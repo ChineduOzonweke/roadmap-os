@@ -1,0 +1,3048 @@
+{
+ "resources": [
+  {
+   "id": "RES-G01",
+   "phaseId": null,
+   "group": "",
+   "label": "CORE / NAVIGATION",
+   "name": "roadmap.sh - map of the ecosystem",
+   "url": "https://roadmap.sh/",
+   "note": "Use role roadmaps for external cross-checking and discovery. Do not use roadmap.sh as the sole curriculum because its job is to map roles and technologies, not to teach every concept to the depth required here.",
+   "topicIds": []
+  },
+  {
+   "id": "RES-G02",
+   "phaseId": null,
+   "group": "",
+   "label": "CORE / UNIVERSITY LIBRARY",
+   "name": "MIT OpenCourseWare",
+   "url": "https://ocw.mit.edu/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-G03",
+   "phaseId": null,
+   "group": "",
+   "label": "CORE / BEGINNER CS SUPPORT",
+   "name": "Harvard CS50 family",
+   "url": "https://cs50.harvard.edu/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-G04",
+   "phaseId": null,
+   "group": "",
+   "label": "OPTIONAL / WEB ENGINEERING",
+   "name": "The Odin Project",
+   "url": "https://www.theodinproject.com/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-G05",
+   "phaseId": null,
+   "group": "",
+   "label": "OPTIONAL / PRACTICE + WEB + PYTHON SUPPORT",
+   "name": "freeCodeCamp",
+   "url": "https://www.freecodecamp.org/learn/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-G06",
+   "phaseId": null,
+   "group": "",
+   "label": "OPTIONAL / STRUCTURED SPECIALISATIONS",
+   "name": "Coursera",
+   "url": "https://www.coursera.org/",
+   "note": "Use it when a specific course is genuinely better suited to a gap or when a credential itself has a concrete reason to exist. Do not turn the roadmap into certificate collection.",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P01-01",
+   "phaseId": "P01",
+   "group": "",
+   "label": "CORE",
+   "name": "Harvard CS50P",
+   "url": "https://cs50.harvard.edu/python/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P01-02",
+   "phaseId": "P01",
+   "group": "",
+   "label": "PRACTICE",
+   "name": "Exercism Python",
+   "url": "https://exercism.org/tracks/python",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P01-03",
+   "phaseId": "P01",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "Python documentation",
+   "url": "https://docs.python.org/3/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P01-04",
+   "phaseId": "P01",
+   "group": "",
+   "label": "DEEP",
+   "name": "Python language reference and later CPython implementation reading",
+   "url": "https://docs.python.org/3/reference/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P01-05",
+   "phaseId": "P01",
+   "group": "",
+   "label": "IMPLEMENT",
+   "name": "command-line utilities, text/file processors, small automation scripts.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P02-01",
+   "phaseId": "P02",
+   "group": "",
+   "label": "CORE",
+   "name": "Pro Git",
+   "url": "https://git-scm.com/book/en/v2",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P02-02",
+   "phaseId": "P02",
+   "group": "",
+   "label": "PRACTICE",
+   "name": "GitHub Skills",
+   "url": "https://skills.github.com/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P02-03",
+   "phaseId": "P02",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "Git documentation",
+   "url": "https://git-scm.com/docs",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P02-04",
+   "phaseId": "P02",
+   "group": "",
+   "label": "DEEP",
+   "name": "Git internals/reference",
+   "url": "https://git-scm.com/book/en/v2/Git-Internals-Plumbing-and-Porcelain",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P02-05",
+   "phaseId": "P02",
+   "group": "",
+   "label": "IMPLEMENT",
+   "name": "use Git on every roadmap project; recover from a deliberately created merge conflict.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P03-01",
+   "phaseId": "P03",
+   "group": "",
+   "label": "CORE",
+   "name": "MIT Missing Semester",
+   "url": "https://missing.csail.mit.edu/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P03-02",
+   "phaseId": "P03",
+   "group": "",
+   "label": "PRACTICE",
+   "name": "shell tasks in your own projects and Linux command exercises.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P03-03",
+   "phaseId": "P03",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "`man` pages and GNU/Linux documentation.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P03-04",
+   "phaseId": "P03",
+   "group": "",
+   "label": "DEEP",
+   "name": "The Linux Programming Interface, then kernel documentation when needed.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P03-05",
+   "phaseId": "P03",
+   "group": "",
+   "label": "IMPLEMENT",
+   "name": "shell automation, log filtering, process inspection, SSH into a remote host.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P04-01",
+   "phaseId": "P04",
+   "group": "",
+   "label": "CORE",
+   "name": "MIT 6.006 Introduction to Algorithms",
+   "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P04-02",
+   "phaseId": "P04",
+   "group": "",
+   "label": "PRACTICE",
+   "name": "NeetCode",
+   "url": "https://neetcode.io/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P04-03",
+   "phaseId": "P04",
+   "group": "",
+   "label": "INTERVIEW",
+   "name": "LeetCode",
+   "url": "https://leetcode.com/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P04-04",
+   "phaseId": "P04",
+   "group": "",
+   "label": "DEEP",
+   "name": "Introduction to Algorithms, Cormen et al.; MIT 6.006 notes/problem sets remain the working spine.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P04-05",
+   "phaseId": "P04",
+   "group": "",
+   "label": "IMPLEMENT",
+   "name": "implement core structures and selected algorithms yourself before using standard-library versions.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P05-01",
+   "phaseId": "P05",
+   "group": "Operating Systems",
+   "label": "CORE",
+   "name": "MIT 6.1810 Operating System Engineering",
+   "url": "https://pdos.csail.mit.edu/6.S081/2026/",
+   "note": "",
+   "topicIds": [
+    "P05.1"
+   ]
+  },
+  {
+   "id": "RES-P05-02",
+   "phaseId": "P05",
+   "group": "Operating Systems",
+   "label": "PRACTICE",
+   "name": "xv6 labs/homework.",
+   "url": null,
+   "note": "",
+   "topicIds": [
+    "P05.1"
+   ]
+  },
+  {
+   "id": "RES-P05-03",
+   "phaseId": "P05",
+   "group": "Operating Systems",
+   "label": "REFERENCE",
+   "name": "xv6 book and course notes.",
+   "url": null,
+   "note": "",
+   "topicIds": [
+    "P05.1"
+   ]
+  },
+  {
+   "id": "RES-P05-04",
+   "phaseId": "P05",
+   "group": "Operating Systems",
+   "label": "DEEP",
+   "name": "Operating Systems: Three Easy Pieces",
+   "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/",
+   "note": "",
+   "topicIds": [
+    "P05.1"
+   ]
+  },
+  {
+   "id": "RES-P05-05",
+   "phaseId": "P05",
+   "group": "Networking",
+   "label": "CORE",
+   "name": "Stanford CS144 Computer Networking",
+   "url": "https://cs144.github.io/",
+   "note": "",
+   "topicIds": [
+    "P05.2"
+   ]
+  },
+  {
+   "id": "RES-P05-06",
+   "phaseId": "P05",
+   "group": "Networking",
+   "label": "PRACTICE",
+   "name": "networking labs, packet inspection, sockets.",
+   "url": null,
+   "note": "",
+   "topicIds": [
+    "P05.2"
+   ]
+  },
+  {
+   "id": "RES-P05-07",
+   "phaseId": "P05",
+   "group": "Networking",
+   "label": "REFERENCE",
+   "name": "MDN HTTP documentation",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP",
+   "note": "",
+   "topicIds": [
+    "P05.2"
+   ]
+  },
+  {
+   "id": "RES-P05-08",
+   "phaseId": "P05",
+   "group": "Networking",
+   "label": "DEEP",
+   "name": "Computer Networking: A Top-Down Approach; RFCs for exact protocol behavior.",
+   "url": null,
+   "note": "",
+   "topicIds": [
+    "P05.2"
+   ]
+  },
+  {
+   "id": "RES-P05-09",
+   "phaseId": "P05",
+   "group": "Computer Architecture",
+   "label": "CORE",
+   "name": "UC Berkeley CS61C",
+   "url": "https://cs61c.org/",
+   "note": "",
+   "topicIds": [
+    "P05.3"
+   ]
+  },
+  {
+   "id": "RES-P05-10",
+   "phaseId": "P05",
+   "group": "Computer Architecture",
+   "label": "PRACTICE",
+   "name": "architecture exercises and low-level programming.",
+   "url": null,
+   "note": "",
+   "topicIds": [
+    "P05.3"
+   ]
+  },
+  {
+   "id": "RES-P05-11",
+   "phaseId": "P05",
+   "group": "Computer Architecture",
+   "label": "REFERENCE",
+   "name": "course notes",
+   "url": "https://notes.cs61c.org/",
+   "note": "",
+   "topicIds": [
+    "P05.3"
+   ]
+  },
+  {
+   "id": "RES-P05-12",
+   "phaseId": "P05",
+   "group": "Computer Architecture",
+   "label": "DEEP",
+   "name": "Computer Organization and Design / Computer Architecture: A Quantitative Approach.",
+   "url": null,
+   "note": "",
+   "topicIds": [
+    "P05.3"
+   ]
+  },
+  {
+   "id": "RES-P05-13",
+   "phaseId": "P05",
+   "group": "Compilers / Runtimes",
+   "label": "CORE",
+   "name": "Crafting Interpreters",
+   "url": "https://craftinginterpreters.com/",
+   "note": "",
+   "topicIds": [
+    "P05.4"
+   ]
+  },
+  {
+   "id": "RES-P05-14",
+   "phaseId": "P05",
+   "group": "Compilers / Runtimes",
+   "label": "PRACTICE",
+   "name": "build a small interpreter.",
+   "url": null,
+   "note": "",
+   "topicIds": [
+    "P05.4"
+   ]
+  },
+  {
+   "id": "RES-P05-15",
+   "phaseId": "P05",
+   "group": "Compilers / Runtimes",
+   "label": "REFERENCE",
+   "name": "language specifications and runtime docs once relevant.",
+   "url": null,
+   "note": "",
+   "topicIds": [
+    "P05.4"
+   ]
+  },
+  {
+   "id": "RES-P05-16",
+   "phaseId": "P05",
+   "group": "Compilers / Runtimes",
+   "label": "DEEP",
+   "name": "Engineering a Compiler; LLVM documentation.",
+   "url": null,
+   "note": "",
+   "topicIds": [
+    "P05.4"
+   ]
+  },
+  {
+   "id": "RES-P06-01",
+   "phaseId": "P06",
+   "group": "",
+   "label": "CORE",
+   "name": "CMU 15-445/645 Intro to Database Systems",
+   "url": "https://15445.courses.cs.cmu.edu/fall2026/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P06-02",
+   "phaseId": "P06",
+   "group": "",
+   "label": "BEGINNER PRACTICE",
+   "name": "SQLBolt",
+   "url": "https://sqlbolt.com/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P06-03",
+   "phaseId": "P06",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "PostgreSQL docs",
+   "url": "https://www.postgresql.org/docs/current/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P06-04",
+   "phaseId": "P06",
+   "group": "",
+   "label": "DEEP",
+   "name": "Database Internals; CMU lecture material and labs.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P06-05",
+   "phaseId": "P06",
+   "group": "",
+   "label": "IMPLEMENT",
+   "name": "build a database-backed application; inspect `EXPLAIN`; benchmark an index/no-index query.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P06-06",
+   "phaseId": "P06",
+   "group": "Redis",
+   "label": "REFERENCE",
+   "name": "Redis docs",
+   "url": "https://redis.io/docs/latest/",
+   "note": "",
+   "topicIds": [
+    "P06.3"
+   ]
+  },
+  {
+   "id": "RES-P06-07",
+   "phaseId": "P06",
+   "group": "Redis",
+   "label": "IMPLEMENT",
+   "name": "caching, rate limiting, session data, queues where justified.",
+   "url": null,
+   "note": "",
+   "topicIds": [
+    "P06.3"
+   ]
+  },
+  {
+   "id": "RES-P06-08",
+   "phaseId": "P06",
+   "group": "NoSQL",
+   "label": "REFERENCE",
+   "name": "MongoDB docs for document databases",
+   "url": "https://www.mongodb.com/docs/",
+   "note": "",
+   "topicIds": [
+    "P06.4"
+   ]
+  },
+  {
+   "id": "RES-P06-09",
+   "phaseId": "P06",
+   "group": "NoSQL",
+   "label": "DEEP",
+   "name": "Database Internals and distributed database literature.",
+   "url": null,
+   "note": "",
+   "topicIds": [
+    "P06.4"
+   ]
+  },
+  {
+   "id": "RES-P06-10",
+   "phaseId": "P06",
+   "group": "NoSQL",
+   "label": "RULE",
+   "name": "learn data-model tradeoffs before collecting databases by name.",
+   "url": null,
+   "note": "",
+   "topicIds": [
+    "P06.4"
+   ]
+  },
+  {
+   "id": "RES-P07-01",
+   "phaseId": "P07",
+   "group": "",
+   "label": "CORE",
+   "name": "Google Engineering Practices",
+   "url": "https://google.github.io/eng-practices/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P07-02",
+   "phaseId": "P07",
+   "group": "",
+   "label": "PRACTICE",
+   "name": "refactor your own projects; write tests before/after changes.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P07-03",
+   "phaseId": "P07",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "language/tool documentation and Python Packaging User Guide",
+   "url": "https://packaging.python.org/en/latest/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P07-04",
+   "phaseId": "P07",
+   "group": "",
+   "label": "TESTING REFERENCE",
+   "name": "pytest",
+   "url": "https://docs.pytest.org/en/stable/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P07-05",
+   "phaseId": "P07",
+   "group": "",
+   "label": "DEEP",
+   "name": "Refactoring, Martin Fowler; Software Engineering at Google.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P07-06",
+   "phaseId": "P07",
+   "group": "",
+   "label": "IMPLEMENT",
+   "name": "every serious project gets tests, logging, documentation, dependency pinning, and a repeatable setup.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P07-07",
+   "phaseId": "P07",
+   "group": "Java",
+   "label": "CORE/reference",
+   "name": "dev.java Learn Java",
+   "url": "https://dev.java/learn/",
+   "note": "",
+   "topicIds": [
+    "P01.2"
+   ]
+  },
+  {
+   "id": "RES-P07-08",
+   "phaseId": "P07",
+   "group": "Java",
+   "label": "PRACTICE",
+   "name": "university Java work and small independent Java programs.",
+   "url": null,
+   "note": "",
+   "topicIds": [
+    "P01.2"
+   ]
+  },
+  {
+   "id": "RES-P07-09",
+   "phaseId": "P07",
+   "group": "Java",
+   "label": "TESTING",
+   "name": "JUnit 5 user guide",
+   "url": "https://junit.org/junit5/docs/current/user-guide/",
+   "note": "",
+   "topicIds": [
+    "P01.2"
+   ]
+  },
+  {
+   "id": "RES-P07-10",
+   "phaseId": "P07",
+   "group": "JavaScript / TypeScript",
+   "label": "CORE",
+   "name": "The Odin Project Full Stack JavaScript path",
+   "url": "https://www.theodinproject.com/paths/2",
+   "note": "",
+   "topicIds": [
+    "P01.3"
+   ]
+  },
+  {
+   "id": "RES-P07-11",
+   "phaseId": "P07",
+   "group": "JavaScript / TypeScript",
+   "label": "REFERENCE",
+   "name": "MDN JavaScript Guide",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide",
+   "note": "",
+   "topicIds": [
+    "P01.3"
+   ]
+  },
+  {
+   "id": "RES-P07-12",
+   "phaseId": "P07",
+   "group": "JavaScript / TypeScript",
+   "label": "TYPE SYSTEM",
+   "name": "TypeScript Handbook",
+   "url": "https://www.typescriptlang.org/docs/handbook/",
+   "note": "",
+   "topicIds": [
+    "P01.3"
+   ]
+  },
+  {
+   "id": "RES-P07-13",
+   "phaseId": "P07",
+   "group": "JavaScript / TypeScript",
+   "label": "IMPLEMENT",
+   "name": "browser application, then Node.js service where useful.",
+   "url": null,
+   "note": "",
+   "topicIds": [
+    "P01.3"
+   ]
+  },
+  {
+   "id": "RES-P08-01",
+   "phaseId": "P08",
+   "group": "",
+   "label": "CORE",
+   "name": "FastAPI Tutorial",
+   "url": "https://fastapi.tiangolo.com/tutorial/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P08-02",
+   "phaseId": "P08",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "MDN HTTP",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P08-03",
+   "phaseId": "P08",
+   "group": "",
+   "label": "SECURITY",
+   "name": "OWASP Web Security Testing Guide / PortSwigger Academy",
+   "url": "https://portswigger.net/web-security",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P08-04",
+   "phaseId": "P08",
+   "group": "",
+   "label": "DEEP",
+   "name": "API Design Patterns; HTTP/RFC references.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P08-05",
+   "phaseId": "P08",
+   "group": "",
+   "label": "IMPLEMENT",
+   "name": "CRUD API → authenticated API → URL shortener → real-time backend.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P08-06",
+   "phaseId": "P08",
+   "group": "Optional Java backend lane",
+   "label": "REFERENCE/IMPLEMENT",
+   "name": "Spring Boot",
+   "url": "https://spring.io/projects/spring-boot",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P09-01",
+   "phaseId": "P09",
+   "group": "",
+   "label": "CORE",
+   "name": "Software Architecture in Practice / Martin Fowler architecture articles",
+   "url": "https://martinfowler.com/architecture/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P09-02",
+   "phaseId": "P09",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "AWS Well-Architected Framework",
+   "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P09-03",
+   "phaseId": "P09",
+   "group": "",
+   "label": "DEEP",
+   "name": "Designing Data-Intensive Applications",
+   "url": "https://dataintensive.net/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P09-04",
+   "phaseId": "P09",
+   "group": "",
+   "label": "IMPLEMENT",
+   "name": "refactor a monolith from script → modules → layered design; split services only when a real boundary appears.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P10-01",
+   "phaseId": "P10",
+   "group": "Linear Algebra",
+   "label": "CORE",
+   "name": "MIT 18.06 / 18.06SC",
+   "url": "https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/",
+   "note": "",
+   "topicIds": [
+    "P10.1"
+   ]
+  },
+  {
+   "id": "RES-P10-02",
+   "phaseId": "P10",
+   "group": "Linear Algebra",
+   "label": "PRACTICE",
+   "name": "problem sets + hand derivations + NumPy.",
+   "url": null,
+   "note": "",
+   "topicIds": [
+    "P10.1"
+   ]
+  },
+  {
+   "id": "RES-P10-03",
+   "phaseId": "P10",
+   "group": "Linear Algebra",
+   "label": "REFERENCE",
+   "name": "MIT notes and linear algebra reference material.",
+   "url": null,
+   "note": "",
+   "topicIds": [
+    "P10.1"
+   ]
+  },
+  {
+   "id": "RES-P10-04",
+   "phaseId": "P10",
+   "group": "Linear Algebra",
+   "label": "DEEP",
+   "name": "Linear Algebra Done Right or equivalent rigorous text when research depth demands it.",
+   "url": null,
+   "note": "",
+   "topicIds": [
+    "P10.1"
+   ]
+  },
+  {
+   "id": "RES-P10-05",
+   "phaseId": "P10",
+   "group": "Calculus",
+   "label": "CORE",
+   "name": "MIT 18.01SC Single Variable Calculus",
+   "url": "https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/",
+   "note": "",
+   "topicIds": [
+    "P10.2"
+   ]
+  },
+  {
+   "id": "RES-P10-06",
+   "phaseId": "P10",
+   "group": "Calculus",
+   "label": "SUPPLEMENT",
+   "name": "MIT 18.02 / multivariable calculus material when gradients/Jacobians become active.",
+   "url": null,
+   "note": "",
+   "topicIds": [
+    "P10.2"
+   ]
+  },
+  {
+   "id": "RES-P10-07",
+   "phaseId": "P10",
+   "group": "Calculus",
+   "label": "DEEP",
+   "name": "Stewart or a rigorous alternative if needed for formal depth.",
+   "url": null,
+   "note": "",
+   "topicIds": [
+    "P10.2"
+   ]
+  },
+  {
+   "id": "RES-P10-08",
+   "phaseId": "P10",
+   "group": "Probability",
+   "label": "CORE",
+   "name": "MIT probabilistic systems material",
+   "url": "https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/",
+   "note": "",
+   "topicIds": [
+    "P10.3"
+   ]
+  },
+  {
+   "id": "RES-P10-09",
+   "phaseId": "P10",
+   "group": "Probability",
+   "label": "PRACTICE",
+   "name": "problem sets, simulations, Monte Carlo experiments.",
+   "url": null,
+   "note": "",
+   "topicIds": [
+    "P10.3"
+   ]
+  },
+  {
+   "id": "RES-P10-10",
+   "phaseId": "P10",
+   "group": "Probability",
+   "label": "DEEP",
+   "name": "Introduction to Probability, Blitzstein and Hwang.",
+   "url": null,
+   "note": "",
+   "topicIds": [
+    "P10.3"
+   ]
+  },
+  {
+   "id": "RES-P10-11",
+   "phaseId": "P10",
+   "group": "Statistics",
+   "label": "CORE",
+   "name": "OpenIntro Statistics",
+   "url": "https://www.openintro.org/book/os/",
+   "note": "",
+   "topicIds": [
+    "P10.4"
+   ]
+  },
+  {
+   "id": "RES-P10-12",
+   "phaseId": "P10",
+   "group": "Statistics",
+   "label": "SUPPLEMENT",
+   "name": "An Introduction to Statistical Learning",
+   "url": "https://www.statlearning.com/",
+   "note": "",
+   "topicIds": [
+    "P10.4"
+   ]
+  },
+  {
+   "id": "RES-P10-13",
+   "phaseId": "P10",
+   "group": "Statistics",
+   "label": "REFERENCE",
+   "name": "statistical software documentation and formal statistical texts as needed.",
+   "url": null,
+   "note": "",
+   "topicIds": [
+    "P10.4"
+   ]
+  },
+  {
+   "id": "RES-P10-14",
+   "phaseId": "P10",
+   "group": "Optimisation",
+   "label": "CORE",
+   "name": "selected MIT/Stanford optimisation material tied directly to ML.",
+   "url": null,
+   "note": "",
+   "topicIds": [
+    "P10.5"
+   ]
+  },
+  {
+   "id": "RES-P10-15",
+   "phaseId": "P10",
+   "group": "Optimisation",
+   "label": "REFERENCE",
+   "name": "PyTorch optimisation documentation and algorithm references.",
+   "url": null,
+   "note": "",
+   "topicIds": [
+    "P10.5"
+   ]
+  },
+  {
+   "id": "RES-P10-16",
+   "phaseId": "P10",
+   "group": "Optimisation",
+   "label": "DEEP",
+   "name": "Convex Optimization by Boyd and Vandenberghe when the target work requires formal convex analysis.",
+   "url": null,
+   "note": "",
+   "topicIds": [
+    "P10.5"
+   ]
+  },
+  {
+   "id": "RES-P11-01",
+   "phaseId": "P11",
+   "group": "",
+   "label": "CORE",
+   "name": "Kaggle Learn for short guided practice",
+   "url": "https://www.kaggle.com/learn",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P11-02",
+   "phaseId": "P11",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "NumPy docs",
+   "url": "https://numpy.org/doc/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P11-03",
+   "phaseId": "P11",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "Pandas docs",
+   "url": "https://pandas.pydata.org/docs/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P11-04",
+   "phaseId": "P11",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "Matplotlib docs",
+   "url": "https://matplotlib.org/stable/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P11-05",
+   "phaseId": "P11",
+   "group": "",
+   "label": "PRACTICE",
+   "name": "real datasets, university datasets, analysis writeups.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P11-06",
+   "phaseId": "P11",
+   "group": "",
+   "label": "DEEP",
+   "name": "Practical Statistics for Data Scientists and your statistics coursework.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P12-01",
+   "phaseId": "P12",
+   "group": "",
+   "label": "CORE",
+   "name": "Data Engineering Zoomcamp",
+   "url": "https://datatalks.club/blog/data-engineering-zoomcamp.html",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P12-02",
+   "phaseId": "P12",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "Apache Airflow docs",
+   "url": "https://airflow.apache.org/docs/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P12-03",
+   "phaseId": "P12",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "Apache Spark docs",
+   "url": "https://spark.apache.org/documentation/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P12-04",
+   "phaseId": "P12",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "Apache Kafka docs",
+   "url": "https://kafka.apache.org/documentation/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P12-05",
+   "phaseId": "P12",
+   "group": "",
+   "label": "OPTIONAL",
+   "name": "dbt docs for analytics engineering",
+   "url": "https://docs.getdbt.com/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P12-06",
+   "phaseId": "P12",
+   "group": "",
+   "label": "IMPLEMENT",
+   "name": "raw source → validation → transformation → PostgreSQL → analytics query → report, then schedule and log it.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P13-01",
+   "phaseId": "P13",
+   "group": "",
+   "label": "CORE",
+   "name": "An Introduction to Statistical Learning",
+   "url": "https://www.statlearning.com/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P13-02",
+   "phaseId": "P13",
+   "group": "",
+   "label": "PRACTICE / REFERENCE",
+   "name": "scikit-learn User Guide",
+   "url": "https://scikit-learn.org/stable/user_guide.html",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P13-03",
+   "phaseId": "P13",
+   "group": "",
+   "label": "DEEP",
+   "name": "Stanford CS229",
+   "url": "https://cs229.stanford.edu/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P13-04",
+   "phaseId": "P13",
+   "group": "",
+   "label": "IMPLEMENT",
+   "name": "baseline → feature engineering → model comparison → evaluation report.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P14-01",
+   "phaseId": "P14",
+   "group": "",
+   "label": "CORE",
+   "name": "Stanford CS229 lectures/notes",
+   "url": "https://cs229.stanford.edu/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P14-02",
+   "phaseId": "P14",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "scikit-learn User Guide",
+   "url": "https://scikit-learn.org/stable/user_guide.html",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P14-03",
+   "phaseId": "P14",
+   "group": "",
+   "label": "DEEP",
+   "name": "The Elements of Statistical Learning",
+   "url": "https://hastie.su.domains/ElemStatLearn/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P14-04",
+   "phaseId": "P14",
+   "group": "",
+   "label": "IMPLEMENT",
+   "name": "deliberately create leakage, imbalance, and overfitting failures and diagnose them.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P15-01",
+   "phaseId": "P15",
+   "group": "",
+   "label": "CORE",
+   "name": "ISLR + CS229 statistical learning material.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P15-02",
+   "phaseId": "P15",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "scikit-learn metrics/model_selection docs",
+   "url": "https://scikit-learn.org/stable/modules/classes.html",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P15-03",
+   "phaseId": "P15",
+   "group": "",
+   "label": "DEEP",
+   "name": "statistical decision theory and experiment design when research work demands it.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P15-04",
+   "phaseId": "P15",
+   "group": "",
+   "label": "IMPLEMENT",
+   "name": "write an evaluation plan before training; justify the metric using the error costs.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P16-01",
+   "phaseId": "P16",
+   "group": "",
+   "label": "CORE",
+   "name": "CS229 notes + your mathematics notes.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P16-02",
+   "phaseId": "P16",
+   "group": "",
+   "label": "PRACTICE",
+   "name": "NumPy-only implementations.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P16-03",
+   "phaseId": "P16",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "NumPy docs",
+   "url": "https://numpy.org/doc/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P16-04",
+   "phaseId": "P16",
+   "group": "",
+   "label": "DEEP",
+   "name": "numerical optimisation and linear algebra references as gaps appear.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P16-05",
+   "phaseId": "P16",
+   "group": "",
+   "label": "IMPLEMENT",
+   "name": "compare your implementation with scikit-learn/PyTorch behavior and complexity.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P17-01",
+   "phaseId": "P17",
+   "group": "",
+   "label": "CORE",
+   "name": "Forecasting: Principles and Practice",
+   "url": "https://otexts.com/fpp3/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P17-02",
+   "phaseId": "P17",
+   "group": "",
+   "label": "PRACTICE",
+   "name": "forecasting experiments with temporal validation.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P17-03",
+   "phaseId": "P17",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "statsmodels time-series docs",
+   "url": "https://www.statsmodels.org/stable/tsa.html",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P17-04",
+   "phaseId": "P17",
+   "group": "",
+   "label": "DEEP",
+   "name": "advanced forecasting literature when needed.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P18-01",
+   "phaseId": "P18",
+   "group": "",
+   "label": "CORE",
+   "name": "Google recommendation systems learning materials",
+   "url": "https://developers.google.com/machine-learning/recommendation",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P18-02",
+   "phaseId": "P18",
+   "group": "",
+   "label": "SUPPLEMENT",
+   "name": "Stanford recommender / large-scale ML material.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P18-03",
+   "phaseId": "P18",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "TensorFlow Recommenders docs when implementing with that stack.",
+   "url": "https://www.tensorflow.org/recommenders",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P18-04",
+   "phaseId": "P18",
+   "group": "",
+   "label": "DEEP",
+   "name": "recommender-system literature and industry case studies.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P19-01",
+   "phaseId": "P19",
+   "group": "",
+   "label": "CORE",
+   "name": "MIT 6.S191 Introduction to Deep Learning",
+   "url": "https://introtodeeplearning.com/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P19-02",
+   "phaseId": "P19",
+   "group": "",
+   "label": "PRACTICE / REFERENCE",
+   "name": "PyTorch tutorials",
+   "url": "https://docs.pytorch.org/tutorials/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P19-03",
+   "phaseId": "P19",
+   "group": "",
+   "label": "DEEP",
+   "name": "Deep Learning, Goodfellow et al.; Dive into Deep Learning",
+   "url": "https://d2l.ai/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P19-04",
+   "phaseId": "P19",
+   "group": "",
+   "label": "IMPLEMENT",
+   "name": "hand-compute a small forward/backprop example, then build the same idea in PyTorch.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P20-01",
+   "phaseId": "P20",
+   "group": "",
+   "label": "CORE",
+   "name": "Stanford CS231n",
+   "url": "https://cs231n.stanford.edu/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P20-02",
+   "phaseId": "P20",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "PyTorch vision tutorials and torchvision docs.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P20-03",
+   "phaseId": "P20",
+   "group": "",
+   "label": "DEEP",
+   "name": "modern vision papers once fundamentals are strong.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P21-01",
+   "phaseId": "P21",
+   "group": "",
+   "label": "CORE",
+   "name": "Stanford CS224N",
+   "url": "https://web.stanford.edu/class/cs224n/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P21-02",
+   "phaseId": "P21",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "Hugging Face NLP/Transformers docs.",
+   "url": "https://huggingface.co/docs/transformers/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P21-03",
+   "phaseId": "P21",
+   "group": "",
+   "label": "DEEP",
+   "name": "NLP research papers and selected chapters of Speech and Language Processing.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P22-01",
+   "phaseId": "P22",
+   "group": "",
+   "label": "CORE",
+   "name": "Stanford CS224N + Hugging Face course.",
+   "url": "https://huggingface.co/docs/course/chapter1/1",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P22-02",
+   "phaseId": "P22",
+   "group": "",
+   "label": "SUPPLEMENT",
+   "name": "The Illustrated Transformer",
+   "url": "https://jalammar.github.io/illustrated-transformer/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P22-03",
+   "phaseId": "P22",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "Transformer implementation/documentation in Hugging Face.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P22-04",
+   "phaseId": "P22",
+   "group": "",
+   "label": "IMPLEMENT",
+   "name": "implement a small attention block and a miniature transformer before fine-tuning large models.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P23-01",
+   "phaseId": "P23",
+   "group": "",
+   "label": "CORE",
+   "name": "Hugging Face Course",
+   "url": "https://huggingface.co/course/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P23-02",
+   "phaseId": "P23",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "Transformers, Datasets, Tokenizers, Accelerate docs.",
+   "url": "https://huggingface.co/docs/accelerate/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P23-03",
+   "phaseId": "P23",
+   "group": "",
+   "label": "DEEP",
+   "name": "Full Stack Deep Learning",
+   "url": "https://fullstackdeeplearning.com/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P23-04",
+   "phaseId": "P23",
+   "group": "",
+   "label": "RECHECK",
+   "name": "model-serving and inference libraries change quickly. Read current release docs when implementing.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P24-01",
+   "phaseId": "P24",
+   "group": "",
+   "label": "CORE",
+   "name": "Full Stack Deep Learning material on LLM applications",
+   "url": "https://fullstackdeeplearning.com/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P24-02",
+   "phaseId": "P24",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "LlamaIndex docs",
+   "url": "https://docs.llamaindex.ai/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P24-03",
+   "phaseId": "P24",
+   "group": "",
+   "label": "SUPPLEMENT",
+   "name": "Haystack docs when a comparison is useful",
+   "url": "https://docs.haystack.deepset.ai/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P24-04",
+   "phaseId": "P24",
+   "group": "",
+   "label": "DEEP",
+   "name": "information retrieval fundamentals and vector-search documentation.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P24-05",
+   "phaseId": "P24",
+   "group": "",
+   "label": "IMPLEMENT",
+   "name": "a retrieval system with an evaluation set, not a “chat with PDF” demo only.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P25-01",
+   "phaseId": "P25",
+   "group": "",
+   "label": "CORE",
+   "name": "Hugging Face Agents Course",
+   "url": "https://huggingface.co/learn/agents-course/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P25-02",
+   "phaseId": "P25",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "LangGraph documentation when using graph-based orchestration",
+   "url": "https://docs.langchain.com/oss/python/langgraph/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P25-03",
+   "phaseId": "P25",
+   "group": "",
+   "label": "SUPPLEMENT",
+   "name": "provider-specific agent SDK documentation when a project calls for it.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P25-04",
+   "phaseId": "P25",
+   "group": "",
+   "label": "DEEP",
+   "name": "agent reliability/evaluation research and production case studies.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P25-05",
+   "phaseId": "P25",
+   "group": "",
+   "label": "IMPLEMENT",
+   "name": "deterministic tool-use first, then bounded agent loops.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P26-01",
+   "phaseId": "P26",
+   "group": "",
+   "label": "CORE",
+   "name": "Hugging Face task/model documentation.",
+   "url": "https://huggingface.co/tasks",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P26-02",
+   "phaseId": "P26",
+   "group": "",
+   "label": "FOUNDATIONS",
+   "name": "CS231n + CS224N.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P26-03",
+   "phaseId": "P26",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "PyTorch and Transformers docs.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P26-04",
+   "phaseId": "P26",
+   "group": "",
+   "label": "DEEP",
+   "name": "current multimodal model papers.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P26-05",
+   "phaseId": "P26",
+   "group": "",
+   "label": "RECHECK",
+   "name": "this is a fast-moving research area; refresh the model/tool section before serious work.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P27-01",
+   "phaseId": "P27",
+   "group": "",
+   "label": "CORE",
+   "name": "NIST AI Risk Management Framework",
+   "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P27-02",
+   "phaseId": "P27",
+   "group": "",
+   "label": "PRACTICE",
+   "name": "build a labelled evaluation set and regression suite for every serious AI project.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P27-03",
+   "phaseId": "P27",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "framework-specific evaluation docs (MLflow, provider APIs, task libraries) for the stack in use.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P27-04",
+   "phaseId": "P27",
+   "group": "",
+   "label": "DEEP",
+   "name": "evaluation and measurement papers; benchmark methodology.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P28-01",
+   "phaseId": "P28",
+   "group": "",
+   "label": "CORE",
+   "name": "Made With ML MLOps Course",
+   "url": "https://madewithml.com/courses/mlops/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P28-02",
+   "phaseId": "P28",
+   "group": "",
+   "label": "SUPPLEMENT",
+   "name": "Full Stack Deep Learning",
+   "url": "https://fullstackdeeplearning.com/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P28-03",
+   "phaseId": "P28",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "MLflow docs",
+   "url": "https://mlflow.org/docs/latest/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P28-04",
+   "phaseId": "P28",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "DVC docs",
+   "url": "https://dvc.org/doc",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P28-05",
+   "phaseId": "P28",
+   "group": "",
+   "label": "DEEP",
+   "name": "Google Rules of ML",
+   "url": "https://developers.google.com/machine-learning/guides/rules-of-ml",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P28-06",
+   "phaseId": "P28",
+   "group": "",
+   "label": "IMPLEMENT",
+   "name": "train → track → register → serve → monitor → reproduce.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P29-01",
+   "phaseId": "P29",
+   "group": "",
+   "label": "CORE",
+   "name": "FastAPI for service fundamentals",
+   "url": "https://fastapi.tiangolo.com/tutorial/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P29-02",
+   "phaseId": "P29",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "KServe docs for Kubernetes-native serving",
+   "url": "https://kserve.github.io/website/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P29-03",
+   "phaseId": "P29",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "vLLM docs for LLM inference",
+   "url": "https://docs.vllm.ai/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P29-04",
+   "phaseId": "P29",
+   "group": "",
+   "label": "DEEP",
+   "name": "serving-system papers and performance investigations.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P29-05",
+   "phaseId": "P29",
+   "group": "",
+   "label": "IMPLEMENT",
+   "name": "deploy one model behind a versioned API with metrics and a rollback plan.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P30-01",
+   "phaseId": "P30",
+   "group": "",
+   "label": "CORE",
+   "name": "Made With ML",
+   "url": "https://madewithml.com/courses/mlops/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P30-02",
+   "phaseId": "P30",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "MLflow",
+   "url": "https://mlflow.org/docs/latest/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P30-03",
+   "phaseId": "P30",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "DVC",
+   "url": "https://dvc.org/doc",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P30-04",
+   "phaseId": "P30",
+   "group": "",
+   "label": "PRACTICE",
+   "name": "GitHub Actions + containerised pipeline.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P30-05",
+   "phaseId": "P30",
+   "group": "",
+   "label": "DEEP",
+   "name": "FSDL + production ML case studies.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P31-01",
+   "phaseId": "P31",
+   "group": "",
+   "label": "CORE",
+   "name": "Docker Get Started",
+   "url": "https://docs.docker.com/get-started/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P31-02",
+   "phaseId": "P31",
+   "group": "",
+   "label": "PRACTICE",
+   "name": "GitHub Actions",
+   "url": "https://docs.github.com/en/actions",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P31-03",
+   "phaseId": "P31",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "Docker docs",
+   "url": "https://docs.docker.com/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P31-04",
+   "phaseId": "P31",
+   "group": "",
+   "label": "DEEP",
+   "name": "Kubernetes and cloud architecture only after the fundamentals are real.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P31-05",
+   "phaseId": "P31",
+   "group": "",
+   "label": "IMPLEMENT",
+   "name": "containerise a project, test in CI, push an image, deploy it.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P32-01",
+   "phaseId": "P32",
+   "group": "",
+   "label": "CORE",
+   "name": "AWS Skill Builder / cloud fundamentals",
+   "url": "https://skillbuilder.aws/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P32-02",
+   "phaseId": "P32",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "AWS documentation",
+   "url": "https://docs.aws.amazon.com/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P32-03",
+   "phaseId": "P32",
+   "group": "",
+   "label": "ARCHITECTURE",
+   "name": "AWS Well-Architected Framework",
+   "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P32-04",
+   "phaseId": "P32",
+   "group": "",
+   "label": "DEEP",
+   "name": "cloud architecture case studies and service-specific documentation.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P32-05",
+   "phaseId": "P32",
+   "group": "",
+   "label": "RULE",
+   "name": "learn one cloud deeply enough to deploy; understand the analogous concepts in others.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P33-01",
+   "phaseId": "P33",
+   "group": "",
+   "label": "CORE",
+   "name": "HashiCorp Terraform Tutorials",
+   "url": "https://developer.hashicorp.com/terraform/tutorials",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P33-02",
+   "phaseId": "P33",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "Terraform docs",
+   "url": "https://developer.hashicorp.com/terraform/docs",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P33-03",
+   "phaseId": "P33",
+   "group": "",
+   "label": "DEEP",
+   "name": "Terraform internals and cloud-provider-specific patterns when required.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P33-04",
+   "phaseId": "P33",
+   "group": "",
+   "label": "IMPLEMENT",
+   "name": "provision the infrastructure for one portfolio system from code.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P34-01",
+   "phaseId": "P34",
+   "group": "",
+   "label": "CORE",
+   "name": "Kubernetes Concepts and official tutorials",
+   "url": "https://kubernetes.io/docs/concepts/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P34-02",
+   "phaseId": "P34",
+   "group": "",
+   "label": "PRACTICE",
+   "name": "Minikube/kind-based local cluster.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P34-03",
+   "phaseId": "P34",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "Kubernetes docs",
+   "url": "https://kubernetes.io/docs/home/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P34-04",
+   "phaseId": "P34",
+   "group": "",
+   "label": "DEEP",
+   "name": "Kubernetes architecture and scheduler/controller internals.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P34-05",
+   "phaseId": "P34",
+   "group": "",
+   "label": "RULE",
+   "name": "Kubernetes stays deferred until Linux, networking, containers, deployment, and debugging are comfortable.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P35-01",
+   "phaseId": "P35",
+   "group": "",
+   "label": "CORE",
+   "name": "Designing Data-Intensive Applications",
+   "url": "https://dataintensive.net/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P35-02",
+   "phaseId": "P35",
+   "group": "",
+   "label": "PRACTICE",
+   "name": "System Design Primer",
+   "url": "https://github.com/donnemartin/system-design-primer",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P35-03",
+   "phaseId": "P35",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "AWS Well-Architected Framework",
+   "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P35-04",
+   "phaseId": "P35",
+   "group": "",
+   "label": "DEEP",
+   "name": "system-specific architecture papers and postmortems.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P35-05",
+   "phaseId": "P35",
+   "group": "",
+   "label": "IMPLEMENT",
+   "name": "design the architecture of your own projects before scaling them.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P36-01",
+   "phaseId": "P36",
+   "group": "",
+   "label": "CORE",
+   "name": "MIT 6.5840 Distributed Systems",
+   "url": "https://pdos.csail.mit.edu/6.824/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P36-02",
+   "phaseId": "P36",
+   "group": "",
+   "label": "PRACTICE",
+   "name": "labs and paper questions where prerequisites permit.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P36-03",
+   "phaseId": "P36",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "Raft resources",
+   "url": "https://raft.github.io/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P36-04",
+   "phaseId": "P36",
+   "group": "",
+   "label": "DEEP",
+   "name": "Distributed Systems, Tanenbaum/van Steen or equivalent; original papers.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P36-05",
+   "phaseId": "P36",
+   "group": "",
+   "label": "IMPLEMENT",
+   "name": "replicated key-value store or selected distributed-systems lab.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P37-01",
+   "phaseId": "P37",
+   "group": "",
+   "label": "CORE",
+   "name": "Stanford CS329S Machine Learning Systems Design",
+   "url": "https://web.stanford.edu/class/cs329s/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P37-02",
+   "phaseId": "P37",
+   "group": "",
+   "label": "DEEP",
+   "name": "Designing Machine Learning Systems, Chip Huyen",
+   "url": "https://www.oreilly.com/library/view/designing-machine-learning/9781098107956/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P37-03",
+   "phaseId": "P37",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "cloud and serving documentation for the deployed architecture.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P37-04",
+   "phaseId": "P37",
+   "group": "",
+   "label": "IMPLEMENT",
+   "name": "design and defend a complete ML system from product requirement to monitoring.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P38-01",
+   "phaseId": "P38",
+   "group": "",
+   "label": "CORE",
+   "name": "OpenTelemetry docs",
+   "url": "https://opentelemetry.io/docs/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P38-02",
+   "phaseId": "P38",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "Prometheus docs",
+   "url": "https://prometheus.io/docs/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P38-03",
+   "phaseId": "P38",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "Grafana docs",
+   "url": "https://grafana.com/docs/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P38-04",
+   "phaseId": "P38",
+   "group": "",
+   "label": "DEEP",
+   "name": "Site Reliability Engineering",
+   "url": "https://sre.google/sre-book/table-of-contents/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P38-05",
+   "phaseId": "P38",
+   "group": "",
+   "label": "IMPLEMENT",
+   "name": "instrument one service and trace a request across components.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P39-01",
+   "phaseId": "P39",
+   "group": "",
+   "label": "CORE",
+   "name": "PortSwigger Web Security Academy",
+   "url": "https://portswigger.net/web-security",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P39-02",
+   "phaseId": "P39",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "OWASP Top 10",
+   "url": "https://owasp.org/www-project-top-ten/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P39-03",
+   "phaseId": "P39",
+   "group": "",
+   "label": "AI SECURITY REFERENCE",
+   "name": "OWASP GenAI Security Project",
+   "url": "https://genai.owasp.org/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P39-04",
+   "phaseId": "P39",
+   "group": "",
+   "label": "STANDARDS",
+   "name": "NIST AI RMF",
+   "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P39-05",
+   "phaseId": "P39",
+   "group": "",
+   "label": "DEEP",
+   "name": "threat-modeling literature and security advisories for the systems actually deployed.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P40-01",
+   "phaseId": "P40",
+   "group": "",
+   "label": "CORE",
+   "name": "papers from NeurIPS, ICML, ICLR, ACL, CVPR, MLSys, etc.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P40-02",
+   "phaseId": "P40",
+   "group": "",
+   "label": "DISCOVERY",
+   "name": "arXiv",
+   "url": "https://arxiv.org/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P40-03",
+   "phaseId": "P40",
+   "group": "",
+   "label": "SUPPLEMENT",
+   "name": "Papers with Code / benchmark repositories where still relevant.",
+   "url": "https://paperswithcode.com/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P40-04",
+   "phaseId": "P40",
+   "group": "",
+   "label": "DEEP",
+   "name": "original papers, official code repositories, supplementary material.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P40-05",
+   "phaseId": "P40",
+   "group": "",
+   "label": "IMPLEMENT",
+   "name": "reproduce one paper before attempting original research.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P41-01",
+   "phaseId": "P41",
+   "group": "",
+   "label": "CORE",
+   "name": "Reinforcement Learning: An Introduction, Sutton and Barto",
+   "url": "http://incompleteideas.net/book/the-book-2nd.html",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P41-02",
+   "phaseId": "P41",
+   "group": "",
+   "label": "SUPPLEMENT",
+   "name": "David Silver reinforcement learning lectures",
+   "url": "https://www.davidsilver.uk/teaching/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P41-03",
+   "phaseId": "P41",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "Gymnasium docs when implementing environments",
+   "url": "https://gymnasium.farama.org/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P41-04",
+   "phaseId": "P41",
+   "group": "",
+   "label": "DEEP",
+   "name": "current RL papers once mathematics and deep learning foundations are strong.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P42-01",
+   "phaseId": "P42",
+   "group": "",
+   "label": "CORE",
+   "name": "PyTorch Distributed documentation",
+   "url": "https://docs.pytorch.org/docs/stable/distributed.html",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P42-02",
+   "phaseId": "P42",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "Ray docs",
+   "url": "https://docs.ray.io/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P42-03",
+   "phaseId": "P42",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "DeepSpeed docs",
+   "url": "https://www.deepspeed.ai/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P42-04",
+   "phaseId": "P42",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "vLLM docs",
+   "url": "https://docs.vllm.ai/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P42-05",
+   "phaseId": "P42",
+   "group": "",
+   "label": "DEEP",
+   "name": "systems papers, benchmark reports, accelerator architecture material.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P43-01",
+   "phaseId": "P43",
+   "group": "",
+   "label": "CORE",
+   "name": "Data Engineering Zoomcamp",
+   "url": "https://datatalks.club/blog/data-engineering-zoomcamp.html",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P43-02",
+   "phaseId": "P43",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "Kafka",
+   "url": "https://kafka.apache.org/documentation/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P43-03",
+   "phaseId": "P43",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "Spark",
+   "url": "https://spark.apache.org/documentation/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P43-04",
+   "phaseId": "P43",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "Airflow",
+   "url": "https://airflow.apache.org/docs/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P43-05",
+   "phaseId": "P43",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "Feast",
+   "url": "https://docs.feast.dev/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P43-06",
+   "phaseId": "P43",
+   "group": "",
+   "label": "IMPLEMENT",
+   "name": "streaming pipeline + batch pipeline + feature serving comparison.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P44-01",
+   "phaseId": "P44",
+   "group": "",
+   "label": "CORE",
+   "name": "Full Stack Deep Learning",
+   "url": "https://fullstackdeeplearning.com/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P44-02",
+   "phaseId": "P44",
+   "group": "",
+   "label": "ECOSYSTEM REFERENCE",
+   "name": "Hugging Face docs/course",
+   "url": "https://huggingface.co/docs",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P44-03",
+   "phaseId": "P44",
+   "group": "",
+   "label": "IMPLEMENTATION REFERENCE",
+   "name": "provider/model/framework docs specific to the current architecture.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P44-04",
+   "phaseId": "P44",
+   "group": "",
+   "label": "DEEP",
+   "name": "production case studies, evaluation papers, serving-system documentation.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P44-05",
+   "phaseId": "P44",
+   "group": "",
+   "label": "RULE",
+   "name": "architecture and evaluation outrank prompt cleverness.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P45-01",
+   "phaseId": "P45",
+   "group": "",
+   "label": "CORE",
+   "name": "cloud provider pricing documentation (start with AWS)",
+   "url": "https://aws.amazon.com/pricing/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P45-02",
+   "phaseId": "P45",
+   "group": "",
+   "label": "ARCHITECTURE",
+   "name": "AWS Well-Architected cost optimisation pillar",
+   "url": "https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P45-03",
+   "phaseId": "P45",
+   "group": "",
+   "label": "DEEP",
+   "name": "FinOps Foundation",
+   "url": "https://www.finops.org/framework/",
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P45-04",
+   "phaseId": "P45",
+   "group": "",
+   "label": "IMPLEMENT",
+   "name": "add cost estimates and a cost-per-request measure to a deployed system.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P46-01",
+   "phaseId": "P46",
+   "group": "",
+   "label": "CORE",
+   "name": "product discovery through real project users and stakeholders.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P46-02",
+   "phaseId": "P46",
+   "group": "",
+   "label": "SUPPLEMENT",
+   "name": "Inspired, The Mom Test, and strong product requirement examples.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P46-03",
+   "phaseId": "P46",
+   "group": "",
+   "label": "REFERENCE",
+   "name": "your project's issue tracker, design docs, analytics, user interviews.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P46-04",
+   "phaseId": "P46",
+   "group": "",
+   "label": "IMPLEMENT",
+   "name": "write a one-page problem statement, success metric, constraints, and feedback plan before a significant build.",
+   "url": null,
+   "note": "",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P01-X1",
+   "phaseId": "P01",
+   "group": "",
+   "label": "PHASE-TEXT",
+   "name": "CS50x - Introduction to Computer Science",
+   "url": "https://cs50.harvard.edu/x/",
+   "note": "Found in master phase text (P01.1h).",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P06-X1",
+   "phaseId": "P06",
+   "group": "",
+   "label": "PHASE-TEXT",
+   "name": "Referenced in P06.2a Resources",
+   "url": "https://www.postgresql.org/docs/current/tutorial.html",
+   "note": "Found in master phase text (P06.2a).",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P23-X1",
+   "phaseId": "P23",
+   "group": "",
+   "label": "PHASE-TEXT",
+   "name": "Referenced in P23.6 Tooling",
+   "url": "https://huggingface.co/docs/transformers",
+   "note": "Found in master phase text (P23.6).",
+   "topicIds": []
+  },
+  {
+   "id": "RES-P33-X1",
+   "phaseId": "P33",
+   "group": "",
+   "label": "PHASE-TEXT",
+   "name": "Referenced in P33.0 Core scope",
+   "url": "https://developer.hashicorp.com/terraform/intro",
+   "note": "Found in master phase text (P33.0).",
+   "topicIds": []
+  }
+ ],
+ "tools": [
+  {
+   "id": "TOOL-01",
+   "name": "Python",
+   "activation": "Phase 1",
+   "route": "CS50P",
+   "url": "https://docs.python.org/3/",
+   "reference": "https://docs.python.org/3/"
+  },
+  {
+   "id": "TOOL-02",
+   "name": "Java",
+   "activation": "Phase 1/7 support",
+   "route": "dev.java + university work",
+   "url": "https://dev.java/learn/",
+   "reference": "https://dev.java/learn/"
+  },
+  {
+   "id": "TOOL-03",
+   "name": "JavaScript",
+   "activation": "Phase 7 onward",
+   "route": "Odin / MDN",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+   "reference": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+  },
+  {
+   "id": "TOOL-04",
+   "name": "TypeScript",
+   "activation": "Phase 7 onward",
+   "route": "Odin + TS Handbook",
+   "url": "https://www.typescriptlang.org/docs/handbook/",
+   "reference": "https://www.typescriptlang.org/docs/handbook/"
+  },
+  {
+   "id": "TOOL-05",
+   "name": "SQL",
+   "activation": "Phase 6",
+   "route": "SQLBolt + CMU",
+   "url": "https://www.postgresql.org/docs/current/",
+   "reference": "https://www.postgresql.org/docs/current/"
+  },
+  {
+   "id": "TOOL-06",
+   "name": "PostgreSQL",
+   "activation": "Phase 6",
+   "route": "CMU DB course",
+   "url": "https://www.postgresql.org/docs/current/",
+   "reference": "https://www.postgresql.org/docs/current/"
+  },
+  {
+   "id": "TOOL-07",
+   "name": "Redis",
+   "activation": "Phase 6/8",
+   "route": "project use + docs",
+   "url": "https://redis.io/docs/latest/",
+   "reference": "https://redis.io/docs/latest/"
+  },
+  {
+   "id": "TOOL-08",
+   "name": "MongoDB",
+   "activation": "Optional",
+   "route": "docs + targeted tutorial",
+   "url": "https://www.mongodb.com/docs/",
+   "reference": "https://www.mongodb.com/docs/"
+  },
+  {
+   "id": "TOOL-09",
+   "name": "Git",
+   "activation": "Phase 2",
+   "route": "Pro Git",
+   "url": "https://git-scm.com/docs",
+   "reference": "https://git-scm.com/docs"
+  },
+  {
+   "id": "TOOL-10",
+   "name": "GitHub",
+   "activation": "Phase 2",
+   "route": "GitHub Skills",
+   "url": "https://docs.github.com/",
+   "reference": "https://docs.github.com/"
+  },
+  {
+   "id": "TOOL-11",
+   "name": "Linux",
+   "activation": "Phase 3",
+   "route": "Missing Semester",
+   "url": "https://missing.csail.mit.edu/",
+   "reference": "https://missing.csail.mit.edu/"
+  },
+  {
+   "id": "TOOL-12",
+   "name": "Bash",
+   "activation": "Phase 3",
+   "route": "Missing Semester",
+   "url": null,
+   "reference": "shell manuals"
+  },
+  {
+   "id": "TOOL-13",
+   "name": "Docker",
+   "activation": "Phase 31",
+   "route": "Docker Get Started",
+   "url": "https://docs.docker.com/",
+   "reference": "https://docs.docker.com/"
+  },
+  {
+   "id": "TOOL-14",
+   "name": "GitHub Actions",
+   "activation": "Phase 31",
+   "route": "GitHub Actions docs",
+   "url": "https://docs.github.com/en/actions",
+   "reference": "https://docs.github.com/en/actions"
+  },
+  {
+   "id": "TOOL-15",
+   "name": "Terraform",
+   "activation": "Phase 33",
+   "route": "HashiCorp tutorials",
+   "url": "https://developer.hashicorp.com/terraform/docs",
+   "reference": "https://developer.hashicorp.com/terraform/docs"
+  },
+  {
+   "id": "TOOL-16",
+   "name": "Kubernetes",
+   "activation": "Phase 34",
+   "route": "Kubernetes docs",
+   "url": "https://kubernetes.io/docs/",
+   "reference": "https://kubernetes.io/docs/"
+  },
+  {
+   "id": "TOOL-17",
+   "name": "NumPy",
+   "activation": "Phase 11+",
+   "route": "NumPy docs",
+   "url": "https://numpy.org/doc/",
+   "reference": "https://numpy.org/doc/"
+  },
+  {
+   "id": "TOOL-18",
+   "name": "Pandas",
+   "activation": "Phase 11+",
+   "route": "Pandas docs",
+   "url": "https://pandas.pydata.org/docs/",
+   "reference": "https://pandas.pydata.org/docs/"
+  },
+  {
+   "id": "TOOL-19",
+   "name": "Matplotlib",
+   "activation": "Phase 11+",
+   "route": "Matplotlib docs",
+   "url": "https://matplotlib.org/stable/",
+   "reference": "https://matplotlib.org/stable/"
+  },
+  {
+   "id": "TOOL-20",
+   "name": "scikit-learn",
+   "activation": "Phase 13+",
+   "route": "ISLR + User Guide",
+   "url": "https://scikit-learn.org/stable/user_guide.html",
+   "reference": "https://scikit-learn.org/stable/user_guide.html"
+  },
+  {
+   "id": "TOOL-21",
+   "name": "PyTorch",
+   "activation": "Phase 19+",
+   "route": "MIT 6.S191 + tutorials",
+   "url": "https://docs.pytorch.org/",
+   "reference": "https://docs.pytorch.org/"
+  },
+  {
+   "id": "TOOL-22",
+   "name": "Hugging Face Transformers",
+   "activation": "Phase 22+",
+   "route": "HF Course",
+   "url": "https://huggingface.co/docs/transformers/",
+   "reference": "https://huggingface.co/docs/transformers/"
+  },
+  {
+   "id": "TOOL-23",
+   "name": "Datasets",
+   "activation": "Phase 23+",
+   "route": "HF Course",
+   "url": "https://huggingface.co/docs/datasets/",
+   "reference": "https://huggingface.co/docs/datasets/"
+  },
+  {
+   "id": "TOOL-24",
+   "name": "Tokenizers",
+   "activation": "Phase 23+",
+   "route": "HF Course",
+   "url": "https://huggingface.co/docs/tokenizers/",
+   "reference": "https://huggingface.co/docs/tokenizers/"
+  },
+  {
+   "id": "TOOL-25",
+   "name": "Accelerate",
+   "activation": "Phase 23+",
+   "route": "HF Course",
+   "url": "https://huggingface.co/docs/accelerate/",
+   "reference": "https://huggingface.co/docs/accelerate/"
+  },
+  {
+   "id": "TOOL-26",
+   "name": "FastAPI",
+   "activation": "Phase 8/29",
+   "route": "FastAPI tutorial",
+   "url": "https://fastapi.tiangolo.com/",
+   "reference": "https://fastapi.tiangolo.com/"
+  },
+  {
+   "id": "TOOL-27",
+   "name": "Spring Boot",
+   "activation": "Optional Java backend",
+   "route": "Spring official docs",
+   "url": "https://spring.io/projects/spring-boot",
+   "reference": "https://spring.io/projects/spring-boot"
+  },
+  {
+   "id": "TOOL-28",
+   "name": "MLflow",
+   "activation": "Phase 28/30",
+   "route": "Made With ML + MLflow docs",
+   "url": "https://mlflow.org/docs/latest/",
+   "reference": "https://mlflow.org/docs/latest/"
+  },
+  {
+   "id": "TOOL-29",
+   "name": "DVC",
+   "activation": "Phase 28/30",
+   "route": "Made With ML + DVC docs",
+   "url": "https://dvc.org/doc",
+   "reference": "https://dvc.org/doc"
+  },
+  {
+   "id": "TOOL-30",
+   "name": "Airflow",
+   "activation": "Phase 12/43",
+   "route": "Zoomcamp",
+   "url": "https://airflow.apache.org/docs/",
+   "reference": "https://airflow.apache.org/docs/"
+  },
+  {
+   "id": "TOOL-31",
+   "name": "Kafka",
+   "activation": "Phase 12/43",
+   "route": "Zoomcamp",
+   "url": "https://kafka.apache.org/documentation/",
+   "reference": "https://kafka.apache.org/documentation/"
+  },
+  {
+   "id": "TOOL-32",
+   "name": "Spark",
+   "activation": "Phase 12/43",
+   "route": "Zoomcamp",
+   "url": "https://spark.apache.org/documentation/",
+   "reference": "https://spark.apache.org/documentation/"
+  },
+  {
+   "id": "TOOL-33",
+   "name": "Feast",
+   "activation": "Phase 43",
+   "route": "Feature store docs",
+   "url": "https://docs.feast.dev/",
+   "reference": "https://docs.feast.dev/"
+  },
+  {
+   "id": "TOOL-34",
+   "name": "OpenTelemetry",
+   "activation": "Phase 38",
+   "route": "Official docs",
+   "url": "https://opentelemetry.io/docs/",
+   "reference": "https://opentelemetry.io/docs/"
+  },
+  {
+   "id": "TOOL-35",
+   "name": "Prometheus",
+   "activation": "Phase 38",
+   "route": "Official docs",
+   "url": "https://prometheus.io/docs/",
+   "reference": "https://prometheus.io/docs/"
+  },
+  {
+   "id": "TOOL-36",
+   "name": "Grafana",
+   "activation": "Phase 38",
+   "route": "Official docs",
+   "url": "https://grafana.com/docs/",
+   "reference": "https://grafana.com/docs/"
+  },
+  {
+   "id": "TOOL-37",
+   "name": "vLLM",
+   "activation": "Phase 23/29/42",
+   "route": "official docs",
+   "url": "https://docs.vllm.ai/",
+   "reference": "https://docs.vllm.ai/"
+  },
+  {
+   "id": "TOOL-38",
+   "name": "KServe",
+   "activation": "Phase 29",
+   "route": "official docs",
+   "url": "https://kserve.github.io/website/",
+   "reference": "https://kserve.github.io/website/"
+  },
+  {
+   "id": "TOOL-39",
+   "name": "Ray",
+   "activation": "Phase 42",
+   "route": "official docs",
+   "url": "https://docs.ray.io/",
+   "reference": "https://docs.ray.io/"
+  },
+  {
+   "id": "TOOL-40",
+   "name": "DeepSpeed",
+   "activation": "Phase 42",
+   "route": "official docs",
+   "url": "https://www.deepspeed.ai/",
+   "reference": "https://www.deepspeed.ai/"
+  },
+  {
+   "id": "TOOL-41",
+   "name": "LlamaIndex",
+   "activation": "Phase 24",
+   "route": "official docs",
+   "url": "https://docs.llamaindex.ai/",
+   "reference": "https://docs.llamaindex.ai/"
+  },
+  {
+   "id": "TOOL-42",
+   "name": "LangGraph",
+   "activation": "Phase 25",
+   "route": "official docs",
+   "url": "https://docs.langchain.com/oss/python/langgraph/",
+   "reference": "https://docs.langchain.com/oss/python/langgraph/"
+  },
+  {
+   "id": "TOOL-43",
+   "name": "Gymnasium",
+   "activation": "Phase 41",
+   "route": "official docs",
+   "url": "https://gymnasium.farama.org/",
+   "reference": "https://gymnasium.farama.org/"
+  }
+ ]
+}

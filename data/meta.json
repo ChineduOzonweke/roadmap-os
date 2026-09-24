@@ -1,0 +1,512 @@
+{
+ "source": {
+  "file": "curriculum/source/MASTER_ROADMAP_VICTOR_2026_FINAL_2026-09-17.md",
+  "md5": "2951e64c4a6cd61691e30420b1f98f10",
+  "version": "v1.0 (2026-09-24)",
+  "generated": "2026-09-24"
+ },
+ "depthModel": [
+  {
+   "level": 0,
+   "name": "Awareness",
+   "definition": "You can define it, explain why it exists, and identify where it appears."
+  },
+  {
+   "level": 1,
+   "name": "Basic",
+   "definition": "You can use it with documentation and guidance."
+  },
+  {
+   "level": 2,
+   "name": "Working",
+   "definition": "You can independently use it in normal projects."
+  },
+  {
+   "level": 3,
+   "name": "Professional",
+   "definition": "You understand common trade-offs, failure modes, testing, operational concerns, and real usage."
+  },
+  {
+   "level": 4,
+   "name": "Advanced",
+   "definition": "You understand internals, optimisation, architecture, edge cases, and design trade-offs."
+  },
+  {
+   "level": 5,
+   "name": "Research / Specialist",
+   "definition": "You can engage with primary literature, reproduce results, design experiments, and potentially contribute new work."
+  }
+ ],
+ "depthNotes": [
+  "D4 does not mean you must know every obscure detail.",
+  "D5 should not be pursued simply because D5 exists.",
+  "Depth should match the role and the problem.",
+  "---"
+ ],
+ "priorityModel": [
+  {
+   "symbol": "🔴",
+   "name": "Critical",
+   "definition": "Core to the long-term trajectory or repeatedly useful across roles."
+  },
+  {
+   "symbol": "🟠",
+   "name": "High",
+   "definition": "Important for professional work, internships, production systems, or advanced specialization."
+  },
+  {
+   "symbol": "🟡",
+   "name": "Useful",
+   "definition": "Valuable, but should not displace core foundations."
+  },
+  {
+   "symbol": "🟢",
+   "name": "Optional",
+   "definition": "Relevant mainly to a specialization or particular role."
+  },
+  {
+   "symbol": "⚪",
+   "name": "Defer / Skip Unless Needed",
+   "definition": "Do not spend serious time here until a concrete need appears."
+  }
+ ],
+ "masteryStates": [
+  {
+   "level": 0,
+   "id": "not_started",
+   "name": "Not started",
+   "master": "No evidence yet."
+  },
+  {
+   "level": 1,
+   "id": "learning",
+   "name": "Learning",
+   "master": "Learn."
+  },
+  {
+   "level": 2,
+   "id": "explained",
+   "name": "Explained",
+   "master": "Explain without notes; reason through the mechanism where appropriate."
+  },
+  {
+   "level": 3,
+   "id": "practised",
+   "name": "Practised",
+   "master": "Implement a small version where educationally useful; solve targeted exercises/problems; use the mature library or real tool."
+  },
+  {
+   "level": 4,
+   "id": "demonstrated",
+   "name": "Demonstrated",
+   "master": "Build something with it; break or debug something involving it; document what you learned; pass the practical mastery check (phase-gating rule)."
+  },
+  {
+   "level": 5,
+   "id": "retained",
+   "name": "Retained",
+   "master": "Re-test it later (spaced-retest rule: 1-3 days, 7 days, 30 days, 90 days, 6 months)."
+  }
+ ],
+ "evidenceLoop": [
+  "Learn.",
+  "Explain without notes.",
+  "Reason through the mechanism where appropriate.",
+  "Implement a small version where educationally useful.",
+  "Solve targeted exercises/problems.",
+  "Use the mature library or real tool.",
+  "Build something with it.",
+  "Break or debug something involving it.",
+  "Document what you learned.",
+  "Re-test it later."
+ ],
+ "phaseGatingRule": [
+  "identify 5-10 must-know capabilities",
+  "practise them without constant tutorial dependence",
+  "produce at least one artifact",
+  "pass a practical mastery check",
+  "re-test later"
+ ],
+ "spacedRetestDays": [
+  2,
+  7,
+  30,
+  90,
+  180
+ ],
+ "dailyWorkUnit": [
+  {
+   "minutes": "10",
+   "step": "recall"
+  },
+  {
+   "minutes": "30-45",
+   "step": "learn one small concept"
+  },
+  {
+   "minutes": "30-45",
+   "step": "write code yourself"
+  },
+  {
+   "minutes": "10-15",
+   "step": "debug / test"
+  },
+  {
+   "minutes": "5-10",
+   "step": "explain from memory"
+  },
+  {
+   "minutes": "5",
+   "step": "record the next step"
+  }
+ ],
+ "operatingRulesMd": "**0.2 THE CARDINAL RULE**\n\nDo not try to learn the whole roadmap simultaneously.\n\nAt any given time, the execution layer should contain:\n\n- **ONE primary learning block**\n- **At most ONE supporting block** when capacity allows\n- **A small maintenance track** only after the relevant foundation exists\n- **ONE active project** only when academic load permits\n\nDuring the true beginner reset, there may be **only one real learning block: programming**.\n\nEverything else is reference material until the current gate is passed.\n\n**0.3 ACTIVE-PATH MODES**\n\n**Mode A - Foundation Reset**\n\nPrimary: programming fundamentals.\n\nSupporting: environment setup and Git only as needed to support programming.\n\nNot active: ML, deep learning, cloud, Kubernetes, advanced DSA, LLM engineering.\n\n**Mode B - Normal Semester**\n\nPrimary: university obligations plus one roadmap module.\n\nSupporting: one small secondary block if there is real capacity.\n\nMaintenance: DSA after the programming gate.\n\nProject: one active project milestone.\n\n**Mode C - Heavy Semester**\n\nUse this mode for roughly 10 or more substantial courses, multiple high-workload quantitative/programming courses, a major internship/SIWES workload, or repeated weeks where university work consumes most available study time.\n\nThen use university as the priority. Keep only maintenance work outside school. The roadmap can pause.\n\nA roadmap pause is **not failure**. It is correct scheduling.\n\n**Mode D - Examination Period**\n\nUniversity preparation is primary. Pause new roadmap modules. DSA may be an optional 15-30 minute maintenance session only if it helps rather than distracts.\n\n**Mode E - Internship / SIWES**\n\nTreat genuine overlapping work as applied learning. Do not attempt to run the entire independent curriculum alongside a demanding placement.\n\n**Mode F - Long Break / Low Academic Load**\n\nUse extra capacity for deeper study, projects, DSA, deployment practice, and research reproduction while keeping the active path narrow.\n\n**0.4 EXECUTION STATES**\n\nUse:\n\n- **NOW** - current focus\n- **NEXT** - next dependency-respecting block\n- **LATER** - important, but prerequisites are not ready\n- **OPTIONAL** - valuable for a specialization, but not universally necessary\n- **DEFER** - deliberately postponed to protect the core\n- **MAINTENANCE** - previously learned material being retained\n\n**0.5 EVIDENCE OF LEARNING**\n\nA topic is not complete because you watched a video.\n\nDefault loop:\n\n1. Learn.\n2. Explain without notes.\n3. Reason through the mechanism where appropriate.\n4. Implement a small version where educationally useful.\n5. Solve targeted exercises/problems.\n6. Use the mature library or real tool.\n7. Build something with it.\n8. Break or debug something involving it.\n9. Document what you learned.\n10. Re-test it later.\n\n**0.6 THE ANTI-TUTORIAL-HELL RULE**\n\nPrefer:\n\n**learn -> attempt -> get stuck -> consult -> fix -> explain**\n\nover:\n\n**watch -> watch -> watch -> watch -> maybe code later.**\n\n**0.7 RESOURCE PROGRESSION RULE**\n\nResources are deliberately staged. The objective is not to use the most advanced resource as early as possible. The objective is to move from **guided learning to independent technical work**.\n\n**Resource levels**\n\n- **R0 - Orientation:** roadmap pages, overviews, terminology maps.\n- **R1 - Beginner primary:** a structured course, textbook, or guided curriculum that teaches the subject in sequence.\n- **R2 - Practice:** exercises, problem sets, coding challenges, labs, or notebooks.\n- **R3 - Official reference:** language, framework, library, protocol, or platform documentation.\n- **R4 - Deep reference:** university notes, advanced textbooks, architecture material, source-oriented explanations.\n- **R5 - Primary sources:** specifications, standards, research papers, source code, benchmarks, design documents.\n- **R6 - Real system:** production projects, incident reports, performance investigations, open-source contributions, and original experiments.\n\n**Default progression**\n\n```text\nR0 orientation\n     ↓\nR1 structured learning\n     ↓\nR2 deliberate practice\n     ↓\nR3 official documentation becomes normal\n     ↓\nR4 deep technical references\n     ↓\nR5 specifications / source / papers\n     ↓\nR6 real systems and original work\n```\n\nAt beginner level, a good course can save enormous time and prevent false confidence. Do not avoid excellent beginner material merely because it is beginner material. Later, as your competence increases, **documentation should gradually become the default place you learn exact behavior**.\n\n**The resource stack for a major subject**\n\nUse one active stack:\n\n1. **Primary:** the resource you actually follow.\n2. **Practice:** where you prove the concept.\n3. **Official reference:** the authoritative place you check exact behavior.\n4. **Deepening:** one serious source for deeper understanding.\n5. **Implementation:** a concrete artifact that forces integration.\n\nDo not create a primary-resource pile.\n\n**What “best resource” means here**\n\nThere is no timeless universal best resource on the internet. A resource is selected because it is a strong fit for **your current level, desired depth, subject stability, learning objective, practice needs, and eventual engineering use**. When a subject is broad, multiple complementary resources are intentional rather than redundant.\n\n**0.8 THE ANTI-FRAMEWORK-HOPPING RULE**\n\nA new framework is not automatically a new learning priority. Learn concepts deeply, then learn frameworks as implementations of those concepts.\n\n**0.9 PHASE-GATING RULE**\n\nA later phase is unlocked by **capability evidence**, not calendar time.\n\nFor each phase:\n\n- identify 5-10 must-know capabilities\n- practise them without constant tutorial dependence\n- produce at least one artifact\n- pass a practical mastery check\n- re-test later\n\nOptional topics never block a core phase unless they become relevant to the chosen specialization.\n\n**0.10 SPACED-RETEST RULE**\n\nFor major foundational capabilities, use this default review rhythm:\n\n```text\nInitial mastery\n    ↓\n1-3 days\n    ↓\n7 days\n    ↓\n30 days\n    ↓\n90 days\n    ↓\n6 months\n```\n\nThe re-test should be active recall or a small unseen problem, not rereading notes. If a foundational skill repeatedly fails re-testing, temporarily bring it back into NOW.\n\n**0.11 TIME-CAPACITY RULE**\n\nDo not invent a workload your semester cannot support. Rough external-roadmap ceilings after university obligations:\n\n- **0-5 hours/week:** one primary block only\n- **5-10 hours/week:** one primary block + DSA maintenance after the programming gate\n- **10-15 hours/week:** primary + DSA + one modest project milestone\n- **15+ hours/week:** mainly for long breaks or unusually light periods\n\nThese are planning ranges, not quotas.",
+ "weeklyModelMd": "A realistic baseline is more useful than an heroic schedule.\n\n**Beginner reset**\n\nMost external study time should go into the primary programming block. Do not force DSA, ML, mathematics, projects, and cloud into the same week.\n\n**After the programming gate**\n\nA typical allocation can become:\n\n- **40-50%** primary subject\n- **20-25%** DSA\n- **15-20%** project/engineering\n- **10-15%** mathematics, statistics, or review\n\nThese percentages only apply when capacity exists. University and internship obligations override them.",
+ "monthlyReviewMd": "At the end of each month answer:\n\n**Knowledge**\n\n- What can I explain now that I could not explain before?\n\n**Implementation**\n\n- What can I build now?\n\n**Problem solving**\n\n- Which DSA patterns improved?\n\n**Projects**\n\n- What did I ship?\n\n**Weaknesses**\n\n- Where did I get stuck repeatedly?\n\n**Roadmap**\n\n- Is the sequence still sensible?\n\n**Career**\n\n- Did I create evidence of capability?\n\nDo not restart the roadmap every month.\n\nAdjust the active path, not the entire architecture.",
+ "recoveryMd": "When a re-test shows a foundational gap, do not restart the entire roadmap.\n\nUse this recovery loop:\n\n```text\nIdentify exact broken capability\n        ↓\nReturn to the smallest prerequisite\n        ↓\nDo 3-5 targeted exercises\n        ↓\nBuild one tiny artifact\n        ↓\nRe-test from memory\n        ↓\nReturn to the active phase\n```\n\nThe objective is targeted repair, not repeated full-course resets.",
+ "dependencySpine": [
+  "Python",
+  "Git + Linux / CLI",
+  "DSA + SQL",
+  "Statistics / Probability + Linear Algebra",
+  "NumPy / Pandas + EDA",
+  "Software Engineering + Backend",
+  "Classical ML",
+  "Docker / CI/CD / Cloud",
+  "Deep Learning",
+  "ML Engineering / MLOps",
+  "Transformers / LLMs / AI Engineering"
+ ],
+ "decision5": [
+  "Classical ML (P13–P16)",
+  "Docker / CI/CD / Cloud (P31, P32)",
+  "Deep Learning (P19–P21)",
+  "ML Engineering / MLOps (P28–P30)",
+  "Transformers / LLMs (P22–P27)"
+ ],
+ "dsaLane": [
+  {
+   "from": 18,
+   "to": 21,
+   "slices": [
+    {
+     "ref": "P04.2",
+     "kind": "topic",
+     "topicId": "P04.2",
+     "conceptIds": null,
+     "label": "P04.2 Linear structures"
+    },
+    {
+     "ref": "P04.5:1-7",
+     "kind": "topic",
+     "topicId": "P04.5",
+     "conceptIds": [
+      "P04.5#1",
+      "P04.5#2",
+      "P04.5#3",
+      "P04.5#4",
+      "P04.5#5",
+      "P04.5#6",
+      "P04.5#7"
+     ],
+     "label": "P04.5 Algorithm families · #1–7 (linear search → recursion)"
+    }
+   ],
+   "note": "Re-test linear structures, hashing, search/sort (2-3 sessions/week)."
+  },
+  {
+   "from": 22,
+   "to": 33,
+   "slices": [
+    {
+     "ref": "P04.3",
+     "kind": "topic",
+     "topicId": "P04.3",
+     "conceptIds": null,
+     "label": "P04.3 Trees"
+    }
+   ],
+   "note": "Trees, heaps, priority queues, tries."
+  },
+  {
+   "from": 34,
+   "to": 46,
+   "slices": [
+    {
+     "ref": "P04.4",
+     "kind": "topic",
+     "topicId": "P04.4",
+     "conceptIds": null,
+     "label": "P04.4 Graphs"
+    }
+   ],
+   "note": "Graphs."
+  },
+  {
+   "from": 47,
+   "to": 66,
+   "slices": [
+    {
+     "ref": "P04.5:8-13",
+     "kind": "topic",
+     "topicId": "P04.5",
+     "conceptIds": [
+      "P04.5#8",
+      "P04.5#9",
+      "P04.5#10",
+      "P04.5#11",
+      "P04.5#12",
+      "P04.5#13"
+     ],
+     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)"
+    },
+    {
+     "ref": "P04.6",
+     "kind": "topic",
+     "topicId": "P04.6",
+     "conceptIds": null,
+     "label": "P04.6 Problem-solving patterns"
+    }
+   ],
+   "note": "Algorithm families and problem-solving patterns; target C2 at CW66."
+  },
+  {
+   "from": 67,
+   "to": 101,
+   "slices": [
+    {
+     "ref": "P04.7",
+     "kind": "topic",
+     "topicId": "P04.7",
+     "conceptIds": null,
+     "label": "P04.7 Interview progression"
+    }
+   ],
+   "note": "Interview progression: easy to medium, mistake log (master DSA track)."
+  },
+  {
+   "from": 102,
+   "to": null,
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  }
+ ],
+ "onDemand": {
+  "P05.4": "OPTIONAL (🟡). Schedule only if a runtime/compiler need appears or in a specialisation.",
+  "P12.0#14-16": "Later technologies (Airflow, Spark, Kafka): learn on demand under Phase 43 when a real scaling/workflow problem appears (master Phase 12 and 43 text).",
+  "P41.0": "OPTIONAL branch (🟢). Gate: after C5 and only if a project or research direction requires it.",
+  "P43.0": "On demand after data, backend, deployment and ML-lifecycle concepts work (Phase 43 GATE).",
+  "P46.0": "Continuous: awareness from S4; detailed product reasoning inside PR07, PR11 and internships (Phase 46 GATE)."
+ },
+ "onDemandGates": {
+  "P05.4": "C2",
+  "P41.0": "C5",
+  "P43.0": "C5",
+  "P46.0": null
+ },
+ "gateOrder": [
+  "G0",
+  "C1",
+  "SG2",
+  "SG3",
+  "SG4",
+  "C2",
+  "C4",
+  "C3",
+  "SG5",
+  "SG6A",
+  "C5",
+  "C6",
+  "SG7"
+ ],
+ "quality": {
+  "general": [
+   "Problem statement",
+   "Requirements",
+   "Architecture",
+   "Technology justification",
+   "Data model",
+   "Implementation",
+   "Tests",
+   "Error-handling strategy",
+   "Security considerations",
+   "Deployment",
+   "Monitoring",
+   "Performance analysis",
+   "Limitations",
+   "Future improvements",
+   "README"
+  ],
+  "ml": [
+   "dataset description",
+   "target definition",
+   "baseline",
+   "split strategy",
+   "metrics",
+   "feature pipeline",
+   "model comparison",
+   "error analysis",
+   "reproducibility information"
+  ],
+  "ai": [
+   "evaluation dataset",
+   "retrieval evaluation",
+   "hallucination/failure analysis",
+   "prompt/tool security",
+   "cost considerations"
+  ]
+ },
+ "deepDiveQuestions": [
+  "Why this problem?",
+  "What were the constraints?",
+  "Why this architecture?",
+  "What alternatives did you reject?",
+  "What broke?",
+  "How did you debug it?",
+  "What would you change at 10× scale?",
+  "What metrics mattered?",
+  "What did you personally implement?"
+ ],
+ "portfolioStages": [
+  {
+   "id": "PS-A",
+   "title": "Stage A: Beginner",
+   "items": [
+    "clean code",
+    "simple applications",
+    "basic data work"
+   ]
+  },
+  {
+   "id": "PS-B",
+   "title": "Stage B: Intermediate",
+   "items": [
+    "backend",
+    "databases",
+    "testing",
+    "deployment",
+    "classical ML"
+   ]
+  },
+  {
+   "id": "PS-C",
+   "title": "Stage C: Advanced",
+   "items": [
+    "ML engineering",
+    "systems",
+    "deep learning",
+    "MLOps",
+    "serious projects"
+   ]
+  },
+  {
+   "id": "PS-D",
+   "title": "Stage D: Elite-track candidate",
+   "items": [
+    "strong projects",
+    "internships",
+    "research/open-source evidence",
+    "DSA readiness",
+    "system-design readiness",
+    "communication"
+   ]
+  }
+ ],
+ "storyThemes": [
+  "ownership",
+  "failure",
+  "ambiguity",
+  "conflict",
+  "leadership",
+  "teamwork",
+  "difficult debugging",
+  "impact",
+  "technical trade-offs"
+ ],
+ "resourceNotes": [
+  "RES-P07-07: master lists group 'Java' under P07; associated with P01.2 by title.",
+  "RES-P07-08: master lists group 'Java' under P07; associated with P01.2 by title.",
+  "RES-P07-09: master lists group 'Java' under P07; associated with P01.2 by title.",
+  "RES-P07-10: master lists group 'JavaScript / TypeScript' under P07; associated with P01.3 by title.",
+  "RES-P07-11: master lists group 'JavaScript / TypeScript' under P07; associated with P01.3 by title.",
+  "RES-P07-12: master lists group 'JavaScript / TypeScript' under P07; associated with P01.3 by title.",
+  "RES-P07-13: master lists group 'JavaScript / TypeScript' under P07; associated with P01.3 by title."
+ ],
+ "componentEdges": [
+  {
+   "from": "P10.1d",
+   "to": "P13.5",
+   "reason": "PCA in unsupervised learning needs eigen/SVD"
+  },
+  {
+   "from": "P10.2",
+   "to": "P16.0",
+   "reason": "gradient descent (P16 item 2) needs calculus"
+  },
+  {
+   "from": "P10.5",
+   "to": "P16.0",
+   "reason": "from-scratch optimisation needs optimisation basics"
+  },
+  {
+   "from": "P19.1",
+   "to": "P16.0#7",
+   "reason": "simple neural network and backprop items belong with deep learning"
+  },
+  {
+   "from": "P05.2",
+   "to": "PR05",
+   "reason": "WebSockets and networking before the chat backend"
+  },
+  {
+   "from": "P05.1",
+   "to": "PR05",
+   "reason": "concurrency reasoning before the chat backend"
+  },
+  {
+   "from": "P06.3",
+   "to": "PR04",
+   "reason": "Redis caching and rate limiting before the URL shortener"
+  },
+  {
+   "from": "P08.4",
+   "to": "C3",
+   "reason": "authenticated API required by C3"
+  },
+  {
+   "from": "P31.1",
+   "to": "P29.1",
+   "reason": "containerisation before the early serving segment"
+  },
+  {
+   "from": "P32.0",
+   "to": "P29.1",
+   "reason": "cloud basics before the early serving segment"
+  },
+  {
+   "from": "P28.0",
+   "to": "P22.0",
+   "reason": "decision 5: ML engineering before Transformers"
+  },
+  {
+   "from": "P30.4",
+   "to": "P22.0",
+   "reason": "decision 5: MLOps before Transformers"
+  },
+  {
+   "from": "P32.1",
+   "to": "P19.0",
+   "reason": "decision 5: Docker/CI/CD/Cloud before deep learning"
+  }
+ ],
+ "validation": {
+  "conceptCoverage": [
+   1440,
+   1440
+  ],
+  "phaseDependencyViolations": 0,
+  "componentEdgeViolations": 0,
+  "checkpointViolations": 0,
+  "projectViolations": 0
+ }
+}

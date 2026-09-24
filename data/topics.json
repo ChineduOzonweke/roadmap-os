@@ -1,0 +1,10619 @@
+[
+ {
+  "id": "P01.1",
+  "phaseId": "P01",
+  "parentId": null,
+  "title": "Python",
+  "label": "Python",
+  "meta": "🔴 long-term D4 | Entry target: D2",
+  "kind": "parent",
+  "depth": {
+   "min": 2,
+   "max": 4,
+   "raw": "🔴 long-term D4 | Entry target: D2"
+  },
+  "conceptIds": [],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "**Role:** primary language for data, ML, AI, scripting, automation, research, and potentially backend work."
+   }
+  ],
+  "weeks": [],
+  "firstWeek": null,
+  "requiredGate": null,
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P01.1a",
+  "phaseId": "P01",
+  "parentId": "P01.1",
+  "title": "Zero-level runway",
+  "label": "Python › Zero-level runway",
+  "meta": "do not skip",
+  "kind": "concepts",
+  "depth": {
+   "min": 2,
+   "max": 4,
+   "raw": "🔴 long-term D4 | Entry target: D2"
+  },
+  "conceptIds": [
+   "P01.1a#1",
+   "P01.1a#2",
+   "P01.1a#3",
+   "P01.1a#4",
+   "P01.1a#5",
+   "P01.1a#6",
+   "P01.1a#7",
+   "P01.1a#8",
+   "P01.1a#9",
+   "P01.1a#10",
+   "P01.1a#11",
+   "P01.1a#12",
+   "P01.1a#13",
+   "P01.1a#14",
+   "P01.1a#15",
+   "P01.1a#16",
+   "P01.1a#17",
+   "P01.1a#18",
+   "P01.1a#19",
+   "P01.1a#20",
+   "P01.1a#21",
+   "P01.1a#22",
+   "P01.1a#23",
+   "P01.1a#24",
+   "P01.1a#25",
+   "P01.1a#26",
+   "P01.1a#27",
+   "P01.1a#28",
+   "P01.1a#29",
+   "P01.1a#30",
+   "P01.1a#31",
+   "P01.1a#32",
+   "P01.1a#33",
+   "P01.1a#34",
+   "P01.1a#35",
+   "P01.1a#36",
+   "P01.1a#37",
+   "P01.1a#38",
+   "P01.1a#39"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Start here if loops, conditions, functions, and basic collections are not reliable from memory.\n\n**Module A - First contact**"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P01.1a#1",
+     "P01.1a#2",
+     "P01.1a#3",
+     "P01.1a#4",
+     "P01.1a#5"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "**Module B - Control flow**\n\nWrite small programs from memory using:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P01.1a#6",
+     "P01.1a#7",
+     "P01.1a#8",
+     "P01.1a#9",
+     "P01.1a#10",
+     "P01.1a#11",
+     "P01.1a#12",
+     "P01.1a#13"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "**Module C - Functions**"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P01.1a#14",
+     "P01.1a#15",
+     "P01.1a#16",
+     "P01.1a#17",
+     "P01.1a#18"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "**Module D - Core data structures**"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P01.1a#19",
+     "P01.1a#20",
+     "P01.1a#21",
+     "P01.1a#22",
+     "P01.1a#23",
+     "P01.1a#24",
+     "P01.1a#25",
+     "P01.1a#26"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "**Module E - Files, errors, and small programs**"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P01.1a#27",
+     "P01.1a#28",
+     "P01.1a#29",
+     "P01.1a#30",
+     "P01.1a#31"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "**Programming foundation gate**\n\nBefore moving into DSA-heavy work, you should be able to complete these without a tutorial:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P01.1a#32",
+     "P01.1a#33",
+     "P01.1a#34",
+     "P01.1a#35",
+     "P01.1a#36",
+     "P01.1a#37",
+     "P01.1a#38",
+     "P01.1a#39"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "The requirement is independent execution, not speed."
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 1,
+    "lane": "primary",
+    "conceptIds": [
+     "P01.1a#1",
+     "P01.1a#2",
+     "P01.1a#3",
+     "P01.1a#4",
+     "P01.1a#5",
+     "P01.1a#6",
+     "P01.1a#7",
+     "P01.1a#8",
+     "P01.1a#9",
+     "P01.1a#14",
+     "P01.1a#15",
+     "P01.1a#16",
+     "P01.1a#27"
+    ]
+   },
+   {
+    "cw": 2,
+    "lane": "primary",
+    "conceptIds": [
+     "P01.1a#9",
+     "P01.1a#10",
+     "P01.1a#11",
+     "P01.1a#12",
+     "P01.1a#13",
+     "P01.1a#17",
+     "P01.1a#18",
+     "P01.1a#19",
+     "P01.1a#20",
+     "P01.1a#21",
+     "P01.1a#22",
+     "P01.1a#23",
+     "P01.1a#24",
+     "P01.1a#25",
+     "P01.1a#26",
+     "P01.1a#28",
+     "P01.1a#29",
+     "P01.1a#30",
+     "P01.1a#31",
+     "P01.1a#32",
+     "P01.1a#33",
+     "P01.1a#34",
+     "P01.1a#35",
+     "P01.1a#36",
+     "P01.1a#37",
+     "P01.1a#38",
+     "P01.1a#39"
+    ]
+   }
+  ],
+  "firstWeek": 1,
+  "requiredGate": null,
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": [
+   "P01.1g"
+  ]
+ },
+ {
+  "id": "P01.1b",
+  "phaseId": "P01",
+  "parentId": "P01.1",
+  "title": "Core language",
+  "label": "Python › Core language",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 2,
+   "max": 4,
+   "raw": "🔴 long-term D4 | Entry target: D2"
+  },
+  "conceptIds": [
+   "P01.1b#1",
+   "P01.1b#2",
+   "P01.1b#3",
+   "P01.1b#4",
+   "P01.1b#5",
+   "P01.1b#6",
+   "P01.1b#7",
+   "P01.1b#8",
+   "P01.1b#9",
+   "P01.1b#10",
+   "P01.1b#11",
+   "P01.1b#12",
+   "P01.1b#13",
+   "P01.1b#14",
+   "P01.1b#15",
+   "P01.1b#16",
+   "P01.1b#17",
+   "P01.1b#18",
+   "P01.1b#19",
+   "P01.1b#20",
+   "P01.1b#21",
+   "P01.1b#22",
+   "P01.1b#23",
+   "P01.1b#24",
+   "P01.1b#25",
+   "P01.1b#26",
+   "P01.1b#27"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn thoroughly:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P01.1b#1",
+     "P01.1b#2",
+     "P01.1b#3",
+     "P01.1b#4",
+     "P01.1b#5",
+     "P01.1b#6",
+     "P01.1b#7",
+     "P01.1b#8",
+     "P01.1b#9",
+     "P01.1b#10",
+     "P01.1b#11",
+     "P01.1b#12",
+     "P01.1b#13",
+     "P01.1b#14",
+     "P01.1b#15",
+     "P01.1b#16",
+     "P01.1b#17",
+     "P01.1b#18",
+     "P01.1b#19",
+     "P01.1b#20",
+     "P01.1b#21",
+     "P01.1b#22",
+     "P01.1b#23",
+     "P01.1b#24",
+     "P01.1b#25",
+     "P01.1b#26",
+     "P01.1b#27"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 3,
+    "lane": "primary",
+    "conceptIds": [
+     "P01.1b#1",
+     "P01.1b#2",
+     "P01.1b#3",
+     "P01.1b#4",
+     "P01.1b#5",
+     "P01.1b#6",
+     "P01.1b#7",
+     "P01.1b#8",
+     "P01.1b#9",
+     "P01.1b#10",
+     "P01.1b#11",
+     "P01.1b#12",
+     "P01.1b#13"
+    ]
+   },
+   {
+    "cw": 4,
+    "lane": "primary",
+    "conceptIds": [
+     "P01.1b#14",
+     "P01.1b#15",
+     "P01.1b#16",
+     "P01.1b#17",
+     "P01.1b#18",
+     "P01.1b#19",
+     "P01.1b#20",
+     "P01.1b#21",
+     "P01.1b#22",
+     "P01.1b#23",
+     "P01.1b#24",
+     "P01.1b#25",
+     "P01.1b#26",
+     "P01.1b#27"
+    ]
+   }
+  ],
+  "firstWeek": 3,
+  "requiredGate": "G0",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": [
+   "P01.1g"
+  ]
+ },
+ {
+  "id": "P01.1c",
+  "phaseId": "P01",
+  "parentId": "P01.1",
+  "title": "Intermediate Python",
+  "label": "Python › Intermediate Python",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 2,
+   "max": 4,
+   "raw": "🔴 long-term D4 | Entry target: D2"
+  },
+  "conceptIds": [
+   "P01.1c#1",
+   "P01.1c#2",
+   "P01.1c#3",
+   "P01.1c#4",
+   "P01.1c#5",
+   "P01.1c#6",
+   "P01.1c#7",
+   "P01.1c#8",
+   "P01.1c#9",
+   "P01.1c#10",
+   "P01.1c#11",
+   "P01.1c#12",
+   "P01.1c#13",
+   "P01.1c#14",
+   "P01.1c#15",
+   "P01.1c#16",
+   "P01.1c#17",
+   "P01.1c#18"
+  ],
+  "blocks": [
+   {
+    "t": "concepts",
+    "ids": [
+     "P01.1c#1",
+     "P01.1c#2",
+     "P01.1c#3",
+     "P01.1c#4",
+     "P01.1c#5",
+     "P01.1c#6",
+     "P01.1c#7",
+     "P01.1c#8",
+     "P01.1c#9",
+     "P01.1c#10",
+     "P01.1c#11",
+     "P01.1c#12",
+     "P01.1c#13",
+     "P01.1c#14",
+     "P01.1c#15",
+     "P01.1c#16",
+     "P01.1c#17",
+     "P01.1c#18"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 9,
+    "lane": "primary",
+    "conceptIds": [
+     "P01.1c#1",
+     "P01.1c#2",
+     "P01.1c#3",
+     "P01.1c#4",
+     "P01.1c#5",
+     "P01.1c#6",
+     "P01.1c#7",
+     "P01.1c#8",
+     "P01.1c#9"
+    ]
+   },
+   {
+    "cw": 10,
+    "lane": "primary",
+    "conceptIds": [
+     "P01.1c#10",
+     "P01.1c#11",
+     "P01.1c#12",
+     "P01.1c#13",
+     "P01.1c#14",
+     "P01.1c#15",
+     "P01.1c#16",
+     "P01.1c#17",
+     "P01.1c#18"
+    ]
+   }
+  ],
+  "firstWeek": 9,
+  "requiredGate": "G0",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": [
+   "P01.1g"
+  ]
+ },
+ {
+  "id": "P01.1d",
+  "phaseId": "P01",
+  "parentId": "P01.1",
+  "title": "Professional Python",
+  "label": "Python › Professional Python",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 2,
+   "max": 4,
+   "raw": "🔴 long-term D4 | Entry target: D2"
+  },
+  "conceptIds": [
+   "P01.1d#1",
+   "P01.1d#2",
+   "P01.1d#3",
+   "P01.1d#4",
+   "P01.1d#5",
+   "P01.1d#6",
+   "P01.1d#7",
+   "P01.1d#8",
+   "P01.1d#9",
+   "P01.1d#10",
+   "P01.1d#11",
+   "P01.1d#12",
+   "P01.1d#13",
+   "P01.1d#14",
+   "P01.1d#15",
+   "P01.1d#16"
+  ],
+  "blocks": [
+   {
+    "t": "concepts",
+    "ids": [
+     "P01.1d#1",
+     "P01.1d#2",
+     "P01.1d#3",
+     "P01.1d#4",
+     "P01.1d#5",
+     "P01.1d#6",
+     "P01.1d#7",
+     "P01.1d#8",
+     "P01.1d#9",
+     "P01.1d#10",
+     "P01.1d#11",
+     "P01.1d#12",
+     "P01.1d#13",
+     "P01.1d#14",
+     "P01.1d#15",
+     "P01.1d#16"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 12,
+    "lane": "primary",
+    "conceptIds": [
+     "P01.1d#1",
+     "P01.1d#2",
+     "P01.1d#3",
+     "P01.1d#4",
+     "P01.1d#5",
+     "P01.1d#6",
+     "P01.1d#7",
+     "P01.1d#8",
+     "P01.1d#9",
+     "P01.1d#10"
+    ]
+   },
+   {
+    "cw": 35,
+    "lane": "primary",
+    "conceptIds": [
+     "P01.1d#11",
+     "P01.1d#12",
+     "P01.1d#13",
+     "P01.1d#14",
+     "P01.1d#15",
+     "P01.1d#16"
+    ]
+   }
+  ],
+  "firstWeek": 12,
+  "requiredGate": "G0",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": [
+   "P01.1g"
+  ]
+ },
+ {
+  "id": "P01.1e",
+  "phaseId": "P01",
+  "parentId": "P01.1",
+  "title": "Deeper internals",
+  "label": "Python › Deeper internals",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 2,
+   "max": 4,
+   "raw": "🔴 long-term D4 | Entry target: D2"
+  },
+  "conceptIds": [
+   "P01.1e#1",
+   "P01.1e#2",
+   "P01.1e#3",
+   "P01.1e#4",
+   "P01.1e#5",
+   "P01.1e#6",
+   "P01.1e#7",
+   "P01.1e#8",
+   "P01.1e#9",
+   "P01.1e#10",
+   "P01.1e#11",
+   "P01.1e#12",
+   "P01.1e#13",
+   "P01.1e#14",
+   "P01.1e#15"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn conceptually:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P01.1e#1",
+     "P01.1e#2",
+     "P01.1e#3",
+     "P01.1e#4",
+     "P01.1e#5",
+     "P01.1e#6",
+     "P01.1e#7",
+     "P01.1e#8",
+     "P01.1e#9",
+     "P01.1e#10",
+     "P01.1e#11",
+     "P01.1e#12",
+     "P01.1e#13",
+     "P01.1e#14",
+     "P01.1e#15"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 53,
+    "lane": "supporting",
+    "conceptIds": [
+     "P01.1e#1",
+     "P01.1e#2",
+     "P01.1e#3",
+     "P01.1e#4",
+     "P01.1e#5",
+     "P01.1e#6",
+     "P01.1e#7",
+     "P01.1e#8"
+    ]
+   },
+   {
+    "cw": 54,
+    "lane": "supporting",
+    "conceptIds": [
+     "P01.1e#9",
+     "P01.1e#10",
+     "P01.1e#11",
+     "P01.1e#12",
+     "P01.1e#13",
+     "P01.1e#14",
+     "P01.1e#15"
+    ]
+   }
+  ],
+  "firstWeek": 53,
+  "requiredGate": "SG4",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": [
+   "P01.1g"
+  ]
+ },
+ {
+  "id": "P01.1f",
+  "phaseId": "P01",
+  "parentId": "P01.1",
+  "title": "Required implementations",
+  "label": "Python › Required implementations",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 2,
+   "max": 4,
+   "raw": "🔴 long-term D4 | Entry target: D2"
+  },
+  "conceptIds": [
+   "P01.1f#1",
+   "P01.1f#2",
+   "P01.1f#3",
+   "P01.1f#4",
+   "P01.1f#5",
+   "P01.1f#6",
+   "P01.1f#7",
+   "P01.1f#8",
+   "P01.1f#9",
+   "P01.1f#10"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Build progressively:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P01.1f#1",
+     "P01.1f#2",
+     "P01.1f#3",
+     "P01.1f#4",
+     "P01.1f#5",
+     "P01.1f#6",
+     "P01.1f#7",
+     "P01.1f#8",
+     "P01.1f#9",
+     "P01.1f#10"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 3,
+    "lane": "primary",
+    "conceptIds": [
+     "P01.1f#1"
+    ]
+   },
+   {
+    "cw": 4,
+    "lane": "primary",
+    "conceptIds": [
+     "P01.1f#2"
+    ]
+   },
+   {
+    "cw": 9,
+    "lane": "primary",
+    "conceptIds": [
+     "P01.1f#3"
+    ]
+   },
+   {
+    "cw": 10,
+    "lane": "primary",
+    "conceptIds": [
+     "P01.1f#4"
+    ]
+   },
+   {
+    "cw": 12,
+    "lane": "primary",
+    "conceptIds": [
+     "P01.1f#5"
+    ]
+   },
+   {
+    "cw": 30,
+    "lane": "primary",
+    "conceptIds": [
+     "P01.1f#7"
+    ]
+   },
+   {
+    "cw": 36,
+    "lane": "primary",
+    "conceptIds": [
+     "P01.1f#8"
+    ]
+   },
+   {
+    "cw": 39,
+    "lane": "primary",
+    "conceptIds": [
+     "P01.1f#6"
+    ]
+   },
+   {
+    "cw": 44,
+    "lane": "primary",
+    "conceptIds": [
+     "P01.1f#9"
+    ]
+   },
+   {
+    "cw": 85,
+    "lane": "primary",
+    "conceptIds": [
+     "P01.1f#10"
+    ]
+   }
+  ],
+  "firstWeek": 3,
+  "requiredGate": "G0",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": [
+   "P01.1g"
+  ]
+ },
+ {
+  "id": "P01.1g",
+  "phaseId": "P01",
+  "parentId": "P01.1",
+  "title": "Mastery",
+  "label": "Python › Mastery",
+  "meta": "",
+  "kind": "gate-text",
+  "depth": {
+   "min": 2,
+   "max": 4,
+   "raw": "🔴 long-term D4 | Entry target: D2"
+  },
+  "conceptIds": [],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "You should be able to start a medium-sized Python project without a tutorial, organise it sensibly, test it, debug it, document it, package it, and explain your design choices."
+   }
+  ],
+  "weeks": [],
+  "firstWeek": null,
+  "requiredGate": null,
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P01.1h",
+  "phaseId": "P01",
+  "parentId": "P01.1",
+  "title": "Resources",
+  "label": "Python › Resources",
+  "meta": "",
+  "kind": "resources",
+  "depth": {
+   "min": 2,
+   "max": 4,
+   "raw": "🔴 long-term D4 | Entry target: D2"
+  },
+  "conceptIds": [],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "**Primary - true beginner path**\n\n**CS50's Introduction to Programming with Python (CS50P)**\nhttps://cs50.harvard.edu/python/\n\nUse this as the main guided course for the initial reset.\n\n**Secondary - broader CS context**\n\n**CS50x - Introduction to Computer Science**\nhttps://cs50.harvard.edu/x/\n\nUse later, not concurrently as a second full-time course, to deepen C, memory, algorithms, abstraction, and general CS.\n\n**Official reference**\n\n**Python documentation**\nhttps://docs.python.org/3/\n\nUse the official docs as the reference source rather than the first teaching resource for an absolute beginner.\n\n**Later reference**\n\n*Fluent Python* once basic fluency is established."
+   }
+  ],
+  "weeks": [],
+  "firstWeek": null,
+  "requiredGate": null,
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P01.2",
+  "phaseId": "P01",
+  "parentId": null,
+  "title": "Java",
+  "label": "Java",
+  "meta": "🟠 D2",
+  "kind": "concepts",
+  "depth": {
+   "min": 2,
+   "max": 2,
+   "raw": "🟠 D2"
+  },
+  "conceptIds": [
+   "P01.2#1",
+   "P01.2#2",
+   "P01.2#3",
+   "P01.2#4",
+   "P01.2#5",
+   "P01.2#6",
+   "P01.2#7",
+   "P01.2#8",
+   "P01.2#9",
+   "P01.2#10",
+   "P01.2#11",
+   "P01.2#12",
+   "P01.2#13",
+   "P01.2#14",
+   "P01.2#15",
+   "P01.2#16",
+   "P01.2#17",
+   "P01.2#18",
+   "P01.2#19",
+   "P01.2#20",
+   "P01.2#21",
+   "P01.2#22",
+   "P01.2#23",
+   "P01.2#24",
+   "P01.2#25",
+   "P01.2#26",
+   "P01.2#27",
+   "P01.2#28",
+   "P01.2#29",
+   "P01.2#30"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Java is a supporting language here. It reinforces object-oriented design and a second strongly typed ecosystem, but Python remains the primary language for the main trajectory.\n\nLearn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P01.2#1",
+     "P01.2#2",
+     "P01.2#3",
+     "P01.2#4",
+     "P01.2#5",
+     "P01.2#6",
+     "P01.2#7",
+     "P01.2#8",
+     "P01.2#9",
+     "P01.2#10",
+     "P01.2#11",
+     "P01.2#12",
+     "P01.2#13",
+     "P01.2#14",
+     "P01.2#15",
+     "P01.2#16",
+     "P01.2#17",
+     "P01.2#18",
+     "P01.2#19",
+     "P01.2#20",
+     "P01.2#21",
+     "P01.2#22",
+     "P01.2#23",
+     "P01.2#24",
+     "P01.2#25",
+     "P01.2#26"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Use Java for:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P01.2#27",
+     "P01.2#28",
+     "P01.2#29",
+     "P01.2#30"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Do not build a second enormous career roadmap around Java unless your opportunities demand it."
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 47,
+    "lane": "supporting",
+    "conceptIds": [
+     "P01.2#1",
+     "P01.2#2",
+     "P01.2#3",
+     "P01.2#4",
+     "P01.2#5"
+    ]
+   },
+   {
+    "cw": 48,
+    "lane": "supporting",
+    "conceptIds": [
+     "P01.2#6",
+     "P01.2#7",
+     "P01.2#8",
+     "P01.2#9",
+     "P01.2#10"
+    ]
+   },
+   {
+    "cw": 49,
+    "lane": "supporting",
+    "conceptIds": [
+     "P01.2#11",
+     "P01.2#12",
+     "P01.2#13",
+     "P01.2#14",
+     "P01.2#15"
+    ]
+   },
+   {
+    "cw": 50,
+    "lane": "supporting",
+    "conceptIds": [
+     "P01.2#16",
+     "P01.2#17",
+     "P01.2#18",
+     "P01.2#19",
+     "P01.2#20"
+    ]
+   },
+   {
+    "cw": 51,
+    "lane": "supporting",
+    "conceptIds": [
+     "P01.2#21",
+     "P01.2#22",
+     "P01.2#23",
+     "P01.2#24",
+     "P01.2#25",
+     "P01.2#26"
+    ]
+   },
+   {
+    "cw": 52,
+    "lane": "supporting",
+    "conceptIds": [
+     "P01.2#27",
+     "P01.2#28",
+     "P01.2#29",
+     "P01.2#30"
+    ]
+   }
+  ],
+  "firstWeek": 47,
+  "requiredGate": "SG4",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P01.3",
+  "phaseId": "P01",
+  "parentId": null,
+  "title": "JavaScript / TypeScript",
+  "label": "JavaScript / TypeScript",
+  "meta": "🟡 D2",
+  "kind": "concepts",
+  "depth": {
+   "min": 2,
+   "max": 2,
+   "raw": "🟡 D2"
+  },
+  "conceptIds": [
+   "P01.3#1",
+   "P01.3#2",
+   "P01.3#3",
+   "P01.3#4",
+   "P01.3#5",
+   "P01.3#6",
+   "P01.3#7",
+   "P01.3#8",
+   "P01.3#9",
+   "P01.3#10",
+   "P01.3#11",
+   "P01.3#12",
+   "P01.3#13",
+   "P01.3#14",
+   "P01.3#15",
+   "P01.3#16",
+   "P01.3#17",
+   "P01.3#18",
+   "P01.3#19"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Purpose: understand the modern web well enough to build products and collaborate with frontend engineers.\n\nLearn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P01.3#1",
+     "P01.3#2",
+     "P01.3#3",
+     "P01.3#4",
+     "P01.3#5",
+     "P01.3#6",
+     "P01.3#7",
+     "P01.3#8",
+     "P01.3#9",
+     "P01.3#10",
+     "P01.3#11",
+     "P01.3#12",
+     "P01.3#13",
+     "P01.3#14",
+     "P01.3#15",
+     "P01.3#16",
+     "P01.3#17",
+     "P01.3#18",
+     "P01.3#19"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Do not turn frontend into the centre of the roadmap."
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 143,
+    "lane": "supporting",
+    "conceptIds": [
+     "P01.3#1",
+     "P01.3#2",
+     "P01.3#3",
+     "P01.3#4",
+     "P01.3#5"
+    ]
+   },
+   {
+    "cw": 144,
+    "lane": "supporting",
+    "conceptIds": [
+     "P01.3#6",
+     "P01.3#7",
+     "P01.3#8",
+     "P01.3#9",
+     "P01.3#10"
+    ]
+   },
+   {
+    "cw": 145,
+    "lane": "supporting",
+    "conceptIds": [
+     "P01.3#11",
+     "P01.3#12",
+     "P01.3#13",
+     "P01.3#14",
+     "P01.3#15"
+    ]
+   },
+   {
+    "cw": 146,
+    "lane": "supporting",
+    "conceptIds": [
+     "P01.3#16",
+     "P01.3#17",
+     "P01.3#18",
+     "P01.3#19"
+    ]
+   }
+  ],
+  "firstWeek": 143,
+  "requiredGate": "C5",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P02.1",
+  "phaseId": "P02",
+  "parentId": null,
+  "title": "Git",
+  "label": "Git",
+  "meta": "🔴 D3",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 3,
+   "raw": "🔴 D3"
+  },
+  "conceptIds": [
+   "P02.1#1",
+   "P02.1#2",
+   "P02.1#3",
+   "P02.1#4",
+   "P02.1#5",
+   "P02.1#6",
+   "P02.1#7",
+   "P02.1#8",
+   "P02.1#9",
+   "P02.1#10",
+   "P02.1#11",
+   "P02.1#12",
+   "P02.1#13",
+   "P02.1#14",
+   "P02.1#15",
+   "P02.1#16",
+   "P02.1#17",
+   "P02.1#18",
+   "P02.1#19",
+   "P02.1#20",
+   "P02.1#21",
+   "P02.1#22",
+   "P02.1#23",
+   "P02.1#24"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P02.1#1",
+     "P02.1#2",
+     "P02.1#3",
+     "P02.1#4",
+     "P02.1#5",
+     "P02.1#6",
+     "P02.1#7",
+     "P02.1#8",
+     "P02.1#9",
+     "P02.1#10",
+     "P02.1#11",
+     "P02.1#12",
+     "P02.1#13",
+     "P02.1#14",
+     "P02.1#15",
+     "P02.1#16",
+     "P02.1#17",
+     "P02.1#18",
+     "P02.1#19",
+     "P02.1#20"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Practice recovery:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P02.1#21",
+     "P02.1#22",
+     "P02.1#23",
+     "P02.1#24"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "You should not fear Git internals."
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 5,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 5,
+  "requiredGate": "G0",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P02.2",
+  "phaseId": "P02",
+  "parentId": null,
+  "title": "GitHub",
+  "label": "GitHub",
+  "meta": "🔴 D3",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 3,
+   "raw": "🔴 D3"
+  },
+  "conceptIds": [
+   "P02.2#1",
+   "P02.2#2",
+   "P02.2#3",
+   "P02.2#4",
+   "P02.2#5",
+   "P02.2#6",
+   "P02.2#7",
+   "P02.2#8",
+   "P02.2#9",
+   "P02.2#10",
+   "P02.2#11",
+   "P02.2#12",
+   "P02.2#13"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P02.2#1",
+     "P02.2#2",
+     "P02.2#3",
+     "P02.2#4",
+     "P02.2#5",
+     "P02.2#6",
+     "P02.2#7",
+     "P02.2#8",
+     "P02.2#9",
+     "P02.2#10",
+     "P02.2#11",
+     "P02.2#12",
+     "P02.2#13"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 6,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 6,
+  "requiredGate": "G0",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P02.2a",
+  "phaseId": "P02",
+  "parentId": "P02.2",
+  "title": "Mastery",
+  "label": "GitHub › Mastery",
+  "meta": "",
+  "kind": "gate-text",
+  "depth": {
+   "min": 3,
+   "max": 3,
+   "raw": "🔴 D3"
+  },
+  "conceptIds": [],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "You can collaborate in a real repository without treating Git as a mysterious sequence of incantations."
+   }
+  ],
+  "weeks": [],
+  "firstWeek": null,
+  "requiredGate": null,
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P03.1",
+  "phaseId": "P03",
+  "parentId": null,
+  "title": "Linux",
+  "label": "Linux",
+  "meta": "🔴 D3",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 3,
+   "raw": "🔴 D3"
+  },
+  "conceptIds": [
+   "P03.1#1",
+   "P03.1#2",
+   "P03.1#3",
+   "P03.1#4",
+   "P03.1#5",
+   "P03.1#6",
+   "P03.1#7",
+   "P03.1#8",
+   "P03.1#9",
+   "P03.1#10",
+   "P03.1#11",
+   "P03.1#12",
+   "P03.1#13",
+   "P03.1#14",
+   "P03.1#15",
+   "P03.1#16",
+   "P03.1#17",
+   "P03.1#18",
+   "P03.1#19",
+   "P03.1#20",
+   "P03.1#21",
+   "P03.1#22",
+   "P03.1#23",
+   "P03.1#24",
+   "P03.1#25",
+   "P03.1#26",
+   "P03.1#27",
+   "P03.1#28",
+   "P03.1#29",
+   "P03.1#30",
+   "P03.1#31",
+   "P03.1#32",
+   "P03.1#33",
+   "P03.1#34",
+   "P03.1#35",
+   "P03.1#36",
+   "P03.1#37",
+   "P03.1#38",
+   "P03.1#39",
+   "P03.1#40",
+   "P03.1#41",
+   "P03.1#42",
+   "P03.1#43",
+   "P03.1#44",
+   "P03.1#45",
+   "P03.1#46",
+   "P03.1#47",
+   "P03.1#48"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P03.1#1",
+     "P03.1#2",
+     "P03.1#3",
+     "P03.1#4",
+     "P03.1#5",
+     "P03.1#6",
+     "P03.1#7",
+     "P03.1#8",
+     "P03.1#9",
+     "P03.1#10",
+     "P03.1#11",
+     "P03.1#12",
+     "P03.1#13",
+     "P03.1#14",
+     "P03.1#15",
+     "P03.1#16",
+     "P03.1#17",
+     "P03.1#18",
+     "P03.1#19",
+     "P03.1#20",
+     "P03.1#21"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Core tools to become comfortable with:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P03.1#22",
+     "P03.1#23",
+     "P03.1#24",
+     "P03.1#25",
+     "P03.1#26",
+     "P03.1#27",
+     "P03.1#28",
+     "P03.1#29",
+     "P03.1#30",
+     "P03.1#31",
+     "P03.1#32",
+     "P03.1#33",
+     "P03.1#34",
+     "P03.1#35",
+     "P03.1#36",
+     "P03.1#37",
+     "P03.1#38",
+     "P03.1#39",
+     "P03.1#40",
+     "P03.1#41",
+     "P03.1#42",
+     "P03.1#43",
+     "P03.1#44",
+     "P03.1#45",
+     "P03.1#46",
+     "P03.1#47",
+     "P03.1#48"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 7,
+    "lane": "primary",
+    "conceptIds": [
+     "P03.1#1",
+     "P03.1#2",
+     "P03.1#3",
+     "P03.1#4",
+     "P03.1#5",
+     "P03.1#6",
+     "P03.1#7",
+     "P03.1#8",
+     "P03.1#9",
+     "P03.1#10",
+     "P03.1#11",
+     "P03.1#12",
+     "P03.1#13",
+     "P03.1#22",
+     "P03.1#23",
+     "P03.1#24",
+     "P03.1#25",
+     "P03.1#26",
+     "P03.1#27",
+     "P03.1#28",
+     "P03.1#29",
+     "P03.1#30",
+     "P03.1#31",
+     "P03.1#32",
+     "P03.1#33",
+     "P03.1#34",
+     "P03.1#35",
+     "P03.1#36",
+     "P03.1#37",
+     "P03.1#38",
+     "P03.1#39",
+     "P03.1#40"
+    ]
+   },
+   {
+    "cw": 8,
+    "lane": "primary",
+    "conceptIds": [
+     "P03.1#14",
+     "P03.1#15",
+     "P03.1#16",
+     "P03.1#17",
+     "P03.1#18",
+     "P03.1#19",
+     "P03.1#20",
+     "P03.1#21",
+     "P03.1#41",
+     "P03.1#42",
+     "P03.1#43",
+     "P03.1#44",
+     "P03.1#45",
+     "P03.1#46",
+     "P03.1#47",
+     "P03.1#48"
+    ]
+   }
+  ],
+  "firstWeek": 7,
+  "requiredGate": "G0",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P03.1a",
+  "phaseId": "P03",
+  "parentId": "P03.1",
+  "title": "Projects",
+  "label": "Linux › Projects",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 3,
+   "raw": "🔴 D3"
+  },
+  "conceptIds": [
+   "P03.1a#1",
+   "P03.1a#2",
+   "P03.1a#3",
+   "P03.1a#4",
+   "P03.1a#5"
+  ],
+  "blocks": [
+   {
+    "t": "concepts",
+    "ids": [
+     "P03.1a#1",
+     "P03.1a#2",
+     "P03.1a#3",
+     "P03.1a#4",
+     "P03.1a#5"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 8,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 8,
+  "requiredGate": "G0",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P04.0",
+  "phaseId": "P04",
+  "parentId": null,
+  "title": "Core scope",
+  "label": "Data Structures & Algorithms (core scope)",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "D4"
+  },
+  "conceptIds": [
+   "P04.0#1",
+   "P04.0#2"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "**Entry condition:** pass the programming foundation gate. DSA is not the first topic in this zero-reset plan.\n\nThis serves two purposes:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P04.0#1",
+     "P04.0#2"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 15,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 15,
+  "requiredGate": "C1",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P04.1",
+  "phaseId": "P04",
+  "parentId": null,
+  "title": "Complexity",
+  "label": "Complexity",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "D4"
+  },
+  "conceptIds": [
+   "P04.1#1",
+   "P04.1#2",
+   "P04.1#3",
+   "P04.1#4",
+   "P04.1#5",
+   "P04.1#6",
+   "P04.1#7",
+   "P04.1#8",
+   "P04.1#9"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Master:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P04.1#1",
+     "P04.1#2",
+     "P04.1#3",
+     "P04.1#4",
+     "P04.1#5",
+     "P04.1#6",
+     "P04.1#7",
+     "P04.1#8",
+     "P04.1#9"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Do not only memorise complexity tables. Derive them from loops and operations."
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 15,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 15,
+  "requiredGate": "C1",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P04.2",
+  "phaseId": "P04",
+  "parentId": null,
+  "title": "Linear structures",
+  "label": "Linear structures",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "D4"
+  },
+  "conceptIds": [
+   "P04.2#1",
+   "P04.2#2",
+   "P04.2#3",
+   "P04.2#4",
+   "P04.2#5",
+   "P04.2#6",
+   "P04.2#7",
+   "P04.2#8",
+   "P04.2#9",
+   "P04.2#10",
+   "P04.2#11",
+   "P04.2#12",
+   "P04.2#13",
+   "P04.2#14",
+   "P04.2#15",
+   "P04.2#16"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn and implement:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P04.2#1",
+     "P04.2#2",
+     "P04.2#3",
+     "P04.2#4",
+     "P04.2#5",
+     "P04.2#6",
+     "P04.2#7",
+     "P04.2#8",
+     "P04.2#9",
+     "P04.2#10",
+     "P04.2#11"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Understand:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P04.2#12",
+     "P04.2#13",
+     "P04.2#14",
+     "P04.2#15",
+     "P04.2#16"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 15,
+    "lane": "primary",
+    "conceptIds": [
+     "P04.2#1",
+     "P04.2#2",
+     "P04.2#3",
+     "P04.2#12",
+     "P04.2#13",
+     "P04.2#14",
+     "P04.2#15"
+    ]
+   },
+   {
+    "cw": 16,
+    "lane": "primary",
+    "conceptIds": [
+     "P04.2#4",
+     "P04.2#5",
+     "P04.2#6",
+     "P04.2#7",
+     "P04.2#8",
+     "P04.2#9"
+    ]
+   },
+   {
+    "cw": 17,
+    "lane": "primary",
+    "conceptIds": [
+     "P04.2#10",
+     "P04.2#11",
+     "P04.2#16"
+    ]
+   },
+   {
+    "cw": 18,
+    "cwEnd": 21,
+    "lane": "dsa",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 15,
+  "requiredGate": "C1",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P04.3",
+  "phaseId": "P04",
+  "parentId": null,
+  "title": "Trees",
+  "label": "Trees",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "D4"
+  },
+  "conceptIds": [
+   "P04.3#1",
+   "P04.3#2",
+   "P04.3#3",
+   "P04.3#4",
+   "P04.3#5",
+   "P04.3#6",
+   "P04.3#7",
+   "P04.3#8",
+   "P04.3#9",
+   "P04.3#10",
+   "P04.3#11",
+   "P04.3#12"
+  ],
+  "blocks": [
+   {
+    "t": "concepts",
+    "ids": [
+     "P04.3#1",
+     "P04.3#2",
+     "P04.3#3",
+     "P04.3#4",
+     "P04.3#5",
+     "P04.3#6",
+     "P04.3#7",
+     "P04.3#8",
+     "P04.3#9",
+     "P04.3#10",
+     "P04.3#11",
+     "P04.3#12"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 22,
+    "cwEnd": 33,
+    "lane": "dsa",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 22,
+  "requiredGate": "SG2",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P04.4",
+  "phaseId": "P04",
+  "parentId": null,
+  "title": "Graphs",
+  "label": "Graphs",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "D4"
+  },
+  "conceptIds": [
+   "P04.4#1",
+   "P04.4#2",
+   "P04.4#3",
+   "P04.4#4",
+   "P04.4#5",
+   "P04.4#6",
+   "P04.4#7",
+   "P04.4#8",
+   "P04.4#9",
+   "P04.4#10",
+   "P04.4#11",
+   "P04.4#12",
+   "P04.4#13",
+   "P04.4#14",
+   "P04.4#15"
+  ],
+  "blocks": [
+   {
+    "t": "concepts",
+    "ids": [
+     "P04.4#1",
+     "P04.4#2",
+     "P04.4#3",
+     "P04.4#4",
+     "P04.4#5",
+     "P04.4#6",
+     "P04.4#7",
+     "P04.4#8",
+     "P04.4#9",
+     "P04.4#10",
+     "P04.4#11",
+     "P04.4#12",
+     "P04.4#13",
+     "P04.4#14",
+     "P04.4#15"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 34,
+    "cwEnd": 46,
+    "lane": "dsa",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 34,
+  "requiredGate": "SG3",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P04.5",
+  "phaseId": "P04",
+  "parentId": null,
+  "title": "Algorithm families",
+  "label": "Algorithm families",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "D4"
+  },
+  "conceptIds": [
+   "P04.5#1",
+   "P04.5#2",
+   "P04.5#3",
+   "P04.5#4",
+   "P04.5#5",
+   "P04.5#6",
+   "P04.5#7",
+   "P04.5#8",
+   "P04.5#9",
+   "P04.5#10",
+   "P04.5#11",
+   "P04.5#12",
+   "P04.5#13"
+  ],
+  "blocks": [
+   {
+    "t": "concepts",
+    "ids": [
+     "P04.5#1",
+     "P04.5#2",
+     "P04.5#3",
+     "P04.5#4",
+     "P04.5#5",
+     "P04.5#6",
+     "P04.5#7",
+     "P04.5#8",
+     "P04.5#9",
+     "P04.5#10",
+     "P04.5#11",
+     "P04.5#12",
+     "P04.5#13"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 17,
+    "lane": "primary",
+    "conceptIds": [
+     "P04.5#1",
+     "P04.5#2",
+     "P04.5#3",
+     "P04.5#4",
+     "P04.5#5",
+     "P04.5#6",
+     "P04.5#7"
+    ]
+   },
+   {
+    "cw": 18,
+    "cwEnd": 21,
+    "lane": "dsa",
+    "conceptIds": [
+     "P04.5#1",
+     "P04.5#2",
+     "P04.5#3",
+     "P04.5#4",
+     "P04.5#5",
+     "P04.5#6",
+     "P04.5#7"
+    ]
+   },
+   {
+    "cw": 47,
+    "cwEnd": 66,
+    "lane": "dsa",
+    "conceptIds": [
+     "P04.5#8",
+     "P04.5#9",
+     "P04.5#10",
+     "P04.5#11",
+     "P04.5#12",
+     "P04.5#13"
+    ]
+   }
+  ],
+  "firstWeek": 17,
+  "requiredGate": "C1",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P04.6",
+  "phaseId": "P04",
+  "parentId": null,
+  "title": "Problem-solving patterns",
+  "label": "Problem-solving patterns",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "D4"
+  },
+  "conceptIds": [
+   "P04.6#1",
+   "P04.6#2",
+   "P04.6#3",
+   "P04.6#4",
+   "P04.6#5",
+   "P04.6#6",
+   "P04.6#7",
+   "P04.6#8",
+   "P04.6#9",
+   "P04.6#10",
+   "P04.6#11",
+   "P04.6#12",
+   "P04.6#13",
+   "P04.6#14",
+   "P04.6#15",
+   "P04.6#16"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Become comfortable recognising:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P04.6#1",
+     "P04.6#2",
+     "P04.6#3",
+     "P04.6#4",
+     "P04.6#5",
+     "P04.6#6",
+     "P04.6#7",
+     "P04.6#8",
+     "P04.6#9",
+     "P04.6#10",
+     "P04.6#11",
+     "P04.6#12",
+     "P04.6#13",
+     "P04.6#14",
+     "P04.6#15",
+     "P04.6#16"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 47,
+    "cwEnd": 66,
+    "lane": "dsa",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 47,
+  "requiredGate": "SG4",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P04.7",
+  "phaseId": "P04",
+  "parentId": null,
+  "title": "Interview progression",
+  "label": "Interview progression",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "D4"
+  },
+  "conceptIds": [],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "```text\nLearn pattern\n↓\nImplement pattern\n↓\nEasy problems\n↓\nMedium problems\n↓\nSelected hard problems\n↓\nExplain alternative solutions\n↓\nTimed solution\n↓\nMock interview\n```\n\nThe goal is pattern mastery, correctness, complexity reasoning, and communication rather than arbitrary problem counts.\n\n**Planning benchmark**\n\nA long-term range of roughly 200–300 carefully understood problems can be useful as a planning guide, but it is not a qualification threshold."
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 67,
+    "cwEnd": 101,
+    "lane": "dsa",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 67,
+  "requiredGate": "C2",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P04.7a",
+  "phaseId": "P04",
+  "parentId": "P04.7",
+  "title": "Resources",
+  "label": "Interview progression › Resources",
+  "meta": "",
+  "kind": "resources",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "D4"
+  },
+  "conceptIds": [],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "**Primary curriculum**\n\n**MIT 6.006 - Introduction to Algorithms**\nhttps://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/\n\nUse the lectures, notes, problem sets, and solutions as the conceptual spine.\n\n**Practice companion**\n\n**NeetCode**\nhttps://neetcode.io/\n\nUse for pattern-based and interview-oriented practice after learning the underlying concepts.\n\n**Interview practice**\n\n**LeetCode**\nhttps://leetcode.com/\n\nUse selectively for timed and interview-style practice. Do not optimise for raw problem count.\n\n**Local reinforcement**\n\n- university problem sets\n- handwritten derivations\n- your own implementations"
+   }
+  ],
+  "weeks": [],
+  "firstWeek": null,
+  "requiredGate": null,
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P05.1",
+  "phaseId": "P05",
+  "parentId": null,
+  "title": "Operating Systems",
+  "label": "Operating Systems",
+  "meta": "🔴 D3",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 3,
+   "raw": "🔴 D3"
+  },
+  "conceptIds": [
+   "P05.1#1",
+   "P05.1#2",
+   "P05.1#3",
+   "P05.1#4",
+   "P05.1#5",
+   "P05.1#6",
+   "P05.1#7",
+   "P05.1#8",
+   "P05.1#9",
+   "P05.1#10",
+   "P05.1#11",
+   "P05.1#12",
+   "P05.1#13",
+   "P05.1#14",
+   "P05.1#15",
+   "P05.1#16",
+   "P05.1#17",
+   "P05.1#18",
+   "P05.1#19",
+   "P05.1#20",
+   "P05.1#21",
+   "P05.1#22",
+   "P05.1#23",
+   "P05.1#24",
+   "P05.1#25",
+   "P05.1#26"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P05.1#1",
+     "P05.1#2",
+     "P05.1#3",
+     "P05.1#4",
+     "P05.1#5",
+     "P05.1#6",
+     "P05.1#7",
+     "P05.1#8",
+     "P05.1#9",
+     "P05.1#10",
+     "P05.1#11",
+     "P05.1#12",
+     "P05.1#13",
+     "P05.1#14",
+     "P05.1#15",
+     "P05.1#16",
+     "P05.1#17",
+     "P05.1#18",
+     "P05.1#19",
+     "P05.1#20",
+     "P05.1#21",
+     "P05.1#22"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Key question:\n\n> What actually happens between the moment I run a program and the moment it produces output?\n\nProject ideas:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P05.1#23",
+     "P05.1#24",
+     "P05.1#25",
+     "P05.1#26"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 50,
+    "lane": "primary",
+    "conceptIds": [
+     "P05.1#1",
+     "P05.1#2",
+     "P05.1#3",
+     "P05.1#4",
+     "P05.1#5",
+     "P05.1#6",
+     "P05.1#22"
+    ]
+   },
+   {
+    "cw": 51,
+    "lane": "primary",
+    "conceptIds": [
+     "P05.1#7",
+     "P05.1#8",
+     "P05.1#9",
+     "P05.1#10",
+     "P05.1#11",
+     "P05.1#12",
+     "P05.1#13",
+     "P05.1#14",
+     "P05.1#20",
+     "P05.1#21"
+    ]
+   },
+   {
+    "cw": 52,
+    "lane": "primary",
+    "conceptIds": [
+     "P05.1#15",
+     "P05.1#16",
+     "P05.1#17",
+     "P05.1#18",
+     "P05.1#19",
+     "P05.1#23",
+     "P05.1#24",
+     "P05.1#25",
+     "P05.1#26"
+    ]
+   }
+  ],
+  "firstWeek": 50,
+  "requiredGate": "SG4",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P05.2",
+  "phaseId": "P05",
+  "parentId": null,
+  "title": "Networking",
+  "label": "Networking",
+  "meta": "🔴 D3",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 3,
+   "raw": "🔴 D3"
+  },
+  "conceptIds": [
+   "P05.2#1",
+   "P05.2#2",
+   "P05.2#3",
+   "P05.2#4",
+   "P05.2#5",
+   "P05.2#6",
+   "P05.2#7",
+   "P05.2#8",
+   "P05.2#9",
+   "P05.2#10",
+   "P05.2#11",
+   "P05.2#12",
+   "P05.2#13",
+   "P05.2#14",
+   "P05.2#15",
+   "P05.2#16",
+   "P05.2#17",
+   "P05.2#18",
+   "P05.2#19",
+   "P05.2#20",
+   "P05.2#21",
+   "P05.2#22",
+   "P05.2#23",
+   "P05.2#24"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P05.2#1",
+     "P05.2#2",
+     "P05.2#3",
+     "P05.2#4",
+     "P05.2#5",
+     "P05.2#6",
+     "P05.2#7",
+     "P05.2#8",
+     "P05.2#9",
+     "P05.2#10",
+     "P05.2#11",
+     "P05.2#12",
+     "P05.2#13",
+     "P05.2#14",
+     "P05.2#15",
+     "P05.2#16",
+     "P05.2#17",
+     "P05.2#18",
+     "P05.2#19",
+     "P05.2#20"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Be able to explain:\n\n```text\nBrowser\n→ DNS\n→ TCP\n→ TLS\n→ HTTP\n→ reverse proxy\n→ application\n→ database\n```\n\nPractice with:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P05.2#21",
+     "P05.2#22",
+     "P05.2#23",
+     "P05.2#24"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 47,
+    "lane": "primary",
+    "conceptIds": [
+     "P05.2#1",
+     "P05.2#2",
+     "P05.2#3",
+     "P05.2#4",
+     "P05.2#5",
+     "P05.2#6",
+     "P05.2#7",
+     "P05.2#8",
+     "P05.2#9"
+    ]
+   },
+   {
+    "cw": 48,
+    "lane": "primary",
+    "conceptIds": [
+     "P05.2#10",
+     "P05.2#11",
+     "P05.2#12",
+     "P05.2#13",
+     "P05.2#14",
+     "P05.2#15",
+     "P05.2#16"
+    ]
+   },
+   {
+    "cw": 49,
+    "lane": "primary",
+    "conceptIds": [
+     "P05.2#17",
+     "P05.2#18",
+     "P05.2#19",
+     "P05.2#20",
+     "P05.2#21",
+     "P05.2#22",
+     "P05.2#23",
+     "P05.2#24"
+    ]
+   }
+  ],
+  "firstWeek": 47,
+  "requiredGate": "SG4",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P05.3",
+  "phaseId": "P05",
+  "parentId": null,
+  "title": "Computer Architecture",
+  "label": "Computer Architecture",
+  "meta": "🟠 D2–D3",
+  "kind": "concepts",
+  "depth": {
+   "min": 2,
+   "max": 3,
+   "raw": "🟠 D2–D3"
+  },
+  "conceptIds": [
+   "P05.3#1",
+   "P05.3#2",
+   "P05.3#3",
+   "P05.3#4",
+   "P05.3#5",
+   "P05.3#6",
+   "P05.3#7",
+   "P05.3#8",
+   "P05.3#9",
+   "P05.3#10",
+   "P05.3#11",
+   "P05.3#12",
+   "P05.3#13",
+   "P05.3#14",
+   "P05.3#15",
+   "P05.3#16",
+   "P05.3#17",
+   "P05.3#18",
+   "P05.3#19"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P05.3#1",
+     "P05.3#2",
+     "P05.3#3",
+     "P05.3#4",
+     "P05.3#5",
+     "P05.3#6",
+     "P05.3#7",
+     "P05.3#8",
+     "P05.3#9",
+     "P05.3#10",
+     "P05.3#11",
+     "P05.3#12",
+     "P05.3#13",
+     "P05.3#14",
+     "P05.3#15"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Understand why:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P05.3#16",
+     "P05.3#17",
+     "P05.3#18",
+     "P05.3#19"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 102,
+    "lane": "supporting",
+    "conceptIds": [
+     "P05.3#1",
+     "P05.3#2",
+     "P05.3#3",
+     "P05.3#4",
+     "P05.3#5",
+     "P05.3#6"
+    ]
+   },
+   {
+    "cw": 103,
+    "lane": "supporting",
+    "conceptIds": [
+     "P05.3#7",
+     "P05.3#8",
+     "P05.3#9",
+     "P05.3#10",
+     "P05.3#11",
+     "P05.3#12"
+    ]
+   },
+   {
+    "cw": 104,
+    "lane": "supporting",
+    "conceptIds": [
+     "P05.3#13",
+     "P05.3#14",
+     "P05.3#15",
+     "P05.3#16",
+     "P05.3#17",
+     "P05.3#18",
+     "P05.3#19"
+    ]
+   }
+  ],
+  "firstWeek": 102,
+  "requiredGate": "SG5",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P05.4",
+  "phaseId": "P05",
+  "parentId": null,
+  "title": "Compilers and runtimes",
+  "label": "Compilers and runtimes",
+  "meta": "🟡 D2",
+  "kind": "concepts",
+  "depth": {
+   "min": 2,
+   "max": 2,
+   "raw": "🟡 D2"
+  },
+  "conceptIds": [
+   "P05.4#1",
+   "P05.4#2",
+   "P05.4#3",
+   "P05.4#4",
+   "P05.4#5",
+   "P05.4#6",
+   "P05.4#7",
+   "P05.4#8",
+   "P05.4#9",
+   "P05.4#10"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn conceptually:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P05.4#1",
+     "P05.4#2",
+     "P05.4#3",
+     "P05.4#4",
+     "P05.4#5",
+     "P05.4#6",
+     "P05.4#7",
+     "P05.4#8",
+     "P05.4#9",
+     "P05.4#10"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Build a tiny interpreter eventually if the subject interests you or if you want deeper CS foundations."
+   }
+  ],
+  "weeks": [],
+  "firstWeek": null,
+  "requiredGate": "C2",
+  "onDemand": "OPTIONAL (🟡). Schedule only if a runtime/compiler need appears or in a specialisation.",
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P06.1",
+  "phaseId": "P06",
+  "parentId": null,
+  "title": "Relational fundamentals",
+  "label": "Relational fundamentals",
+  "meta": "🔴 D4",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "conceptIds": [
+   "P06.1#1",
+   "P06.1#2",
+   "P06.1#3",
+   "P06.1#4",
+   "P06.1#5",
+   "P06.1#6",
+   "P06.1#7",
+   "P06.1#8",
+   "P06.1#9",
+   "P06.1#10",
+   "P06.1#11",
+   "P06.1#12"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P06.1#1",
+     "P06.1#2",
+     "P06.1#3",
+     "P06.1#4",
+     "P06.1#5",
+     "P06.1#6",
+     "P06.1#7",
+     "P06.1#8",
+     "P06.1#9",
+     "P06.1#10",
+     "P06.1#11",
+     "P06.1#12"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 18,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 18,
+  "requiredGate": "C1",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P06.1a",
+  "phaseId": "P06",
+  "parentId": "P06.1",
+  "title": "SQL mastery",
+  "label": "Relational fundamentals › SQL mastery",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "conceptIds": [
+   "P06.1a#1",
+   "P06.1a#2",
+   "P06.1a#3",
+   "P06.1a#4",
+   "P06.1a#5",
+   "P06.1a#6",
+   "P06.1a#7",
+   "P06.1a#8",
+   "P06.1a#9",
+   "P06.1a#10",
+   "P06.1a#11",
+   "P06.1a#12",
+   "P06.1a#13",
+   "P06.1a#14",
+   "P06.1a#15",
+   "P06.1a#16",
+   "P06.1a#17"
+  ],
+  "blocks": [
+   {
+    "t": "concepts",
+    "ids": [
+     "P06.1a#1",
+     "P06.1a#2",
+     "P06.1a#3",
+     "P06.1a#4",
+     "P06.1a#5",
+     "P06.1a#6",
+     "P06.1a#7",
+     "P06.1a#8",
+     "P06.1a#9",
+     "P06.1a#10",
+     "P06.1a#11",
+     "P06.1a#12",
+     "P06.1a#13",
+     "P06.1a#14",
+     "P06.1a#15",
+     "P06.1a#16",
+     "P06.1a#17"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 18,
+    "lane": "primary",
+    "conceptIds": [
+     "P06.1a#1",
+     "P06.1a#2",
+     "P06.1a#3",
+     "P06.1a#4",
+     "P06.1a#5",
+     "P06.1a#6"
+    ]
+   },
+   {
+    "cw": 19,
+    "lane": "primary",
+    "conceptIds": [
+     "P06.1a#7",
+     "P06.1a#8",
+     "P06.1a#9",
+     "P06.1a#10",
+     "P06.1a#11",
+     "P06.1a#12"
+    ]
+   },
+   {
+    "cw": 20,
+    "lane": "primary",
+    "conceptIds": [
+     "P06.1a#13",
+     "P06.1a#14",
+     "P06.1a#15",
+     "P06.1a#16",
+     "P06.1a#17"
+    ]
+   }
+  ],
+  "firstWeek": 18,
+  "requiredGate": "C1",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P06.1b",
+  "phaseId": "P06",
+  "parentId": "P06.1",
+  "title": "Database design",
+  "label": "Relational fundamentals › Database design",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "conceptIds": [
+   "P06.1b#1",
+   "P06.1b#2",
+   "P06.1b#3",
+   "P06.1b#4",
+   "P06.1b#5",
+   "P06.1b#6"
+  ],
+  "blocks": [
+   {
+    "t": "concepts",
+    "ids": [
+     "P06.1b#1",
+     "P06.1b#2",
+     "P06.1b#3",
+     "P06.1b#4",
+     "P06.1b#5",
+     "P06.1b#6"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 53,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 53,
+  "requiredGate": "SG4",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P06.1c",
+  "phaseId": "P06",
+  "parentId": "P06.1",
+  "title": "Transactions",
+  "label": "Relational fundamentals › Transactions",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "conceptIds": [
+   "P06.1c#1",
+   "P06.1c#2",
+   "P06.1c#3",
+   "P06.1c#4",
+   "P06.1c#5",
+   "P06.1c#6",
+   "P06.1c#7",
+   "P06.1c#8",
+   "P06.1c#9",
+   "P06.1c#10"
+  ],
+  "blocks": [
+   {
+    "t": "concepts",
+    "ids": [
+     "P06.1c#1",
+     "P06.1c#2",
+     "P06.1c#3",
+     "P06.1c#4",
+     "P06.1c#5",
+     "P06.1c#6",
+     "P06.1c#7",
+     "P06.1c#8",
+     "P06.1c#9",
+     "P06.1c#10"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 54,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 54,
+  "requiredGate": "SG4",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P06.1d",
+  "phaseId": "P06",
+  "parentId": "P06.1",
+  "title": "Performance",
+  "label": "Relational fundamentals › Performance",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "conceptIds": [
+   "P06.1d#1",
+   "P06.1d#2",
+   "P06.1d#3",
+   "P06.1d#4",
+   "P06.1d#5",
+   "P06.1d#6",
+   "P06.1d#7",
+   "P06.1d#8",
+   "P06.1d#9",
+   "P06.1d#10",
+   "P06.1d#11"
+  ],
+  "blocks": [
+   {
+    "t": "concepts",
+    "ids": [
+     "P06.1d#1",
+     "P06.1d#2",
+     "P06.1d#3",
+     "P06.1d#4",
+     "P06.1d#5",
+     "P06.1d#6",
+     "P06.1d#7",
+     "P06.1d#8",
+     "P06.1d#9",
+     "P06.1d#10",
+     "P06.1d#11"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 55,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 55,
+  "requiredGate": "SG4",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P06.1e",
+  "phaseId": "P06",
+  "parentId": "P06.1",
+  "title": "Distributed concepts",
+  "label": "Relational fundamentals › Distributed concepts",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "conceptIds": [
+   "P06.1e#1",
+   "P06.1e#2",
+   "P06.1e#3",
+   "P06.1e#4",
+   "P06.1e#5",
+   "P06.1e#6",
+   "P06.1e#7",
+   "P06.1e#8"
+  ],
+  "blocks": [
+   {
+    "t": "concepts",
+    "ids": [
+     "P06.1e#1",
+     "P06.1e#2",
+     "P06.1e#3",
+     "P06.1e#4",
+     "P06.1e#5",
+     "P06.1e#6",
+     "P06.1e#7",
+     "P06.1e#8"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 56,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 56,
+  "requiredGate": "SG4",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P06.2",
+  "phaseId": "P06",
+  "parentId": null,
+  "title": "PostgreSQL",
+  "label": "PostgreSQL",
+  "meta": "🔴 D4",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "conceptIds": [
+   "P06.2#1",
+   "P06.2#2",
+   "P06.2#3",
+   "P06.2#4",
+   "P06.2#5"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Use PostgreSQL as the primary relational database for practical work.\n\nProjects:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P06.2#1",
+     "P06.2#2",
+     "P06.2#3",
+     "P06.2#4",
+     "P06.2#5"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 20,
+    "lane": "primary",
+    "conceptIds": null
+   },
+   {
+    "cw": 55,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 20,
+  "requiredGate": "C1",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P06.2a",
+  "phaseId": "P06",
+  "parentId": "P06.2",
+  "title": "Resources",
+  "label": "PostgreSQL › Resources",
+  "meta": "",
+  "kind": "resources",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "conceptIds": [],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "PostgreSQL official documentation and tutorial:\nhttps://www.postgresql.org/docs/current/tutorial.html"
+   }
+  ],
+  "weeks": [],
+  "firstWeek": null,
+  "requiredGate": null,
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P06.3",
+  "phaseId": "P06",
+  "parentId": null,
+  "title": "Redis",
+  "label": "Redis",
+  "meta": "🟠 D2–D3",
+  "kind": "concepts",
+  "depth": {
+   "min": 2,
+   "max": 3,
+   "raw": "🟠 D2–D3"
+  },
+  "conceptIds": [
+   "P06.3#1",
+   "P06.3#2",
+   "P06.3#3",
+   "P06.3#4",
+   "P06.3#5",
+   "P06.3#6",
+   "P06.3#7"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P06.3#1",
+     "P06.3#2",
+     "P06.3#3",
+     "P06.3#4",
+     "P06.3#5",
+     "P06.3#6",
+     "P06.3#7"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Do not use Redis merely because a project looks more sophisticated with Redis.\n\nKnow why the cache exists."
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 56,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 56,
+  "requiredGate": "SG4",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P06.4",
+  "phaseId": "P06",
+  "parentId": null,
+  "title": "NoSQL",
+  "label": "NoSQL",
+  "meta": "🟡 D1–D2",
+  "kind": "concepts",
+  "depth": {
+   "min": 1,
+   "max": 2,
+   "raw": "🟡 D1–D2"
+  },
+  "conceptIds": [
+   "P06.4#1",
+   "P06.4#2",
+   "P06.4#3",
+   "P06.4#4"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Understand categories:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P06.4#1",
+     "P06.4#2",
+     "P06.4#3",
+     "P06.4#4"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Study specific products only when the project or job requires them."
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 56,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 56,
+  "requiredGate": "SG4",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P07.1",
+  "phaseId": "P07",
+  "parentId": null,
+  "title": "Code quality",
+  "label": "Code quality",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "conceptIds": [
+   "P07.1#1",
+   "P07.1#2",
+   "P07.1#3",
+   "P07.1#4",
+   "P07.1#5",
+   "P07.1#6",
+   "P07.1#7",
+   "P07.1#8",
+   "P07.1#9",
+   "P07.1#10",
+   "P07.1#11"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P07.1#1",
+     "P07.1#2",
+     "P07.1#3",
+     "P07.1#4",
+     "P07.1#5",
+     "P07.1#6",
+     "P07.1#7",
+     "P07.1#8",
+     "P07.1#9",
+     "P07.1#10",
+     "P07.1#11"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 34,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 34,
+  "requiredGate": "SG3",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P07.2",
+  "phaseId": "P07",
+  "parentId": null,
+  "title": "Principles",
+  "label": "Principles",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "conceptIds": [
+   "P07.2#1",
+   "P07.2#2",
+   "P07.2#3",
+   "P07.2#4"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P07.2#1",
+     "P07.2#2",
+     "P07.2#3",
+     "P07.2#4"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Do not turn principles into dogma.\n\nUnderstand when an abstraction is useful and when it is overengineering."
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 34,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 34,
+  "requiredGate": "SG3",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P07.3",
+  "phaseId": "P07",
+  "parentId": null,
+  "title": "Testing",
+  "label": "Testing",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "conceptIds": [
+   "P07.3#1",
+   "P07.3#2",
+   "P07.3#3",
+   "P07.3#4",
+   "P07.3#5",
+   "P07.3#6",
+   "P07.3#7",
+   "P07.3#8",
+   "P07.3#9",
+   "P07.3#10",
+   "P07.3#11"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P07.3#1",
+     "P07.3#2",
+     "P07.3#3",
+     "P07.3#4",
+     "P07.3#5",
+     "P07.3#6",
+     "P07.3#7",
+     "P07.3#8",
+     "P07.3#9",
+     "P07.3#10",
+     "P07.3#11"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 11,
+    "lane": "primary",
+    "conceptIds": null
+   },
+   {
+    "cw": 35,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 11,
+  "requiredGate": "G0",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P07.4",
+  "phaseId": "P07",
+  "parentId": null,
+  "title": "Debugging",
+  "label": "Debugging",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "conceptIds": [
+   "P07.4#1",
+   "P07.4#2",
+   "P07.4#3",
+   "P07.4#4",
+   "P07.4#5",
+   "P07.4#6",
+   "P07.4#7",
+   "P07.4#8",
+   "P07.4#9",
+   "P07.4#10"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Become comfortable with:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P07.4#1",
+     "P07.4#2",
+     "P07.4#3",
+     "P07.4#4",
+     "P07.4#5",
+     "P07.4#6",
+     "P07.4#7",
+     "P07.4#8",
+     "P07.4#9",
+     "P07.4#10"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 11,
+    "lane": "primary",
+    "conceptIds": null
+   },
+   {
+    "cw": 35,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 11,
+  "requiredGate": "G0",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P07.5",
+  "phaseId": "P07",
+  "parentId": null,
+  "title": "Engineering workflow",
+  "label": "Engineering workflow",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "conceptIds": [
+   "P07.5#1",
+   "P07.5#2",
+   "P07.5#3",
+   "P07.5#4",
+   "P07.5#5",
+   "P07.5#6",
+   "P07.5#7",
+   "P07.5#8",
+   "P07.5#9"
+  ],
+  "blocks": [
+   {
+    "t": "concepts",
+    "ids": [
+     "P07.5#1",
+     "P07.5#2",
+     "P07.5#3",
+     "P07.5#4",
+     "P07.5#5",
+     "P07.5#6",
+     "P07.5#7",
+     "P07.5#8",
+     "P07.5#9"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 36,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 36,
+  "requiredGate": "SG3",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P08.0",
+  "phaseId": "P08",
+  "parentId": null,
+  "title": "Core scope",
+  "label": "Backend Engineering (core scope)",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🔴 D3–D4"
+  },
+  "conceptIds": [],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Primary practical direction:\n\n**Python + FastAPI**\n\nSecondary ecosystem:\n\n**Java + Spring Boot**"
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 36,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 36,
+  "requiredGate": "SG3",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P08.1",
+  "phaseId": "P08",
+  "parentId": null,
+  "title": "HTTP",
+  "label": "HTTP",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🔴 D3–D4"
+  },
+  "conceptIds": [
+   "P08.1#1",
+   "P08.1#2",
+   "P08.1#3",
+   "P08.1#4",
+   "P08.1#5",
+   "P08.1#6",
+   "P08.1#7",
+   "P08.1#8",
+   "P08.1#9",
+   "P08.1#10"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Understand:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P08.1#1",
+     "P08.1#2",
+     "P08.1#3",
+     "P08.1#4",
+     "P08.1#5",
+     "P08.1#6",
+     "P08.1#7",
+     "P08.1#8",
+     "P08.1#9",
+     "P08.1#10"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 37,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 37,
+  "requiredGate": "SG3",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P08.2",
+  "phaseId": "P08",
+  "parentId": null,
+  "title": "REST",
+  "label": "REST",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🔴 D3–D4"
+  },
+  "conceptIds": [
+   "P08.2#1",
+   "P08.2#2",
+   "P08.2#3",
+   "P08.2#4",
+   "P08.2#5",
+   "P08.2#6",
+   "P08.2#7",
+   "P08.2#8",
+   "P08.2#9",
+   "P08.2#10"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P08.2#1",
+     "P08.2#2",
+     "P08.2#3",
+     "P08.2#4",
+     "P08.2#5",
+     "P08.2#6",
+     "P08.2#7",
+     "P08.2#8",
+     "P08.2#9",
+     "P08.2#10"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 38,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 38,
+  "requiredGate": "SG3",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P08.3",
+  "phaseId": "P08",
+  "parentId": null,
+  "title": "API design",
+  "label": "API design",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🔴 D3–D4"
+  },
+  "conceptIds": [
+   "P08.3#1",
+   "P08.3#2",
+   "P08.3#3",
+   "P08.3#4",
+   "P08.3#5",
+   "P08.3#6",
+   "P08.3#7",
+   "P08.3#8",
+   "P08.3#9"
+  ],
+  "blocks": [
+   {
+    "t": "concepts",
+    "ids": [
+     "P08.3#1",
+     "P08.3#2",
+     "P08.3#3",
+     "P08.3#4",
+     "P08.3#5",
+     "P08.3#6",
+     "P08.3#7",
+     "P08.3#8",
+     "P08.3#9"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 41,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 41,
+  "requiredGate": "SG3",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P08.4",
+  "phaseId": "P08",
+  "parentId": null,
+  "title": "Identity",
+  "label": "Identity",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🔴 D3–D4"
+  },
+  "conceptIds": [
+   "P08.4#1",
+   "P08.4#2",
+   "P08.4#3",
+   "P08.4#4",
+   "P08.4#5",
+   "P08.4#6",
+   "P08.4#7"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn concepts:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P08.4#1",
+     "P08.4#2",
+     "P08.4#3",
+     "P08.4#4",
+     "P08.4#5",
+     "P08.4#6",
+     "P08.4#7"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 57,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 57,
+  "requiredGate": "SG4",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P08.5",
+  "phaseId": "P08",
+  "parentId": null,
+  "title": "Application infrastructure",
+  "label": "Application infrastructure",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🔴 D3–D4"
+  },
+  "conceptIds": [
+   "P08.5#1",
+   "P08.5#2",
+   "P08.5#3",
+   "P08.5#4",
+   "P08.5#5",
+   "P08.5#6",
+   "P08.5#7"
+  ],
+  "blocks": [
+   {
+    "t": "concepts",
+    "ids": [
+     "P08.5#1",
+     "P08.5#2",
+     "P08.5#3",
+     "P08.5#4",
+     "P08.5#5",
+     "P08.5#6",
+     "P08.5#7"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 58,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 58,
+  "requiredGate": "SG4",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P08.6",
+  "phaseId": "P08",
+  "parentId": null,
+  "title": "Backend projects",
+  "label": "Backend projects",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🔴 D3–D4"
+  },
+  "conceptIds": [
+   "P08.6#1",
+   "P08.6#2",
+   "P08.6#3",
+   "P08.6#4",
+   "P08.6#5",
+   "P08.6#6",
+   "P08.6#7",
+   "P08.6#8",
+   "P08.6#9",
+   "P08.6#10",
+   "P08.6#11",
+   "P08.6#12",
+   "P08.6#13",
+   "P08.6#14",
+   "P08.6#15",
+   "P08.6#16",
+   "P08.6#17"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "**Project A - CRUD API**\n\nDemonstrate:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P08.6#1",
+     "P08.6#2",
+     "P08.6#3",
+     "P08.6#4"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "**Project B - Authenticated API**\n\nAdd:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P08.6#5",
+     "P08.6#6",
+     "P08.6#7",
+     "P08.6#8"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "**Project C - URL shortener**\n\nAdd:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P08.6#9",
+     "P08.6#10",
+     "P08.6#11",
+     "P08.6#12",
+     "P08.6#13"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "**Project D - Real-time chat backend**\n\nAdd:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P08.6#14",
+     "P08.6#15",
+     "P08.6#16",
+     "P08.6#17"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 42,
+    "lane": "primary",
+    "conceptIds": [
+     "P08.6#1",
+     "P08.6#2",
+     "P08.6#3",
+     "P08.6#4"
+    ]
+   },
+   {
+    "cw": 57,
+    "lane": "primary",
+    "conceptIds": [
+     "P08.6#5",
+     "P08.6#6",
+     "P08.6#7",
+     "P08.6#8"
+    ]
+   },
+   {
+    "cw": 60,
+    "lane": "primary",
+    "conceptIds": [
+     "P08.6#9",
+     "P08.6#10",
+     "P08.6#11",
+     "P08.6#12",
+     "P08.6#13"
+    ]
+   },
+   {
+    "cw": 63,
+    "lane": "primary",
+    "conceptIds": [
+     "P08.6#14",
+     "P08.6#15",
+     "P08.6#16",
+     "P08.6#17"
+    ]
+   }
+  ],
+  "firstWeek": 42,
+  "requiredGate": "SG3",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P09.0",
+  "phaseId": "P09",
+  "parentId": null,
+  "title": "Core scope",
+  "label": "Software Architecture (core scope)",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 3,
+   "raw": "🟠 D3"
+  },
+  "conceptIds": [
+   "P09.0#1",
+   "P09.0#2",
+   "P09.0#3",
+   "P09.0#4",
+   "P09.0#5",
+   "P09.0#6",
+   "P09.0#7",
+   "P09.0#8",
+   "P09.0#9",
+   "P09.0#10",
+   "P09.0#11",
+   "P09.0#12",
+   "P09.0#13",
+   "P09.0#14"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Progression:\n\n```text\nScript\n→ structured program\n→ modules\n→ layered application\n→ modular monolith\n→ service-oriented architecture\n→ microservices\n→ distributed architecture\n```\n\nLearn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P09.0#1",
+     "P09.0#2",
+     "P09.0#3",
+     "P09.0#4",
+     "P09.0#5",
+     "P09.0#6",
+     "P09.0#7",
+     "P09.0#8",
+     "P09.0#9",
+     "P09.0#10",
+     "P09.0#11",
+     "P09.0#12",
+     "P09.0#13",
+     "P09.0#14"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 91,
+    "lane": "primary",
+    "conceptIds": [
+     "P09.0#1",
+     "P09.0#2",
+     "P09.0#3",
+     "P09.0#4",
+     "P09.0#5",
+     "P09.0#6",
+     "P09.0#7",
+     "P09.0#8"
+    ]
+   },
+   {
+    "cw": 92,
+    "lane": "primary",
+    "conceptIds": [
+     "P09.0#9",
+     "P09.0#10",
+     "P09.0#11",
+     "P09.0#12",
+     "P09.0#13",
+     "P09.0#14"
+    ]
+   }
+  ],
+  "firstWeek": 91,
+  "requiredGate": "C4",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P09.1",
+  "phaseId": "P09",
+  "parentId": null,
+  "title": "Design-pattern families",
+  "label": "Design-pattern families",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 3,
+   "raw": "🟠 D3"
+  },
+  "conceptIds": [
+   "P09.1#1",
+   "P09.1#2",
+   "P09.1#3",
+   "P09.1#4",
+   "P09.1#5",
+   "P09.1#6",
+   "P09.1#7",
+   "P09.1#8"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Awareness/working level:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P09.1#1",
+     "P09.1#2",
+     "P09.1#3",
+     "P09.1#4",
+     "P09.1#5",
+     "P09.1#6",
+     "P09.1#7",
+     "P09.1#8"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Do not memorise pattern names without understanding the underlying design problem."
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 92,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 92,
+  "requiredGate": "C4",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P09.2",
+  "phaseId": "P09",
+  "parentId": null,
+  "title": "Critical rule",
+  "label": "Critical rule",
+  "meta": "",
+  "kind": "rule",
+  "depth": {
+   "min": 3,
+   "max": 3,
+   "raw": "🟠 D3"
+  },
+  "conceptIds": [],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Do not build microservices because they look impressive.\n\nFirst learn to design a good single service."
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 92,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 92,
+  "requiredGate": "C4",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P10.1",
+  "phaseId": "P10",
+  "parentId": null,
+  "title": "Linear Algebra",
+  "label": "Linear Algebra",
+  "meta": "🔴 D4",
+  "kind": "parent",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "conceptIds": [],
+  "blocks": [],
+  "weeks": [],
+  "firstWeek": null,
+  "requiredGate": null,
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P10.1a",
+  "phaseId": "P10",
+  "parentId": "P10.1",
+  "title": "Foundations",
+  "label": "Linear Algebra › Foundations",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "conceptIds": [
+   "P10.1a#1",
+   "P10.1a#2",
+   "P10.1a#3",
+   "P10.1a#4",
+   "P10.1a#5",
+   "P10.1a#6",
+   "P10.1a#7",
+   "P10.1a#8"
+  ],
+  "blocks": [
+   {
+    "t": "concepts",
+    "ids": [
+     "P10.1a#1",
+     "P10.1a#2",
+     "P10.1a#3",
+     "P10.1a#4",
+     "P10.1a#5",
+     "P10.1a#6",
+     "P10.1a#7",
+     "P10.1a#8"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 26,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 26,
+  "requiredGate": "SG2",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P10.1b",
+  "phaseId": "P10",
+  "parentId": "P10.1",
+  "title": "Vector spaces",
+  "label": "Linear Algebra › Vector spaces",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "conceptIds": [
+   "P10.1b#1",
+   "P10.1b#2",
+   "P10.1b#3",
+   "P10.1b#4",
+   "P10.1b#5",
+   "P10.1b#6",
+   "P10.1b#7",
+   "P10.1b#8"
+  ],
+  "blocks": [
+   {
+    "t": "concepts",
+    "ids": [
+     "P10.1b#1",
+     "P10.1b#2",
+     "P10.1b#3",
+     "P10.1b#4",
+     "P10.1b#5",
+     "P10.1b#6",
+     "P10.1b#7",
+     "P10.1b#8"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 27,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 27,
+  "requiredGate": "SG2",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P10.1c",
+  "phaseId": "P10",
+  "parentId": "P10.1",
+  "title": "Geometry",
+  "label": "Linear Algebra › Geometry",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "conceptIds": [
+   "P10.1c#1",
+   "P10.1c#2",
+   "P10.1c#3",
+   "P10.1c#4",
+   "P10.1c#5",
+   "P10.1c#6"
+  ],
+  "blocks": [
+   {
+    "t": "concepts",
+    "ids": [
+     "P10.1c#1",
+     "P10.1c#2",
+     "P10.1c#3",
+     "P10.1c#4",
+     "P10.1c#5",
+     "P10.1c#6"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 28,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 28,
+  "requiredGate": "SG2",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P10.1d",
+  "phaseId": "P10",
+  "parentId": "P10.1",
+  "title": "Advanced",
+  "label": "Linear Algebra › Advanced",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "conceptIds": [
+   "P10.1d#1",
+   "P10.1d#2",
+   "P10.1d#3",
+   "P10.1d#4",
+   "P10.1d#5",
+   "P10.1d#6",
+   "P10.1d#7",
+   "P10.1d#8"
+  ],
+  "blocks": [
+   {
+    "t": "concepts",
+    "ids": [
+     "P10.1d#1",
+     "P10.1d#2",
+     "P10.1d#3",
+     "P10.1d#4",
+     "P10.1d#5",
+     "P10.1d#6",
+     "P10.1d#7",
+     "P10.1d#8"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 76,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 76,
+  "requiredGate": "C2",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P10.1e",
+  "phaseId": "P10",
+  "parentId": "P10.1",
+  "title": "ML connections",
+  "label": "Linear Algebra › ML connections",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "conceptIds": [
+   "P10.1e#1",
+   "P10.1e#2",
+   "P10.1e#3",
+   "P10.1e#4",
+   "P10.1e#5",
+   "P10.1e#6",
+   "P10.1e#7",
+   "P10.1e#8",
+   "P10.1e#9",
+   "P10.1e#10"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "You should know why linear algebra appears in:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P10.1e#1",
+     "P10.1e#2",
+     "P10.1e#3",
+     "P10.1e#4",
+     "P10.1e#5",
+     "P10.1e#6",
+     "P10.1e#7"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "**Required practice**\n\nDo numerical work by hand and with Python/NumPy.\n\nImplement:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P10.1e#8",
+     "P10.1e#9",
+     "P10.1e#10"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 76,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 76,
+  "requiredGate": "C2",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P10.2",
+  "phaseId": "P10",
+  "parentId": null,
+  "title": "Calculus",
+  "label": "Calculus",
+  "meta": "🔴 D3–D4",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🔴 D3–D4"
+  },
+  "conceptIds": [
+   "P10.2#1",
+   "P10.2#2",
+   "P10.2#3",
+   "P10.2#4",
+   "P10.2#5",
+   "P10.2#6",
+   "P10.2#7",
+   "P10.2#8",
+   "P10.2#9",
+   "P10.2#10",
+   "P10.2#11",
+   "P10.2#12",
+   "P10.2#13",
+   "P10.2#14",
+   "P10.2#15",
+   "P10.2#16",
+   "P10.2#17",
+   "P10.2#18"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P10.2#1",
+     "P10.2#2",
+     "P10.2#3",
+     "P10.2#4",
+     "P10.2#5",
+     "P10.2#6",
+     "P10.2#7",
+     "P10.2#8",
+     "P10.2#9",
+     "P10.2#10",
+     "P10.2#11",
+     "P10.2#12",
+     "P10.2#13"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Connect directly to:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P10.2#14",
+     "P10.2#15",
+     "P10.2#16",
+     "P10.2#17",
+     "P10.2#18"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "You should be able to derive simple gradients rather than only recognise them."
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 82,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 82,
+  "requiredGate": "C2",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P10.3",
+  "phaseId": "P10",
+  "parentId": null,
+  "title": "Probability",
+  "label": "Probability",
+  "meta": "🔴 D3–D4",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🔴 D3–D4"
+  },
+  "conceptIds": [
+   "P10.3#1",
+   "P10.3#2",
+   "P10.3#3",
+   "P10.3#4",
+   "P10.3#5",
+   "P10.3#6",
+   "P10.3#7",
+   "P10.3#8",
+   "P10.3#9",
+   "P10.3#10",
+   "P10.3#11",
+   "P10.3#12",
+   "P10.3#13",
+   "P10.3#14",
+   "P10.3#15",
+   "P10.3#16",
+   "P10.3#17",
+   "P10.3#18",
+   "P10.3#19",
+   "P10.3#20"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P10.3#1",
+     "P10.3#2",
+     "P10.3#3",
+     "P10.3#4",
+     "P10.3#5",
+     "P10.3#6",
+     "P10.3#7",
+     "P10.3#8",
+     "P10.3#9",
+     "P10.3#10",
+     "P10.3#11",
+     "P10.3#12",
+     "P10.3#13",
+     "P10.3#14",
+     "P10.3#15",
+     "P10.3#16"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Then:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P10.3#17",
+     "P10.3#18",
+     "P10.3#19",
+     "P10.3#20"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 22,
+    "lane": "primary",
+    "conceptIds": [
+     "P10.3#1",
+     "P10.3#2",
+     "P10.3#3",
+     "P10.3#4",
+     "P10.3#5",
+     "P10.3#6",
+     "P10.3#7",
+     "P10.3#8",
+     "P10.3#9"
+    ]
+   },
+   {
+    "cw": 23,
+    "lane": "primary",
+    "conceptIds": [
+     "P10.3#10",
+     "P10.3#11",
+     "P10.3#12",
+     "P10.3#13",
+     "P10.3#14",
+     "P10.3#15",
+     "P10.3#16"
+    ]
+   },
+   {
+    "cw": 74,
+    "lane": "primary",
+    "conceptIds": [
+     "P10.3#17",
+     "P10.3#18",
+     "P10.3#19",
+     "P10.3#20"
+    ]
+   }
+  ],
+  "firstWeek": 22,
+  "requiredGate": "SG2",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P10.4",
+  "phaseId": "P10",
+  "parentId": null,
+  "title": "Statistics",
+  "label": "Statistics",
+  "meta": "🔴 D4",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "conceptIds": [
+   "P10.4#1",
+   "P10.4#2",
+   "P10.4#3",
+   "P10.4#4",
+   "P10.4#5",
+   "P10.4#6",
+   "P10.4#7",
+   "P10.4#8",
+   "P10.4#9",
+   "P10.4#10",
+   "P10.4#11",
+   "P10.4#12",
+   "P10.4#13",
+   "P10.4#14",
+   "P10.4#15",
+   "P10.4#16"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P10.4#1",
+     "P10.4#2",
+     "P10.4#3",
+     "P10.4#4",
+     "P10.4#5",
+     "P10.4#6",
+     "P10.4#7",
+     "P10.4#8",
+     "P10.4#9",
+     "P10.4#10",
+     "P10.4#11",
+     "P10.4#12",
+     "P10.4#13",
+     "P10.4#14",
+     "P10.4#15",
+     "P10.4#16"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Important mindset:\n\n> Statistics is not merely calculating summaries; it is reasoning under uncertainty."
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 24,
+    "lane": "primary",
+    "conceptIds": [
+     "P10.4#1",
+     "P10.4#2",
+     "P10.4#3",
+     "P10.4#4",
+     "P10.4#5",
+     "P10.4#6"
+    ]
+   },
+   {
+    "cw": 25,
+    "lane": "primary",
+    "conceptIds": [
+     "P10.4#7",
+     "P10.4#8",
+     "P10.4#9",
+     "P10.4#10",
+     "P10.4#11"
+    ]
+   },
+   {
+    "cw": 73,
+    "lane": "primary",
+    "conceptIds": [
+     "P10.4#12",
+     "P10.4#13"
+    ]
+   },
+   {
+    "cw": 81,
+    "lane": "primary",
+    "conceptIds": [
+     "P10.4#14",
+     "P10.4#15",
+     "P10.4#16"
+    ]
+   }
+  ],
+  "firstWeek": 24,
+  "requiredGate": "SG2",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P10.5",
+  "phaseId": "P10",
+  "parentId": null,
+  "title": "Optimisation",
+  "label": "Optimisation",
+  "meta": "🟠 D3–D4",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🟠 D3–D4"
+  },
+  "conceptIds": [
+   "P10.5#1",
+   "P10.5#2",
+   "P10.5#3",
+   "P10.5#4",
+   "P10.5#5",
+   "P10.5#6",
+   "P10.5#7",
+   "P10.5#8",
+   "P10.5#9",
+   "P10.5#10",
+   "P10.5#11",
+   "P10.5#12"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P10.5#1",
+     "P10.5#2",
+     "P10.5#3",
+     "P10.5#4",
+     "P10.5#5",
+     "P10.5#6",
+     "P10.5#7",
+     "P10.5#8",
+     "P10.5#9",
+     "P10.5#10",
+     "P10.5#11",
+     "P10.5#12"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Connect this to model training."
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 83,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 83,
+  "requiredGate": "C2",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P11.1",
+  "phaseId": "P11",
+  "parentId": null,
+  "title": "Core stack",
+  "label": "Core stack",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🔴 D3–D4"
+  },
+  "conceptIds": [
+   "P11.1#1",
+   "P11.1#2",
+   "P11.1#3",
+   "P11.1#4",
+   "P11.1#5"
+  ],
+  "blocks": [
+   {
+    "t": "concepts",
+    "ids": [
+     "P11.1#1",
+     "P11.1#2",
+     "P11.1#3",
+     "P11.1#4",
+     "P11.1#5"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 29,
+    "lane": "primary",
+    "conceptIds": null
+   },
+   {
+    "cw": 30,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 29,
+  "requiredGate": "SG2",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P11.2",
+  "phaseId": "P11",
+  "parentId": null,
+  "title": "Data workflow",
+  "label": "Data workflow",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🔴 D3–D4"
+  },
+  "conceptIds": [],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "```text\nQuestion\n→ data acquisition\n→ inspection\n→ validation\n→ cleaning\n→ exploration\n→ hypothesis formation\n→ analysis\n→ modelling if appropriate\n→ evaluation\n→ communication\n```"
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 31,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 31,
+  "requiredGate": "SG2",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P11.3",
+  "phaseId": "P11",
+  "parentId": null,
+  "title": "Data-quality reasoning",
+  "label": "Data-quality reasoning",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🔴 D3–D4"
+  },
+  "conceptIds": [
+   "P11.3#1",
+   "P11.3#2",
+   "P11.3#3",
+   "P11.3#4",
+   "P11.3#5",
+   "P11.3#6",
+   "P11.3#7",
+   "P11.3#8",
+   "P11.3#9",
+   "P11.3#10",
+   "P11.3#11",
+   "P11.3#12"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Inspect:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P11.3#1",
+     "P11.3#2",
+     "P11.3#3",
+     "P11.3#4",
+     "P11.3#5",
+     "P11.3#6",
+     "P11.3#7",
+     "P11.3#8",
+     "P11.3#9",
+     "P11.3#10",
+     "P11.3#11",
+     "P11.3#12"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 31,
+    "lane": "primary",
+    "conceptIds": [
+     "P11.3#1",
+     "P11.3#2",
+     "P11.3#3",
+     "P11.3#4",
+     "P11.3#5",
+     "P11.3#6"
+    ]
+   },
+   {
+    "cw": 32,
+    "lane": "primary",
+    "conceptIds": [
+     "P11.3#7",
+     "P11.3#8",
+     "P11.3#9",
+     "P11.3#10",
+     "P11.3#11",
+     "P11.3#12"
+    ]
+   }
+  ],
+  "firstWeek": 31,
+  "requiredGate": "SG2",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P11.4",
+  "phaseId": "P11",
+  "parentId": null,
+  "title": "Data projects",
+  "label": "Data projects",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🔴 D3–D4"
+  },
+  "conceptIds": [
+   "P11.4#1",
+   "P11.4#2",
+   "P11.4#3",
+   "P11.4#4",
+   "P11.4#5",
+   "P11.4#6"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Build:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P11.4#1",
+     "P11.4#2",
+     "P11.4#3",
+     "P11.4#4",
+     "P11.4#5",
+     "P11.4#6"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 67,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 67,
+  "requiredGate": "C2",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P11.5",
+  "phaseId": "P11",
+  "parentId": null,
+  "title": "Communication",
+  "label": "Communication",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🔴 D3–D4"
+  },
+  "conceptIds": [
+   "P11.5#1",
+   "P11.5#2",
+   "P11.5#3",
+   "P11.5#4",
+   "P11.5#5"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn to communicate:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P11.5#1",
+     "P11.5#2",
+     "P11.5#3",
+     "P11.5#4",
+     "P11.5#5"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Do not turn every analysis into a dashboard when a clear written finding is more appropriate."
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 67,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 67,
+  "requiredGate": "C2",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P12.0",
+  "phaseId": "P12",
+  "parentId": null,
+  "title": "Core scope",
+  "label": "Data Engineering Foundation (core scope)",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 2,
+   "max": 3,
+   "raw": "🟡–🟠 D2–D3"
+  },
+  "conceptIds": [
+   "P12.0#1",
+   "P12.0#2",
+   "P12.0#3",
+   "P12.0#4",
+   "P12.0#5",
+   "P12.0#6",
+   "P12.0#7",
+   "P12.0#8",
+   "P12.0#9",
+   "P12.0#10",
+   "P12.0#11",
+   "P12.0#12",
+   "P12.0#13",
+   "P12.0#14",
+   "P12.0#15",
+   "P12.0#16"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "The purpose is to understand how data moves through real systems.\n\nLearn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P12.0#1",
+     "P12.0#2",
+     "P12.0#3",
+     "P12.0#4",
+     "P12.0#5",
+     "P12.0#6",
+     "P12.0#7",
+     "P12.0#8",
+     "P12.0#9",
+     "P12.0#10",
+     "P12.0#11",
+     "P12.0#12",
+     "P12.0#13"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Later technologies:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P12.0#14",
+     "P12.0#15",
+     "P12.0#16"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Learn each as a response to a real scaling or workflow problem."
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 68,
+    "lane": "primary",
+    "conceptIds": [
+     "P12.0#1",
+     "P12.0#2",
+     "P12.0#3",
+     "P12.0#4",
+     "P12.0#5",
+     "P12.0#6",
+     "P12.0#7",
+     "P12.0#8",
+     "P12.0#9",
+     "P12.0#10",
+     "P12.0#11",
+     "P12.0#12",
+     "P12.0#13"
+    ]
+   }
+  ],
+  "firstWeek": 68,
+  "requiredGate": "C2",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P12.1",
+  "phaseId": "P12",
+  "parentId": null,
+  "title": "Data engineering project",
+  "label": "Data engineering project",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 2,
+   "max": 3,
+   "raw": "🟡–🟠 D2–D3"
+  },
+  "conceptIds": [],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Build:\n\n```text\nRaw source\n→ ingestion\n→ validation\n→ transformation\n→ PostgreSQL\n→ analytical query\n→ report\n```\n\nThen add a second version with batch scheduling and logging."
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 69,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 69,
+  "requiredGate": "C2",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P13.1",
+  "phaseId": "P13",
+  "parentId": null,
+  "title": "Problem formulation",
+  "label": "Problem formulation",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "conceptIds": [
+   "P13.1#1",
+   "P13.1#2",
+   "P13.1#3",
+   "P13.1#4",
+   "P13.1#5",
+   "P13.1#6",
+   "P13.1#7"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Before model selection ask:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P13.1#1",
+     "P13.1#2",
+     "P13.1#3",
+     "P13.1#4",
+     "P13.1#5",
+     "P13.1#6",
+     "P13.1#7"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 72,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 72,
+  "requiredGate": "C2",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P13.2",
+  "phaseId": "P13",
+  "parentId": null,
+  "title": "Regression",
+  "label": "Regression",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "conceptIds": [
+   "P13.2#1",
+   "P13.2#2",
+   "P13.2#3",
+   "P13.2#4",
+   "P13.2#5",
+   "P13.2#6",
+   "P13.2#7",
+   "P13.2#8",
+   "P13.2#9",
+   "P13.2#10"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P13.2#1",
+     "P13.2#2",
+     "P13.2#3",
+     "P13.2#4",
+     "P13.2#5"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Understand:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P13.2#6",
+     "P13.2#7",
+     "P13.2#8",
+     "P13.2#9",
+     "P13.2#10"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 73,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 73,
+  "requiredGate": "C2",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P13.3",
+  "phaseId": "P13",
+  "parentId": null,
+  "title": "Classification",
+  "label": "Classification",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "conceptIds": [
+   "P13.3#1",
+   "P13.3#2",
+   "P13.3#3",
+   "P13.3#4",
+   "P13.3#5",
+   "P13.3#6",
+   "P13.3#7"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P13.3#1",
+     "P13.3#2",
+     "P13.3#3",
+     "P13.3#4",
+     "P13.3#5",
+     "P13.3#6",
+     "P13.3#7"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 74,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 74,
+  "requiredGate": "C2",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P13.4",
+  "phaseId": "P13",
+  "parentId": null,
+  "title": "Boosting",
+  "label": "Boosting",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "conceptIds": [
+   "P13.4#1",
+   "P13.4#2",
+   "P13.4#3",
+   "P13.4#4",
+   "P13.4#5",
+   "P13.4#6"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Understand:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P13.4#1",
+     "P13.4#2",
+     "P13.4#3",
+     "P13.4#4",
+     "P13.4#5",
+     "P13.4#6"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Use mature implementations professionally after understanding the concepts."
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 75,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 75,
+  "requiredGate": "C2",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P13.5",
+  "phaseId": "P13",
+  "parentId": null,
+  "title": "Unsupervised learning",
+  "label": "Unsupervised learning",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "conceptIds": [
+   "P13.5#1",
+   "P13.5#2",
+   "P13.5#3",
+   "P13.5#4",
+   "P13.5#5",
+   "P13.5#6"
+  ],
+  "blocks": [
+   {
+    "t": "concepts",
+    "ids": [
+     "P13.5#1",
+     "P13.5#2",
+     "P13.5#3",
+     "P13.5#4",
+     "P13.5#5",
+     "P13.5#6"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Understand assumptions and failure modes."
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 77,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 77,
+  "requiredGate": "C2",
+  "onDemand": null,
+  "predecessors": [
+   {
+    "from": "P10.1d",
+    "to": "P13.5",
+    "reason": "PCA in unsupervised learning needs eigen/SVD"
+   }
+  ],
+  "masteryStatements": []
+ },
+ {
+  "id": "P14.0",
+  "phaseId": "P14",
+  "parentId": null,
+  "title": "Core scope",
+  "label": "Machine Learning Theory (core scope)",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "conceptIds": [
+   "P14.0#1",
+   "P14.0#2",
+   "P14.0#3",
+   "P14.0#4",
+   "P14.0#5",
+   "P14.0#6",
+   "P14.0#7",
+   "P14.0#8",
+   "P14.0#9",
+   "P14.0#10",
+   "P14.0#11",
+   "P14.0#12",
+   "P14.0#13"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P14.0#1",
+     "P14.0#2",
+     "P14.0#3",
+     "P14.0#4",
+     "P14.0#5",
+     "P14.0#6",
+     "P14.0#7",
+     "P14.0#8",
+     "P14.0#9",
+     "P14.0#10",
+     "P14.0#11",
+     "P14.0#12",
+     "P14.0#13"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 78,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 78,
+  "requiredGate": "C2",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P14.1",
+  "phaseId": "P14",
+  "parentId": null,
+  "title": "Feature engineering",
+  "label": "Feature engineering",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "conceptIds": [
+   "P14.1#1",
+   "P14.1#2",
+   "P14.1#3",
+   "P14.1#4",
+   "P14.1#5",
+   "P14.1#6",
+   "P14.1#7",
+   "P14.1#8"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P14.1#1",
+     "P14.1#2",
+     "P14.1#3",
+     "P14.1#4",
+     "P14.1#5",
+     "P14.1#6",
+     "P14.1#7",
+     "P14.1#8"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 79,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 79,
+  "requiredGate": "C2",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P14.2",
+  "phaseId": "P14",
+  "parentId": null,
+  "title": "Leakage",
+  "label": "Leakage",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "conceptIds": [
+   "P14.2#1",
+   "P14.2#2",
+   "P14.2#3",
+   "P14.2#4",
+   "P14.2#5"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Be able to distinguish:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P14.2#1",
+     "P14.2#2",
+     "P14.2#3",
+     "P14.2#4",
+     "P14.2#5"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 79,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 79,
+  "requiredGate": "C2",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P14.3",
+  "phaseId": "P14",
+  "parentId": null,
+  "title": "Baselines",
+  "label": "Baselines",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "conceptIds": [
+   "P14.3#1",
+   "P14.3#2",
+   "P14.3#3",
+   "P14.3#4"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Every ML project should have a baseline.\n\nExamples:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P14.3#1",
+     "P14.3#2",
+     "P14.3#3",
+     "P14.3#4"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Do not jump directly to the fanciest model."
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 72,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 72,
+  "requiredGate": "C2",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P15.1",
+  "phaseId": "P15",
+  "parentId": null,
+  "title": "Classification metrics",
+  "label": "Classification metrics",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "conceptIds": [
+   "P15.1#1",
+   "P15.1#2",
+   "P15.1#3",
+   "P15.1#4",
+   "P15.1#5",
+   "P15.1#6",
+   "P15.1#7",
+   "P15.1#8",
+   "P15.1#9",
+   "P15.1#10"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Understand:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P15.1#1",
+     "P15.1#2",
+     "P15.1#3",
+     "P15.1#4",
+     "P15.1#5",
+     "P15.1#6",
+     "P15.1#7",
+     "P15.1#8",
+     "P15.1#9",
+     "P15.1#10"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 80,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 80,
+  "requiredGate": "C2",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P15.2",
+  "phaseId": "P15",
+  "parentId": null,
+  "title": "Regression metrics",
+  "label": "Regression metrics",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "conceptIds": [
+   "P15.2#1",
+   "P15.2#2",
+   "P15.2#3",
+   "P15.2#4",
+   "P15.2#5"
+  ],
+  "blocks": [
+   {
+    "t": "concepts",
+    "ids": [
+     "P15.2#1",
+     "P15.2#2",
+     "P15.2#3",
+     "P15.2#4",
+     "P15.2#5"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 80,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 80,
+  "requiredGate": "C2",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P15.3",
+  "phaseId": "P15",
+  "parentId": null,
+  "title": "Evaluation design",
+  "label": "Evaluation design",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "conceptIds": [
+   "P15.3#1",
+   "P15.3#2",
+   "P15.3#3",
+   "P15.3#4",
+   "P15.3#5",
+   "P15.3#6",
+   "P15.3#7"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P15.3#1",
+     "P15.3#2",
+     "P15.3#3",
+     "P15.3#4",
+     "P15.3#5",
+     "P15.3#6",
+     "P15.3#7"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 81,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 81,
+  "requiredGate": "C2",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P15.4",
+  "phaseId": "P15",
+  "parentId": null,
+  "title": "Metric selection",
+  "label": "Metric selection",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "conceptIds": [],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Always ask:\n\n> What type of error matters operationally?\n\nNot merely:\n\n> Which metric gives the biggest number?"
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 81,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 81,
+  "requiredGate": "C2",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P16.0",
+  "phaseId": "P16",
+  "parentId": null,
+  "title": "Core scope",
+  "label": "From-Scratch ML Implementation (core scope)",
+  "meta": "",
+  "kind": "concepts",
+  "depth": null,
+  "conceptIds": [
+   "P16.0#1",
+   "P16.0#2",
+   "P16.0#3",
+   "P16.0#4",
+   "P16.0#5",
+   "P16.0#6",
+   "P16.0#7",
+   "P16.0#8",
+   "P16.0#9",
+   "P16.0#10",
+   "P16.0#11",
+   "P16.0#12",
+   "P16.0#13",
+   "P16.0#14"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Implement selected algorithms with NumPy before relying entirely on libraries.\n\nRequired candidates:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P16.0#1",
+     "P16.0#2",
+     "P16.0#3",
+     "P16.0#4",
+     "P16.0#5",
+     "P16.0#6",
+     "P16.0#7",
+     "P16.0#8"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "For every implementation document:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P16.0#9",
+     "P16.0#10",
+     "P16.0#11",
+     "P16.0#12",
+     "P16.0#13",
+     "P16.0#14"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Then transition to scikit-learn for robust workflows."
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 84,
+    "lane": "primary",
+    "conceptIds": [
+     "P16.0#1",
+     "P16.0#2",
+     "P16.0#3",
+     "P16.0#9",
+     "P16.0#10",
+     "P16.0#11",
+     "P16.0#12",
+     "P16.0#13",
+     "P16.0#14"
+    ]
+   },
+   {
+    "cw": 85,
+    "lane": "primary",
+    "conceptIds": [
+     "P16.0#4",
+     "P16.0#5",
+     "P16.0#6",
+     "P16.0#9",
+     "P16.0#10",
+     "P16.0#11",
+     "P16.0#12",
+     "P16.0#13",
+     "P16.0#14"
+    ]
+   },
+   {
+    "cw": 103,
+    "lane": "primary",
+    "conceptIds": [
+     "P16.0#7",
+     "P16.0#8"
+    ]
+   }
+  ],
+  "firstWeek": 84,
+  "requiredGate": "C2",
+  "onDemand": null,
+  "predecessors": [
+   {
+    "from": "P10.2",
+    "to": "P16.0",
+    "reason": "gradient descent (P16 item 2) needs calculus"
+   },
+   {
+    "from": "P10.5",
+    "to": "P16.0",
+    "reason": "from-scratch optimisation needs optimisation basics"
+   },
+   {
+    "from": "P19.1",
+    "to": "P16.0#7",
+    "reason": "simple neural network and backprop items belong with deep learning"
+   }
+  ],
+  "masteryStatements": []
+ },
+ {
+  "id": "P17.0",
+  "phaseId": "P17",
+  "parentId": null,
+  "title": "Core scope",
+  "label": "Time Series (core scope)",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 2,
+   "max": 3,
+   "raw": "🟠 D2–D3"
+  },
+  "conceptIds": [
+   "P17.0#1",
+   "P17.0#2",
+   "P17.0#3",
+   "P17.0#4",
+   "P17.0#5",
+   "P17.0#6",
+   "P17.0#7",
+   "P17.0#8",
+   "P17.0#9",
+   "P17.0#10",
+   "P17.0#11",
+   "P17.0#12",
+   "P17.0#13",
+   "P17.0#14",
+   "P17.0#15"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Useful for Data Science, finance, operations, forecasting, and many production settings.\n\nLearn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P17.0#1",
+     "P17.0#2",
+     "P17.0#3",
+     "P17.0#4",
+     "P17.0#5",
+     "P17.0#6",
+     "P17.0#7",
+     "P17.0#8",
+     "P17.0#9",
+     "P17.0#10"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Later:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P17.0#11",
+     "P17.0#12",
+     "P17.0#13",
+     "P17.0#14",
+     "P17.0#15"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Critical rule:\n\nNever randomly split a genuinely temporal dataset in a way that leaks future information into the past."
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 86,
+    "lane": "primary",
+    "conceptIds": [
+     "P17.0#1",
+     "P17.0#2",
+     "P17.0#3",
+     "P17.0#4",
+     "P17.0#5",
+     "P17.0#6",
+     "P17.0#7",
+     "P17.0#8",
+     "P17.0#9",
+     "P17.0#10"
+    ]
+   },
+   {
+    "cw": 111,
+    "lane": "primary",
+    "conceptIds": [
+     "P17.0#11",
+     "P17.0#12",
+     "P17.0#13",
+     "P17.0#14",
+     "P17.0#15"
+    ]
+   }
+  ],
+  "firstWeek": 86,
+  "requiredGate": "C2",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P18.0",
+  "phaseId": "P18",
+  "parentId": null,
+  "title": "Core scope",
+  "label": "Recommender Systems (core scope)",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 3,
+   "raw": "🟠 D3"
+  },
+  "conceptIds": [
+   "P18.0#1",
+   "P18.0#2",
+   "P18.0#3",
+   "P18.0#4",
+   "P18.0#5",
+   "P18.0#6",
+   "P18.0#7",
+   "P18.0#8",
+   "P18.0#9",
+   "P18.0#10",
+   "P18.0#11",
+   "P18.0#12",
+   "P18.0#13"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "This is an important bridge between ML and systems.\n\nLearn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P18.0#1",
+     "P18.0#2",
+     "P18.0#3",
+     "P18.0#4",
+     "P18.0#5",
+     "P18.0#6",
+     "P18.0#7",
+     "P18.0#8",
+     "P18.0#9",
+     "P18.0#10",
+     "P18.0#11",
+     "P18.0#12",
+     "P18.0#13"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Architecture:\n\n```text\nUser activity\n→ event ingestion\n→ feature generation\n→ candidate generation\n→ ranking\n→ serving\n→ feedback\n```\n\nProject:\n\nBuild a recommendation system, then design how it would evolve from a local prototype into a production system."
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 127,
+    "lane": "primary",
+    "conceptIds": [
+     "P18.0#1",
+     "P18.0#2",
+     "P18.0#3",
+     "P18.0#4",
+     "P18.0#5",
+     "P18.0#6",
+     "P18.0#7"
+    ]
+   },
+   {
+    "cw": 128,
+    "lane": "primary",
+    "conceptIds": [
+     "P18.0#8",
+     "P18.0#9",
+     "P18.0#10",
+     "P18.0#11",
+     "P18.0#12",
+     "P18.0#13"
+    ]
+   }
+  ],
+  "firstWeek": 127,
+  "requiredGate": "SG6A",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P19.0",
+  "phaseId": "P19",
+  "parentId": null,
+  "title": "Core scope",
+  "label": "Deep Learning (core scope)",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "conceptIds": [],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Primary framework: PyTorch."
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 102,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 102,
+  "requiredGate": "SG5",
+  "onDemand": null,
+  "predecessors": [
+   {
+    "from": "P32.1",
+    "to": "P19.0",
+    "reason": "decision 5: Docker/CI/CD/Cloud before deep learning"
+   }
+  ],
+  "masteryStatements": []
+ },
+ {
+  "id": "P19.1",
+  "phaseId": "P19",
+  "parentId": null,
+  "title": "Neural-network foundations",
+  "label": "Neural-network foundations",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "conceptIds": [
+   "P19.1#1",
+   "P19.1#2",
+   "P19.1#3",
+   "P19.1#4",
+   "P19.1#5",
+   "P19.1#6",
+   "P19.1#7",
+   "P19.1#8"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P19.1#1",
+     "P19.1#2",
+     "P19.1#3",
+     "P19.1#4",
+     "P19.1#5",
+     "P19.1#6",
+     "P19.1#7",
+     "P19.1#8"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 102,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 102,
+  "requiredGate": "SG5",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P19.2",
+  "phaseId": "P19",
+  "parentId": null,
+  "title": "Activations",
+  "label": "Activations",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "conceptIds": [
+   "P19.2#1",
+   "P19.2#2",
+   "P19.2#3",
+   "P19.2#4",
+   "P19.2#5"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Understand:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P19.2#1",
+     "P19.2#2",
+     "P19.2#3",
+     "P19.2#4",
+     "P19.2#5"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Understand why activation functions affect optimisation and expressiveness."
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 103,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 103,
+  "requiredGate": "SG5",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P19.3",
+  "phaseId": "P19",
+  "parentId": null,
+  "title": "Training",
+  "label": "Training",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "conceptIds": [
+   "P19.3#1",
+   "P19.3#2",
+   "P19.3#3",
+   "P19.3#4",
+   "P19.3#5",
+   "P19.3#6",
+   "P19.3#7",
+   "P19.3#8",
+   "P19.3#9",
+   "P19.3#10",
+   "P19.3#11",
+   "P19.3#12"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P19.3#1",
+     "P19.3#2",
+     "P19.3#3",
+     "P19.3#4",
+     "P19.3#5",
+     "P19.3#6",
+     "P19.3#7",
+     "P19.3#8",
+     "P19.3#9",
+     "P19.3#10",
+     "P19.3#11",
+     "P19.3#12"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 104,
+    "lane": "primary",
+    "conceptIds": [
+     "P19.3#1",
+     "P19.3#2",
+     "P19.3#3",
+     "P19.3#4",
+     "P19.3#5",
+     "P19.3#6"
+    ]
+   },
+   {
+    "cw": 105,
+    "lane": "primary",
+    "conceptIds": [
+     "P19.3#7",
+     "P19.3#8",
+     "P19.3#9",
+     "P19.3#10",
+     "P19.3#11",
+     "P19.3#12"
+    ]
+   }
+  ],
+  "firstWeek": 104,
+  "requiredGate": "SG5",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P19.4",
+  "phaseId": "P19",
+  "parentId": null,
+  "title": "Failure modes",
+  "label": "Failure modes",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "conceptIds": [
+   "P19.4#1",
+   "P19.4#2",
+   "P19.4#3",
+   "P19.4#4",
+   "P19.4#5",
+   "P19.4#6",
+   "P19.4#7"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Understand:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P19.4#1",
+     "P19.4#2",
+     "P19.4#3",
+     "P19.4#4",
+     "P19.4#5",
+     "P19.4#6",
+     "P19.4#7"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 106,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 106,
+  "requiredGate": "SG5",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P19.5",
+  "phaseId": "P19",
+  "parentId": null,
+  "title": "Required builds",
+  "label": "Required builds",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "conceptIds": [
+   "P19.5#1",
+   "P19.5#2",
+   "P19.5#3",
+   "P19.5#4",
+   "P19.5#5"
+  ],
+  "blocks": [
+   {
+    "t": "concepts",
+    "ids": [
+     "P19.5#1",
+     "P19.5#2",
+     "P19.5#3",
+     "P19.5#4",
+     "P19.5#5"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 107,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 107,
+  "requiredGate": "SG5",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P20.0",
+  "phaseId": "P20",
+  "parentId": null,
+  "title": "Core scope",
+  "label": "Computer Vision (core scope)",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 2,
+   "max": 3,
+   "raw": "🟡–🟠 D2–D3"
+  },
+  "conceptIds": [
+   "P20.0#1",
+   "P20.0#2",
+   "P20.0#3",
+   "P20.0#4",
+   "P20.0#5",
+   "P20.0#6",
+   "P20.0#7",
+   "P20.0#8",
+   "P20.0#9",
+   "P20.0#10",
+   "P20.0#11",
+   "P20.0#12",
+   "P20.0#13",
+   "P20.0#14",
+   "P20.0#15",
+   "P20.0#16",
+   "P20.0#17",
+   "P20.0#18",
+   "P20.0#19",
+   "P20.0#20"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P20.0#1",
+     "P20.0#2",
+     "P20.0#3",
+     "P20.0#4",
+     "P20.0#5",
+     "P20.0#6",
+     "P20.0#7",
+     "P20.0#8",
+     "P20.0#9",
+     "P20.0#10",
+     "P20.0#11",
+     "P20.0#12"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Conceptual architecture progression:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P20.0#13",
+     "P20.0#14",
+     "P20.0#15",
+     "P20.0#16"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "The objective is historical and conceptual understanding, not architecture memorisation.\n\nProjects:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P20.0#17",
+     "P20.0#18",
+     "P20.0#19",
+     "P20.0#20"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 108,
+    "lane": "primary",
+    "conceptIds": [
+     "P20.0#1",
+     "P20.0#2",
+     "P20.0#3",
+     "P20.0#4",
+     "P20.0#5",
+     "P20.0#6",
+     "P20.0#7",
+     "P20.0#8",
+     "P20.0#9",
+     "P20.0#10",
+     "P20.0#11",
+     "P20.0#12"
+    ]
+   },
+   {
+    "cw": 109,
+    "lane": "primary",
+    "conceptIds": [
+     "P20.0#13",
+     "P20.0#14",
+     "P20.0#15",
+     "P20.0#16",
+     "P20.0#17",
+     "P20.0#18",
+     "P20.0#19",
+     "P20.0#20"
+    ]
+   }
+  ],
+  "firstWeek": 108,
+  "requiredGate": "SG5",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P21.0",
+  "phaseId": "P21",
+  "parentId": null,
+  "title": "Core scope",
+  "label": "Sequence Models and NLP (core scope)",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 3,
+   "raw": "🟠 D3"
+  },
+  "conceptIds": [
+   "P21.0#1",
+   "P21.0#2",
+   "P21.0#3",
+   "P21.0#4",
+   "P21.0#5",
+   "P21.0#6",
+   "P21.0#7",
+   "P21.0#8",
+   "P21.0#9",
+   "P21.0#10",
+   "P21.0#11"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P21.0#1",
+     "P21.0#2",
+     "P21.0#3",
+     "P21.0#4",
+     "P21.0#5",
+     "P21.0#6",
+     "P21.0#7",
+     "P21.0#8",
+     "P21.0#9",
+     "P21.0#10",
+     "P21.0#11"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Then move toward attention and Transformers."
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 110,
+    "lane": "primary",
+    "conceptIds": [
+     "P21.0#1",
+     "P21.0#2",
+     "P21.0#3",
+     "P21.0#4",
+     "P21.0#5",
+     "P21.0#6"
+    ]
+   },
+   {
+    "cw": 111,
+    "lane": "primary",
+    "conceptIds": [
+     "P21.0#7",
+     "P21.0#8",
+     "P21.0#9",
+     "P21.0#10",
+     "P21.0#11"
+    ]
+   }
+  ],
+  "firstWeek": 110,
+  "requiredGate": "SG5",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P22.0",
+  "phaseId": "P22",
+  "parentId": null,
+  "title": "Core scope",
+  "label": "Attention and Transformers (core scope)",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "conceptIds": [
+   "P22.0#1",
+   "P22.0#2",
+   "P22.0#3",
+   "P22.0#4",
+   "P22.0#5",
+   "P22.0#6",
+   "P22.0#7",
+   "P22.0#8",
+   "P22.0#9",
+   "P22.0#10",
+   "P22.0#11",
+   "P22.0#12",
+   "P22.0#13",
+   "P22.0#14",
+   "P22.0#15"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "This is a major conceptual milestone.\n\nLearn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P22.0#1",
+     "P22.0#2",
+     "P22.0#3",
+     "P22.0#4",
+     "P22.0#5",
+     "P22.0#6",
+     "P22.0#7",
+     "P22.0#8",
+     "P22.0#9",
+     "P22.0#10",
+     "P22.0#11",
+     "P22.0#12",
+     "P22.0#13",
+     "P22.0#14",
+     "P22.0#15"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 139,
+    "lane": "primary",
+    "conceptIds": [
+     "P22.0#1",
+     "P22.0#2",
+     "P22.0#3",
+     "P22.0#4",
+     "P22.0#5",
+     "P22.0#6",
+     "P22.0#7",
+     "P22.0#8"
+    ]
+   },
+   {
+    "cw": 140,
+    "lane": "primary",
+    "conceptIds": [
+     "P22.0#9",
+     "P22.0#10",
+     "P22.0#11",
+     "P22.0#12",
+     "P22.0#13",
+     "P22.0#14",
+     "P22.0#15"
+    ]
+   }
+  ],
+  "firstWeek": 139,
+  "requiredGate": "C5",
+  "onDemand": null,
+  "predecessors": [
+   {
+    "from": "P28.0",
+    "to": "P22.0",
+    "reason": "decision 5: ML engineering before Transformers"
+   },
+   {
+    "from": "P30.4",
+    "to": "P22.0",
+    "reason": "decision 5: MLOps before Transformers"
+   }
+  ],
+  "masteryStatements": [
+   "P22.1"
+  ]
+ },
+ {
+  "id": "P22.1",
+  "phaseId": "P22",
+  "parentId": null,
+  "title": "Required understanding",
+  "label": "Required understanding",
+  "meta": "",
+  "kind": "gate-text",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "conceptIds": [],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "You should be able to explain why attention works as a mechanism for selecting and combining information."
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 140,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 140,
+  "requiredGate": "C5",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P22.2",
+  "phaseId": "P22",
+  "parentId": null,
+  "title": "Required build",
+  "label": "Required build",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "conceptIds": [
+   "P22.2#1",
+   "P22.2#2",
+   "P22.2#3",
+   "P22.2#4",
+   "P22.2#5",
+   "P22.2#6",
+   "P22.2#7",
+   "P22.2#8",
+   "P22.2#9",
+   "P22.2#10"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Implement a small Transformer from scratch.\n\nSuggested progression:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P22.2#1",
+     "P22.2#2",
+     "P22.2#3",
+     "P22.2#4",
+     "P22.2#5",
+     "P22.2#6",
+     "P22.2#7",
+     "P22.2#8",
+     "P22.2#9",
+     "P22.2#10"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "The model can be tiny. The purpose is understanding."
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 141,
+    "lane": "primary",
+    "conceptIds": [
+     "P22.2#1",
+     "P22.2#2",
+     "P22.2#3",
+     "P22.2#4",
+     "P22.2#5"
+    ]
+   },
+   {
+    "cw": 142,
+    "lane": "primary",
+    "conceptIds": [
+     "P22.2#6",
+     "P22.2#7",
+     "P22.2#8",
+     "P22.2#9",
+     "P22.2#10"
+    ]
+   }
+  ],
+  "firstWeek": 141,
+  "requiredGate": "C5",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": [
+   "P22.1"
+  ]
+ },
+ {
+  "id": "P23.1",
+  "phaseId": "P23",
+  "parentId": null,
+  "title": "Tokenisation",
+  "label": "Tokenisation",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🔴 D3–D4"
+  },
+  "conceptIds": [
+   "P23.1#1",
+   "P23.1#2",
+   "P23.1#3",
+   "P23.1#4",
+   "P23.1#5",
+   "P23.1#6",
+   "P23.1#7",
+   "P23.1#8"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P23.1#1",
+     "P23.1#2",
+     "P23.1#3",
+     "P23.1#4",
+     "P23.1#5",
+     "P23.1#6",
+     "P23.1#7",
+     "P23.1#8"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 143,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 143,
+  "requiredGate": "C5",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P23.2",
+  "phaseId": "P23",
+  "parentId": null,
+  "title": "Embeddings",
+  "label": "Embeddings",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🔴 D3–D4"
+  },
+  "conceptIds": [
+   "P23.2#1",
+   "P23.2#2",
+   "P23.2#3",
+   "P23.2#4",
+   "P23.2#5"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P23.2#1",
+     "P23.2#2",
+     "P23.2#3",
+     "P23.2#4",
+     "P23.2#5"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 143,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 143,
+  "requiredGate": "C5",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P23.3",
+  "phaseId": "P23",
+  "parentId": null,
+  "title": "Model lifecycle",
+  "label": "Model lifecycle",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🔴 D3–D4"
+  },
+  "conceptIds": [
+   "P23.3#1",
+   "P23.3#2",
+   "P23.3#3",
+   "P23.3#4",
+   "P23.3#5",
+   "P23.3#6",
+   "P23.3#7"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Understand:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P23.3#1",
+     "P23.3#2",
+     "P23.3#3",
+     "P23.3#4",
+     "P23.3#5",
+     "P23.3#6",
+     "P23.3#7"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 144,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 144,
+  "requiredGate": "C5",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P23.4",
+  "phaseId": "P23",
+  "parentId": null,
+  "title": "Fine-tuning",
+  "label": "Fine-tuning",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🔴 D3–D4"
+  },
+  "conceptIds": [
+   "P23.4#1",
+   "P23.4#2",
+   "P23.4#3",
+   "P23.4#4",
+   "P23.4#5",
+   "P23.4#6",
+   "P23.4#7"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P23.4#1",
+     "P23.4#2",
+     "P23.4#3",
+     "P23.4#4",
+     "P23.4#5",
+     "P23.4#6",
+     "P23.4#7"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 145,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 145,
+  "requiredGate": "C5",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P23.5",
+  "phaseId": "P23",
+  "parentId": null,
+  "title": "Inference",
+  "label": "Inference",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🔴 D3–D4"
+  },
+  "conceptIds": [
+   "P23.5#1",
+   "P23.5#2",
+   "P23.5#3",
+   "P23.5#4",
+   "P23.5#5",
+   "P23.5#6",
+   "P23.5#7",
+   "P23.5#8"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P23.5#1",
+     "P23.5#2",
+     "P23.5#3",
+     "P23.5#4",
+     "P23.5#5",
+     "P23.5#6",
+     "P23.5#7",
+     "P23.5#8"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 146,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 146,
+  "requiredGate": "C5",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P23.6",
+  "phaseId": "P23",
+  "parentId": null,
+  "title": "Tooling",
+  "label": "Tooling",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🔴 D3–D4"
+  },
+  "conceptIds": [],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Use the Hugging Face ecosystem as a core reference point.\n\nReference:\nhttps://huggingface.co/docs/transformers\n\nDo not become a wrapper-only LLM developer."
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 146,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 146,
+  "requiredGate": "C5",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P24.0",
+  "phaseId": "P24",
+  "parentId": null,
+  "title": "Core scope",
+  "label": "Retrieval-Augmented Generation (core scope)",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 3,
+   "raw": "🔴 D3"
+  },
+  "conceptIds": [
+   "P24.0#1",
+   "P24.0#2",
+   "P24.0#3",
+   "P24.0#4",
+   "P24.0#5",
+   "P24.0#6",
+   "P24.0#7",
+   "P24.0#8",
+   "P24.0#9",
+   "P24.0#10",
+   "P24.0#11",
+   "P24.0#12",
+   "P24.0#13",
+   "P24.0#14",
+   "P24.0#15"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Understand RAG as an information-retrieval system plus a generation system.\n\n```text\nDocuments\n→ parsing\n→ cleaning\n→ chunking\n→ metadata\n→ embedding/indexing\n→ query\n→ retrieval\n→ filtering\n→ reranking\n→ context assembly\n→ LLM\n→ answer\n→ evaluation\n```\n\nLearn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P24.0#1",
+     "P24.0#2",
+     "P24.0#3",
+     "P24.0#4",
+     "P24.0#5",
+     "P24.0#6",
+     "P24.0#7",
+     "P24.0#8",
+     "P24.0#9",
+     "P24.0#10",
+     "P24.0#11",
+     "P24.0#12",
+     "P24.0#13",
+     "P24.0#14",
+     "P24.0#15"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 147,
+    "lane": "primary",
+    "conceptIds": [
+     "P24.0#1",
+     "P24.0#2",
+     "P24.0#3",
+     "P24.0#4",
+     "P24.0#5",
+     "P24.0#6",
+     "P24.0#7",
+     "P24.0#8"
+    ]
+   },
+   {
+    "cw": 148,
+    "lane": "primary",
+    "conceptIds": [
+     "P24.0#9",
+     "P24.0#10",
+     "P24.0#11",
+     "P24.0#12",
+     "P24.0#13",
+     "P24.0#14",
+     "P24.0#15"
+    ]
+   }
+  ],
+  "firstWeek": 147,
+  "requiredGate": "C5",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P24.1",
+  "phaseId": "P24",
+  "parentId": null,
+  "title": "Failure modes",
+  "label": "Failure modes",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 3,
+   "raw": "🔴 D3"
+  },
+  "conceptIds": [
+   "P24.1#1",
+   "P24.1#2",
+   "P24.1#3",
+   "P24.1#4",
+   "P24.1#5",
+   "P24.1#6",
+   "P24.1#7",
+   "P24.1#8",
+   "P24.1#9"
+  ],
+  "blocks": [
+   {
+    "t": "concepts",
+    "ids": [
+     "P24.1#1",
+     "P24.1#2",
+     "P24.1#3",
+     "P24.1#4",
+     "P24.1#5",
+     "P24.1#6",
+     "P24.1#7",
+     "P24.1#8",
+     "P24.1#9"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 149,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 149,
+  "requiredGate": "C5",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P24.2",
+  "phaseId": "P24",
+  "parentId": null,
+  "title": "Required project",
+  "label": "Required project",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 3,
+   "raw": "🔴 D3"
+  },
+  "conceptIds": [
+   "P24.2#1",
+   "P24.2#2",
+   "P24.2#3",
+   "P24.2#4",
+   "P24.2#5",
+   "P24.2#6",
+   "P24.2#7",
+   "P24.2#8",
+   "P24.2#9"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Build a production-style document research system with:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P24.2#1",
+     "P24.2#2",
+     "P24.2#3",
+     "P24.2#4",
+     "P24.2#5",
+     "P24.2#6",
+     "P24.2#7",
+     "P24.2#8",
+     "P24.2#9"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 156,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 156,
+  "requiredGate": "C5",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P25.0",
+  "phaseId": "P25",
+  "parentId": null,
+  "title": "Core scope",
+  "label": "AI Agents (core scope)",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 2,
+   "max": 3,
+   "raw": "🟠 D2–D3"
+  },
+  "conceptIds": [
+   "P25.0#1",
+   "P25.0#2",
+   "P25.0#3",
+   "P25.0#4",
+   "P25.0#5",
+   "P25.0#6",
+   "P25.0#7",
+   "P25.0#8",
+   "P25.0#9",
+   "P25.0#10",
+   "P25.0#11",
+   "P25.0#12",
+   "P25.0#13"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn the spectrum:\n\n```text\nDeterministic function\n→ tool call\n→ workflow\n→ stateful workflow\n→ planning\n→ agent\n→ multi-step agent\n→ multi-agent system\n```\n\nLearn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P25.0#1",
+     "P25.0#2",
+     "P25.0#3",
+     "P25.0#4",
+     "P25.0#5",
+     "P25.0#6",
+     "P25.0#7",
+     "P25.0#8",
+     "P25.0#9",
+     "P25.0#10",
+     "P25.0#11",
+     "P25.0#12",
+     "P25.0#13"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Critical principle:\n\n> An agent is not automatically better than a deterministic workflow.\n\nUse agents when the problem benefits from flexible decision-making.\n\nAvoid creating agent complexity where a normal program is clearer and more reliable."
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 152,
+    "lane": "primary",
+    "conceptIds": [
+     "P25.0#1",
+     "P25.0#2",
+     "P25.0#3",
+     "P25.0#4",
+     "P25.0#5",
+     "P25.0#6",
+     "P25.0#7"
+    ]
+   },
+   {
+    "cw": 153,
+    "lane": "primary",
+    "conceptIds": [
+     "P25.0#8",
+     "P25.0#9",
+     "P25.0#10",
+     "P25.0#11",
+     "P25.0#12",
+     "P25.0#13"
+    ]
+   }
+  ],
+  "firstWeek": 152,
+  "requiredGate": "C5",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P26.0",
+  "phaseId": "P26",
+  "parentId": null,
+  "title": "Core scope",
+  "label": "Multimodal AI (core scope)",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 2,
+   "max": 3,
+   "raw": "🟡–🟠 D2–D3"
+  },
+  "conceptIds": [
+   "P26.0#1",
+   "P26.0#2",
+   "P26.0#3",
+   "P26.0#4",
+   "P26.0#5",
+   "P26.0#6",
+   "P26.0#7",
+   "P26.0#8",
+   "P26.0#9",
+   "P26.0#10"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn conceptually:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P26.0#1",
+     "P26.0#2",
+     "P26.0#3",
+     "P26.0#4",
+     "P26.0#5",
+     "P26.0#6",
+     "P26.0#7"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Potential projects:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P26.0#8",
+     "P26.0#9",
+     "P26.0#10"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Do not specialise here unless your later path points this way."
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 175,
+    "lane": "primary",
+    "conceptIds": [
+     "P26.0#1",
+     "P26.0#2",
+     "P26.0#3",
+     "P26.0#4",
+     "P26.0#5"
+    ]
+   },
+   {
+    "cw": 176,
+    "lane": "primary",
+    "conceptIds": [
+     "P26.0#6",
+     "P26.0#7",
+     "P26.0#8",
+     "P26.0#9",
+     "P26.0#10"
+    ]
+   }
+  ],
+  "firstWeek": 175,
+  "requiredGate": "C6",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P27.0",
+  "phaseId": "P27",
+  "parentId": null,
+  "title": "Core scope",
+  "label": "AI Evaluation (core scope)",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 3,
+   "raw": "🔴 D3"
+  },
+  "conceptIds": [
+   "P27.0#1",
+   "P27.0#2",
+   "P27.0#3",
+   "P27.0#4",
+   "P27.0#5",
+   "P27.0#6",
+   "P27.0#7",
+   "P27.0#8",
+   "P27.0#9",
+   "P27.0#10",
+   "P27.0#11"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "AI systems need tests.\n\nLearn to evaluate:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P27.0#1",
+     "P27.0#2",
+     "P27.0#3",
+     "P27.0#4",
+     "P27.0#5",
+     "P27.0#6",
+     "P27.0#7",
+     "P27.0#8",
+     "P27.0#9",
+     "P27.0#10",
+     "P27.0#11"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 150,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 150,
+  "requiredGate": "C5",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P27.1",
+  "phaseId": "P27",
+  "parentId": null,
+  "title": "Evaluation loop",
+  "label": "Evaluation loop",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 3,
+   "raw": "🔴 D3"
+  },
+  "conceptIds": [],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "```text\nDefine objective\n→ define metric\n→ build dataset\n→ establish baseline\n→ run system\n→ analyse failures\n→ improve\n→ regression test\n```"
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 150,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 150,
+  "requiredGate": "C5",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P27.2",
+  "phaseId": "P27",
+  "parentId": null,
+  "title": "Evaluation levels",
+  "label": "Evaluation levels",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 3,
+   "raw": "🔴 D3"
+  },
+  "conceptIds": [],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "**Unit level**\n\nDoes a component behave correctly?\n\n**Retrieval level**\n\nDid we retrieve the right evidence?\n\n**Generation level**\n\nDid the model answer appropriately?\n\n**System level**\n\nDoes the whole product satisfy user requirements?\n\n**Online level**\n\nDoes real-world use improve or degrade outcomes?"
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 151,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 151,
+  "requiredGate": "C5",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P28.0",
+  "phaseId": "P28",
+  "parentId": null,
+  "title": "Core scope",
+  "label": "ML Engineering (core scope)",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "conceptIds": [
+   "P28.0#1",
+   "P28.0#2",
+   "P28.0#3",
+   "P28.0#4",
+   "P28.0#5",
+   "P28.0#6",
+   "P28.0#7",
+   "P28.0#8",
+   "P28.0#9",
+   "P28.0#10",
+   "P28.0#11",
+   "P28.0#12",
+   "P28.0#13",
+   "P28.0#14",
+   "P28.0#15",
+   "P28.0#16",
+   "P28.0#17",
+   "P28.0#18",
+   "P28.0#19",
+   "P28.0#20",
+   "P28.0#21"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "This is the bridge from ML practitioner to ML engineer.\n\nLearn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P28.0#1",
+     "P28.0#2",
+     "P28.0#3",
+     "P28.0#4",
+     "P28.0#5",
+     "P28.0#6",
+     "P28.0#7",
+     "P28.0#8",
+     "P28.0#9",
+     "P28.0#10",
+     "P28.0#11",
+     "P28.0#12",
+     "P28.0#13",
+     "P28.0#14",
+     "P28.0#15",
+     "P28.0#16",
+     "P28.0#17",
+     "P28.0#18",
+     "P28.0#19",
+     "P28.0#20",
+     "P28.0#21"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 113,
+    "lane": "primary",
+    "conceptIds": [
+     "P28.0#1",
+     "P28.0#2",
+     "P28.0#3",
+     "P28.0#4",
+     "P28.0#5",
+     "P28.0#6",
+     "P28.0#7",
+     "P28.0#8",
+     "P28.0#9",
+     "P28.0#10"
+    ]
+   },
+   {
+    "cw": 114,
+    "lane": "primary",
+    "conceptIds": [
+     "P28.0#11",
+     "P28.0#12",
+     "P28.0#13",
+     "P28.0#14",
+     "P28.0#15",
+     "P28.0#16",
+     "P28.0#17",
+     "P28.0#18",
+     "P28.0#19",
+     "P28.0#20",
+     "P28.0#21"
+    ]
+   }
+  ],
+  "firstWeek": 113,
+  "requiredGate": "SG6A",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P28.1",
+  "phaseId": "P28",
+  "parentId": null,
+  "title": "Standard lifecycle",
+  "label": "Standard lifecycle",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "conceptIds": [],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "```text\nData\n→ validation\n→ feature generation\n→ training\n→ experiment tracking\n→ evaluation\n→ model registry\n→ packaging\n→ deployment\n→ inference\n→ monitoring\n→ drift\n→ retraining\n```"
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 113,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 113,
+  "requiredGate": "SG6A",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P28.2",
+  "phaseId": "P28",
+  "parentId": null,
+  "title": "Production questions",
+  "label": "Production questions",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "conceptIds": [
+   "P28.2#1",
+   "P28.2#2",
+   "P28.2#3",
+   "P28.2#4",
+   "P28.2#5",
+   "P28.2#6",
+   "P28.2#7",
+   "P28.2#8",
+   "P28.2#9",
+   "P28.2#10",
+   "P28.2#11",
+   "P28.2#12"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "For every model ask:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P28.2#1",
+     "P28.2#2",
+     "P28.2#3",
+     "P28.2#4",
+     "P28.2#5",
+     "P28.2#6",
+     "P28.2#7",
+     "P28.2#8",
+     "P28.2#9",
+     "P28.2#10",
+     "P28.2#11",
+     "P28.2#12"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 114,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 114,
+  "requiredGate": "SG6A",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P29.1",
+  "phaseId": "P29",
+  "parentId": null,
+  "title": "Batch inference",
+  "label": "Batch inference",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 3,
+   "raw": "🔴 D3"
+  },
+  "conceptIds": [
+   "P29.1#1",
+   "P29.1#2",
+   "P29.1#3",
+   "P29.1#4",
+   "P29.1#5"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Use when predictions can be generated periodically.\n\nUnderstand:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P29.1#1",
+     "P29.1#2",
+     "P29.1#3",
+     "P29.1#4",
+     "P29.1#5"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 96,
+    "lane": "primary",
+    "conceptIds": null
+   },
+   {
+    "cw": 115,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 96,
+  "requiredGate": "C3",
+  "onDemand": null,
+  "predecessors": [
+   {
+    "from": "P31.1",
+    "to": "P29.1",
+    "reason": "containerisation before the early serving segment"
+   },
+   {
+    "from": "P32.0",
+    "to": "P29.1",
+    "reason": "cloud basics before the early serving segment"
+   }
+  ],
+  "masteryStatements": []
+ },
+ {
+  "id": "P29.2",
+  "phaseId": "P29",
+  "parentId": null,
+  "title": "Online inference",
+  "label": "Online inference",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 3,
+   "raw": "🔴 D3"
+  },
+  "conceptIds": [
+   "P29.2#1",
+   "P29.2#2",
+   "P29.2#3",
+   "P29.2#4",
+   "P29.2#5",
+   "P29.2#6",
+   "P29.2#7"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Use when predictions must be returned in real time.\n\nUnderstand:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P29.2#1",
+     "P29.2#2",
+     "P29.2#3",
+     "P29.2#4",
+     "P29.2#5",
+     "P29.2#6",
+     "P29.2#7"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 96,
+    "lane": "primary",
+    "conceptIds": null
+   },
+   {
+    "cw": 116,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 96,
+  "requiredGate": "C3",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P29.3",
+  "phaseId": "P29",
+  "parentId": null,
+  "title": "Serving project",
+  "label": "Serving project",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 3,
+   "raw": "🔴 D3"
+  },
+  "conceptIds": [
+   "P29.3#1",
+   "P29.3#2",
+   "P29.3#3",
+   "P29.3#4"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Build:\n\n```text\nClient\n→ API\n→ validation\n→ model\n→ prediction\n→ logging\n→ metrics\n```\n\nThen add:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P29.3#1",
+     "P29.3#2",
+     "P29.3#3",
+     "P29.3#4"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 117,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 117,
+  "requiredGate": "SG6A",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P30.1",
+  "phaseId": "P30",
+  "parentId": null,
+  "title": "Level 1",
+  "label": "Level 1",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🔴 D3–D4"
+  },
+  "conceptIds": [
+   "P30.1#1",
+   "P30.1#2",
+   "P30.1#3",
+   "P30.1#4",
+   "P30.1#5"
+  ],
+  "blocks": [
+   {
+    "t": "concepts",
+    "ids": [
+     "P30.1#1",
+     "P30.1#2",
+     "P30.1#3",
+     "P30.1#4",
+     "P30.1#5"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 118,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 118,
+  "requiredGate": "SG6A",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P30.2",
+  "phaseId": "P30",
+  "parentId": null,
+  "title": "Level 2",
+  "label": "Level 2",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🔴 D3–D4"
+  },
+  "conceptIds": [
+   "P30.2#1",
+   "P30.2#2",
+   "P30.2#3",
+   "P30.2#4"
+  ],
+  "blocks": [
+   {
+    "t": "concepts",
+    "ids": [
+     "P30.2#1",
+     "P30.2#2",
+     "P30.2#3",
+     "P30.2#4"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 119,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 119,
+  "requiredGate": "SG6A",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P30.3",
+  "phaseId": "P30",
+  "parentId": null,
+  "title": "Level 3",
+  "label": "Level 3",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🔴 D3–D4"
+  },
+  "conceptIds": [
+   "P30.3#1",
+   "P30.3#2",
+   "P30.3#3",
+   "P30.3#4"
+  ],
+  "blocks": [
+   {
+    "t": "concepts",
+    "ids": [
+     "P30.3#1",
+     "P30.3#2",
+     "P30.3#3",
+     "P30.3#4"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 120,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 120,
+  "requiredGate": "SG6A",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P30.4",
+  "phaseId": "P30",
+  "parentId": null,
+  "title": "Level 4",
+  "label": "Level 4",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🔴 D3–D4"
+  },
+  "conceptIds": [
+   "P30.4#1",
+   "P30.4#2",
+   "P30.4#3",
+   "P30.4#4",
+   "P30.4#5"
+  ],
+  "blocks": [
+   {
+    "t": "concepts",
+    "ids": [
+     "P30.4#1",
+     "P30.4#2",
+     "P30.4#3",
+     "P30.4#4",
+     "P30.4#5"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Do not learn tools without understanding the ML lifecycle they support."
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 121,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 121,
+  "requiredGate": "SG6A",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P31.0",
+  "phaseId": "P31",
+  "parentId": null,
+  "title": "Core scope",
+  "label": "DevOps (core scope)",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 3,
+   "raw": "🟠 D3"
+  },
+  "conceptIds": [
+   "P31.0#1",
+   "P31.0#2",
+   "P31.0#3",
+   "P31.0#4",
+   "P31.0#5",
+   "P31.0#6",
+   "P31.0#7",
+   "P31.0#8",
+   "P31.0#9",
+   "P31.0#10",
+   "P31.0#11",
+   "P31.0#12",
+   "P31.0#13",
+   "P31.0#14"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P31.0#1",
+     "P31.0#2",
+     "P31.0#3",
+     "P31.0#4",
+     "P31.0#5",
+     "P31.0#6",
+     "P31.0#7",
+     "P31.0#8",
+     "P31.0#9",
+     "P31.0#10",
+     "P31.0#11",
+     "P31.0#12",
+     "P31.0#13",
+     "P31.0#14"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 88,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 88,
+  "requiredGate": "C4",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P31.1",
+  "phaseId": "P31",
+  "parentId": null,
+  "title": "Docker",
+  "label": "Docker",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 3,
+   "raw": "🟠 D3"
+  },
+  "conceptIds": [
+   "P31.1#1",
+   "P31.1#2",
+   "P31.1#3",
+   "P31.1#4",
+   "P31.1#5",
+   "P31.1#6",
+   "P31.1#7",
+   "P31.1#8",
+   "P31.1#9"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Master:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P31.1#1",
+     "P31.1#2",
+     "P31.1#3",
+     "P31.1#4",
+     "P31.1#5",
+     "P31.1#6",
+     "P31.1#7",
+     "P31.1#8",
+     "P31.1#9"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Reference:\nhttps://docs.docker.com/get-started/"
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 88,
+    "lane": "primary",
+    "conceptIds": [
+     "P31.1#1",
+     "P31.1#2",
+     "P31.1#3",
+     "P31.1#4",
+     "P31.1#5"
+    ]
+   },
+   {
+    "cw": 89,
+    "lane": "primary",
+    "conceptIds": [
+     "P31.1#6",
+     "P31.1#7",
+     "P31.1#8",
+     "P31.1#9"
+    ]
+   }
+  ],
+  "firstWeek": 88,
+  "requiredGate": "C4",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P31.2",
+  "phaseId": "P31",
+  "parentId": null,
+  "title": "CI/CD",
+  "label": "CI/CD",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 3,
+   "raw": "🟠 D3"
+  },
+  "conceptIds": [
+   "P31.2#1",
+   "P31.2#2",
+   "P31.2#3",
+   "P31.2#4",
+   "P31.2#5",
+   "P31.2#6",
+   "P31.2#7"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Use GitHub Actions initially.\n\nBuild pipelines that:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P31.2#1",
+     "P31.2#2",
+     "P31.2#3",
+     "P31.2#4",
+     "P31.2#5",
+     "P31.2#6",
+     "P31.2#7"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Do not let CI become a ritual. Understand what each stage protects you from."
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 90,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 90,
+  "requiredGate": "C4",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P32.0",
+  "phaseId": "P32",
+  "parentId": null,
+  "title": "Core scope",
+  "label": "Cloud (core scope)",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 2,
+   "max": 3,
+   "raw": "🟠 D2–D3"
+  },
+  "conceptIds": [
+   "P32.0#1",
+   "P32.0#2",
+   "P32.0#3",
+   "P32.0#4",
+   "P32.0#5",
+   "P32.0#6",
+   "P32.0#7",
+   "P32.0#8",
+   "P32.0#9",
+   "P32.0#10",
+   "P32.0#11",
+   "P32.0#12",
+   "P32.0#13",
+   "P32.0#14"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn one provider deeply enough to deploy actual systems.\n\nA reasonable first-provider strategy is AWS, but this is a recommendation, not a permanent requirement.\n\nLearn cloud concepts:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P32.0#1",
+     "P32.0#2",
+     "P32.0#3",
+     "P32.0#4",
+     "P32.0#5",
+     "P32.0#6",
+     "P32.0#7",
+     "P32.0#8",
+     "P32.0#9",
+     "P32.0#10",
+     "P32.0#11",
+     "P32.0#12",
+     "P32.0#13",
+     "P32.0#14"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Do not memorise service names without understanding the architecture behind them."
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 93,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 93,
+  "requiredGate": "C4",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P32.1",
+  "phaseId": "P32",
+  "parentId": null,
+  "title": "Required cloud project",
+  "label": "Required cloud project",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 2,
+   "max": 3,
+   "raw": "🟠 D2–D3"
+  },
+  "conceptIds": [
+   "P32.1#1",
+   "P32.1#2",
+   "P32.1#3",
+   "P32.1#4",
+   "P32.1#5",
+   "P32.1#6"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Deploy a real backend or ML inference service with:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P32.1#1",
+     "P32.1#2",
+     "P32.1#3",
+     "P32.1#4",
+     "P32.1#5",
+     "P32.1#6"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 94,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 94,
+  "requiredGate": "C4",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P33.0",
+  "phaseId": "P33",
+  "parentId": null,
+  "title": "Core scope",
+  "label": "Terraform / Infrastructure as Code (core scope)",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 2,
+   "max": 3,
+   "raw": "🟡–🟠 D2–D3"
+  },
+  "conceptIds": [
+   "P33.0#1",
+   "P33.0#2",
+   "P33.0#3",
+   "P33.0#4",
+   "P33.0#5",
+   "P33.0#6",
+   "P33.0#7",
+   "P33.0#8",
+   "P33.0#9",
+   "P33.0#10",
+   "P33.0#11",
+   "P33.0#12",
+   "P33.0#13"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P33.0#1",
+     "P33.0#2",
+     "P33.0#3",
+     "P33.0#4",
+     "P33.0#5",
+     "P33.0#6",
+     "P33.0#7",
+     "P33.0#8",
+     "P33.0#9",
+     "P33.0#10",
+     "P33.0#11",
+     "P33.0#12",
+     "P33.0#13"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Core workflow:\n\n```text\nWrite\n→ Plan\n→ Apply\n```\n\nTerraform is designed to define, version, and manage infrastructure through declarative configuration and provider APIs. Reference:\nhttps://developer.hashicorp.com/terraform/intro\n\nDo not commit sensitive state or credentials."
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 124,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 124,
+  "requiredGate": "SG6A",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P34.0",
+  "phaseId": "P34",
+  "parentId": null,
+  "title": "Core scope",
+  "label": "Kubernetes (core scope)",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 2,
+   "max": 3,
+   "raw": "🟡 D2 initially, D3 later"
+  },
+  "conceptIds": [
+   "P34.0#1",
+   "P34.0#2",
+   "P34.0#3",
+   "P34.0#4",
+   "P34.0#5",
+   "P34.0#6",
+   "P34.0#7",
+   "P34.0#8",
+   "P34.0#9",
+   "P34.0#10",
+   "P34.0#11",
+   "P34.0#12",
+   "P34.0#13",
+   "P34.0#14",
+   "P34.0#15",
+   "P34.0#16",
+   "P34.0#17",
+   "P34.0#18"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Prerequisites:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P34.0#1",
+     "P34.0#2",
+     "P34.0#3",
+     "P34.0#4"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Learn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P34.0#5",
+     "P34.0#6",
+     "P34.0#7",
+     "P34.0#8",
+     "P34.0#9",
+     "P34.0#10",
+     "P34.0#11",
+     "P34.0#12",
+     "P34.0#13",
+     "P34.0#14",
+     "P34.0#15",
+     "P34.0#16",
+     "P34.0#17",
+     "P34.0#18"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Reference:\nhttps://kubernetes.io/docs/concepts/\n\nUnderstand the problem Kubernetes solves before memorising Kubernetes objects.\n\nDo not learn Kubernetes merely because job descriptions contain the word."
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 125,
+    "lane": "primary",
+    "conceptIds": [
+     "P34.0#1",
+     "P34.0#2",
+     "P34.0#3",
+     "P34.0#4",
+     "P34.0#5",
+     "P34.0#6",
+     "P34.0#7",
+     "P34.0#8",
+     "P34.0#9",
+     "P34.0#10",
+     "P34.0#11"
+    ]
+   },
+   {
+    "cw": 126,
+    "lane": "primary",
+    "conceptIds": [
+     "P34.0#12",
+     "P34.0#13",
+     "P34.0#14",
+     "P34.0#15",
+     "P34.0#16",
+     "P34.0#17",
+     "P34.0#18"
+    ]
+   }
+  ],
+  "firstWeek": 125,
+  "requiredGate": "SG6A",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P35.0",
+  "phaseId": "P35",
+  "parentId": null,
+  "title": "Core scope",
+  "label": "System Design (core scope)",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🔴 D3–D4"
+  },
+  "conceptIds": [],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "System-design progression:\n\n```text\nSingle service\n→ database\n→ cache\n→ queue\n→ load balancer\n→ replication\n→ partitioning\n→ scaling\n→ distributed systems\n→ reliability\n→ observability\n```"
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 59,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 59,
+  "requiredGate": "SG4",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P35.1",
+  "phaseId": "P35",
+  "parentId": null,
+  "title": "Standard design process",
+  "label": "Standard design process",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🔴 D3–D4"
+  },
+  "conceptIds": [
+   "P35.1#1",
+   "P35.1#2",
+   "P35.1#3",
+   "P35.1#4",
+   "P35.1#5",
+   "P35.1#6",
+   "P35.1#7",
+   "P35.1#8",
+   "P35.1#9",
+   "P35.1#10",
+   "P35.1#11",
+   "P35.1#12"
+  ],
+  "blocks": [
+   {
+    "t": "concepts",
+    "ids": [
+     "P35.1#1",
+     "P35.1#2",
+     "P35.1#3",
+     "P35.1#4",
+     "P35.1#5",
+     "P35.1#6",
+     "P35.1#7",
+     "P35.1#8",
+     "P35.1#9",
+     "P35.1#10",
+     "P35.1#11",
+     "P35.1#12"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 59,
+    "lane": "primary",
+    "conceptIds": null
+   },
+   {
+    "cw": 162,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 59,
+  "requiredGate": "SG4",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P35.2",
+  "phaseId": "P35",
+  "parentId": null,
+  "title": "Core concepts",
+  "label": "Core concepts",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🔴 D3–D4"
+  },
+  "conceptIds": [
+   "P35.2#1",
+   "P35.2#2",
+   "P35.2#3",
+   "P35.2#4",
+   "P35.2#5",
+   "P35.2#6",
+   "P35.2#7",
+   "P35.2#8",
+   "P35.2#9",
+   "P35.2#10",
+   "P35.2#11",
+   "P35.2#12",
+   "P35.2#13",
+   "P35.2#14",
+   "P35.2#15",
+   "P35.2#16",
+   "P35.2#17",
+   "P35.2#18",
+   "P35.2#19"
+  ],
+  "blocks": [
+   {
+    "t": "concepts",
+    "ids": [
+     "P35.2#1",
+     "P35.2#2",
+     "P35.2#3",
+     "P35.2#4",
+     "P35.2#5",
+     "P35.2#6",
+     "P35.2#7",
+     "P35.2#8",
+     "P35.2#9",
+     "P35.2#10",
+     "P35.2#11",
+     "P35.2#12",
+     "P35.2#13",
+     "P35.2#14",
+     "P35.2#15",
+     "P35.2#16",
+     "P35.2#17",
+     "P35.2#18",
+     "P35.2#19"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 59,
+    "lane": "primary",
+    "conceptIds": [
+     "P35.2#1",
+     "P35.2#2",
+     "P35.2#3",
+     "P35.2#4",
+     "P35.2#5",
+     "P35.2#6",
+     "P35.2#7",
+     "P35.2#8",
+     "P35.2#9",
+     "P35.2#10"
+    ]
+   },
+   {
+    "cw": 61,
+    "lane": "primary",
+    "conceptIds": [
+     "P35.2#11",
+     "P35.2#12",
+     "P35.2#13",
+     "P35.2#14",
+     "P35.2#15",
+     "P35.2#16",
+     "P35.2#17",
+     "P35.2#18",
+     "P35.2#19"
+    ]
+   },
+   {
+    "cw": 162,
+    "lane": "primary",
+    "conceptIds": [
+     "P35.2#1",
+     "P35.2#2",
+     "P35.2#3",
+     "P35.2#4",
+     "P35.2#5",
+     "P35.2#6",
+     "P35.2#7",
+     "P35.2#8",
+     "P35.2#9",
+     "P35.2#10"
+    ]
+   },
+   {
+    "cw": 163,
+    "lane": "primary",
+    "conceptIds": [
+     "P35.2#11",
+     "P35.2#12",
+     "P35.2#13",
+     "P35.2#14",
+     "P35.2#15",
+     "P35.2#16",
+     "P35.2#17",
+     "P35.2#18",
+     "P35.2#19"
+    ]
+   }
+  ],
+  "firstWeek": 59,
+  "requiredGate": "SG4",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P35.3",
+  "phaseId": "P35",
+  "parentId": null,
+  "title": "Systems to design",
+  "label": "Systems to design",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🔴 D3–D4"
+  },
+  "conceptIds": [
+   "P35.3#1",
+   "P35.3#2",
+   "P35.3#3",
+   "P35.3#4",
+   "P35.3#5",
+   "P35.3#6",
+   "P35.3#7",
+   "P35.3#8",
+   "P35.3#9",
+   "P35.3#10"
+  ],
+  "blocks": [
+   {
+    "t": "concepts",
+    "ids": [
+     "P35.3#1",
+     "P35.3#2",
+     "P35.3#3",
+     "P35.3#4",
+     "P35.3#5",
+     "P35.3#6",
+     "P35.3#7",
+     "P35.3#8",
+     "P35.3#9",
+     "P35.3#10"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 164,
+    "lane": "primary",
+    "conceptIds": null
+   },
+   {
+    "cw": 165,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 164,
+  "requiredGate": "C6",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P36.0",
+  "phaseId": "P36",
+  "parentId": null,
+  "title": "Core scope",
+  "label": "Distributed Systems (core scope)",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 3,
+   "raw": "🟠 D3"
+  },
+  "conceptIds": [
+   "P36.0#1",
+   "P36.0#2",
+   "P36.0#3",
+   "P36.0#4",
+   "P36.0#5",
+   "P36.0#6",
+   "P36.0#7",
+   "P36.0#8",
+   "P36.0#9",
+   "P36.0#10",
+   "P36.0#11",
+   "P36.0#12",
+   "P36.0#13",
+   "P36.0#14",
+   "P36.0#15",
+   "P36.0#16",
+   "P36.0#17",
+   "P36.0#18",
+   "P36.0#19",
+   "P36.0#20"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P36.0#1",
+     "P36.0#2",
+     "P36.0#3",
+     "P36.0#4",
+     "P36.0#5",
+     "P36.0#6",
+     "P36.0#7",
+     "P36.0#8",
+     "P36.0#9",
+     "P36.0#10",
+     "P36.0#11",
+     "P36.0#12",
+     "P36.0#13",
+     "P36.0#14",
+     "P36.0#15"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Advanced awareness:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P36.0#16",
+     "P36.0#17",
+     "P36.0#18",
+     "P36.0#19",
+     "P36.0#20"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Do not begin with advanced consensus before understanding basic distributed-system failure modes."
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 166,
+    "lane": "primary",
+    "conceptIds": [
+     "P36.0#1",
+     "P36.0#2",
+     "P36.0#3",
+     "P36.0#4",
+     "P36.0#5",
+     "P36.0#6",
+     "P36.0#7",
+     "P36.0#8"
+    ]
+   },
+   {
+    "cw": 167,
+    "lane": "primary",
+    "conceptIds": [
+     "P36.0#9",
+     "P36.0#10",
+     "P36.0#11",
+     "P36.0#12",
+     "P36.0#13",
+     "P36.0#14",
+     "P36.0#15"
+    ]
+   },
+   {
+    "cw": 168,
+    "lane": "primary",
+    "conceptIds": [
+     "P36.0#16",
+     "P36.0#17",
+     "P36.0#18",
+     "P36.0#19",
+     "P36.0#20"
+    ]
+   }
+  ],
+  "firstWeek": 166,
+  "requiredGate": "C6",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P37.0",
+  "phaseId": "P37",
+  "parentId": null,
+  "title": "Core scope",
+  "label": "ML System Design (core scope)",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🔴 D3–D4"
+  },
+  "conceptIds": [],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "This is where your software + ML combination becomes especially valuable."
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 169,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 169,
+  "requiredGate": "C6",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P37.1",
+  "phaseId": "P37",
+  "parentId": null,
+  "title": "Recommendation system",
+  "label": "Recommendation system",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🔴 D3–D4"
+  },
+  "conceptIds": [
+   "P37.1#1",
+   "P37.1#2",
+   "P37.1#3",
+   "P37.1#4",
+   "P37.1#5",
+   "P37.1#6"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "```text\nUser events\n→ event pipeline\n→ feature generation\n→ candidate generation\n→ ranking\n→ serving\n→ feedback\n```\n\nQuestions:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P37.1#1",
+     "P37.1#2",
+     "P37.1#3",
+     "P37.1#4",
+     "P37.1#5",
+     "P37.1#6"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 169,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 169,
+  "requiredGate": "C6",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P37.2",
+  "phaseId": "P37",
+  "parentId": null,
+  "title": "Fraud detection",
+  "label": "Fraud detection",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🔴 D3–D4"
+  },
+  "conceptIds": [
+   "P37.2#1",
+   "P37.2#2",
+   "P37.2#3",
+   "P37.2#4",
+   "P37.2#5",
+   "P37.2#6"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "```text\nTransaction\n→ ingestion\n→ feature computation\n→ model\n→ risk score\n→ policy/decision\n→ logging\n→ monitoring\n```\n\nQuestions:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P37.2#1",
+     "P37.2#2",
+     "P37.2#3",
+     "P37.2#4",
+     "P37.2#5",
+     "P37.2#6"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 169,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 169,
+  "requiredGate": "C6",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P37.3",
+  "phaseId": "P37",
+  "parentId": null,
+  "title": "Search",
+  "label": "Search",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🔴 D3–D4"
+  },
+  "conceptIds": [],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "```text\nDocuments\n→ indexing\n→ query\n→ retrieval\n→ ranking\n→ results\n```"
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 170,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 170,
+  "requiredGate": "C6",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P37.4",
+  "phaseId": "P37",
+  "parentId": null,
+  "title": "Model-serving platform",
+  "label": "Model-serving platform",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🔴 D3–D4"
+  },
+  "conceptIds": [],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "```text\nClient\n→ gateway\n→ routing\n→ inference service\n→ model\n→ result\n→ telemetry\n```"
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 170,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 170,
+  "requiredGate": "C6",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P37.5",
+  "phaseId": "P37",
+  "parentId": null,
+  "title": "RAG system",
+  "label": "RAG system",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🔴 D3–D4"
+  },
+  "conceptIds": [],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "```text\nDocuments\n→ ingestion\n→ indexing\n→ retrieval\n→ reranking\n→ generation\n→ evaluation\n```"
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 170,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 170,
+  "requiredGate": "C6",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P38.0",
+  "phaseId": "P38",
+  "parentId": null,
+  "title": "Core scope",
+  "label": "Observability (core scope)",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 3,
+   "raw": "🟠 D3"
+  },
+  "conceptIds": [
+   "P38.0#1",
+   "P38.0#2",
+   "P38.0#3"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn the distinction between:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P38.0#1",
+     "P38.0#2",
+     "P38.0#3"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 122,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 122,
+  "requiredGate": "SG6A",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P38.1",
+  "phaseId": "P38",
+  "parentId": null,
+  "title": "Metrics",
+  "label": "Metrics",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 3,
+   "raw": "🟠 D3"
+  },
+  "conceptIds": [
+   "P38.1#1",
+   "P38.1#2",
+   "P38.1#3",
+   "P38.1#4",
+   "P38.1#5",
+   "P38.1#6",
+   "P38.1#7",
+   "P38.1#8",
+   "P38.1#9",
+   "P38.1#10"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Monitor:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P38.1#1",
+     "P38.1#2",
+     "P38.1#3",
+     "P38.1#4",
+     "P38.1#5",
+     "P38.1#6",
+     "P38.1#7",
+     "P38.1#8",
+     "P38.1#9",
+     "P38.1#10"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 122,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 122,
+  "requiredGate": "SG6A",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P38.2",
+  "phaseId": "P38",
+  "parentId": null,
+  "title": "Logging",
+  "label": "Logging",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 3,
+   "raw": "🟠 D3"
+  },
+  "conceptIds": [
+   "P38.2#1",
+   "P38.2#2",
+   "P38.2#3",
+   "P38.2#4"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Logs should help answer:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P38.2#1",
+     "P38.2#2",
+     "P38.2#3",
+     "P38.2#4"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Do not log secrets or sensitive data carelessly."
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 123,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 123,
+  "requiredGate": "SG6A",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P38.3",
+  "phaseId": "P38",
+  "parentId": null,
+  "title": "Tracing",
+  "label": "Tracing",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 3,
+   "raw": "🟠 D3"
+  },
+  "conceptIds": [
+   "P38.3#1",
+   "P38.3#2",
+   "P38.3#3",
+   "P38.3#4"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Understand:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P38.3#1",
+     "P38.3#2",
+     "P38.3#3",
+     "P38.3#4"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 123,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 123,
+  "requiredGate": "SG6A",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P39.0",
+  "phaseId": "P39",
+  "parentId": null,
+  "title": "Core scope",
+  "label": "Security (core scope)",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 3,
+   "raw": "🔴 D3"
+  },
+  "conceptIds": [],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Security is not a separate department in your mental model."
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 57,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 57,
+  "requiredGate": "SG4",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P39.1",
+  "phaseId": "P39",
+  "parentId": null,
+  "title": "General",
+  "label": "General",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 3,
+   "raw": "🔴 D3"
+  },
+  "conceptIds": [
+   "P39.1#1",
+   "P39.1#2",
+   "P39.1#3",
+   "P39.1#4",
+   "P39.1#5",
+   "P39.1#6",
+   "P39.1#7",
+   "P39.1#8",
+   "P39.1#9",
+   "P39.1#10",
+   "P39.1#11"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P39.1#1",
+     "P39.1#2",
+     "P39.1#3",
+     "P39.1#4",
+     "P39.1#5",
+     "P39.1#6",
+     "P39.1#7",
+     "P39.1#8",
+     "P39.1#9",
+     "P39.1#10",
+     "P39.1#11"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 57,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 57,
+  "requiredGate": "SG4",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P39.2",
+  "phaseId": "P39",
+  "parentId": null,
+  "title": "Common web risks",
+  "label": "Common web risks",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 3,
+   "raw": "🔴 D3"
+  },
+  "conceptIds": [
+   "P39.2#1",
+   "P39.2#2",
+   "P39.2#3",
+   "P39.2#4",
+   "P39.2#5",
+   "P39.2#6",
+   "P39.2#7",
+   "P39.2#8"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Understand:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P39.2#1",
+     "P39.2#2",
+     "P39.2#3",
+     "P39.2#4",
+     "P39.2#5",
+     "P39.2#6",
+     "P39.2#7",
+     "P39.2#8"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 58,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 58,
+  "requiredGate": "SG4",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P39.3",
+  "phaseId": "P39",
+  "parentId": null,
+  "title": "AI security",
+  "label": "AI security",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 3,
+   "raw": "🔴 D3"
+  },
+  "conceptIds": [
+   "P39.3#1",
+   "P39.3#2",
+   "P39.3#3",
+   "P39.3#4",
+   "P39.3#5",
+   "P39.3#6",
+   "P39.3#7",
+   "P39.3#8",
+   "P39.3#9"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P39.3#1",
+     "P39.3#2",
+     "P39.3#3",
+     "P39.3#4",
+     "P39.3#5",
+     "P39.3#6",
+     "P39.3#7",
+     "P39.3#8",
+     "P39.3#9"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 154,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 154,
+  "requiredGate": "C5",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P40.1",
+  "phaseId": "P40",
+  "parentId": null,
+  "title": "Reading papers",
+  "label": "Reading papers",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 5,
+   "raw": "🟠 D3 → D5 if specialization demands it"
+  },
+  "conceptIds": [
+   "P40.1#1",
+   "P40.1#2",
+   "P40.1#3",
+   "P40.1#4",
+   "P40.1#5",
+   "P40.1#6",
+   "P40.1#7",
+   "P40.1#8",
+   "P40.1#9",
+   "P40.1#10"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "For every paper ask:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P40.1#1",
+     "P40.1#2",
+     "P40.1#3",
+     "P40.1#4",
+     "P40.1#5",
+     "P40.1#6",
+     "P40.1#7",
+     "P40.1#8",
+     "P40.1#9",
+     "P40.1#10"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 178,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 178,
+  "requiredGate": "SG7",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P40.2",
+  "phaseId": "P40",
+  "parentId": null,
+  "title": "Reproduction ladder",
+  "label": "Reproduction ladder",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 5,
+   "raw": "🟠 D3 → D5 if specialization demands it"
+  },
+  "conceptIds": [],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "```text\nRead\n→ understand\n→ implement\n→ reproduce\n→ validate\n→ modify\n→ ablate\n→ benchmark\n→ hypothesize\n→ experiment\n→ write\n```"
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 179,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 179,
+  "requiredGate": "SG7",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P40.3",
+  "phaseId": "P40",
+  "parentId": null,
+  "title": "Experimental discipline",
+  "label": "Experimental discipline",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 5,
+   "raw": "🟠 D3 → D5 if specialization demands it"
+  },
+  "conceptIds": [
+   "P40.3#1",
+   "P40.3#2",
+   "P40.3#3",
+   "P40.3#4",
+   "P40.3#5",
+   "P40.3#6",
+   "P40.3#7",
+   "P40.3#8",
+   "P40.3#9"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Track:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P40.3#1",
+     "P40.3#2",
+     "P40.3#3",
+     "P40.3#4",
+     "P40.3#5",
+     "P40.3#6",
+     "P40.3#7",
+     "P40.3#8",
+     "P40.3#9"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 180,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 180,
+  "requiredGate": "SG7",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P40.4",
+  "phaseId": "P40",
+  "parentId": null,
+  "title": "Research writing",
+  "label": "Research writing",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 5,
+   "raw": "🟠 D3 → D5 if specialization demands it"
+  },
+  "conceptIds": [
+   "P40.4#1",
+   "P40.4#2",
+   "P40.4#3",
+   "P40.4#4",
+   "P40.4#5",
+   "P40.4#6",
+   "P40.4#7",
+   "P40.4#8"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn to structure:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P40.4#1",
+     "P40.4#2",
+     "P40.4#3",
+     "P40.4#4",
+     "P40.4#5",
+     "P40.4#6",
+     "P40.4#7",
+     "P40.4#8"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Potential goal:\n\nProduce at least one research-quality reproduction before attempting original work."
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 181,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 181,
+  "requiredGate": "SG7",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P41.0",
+  "phaseId": "P41",
+  "parentId": null,
+  "title": "Core scope",
+  "label": "Reinforcement Learning (core scope)",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 2,
+   "max": 2,
+   "raw": "🟢 D2 initially"
+  },
+  "conceptIds": [
+   "P41.0#1",
+   "P41.0#2",
+   "P41.0#3",
+   "P41.0#4",
+   "P41.0#5",
+   "P41.0#6",
+   "P41.0#7",
+   "P41.0#8",
+   "P41.0#9",
+   "P41.0#10",
+   "P41.0#11"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn only after strong foundations unless your specialization requires it.\n\nTopics:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P41.0#1",
+     "P41.0#2",
+     "P41.0#3",
+     "P41.0#4",
+     "P41.0#5",
+     "P41.0#6",
+     "P41.0#7",
+     "P41.0#8",
+     "P41.0#9",
+     "P41.0#10"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Potential project:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P41.0#11"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Do not let RL displace core software, ML, statistics, systems, or DSA work unless it becomes strategically relevant."
+   }
+  ],
+  "weeks": [],
+  "firstWeek": null,
+  "requiredGate": "C5",
+  "onDemand": "OPTIONAL branch (🟢). Gate: after C5 and only if a project or research direction requires it.",
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P42.0",
+  "phaseId": "P42",
+  "parentId": null,
+  "title": "Core scope",
+  "label": "Advanced ML System Topics (core scope)",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🟠–🔴 D3–D4"
+  },
+  "conceptIds": [],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Study when the foundations are mature."
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 171,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 171,
+  "requiredGate": "C6",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P42.1",
+  "phaseId": "P42",
+  "parentId": null,
+  "title": "Feature stores",
+  "label": "Feature stores",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🟠–🔴 D3–D4"
+  },
+  "conceptIds": [
+   "P42.1#1",
+   "P42.1#2",
+   "P42.1#3",
+   "P42.1#4",
+   "P42.1#5"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Understand:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P42.1#1",
+     "P42.1#2",
+     "P42.1#3",
+     "P42.1#4",
+     "P42.1#5"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 171,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 171,
+  "requiredGate": "C6",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P42.2",
+  "phaseId": "P42",
+  "parentId": null,
+  "title": "Distributed training",
+  "label": "Distributed training",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🟠–🔴 D3–D4"
+  },
+  "conceptIds": [
+   "P42.2#1",
+   "P42.2#2",
+   "P42.2#3",
+   "P42.2#4",
+   "P42.2#5"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Understand conceptually:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P42.2#1",
+     "P42.2#2",
+     "P42.2#3",
+     "P42.2#4",
+     "P42.2#5"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 172,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 172,
+  "requiredGate": "C6",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P42.3",
+  "phaseId": "P42",
+  "parentId": null,
+  "title": "Model optimisation",
+  "label": "Model optimisation",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🟠–🔴 D3–D4"
+  },
+  "conceptIds": [
+   "P42.3#1",
+   "P42.3#2",
+   "P42.3#3",
+   "P42.3#4",
+   "P42.3#5",
+   "P42.3#6"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P42.3#1",
+     "P42.3#2",
+     "P42.3#3",
+     "P42.3#4",
+     "P42.3#5",
+     "P42.3#6"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 173,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 173,
+  "requiredGate": "C6",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P42.4",
+  "phaseId": "P42",
+  "parentId": null,
+  "title": "High-scale inference",
+  "label": "High-scale inference",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🟠–🔴 D3–D4"
+  },
+  "conceptIds": [
+   "P42.4#1",
+   "P42.4#2",
+   "P42.4#3",
+   "P42.4#4",
+   "P42.4#5",
+   "P42.4#6",
+   "P42.4#7",
+   "P42.4#8"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Reason about:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P42.4#1",
+     "P42.4#2",
+     "P42.4#3",
+     "P42.4#4",
+     "P42.4#5",
+     "P42.4#6",
+     "P42.4#7",
+     "P42.4#8"
+    ]
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 174,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 174,
+  "requiredGate": "C6",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P43.0",
+  "phaseId": "P43",
+  "parentId": null,
+  "title": "Core scope",
+  "label": "Data / ML Infrastructure (core scope)",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 2,
+   "max": 3,
+   "raw": "🟡–🟠 D2–D3"
+  },
+  "conceptIds": [
+   "P43.0#1",
+   "P43.0#2",
+   "P43.0#3",
+   "P43.0#4",
+   "P43.0#5",
+   "P43.0#6"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Possible technologies:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P43.0#1",
+     "P43.0#2",
+     "P43.0#3",
+     "P43.0#4",
+     "P43.0#5",
+     "P43.0#6"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Do not collect technologies.\n\nLearn them through real problems:\n\n**Kafka**\n\nLearn when events must be streamed reliably.\n\n**Spark**\n\nLearn when distributed batch computation becomes necessary.\n\n**Airflow**\n\nLearn when scheduled workflows need orchestration.\n\n**Feature store**\n\nLearn when feature consistency and serving become hard enough to require one."
+   }
+  ],
+  "weeks": [],
+  "firstWeek": null,
+  "requiredGate": "C5",
+  "onDemand": "On demand after data, backend, deployment and ML-lifecycle concepts work (Phase 43 GATE).",
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P44.0",
+  "phaseId": "P44",
+  "parentId": null,
+  "title": "Core scope",
+  "label": "AI Engineering as a Systems Discipline (core scope)",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🔴 D3–D4"
+  },
+  "conceptIds": [
+   "P44.0#1",
+   "P44.0#2",
+   "P44.0#3",
+   "P44.0#4",
+   "P44.0#5",
+   "P44.0#6",
+   "P44.0#7",
+   "P44.0#8",
+   "P44.0#9"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Modern AI engineering should combine:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P44.0#1",
+     "P44.0#2",
+     "P44.0#3",
+     "P44.0#4",
+     "P44.0#5",
+     "P44.0#6",
+     "P44.0#7",
+     "P44.0#8",
+     "P44.0#9"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "A production AI system is not merely a prompt.\n\nThink:\n\n```text\nUser\n↓\nAPI\n↓\nAuth\n↓\nApplication logic\n↓\nRetrieval / tools\n↓\nModel\n↓\nValidation\n↓\nResponse\n↓\nEvaluation / telemetry\n```\n\nEvery layer can fail."
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 155,
+    "lane": "primary",
+    "conceptIds": null
+   }
+  ],
+  "firstWeek": 155,
+  "requiredGate": "C5",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P45.0",
+  "phaseId": "P45",
+  "parentId": null,
+  "title": "Core scope",
+  "label": "Cost Engineering (core scope)",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 2,
+   "max": 3,
+   "raw": "🟡–🟠 D2–D3"
+  },
+  "conceptIds": [
+   "P45.0#1",
+   "P45.0#2",
+   "P45.0#3",
+   "P45.0#4",
+   "P45.0#5",
+   "P45.0#6",
+   "P45.0#7",
+   "P45.0#8",
+   "P45.0#9",
+   "P45.0#10",
+   "P45.0#11",
+   "P45.0#12",
+   "P45.0#13",
+   "P45.0#14",
+   "P45.0#15"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn to reason about:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P45.0#1",
+     "P45.0#2",
+     "P45.0#3",
+     "P45.0#4",
+     "P45.0#5",
+     "P45.0#6",
+     "P45.0#7",
+     "P45.0#8"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "For AI:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P45.0#9",
+     "P45.0#10",
+     "P45.0#11",
+     "P45.0#12",
+     "P45.0#13",
+     "P45.0#14",
+     "P45.0#15"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "A technically elegant system that costs ten times more than necessary is not automatically a better engineering solution."
+   }
+  ],
+  "weeks": [
+   {
+    "cw": 133,
+    "lane": "supporting",
+    "conceptIds": [
+     "P45.0#1",
+     "P45.0#2",
+     "P45.0#3",
+     "P45.0#4",
+     "P45.0#5",
+     "P45.0#6",
+     "P45.0#7",
+     "P45.0#8"
+    ]
+   },
+   {
+    "cw": 134,
+    "lane": "supporting",
+    "conceptIds": [
+     "P45.0#9",
+     "P45.0#10",
+     "P45.0#11",
+     "P45.0#12",
+     "P45.0#13",
+     "P45.0#14",
+     "P45.0#15"
+    ]
+   }
+  ],
+  "firstWeek": 133,
+  "requiredGate": "SG6A",
+  "onDemand": null,
+  "predecessors": [],
+  "masteryStatements": []
+ },
+ {
+  "id": "P46.0",
+  "phaseId": "P46",
+  "parentId": null,
+  "title": "Core scope",
+  "label": "Product Thinking for Engineers (core scope)",
+  "meta": "",
+  "kind": "concepts",
+  "depth": {
+   "min": 2,
+   "max": 3,
+   "raw": "🟡 D2–D3"
+  },
+  "conceptIds": [
+   "P46.0#1",
+   "P46.0#2",
+   "P46.0#3",
+   "P46.0#4",
+   "P46.0#5",
+   "P46.0#6",
+   "P46.0#7",
+   "P46.0#8",
+   "P46.0#9",
+   "P46.0#10",
+   "P46.0#11",
+   "P46.0#12",
+   "P46.0#13"
+  ],
+  "blocks": [
+   {
+    "t": "md",
+    "md": "Learn to connect technical decisions to user needs.\n\nUnderstand:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P46.0#1",
+     "P46.0#2",
+     "P46.0#3",
+     "P46.0#4",
+     "P46.0#5",
+     "P46.0#6",
+     "P46.0#7",
+     "P46.0#8"
+    ]
+   },
+   {
+    "t": "md",
+    "md": "Before building ML ask:"
+   },
+   {
+    "t": "concepts",
+    "ids": [
+     "P46.0#9",
+     "P46.0#10",
+     "P46.0#11",
+     "P46.0#12",
+     "P46.0#13"
+    ]
+   }
+  ],
+  "weeks": [],
+  "firstWeek": null,
+  "requiredGate": null,
+  "onDemand": "Continuous: awareness from S4; detailed product reasoning inside PR07, PR11 and internships (Phase 46 GATE).",
+  "predecessors": [],
+  "masteryStatements": []
+ }
+]

@@ -1,0 +1,194 @@
+[
+ {
+  "id": "S0",
+  "name": "Programming reset",
+  "basis": "Master timeline 2026-2027, Stage 0; Mode A",
+  "entry": "Day 1.",
+  "exit": "G0 initial Python gate (master 14-day plan)",
+  "range": [
+   1,
+   2
+  ],
+  "parent": null
+ },
+ {
+  "id": "S1",
+  "name": "Tooling and programming fluency",
+  "basis": "Master timeline 2026-2027, Stage 1",
+  "entry": "G0 passed.",
+  "exit": "C1 Programmer",
+  "range": [
+   3,
+   14
+  ],
+  "parent": null
+ },
+ {
+  "id": "S2",
+  "name": "First CS/data foundations",
+  "basis": "Master timeline 2026-2027, Stage 2 ('only after Stage 1 is reliable')",
+  "entry": "C1 passed.",
+  "exit": "SG2 stage gate: DSA-fundamentals and SQL phase gates",
+  "range": [
+   15,
+   21
+  ],
+  "parent": null
+ },
+ {
+  "id": "S3",
+  "name": "Mathematical/data foundations",
+  "basis": "Master timeline 2026-2027, Stage 3",
+  "entry": "SG2 passed.",
+  "exit": "SG3 stage gate: data gate + statistics gate (master precondition for classical ML)",
+  "range": [
+   22,
+   33
+  ],
+  "parent": null
+ },
+ {
+  "id": "S4",
+  "name": "Engineering foundation",
+  "basis": "Master timeline 2026-2027, Stage 4",
+  "entry": "SG3 passed.",
+  "exit": "SG4 Foundation Reset exit",
+  "range": [
+   34,
+   46
+  ],
+  "parent": null
+ },
+ {
+  "id": "S5",
+  "name": "Engineering + classical ML",
+  "basis": "Master timeline 2027-2028 emphasis",
+  "entry": "SG4 passed.",
+  "exit": "SG5 stage exit (C2, C4, C3 all passed)",
+  "range": [
+   47,
+   101
+  ],
+  "parent": null
+ },
+ {
+  "id": "S6",
+  "name": "Deep learning + ML engineering",
+  "basis": "Master timeline 2028-2029 emphasis, minus attention/Transformers (moved to S7 by decision 5)",
+  "entry": "SG5 passed (Docker/CI/CD/Cloud gates inside S5C are the D5 precondition).",
+  "exit": "C5 ML engineer",
+  "range": [
+   102,
+   138
+  ],
+  "parent": null
+ },
+ {
+  "id": "S7",
+  "name": "Transformers/LLMs + AI engineering + ML systems",
+  "basis": "Master timeline 2029-2030 emphasis, plus attention/Transformers",
+  "entry": "C5 passed (decision 5).",
+  "exit": "C6 AI engineer, then SG7 systems exit",
+  "range": [
+   139,
+   177
+  ],
+  "parent": null
+ },
+ {
+  "id": "S8",
+  "name": "Research + specialisation",
+  "basis": "Master timeline 2030+; Phase 40 gate",
+  "entry": "C5 passed, ideally C6 (Phase 40 GATE).",
+  "exit": "Open-ended; C7 windows are calendar-driven",
+  "range": [
+   178,
+   206
+  ],
+  "parent": null
+ },
+ {
+  "id": "S5A",
+  "name": "CS and backend depth",
+  "basis": "",
+  "entry": "",
+  "exit": "C2 CS foundation",
+  "range": [
+   47,
+   66
+  ],
+  "parent": "S5"
+ },
+ {
+  "id": "S5B",
+  "name": "Data and classical ML",
+  "basis": "",
+  "entry": "",
+  "exit": "C4 Data scientist",
+  "range": [
+   67,
+   87
+  ],
+  "parent": "S5"
+ },
+ {
+  "id": "S5C",
+  "name": "Production engineering",
+  "basis": "",
+  "entry": "",
+  "exit": "C3 Backend engineer",
+  "range": [
+   88,
+   101
+  ],
+  "parent": "S5"
+ },
+ {
+  "id": "S6A",
+  "name": "Deep learning",
+  "basis": "",
+  "entry": "",
+  "exit": "SG6A deep-learning phase gates",
+  "range": [
+   102,
+   112
+  ],
+  "parent": "S6"
+ },
+ {
+  "id": "S6B",
+  "name": "ML engineering and MLOps",
+  "basis": "",
+  "entry": "",
+  "exit": "C5 ML engineer",
+  "range": [
+   113,
+   138
+  ],
+  "parent": "S6"
+ },
+ {
+  "id": "S7A",
+  "name": "Transformers, LLMs, AI engineering",
+  "basis": "",
+  "entry": "",
+  "exit": "C6 AI engineer",
+  "range": [
+   139,
+   161
+  ],
+  "parent": "S7"
+ },
+ {
+  "id": "S7B",
+  "name": "Systems depth",
+  "basis": "",
+  "entry": "",
+  "exit": "SG7 systems exit",
+  "range": [
+   162,
+   177
+  ],
+  "parent": "S7"
+ }
+]

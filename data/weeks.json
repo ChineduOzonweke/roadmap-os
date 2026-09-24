@@ -1,0 +1,7923 @@
+[
+ {
+  "cw": 1,
+  "stage": "S0",
+  "mainStage": "S0",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P01.1a:1-9,14-16,27",
+    "kind": "topic",
+    "topicId": "P01.1a",
+    "conceptIds": [
+     "P01.1a#1",
+     "P01.1a#2",
+     "P01.1a#3",
+     "P01.1a#4",
+     "P01.1a#5",
+     "P01.1a#6",
+     "P01.1a#7",
+     "P01.1a#8",
+     "P01.1a#9",
+     "P01.1a#14",
+     "P01.1a#15",
+     "P01.1a#16",
+     "P01.1a#27"
+    ],
+    "label": "P01.1a Python › Zero-level runway · #1–9 (print() → for); #14–16 (defining functions → return values); #27 (input/output)"
+   }
+  ],
+  "supporting": [
+   {
+    "ref": "SETUP",
+    "kind": "activity",
+    "activity": "SETUP",
+    "label": "Environment setup (editor, Python, terminal; Git repo only if trivial)"
+   }
+  ],
+  "dsaLane": null,
+  "project": null,
+  "build": "Five tiny programs; break one deliberately and fix it (master Day 1 work).",
+  "note": "Days 1-7 of the master plan: Days 1-3 functions, variables, expressions, input/output; Days 4-6 conditionals and boolean reasoning; Day 7 loops begin.",
+  "gate": null,
+  "requiredGate": null,
+  "conceptCount": 13,
+  "dayPlan": {
+   "days": "1-7",
+   "plan": [
+    {
+     "days": "Days 1-3",
+     "focus": "Functions, variables, expressions, input/output"
+    },
+    {
+     "days": "Days 4-6",
+     "focus": "Conditionals and boolean reasoning"
+    },
+    {
+     "days": "Days 7-9",
+     "focus": "Loops and iteration"
+    },
+    {
+     "days": "Days 10-11",
+     "focus": "Strings and collections"
+    },
+    {
+     "days": "Days 12-13",
+     "focus": "Functions, decomposition, small programs"
+    },
+    {
+     "days": "Day 14",
+     "focus": "Exceptions, files, review, unseen test"
+    }
+   ]
+  }
+ },
+ {
+  "cw": 2,
+  "stage": "S0",
+  "mainStage": "S0",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P01.1a:9-13,17-26,28-39",
+    "kind": "topic",
+    "topicId": "P01.1a",
+    "conceptIds": [
+     "P01.1a#9",
+     "P01.1a#10",
+     "P01.1a#11",
+     "P01.1a#12",
+     "P01.1a#13",
+     "P01.1a#17",
+     "P01.1a#18",
+     "P01.1a#19",
+     "P01.1a#20",
+     "P01.1a#21",
+     "P01.1a#22",
+     "P01.1a#23",
+     "P01.1a#24",
+     "P01.1a#25",
+     "P01.1a#26",
+     "P01.1a#28",
+     "P01.1a#29",
+     "P01.1a#30",
+     "P01.1a#31",
+     "P01.1a#32",
+     "P01.1a#33",
+     "P01.1a#34",
+     "P01.1a#35",
+     "P01.1a#36",
+     "P01.1a#37",
+     "P01.1a#38",
+     "P01.1a#39"
+    ],
+    "label": "P01.1a Python › Zero-level runway · #9–13 (for → continue); #17–26 (local vs global scope → nested structures); #28–39 (text files → Build a small program of roughly 100-200 lines without copying a walkthrough.)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": null,
+  "project": null,
+  "build": "Unseen test on Day 14 (includes the 100-200 line program, P01.1a#39).",
+  "note": "Days 8-14: Days 8-9 loops; Days 10-11 strings and collections; Days 12-13 functions, decomposition, small programs; Day 14 exceptions, files, review, unseen test.",
+  "gate": "G0",
+  "requiredGate": null,
+  "conceptCount": 27,
+  "dayPlan": {
+   "days": "8-14",
+   "plan": [
+    {
+     "days": "Days 1-3",
+     "focus": "Functions, variables, expressions, input/output"
+    },
+    {
+     "days": "Days 4-6",
+     "focus": "Conditionals and boolean reasoning"
+    },
+    {
+     "days": "Days 7-9",
+     "focus": "Loops and iteration"
+    },
+    {
+     "days": "Days 10-11",
+     "focus": "Strings and collections"
+    },
+    {
+     "days": "Days 12-13",
+     "focus": "Functions, decomposition, small programs"
+    },
+    {
+     "days": "Day 14",
+     "focus": "Exceptions, files, review, unseen test"
+    }
+   ]
+  }
+ },
+ {
+  "cw": 3,
+  "stage": "S1",
+  "mainStage": "S1",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P01.1b:1-13",
+    "kind": "topic",
+    "topicId": "P01.1b",
+    "conceptIds": [
+     "P01.1b#1",
+     "P01.1b#2",
+     "P01.1b#3",
+     "P01.1b#4",
+     "P01.1b#5",
+     "P01.1b#6",
+     "P01.1b#7",
+     "P01.1b#8",
+     "P01.1b#9",
+     "P01.1b#10",
+     "P01.1b#11",
+     "P01.1b#12",
+     "P01.1b#13"
+    ],
+    "label": "P01.1b Python › Core language · #1–13 (literals → default arguments)"
+   },
+   {
+    "ref": "P01.1f:1",
+    "kind": "topic",
+    "topicId": "P01.1f",
+    "conceptIds": [
+     "P01.1f#1"
+    ],
+    "label": "P01.1f Python › Required implementations · #1 (CLI calculator)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": null,
+  "project": null,
+  "build": "Build 1: CLI calculator (P01.1f#1).",
+  "note": "Fluency practice after G0; no new gate.",
+  "gate": null,
+  "requiredGate": "G0",
+  "conceptCount": 14,
+  "dayPlan": null
+ },
+ {
+  "cw": 4,
+  "stage": "S1",
+  "mainStage": "S1",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P01.1b:14-27",
+    "kind": "topic",
+    "topicId": "P01.1b",
+    "conceptIds": [
+     "P01.1b#14",
+     "P01.1b#15",
+     "P01.1b#16",
+     "P01.1b#17",
+     "P01.1b#18",
+     "P01.1b#19",
+     "P01.1b#20",
+     "P01.1b#21",
+     "P01.1b#22",
+     "P01.1b#23",
+     "P01.1b#24",
+     "P01.1b#25",
+     "P01.1b#26",
+     "P01.1b#27"
+    ],
+    "label": "P01.1b Python › Core language · #14–27 (scopes → comprehensions)"
+   },
+   {
+    "ref": "P01.1f:2",
+    "kind": "topic",
+    "topicId": "P01.1f",
+    "conceptIds": [
+     "P01.1f#2"
+    ],
+    "label": "P01.1f Python › Required implementations · #2 (File organiser)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": null,
+  "project": null,
+  "build": "Build 2: File organiser (P01.1f#2).",
+  "note": "",
+  "gate": null,
+  "requiredGate": "G0",
+  "conceptCount": 15,
+  "dayPlan": null
+ },
+ {
+  "cw": 5,
+  "stage": "S1",
+  "mainStage": "S1",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P02.1",
+    "kind": "topic",
+    "topicId": "P02.1",
+    "conceptIds": null,
+    "label": "P02.1 Git"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": null,
+  "project": null,
+  "build": "Recovery drills: deleted file, bad commit, merge conflict, earlier version.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "G0",
+  "conceptCount": 24,
+  "dayPlan": null
+ },
+ {
+  "cw": 6,
+  "stage": "S1",
+  "mainStage": "S1",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P02.2",
+    "kind": "topic",
+    "topicId": "P02.2",
+    "conceptIds": null,
+    "label": "P02.2 GitHub"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": null,
+  "project": null,
+  "build": "Put Builds 1-2 on GitHub with README and .gitignore.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "G0",
+  "conceptCount": 13,
+  "dayPlan": null
+ },
+ {
+  "cw": 7,
+  "stage": "S1",
+  "mainStage": "S1",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P03.1:1-13,22-40",
+    "kind": "topic",
+    "topicId": "P03.1",
+    "conceptIds": [
+     "P03.1#1",
+     "P03.1#2",
+     "P03.1#3",
+     "P03.1#4",
+     "P03.1#5",
+     "P03.1#6",
+     "P03.1#7",
+     "P03.1#8",
+     "P03.1#9",
+     "P03.1#10",
+     "P03.1#11",
+     "P03.1#12",
+     "P03.1#13",
+     "P03.1#22",
+     "P03.1#23",
+     "P03.1#24",
+     "P03.1#25",
+     "P03.1#26",
+     "P03.1#27",
+     "P03.1#28",
+     "P03.1#29",
+     "P03.1#30",
+     "P03.1#31",
+     "P03.1#32",
+     "P03.1#33",
+     "P03.1#34",
+     "P03.1#35",
+     "P03.1#36",
+     "P03.1#37",
+     "P03.1#38",
+     "P03.1#39",
+     "P03.1#40"
+    ],
+    "label": "P03.1 Linux · #1–13 (filesystem hierarchy → shell scripts); #22–40 (pwd → xargs)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": null,
+  "project": null,
+  "build": "Shell navigation and text-tool exercises on your own files.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "G0",
+  "conceptCount": 32,
+  "dayPlan": null
+ },
+ {
+  "cw": 8,
+  "stage": "S1",
+  "mainStage": "S1",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P03.1:14-21,41-48",
+    "kind": "topic",
+    "topicId": "P03.1",
+    "conceptIds": [
+     "P03.1#14",
+     "P03.1#15",
+     "P03.1#16",
+     "P03.1#17",
+     "P03.1#18",
+     "P03.1#19",
+     "P03.1#20",
+     "P03.1#21",
+     "P03.1#41",
+     "P03.1#42",
+     "P03.1#43",
+     "P03.1#44",
+     "P03.1#45",
+     "P03.1#46",
+     "P03.1#47",
+     "P03.1#48"
+    ],
+    "label": "P03.1 Linux · #14–21 (package managers → cron awareness); #41–48 (curl → chown)"
+   },
+   {
+    "ref": "P03.1a",
+    "kind": "topic",
+    "topicId": "P03.1a",
+    "conceptIds": null,
+    "label": "P03.1a Linux › Projects"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": null,
+  "project": null,
+  "build": "One P03.1a project (shell automation or log filtering).",
+  "note": "",
+  "gate": null,
+  "requiredGate": "G0",
+  "conceptCount": 21,
+  "dayPlan": null
+ },
+ {
+  "cw": 9,
+  "stage": "S1",
+  "mainStage": "S1",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P01.1c:1-9",
+    "kind": "topic",
+    "topicId": "P01.1c",
+    "conceptIds": [
+     "P01.1c#1",
+     "P01.1c#2",
+     "P01.1c#3",
+     "P01.1c#4",
+     "P01.1c#5",
+     "P01.1c#6",
+     "P01.1c#7",
+     "P01.1c#8",
+     "P01.1c#9"
+    ],
+    "label": "P01.1c Python › Intermediate Python · #1–9 (iterators → dataclasses)"
+   },
+   {
+    "ref": "P01.1f:3",
+    "kind": "topic",
+    "topicId": "P01.1f",
+    "conceptIds": [
+     "P01.1f#3"
+    ],
+    "label": "P01.1f Python › Required implementations · #3 (Expense tracker)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": null,
+  "project": null,
+  "build": "Build 3: Expense tracker (P01.1f#3).",
+  "note": "",
+  "gate": null,
+  "requiredGate": "G0",
+  "conceptCount": 10,
+  "dayPlan": null
+ },
+ {
+  "cw": 10,
+  "stage": "S1",
+  "mainStage": "S1",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P01.1c:10-18",
+    "kind": "topic",
+    "topicId": "P01.1c",
+    "conceptIds": [
+     "P01.1c#10",
+     "P01.1c#11",
+     "P01.1c#12",
+     "P01.1c#13",
+     "P01.1c#14",
+     "P01.1c#15",
+     "P01.1c#16",
+     "P01.1c#17",
+     "P01.1c#18"
+    ],
+    "label": "P01.1c Python › Intermediate Python · #10–18 (enums → structural typing concepts)"
+   },
+   {
+    "ref": "P01.1f:4",
+    "kind": "topic",
+    "topicId": "P01.1f",
+    "conceptIds": [
+     "P01.1f#4"
+    ],
+    "label": "P01.1f Python › Required implementations · #4 (Log analyser)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": null,
+  "project": null,
+  "build": "Build 4: Log analyser (P01.1f#4).",
+  "note": "",
+  "gate": null,
+  "requiredGate": "G0",
+  "conceptCount": 10,
+  "dayPlan": null
+ },
+ {
+  "cw": 11,
+  "stage": "S1",
+  "mainStage": "S1",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P07.3",
+    "kind": "topic",
+    "topicId": "P07.3",
+    "conceptIds": null,
+    "label": "P07.3 Testing"
+   },
+   {
+    "ref": "P07.4",
+    "kind": "topic",
+    "topicId": "P07.4",
+    "conceptIds": null,
+    "label": "P07.4 Debugging"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": null,
+  "project": null,
+  "build": "Add tests to Builds 3-4; debug one planted failure.",
+  "note": "Entry depth D1-D2; P07 is revisited in S4.",
+  "gate": null,
+  "requiredGate": "G0",
+  "conceptCount": 21,
+  "dayPlan": null
+ },
+ {
+  "cw": 12,
+  "stage": "S1",
+  "mainStage": "S1",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P01.1d:1-10",
+    "kind": "topic",
+    "topicId": "P01.1d",
+    "conceptIds": [
+     "P01.1d#1",
+     "P01.1d#2",
+     "P01.1d#3",
+     "P01.1d#4",
+     "P01.1d#5",
+     "P01.1d#6",
+     "P01.1d#7",
+     "P01.1d#8",
+     "P01.1d#9",
+     "P01.1d#10"
+    ],
+    "label": "P01.1d Python › Professional Python · #1–10 (virtual environments → environment variables)"
+   },
+   {
+    "ref": "P01.1f:5",
+    "kind": "topic",
+    "topicId": "P01.1f",
+    "conceptIds": [
+     "P01.1f#5"
+    ],
+    "label": "P01.1f Python › Required implementations · #5 (CSV/JSON processor)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": null,
+  "project": null,
+  "build": "Build 5: CSV/JSON processor (P01.1f#5) as an installable package.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "G0",
+  "conceptCount": 11,
+  "dayPlan": null
+ },
+ {
+  "cw": 13,
+  "stage": "S1",
+  "mainStage": "S1",
+  "type": "project",
+  "primary": [
+   {
+    "ref": "PR01",
+    "kind": "project",
+    "projectId": "PR01",
+    "label": "PR01 CLI Tool (build)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": null,
+  "project": "PR01",
+  "build": "PR01 CLI Tool: design, implement, test.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "G0",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 14,
+  "stage": "S1",
+  "mainStage": "S1",
+  "type": "project",
+  "primary": [
+   {
+    "ref": "PR01",
+    "kind": "project",
+    "projectId": "PR01",
+    "label": "PR01 CLI Tool (build)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": null,
+  "project": "PR01",
+  "build": "PR01 finish; C1 practical gate: 3 unseen tasks in separate sessions + CLI program without walkthrough.",
+  "note": "",
+  "gate": "C1",
+  "requiredGate": "G0",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 15,
+  "stage": "S2",
+  "mainStage": "S2",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P04.0",
+    "kind": "topic",
+    "topicId": "P04.0",
+    "conceptIds": null,
+    "label": "P04.0 Data Structures & Algorithms (core scope)"
+   },
+   {
+    "ref": "P04.1",
+    "kind": "topic",
+    "topicId": "P04.1",
+    "conceptIds": null,
+    "label": "P04.1 Complexity"
+   },
+   {
+    "ref": "P04.2:1-3,12-15",
+    "kind": "topic",
+    "topicId": "P04.2",
+    "conceptIds": [
+     "P04.2#1",
+     "P04.2#2",
+     "P04.2#3",
+     "P04.2#12",
+     "P04.2#13",
+     "P04.2#14",
+     "P04.2#15"
+    ],
+    "label": "P04.2 Linear structures · #1–3 (arrays → strings); #12–15 (memory trade-offs → locality)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": null,
+  "project": null,
+  "build": "Implement dynamic array; analyse costs.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C1",
+  "conceptCount": 18,
+  "dayPlan": null
+ },
+ {
+  "cw": 16,
+  "stage": "S2",
+  "mainStage": "S2",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P04.2:4-9",
+    "kind": "topic",
+    "topicId": "P04.2",
+    "conceptIds": [
+     "P04.2#4",
+     "P04.2#5",
+     "P04.2#6",
+     "P04.2#7",
+     "P04.2#8",
+     "P04.2#9"
+    ],
+    "label": "P04.2 Linear structures · #4–9 (linked lists → deques)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": null,
+  "project": null,
+  "build": "Implement linked list, stack, queue, deque.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C1",
+  "conceptCount": 6,
+  "dayPlan": null
+ },
+ {
+  "cw": 17,
+  "stage": "S2",
+  "mainStage": "S2",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P04.2:10-11,16",
+    "kind": "topic",
+    "topicId": "P04.2",
+    "conceptIds": [
+     "P04.2#10",
+     "P04.2#11",
+     "P04.2#16"
+    ],
+    "label": "P04.2 Linear structures · #10–11 (hash tables → sets); #16 (collision handling)"
+   },
+   {
+    "ref": "P04.5:1-7",
+    "kind": "topic",
+    "topicId": "P04.5",
+    "conceptIds": [
+     "P04.5#1",
+     "P04.5#2",
+     "P04.5#3",
+     "P04.5#4",
+     "P04.5#5",
+     "P04.5#6",
+     "P04.5#7"
+    ],
+    "label": "P04.5 Algorithm families · #1–7 (linear search → recursion)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": null,
+  "project": null,
+  "build": "Implement hash table; binary search; merge sort and quicksort.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C1",
+  "conceptCount": 10,
+  "dayPlan": null
+ },
+ {
+  "cw": 18,
+  "stage": "S2",
+  "mainStage": "S2",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P06.1",
+    "kind": "topic",
+    "topicId": "P06.1",
+    "conceptIds": null,
+    "label": "P06.1 Relational fundamentals"
+   },
+   {
+    "ref": "P06.1a:1-6",
+    "kind": "topic",
+    "topicId": "P06.1a",
+    "conceptIds": [
+     "P06.1a#1",
+     "P06.1a#2",
+     "P06.1a#3",
+     "P06.1a#4",
+     "P06.1a#5",
+     "P06.1a#6"
+    ],
+    "label": "P06.1a Relational fundamentals › SQL mastery · #1–6 (SELECT → aggregate functions)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.2",
+     "kind": "topic",
+     "topicId": "P04.2",
+     "conceptIds": null,
+     "label": "P04.2 Linear structures"
+    },
+    {
+     "ref": "P04.5:1-7",
+     "kind": "topic",
+     "topicId": "P04.5",
+     "conceptIds": [
+      "P04.5#1",
+      "P04.5#2",
+      "P04.5#3",
+      "P04.5#4",
+      "P04.5#5",
+      "P04.5#6",
+      "P04.5#7"
+     ],
+     "label": "P04.5 Algorithm families · #1–7 (linear search → recursion)"
+    }
+   ],
+   "note": "Re-test linear structures, hashing, search/sort (2-3 sessions/week)."
+  },
+  "project": null,
+  "build": "SQLBolt set + own queries on a sample database.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C1",
+  "conceptCount": 18,
+  "dayPlan": null
+ },
+ {
+  "cw": 19,
+  "stage": "S2",
+  "mainStage": "S2",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P06.1a:7-12",
+    "kind": "topic",
+    "topicId": "P06.1a",
+    "conceptIds": [
+     "P06.1a#7",
+     "P06.1a#8",
+     "P06.1a#9",
+     "P06.1a#10",
+     "P06.1a#11",
+     "P06.1a#12"
+    ],
+    "label": "P06.1a Relational fundamentals › SQL mastery · #7–12 (joins → CASE)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.2",
+     "kind": "topic",
+     "topicId": "P04.2",
+     "conceptIds": null,
+     "label": "P04.2 Linear structures"
+    },
+    {
+     "ref": "P04.5:1-7",
+     "kind": "topic",
+     "topicId": "P04.5",
+     "conceptIds": [
+      "P04.5#1",
+      "P04.5#2",
+      "P04.5#3",
+      "P04.5#4",
+      "P04.5#5",
+      "P04.5#6",
+      "P04.5#7"
+     ],
+     "label": "P04.5 Algorithm families · #1–7 (linear search → recursion)"
+    }
+   ],
+   "note": "Re-test linear structures, hashing, search/sort (2-3 sessions/week)."
+  },
+  "project": null,
+  "build": "Join/CTE/window exercises.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C1",
+  "conceptCount": 6,
+  "dayPlan": null
+ },
+ {
+  "cw": 20,
+  "stage": "S2",
+  "mainStage": "S2",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P06.1a:13-17",
+    "kind": "topic",
+    "topicId": "P06.1a",
+    "conceptIds": [
+     "P06.1a#13",
+     "P06.1a#14",
+     "P06.1a#15",
+     "P06.1a#16",
+     "P06.1a#17"
+    ],
+    "label": "P06.1a Relational fundamentals › SQL mastery · #13–17 (string functions → materialised-view awareness)"
+   },
+   {
+    "ref": "P06.2",
+    "kind": "topic",
+    "topicId": "P06.2",
+    "conceptIds": null,
+    "label": "P06.2 PostgreSQL"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.2",
+     "kind": "topic",
+     "topicId": "P04.2",
+     "conceptIds": null,
+     "label": "P04.2 Linear structures"
+    },
+    {
+     "ref": "P04.5:1-7",
+     "kind": "topic",
+     "topicId": "P04.5",
+     "conceptIds": [
+      "P04.5#1",
+      "P04.5#2",
+      "P04.5#3",
+      "P04.5#4",
+      "P04.5#5",
+      "P04.5#6",
+      "P04.5#7"
+     ],
+     "label": "P04.5 Algorithm families · #1–7 (linear search → recursion)"
+    }
+   ],
+   "note": "Re-test linear structures, hashing, search/sort (2-3 sessions/week)."
+  },
+  "project": null,
+  "build": "PostgreSQL install; load a dataset; P06.2 project 1 (SQL analytics exercises).",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C1",
+  "conceptCount": 10,
+  "dayPlan": null
+ },
+ {
+  "cw": 21,
+  "stage": "S2",
+  "mainStage": "S2",
+  "type": "consolidation",
+  "primary": [
+   {
+    "ref": "CONSOLIDATE",
+    "kind": "activity",
+    "activity": "CONSOLIDATE",
+    "label": "Consolidation: gate attempt, spaced re-tests, targeted repair"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.2",
+     "kind": "topic",
+     "topicId": "P04.2",
+     "conceptIds": null,
+     "label": "P04.2 Linear structures"
+    },
+    {
+     "ref": "P04.5:1-7",
+     "kind": "topic",
+     "topicId": "P04.5",
+     "conceptIds": [
+      "P04.5#1",
+      "P04.5#2",
+      "P04.5#3",
+      "P04.5#4",
+      "P04.5#5",
+      "P04.5#6",
+      "P04.5#7"
+     ],
+     "label": "P04.5 Algorithm families · #1–7 (linear search → recursion)"
+    }
+   ],
+   "note": "Re-test linear structures, hashing, search/sort (2-3 sessions/week)."
+  },
+  "project": null,
+  "build": "Unseen DSA set (linear structures, hashing, search/sort) + unseen SQL task; spaced re-tests of S0-S1.",
+  "note": "",
+  "gate": "SG2",
+  "requiredGate": "C1",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 22,
+  "stage": "S3",
+  "mainStage": "S3",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P10.3:1-9",
+    "kind": "topic",
+    "topicId": "P10.3",
+    "conceptIds": [
+     "P10.3#1",
+     "P10.3#2",
+     "P10.3#3",
+     "P10.3#4",
+     "P10.3#5",
+     "P10.3#6",
+     "P10.3#7",
+     "P10.3#8",
+     "P10.3#9"
+    ],
+    "label": "P10.3 Probability · #1–9 (sample spaces → CDF)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.3",
+     "kind": "topic",
+     "topicId": "P04.3",
+     "conceptIds": null,
+     "label": "P04.3 Trees"
+    }
+   ],
+   "note": "Trees, heaps, priority queues, tries."
+  },
+  "project": null,
+  "build": "Problem set + Monte Carlo simulation in Python.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG2",
+  "conceptCount": 9,
+  "dayPlan": null
+ },
+ {
+  "cw": 23,
+  "stage": "S3",
+  "mainStage": "S3",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P10.3:10-16",
+    "kind": "topic",
+    "topicId": "P10.3",
+    "conceptIds": [
+     "P10.3#10",
+     "P10.3#11",
+     "P10.3#12",
+     "P10.3#13",
+     "P10.3#14",
+     "P10.3#15",
+     "P10.3#16"
+    ],
+    "label": "P10.3 Probability · #10–16 (expectation → central limit theorem)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.3",
+     "kind": "topic",
+     "topicId": "P04.3",
+     "conceptIds": null,
+     "label": "P04.3 Trees"
+    }
+   ],
+   "note": "Trees, heaps, priority queues, tries."
+  },
+  "project": null,
+  "build": "Simulate LLN and CLT.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG2",
+  "conceptCount": 7,
+  "dayPlan": null
+ },
+ {
+  "cw": 24,
+  "stage": "S3",
+  "mainStage": "S3",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P10.4:1-6",
+    "kind": "topic",
+    "topicId": "P10.4",
+    "conceptIds": [
+     "P10.4#1",
+     "P10.4#2",
+     "P10.4#3",
+     "P10.4#4",
+     "P10.4#5",
+     "P10.4#6"
+    ],
+    "label": "P10.4 Statistics · #1–6 (descriptive statistics → consistency)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.3",
+     "kind": "topic",
+     "topicId": "P04.3",
+     "conceptIds": null,
+     "label": "P04.3 Trees"
+    }
+   ],
+   "note": "Trees, heaps, priority queues, tries."
+  },
+  "project": null,
+  "build": "Descriptive statistics and sampling on a real dataset.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG2",
+  "conceptCount": 6,
+  "dayPlan": null
+ },
+ {
+  "cw": 25,
+  "stage": "S3",
+  "mainStage": "S3",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P10.4:7-11",
+    "kind": "topic",
+    "topicId": "P10.4",
+    "conceptIds": [
+     "P10.4#7",
+     "P10.4#8",
+     "P10.4#9",
+     "P10.4#10",
+     "P10.4#11"
+    ],
+    "label": "P10.4 Statistics · #7–11 (confidence intervals → effect sizes)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.3",
+     "kind": "topic",
+     "topicId": "P04.3",
+     "conceptIds": null,
+     "label": "P04.3 Trees"
+    }
+   ],
+   "note": "Trees, heaps, priority queues, tries."
+  },
+  "project": null,
+  "build": "Confidence intervals and a hypothesis test with power/effect size discussion.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG2",
+  "conceptCount": 5,
+  "dayPlan": null
+ },
+ {
+  "cw": 26,
+  "stage": "S3",
+  "mainStage": "S3",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P10.1a",
+    "kind": "topic",
+    "topicId": "P10.1a",
+    "conceptIds": null,
+    "label": "P10.1a Linear Algebra › Foundations"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.3",
+     "kind": "topic",
+     "topicId": "P04.3",
+     "conceptIds": null,
+     "label": "P04.3 Trees"
+    }
+   ],
+   "note": "Trees, heaps, priority queues, tries."
+  },
+  "project": null,
+  "build": "Hand derivations + NumPy matrix operations.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG2",
+  "conceptCount": 8,
+  "dayPlan": null
+ },
+ {
+  "cw": 27,
+  "stage": "S3",
+  "mainStage": "S3",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P10.1b",
+    "kind": "topic",
+    "topicId": "P10.1b",
+    "conceptIds": null,
+    "label": "P10.1b Linear Algebra › Vector spaces"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.3",
+     "kind": "topic",
+     "topicId": "P04.3",
+     "conceptIds": null,
+     "label": "P04.3 Trees"
+    }
+   ],
+   "note": "Trees, heaps, priority queues, tries."
+  },
+  "project": null,
+  "build": "Problem set.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG2",
+  "conceptCount": 8,
+  "dayPlan": null
+ },
+ {
+  "cw": 28,
+  "stage": "S3",
+  "mainStage": "S3",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P10.1c",
+    "kind": "topic",
+    "topicId": "P10.1c",
+    "conceptIds": null,
+    "label": "P10.1c Linear Algebra › Geometry"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.3",
+     "kind": "topic",
+     "topicId": "P04.3",
+     "conceptIds": null,
+     "label": "P04.3 Trees"
+    }
+   ],
+   "note": "Trees, heaps, priority queues, tries."
+  },
+  "project": null,
+  "build": "Projections and orthogonality in NumPy.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG2",
+  "conceptCount": 6,
+  "dayPlan": null
+ },
+ {
+  "cw": 29,
+  "stage": "S3",
+  "mainStage": "S3",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P11.1",
+    "kind": "topic",
+    "topicId": "P11.1",
+    "conceptIds": null,
+    "label": "P11.1 Core stack"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.3",
+     "kind": "topic",
+     "topicId": "P04.3",
+     "conceptIds": null,
+     "label": "P04.3 Trees"
+    }
+   ],
+   "note": "Trees, heaps, priority queues, tries."
+  },
+  "project": null,
+  "build": "NumPy and Pandas exercises on real data.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG2",
+  "conceptCount": 5,
+  "dayPlan": null
+ },
+ {
+  "cw": 30,
+  "stage": "S3",
+  "mainStage": "S3",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P11.1",
+    "kind": "topic",
+    "topicId": "P11.1",
+    "conceptIds": null,
+    "label": "P11.1 Core stack"
+   },
+   {
+    "ref": "P01.1f:7",
+    "kind": "topic",
+    "topicId": "P01.1f",
+    "conceptIds": [
+     "P01.1f#7"
+    ],
+    "label": "P01.1f Python › Required implementations · #7 (CLI data-analysis tool)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.3",
+     "kind": "topic",
+     "topicId": "P04.3",
+     "conceptIds": null,
+     "label": "P04.3 Trees"
+    }
+   ],
+   "note": "Trees, heaps, priority queues, tries."
+  },
+  "project": null,
+  "build": "Build 7: CLI data-analysis tool (P01.1f#7).",
+  "note": "Second pass on the core stack: Pandas depth and Matplotlib.",
+  "gate": null,
+  "requiredGate": "SG2",
+  "conceptCount": 6,
+  "dayPlan": null
+ },
+ {
+  "cw": 31,
+  "stage": "S3",
+  "mainStage": "S3",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P11.2",
+    "kind": "topic",
+    "topicId": "P11.2",
+    "conceptIds": null,
+    "label": "P11.2 Data workflow"
+   },
+   {
+    "ref": "P11.3:1-6",
+    "kind": "topic",
+    "topicId": "P11.3",
+    "conceptIds": [
+     "P11.3#1",
+     "P11.3#2",
+     "P11.3#3",
+     "P11.3#4",
+     "P11.3#5",
+     "P11.3#6"
+    ],
+    "label": "P11.3 Data-quality reasoning · #1–6 (missing values → distributions)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.3",
+     "kind": "topic",
+     "topicId": "P04.3",
+     "conceptIds": null,
+     "label": "P04.3 Trees"
+    }
+   ],
+   "note": "Trees, heaps, priority queues, tries."
+  },
+  "project": null,
+  "build": "Follow the master data workflow on one dataset.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG2",
+  "conceptCount": 6,
+  "dayPlan": null
+ },
+ {
+  "cw": 32,
+  "stage": "S3",
+  "mainStage": "S3",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P11.3:7-12",
+    "kind": "topic",
+    "topicId": "P11.3",
+    "conceptIds": [
+     "P11.3#7",
+     "P11.3#8",
+     "P11.3#9",
+     "P11.3#10",
+     "P11.3#11",
+     "P11.3#12"
+    ],
+    "label": "P11.3 Data-quality reasoning · #7–12 (class imbalance → inconsistent categories)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.3",
+     "kind": "topic",
+     "topicId": "P04.3",
+     "conceptIds": null,
+     "label": "P04.3 Trees"
+    }
+   ],
+   "note": "Trees, heaps, priority queues, tries."
+  },
+  "project": null,
+  "build": "Reproducible EDA report with data-quality checks.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG2",
+  "conceptCount": 6,
+  "dayPlan": null
+ },
+ {
+  "cw": 33,
+  "stage": "S3",
+  "mainStage": "S3",
+  "type": "consolidation",
+  "primary": [
+   {
+    "ref": "CONSOLIDATE",
+    "kind": "activity",
+    "activity": "CONSOLIDATE",
+    "label": "Consolidation: gate attempt, spaced re-tests, targeted repair"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.3",
+     "kind": "topic",
+     "topicId": "P04.3",
+     "conceptIds": null,
+     "label": "P04.3 Trees"
+    }
+   ],
+   "note": "Trees, heaps, priority queues, tries."
+  },
+  "project": null,
+  "build": "Data gate (unseen EDA task) + statistics gate (unseen inference task); spaced re-tests.",
+  "note": "",
+  "gate": "SG3",
+  "requiredGate": "SG2",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 34,
+  "stage": "S4",
+  "mainStage": "S4",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P07.1",
+    "kind": "topic",
+    "topicId": "P07.1",
+    "conceptIds": null,
+    "label": "P07.1 Code quality"
+   },
+   {
+    "ref": "P07.2",
+    "kind": "topic",
+    "topicId": "P07.2",
+    "conceptIds": null,
+    "label": "P07.2 Principles"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.4",
+     "kind": "topic",
+     "topicId": "P04.4",
+     "conceptIds": null,
+     "label": "P04.4 Graphs"
+    }
+   ],
+   "note": "Graphs."
+  },
+  "project": null,
+  "build": "Refactor Builds 1-5 for code quality.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG3",
+  "conceptCount": 15,
+  "dayPlan": null
+ },
+ {
+  "cw": 35,
+  "stage": "S4",
+  "mainStage": "S4",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P07.3",
+    "kind": "topic",
+    "topicId": "P07.3",
+    "conceptIds": null,
+    "label": "P07.3 Testing"
+   },
+   {
+    "ref": "P07.4",
+    "kind": "topic",
+    "topicId": "P07.4",
+    "conceptIds": null,
+    "label": "P07.4 Debugging"
+   },
+   {
+    "ref": "P01.1d:11-16",
+    "kind": "topic",
+    "topicId": "P01.1d",
+    "conceptIds": [
+     "P01.1d#11",
+     "P01.1d#12",
+     "P01.1d#13",
+     "P01.1d#14",
+     "P01.1d#15",
+     "P01.1d#16"
+    ],
+    "label": "P01.1d Python › Professional Python · #11–16 (secrets handling → debugging)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.4",
+     "kind": "topic",
+     "topicId": "P04.4",
+     "conceptIds": null,
+     "label": "P04.4 Graphs"
+    }
+   ],
+   "note": "Graphs."
+  },
+  "project": null,
+  "build": "Linting, formatting, type checking, profiling on one build.",
+  "note": "Second pass at D2-D3.",
+  "gate": null,
+  "requiredGate": "SG3",
+  "conceptCount": 27,
+  "dayPlan": null
+ },
+ {
+  "cw": 36,
+  "stage": "S4",
+  "mainStage": "S4",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P07.5",
+    "kind": "topic",
+    "topicId": "P07.5",
+    "conceptIds": null,
+    "label": "P07.5 Engineering workflow"
+   },
+   {
+    "ref": "P08.0",
+    "kind": "topic",
+    "topicId": "P08.0",
+    "conceptIds": null,
+    "label": "P08.0 Backend Engineering (core scope)"
+   },
+   {
+    "ref": "P01.1f:8",
+    "kind": "topic",
+    "topicId": "P01.1f",
+    "conceptIds": [
+     "P01.1f#8"
+    ],
+    "label": "P01.1f Python › Required implementations · #8 (reusable Python package)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.4",
+     "kind": "topic",
+     "topicId": "P04.4",
+     "conceptIds": null,
+     "label": "P04.4 Graphs"
+    }
+   ],
+   "note": "Graphs."
+  },
+  "project": null,
+  "build": "Build 8: reusable Python package (P01.1f#8).",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG3",
+  "conceptCount": 10,
+  "dayPlan": null
+ },
+ {
+  "cw": 37,
+  "stage": "S4",
+  "mainStage": "S4",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P08.1",
+    "kind": "topic",
+    "topicId": "P08.1",
+    "conceptIds": null,
+    "label": "P08.1 HTTP"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.4",
+     "kind": "topic",
+     "topicId": "P04.4",
+     "conceptIds": null,
+     "label": "P04.4 Graphs"
+    }
+   ],
+   "note": "Graphs."
+  },
+  "project": null,
+  "build": "Inspect real HTTP traffic with curl and devtools.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG3",
+  "conceptCount": 10,
+  "dayPlan": null
+ },
+ {
+  "cw": 38,
+  "stage": "S4",
+  "mainStage": "S4",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P08.2",
+    "kind": "topic",
+    "topicId": "P08.2",
+    "conceptIds": null,
+    "label": "P08.2 REST"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.4",
+     "kind": "topic",
+     "topicId": "P04.4",
+     "conceptIds": null,
+     "label": "P04.4 Graphs"
+    }
+   ],
+   "note": "Graphs."
+  },
+  "project": null,
+  "build": "Design a REST resource model on paper.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG3",
+  "conceptCount": 10,
+  "dayPlan": null
+ },
+ {
+  "cw": 39,
+  "stage": "S4",
+  "mainStage": "S4",
+  "type": "project",
+  "primary": [
+   {
+    "ref": "PR02",
+    "kind": "project",
+    "projectId": "PR02",
+    "label": "PR02 API Client / Automation Tool (build)"
+   },
+   {
+    "ref": "P01.1f:6",
+    "kind": "topic",
+    "topicId": "P01.1f",
+    "conceptIds": [
+     "P01.1f#6"
+    ],
+    "label": "P01.1f Python › Required implementations · #6 (API client)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.4",
+     "kind": "topic",
+     "topicId": "P04.4",
+     "conceptIds": null,
+     "label": "P04.4 Graphs"
+    }
+   ],
+   "note": "Graphs."
+  },
+  "project": "PR02",
+  "build": "PR02 API Client: consume a public API with retries, rate limits, logging (P01.1f#6).",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG3",
+  "conceptCount": 1,
+  "dayPlan": null
+ },
+ {
+  "cw": 40,
+  "stage": "S4",
+  "mainStage": "S4",
+  "type": "project",
+  "primary": [
+   {
+    "ref": "PR02",
+    "kind": "project",
+    "projectId": "PR02",
+    "label": "PR02 API Client / Automation Tool (build)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.4",
+     "kind": "topic",
+     "topicId": "P04.4",
+     "conceptIds": null,
+     "label": "P04.4 Graphs"
+    }
+   ],
+   "note": "Graphs."
+  },
+  "project": "PR02",
+  "build": "PR02 finish + README.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG3",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 41,
+  "stage": "S4",
+  "mainStage": "S4",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P08.3",
+    "kind": "topic",
+    "topicId": "P08.3",
+    "conceptIds": null,
+    "label": "P08.3 API design"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.4",
+     "kind": "topic",
+     "topicId": "P04.4",
+     "conceptIds": null,
+     "label": "P04.4 Graphs"
+    }
+   ],
+   "note": "Graphs."
+  },
+  "project": null,
+  "build": "API design exercise for PR03.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG3",
+  "conceptCount": 9,
+  "dayPlan": null
+ },
+ {
+  "cw": 42,
+  "stage": "S4",
+  "mainStage": "S4",
+  "type": "project",
+  "primary": [
+   {
+    "ref": "PR03",
+    "kind": "project",
+    "projectId": "PR03",
+    "label": "PR03 Database-Backed API (build)"
+   },
+   {
+    "ref": "P08.6:1-4",
+    "kind": "topic",
+    "topicId": "P08.6",
+    "conceptIds": [
+     "P08.6#1",
+     "P08.6#2",
+     "P08.6#3",
+     "P08.6#4"
+    ],
+    "label": "P08.6 Backend projects · #1–4 (routing → testing)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.4",
+     "kind": "topic",
+     "topicId": "P04.4",
+     "conceptIds": null,
+     "label": "P04.4 Graphs"
+    }
+   ],
+   "note": "Graphs."
+  },
+  "project": "PR03",
+  "build": "PR03 Database-Backed API: routing, validation, database access.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG3",
+  "conceptCount": 4,
+  "dayPlan": null
+ },
+ {
+  "cw": 43,
+  "stage": "S4",
+  "mainStage": "S4",
+  "type": "project",
+  "primary": [
+   {
+    "ref": "PR03",
+    "kind": "project",
+    "projectId": "PR03",
+    "label": "PR03 Database-Backed API (build)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.4",
+     "kind": "topic",
+     "topicId": "P04.4",
+     "conceptIds": null,
+     "label": "P04.4 Graphs"
+    }
+   ],
+   "note": "Graphs."
+  },
+  "project": "PR03",
+  "build": "PR03 migrations and tests.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG3",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 44,
+  "stage": "S4",
+  "mainStage": "S4",
+  "type": "project",
+  "primary": [
+   {
+    "ref": "PR03",
+    "kind": "project",
+    "projectId": "PR03",
+    "label": "PR03 Database-Backed API (build)"
+   },
+   {
+    "ref": "P01.1f:9",
+    "kind": "topic",
+    "topicId": "P01.1f",
+    "conceptIds": [
+     "P01.1f#9"
+    ],
+    "label": "P01.1f Python › Required implementations · #9 (tested backend service)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.4",
+     "kind": "topic",
+     "topicId": "P04.4",
+     "conceptIds": null,
+     "label": "P04.4 Graphs"
+    }
+   ],
+   "note": "Graphs."
+  },
+  "project": "PR03",
+  "build": "PR03 finish + README (Build 9 P01.1f#9).",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG3",
+  "conceptCount": 1,
+  "dayPlan": null
+ },
+ {
+  "cw": 45,
+  "stage": "S4",
+  "mainStage": "S4",
+  "type": "consolidation",
+  "primary": [
+   {
+    "ref": "CONSOLIDATE",
+    "kind": "activity",
+    "activity": "CONSOLIDATE",
+    "label": "Consolidation: gate attempt, spaced re-tests, targeted repair"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.4",
+     "kind": "topic",
+     "topicId": "P04.4",
+     "conceptIds": null,
+     "label": "P04.4 Graphs"
+    }
+   ],
+   "note": "Graphs."
+  },
+  "project": null,
+  "build": "Spaced re-tests across S0-S4; repair loop (master foundation failure recovery).",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG3",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 46,
+  "stage": "S4",
+  "mainStage": "S4",
+  "type": "consolidation",
+  "primary": [
+   {
+    "ref": "CONSOLIDATE",
+    "kind": "activity",
+    "activity": "CONSOLIDATE",
+    "label": "Consolidation: gate attempt, spaced re-tests, targeted repair"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.4",
+     "kind": "topic",
+     "topicId": "P04.4",
+     "conceptIds": null,
+     "label": "P04.4 Graphs"
+    }
+   ],
+   "note": "Graphs."
+  },
+  "project": null,
+  "build": "Foundation Reset exit review; portfolio Stage A update (T09).",
+  "note": "",
+  "gate": "SG4",
+  "requiredGate": "SG3",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 47,
+  "stage": "S5A",
+  "mainStage": "S5",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P05.2:1-9",
+    "kind": "topic",
+    "topicId": "P05.2",
+    "conceptIds": [
+     "P05.2#1",
+     "P05.2#2",
+     "P05.2#3",
+     "P05.2#4",
+     "P05.2#5",
+     "P05.2#6",
+     "P05.2#7",
+     "P05.2#8",
+     "P05.2#9"
+    ],
+    "label": "P05.2 Networking · #1–9 (packets → sockets)"
+   }
+  ],
+  "supporting": [
+   {
+    "ref": "P01.2:1-5",
+    "kind": "topic",
+    "topicId": "P01.2",
+    "conceptIds": [
+     "P01.2#1",
+     "P01.2#2",
+     "P01.2#3",
+     "P01.2#4",
+     "P01.2#5"
+    ],
+    "label": "P01.2 Java · #1–5 (syntax → constructors)"
+   }
+  ],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.5:8-13",
+     "kind": "topic",
+     "topicId": "P04.5",
+     "conceptIds": [
+      "P04.5#8",
+      "P04.5#9",
+      "P04.5#10",
+      "P04.5#11",
+      "P04.5#12",
+      "P04.5#13"
+     ],
+     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)"
+    },
+    {
+     "ref": "P04.6",
+     "kind": "topic",
+     "topicId": "P04.6",
+     "conceptIds": null,
+     "label": "P04.6 Problem-solving patterns"
+    }
+   ],
+   "note": "Algorithm families and problem-solving patterns; target C2 at CW66."
+  },
+  "project": null,
+  "build": "Simple socket programs.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG4",
+  "conceptCount": 14,
+  "dayPlan": null
+ },
+ {
+  "cw": 48,
+  "stage": "S5A",
+  "mainStage": "S5",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P05.2:10-16",
+    "kind": "topic",
+    "topicId": "P05.2",
+    "conceptIds": [
+     "P05.2#10",
+     "P05.2#11",
+     "P05.2#12",
+     "P05.2#13",
+     "P05.2#14",
+     "P05.2#15",
+     "P05.2#16"
+    ],
+    "label": "P05.2 Networking · #10–16 (DNS → sessions)"
+   }
+  ],
+  "supporting": [
+   {
+    "ref": "P01.2:6-10",
+    "kind": "topic",
+    "topicId": "P01.2",
+    "conceptIds": [
+     "P01.2#6",
+     "P01.2#7",
+     "P01.2#8",
+     "P01.2#9",
+     "P01.2#10"
+    ],
+    "label": "P01.2 Java · #6–10 (inheritance → composition)"
+   }
+  ],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.5:8-13",
+     "kind": "topic",
+     "topicId": "P04.5",
+     "conceptIds": [
+      "P04.5#8",
+      "P04.5#9",
+      "P04.5#10",
+      "P04.5#11",
+      "P04.5#12",
+      "P04.5#13"
+     ],
+     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)"
+    },
+    {
+     "ref": "P04.6",
+     "kind": "topic",
+     "topicId": "P04.6",
+     "conceptIds": null,
+     "label": "P04.6 Problem-solving patterns"
+    }
+   ],
+   "note": "Algorithm families and problem-solving patterns; target C2 at CW66."
+  },
+  "project": null,
+  "build": "Trace DNS + TLS for a real site.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG4",
+  "conceptCount": 12,
+  "dayPlan": null
+ },
+ {
+  "cw": 49,
+  "stage": "S5A",
+  "mainStage": "S5",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P05.2:17-24",
+    "kind": "topic",
+    "topicId": "P05.2",
+    "conceptIds": [
+     "P05.2#17",
+     "P05.2#18",
+     "P05.2#19",
+     "P05.2#20",
+     "P05.2#21",
+     "P05.2#22",
+     "P05.2#23",
+     "P05.2#24"
+    ],
+    "label": "P05.2 Networking · #17–24 (proxies → local HTTP servers)"
+   }
+  ],
+  "supporting": [
+   {
+    "ref": "P01.2:11-15",
+    "kind": "topic",
+    "topicId": "P01.2",
+    "conceptIds": [
+     "P01.2#11",
+     "P01.2#12",
+     "P01.2#13",
+     "P01.2#14",
+     "P01.2#15"
+    ],
+    "label": "P01.2 Java · #11–15 (packages → streams)"
+   }
+  ],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.5:8-13",
+     "kind": "topic",
+     "topicId": "P04.5",
+     "conceptIds": [
+      "P04.5#8",
+      "P04.5#9",
+      "P04.5#10",
+      "P04.5#11",
+      "P04.5#12",
+      "P04.5#13"
+     ],
+     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)"
+    },
+    {
+     "ref": "P04.6",
+     "kind": "topic",
+     "topicId": "P04.6",
+     "conceptIds": null,
+     "label": "P04.6 Problem-solving patterns"
+    }
+   ],
+   "note": "Algorithm families and problem-solving patterns; target C2 at CW66."
+  },
+  "project": null,
+  "build": "Local HTTP server behind a reverse proxy.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG4",
+  "conceptCount": 13,
+  "dayPlan": null
+ },
+ {
+  "cw": 50,
+  "stage": "S5A",
+  "mainStage": "S5",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P05.1:1-6,22",
+    "kind": "topic",
+    "topicId": "P05.1",
+    "conceptIds": [
+     "P05.1#1",
+     "P05.1#2",
+     "P05.1#3",
+     "P05.1#4",
+     "P05.1#5",
+     "P05.1#6",
+     "P05.1#22"
+    ],
+    "label": "P05.1 Operating Systems · #1–6 (kernel vs user space → system calls); #22 (CPU scheduling concepts)"
+   }
+  ],
+  "supporting": [
+   {
+    "ref": "P01.2:16-20",
+    "kind": "topic",
+    "topicId": "P01.2",
+    "conceptIds": [
+     "P01.2#16",
+     "P01.2#17",
+     "P01.2#18",
+     "P01.2#19",
+     "P01.2#20"
+    ],
+    "label": "P01.2 Java · #16–20 (lambdas → threads)"
+   }
+  ],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.5:8-13",
+     "kind": "topic",
+     "topicId": "P04.5",
+     "conceptIds": [
+      "P04.5#8",
+      "P04.5#9",
+      "P04.5#10",
+      "P04.5#11",
+      "P04.5#12",
+      "P04.5#13"
+     ],
+     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)"
+    },
+    {
+     "ref": "P04.6",
+     "kind": "topic",
+     "topicId": "P04.6",
+     "conceptIds": null,
+     "label": "P04.6 Problem-solving patterns"
+    }
+   ],
+   "note": "Algorithm families and problem-solving patterns; target C2 at CW66."
+  },
+  "project": null,
+  "build": "Process monitor (P05.1 project idea).",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG4",
+  "conceptCount": 12,
+  "dayPlan": null
+ },
+ {
+  "cw": 51,
+  "stage": "S5A",
+  "mainStage": "S5",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P05.1:7-14,20-21",
+    "kind": "topic",
+    "topicId": "P05.1",
+    "conceptIds": [
+     "P05.1#7",
+     "P05.1#8",
+     "P05.1#9",
+     "P05.1#10",
+     "P05.1#11",
+     "P05.1#12",
+     "P05.1#13",
+     "P05.1#14",
+     "P05.1#20",
+     "P05.1#21"
+    ],
+    "label": "P05.1 Operating Systems · #7–14 (virtual memory → sockets awareness); #20–21 (memory allocation concepts → caching)"
+   }
+  ],
+  "supporting": [
+   {
+    "ref": "P01.2:21-26",
+    "kind": "topic",
+    "topicId": "P01.2",
+    "conceptIds": [
+     "P01.2#21",
+     "P01.2#22",
+     "P01.2#23",
+     "P01.2#24",
+     "P01.2#25",
+     "P01.2#26"
+    ],
+    "label": "P01.2 Java · #21–26 (executors → JUnit)"
+   }
+  ],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.5:8-13",
+     "kind": "topic",
+     "topicId": "P04.5",
+     "conceptIds": [
+      "P04.5#8",
+      "P04.5#9",
+      "P04.5#10",
+      "P04.5#11",
+      "P04.5#12",
+      "P04.5#13"
+     ],
+     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)"
+    },
+    {
+     "ref": "P04.6",
+     "kind": "topic",
+     "topicId": "P04.6",
+     "conceptIds": null,
+     "label": "P04.6 Problem-solving patterns"
+    }
+   ],
+   "note": "Algorithm families and problem-solving patterns; target C2 at CW66."
+  },
+  "project": null,
+  "build": "File-descriptor and memory exploration exercises.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG4",
+  "conceptCount": 16,
+  "dayPlan": null
+ },
+ {
+  "cw": 52,
+  "stage": "S5A",
+  "mainStage": "S5",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P05.1:15-19,23-26",
+    "kind": "topic",
+    "topicId": "P05.1",
+    "conceptIds": [
+     "P05.1#15",
+     "P05.1#16",
+     "P05.1#17",
+     "P05.1#18",
+     "P05.1#19",
+     "P05.1#23",
+     "P05.1#24",
+     "P05.1#25",
+     "P05.1#26"
+    ],
+    "label": "P05.1 Operating Systems · #15–19 (synchronization → deadlocks); #23–26 (process monitor → file-system exploration tool)"
+   }
+  ],
+  "supporting": [
+   {
+    "ref": "P01.2:27-30",
+    "kind": "topic",
+    "topicId": "P01.2",
+    "conceptIds": [
+     "P01.2#27",
+     "P01.2#28",
+     "P01.2#29",
+     "P01.2#30"
+    ],
+    "label": "P01.2 Java · #27–30 (OOP mastery → understanding enterprise systems)"
+   }
+  ],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.5:8-13",
+     "kind": "topic",
+     "topicId": "P04.5",
+     "conceptIds": [
+      "P04.5#8",
+      "P04.5#9",
+      "P04.5#10",
+      "P04.5#11",
+      "P04.5#12",
+      "P04.5#13"
+     ],
+     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)"
+    },
+    {
+     "ref": "P04.6",
+     "kind": "topic",
+     "topicId": "P04.6",
+     "conceptIds": null,
+     "label": "P04.6 Problem-solving patterns"
+    }
+   ],
+   "note": "Algorithm families and problem-solving patterns; target C2 at CW66."
+  },
+  "project": null,
+  "build": "Concurrency bugs: reproduce a race and a deadlock, then fix them.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG4",
+  "conceptCount": 13,
+  "dayPlan": null
+ },
+ {
+  "cw": 53,
+  "stage": "S5A",
+  "mainStage": "S5",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P06.1b",
+    "kind": "topic",
+    "topicId": "P06.1b",
+    "conceptIds": null,
+    "label": "P06.1b Relational fundamentals › Database design"
+   }
+  ],
+  "supporting": [
+   {
+    "ref": "P01.1e:1-8",
+    "kind": "topic",
+    "topicId": "P01.1e",
+    "conceptIds": [
+     "P01.1e#1",
+     "P01.1e#2",
+     "P01.1e#3",
+     "P01.1e#4",
+     "P01.1e#5",
+     "P01.1e#6",
+     "P01.1e#7",
+     "P01.1e#8"
+    ],
+    "label": "P01.1e Python › Deeper internals · #1–8 (object model → import machinery)"
+   }
+  ],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.5:8-13",
+     "kind": "topic",
+     "topicId": "P04.5",
+     "conceptIds": [
+      "P04.5#8",
+      "P04.5#9",
+      "P04.5#10",
+      "P04.5#11",
+      "P04.5#12",
+      "P04.5#13"
+     ],
+     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)"
+    },
+    {
+     "ref": "P04.6",
+     "kind": "topic",
+     "topicId": "P04.6",
+     "conceptIds": null,
+     "label": "P04.6 Problem-solving patterns"
+    }
+   ],
+   "note": "Algorithm families and problem-solving patterns; target C2 at CW66."
+  },
+  "project": null,
+  "build": "Schema design for PR03 v2 (P06.2 project 2).",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG4",
+  "conceptCount": 14,
+  "dayPlan": null
+ },
+ {
+  "cw": 54,
+  "stage": "S5A",
+  "mainStage": "S5",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P06.1c",
+    "kind": "topic",
+    "topicId": "P06.1c",
+    "conceptIds": null,
+    "label": "P06.1c Relational fundamentals › Transactions"
+   }
+  ],
+  "supporting": [
+   {
+    "ref": "P01.1e:9-15",
+    "kind": "topic",
+    "topicId": "P01.1e",
+    "conceptIds": [
+     "P01.1e#9",
+     "P01.1e#10",
+     "P01.1e#11",
+     "P01.1e#12",
+     "P01.1e#13",
+     "P01.1e#14",
+     "P01.1e#15"
+    ],
+    "label": "P01.1e Python › Deeper internals · #9–15 (bytecode/interpreter concepts → current Python concurrency evolution)"
+   }
+  ],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.5:8-13",
+     "kind": "topic",
+     "topicId": "P04.5",
+     "conceptIds": [
+      "P04.5#8",
+      "P04.5#9",
+      "P04.5#10",
+      "P04.5#11",
+      "P04.5#12",
+      "P04.5#13"
+     ],
+     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)"
+    },
+    {
+     "ref": "P04.6",
+     "kind": "topic",
+     "topicId": "P04.6",
+     "conceptIds": null,
+     "label": "P04.6 Problem-solving patterns"
+    }
+   ],
+   "note": "Algorithm families and problem-solving patterns; target C2 at CW66."
+  },
+  "project": null,
+  "build": "Transaction-heavy exercise (P06.2 project 3).",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG4",
+  "conceptCount": 17,
+  "dayPlan": null
+ },
+ {
+  "cw": 55,
+  "stage": "S5A",
+  "mainStage": "S5",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P06.1d",
+    "kind": "topic",
+    "topicId": "P06.1d",
+    "conceptIds": null,
+    "label": "P06.1d Relational fundamentals › Performance"
+   },
+   {
+    "ref": "P06.2",
+    "kind": "topic",
+    "topicId": "P06.2",
+    "conceptIds": null,
+    "label": "P06.2 PostgreSQL"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.5:8-13",
+     "kind": "topic",
+     "topicId": "P04.5",
+     "conceptIds": [
+      "P04.5#8",
+      "P04.5#9",
+      "P04.5#10",
+      "P04.5#11",
+      "P04.5#12",
+      "P04.5#13"
+     ],
+     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)"
+    },
+    {
+     "ref": "P04.6",
+     "kind": "topic",
+     "topicId": "P04.6",
+     "conceptIds": null,
+     "label": "P04.6 Problem-solving patterns"
+    }
+   ],
+   "note": "Algorithm families and problem-solving patterns; target C2 at CW66."
+  },
+  "project": null,
+  "build": "Query optimisation exercise with EXPLAIN (P06.2 project 4).",
+  "note": "Second pass on PostgreSQL at depth.",
+  "gate": null,
+  "requiredGate": "SG4",
+  "conceptCount": 16,
+  "dayPlan": null
+ },
+ {
+  "cw": 56,
+  "stage": "S5A",
+  "mainStage": "S5",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P06.3",
+    "kind": "topic",
+    "topicId": "P06.3",
+    "conceptIds": null,
+    "label": "P06.3 Redis"
+   },
+   {
+    "ref": "P06.1e",
+    "kind": "topic",
+    "topicId": "P06.1e",
+    "conceptIds": null,
+    "label": "P06.1e Relational fundamentals › Distributed concepts"
+   },
+   {
+    "ref": "P06.4",
+    "kind": "topic",
+    "topicId": "P06.4",
+    "conceptIds": null,
+    "label": "P06.4 NoSQL"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.5:8-13",
+     "kind": "topic",
+     "topicId": "P04.5",
+     "conceptIds": [
+      "P04.5#8",
+      "P04.5#9",
+      "P04.5#10",
+      "P04.5#11",
+      "P04.5#12",
+      "P04.5#13"
+     ],
+     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)"
+    },
+    {
+     "ref": "P04.6",
+     "kind": "topic",
+     "topicId": "P04.6",
+     "conceptIds": null,
+     "label": "P04.6 Problem-solving patterns"
+    }
+   ],
+   "note": "Algorithm families and problem-solving patterns; target C2 at CW66."
+  },
+  "project": null,
+  "build": "Add Redis caching to PR03.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG4",
+  "conceptCount": 19,
+  "dayPlan": null
+ },
+ {
+  "cw": 57,
+  "stage": "S5A",
+  "mainStage": "S5",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P08.4",
+    "kind": "topic",
+    "topicId": "P08.4",
+    "conceptIds": null,
+    "label": "P08.4 Identity"
+   },
+   {
+    "ref": "P08.6:5-8",
+    "kind": "topic",
+    "topicId": "P08.6",
+    "conceptIds": [
+     "P08.6#5",
+     "P08.6#6",
+     "P08.6#7",
+     "P08.6#8"
+    ],
+    "label": "P08.6 Backend projects · #5–8 (users → roles)"
+   },
+   {
+    "ref": "P39.0",
+    "kind": "topic",
+    "topicId": "P39.0",
+    "conceptIds": null,
+    "label": "P39.0 Security (core scope)"
+   },
+   {
+    "ref": "P39.1",
+    "kind": "topic",
+    "topicId": "P39.1",
+    "conceptIds": null,
+    "label": "P39.1 General"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.5:8-13",
+     "kind": "topic",
+     "topicId": "P04.5",
+     "conceptIds": [
+      "P04.5#8",
+      "P04.5#9",
+      "P04.5#10",
+      "P04.5#11",
+      "P04.5#12",
+      "P04.5#13"
+     ],
+     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)"
+    },
+    {
+     "ref": "P04.6",
+     "kind": "topic",
+     "topicId": "P04.6",
+     "conceptIds": null,
+     "label": "P04.6 Problem-solving patterns"
+    }
+   ],
+   "note": "Algorithm families and problem-solving patterns; target C2 at CW66."
+  },
+  "project": "PR03",
+  "build": "Add users, password hashing, tokens, roles to PR03.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG4",
+  "conceptCount": 22,
+  "dayPlan": null
+ },
+ {
+  "cw": 58,
+  "stage": "S5A",
+  "mainStage": "S5",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P39.2",
+    "kind": "topic",
+    "topicId": "P39.2",
+    "conceptIds": null,
+    "label": "P39.2 Common web risks"
+   },
+   {
+    "ref": "P08.5",
+    "kind": "topic",
+    "topicId": "P08.5",
+    "conceptIds": null,
+    "label": "P08.5 Application infrastructure"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.5:8-13",
+     "kind": "topic",
+     "topicId": "P04.5",
+     "conceptIds": [
+      "P04.5#8",
+      "P04.5#9",
+      "P04.5#10",
+      "P04.5#11",
+      "P04.5#12",
+      "P04.5#13"
+     ],
+     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)"
+    },
+    {
+     "ref": "P04.6",
+     "kind": "topic",
+     "topicId": "P04.6",
+     "conceptIds": null,
+     "label": "P04.6 Problem-solving patterns"
+    }
+   ],
+   "note": "Algorithm families and problem-solving patterns; target C2 at CW66."
+  },
+  "project": null,
+  "build": "Security review of PR03 against common web risks.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG4",
+  "conceptCount": 15,
+  "dayPlan": null
+ },
+ {
+  "cw": 59,
+  "stage": "S5A",
+  "mainStage": "S5",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P35.0",
+    "kind": "topic",
+    "topicId": "P35.0",
+    "conceptIds": null,
+    "label": "P35.0 System Design (core scope)"
+   },
+   {
+    "ref": "P35.1",
+    "kind": "topic",
+    "topicId": "P35.1",
+    "conceptIds": null,
+    "label": "P35.1 Standard design process"
+   },
+   {
+    "ref": "P35.2:1-10",
+    "kind": "topic",
+    "topicId": "P35.2",
+    "conceptIds": [
+     "P35.2#1",
+     "P35.2#2",
+     "P35.2#3",
+     "P35.2#4",
+     "P35.2#5",
+     "P35.2#6",
+     "P35.2#7",
+     "P35.2#8",
+     "P35.2#9",
+     "P35.2#10"
+    ],
+    "label": "P35.2 Core concepts · #1–10 (availability → backpressure)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.5:8-13",
+     "kind": "topic",
+     "topicId": "P04.5",
+     "conceptIds": [
+      "P04.5#8",
+      "P04.5#9",
+      "P04.5#10",
+      "P04.5#11",
+      "P04.5#12",
+      "P04.5#13"
+     ],
+     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)"
+    },
+    {
+     "ref": "P04.6",
+     "kind": "topic",
+     "topicId": "P04.6",
+     "conceptIds": null,
+     "label": "P04.6 Problem-solving patterns"
+    }
+   ],
+   "note": "Algorithm families and problem-solving patterns; target C2 at CW66."
+  },
+  "project": null,
+  "build": "Design PR04 before building it.",
+  "note": "System-design fundamentals at D1-D2 (master 2027-2028 list).",
+  "gate": null,
+  "requiredGate": "SG4",
+  "conceptCount": 22,
+  "dayPlan": null
+ },
+ {
+  "cw": 60,
+  "stage": "S5A",
+  "mainStage": "S5",
+  "type": "project",
+  "primary": [
+   {
+    "ref": "PR04",
+    "kind": "project",
+    "projectId": "PR04",
+    "label": "PR04 URL Shortener (build)"
+   },
+   {
+    "ref": "P08.6:9-13",
+    "kind": "topic",
+    "topicId": "P08.6",
+    "conceptIds": [
+     "P08.6#9",
+     "P08.6#10",
+     "P08.6#11",
+     "P08.6#12",
+     "P08.6#13"
+    ],
+    "label": "P08.6 Backend projects · #9–13 (unique IDs → analytics)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.5:8-13",
+     "kind": "topic",
+     "topicId": "P04.5",
+     "conceptIds": [
+      "P04.5#8",
+      "P04.5#9",
+      "P04.5#10",
+      "P04.5#11",
+      "P04.5#12",
+      "P04.5#13"
+     ],
+     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)"
+    },
+    {
+     "ref": "P04.6",
+     "kind": "topic",
+     "topicId": "P04.6",
+     "conceptIds": null,
+     "label": "P04.6 Problem-solving patterns"
+    }
+   ],
+   "note": "Algorithm families and problem-solving patterns; target C2 at CW66."
+  },
+  "project": "PR04",
+  "build": "PR04 URL Shortener: IDs, redirects, storage, constraints.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG4",
+  "conceptCount": 5,
+  "dayPlan": null
+ },
+ {
+  "cw": 61,
+  "stage": "S5A",
+  "mainStage": "S5",
+  "type": "project",
+  "primary": [
+   {
+    "ref": "PR04",
+    "kind": "project",
+    "projectId": "PR04",
+    "label": "PR04 URL Shortener (build)"
+   },
+   {
+    "ref": "P35.2:11-19",
+    "kind": "topic",
+    "topicId": "P35.2",
+    "conceptIds": [
+     "P35.2#11",
+     "P35.2#12",
+     "P35.2#13",
+     "P35.2#14",
+     "P35.2#15",
+     "P35.2#16",
+     "P35.2#17",
+     "P35.2#18",
+     "P35.2#19"
+    ],
+    "label": "P35.2 Core concepts · #11–19 (caching → observability)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.5:8-13",
+     "kind": "topic",
+     "topicId": "P04.5",
+     "conceptIds": [
+      "P04.5#8",
+      "P04.5#9",
+      "P04.5#10",
+      "P04.5#11",
+      "P04.5#12",
+      "P04.5#13"
+     ],
+     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)"
+    },
+    {
+     "ref": "P04.6",
+     "kind": "topic",
+     "topicId": "P04.6",
+     "conceptIds": null,
+     "label": "P04.6 Problem-solving patterns"
+    }
+   ],
+   "note": "Algorithm families and problem-solving patterns; target C2 at CW66."
+  },
+  "project": "PR04",
+  "build": "PR04 cache, rate limiting, analytics.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG4",
+  "conceptCount": 9,
+  "dayPlan": null
+ },
+ {
+  "cw": 62,
+  "stage": "S5A",
+  "mainStage": "S5",
+  "type": "project",
+  "primary": [
+   {
+    "ref": "PR04",
+    "kind": "project",
+    "projectId": "PR04",
+    "label": "PR04 URL Shortener (build)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.5:8-13",
+     "kind": "topic",
+     "topicId": "P04.5",
+     "conceptIds": [
+      "P04.5#8",
+      "P04.5#9",
+      "P04.5#10",
+      "P04.5#11",
+      "P04.5#12",
+      "P04.5#13"
+     ],
+     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)"
+    },
+    {
+     "ref": "P04.6",
+     "kind": "topic",
+     "topicId": "P04.6",
+     "conceptIds": null,
+     "label": "P04.6 Problem-solving patterns"
+    }
+   ],
+   "note": "Algorithm families and problem-solving patterns; target C2 at CW66."
+  },
+  "project": "PR04",
+  "build": "PR04 traffic, bottleneck, failure-mode and scaling analysis.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG4",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 63,
+  "stage": "S5A",
+  "mainStage": "S5",
+  "type": "project",
+  "primary": [
+   {
+    "ref": "PR05",
+    "kind": "project",
+    "projectId": "PR05",
+    "label": "PR05 Real-Time Chat Backend (build)"
+   },
+   {
+    "ref": "P08.6:14-17",
+    "kind": "topic",
+    "topicId": "P08.6",
+    "conceptIds": [
+     "P08.6#14",
+     "P08.6#15",
+     "P08.6#16",
+     "P08.6#17"
+    ],
+    "label": "P08.6 Backend projects · #14–17 (WebSockets → concurrency reasoning)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.5:8-13",
+     "kind": "topic",
+     "topicId": "P04.5",
+     "conceptIds": [
+      "P04.5#8",
+      "P04.5#9",
+      "P04.5#10",
+      "P04.5#11",
+      "P04.5#12",
+      "P04.5#13"
+     ],
+     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)"
+    },
+    {
+     "ref": "P04.6",
+     "kind": "topic",
+     "topicId": "P04.6",
+     "conceptIds": null,
+     "label": "P04.6 Problem-solving patterns"
+    }
+   ],
+   "note": "Algorithm families and problem-solving patterns; target C2 at CW66."
+  },
+  "project": "PR05",
+  "build": "PR05 Real-Time Chat Backend: auth + WebSockets.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG4",
+  "conceptCount": 4,
+  "dayPlan": null
+ },
+ {
+  "cw": 64,
+  "stage": "S5A",
+  "mainStage": "S5",
+  "type": "project",
+  "primary": [
+   {
+    "ref": "PR05",
+    "kind": "project",
+    "projectId": "PR05",
+    "label": "PR05 Real-Time Chat Backend (build)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.5:8-13",
+     "kind": "topic",
+     "topicId": "P04.5",
+     "conceptIds": [
+      "P04.5#8",
+      "P04.5#9",
+      "P04.5#10",
+      "P04.5#11",
+      "P04.5#12",
+      "P04.5#13"
+     ],
+     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)"
+    },
+    {
+     "ref": "P04.6",
+     "kind": "topic",
+     "topicId": "P04.6",
+     "conceptIds": null,
+     "label": "P04.6 Problem-solving patterns"
+    }
+   ],
+   "note": "Algorithm families and problem-solving patterns; target C2 at CW66."
+  },
+  "project": "PR05",
+  "build": "PR05 persistence, online/offline, retries.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG4",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 65,
+  "stage": "S5A",
+  "mainStage": "S5",
+  "type": "project",
+  "primary": [
+   {
+    "ref": "PR05",
+    "kind": "project",
+    "projectId": "PR05",
+    "label": "PR05 Real-Time Chat Backend (build)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.5:8-13",
+     "kind": "topic",
+     "topicId": "P04.5",
+     "conceptIds": [
+      "P04.5#8",
+      "P04.5#9",
+      "P04.5#10",
+      "P04.5#11",
+      "P04.5#12",
+      "P04.5#13"
+     ],
+     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)"
+    },
+    {
+     "ref": "P04.6",
+     "kind": "topic",
+     "topicId": "P04.6",
+     "conceptIds": null,
+     "label": "P04.6 Problem-solving patterns"
+    }
+   ],
+   "note": "Algorithm families and problem-solving patterns; target C2 at CW66."
+  },
+  "project": "PR05",
+  "build": "PR05 concurrency reasoning writeup.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG4",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 66,
+  "stage": "S5A",
+  "mainStage": "S5",
+  "type": "consolidation",
+  "primary": [
+   {
+    "ref": "CONSOLIDATE",
+    "kind": "activity",
+    "activity": "CONSOLIDATE",
+    "label": "Consolidation: gate attempt, spaced re-tests, targeted repair"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.5:8-13",
+     "kind": "topic",
+     "topicId": "P04.5",
+     "conceptIds": [
+      "P04.5#8",
+      "P04.5#9",
+      "P04.5#10",
+      "P04.5#11",
+      "P04.5#12",
+      "P04.5#13"
+     ],
+     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)"
+    },
+    {
+     "ref": "P04.6",
+     "kind": "topic",
+     "topicId": "P04.6",
+     "conceptIds": null,
+     "label": "P04.6 Problem-solving patterns"
+    }
+   ],
+   "note": "Algorithm families and problem-solving patterns; target C2 at CW66."
+  },
+  "project": null,
+  "build": "C2 practical gate: mixed unseen DSA set, 80%+ over repeated attempts; explain OS, networking, database concepts.",
+  "note": "",
+  "gate": "C2",
+  "requiredGate": "SG4",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 67,
+  "stage": "S5B",
+  "mainStage": "S5",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P11.4",
+    "kind": "topic",
+    "topicId": "P11.4",
+    "conceptIds": null,
+    "label": "P11.4 Data projects"
+   },
+   {
+    "ref": "P11.5",
+    "kind": "topic",
+    "topicId": "P11.5",
+    "conceptIds": null,
+    "label": "P11.5 Communication"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.7",
+     "kind": "topic",
+     "topicId": "P04.7",
+     "conceptIds": null,
+     "label": "P04.7 Interview progression"
+    }
+   ],
+   "note": "Interview progression: easy to medium, mistake log (master DSA track)."
+  },
+  "project": null,
+  "build": "Rewrite the S3 EDA as a stakeholder report.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C2",
+  "conceptCount": 11,
+  "dayPlan": null
+ },
+ {
+  "cw": 68,
+  "stage": "S5B",
+  "mainStage": "S5",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P12.0:1-13",
+    "kind": "topic",
+    "topicId": "P12.0",
+    "conceptIds": [
+     "P12.0#1",
+     "P12.0#2",
+     "P12.0#3",
+     "P12.0#4",
+     "P12.0#5",
+     "P12.0#6",
+     "P12.0#7",
+     "P12.0#8",
+     "P12.0#9",
+     "P12.0#10",
+     "P12.0#11",
+     "P12.0#12",
+     "P12.0#13"
+    ],
+    "label": "P12.0 Data Engineering Foundation (core scope) · #1–13 (ETL → basic orchestration)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.7",
+     "kind": "topic",
+     "topicId": "P04.7",
+     "conceptIds": null,
+     "label": "P04.7 Interview progression"
+    }
+   ],
+   "note": "Interview progression: easy to medium, mistake log (master DSA track)."
+  },
+  "project": null,
+  "build": "Design the PR06 pipeline.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C2",
+  "conceptCount": 13,
+  "dayPlan": null
+ },
+ {
+  "cw": 69,
+  "stage": "S5B",
+  "mainStage": "S5",
+  "type": "project",
+  "primary": [
+   {
+    "ref": "PR06",
+    "kind": "project",
+    "projectId": "PR06",
+    "label": "PR06 Analytics Platform (build)"
+   },
+   {
+    "ref": "P12.1",
+    "kind": "topic",
+    "topicId": "P12.1",
+    "conceptIds": null,
+    "label": "P12.1 Data engineering project"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.7",
+     "kind": "topic",
+     "topicId": "P04.7",
+     "conceptIds": null,
+     "label": "P04.7 Interview progression"
+    }
+   ],
+   "note": "Interview progression: easy to medium, mistake log (master DSA track)."
+  },
+  "project": "PR06",
+  "build": "PR06 Analytics Platform v1: ingestion, validation, transformation, PostgreSQL.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C2",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 70,
+  "stage": "S5B",
+  "mainStage": "S5",
+  "type": "project",
+  "primary": [
+   {
+    "ref": "PR06",
+    "kind": "project",
+    "projectId": "PR06",
+    "label": "PR06 Analytics Platform (build)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.7",
+     "kind": "topic",
+     "topicId": "P04.7",
+     "conceptIds": null,
+     "label": "P04.7 Interview progression"
+    }
+   ],
+   "note": "Interview progression: easy to medium, mistake log (master DSA track)."
+  },
+  "project": "PR06",
+  "build": "PR06 SQL + Python analysis, visualisation.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C2",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 71,
+  "stage": "S5B",
+  "mainStage": "S5",
+  "type": "project",
+  "primary": [
+   {
+    "ref": "PR06",
+    "kind": "project",
+    "projectId": "PR06",
+    "label": "PR06 Analytics Platform (build)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.7",
+     "kind": "topic",
+     "topicId": "P04.7",
+     "conceptIds": null,
+     "label": "P04.7 Interview progression"
+    }
+   ],
+   "note": "Interview progression: easy to medium, mistake log (master DSA track)."
+  },
+  "project": "PR06",
+  "build": "PR06 v2 with batch scheduling and logging; data dictionary, findings, limitations.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C2",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 72,
+  "stage": "S5B",
+  "mainStage": "S5",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P13.1",
+    "kind": "topic",
+    "topicId": "P13.1",
+    "conceptIds": null,
+    "label": "P13.1 Problem formulation"
+   },
+   {
+    "ref": "P14.3",
+    "kind": "topic",
+    "topicId": "P14.3",
+    "conceptIds": null,
+    "label": "P14.3 Baselines"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.7",
+     "kind": "topic",
+     "topicId": "P04.7",
+     "conceptIds": null,
+     "label": "P04.7 Interview progression"
+    }
+   ],
+   "note": "Interview progression: easy to medium, mistake log (master DSA track)."
+  },
+  "project": null,
+  "build": "Formulate 3 problems; build baselines first.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C2",
+  "conceptCount": 11,
+  "dayPlan": null
+ },
+ {
+  "cw": 73,
+  "stage": "S5B",
+  "mainStage": "S5",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P13.2",
+    "kind": "topic",
+    "topicId": "P13.2",
+    "conceptIds": null,
+    "label": "P13.2 Regression"
+   },
+   {
+    "ref": "P10.4:12-13",
+    "kind": "topic",
+    "topicId": "P10.4",
+    "conceptIds": [
+     "P10.4#12",
+     "P10.4#13"
+    ],
+    "label": "P10.4 Statistics · #12–13 (regression → ANOVA)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.7",
+     "kind": "topic",
+     "topicId": "P04.7",
+     "conceptIds": null,
+     "label": "P04.7 Interview progression"
+    }
+   ],
+   "note": "Interview progression: easy to medium, mistake log (master DSA track)."
+  },
+  "project": null,
+  "build": "Regression on a real dataset.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C2",
+  "conceptCount": 12,
+  "dayPlan": null
+ },
+ {
+  "cw": 74,
+  "stage": "S5B",
+  "mainStage": "S5",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P13.3",
+    "kind": "topic",
+    "topicId": "P13.3",
+    "conceptIds": null,
+    "label": "P13.3 Classification"
+   },
+   {
+    "ref": "P10.3:17-20",
+    "kind": "topic",
+    "topicId": "P10.3",
+    "conceptIds": [
+     "P10.3#17",
+     "P10.3#18",
+     "P10.3#19",
+     "P10.3#20"
+    ],
+    "label": "P10.3 Probability · #17–20 (likelihood → Bayesian reasoning)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.7",
+     "kind": "topic",
+     "topicId": "P04.7",
+     "conceptIds": null,
+     "label": "P04.7 Interview progression"
+    }
+   ],
+   "note": "Interview progression: easy to medium, mistake log (master DSA track)."
+  },
+  "project": null,
+  "build": "Classification on a real dataset; MLE derivation for logistic regression.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C2",
+  "conceptCount": 11,
+  "dayPlan": null
+ },
+ {
+  "cw": 75,
+  "stage": "S5B",
+  "mainStage": "S5",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P13.4",
+    "kind": "topic",
+    "topicId": "P13.4",
+    "conceptIds": null,
+    "label": "P13.4 Boosting"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.7",
+     "kind": "topic",
+     "topicId": "P04.7",
+     "conceptIds": null,
+     "label": "P04.7 Interview progression"
+    }
+   ],
+   "note": "Interview progression: easy to medium, mistake log (master DSA track)."
+  },
+  "project": null,
+  "build": "Trees, ensembles, boosting comparison.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C2",
+  "conceptCount": 6,
+  "dayPlan": null
+ },
+ {
+  "cw": 76,
+  "stage": "S5B",
+  "mainStage": "S5",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P10.1d",
+    "kind": "topic",
+    "topicId": "P10.1d",
+    "conceptIds": null,
+    "label": "P10.1d Linear Algebra › Advanced"
+   },
+   {
+    "ref": "P10.1e",
+    "kind": "topic",
+    "topicId": "P10.1e",
+    "conceptIds": null,
+    "label": "P10.1e Linear Algebra › ML connections"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.7",
+     "kind": "topic",
+     "topicId": "P04.7",
+     "conceptIds": null,
+     "label": "P04.7 Interview progression"
+    }
+   ],
+   "note": "Interview progression: easy to medium, mistake log (master DSA track)."
+  },
+  "project": null,
+  "build": "Eigen/SVD in NumPy; PCA by hand on a small matrix.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C2",
+  "conceptCount": 18,
+  "dayPlan": null
+ },
+ {
+  "cw": 77,
+  "stage": "S5B",
+  "mainStage": "S5",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P13.5",
+    "kind": "topic",
+    "topicId": "P13.5",
+    "conceptIds": null,
+    "label": "P13.5 Unsupervised learning"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.7",
+     "kind": "topic",
+     "topicId": "P04.7",
+     "conceptIds": null,
+     "label": "P04.7 Interview progression"
+    }
+   ],
+   "note": "Interview progression: easy to medium, mistake log (master DSA track)."
+  },
+  "project": null,
+  "build": "Clustering + PCA on a real dataset.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C2",
+  "conceptCount": 6,
+  "dayPlan": null
+ },
+ {
+  "cw": 78,
+  "stage": "S5B",
+  "mainStage": "S5",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P14.0",
+    "kind": "topic",
+    "topicId": "P14.0",
+    "conceptIds": null,
+    "label": "P14.0 Machine Learning Theory (core scope)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.7",
+     "kind": "topic",
+     "topicId": "P04.7",
+     "conceptIds": null,
+     "label": "P04.7 Interview progression"
+    }
+   ],
+   "note": "Interview progression: easy to medium, mistake log (master DSA track)."
+  },
+  "project": null,
+  "build": "Deliberately overfit, then regularise and cross-validate.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C2",
+  "conceptCount": 13,
+  "dayPlan": null
+ },
+ {
+  "cw": 79,
+  "stage": "S5B",
+  "mainStage": "S5",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P14.1",
+    "kind": "topic",
+    "topicId": "P14.1",
+    "conceptIds": null,
+    "label": "P14.1 Feature engineering"
+   },
+   {
+    "ref": "P14.2",
+    "kind": "topic",
+    "topicId": "P14.2",
+    "conceptIds": null,
+    "label": "P14.2 Leakage"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.7",
+     "kind": "topic",
+     "topicId": "P04.7",
+     "conceptIds": null,
+     "label": "P04.7 Interview progression"
+    }
+   ],
+   "note": "Interview progression: easy to medium, mistake log (master DSA track)."
+  },
+  "project": null,
+  "build": "Create leakage deliberately, then diagnose it.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C2",
+  "conceptCount": 13,
+  "dayPlan": null
+ },
+ {
+  "cw": 80,
+  "stage": "S5B",
+  "mainStage": "S5",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P15.1",
+    "kind": "topic",
+    "topicId": "P15.1",
+    "conceptIds": null,
+    "label": "P15.1 Classification metrics"
+   },
+   {
+    "ref": "P15.2",
+    "kind": "topic",
+    "topicId": "P15.2",
+    "conceptIds": null,
+    "label": "P15.2 Regression metrics"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.7",
+     "kind": "topic",
+     "topicId": "P04.7",
+     "conceptIds": null,
+     "label": "P04.7 Interview progression"
+    }
+   ],
+   "note": "Interview progression: easy to medium, mistake log (master DSA track)."
+  },
+  "project": null,
+  "build": "Metric exercises with error-cost reasoning.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C2",
+  "conceptCount": 15,
+  "dayPlan": null
+ },
+ {
+  "cw": 81,
+  "stage": "S5B",
+  "mainStage": "S5",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P15.3",
+    "kind": "topic",
+    "topicId": "P15.3",
+    "conceptIds": null,
+    "label": "P15.3 Evaluation design"
+   },
+   {
+    "ref": "P15.4",
+    "kind": "topic",
+    "topicId": "P15.4",
+    "conceptIds": null,
+    "label": "P15.4 Metric selection"
+   },
+   {
+    "ref": "P10.4:14-16",
+    "kind": "topic",
+    "topicId": "P10.4",
+    "conceptIds": [
+     "P10.4#14",
+     "P10.4#15",
+     "P10.4#16"
+    ],
+    "label": "P10.4 Statistics · #14–16 (experimental design → Bayesian statistics)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.7",
+     "kind": "topic",
+     "topicId": "P04.7",
+     "conceptIds": null,
+     "label": "P04.7 Interview progression"
+    }
+   ],
+   "note": "Interview progression: easy to medium, mistake log (master DSA track)."
+  },
+  "project": null,
+  "build": "Write an evaluation plan before training; A/B test design.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C2",
+  "conceptCount": 10,
+  "dayPlan": null
+ },
+ {
+  "cw": 82,
+  "stage": "S5B",
+  "mainStage": "S5",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P10.2",
+    "kind": "topic",
+    "topicId": "P10.2",
+    "conceptIds": null,
+    "label": "P10.2 Calculus"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.7",
+     "kind": "topic",
+     "topicId": "P04.7",
+     "conceptIds": null,
+     "label": "P04.7 Interview progression"
+    }
+   ],
+   "note": "Interview progression: easy to medium, mistake log (master DSA track)."
+  },
+  "project": null,
+  "build": "Derive gradients for linear and logistic loss.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C2",
+  "conceptCount": 18,
+  "dayPlan": null
+ },
+ {
+  "cw": 83,
+  "stage": "S5B",
+  "mainStage": "S5",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P10.5",
+    "kind": "topic",
+    "topicId": "P10.5",
+    "conceptIds": null,
+    "label": "P10.5 Optimisation"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.7",
+     "kind": "topic",
+     "topicId": "P04.7",
+     "conceptIds": null,
+     "label": "P04.7 Interview progression"
+    }
+   ],
+   "note": "Interview progression: easy to medium, mistake log (master DSA track)."
+  },
+  "project": null,
+  "build": "Gradient descent variants on a toy objective.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C2",
+  "conceptCount": 12,
+  "dayPlan": null
+ },
+ {
+  "cw": 84,
+  "stage": "S5B",
+  "mainStage": "S5",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P16.0:1-3,9-14",
+    "kind": "topic",
+    "topicId": "P16.0",
+    "conceptIds": [
+     "P16.0#1",
+     "P16.0#2",
+     "P16.0#3",
+     "P16.0#9",
+     "P16.0#10",
+     "P16.0#11",
+     "P16.0#12",
+     "P16.0#13",
+     "P16.0#14"
+    ],
+    "label": "P16.0 From-Scratch ML Implementation (core scope) · #1–3 (Linear regression → Logistic regression); #9–14 (mathematical formulation → comparison with library implementation)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.7",
+     "kind": "topic",
+     "topicId": "P04.7",
+     "conceptIds": null,
+     "label": "P04.7 Interview progression"
+    }
+   ],
+   "note": "Interview progression: easy to medium, mistake log (master DSA track)."
+  },
+  "project": null,
+  "build": "From scratch: linear regression, gradient descent, logistic regression.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C2",
+  "conceptCount": 9,
+  "dayPlan": null
+ },
+ {
+  "cw": 85,
+  "stage": "S5B",
+  "mainStage": "S5",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P16.0:4-6,9-14",
+    "kind": "topic",
+    "topicId": "P16.0",
+    "conceptIds": [
+     "P16.0#4",
+     "P16.0#5",
+     "P16.0#6",
+     "P16.0#9",
+     "P16.0#10",
+     "P16.0#11",
+     "P16.0#12",
+     "P16.0#13",
+     "P16.0#14"
+    ],
+    "label": "P16.0 From-Scratch ML Implementation (core scope) · #4–6 (k-means → Selected decision-tree components); #9–14 (mathematical formulation → comparison with library implementation)"
+   },
+   {
+    "ref": "P01.1f:10",
+    "kind": "topic",
+    "topicId": "P01.1f",
+    "conceptIds": [
+     "P01.1f#10"
+    ],
+    "label": "P01.1f Python › Required implementations · #10 (small ML package)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.7",
+     "kind": "topic",
+     "topicId": "P04.7",
+     "conceptIds": null,
+     "label": "P04.7 Interview progression"
+    }
+   ],
+   "note": "Interview progression: easy to medium, mistake log (master DSA track)."
+  },
+  "project": null,
+  "build": "From scratch: k-means, PCA, tree components; Build 10 small ML package (P01.1f#10).",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C2",
+  "conceptCount": 10,
+  "dayPlan": null
+ },
+ {
+  "cw": 86,
+  "stage": "S5B",
+  "mainStage": "S5",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P17.0:1-10",
+    "kind": "topic",
+    "topicId": "P17.0",
+    "conceptIds": [
+     "P17.0#1",
+     "P17.0#2",
+     "P17.0#3",
+     "P17.0#4",
+     "P17.0#5",
+     "P17.0#6",
+     "P17.0#7",
+     "P17.0#8",
+     "P17.0#9",
+     "P17.0#10"
+    ],
+    "label": "P17.0 Time Series (core scope) · #1–10 (temporal indexing → error evaluation)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.7",
+     "kind": "topic",
+     "topicId": "P04.7",
+     "conceptIds": null,
+     "label": "P04.7 Interview progression"
+    }
+   ],
+   "note": "Interview progression: easy to medium, mistake log (master DSA track)."
+  },
+  "project": null,
+  "build": "Forecasting baseline with temporal cross-validation.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C2",
+  "conceptCount": 10,
+  "dayPlan": null
+ },
+ {
+  "cw": 87,
+  "stage": "S5B",
+  "mainStage": "S5",
+  "type": "consolidation",
+  "primary": [
+   {
+    "ref": "CONSOLIDATE",
+    "kind": "activity",
+    "activity": "CONSOLIDATE",
+    "label": "Consolidation: gate attempt, spaced re-tests, targeted repair"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.7",
+     "kind": "topic",
+     "topicId": "P04.7",
+     "conceptIds": null,
+     "label": "P04.7 Interview progression"
+    }
+   ],
+   "note": "Interview progression: easy to medium, mistake log (master DSA track)."
+  },
+  "project": null,
+  "build": "C4 practical gate: unfamiliar dataset, reproducible analysis, 5 defensible questions, limitations, evaluated baseline/model.",
+  "note": "",
+  "gate": "C4",
+  "requiredGate": "C2",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 88,
+  "stage": "S5C",
+  "mainStage": "S5",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P31.0",
+    "kind": "topic",
+    "topicId": "P31.0",
+    "conceptIds": null,
+    "label": "P31.0 DevOps (core scope)"
+   },
+   {
+    "ref": "P31.1:1-5",
+    "kind": "topic",
+    "topicId": "P31.1",
+    "conceptIds": [
+     "P31.1#1",
+     "P31.1#2",
+     "P31.1#3",
+     "P31.1#4",
+     "P31.1#5"
+    ],
+    "label": "P31.1 Docker · #1–5 (images → volumes)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.7",
+     "kind": "topic",
+     "topicId": "P04.7",
+     "conceptIds": null,
+     "label": "P04.7 Interview progression"
+    }
+   ],
+   "note": "Interview progression: easy to medium, mistake log (master DSA track)."
+  },
+  "project": null,
+  "build": "Containerise PR03.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C4",
+  "conceptCount": 19,
+  "dayPlan": null
+ },
+ {
+  "cw": 89,
+  "stage": "S5C",
+  "mainStage": "S5",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P31.1:6-9",
+    "kind": "topic",
+    "topicId": "P31.1",
+    "conceptIds": [
+     "P31.1#6",
+     "P31.1#7",
+     "P31.1#8",
+     "P31.1#9"
+    ],
+    "label": "P31.1 Docker · #6–9 (networks → environment configuration)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.7",
+     "kind": "topic",
+     "topicId": "P04.7",
+     "conceptIds": null,
+     "label": "P04.7 Interview progression"
+    }
+   ],
+   "note": "Interview progression: easy to medium, mistake log (master DSA track)."
+  },
+  "project": null,
+  "build": "Compose PR03 + PostgreSQL + Redis.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C4",
+  "conceptCount": 4,
+  "dayPlan": null
+ },
+ {
+  "cw": 90,
+  "stage": "S5C",
+  "mainStage": "S5",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P31.2",
+    "kind": "topic",
+    "topicId": "P31.2",
+    "conceptIds": null,
+    "label": "P31.2 CI/CD"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.7",
+     "kind": "topic",
+     "topicId": "P04.7",
+     "conceptIds": null,
+     "label": "P04.7 Interview progression"
+    }
+   ],
+   "note": "Interview progression: easy to medium, mistake log (master DSA track)."
+  },
+  "project": null,
+  "build": "CI pipeline: tests, lint, image build.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C4",
+  "conceptCount": 7,
+  "dayPlan": null
+ },
+ {
+  "cw": 91,
+  "stage": "S5C",
+  "mainStage": "S5",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P09.0:1-8",
+    "kind": "topic",
+    "topicId": "P09.0",
+    "conceptIds": [
+     "P09.0#1",
+     "P09.0#2",
+     "P09.0#3",
+     "P09.0#4",
+     "P09.0#5",
+     "P09.0#6",
+     "P09.0#7",
+     "P09.0#8"
+    ],
+    "label": "P09.0 Software Architecture (core scope) · #1–8 (separation of concerns → service boundaries)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.7",
+     "kind": "topic",
+     "topicId": "P04.7",
+     "conceptIds": null,
+     "label": "P04.7 Interview progression"
+    }
+   ],
+   "note": "Interview progression: easy to medium, mistake log (master DSA track)."
+  },
+  "project": null,
+  "build": "Refactor PR03 into layered design.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C4",
+  "conceptCount": 8,
+  "dayPlan": null
+ },
+ {
+  "cw": 92,
+  "stage": "S5C",
+  "mainStage": "S5",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P09.0:9-14",
+    "kind": "topic",
+    "topicId": "P09.0",
+    "conceptIds": [
+     "P09.0#9",
+     "P09.0#10",
+     "P09.0#11",
+     "P09.0#12",
+     "P09.0#13",
+     "P09.0#14"
+    ],
+    "label": "P09.0 Software Architecture (core scope) · #9–14 (domain boundaries → architectural patterns)"
+   },
+   {
+    "ref": "P09.1",
+    "kind": "topic",
+    "topicId": "P09.1",
+    "conceptIds": null,
+    "label": "P09.1 Design-pattern families"
+   },
+   {
+    "ref": "P09.2",
+    "kind": "topic",
+    "topicId": "P09.2",
+    "conceptIds": null,
+    "label": "P09.2 Critical rule"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.7",
+     "kind": "topic",
+     "topicId": "P04.7",
+     "conceptIds": null,
+     "label": "P04.7 Interview progression"
+    }
+   ],
+   "note": "Interview progression: easy to medium, mistake log (master DSA track)."
+  },
+  "project": null,
+  "build": "Architecture note for PR04.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C4",
+  "conceptCount": 14,
+  "dayPlan": null
+ },
+ {
+  "cw": 93,
+  "stage": "S5C",
+  "mainStage": "S5",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P32.0",
+    "kind": "topic",
+    "topicId": "P32.0",
+    "conceptIds": null,
+    "label": "P32.0 Cloud (core scope)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.7",
+     "kind": "topic",
+     "topicId": "P04.7",
+     "conceptIds": null,
+     "label": "P04.7 Interview progression"
+    }
+   ],
+   "note": "Interview progression: easy to medium, mistake log (master DSA track)."
+  },
+  "project": null,
+  "build": "Cloud account, IAM, compute, managed database basics.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C4",
+  "conceptCount": 14,
+  "dayPlan": null
+ },
+ {
+  "cw": 94,
+  "stage": "S5C",
+  "mainStage": "S5",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P32.1",
+    "kind": "topic",
+    "topicId": "P32.1",
+    "conceptIds": null,
+    "label": "P32.1 Required cloud project"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.7",
+     "kind": "topic",
+     "topicId": "P04.7",
+     "conceptIds": null,
+     "label": "P04.7 Interview progression"
+    }
+   ],
+   "note": "Interview progression: easy to medium, mistake log (master DSA track)."
+  },
+  "project": null,
+  "build": "Deploy PR03/PR04 with networking, identity, database, logs, monitoring, deployment automation.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C4",
+  "conceptCount": 6,
+  "dayPlan": null
+ },
+ {
+  "cw": 95,
+  "stage": "S5C",
+  "mainStage": "S5",
+  "type": "consolidation",
+  "primary": [
+   {
+    "ref": "CONSOLIDATE",
+    "kind": "activity",
+    "activity": "CONSOLIDATE",
+    "label": "Consolidation: gate attempt, spaced re-tests, targeted repair"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.7",
+     "kind": "topic",
+     "topicId": "P04.7",
+     "conceptIds": null,
+     "label": "P04.7 Interview progression"
+    }
+   ],
+   "note": "Interview progression: easy to medium, mistake log (master DSA track)."
+  },
+  "project": null,
+  "build": "C3 practical gate: service with auth, persistence, tests, API docs, real deployment.",
+  "note": "",
+  "gate": "C3",
+  "requiredGate": "C4",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 96,
+  "stage": "S5C",
+  "mainStage": "S5",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P29.1",
+    "kind": "topic",
+    "topicId": "P29.1",
+    "conceptIds": null,
+    "label": "P29.1 Batch inference"
+   },
+   {
+    "ref": "P29.2",
+    "kind": "topic",
+    "topicId": "P29.2",
+    "conceptIds": null,
+    "label": "P29.2 Online inference"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.7",
+     "kind": "topic",
+     "topicId": "P04.7",
+     "conceptIds": null,
+     "label": "P04.7 Interview progression"
+    }
+   ],
+   "note": "Interview progression: easy to medium, mistake log (master DSA track)."
+  },
+  "project": null,
+  "build": "Serve a classical model (batch + online) behind FastAPI.",
+  "note": "Early serving segment at D1-D2 (master sequence item 24). Formal D3 serving is in S6B.",
+  "gate": null,
+  "requiredGate": "C3",
+  "conceptCount": 12,
+  "dayPlan": null
+ },
+ {
+  "cw": 97,
+  "stage": "S5C",
+  "mainStage": "S5",
+  "type": "project",
+  "primary": [
+   {
+    "ref": "PR07",
+    "kind": "project",
+    "projectId": "PR07",
+    "label": "PR07 Fraud Detection Platform (build)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.7",
+     "kind": "topic",
+     "topicId": "P04.7",
+     "conceptIds": null,
+     "label": "P04.7 Interview progression"
+    }
+   ],
+   "note": "Interview progression: easy to medium, mistake log (master DSA track)."
+  },
+  "project": "PR07",
+  "build": "PR07 Fraud Detection: data, validation, features, splits, baseline.",
+  "note": "Master: if a fraud-detection project already exists, upgrade it instead of rebuilding.",
+  "gate": null,
+  "requiredGate": "C3",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 98,
+  "stage": "S5C",
+  "mainStage": "S5",
+  "type": "project",
+  "primary": [
+   {
+    "ref": "PR07",
+    "kind": "project",
+    "projectId": "PR07",
+    "label": "PR07 Fraud Detection Platform (build)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.7",
+     "kind": "topic",
+     "topicId": "P04.7",
+     "conceptIds": null,
+     "label": "P04.7 Interview progression"
+    }
+   ],
+   "note": "Interview progression: easy to medium, mistake log (master DSA track)."
+  },
+  "project": "PR07",
+  "build": "PR07 model comparison, threshold choice, error costs (P46 reasoning).",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C3",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 99,
+  "stage": "S5C",
+  "mainStage": "S5",
+  "type": "project",
+  "primary": [
+   {
+    "ref": "PR07",
+    "kind": "project",
+    "projectId": "PR07",
+    "label": "PR07 Fraud Detection Platform (build)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.7",
+     "kind": "topic",
+     "topicId": "P04.7",
+     "conceptIds": null,
+     "label": "P04.7 Interview progression"
+    }
+   ],
+   "note": "Interview progression: easy to medium, mistake log (master DSA track)."
+  },
+  "project": "PR07",
+  "build": "PR07 API + deployment.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C3",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 100,
+  "stage": "S5C",
+  "mainStage": "S5",
+  "type": "project",
+  "primary": [
+   {
+    "ref": "PR07",
+    "kind": "project",
+    "projectId": "PR07",
+    "label": "PR07 Fraud Detection Platform (build)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.7",
+     "kind": "topic",
+     "topicId": "P04.7",
+     "conceptIds": null,
+     "label": "P04.7 Interview progression"
+    }
+   ],
+   "note": "Interview progression: easy to medium, mistake log (master DSA track)."
+  },
+  "project": "PR07",
+  "build": "PR07 monitoring, drift discussion, temporal-leakage check.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C3",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 101,
+  "stage": "S5C",
+  "mainStage": "S5",
+  "type": "consolidation",
+  "primary": [
+   {
+    "ref": "CONSOLIDATE",
+    "kind": "activity",
+    "activity": "CONSOLIDATE",
+    "label": "Consolidation: gate attempt, spaced re-tests, targeted repair"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [
+    {
+     "ref": "P04.7",
+     "kind": "topic",
+     "topicId": "P04.7",
+     "conceptIds": null,
+     "label": "P04.7 Interview progression"
+    }
+   ],
+   "note": "Interview progression: easy to medium, mistake log (master DSA track)."
+  },
+  "project": null,
+  "build": "Stage 5 exit review; portfolio Stage B update (T09).",
+  "note": "",
+  "gate": "SG5",
+  "requiredGate": "C3",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 102,
+  "stage": "S6A",
+  "mainStage": "S6",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P19.0",
+    "kind": "topic",
+    "topicId": "P19.0",
+    "conceptIds": null,
+    "label": "P19.0 Deep Learning (core scope)"
+   },
+   {
+    "ref": "P19.1",
+    "kind": "topic",
+    "topicId": "P19.1",
+    "conceptIds": null,
+    "label": "P19.1 Neural-network foundations"
+   }
+  ],
+  "supporting": [
+   {
+    "ref": "P05.3:1-6",
+    "kind": "topic",
+    "topicId": "P05.3",
+    "conceptIds": [
+     "P05.3#1",
+     "P05.3#2",
+     "P05.3#3",
+     "P05.3#4",
+     "P05.3#5",
+     "P05.3#6"
+    ],
+    "label": "P05.3 Computer Architecture · #1–6 (CPU → cache)"
+   }
+  ],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Hand-compute forward pass of a tiny network.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG5",
+  "conceptCount": 14,
+  "dayPlan": null
+ },
+ {
+  "cw": 103,
+  "stage": "S6A",
+  "mainStage": "S6",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P19.2",
+    "kind": "topic",
+    "topicId": "P19.2",
+    "conceptIds": null,
+    "label": "P19.2 Activations"
+   },
+   {
+    "ref": "P16.0:7-8",
+    "kind": "topic",
+    "topicId": "P16.0",
+    "conceptIds": [
+     "P16.0#7",
+     "P16.0#8"
+    ],
+    "label": "P16.0 From-Scratch ML Implementation (core scope) · #7–8 (Simple neural network → Backpropagation)"
+   }
+  ],
+  "supporting": [
+   {
+    "ref": "P05.3:7-12",
+    "kind": "topic",
+    "topicId": "P05.3",
+    "conceptIds": [
+     "P05.3#7",
+     "P05.3#8",
+     "P05.3#9",
+     "P05.3#10",
+     "P05.3#11",
+     "P05.3#12"
+    ],
+    "label": "P05.3 Computer Architecture · #7–12 (RAM → integer representation)"
+   }
+  ],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "From scratch in NumPy: simple neural network + backpropagation.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG5",
+  "conceptCount": 13,
+  "dayPlan": null
+ },
+ {
+  "cw": 104,
+  "stage": "S6A",
+  "mainStage": "S6",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P19.3:1-6",
+    "kind": "topic",
+    "topicId": "P19.3",
+    "conceptIds": [
+     "P19.3#1",
+     "P19.3#2",
+     "P19.3#3",
+     "P19.3#4",
+     "P19.3#5",
+     "P19.3#6"
+    ],
+    "label": "P19.3 Training · #1–6 (initialisation → momentum)"
+   }
+  ],
+  "supporting": [
+   {
+    "ref": "P05.3:13-19",
+    "kind": "topic",
+    "topicId": "P05.3",
+    "conceptIds": [
+     "P05.3#13",
+     "P05.3#14",
+     "P05.3#15",
+     "P05.3#16",
+     "P05.3#17",
+     "P05.3#18",
+     "P05.3#19"
+    ],
+    "label": "P05.3 Computer Architecture · #13–19 (floating-point awareness → compiled code can outperform interpreted code in appropriate workloads)"
+   }
+  ],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Custom training loop in PyTorch.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG5",
+  "conceptCount": 13,
+  "dayPlan": null
+ },
+ {
+  "cw": 105,
+  "stage": "S6A",
+  "mainStage": "S6",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P19.3:7-12",
+    "kind": "topic",
+    "topicId": "P19.3",
+    "conceptIds": [
+     "P19.3#7",
+     "P19.3#8",
+     "P19.3#9",
+     "P19.3#10",
+     "P19.3#11",
+     "P19.3#12"
+    ],
+    "label": "P19.3 Training · #7–12 (Adam → early stopping)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Optimiser/regularisation ablation.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG5",
+  "conceptCount": 6,
+  "dayPlan": null
+ },
+ {
+  "cw": 106,
+  "stage": "S6A",
+  "mainStage": "S6",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P19.4",
+    "kind": "topic",
+    "topicId": "P19.4",
+    "conceptIds": null,
+    "label": "P19.4 Failure modes"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Reproduce and fix vanishing gradients and overfitting.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG5",
+  "conceptCount": 7,
+  "dayPlan": null
+ },
+ {
+  "cw": 107,
+  "stage": "S6A",
+  "mainStage": "S6",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P19.5",
+    "kind": "topic",
+    "topicId": "P19.5",
+    "conceptIds": null,
+    "label": "P19.5 Required builds"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "All five required builds, with checkpointing.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG5",
+  "conceptCount": 5,
+  "dayPlan": null
+ },
+ {
+  "cw": 108,
+  "stage": "S6A",
+  "mainStage": "S6",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P20.0:1-12",
+    "kind": "topic",
+    "topicId": "P20.0",
+    "conceptIds": [
+     "P20.0#1",
+     "P20.0#2",
+     "P20.0#3",
+     "P20.0#4",
+     "P20.0#5",
+     "P20.0#6",
+     "P20.0#7",
+     "P20.0#8",
+     "P20.0#9",
+     "P20.0#10",
+     "P20.0#11",
+     "P20.0#12"
+    ],
+    "label": "P20.0 Computer Vision (core scope) · #1–12 (image representation → segmentation awareness)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Image classifier.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG5",
+  "conceptCount": 12,
+  "dayPlan": null
+ },
+ {
+  "cw": 109,
+  "stage": "S6A",
+  "mainStage": "S6",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P20.0:13-20",
+    "kind": "topic",
+    "topicId": "P20.0",
+    "conceptIds": [
+     "P20.0#13",
+     "P20.0#14",
+     "P20.0#15",
+     "P20.0#16",
+     "P20.0#17",
+     "P20.0#18",
+     "P20.0#19",
+     "P20.0#20"
+    ],
+    "label": "P20.0 Computer Vision (core scope) · #13–20 (LeNet → document/industrial image analysis)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Transfer-learning classifier.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG5",
+  "conceptCount": 8,
+  "dayPlan": null
+ },
+ {
+  "cw": 110,
+  "stage": "S6A",
+  "mainStage": "S6",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P21.0:1-6",
+    "kind": "topic",
+    "topicId": "P21.0",
+    "conceptIds": [
+     "P21.0#1",
+     "P21.0#2",
+     "P21.0#3",
+     "P21.0#4",
+     "P21.0#5",
+     "P21.0#6"
+    ],
+    "label": "P21.0 Sequence Models and NLP (core scope) · #1–6 (sequences → RNNs)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Sequence classifier with embeddings.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG5",
+  "conceptCount": 6,
+  "dayPlan": null
+ },
+ {
+  "cw": 111,
+  "stage": "S6A",
+  "mainStage": "S6",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P21.0:7-11",
+    "kind": "topic",
+    "topicId": "P21.0",
+    "conceptIds": [
+     "P21.0#7",
+     "P21.0#8",
+     "P21.0#9",
+     "P21.0#10",
+     "P21.0#11"
+    ],
+    "label": "P21.0 Sequence Models and NLP (core scope) · #7–11 (hidden state → teacher forcing awareness)"
+   },
+   {
+    "ref": "P17.0:11-15",
+    "kind": "topic",
+    "topicId": "P17.0",
+    "conceptIds": [
+     "P17.0#11",
+     "P17.0#12",
+     "P17.0#13",
+     "P17.0#14",
+     "P17.0#15"
+    ],
+    "label": "P17.0 Time Series (core scope) · #11–15 (ARIMA awareness → deep-learning forecasting awareness)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "LSTM/GRU comparison; forecasting 'later' items (P17 Later list).",
+  "note": "Optional exposure only: reading on attention is allowed here but is not a gate (decision 5).",
+  "gate": null,
+  "requiredGate": "SG5",
+  "conceptCount": 10,
+  "dayPlan": null
+ },
+ {
+  "cw": 112,
+  "stage": "S6A",
+  "mainStage": "S6",
+  "type": "consolidation",
+  "primary": [
+   {
+    "ref": "CONSOLIDATE",
+    "kind": "activity",
+    "activity": "CONSOLIDATE",
+    "label": "Consolidation: gate attempt, spaced re-tests, targeted repair"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Deep-learning phase gates; spaced re-tests of classical ML.",
+  "note": "",
+  "gate": "SG6A",
+  "requiredGate": "SG5",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 113,
+  "stage": "S6B",
+  "mainStage": "S6",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P28.0:1-10",
+    "kind": "topic",
+    "topicId": "P28.0",
+    "conceptIds": [
+     "P28.0#1",
+     "P28.0#2",
+     "P28.0#3",
+     "P28.0#4",
+     "P28.0#5",
+     "P28.0#6",
+     "P28.0#7",
+     "P28.0#8",
+     "P28.0#9",
+     "P28.0#10"
+    ],
+    "label": "P28.0 ML Engineering (core scope) · #1–10 (project structure → experiment tracking)"
+   },
+   {
+    "ref": "P28.1",
+    "kind": "topic",
+    "topicId": "P28.1",
+    "conceptIds": null,
+    "label": "P28.1 Standard lifecycle"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Restructure PR07 as a reproducible training pipeline.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG6A",
+  "conceptCount": 10,
+  "dayPlan": null
+ },
+ {
+  "cw": 114,
+  "stage": "S6B",
+  "mainStage": "S6",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P28.0:11-21",
+    "kind": "topic",
+    "topicId": "P28.0",
+    "conceptIds": [
+     "P28.0#11",
+     "P28.0#12",
+     "P28.0#13",
+     "P28.0#14",
+     "P28.0#15",
+     "P28.0#16",
+     "P28.0#17",
+     "P28.0#18",
+     "P28.0#19",
+     "P28.0#20",
+     "P28.0#21"
+    ],
+    "label": "P28.0 ML Engineering (core scope) · #11–21 (data versioning → retraining)"
+   },
+   {
+    "ref": "P28.2",
+    "kind": "topic",
+    "topicId": "P28.2",
+    "conceptIds": null,
+    "label": "P28.2 Production questions"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Answer the production questions for PR07.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG6A",
+  "conceptCount": 23,
+  "dayPlan": null
+ },
+ {
+  "cw": 115,
+  "stage": "S6B",
+  "mainStage": "S6",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P29.1",
+    "kind": "topic",
+    "topicId": "P29.1",
+    "conceptIds": null,
+    "label": "P29.1 Batch inference"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Batch inference job at D3.",
+  "note": "Formal serving pass at D3.",
+  "gate": null,
+  "requiredGate": "SG6A",
+  "conceptCount": 5,
+  "dayPlan": null
+ },
+ {
+  "cw": 116,
+  "stage": "S6B",
+  "mainStage": "S6",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P29.2",
+    "kind": "topic",
+    "topicId": "P29.2",
+    "conceptIds": null,
+    "label": "P29.2 Online inference"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Online inference: latency, batching, health checks.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG6A",
+  "conceptCount": 7,
+  "dayPlan": null
+ },
+ {
+  "cw": 117,
+  "stage": "S6B",
+  "mainStage": "S6",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P29.3",
+    "kind": "topic",
+    "topicId": "P29.3",
+    "conceptIds": null,
+    "label": "P29.3 Serving project"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Serving project: versioned API, metrics, rollback plan.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG6A",
+  "conceptCount": 4,
+  "dayPlan": null
+ },
+ {
+  "cw": 118,
+  "stage": "S6B",
+  "mainStage": "S6",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P30.1",
+    "kind": "topic",
+    "topicId": "P30.1",
+    "conceptIds": null,
+    "label": "P30.1 Level 1"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "MLOps Level 1.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG6A",
+  "conceptCount": 5,
+  "dayPlan": null
+ },
+ {
+  "cw": 119,
+  "stage": "S6B",
+  "mainStage": "S6",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P30.2",
+    "kind": "topic",
+    "topicId": "P30.2",
+    "conceptIds": null,
+    "label": "P30.2 Level 2"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "MLOps Level 2.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG6A",
+  "conceptCount": 4,
+  "dayPlan": null
+ },
+ {
+  "cw": 120,
+  "stage": "S6B",
+  "mainStage": "S6",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P30.3",
+    "kind": "topic",
+    "topicId": "P30.3",
+    "conceptIds": null,
+    "label": "P30.3 Level 3"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "MLOps Level 3.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG6A",
+  "conceptCount": 4,
+  "dayPlan": null
+ },
+ {
+  "cw": 121,
+  "stage": "S6B",
+  "mainStage": "S6",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P30.4",
+    "kind": "topic",
+    "topicId": "P30.4",
+    "conceptIds": null,
+    "label": "P30.4 Level 4"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "MLOps Level 4: monitoring, drift, retraining.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG6A",
+  "conceptCount": 5,
+  "dayPlan": null
+ },
+ {
+  "cw": 122,
+  "stage": "S6B",
+  "mainStage": "S6",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P38.0",
+    "kind": "topic",
+    "topicId": "P38.0",
+    "conceptIds": null,
+    "label": "P38.0 Observability (core scope)"
+   },
+   {
+    "ref": "P38.1",
+    "kind": "topic",
+    "topicId": "P38.1",
+    "conceptIds": null,
+    "label": "P38.1 Metrics"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Metrics for the serving project.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG6A",
+  "conceptCount": 13,
+  "dayPlan": null
+ },
+ {
+  "cw": 123,
+  "stage": "S6B",
+  "mainStage": "S6",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P38.2",
+    "kind": "topic",
+    "topicId": "P38.2",
+    "conceptIds": null,
+    "label": "P38.2 Logging"
+   },
+   {
+    "ref": "P38.3",
+    "kind": "topic",
+    "topicId": "P38.3",
+    "conceptIds": null,
+    "label": "P38.3 Tracing"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Instrument one service; trace a request across components.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG6A",
+  "conceptCount": 8,
+  "dayPlan": null
+ },
+ {
+  "cw": 124,
+  "stage": "S6B",
+  "mainStage": "S6",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P33.0",
+    "kind": "topic",
+    "topicId": "P33.0",
+    "conceptIds": null,
+    "label": "P33.0 Terraform / Infrastructure as Code (core scope)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Provision one portfolio system with Terraform.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG6A",
+  "conceptCount": 13,
+  "dayPlan": null
+ },
+ {
+  "cw": 125,
+  "stage": "S6B",
+  "mainStage": "S6",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P34.0:1-11",
+    "kind": "topic",
+    "topicId": "P34.0",
+    "conceptIds": [
+     "P34.0#1",
+     "P34.0#2",
+     "P34.0#3",
+     "P34.0#4",
+     "P34.0#5",
+     "P34.0#6",
+     "P34.0#7",
+     "P34.0#8",
+     "P34.0#9",
+     "P34.0#10",
+     "P34.0#11"
+    ],
+    "label": "P34.0 Kubernetes (core scope) · #1–11 (Linux → ConfigMaps)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Local cluster (Minikube/kind).",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG6A",
+  "conceptCount": 11,
+  "dayPlan": null
+ },
+ {
+  "cw": 126,
+  "stage": "S6B",
+  "mainStage": "S6",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P34.0:12-18",
+    "kind": "topic",
+    "topicId": "P34.0",
+    "conceptIds": [
+     "P34.0#12",
+     "P34.0#13",
+     "P34.0#14",
+     "P34.0#15",
+     "P34.0#16",
+     "P34.0#17",
+     "P34.0#18"
+    ],
+    "label": "P34.0 Kubernetes (core scope) · #12–18 (Secrets → namespaces)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Deploy the serving project to the local cluster.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG6A",
+  "conceptCount": 7,
+  "dayPlan": null
+ },
+ {
+  "cw": 127,
+  "stage": "S6B",
+  "mainStage": "S6",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P18.0:1-7",
+    "kind": "topic",
+    "topicId": "P18.0",
+    "conceptIds": [
+     "P18.0#1",
+     "P18.0#2",
+     "P18.0#3",
+     "P18.0#4",
+     "P18.0#5",
+     "P18.0#6",
+     "P18.0#7"
+    ],
+    "label": "P18.0 Recommender Systems (core scope) · #1–7 (recommendation problem formulation → similarity)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Candidate generation + collaborative filtering prototype.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG6A",
+  "conceptCount": 7,
+  "dayPlan": null
+ },
+ {
+  "cw": 128,
+  "stage": "S6B",
+  "mainStage": "S6",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P18.0:8-13",
+    "kind": "topic",
+    "topicId": "P18.0",
+    "conceptIds": [
+     "P18.0#8",
+     "P18.0#9",
+     "P18.0#10",
+     "P18.0#11",
+     "P18.0#12",
+     "P18.0#13"
+    ],
+    "label": "P18.0 Recommender Systems (core scope) · #8–13 (cold start → online experimentation)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Offline evaluation of the prototype.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG6A",
+  "conceptCount": 6,
+  "dayPlan": null
+ },
+ {
+  "cw": 129,
+  "stage": "S6B",
+  "mainStage": "S6",
+  "type": "project",
+  "primary": [
+   {
+    "ref": "PR08",
+    "kind": "project",
+    "projectId": "PR08",
+    "label": "PR08 Recommendation System (build)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": "PR08",
+  "build": "PR08 Recommendation System: event ingestion, representations.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG6A",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 130,
+  "stage": "S6B",
+  "mainStage": "S6",
+  "type": "project",
+  "primary": [
+   {
+    "ref": "PR08",
+    "kind": "project",
+    "projectId": "PR08",
+    "label": "PR08 Recommendation System (build)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": "PR08",
+  "build": "PR08 retrieval + ranking.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG6A",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 131,
+  "stage": "S6B",
+  "mainStage": "S6",
+  "type": "project",
+  "primary": [
+   {
+    "ref": "PR08",
+    "kind": "project",
+    "projectId": "PR08",
+    "label": "PR08 Recommendation System (build)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": "PR08",
+  "build": "PR08 evaluation + serving API.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG6A",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 132,
+  "stage": "S6B",
+  "mainStage": "S6",
+  "type": "project",
+  "primary": [
+   {
+    "ref": "PR08",
+    "kind": "project",
+    "projectId": "PR08",
+    "label": "PR08 Recommendation System (build)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": "PR08",
+  "build": "PR08 production design writeup.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG6A",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 133,
+  "stage": "S6B",
+  "mainStage": "S6",
+  "type": "project",
+  "primary": [
+   {
+    "ref": "PR09",
+    "kind": "project",
+    "projectId": "PR09",
+    "label": "PR09 ML Serving Platform (build)"
+   }
+  ],
+  "supporting": [
+   {
+    "ref": "P45.0:1-8",
+    "kind": "topic",
+    "topicId": "P45.0",
+    "conceptIds": [
+     "P45.0#1",
+     "P45.0#2",
+     "P45.0#3",
+     "P45.0#4",
+     "P45.0#5",
+     "P45.0#6",
+     "P45.0#7",
+     "P45.0#8"
+    ],
+    "label": "P45.0 Cost Engineering (core scope) · #1–8 (compute cost → operational complexity)"
+   }
+  ],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": "PR09",
+  "build": "PR09 ML Serving Platform: registry, model selection, versioning.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG6A",
+  "conceptCount": 8,
+  "dayPlan": null
+ },
+ {
+  "cw": 134,
+  "stage": "S6B",
+  "mainStage": "S6",
+  "type": "project",
+  "primary": [
+   {
+    "ref": "PR09",
+    "kind": "project",
+    "projectId": "PR09",
+    "label": "PR09 ML Serving Platform (build)"
+   }
+  ],
+  "supporting": [
+   {
+    "ref": "P45.0:9-15",
+    "kind": "topic",
+    "topicId": "P45.0",
+    "conceptIds": [
+     "P45.0#9",
+     "P45.0#10",
+     "P45.0#11",
+     "P45.0#12",
+     "P45.0#13",
+     "P45.0#14",
+     "P45.0#15"
+    ],
+    "label": "P45.0 Cost Engineering (core scope) · #9–15 (tokens → model quality vs cost)"
+   }
+  ],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": "PR09",
+  "build": "PR09 inference API, latency, batching.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG6A",
+  "conceptCount": 7,
+  "dayPlan": null
+ },
+ {
+  "cw": 135,
+  "stage": "S6B",
+  "mainStage": "S6",
+  "type": "project",
+  "primary": [
+   {
+    "ref": "PR09",
+    "kind": "project",
+    "projectId": "PR09",
+    "label": "PR09 ML Serving Platform (build)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": "PR09",
+  "build": "PR09 health checks + monitoring.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG6A",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 136,
+  "stage": "S6B",
+  "mainStage": "S6",
+  "type": "project",
+  "primary": [
+   {
+    "ref": "PR09",
+    "kind": "project",
+    "projectId": "PR09",
+    "label": "PR09 ML Serving Platform (build)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": "PR09",
+  "build": "PR09 cost analysis + documentation.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG6A",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 137,
+  "stage": "S6B",
+  "mainStage": "S6",
+  "type": "consolidation",
+  "primary": [
+   {
+    "ref": "CONSOLIDATE",
+    "kind": "activity",
+    "activity": "CONSOLIDATE",
+    "label": "Consolidation: gate attempt, spaced re-tests, targeted repair"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "C5 practical gate: end-to-end ML service from ingestion through inference and monitoring.",
+  "note": "",
+  "gate": "C5",
+  "requiredGate": "SG6A",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 138,
+  "stage": "S6B",
+  "mainStage": "S6",
+  "type": "consolidation",
+  "primary": [
+   {
+    "ref": "CONSOLIDATE",
+    "kind": "activity",
+    "activity": "CONSOLIDATE",
+    "label": "Consolidation: gate attempt, spaced re-tests, targeted repair"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Buffer/repair; portfolio Stage C update (T09).",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C5",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 139,
+  "stage": "S7A",
+  "mainStage": "S7",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P22.0:1-8",
+    "kind": "topic",
+    "topicId": "P22.0",
+    "conceptIds": [
+     "P22.0#1",
+     "P22.0#2",
+     "P22.0#3",
+     "P22.0#4",
+     "P22.0#5",
+     "P22.0#6",
+     "P22.0#7",
+     "P22.0#8"
+    ],
+    "label": "P22.0 Attention and Transformers (core scope) · #1–8 (query → multi-head attention)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Scaled dot-product attention in NumPy.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C5",
+  "conceptCount": 8,
+  "dayPlan": null
+ },
+ {
+  "cw": 140,
+  "stage": "S7A",
+  "mainStage": "S7",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P22.0:9-15",
+    "kind": "topic",
+    "topicId": "P22.0",
+    "conceptIds": [
+     "P22.0#9",
+     "P22.0#10",
+     "P22.0#11",
+     "P22.0#12",
+     "P22.0#13",
+     "P22.0#14",
+     "P22.0#15"
+    ],
+    "label": "P22.0 Attention and Transformers (core scope) · #9–15 (positional information → autoregressive generation)"
+   },
+   {
+    "ref": "P22.1",
+    "kind": "topic",
+    "topicId": "P22.1",
+    "conceptIds": null,
+    "label": "P22.1 Required understanding"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Explain why attention works (required understanding).",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C5",
+  "conceptCount": 7,
+  "dayPlan": null
+ },
+ {
+  "cw": 141,
+  "stage": "S7A",
+  "mainStage": "S7",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P22.2:1-5",
+    "kind": "topic",
+    "topicId": "P22.2",
+    "conceptIds": [
+     "P22.2#1",
+     "P22.2#2",
+     "P22.2#3",
+     "P22.2#4",
+     "P22.2#5"
+    ],
+    "label": "P22.2 Required build · #1–5 (token embeddings → feed-forward block)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Mini Transformer steps 1-5.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C5",
+  "conceptCount": 5,
+  "dayPlan": null
+ },
+ {
+  "cw": 142,
+  "stage": "S7A",
+  "mainStage": "S7",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P22.2:6-10",
+    "kind": "topic",
+    "topicId": "P22.2",
+    "conceptIds": [
+     "P22.2#6",
+     "P22.2#7",
+     "P22.2#8",
+     "P22.2#9",
+     "P22.2#10"
+    ],
+    "label": "P22.2 Required build · #6–10 (residual connections → text generation)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Mini Transformer steps 6-10: training loop + generation.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C5",
+  "conceptCount": 5,
+  "dayPlan": null
+ },
+ {
+  "cw": 143,
+  "stage": "S7A",
+  "mainStage": "S7",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P23.1",
+    "kind": "topic",
+    "topicId": "P23.1",
+    "conceptIds": null,
+    "label": "P23.1 Tokenisation"
+   },
+   {
+    "ref": "P23.2",
+    "kind": "topic",
+    "topicId": "P23.2",
+    "conceptIds": null,
+    "label": "P23.2 Embeddings"
+   }
+  ],
+  "supporting": [
+   {
+    "ref": "P01.3:1-5",
+    "kind": "topic",
+    "topicId": "P01.3",
+    "conceptIds": [
+     "P01.3#1",
+     "P01.3#2",
+     "P01.3#3",
+     "P01.3#4",
+     "P01.3#5"
+    ],
+    "label": "P01.3 JavaScript / TypeScript · #1–5 (variables → modules)"
+   }
+  ],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Tokeniser + embedding experiments.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C5",
+  "conceptCount": 18,
+  "dayPlan": null
+ },
+ {
+  "cw": 144,
+  "stage": "S7A",
+  "mainStage": "S7",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P23.3",
+    "kind": "topic",
+    "topicId": "P23.3",
+    "conceptIds": null,
+    "label": "P23.3 Model lifecycle"
+   }
+  ],
+  "supporting": [
+   {
+    "ref": "P01.3:6-10",
+    "kind": "topic",
+    "topicId": "P01.3",
+    "conceptIds": [
+     "P01.3#6",
+     "P01.3#7",
+     "P01.3#8",
+     "P01.3#9",
+     "P01.3#10"
+    ],
+    "label": "P01.3 JavaScript / TypeScript · #6–10 (scope → event loop concepts)"
+   }
+  ],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Model lifecycle notes.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C5",
+  "conceptCount": 12,
+  "dayPlan": null
+ },
+ {
+  "cw": 145,
+  "stage": "S7A",
+  "mainStage": "S7",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P23.4",
+    "kind": "topic",
+    "topicId": "P23.4",
+    "conceptIds": null,
+    "label": "P23.4 Fine-tuning"
+   }
+  ],
+  "supporting": [
+   {
+    "ref": "P01.3:11-15",
+    "kind": "topic",
+    "topicId": "P01.3",
+    "conceptIds": [
+     "P01.3#11",
+     "P01.3#12",
+     "P01.3#13",
+     "P01.3#14",
+     "P01.3#15"
+    ],
+    "label": "P01.3 JavaScript / TypeScript · #11–15 (HTTP requests → TypeScript types)"
+   }
+  ],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Small fine-tuning run (LoRA/PEFT).",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C5",
+  "conceptCount": 12,
+  "dayPlan": null
+ },
+ {
+  "cw": 146,
+  "stage": "S7A",
+  "mainStage": "S7",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P23.5",
+    "kind": "topic",
+    "topicId": "P23.5",
+    "conceptIds": null,
+    "label": "P23.5 Inference"
+   },
+   {
+    "ref": "P23.6",
+    "kind": "topic",
+    "topicId": "P23.6",
+    "conceptIds": null,
+    "label": "P23.6 Tooling"
+   }
+  ],
+  "supporting": [
+   {
+    "ref": "P01.3:16-19",
+    "kind": "topic",
+    "topicId": "P01.3",
+    "conceptIds": [
+     "P01.3#16",
+     "P01.3#17",
+     "P01.3#18",
+     "P01.3#19"
+    ],
+    "label": "P01.3 JavaScript / TypeScript · #16–19 (interfaces → basic React)"
+   }
+  ],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Inference benchmarking.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C5",
+  "conceptCount": 12,
+  "dayPlan": null
+ },
+ {
+  "cw": 147,
+  "stage": "S7A",
+  "mainStage": "S7",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P24.0:1-8",
+    "kind": "topic",
+    "topicId": "P24.0",
+    "conceptIds": [
+     "P24.0#1",
+     "P24.0#2",
+     "P24.0#3",
+     "P24.0#4",
+     "P24.0#5",
+     "P24.0#6",
+     "P24.0#7",
+     "P24.0#8"
+    ],
+    "label": "P24.0 Retrieval-Augmented Generation (core scope) · #1–8 (document ingestion → hybrid retrieval)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Ingestion + chunking + hybrid retrieval prototype.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C5",
+  "conceptCount": 8,
+  "dayPlan": null
+ },
+ {
+  "cw": 148,
+  "stage": "S7A",
+  "mainStage": "S7",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P24.0:9-15",
+    "kind": "topic",
+    "topicId": "P24.0",
+    "conceptIds": [
+     "P24.0#9",
+     "P24.0#10",
+     "P24.0#11",
+     "P24.0#12",
+     "P24.0#13",
+     "P24.0#14",
+     "P24.0#15"
+    ],
+    "label": "P24.0 Retrieval-Augmented Generation (core scope) · #9–15 (vector indexes → generation metrics)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Reranking + citation grounding + retrieval metrics.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C5",
+  "conceptCount": 7,
+  "dayPlan": null
+ },
+ {
+  "cw": 149,
+  "stage": "S7A",
+  "mainStage": "S7",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P24.1",
+    "kind": "topic",
+    "topicId": "P24.1",
+    "conceptIds": null,
+    "label": "P24.1 Failure modes"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Reproduce each RAG failure mode.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C5",
+  "conceptCount": 9,
+  "dayPlan": null
+ },
+ {
+  "cw": 150,
+  "stage": "S7A",
+  "mainStage": "S7",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P27.0",
+    "kind": "topic",
+    "topicId": "P27.0",
+    "conceptIds": null,
+    "label": "P27.0 AI Evaluation (core scope)"
+   },
+   {
+    "ref": "P27.1",
+    "kind": "topic",
+    "topicId": "P27.1",
+    "conceptIds": null,
+    "label": "P27.1 Evaluation loop"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Build a labelled evaluation set.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C5",
+  "conceptCount": 11,
+  "dayPlan": null
+ },
+ {
+  "cw": 151,
+  "stage": "S7A",
+  "mainStage": "S7",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P27.2",
+    "kind": "topic",
+    "topicId": "P27.2",
+    "conceptIds": null,
+    "label": "P27.2 Evaluation levels"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Regression suite across evaluation levels.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C5",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 152,
+  "stage": "S7A",
+  "mainStage": "S7",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P25.0:1-7",
+    "kind": "topic",
+    "topicId": "P25.0",
+    "conceptIds": [
+     "P25.0#1",
+     "P25.0#2",
+     "P25.0#3",
+     "P25.0#4",
+     "P25.0#5",
+     "P25.0#6",
+     "P25.0#7"
+    ],
+    "label": "P25.0 AI Agents (core scope) · #1–7 (function calling → execution)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Deterministic tool use first.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C5",
+  "conceptCount": 7,
+  "dayPlan": null
+ },
+ {
+  "cw": 153,
+  "stage": "S7A",
+  "mainStage": "S7",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P25.0:8-13",
+    "kind": "topic",
+    "topicId": "P25.0",
+    "conceptIds": [
+     "P25.0#8",
+     "P25.0#9",
+     "P25.0#10",
+     "P25.0#11",
+     "P25.0#12",
+     "P25.0#13"
+    ],
+    "label": "P25.0 AI Agents (core scope) · #8–13 (retries → evaluation)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Bounded agent loop with guardrails and evaluation.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C5",
+  "conceptCount": 6,
+  "dayPlan": null
+ },
+ {
+  "cw": 154,
+  "stage": "S7A",
+  "mainStage": "S7",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P39.3",
+    "kind": "topic",
+    "topicId": "P39.3",
+    "conceptIds": null,
+    "label": "P39.3 AI security"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Prompt-injection and data-leak threat model.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C5",
+  "conceptCount": 9,
+  "dayPlan": null
+ },
+ {
+  "cw": 155,
+  "stage": "S7A",
+  "mainStage": "S7",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P44.0",
+    "kind": "topic",
+    "topicId": "P44.0",
+    "conceptIds": null,
+    "label": "P44.0 AI Engineering as a Systems Discipline (core scope)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "AI system design note combining the S7A pieces.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C5",
+  "conceptCount": 9,
+  "dayPlan": null
+ },
+ {
+  "cw": 156,
+  "stage": "S7A",
+  "mainStage": "S7",
+  "type": "project",
+  "primary": [
+   {
+    "ref": "PR10",
+    "kind": "project",
+    "projectId": "PR10",
+    "label": "PR10 RAG Research Platform (build)"
+   },
+   {
+    "ref": "P24.2",
+    "kind": "topic",
+    "topicId": "P24.2",
+    "conceptIds": null,
+    "label": "P24.2 Required project"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": "PR10",
+  "build": "PR10 RAG Research Platform: ingestion, parsing, chunking, embeddings.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C5",
+  "conceptCount": 9,
+  "dayPlan": null
+ },
+ {
+  "cw": 157,
+  "stage": "S7A",
+  "mainStage": "S7",
+  "type": "project",
+  "primary": [
+   {
+    "ref": "PR10",
+    "kind": "project",
+    "projectId": "PR10",
+    "label": "PR10 RAG Research Platform (build)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": "PR10",
+  "build": "PR10 retrieval, reranking, generation, citations.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C5",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 158,
+  "stage": "S7A",
+  "mainStage": "S7",
+  "type": "project",
+  "primary": [
+   {
+    "ref": "PR10",
+    "kind": "project",
+    "projectId": "PR10",
+    "label": "PR10 RAG Research Platform (build)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": "PR10",
+  "build": "PR10 evaluation set + failure analysis.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C5",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 159,
+  "stage": "S7A",
+  "mainStage": "S7",
+  "type": "project",
+  "primary": [
+   {
+    "ref": "PR10",
+    "kind": "project",
+    "projectId": "PR10",
+    "label": "PR10 RAG Research Platform (build)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": "PR10",
+  "build": "PR10 auth, logging, security.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C5",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 160,
+  "stage": "S7A",
+  "mainStage": "S7",
+  "type": "project",
+  "primary": [
+   {
+    "ref": "PR10",
+    "kind": "project",
+    "projectId": "PR10",
+    "label": "PR10 RAG Research Platform (build)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": "PR10",
+  "build": "PR10 observability + cost notes.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C5",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 161,
+  "stage": "S7A",
+  "mainStage": "S7",
+  "type": "consolidation",
+  "primary": [
+   {
+    "ref": "CONSOLIDATE",
+    "kind": "activity",
+    "activity": "CONSOLIDATE",
+    "label": "Consolidation: gate attempt, spaced re-tests, targeted repair"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "C6 practical gate: evaluated AI system with evaluation set, retrieval/tool tests, failure analysis, observability.",
+  "note": "",
+  "gate": "C6",
+  "requiredGate": "C5",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 162,
+  "stage": "S7B",
+  "mainStage": "S7",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P35.1",
+    "kind": "topic",
+    "topicId": "P35.1",
+    "conceptIds": null,
+    "label": "P35.1 Standard design process"
+   },
+   {
+    "ref": "P35.2:1-10",
+    "kind": "topic",
+    "topicId": "P35.2",
+    "conceptIds": [
+     "P35.2#1",
+     "P35.2#2",
+     "P35.2#3",
+     "P35.2#4",
+     "P35.2#5",
+     "P35.2#6",
+     "P35.2#7",
+     "P35.2#8",
+     "P35.2#9",
+     "P35.2#10"
+    ],
+    "label": "P35.2 Core concepts · #1–10 (availability → backpressure)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Design exercise at D3.",
+  "note": "Second pass at D3-D4.",
+  "gate": null,
+  "requiredGate": "C6",
+  "conceptCount": 22,
+  "dayPlan": null
+ },
+ {
+  "cw": 163,
+  "stage": "S7B",
+  "mainStage": "S7",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P35.2:11-19",
+    "kind": "topic",
+    "topicId": "P35.2",
+    "conceptIds": [
+     "P35.2#11",
+     "P35.2#12",
+     "P35.2#13",
+     "P35.2#14",
+     "P35.2#15",
+     "P35.2#16",
+     "P35.2#17",
+     "P35.2#18",
+     "P35.2#19"
+    ],
+    "label": "P35.2 Core concepts · #11–19 (caching → observability)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Capacity estimation drills.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C6",
+  "conceptCount": 9,
+  "dayPlan": null
+ },
+ {
+  "cw": 164,
+  "stage": "S7B",
+  "mainStage": "S7",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P35.3",
+    "kind": "topic",
+    "topicId": "P35.3",
+    "conceptIds": null,
+    "label": "P35.3 Systems to design"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Design two systems from the master list.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C6",
+  "conceptCount": 10,
+  "dayPlan": null
+ },
+ {
+  "cw": 165,
+  "stage": "S7B",
+  "mainStage": "S7",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P35.3",
+    "kind": "topic",
+    "topicId": "P35.3",
+    "conceptIds": null,
+    "label": "P35.3 Systems to design"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Design two more; compare trade-offs.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C6",
+  "conceptCount": 10,
+  "dayPlan": null
+ },
+ {
+  "cw": 166,
+  "stage": "S7B",
+  "mainStage": "S7",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P36.0:1-8",
+    "kind": "topic",
+    "topicId": "P36.0",
+    "conceptIds": [
+     "P36.0#1",
+     "P36.0#2",
+     "P36.0#3",
+     "P36.0#4",
+     "P36.0#5",
+     "P36.0#6",
+     "P36.0#7",
+     "P36.0#8"
+    ],
+    "label": "P36.0 Distributed Systems (core scope) · #1–8 (distributed-system characteristics → quorum concepts)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "MIT 6.5840 lab (as prerequisites permit).",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C6",
+  "conceptCount": 8,
+  "dayPlan": null
+ },
+ {
+  "cw": 167,
+  "stage": "S7B",
+  "mainStage": "S7",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P36.0:9-15",
+    "kind": "topic",
+    "topicId": "P36.0",
+    "conceptIds": [
+     "P36.0#9",
+     "P36.0#10",
+     "P36.0#11",
+     "P36.0#12",
+     "P36.0#13",
+     "P36.0#14",
+     "P36.0#15"
+    ],
+    "label": "P36.0 Distributed Systems (core scope) · #9–15 (partitioning → fault tolerance)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Idempotency and retry experiments.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C6",
+  "conceptCount": 7,
+  "dayPlan": null
+ },
+ {
+  "cw": 168,
+  "stage": "S7B",
+  "mainStage": "S7",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P36.0:16-20",
+    "kind": "topic",
+    "topicId": "P36.0",
+    "conceptIds": [
+     "P36.0#16",
+     "P36.0#17",
+     "P36.0#18",
+     "P36.0#19",
+     "P36.0#20"
+    ],
+    "label": "P36.0 Distributed Systems (core scope) · #16–20 (consensus → event sourcing)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Replicated key-value store or Raft lab.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C6",
+  "conceptCount": 5,
+  "dayPlan": null
+ },
+ {
+  "cw": 169,
+  "stage": "S7B",
+  "mainStage": "S7",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P37.0",
+    "kind": "topic",
+    "topicId": "P37.0",
+    "conceptIds": null,
+    "label": "P37.0 ML System Design (core scope)"
+   },
+   {
+    "ref": "P37.1",
+    "kind": "topic",
+    "topicId": "P37.1",
+    "conceptIds": null,
+    "label": "P37.1 Recommendation system"
+   },
+   {
+    "ref": "P37.2",
+    "kind": "topic",
+    "topicId": "P37.2",
+    "conceptIds": null,
+    "label": "P37.2 Fraud detection"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Design and defend recommendation + fraud systems.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C6",
+  "conceptCount": 12,
+  "dayPlan": null
+ },
+ {
+  "cw": 170,
+  "stage": "S7B",
+  "mainStage": "S7",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P37.3",
+    "kind": "topic",
+    "topicId": "P37.3",
+    "conceptIds": null,
+    "label": "P37.3 Search"
+   },
+   {
+    "ref": "P37.4",
+    "kind": "topic",
+    "topicId": "P37.4",
+    "conceptIds": null,
+    "label": "P37.4 Model-serving platform"
+   },
+   {
+    "ref": "P37.5",
+    "kind": "topic",
+    "topicId": "P37.5",
+    "conceptIds": null,
+    "label": "P37.5 RAG system"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Design and defend search, serving platform, RAG systems.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C6",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 171,
+  "stage": "S7B",
+  "mainStage": "S7",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P42.0",
+    "kind": "topic",
+    "topicId": "P42.0",
+    "conceptIds": null,
+    "label": "P42.0 Advanced ML System Topics (core scope)"
+   },
+   {
+    "ref": "P42.1",
+    "kind": "topic",
+    "topicId": "P42.1",
+    "conceptIds": null,
+    "label": "P42.1 Feature stores"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Feature-store design for PR07.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C6",
+  "conceptCount": 5,
+  "dayPlan": null
+ },
+ {
+  "cw": 172,
+  "stage": "S7B",
+  "mainStage": "S7",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P42.2",
+    "kind": "topic",
+    "topicId": "P42.2",
+    "conceptIds": null,
+    "label": "P42.2 Distributed training"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Distributed-training concepts exercise.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C6",
+  "conceptCount": 5,
+  "dayPlan": null
+ },
+ {
+  "cw": 173,
+  "stage": "S7B",
+  "mainStage": "S7",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P42.3",
+    "kind": "topic",
+    "topicId": "P42.3",
+    "conceptIds": null,
+    "label": "P42.3 Model optimisation"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Quantisation/distillation experiment.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C6",
+  "conceptCount": 6,
+  "dayPlan": null
+ },
+ {
+  "cw": 174,
+  "stage": "S7B",
+  "mainStage": "S7",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P42.4",
+    "kind": "topic",
+    "topicId": "P42.4",
+    "conceptIds": null,
+    "label": "P42.4 High-scale inference"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "High-scale inference analysis.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C6",
+  "conceptCount": 8,
+  "dayPlan": null
+ },
+ {
+  "cw": 175,
+  "stage": "S7B",
+  "mainStage": "S7",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P26.0:1-5",
+    "kind": "topic",
+    "topicId": "P26.0",
+    "conceptIds": [
+     "P26.0#1",
+     "P26.0#2",
+     "P26.0#3",
+     "P26.0#4",
+     "P26.0#5"
+    ],
+    "label": "P26.0 Multimodal AI (core scope) · #1–5 (vision-language models → multimodal tokenisation awareness)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Vision-language model exploration.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C6",
+  "conceptCount": 5,
+  "dayPlan": null
+ },
+ {
+  "cw": 176,
+  "stage": "S7B",
+  "mainStage": "S7",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P26.0:6-10",
+    "kind": "topic",
+    "topicId": "P26.0",
+    "conceptIds": [
+     "P26.0#6",
+     "P26.0#7",
+     "P26.0#8",
+     "P26.0#9",
+     "P26.0#10"
+    ],
+    "label": "P26.0 Multimodal AI (core scope) · #6–10 (multimodal retrieval → multimodal search)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "One multimodal project from the master list.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "C6",
+  "conceptCount": 5,
+  "dayPlan": null
+ },
+ {
+  "cw": 177,
+  "stage": "S7B",
+  "mainStage": "S7",
+  "type": "consolidation",
+  "primary": [
+   {
+    "ref": "CONSOLIDATE",
+    "kind": "activity",
+    "activity": "CONSOLIDATE",
+    "label": "Consolidation: gate attempt, spaced re-tests, targeted repair"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Systems exit review.",
+  "note": "",
+  "gate": "SG7",
+  "requiredGate": "C6",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 178,
+  "stage": "S8",
+  "mainStage": "S8",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P40.1",
+    "kind": "topic",
+    "topicId": "P40.1",
+    "conceptIds": null,
+    "label": "P40.1 Reading papers"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Read and annotate papers with the master question list.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG7",
+  "conceptCount": 10,
+  "dayPlan": null
+ },
+ {
+  "cw": 179,
+  "stage": "S8",
+  "mainStage": "S8",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P40.2",
+    "kind": "topic",
+    "topicId": "P40.2",
+    "conceptIds": null,
+    "label": "P40.2 Reproduction ladder"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Choose one paper to reproduce.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG7",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 180,
+  "stage": "S8",
+  "mainStage": "S8",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P40.3",
+    "kind": "topic",
+    "topicId": "P40.3",
+    "conceptIds": null,
+    "label": "P40.3 Experimental discipline"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Experiment tracking discipline on the reproduction.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG7",
+  "conceptCount": 9,
+  "dayPlan": null
+ },
+ {
+  "cw": 181,
+  "stage": "S8",
+  "mainStage": "S8",
+  "type": "study",
+  "primary": [
+   {
+    "ref": "P40.4",
+    "kind": "topic",
+    "topicId": "P40.4",
+    "conceptIds": null,
+    "label": "P40.4 Research writing"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Write the reproduction report.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG7",
+  "conceptCount": 8,
+  "dayPlan": null
+ },
+ {
+  "cw": 182,
+  "stage": "S8",
+  "mainStage": "S8",
+  "type": "open",
+  "primary": [
+   {
+    "ref": "RESEARCH",
+    "kind": "activity",
+    "activity": "RESEARCH",
+    "label": "Paper reproduction (P40 reproduction ladder applied)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Paper reproduction, part 1 of 4.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG7",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 183,
+  "stage": "S8",
+  "mainStage": "S8",
+  "type": "open",
+  "primary": [
+   {
+    "ref": "RESEARCH",
+    "kind": "activity",
+    "activity": "RESEARCH",
+    "label": "Paper reproduction (P40 reproduction ladder applied)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Paper reproduction, part 2 of 4.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG7",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 184,
+  "stage": "S8",
+  "mainStage": "S8",
+  "type": "open",
+  "primary": [
+   {
+    "ref": "RESEARCH",
+    "kind": "activity",
+    "activity": "RESEARCH",
+    "label": "Paper reproduction (P40 reproduction ladder applied)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Paper reproduction, part 3 of 4.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG7",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 185,
+  "stage": "S8",
+  "mainStage": "S8",
+  "type": "open",
+  "primary": [
+   {
+    "ref": "RESEARCH",
+    "kind": "activity",
+    "activity": "RESEARCH",
+    "label": "Paper reproduction (P40 reproduction ladder applied)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Paper reproduction, part 4 of 4.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG7",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 186,
+  "stage": "S8",
+  "mainStage": "S8",
+  "type": "open",
+  "primary": [
+   {
+    "ref": "SPECIALISE",
+    "kind": "activity",
+    "activity": "SPECIALISE",
+    "label": "Specialisation work (master specialisation strategy)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Select one specialisation (master specialisation strategy).",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG7",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 187,
+  "stage": "S8",
+  "mainStage": "S8",
+  "type": "open",
+  "primary": [
+   {
+    "ref": "SPECIALISE",
+    "kind": "activity",
+    "activity": "SPECIALISE",
+    "label": "Specialisation work (master specialisation strategy)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Specialisation depth block 1 of 8 (content per chosen track).",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG7",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 188,
+  "stage": "S8",
+  "mainStage": "S8",
+  "type": "open",
+  "primary": [
+   {
+    "ref": "SPECIALISE",
+    "kind": "activity",
+    "activity": "SPECIALISE",
+    "label": "Specialisation work (master specialisation strategy)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Specialisation depth block 2 of 8 (content per chosen track).",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG7",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 189,
+  "stage": "S8",
+  "mainStage": "S8",
+  "type": "open",
+  "primary": [
+   {
+    "ref": "SPECIALISE",
+    "kind": "activity",
+    "activity": "SPECIALISE",
+    "label": "Specialisation work (master specialisation strategy)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Specialisation depth block 3 of 8 (content per chosen track).",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG7",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 190,
+  "stage": "S8",
+  "mainStage": "S8",
+  "type": "open",
+  "primary": [
+   {
+    "ref": "SPECIALISE",
+    "kind": "activity",
+    "activity": "SPECIALISE",
+    "label": "Specialisation work (master specialisation strategy)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Specialisation depth block 4 of 8 (content per chosen track).",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG7",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 191,
+  "stage": "S8",
+  "mainStage": "S8",
+  "type": "open",
+  "primary": [
+   {
+    "ref": "SPECIALISE",
+    "kind": "activity",
+    "activity": "SPECIALISE",
+    "label": "Specialisation work (master specialisation strategy)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Specialisation depth block 5 of 8 (content per chosen track).",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG7",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 192,
+  "stage": "S8",
+  "mainStage": "S8",
+  "type": "open",
+  "primary": [
+   {
+    "ref": "SPECIALISE",
+    "kind": "activity",
+    "activity": "SPECIALISE",
+    "label": "Specialisation work (master specialisation strategy)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Specialisation depth block 6 of 8 (content per chosen track).",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG7",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 193,
+  "stage": "S8",
+  "mainStage": "S8",
+  "type": "open",
+  "primary": [
+   {
+    "ref": "SPECIALISE",
+    "kind": "activity",
+    "activity": "SPECIALISE",
+    "label": "Specialisation work (master specialisation strategy)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Specialisation depth block 7 of 8 (content per chosen track).",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG7",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 194,
+  "stage": "S8",
+  "mainStage": "S8",
+  "type": "open",
+  "primary": [
+   {
+    "ref": "SPECIALISE",
+    "kind": "activity",
+    "activity": "SPECIALISE",
+    "label": "Specialisation work (master specialisation strategy)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": null,
+  "build": "Specialisation depth block 8 of 8 (content per chosen track).",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG7",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 195,
+  "stage": "S8",
+  "mainStage": "S8",
+  "type": "project",
+  "primary": [
+   {
+    "ref": "PR11",
+    "kind": "project",
+    "projectId": "PR11",
+    "label": "PR11 Intelligent Financial Research Platform (build)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": "PR11",
+  "build": "PR11 Intelligent Financial Research Platform: requirements + architecture.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG7",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 196,
+  "stage": "S8",
+  "mainStage": "S8",
+  "type": "project",
+  "primary": [
+   {
+    "ref": "PR11",
+    "kind": "project",
+    "projectId": "PR11",
+    "label": "PR11 Intelligent Financial Research Platform (build)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": "PR11",
+  "build": "PR11 Intelligent Financial Research Platform: data service.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG7",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 197,
+  "stage": "S8",
+  "mainStage": "S8",
+  "type": "project",
+  "primary": [
+   {
+    "ref": "PR11",
+    "kind": "project",
+    "projectId": "PR11",
+    "label": "PR11 Intelligent Financial Research Platform (build)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": "PR11",
+  "build": "PR11 Intelligent Financial Research Platform: data service.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG7",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 198,
+  "stage": "S8",
+  "mainStage": "S8",
+  "type": "project",
+  "primary": [
+   {
+    "ref": "PR11",
+    "kind": "project",
+    "projectId": "PR11",
+    "label": "PR11 Intelligent Financial Research Platform (build)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": "PR11",
+  "build": "PR11 Intelligent Financial Research Platform: analytics service.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG7",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 199,
+  "stage": "S8",
+  "mainStage": "S8",
+  "type": "project",
+  "primary": [
+   {
+    "ref": "PR11",
+    "kind": "project",
+    "projectId": "PR11",
+    "label": "PR11 Intelligent Financial Research Platform (build)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": "PR11",
+  "build": "PR11 Intelligent Financial Research Platform: ML layer.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG7",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 200,
+  "stage": "S8",
+  "mainStage": "S8",
+  "type": "project",
+  "primary": [
+   {
+    "ref": "PR11",
+    "kind": "project",
+    "projectId": "PR11",
+    "label": "PR11 Intelligent Financial Research Platform (build)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": "PR11",
+  "build": "PR11 Intelligent Financial Research Platform: ML layer.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG7",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 201,
+  "stage": "S8",
+  "mainStage": "S8",
+  "type": "project",
+  "primary": [
+   {
+    "ref": "PR11",
+    "kind": "project",
+    "projectId": "PR11",
+    "label": "PR11 Intelligent Financial Research Platform (build)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": "PR11",
+  "build": "PR11 Intelligent Financial Research Platform: AI service: retrieval.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG7",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 202,
+  "stage": "S8",
+  "mainStage": "S8",
+  "type": "project",
+  "primary": [
+   {
+    "ref": "PR11",
+    "kind": "project",
+    "projectId": "PR11",
+    "label": "PR11 Intelligent Financial Research Platform (build)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": "PR11",
+  "build": "PR11 Intelligent Financial Research Platform: AI service: evaluation.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG7",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 203,
+  "stage": "S8",
+  "mainStage": "S8",
+  "type": "project",
+  "primary": [
+   {
+    "ref": "PR11",
+    "kind": "project",
+    "projectId": "PR11",
+    "label": "PR11 Intelligent Financial Research Platform (build)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": "PR11",
+  "build": "PR11 Intelligent Financial Research Platform: frontend (P01.3).",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG7",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 204,
+  "stage": "S8",
+  "mainStage": "S8",
+  "type": "project",
+  "primary": [
+   {
+    "ref": "PR11",
+    "kind": "project",
+    "projectId": "PR11",
+    "label": "PR11 Intelligent Financial Research Platform (build)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": "PR11",
+  "build": "PR11 Intelligent Financial Research Platform: observability + security.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG7",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 205,
+  "stage": "S8",
+  "mainStage": "S8",
+  "type": "project",
+  "primary": [
+   {
+    "ref": "PR11",
+    "kind": "project",
+    "projectId": "PR11",
+    "label": "PR11 Intelligent Financial Research Platform (build)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": "PR11",
+  "build": "PR11 Intelligent Financial Research Platform: cost + performance reports.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG7",
+  "conceptCount": 0,
+  "dayPlan": null
+ },
+ {
+  "cw": 206,
+  "stage": "S8",
+  "mainStage": "S8",
+  "type": "project",
+  "primary": [
+   {
+    "ref": "PR11",
+    "kind": "project",
+    "projectId": "PR11",
+    "label": "PR11 Intelligent Financial Research Platform (build)"
+   }
+  ],
+  "supporting": [],
+  "dsaLane": {
+   "slices": [],
+   "note": "Maintenance at C2 level; timed practice and mocks only inside calendar-placed C7 windows."
+  },
+  "project": "PR11",
+  "build": "PR11 Intelligent Financial Research Platform: documentation set + demo.",
+  "note": "",
+  "gate": null,
+  "requiredGate": "SG7",
+  "conceptCount": 0,
+  "dayPlan": null
+ }
+]

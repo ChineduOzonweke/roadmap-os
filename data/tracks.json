@@ -1,0 +1,564 @@
+[
+ {
+  "id": "T01",
+  "title": "DSA / Interview preparation",
+  "activation": "Primary block CW15-17, lane from CW18 (see DSA lane).",
+  "bodyMd": "Do not postpone DSA until job applications.\n\nKeep it alive for years.\n\nEarly phase:\n\n- 2–3 focused sessions per week\n\nIntermediate phase:\n\n- 3–5 sessions per week during interview preparation\n\nFinal recruiting phase:\n\n- timed practice\n- mocks\n- review of weak patterns\n\nMaintain a mistake log:\n\n- what I missed\n- why I missed it\n- pattern involved\n- better approach\n- recurrence of mistake",
+  "items": [
+   {
+    "id": "T01#1",
+    "text": "2–3 focused sessions per week"
+   },
+   {
+    "id": "T01#2",
+    "text": "3–5 sessions per week during interview preparation"
+   },
+   {
+    "id": "T01#3",
+    "text": "timed practice"
+   },
+   {
+    "id": "T01#4",
+    "text": "mocks"
+   },
+   {
+    "id": "T01#5",
+    "text": "review of weak patterns"
+   },
+   {
+    "id": "T01#6",
+    "text": "what I missed"
+   },
+   {
+    "id": "T01#7",
+    "text": "why I missed it"
+   },
+   {
+    "id": "T01#8",
+    "text": "pattern involved"
+   },
+   {
+    "id": "T01#9",
+    "text": "better approach"
+   },
+   {
+    "id": "T01#10",
+    "text": "recurrence of mistake"
+   }
+  ]
+ },
+ {
+  "id": "T02",
+  "title": "FAANG / Top-tier tech",
+  "activation": "Coding/CS parts ride the DSA lane; system design from S5A; ML system design from S7B; behavioural stories from first internship evidence.",
+  "bodyMd": "The dream requires preparation beyond merely knowing the stack.\n\n**66.1 Coding interviews**\n\nRequired:\n\n- DSA\n- complexity\n- communication\n- clean implementation\n- edge cases\n\n**66.2 CS interviews**\n\nBe prepared to discuss:\n\n- OS\n- networking\n- databases\n- concurrency\n- memory\n- systems\n\n**66.3 System design**\n\nProgress:\n\n```text\nsingle-service design\n→ common distributed components\n→ scaling\n→ distributed systems\n→ large-scale system design\n→ ML system design\n```\n\n**66.4 ML system design**\n\nPractice:\n\n- recommendation\n- search/ranking\n- fraud\n- ad prediction awareness\n- real-time inference\n- model-serving systems\n- RAG\n- LLM applications\n\n**66.5 Behavioural**\n\nDevelop real stories around:\n\n- ownership\n- failure\n- ambiguity\n- conflict\n- leadership\n- teamwork\n- difficult debugging\n- impact\n- technical trade-offs\n\nDo not fabricate stories.\n\n**66.6 Project deep dives**\n\nFor every serious project be able to answer:\n\n- Why this problem?\n- What were the constraints?\n- Why this architecture?\n- What alternatives did you reject?\n- What broke?\n- How did you debug it?\n- What would you change at 10× scale?\n- What metrics mattered?\n- What did you personally implement?",
+  "items": [
+   {
+    "id": "T02#1",
+    "text": "DSA"
+   },
+   {
+    "id": "T02#2",
+    "text": "complexity"
+   },
+   {
+    "id": "T02#3",
+    "text": "communication"
+   },
+   {
+    "id": "T02#4",
+    "text": "clean implementation"
+   },
+   {
+    "id": "T02#5",
+    "text": "edge cases"
+   },
+   {
+    "id": "T02#6",
+    "text": "OS"
+   },
+   {
+    "id": "T02#7",
+    "text": "networking"
+   },
+   {
+    "id": "T02#8",
+    "text": "databases"
+   },
+   {
+    "id": "T02#9",
+    "text": "concurrency"
+   },
+   {
+    "id": "T02#10",
+    "text": "memory"
+   },
+   {
+    "id": "T02#11",
+    "text": "systems"
+   },
+   {
+    "id": "T02#12",
+    "text": "recommendation"
+   },
+   {
+    "id": "T02#13",
+    "text": "search/ranking"
+   },
+   {
+    "id": "T02#14",
+    "text": "fraud"
+   },
+   {
+    "id": "T02#15",
+    "text": "ad prediction awareness"
+   },
+   {
+    "id": "T02#16",
+    "text": "real-time inference"
+   },
+   {
+    "id": "T02#17",
+    "text": "model-serving systems"
+   },
+   {
+    "id": "T02#18",
+    "text": "RAG"
+   },
+   {
+    "id": "T02#19",
+    "text": "LLM applications"
+   },
+   {
+    "id": "T02#20",
+    "text": "ownership"
+   },
+   {
+    "id": "T02#21",
+    "text": "failure"
+   },
+   {
+    "id": "T02#22",
+    "text": "ambiguity"
+   },
+   {
+    "id": "T02#23",
+    "text": "conflict"
+   },
+   {
+    "id": "T02#24",
+    "text": "leadership"
+   },
+   {
+    "id": "T02#25",
+    "text": "teamwork"
+   },
+   {
+    "id": "T02#26",
+    "text": "difficult debugging"
+   },
+   {
+    "id": "T02#27",
+    "text": "impact"
+   },
+   {
+    "id": "T02#28",
+    "text": "technical trade-offs"
+   },
+   {
+    "id": "T02#29",
+    "text": "Why this problem?"
+   },
+   {
+    "id": "T02#30",
+    "text": "What were the constraints?"
+   },
+   {
+    "id": "T02#31",
+    "text": "Why this architecture?"
+   },
+   {
+    "id": "T02#32",
+    "text": "What alternatives did you reject?"
+   },
+   {
+    "id": "T02#33",
+    "text": "What broke?"
+   },
+   {
+    "id": "T02#34",
+    "text": "How did you debug it?"
+   },
+   {
+    "id": "T02#35",
+    "text": "What would you change at 10× scale?"
+   },
+   {
+    "id": "T02#36",
+    "text": "What metrics mattered?"
+   },
+   {
+    "id": "T02#37",
+    "text": "What did you personally implement?"
+   }
+  ]
+ },
+ {
+  "id": "T03",
+  "title": "Resume",
+  "activation": "Update at every stage exit gate.",
+  "bodyMd": "Your resume should eventually demonstrate:\n\n- technical depth\n- measurable outcomes where genuine\n- internships\n- projects\n- research/open-source evidence\n- leadership where real\n\nAvoid keyword stuffing.\n\nA bullet should ideally communicate:\n\n**action + technical method + outcome**\n\nDo not claim scale, performance, or impact that was not actually achieved.",
+  "items": [
+   {
+    "id": "T03#1",
+    "text": "technical depth"
+   },
+   {
+    "id": "T03#2",
+    "text": "measurable outcomes where genuine"
+   },
+   {
+    "id": "T03#3",
+    "text": "internships"
+   },
+   {
+    "id": "T03#4",
+    "text": "projects"
+   },
+   {
+    "id": "T03#5",
+    "text": "research/open-source evidence"
+   },
+   {
+    "id": "T03#6",
+    "text": "leadership where real"
+   }
+  ]
+ },
+ {
+  "id": "T04",
+  "title": "GitHub",
+  "activation": "From S1 (every build in Git).",
+  "bodyMd": "Target qualities:\n\n- readable code\n- good README\n- tests\n- meaningful history\n- issue tracking\n- architecture notes\n- project demos\n- reproducibility\n\nBetter:\n\n**five excellent repositories**\n\nthan:\n\n**fifty tutorial clones.**",
+  "items": [
+   {
+    "id": "T04#1",
+    "text": "readable code"
+   },
+   {
+    "id": "T04#2",
+    "text": "good README"
+   },
+   {
+    "id": "T04#3",
+    "text": "tests"
+   },
+   {
+    "id": "T04#4",
+    "text": "meaningful history"
+   },
+   {
+    "id": "T04#5",
+    "text": "issue tracking"
+   },
+   {
+    "id": "T04#6",
+    "text": "architecture notes"
+   },
+   {
+    "id": "T04#7",
+    "text": "project demos"
+   },
+   {
+    "id": "T04#8",
+    "text": "reproducibility"
+   }
+  ]
+ },
+ {
+  "id": "T05",
+  "title": "Open source",
+  "activation": "Reading codebases from S5; contributions from S7.",
+  "bodyMd": "Progression:\n\n```text\nRead codebase\n→ documentation improvement\n→ small bug fix\n→ feature\n→ larger contribution\n→ sustained contribution\n```\n\nLook for ecosystems adjacent to your actual roadmap.\n\nPotential areas:\n\n- Python\n- PyTorch\n- Hugging Face\n- scikit-learn\n- FastAPI\n- data tooling\n\nQuality matters more than contribution count.",
+  "items": [
+   {
+    "id": "T05#1",
+    "text": "Python"
+   },
+   {
+    "id": "T05#2",
+    "text": "PyTorch"
+   },
+   {
+    "id": "T05#3",
+    "text": "Hugging Face"
+   },
+   {
+    "id": "T05#4",
+    "text": "scikit-learn"
+   },
+   {
+    "id": "T05#5",
+    "text": "FastAPI"
+   },
+   {
+    "id": "T05#6",
+    "text": "data tooling"
+   }
+  ]
+ },
+ {
+  "id": "T06",
+  "title": "Technical writing",
+  "activation": "READMEs from PR01; writeups at every project and checkpoint.",
+  "bodyMd": "Write:\n\n- project READMEs\n- architecture notes\n- experiment reports\n- debugging writeups\n- concept explanations\n- research summaries\n\nRecommended structure:\n\n```text\nProblem\n→ context\n→ approach\n→ alternatives\n→ implementation\n→ result\n→ failure\n→ lesson\n→ next step\n```\n\nWriting also forces precise thinking.",
+  "items": [
+   {
+    "id": "T06#1",
+    "text": "project READMEs"
+   },
+   {
+    "id": "T06#2",
+    "text": "architecture notes"
+   },
+   {
+    "id": "T06#3",
+    "text": "experiment reports"
+   },
+   {
+    "id": "T06#4",
+    "text": "debugging writeups"
+   },
+   {
+    "id": "T06#5",
+    "text": "concept explanations"
+   },
+   {
+    "id": "T06#6",
+    "text": "research summaries"
+   }
+  ]
+ },
+ {
+  "id": "T07",
+  "title": "Research",
+  "activation": "Light paper reading allowed earlier; full phase after C5 (Phase 40 gate).",
+  "bodyMd": "Progression:\n\n```text\nPaper\n→ notes\n→ implementation\n→ reproduction\n→ variation\n→ experiment\n```\n\nDo not rush into “original research” before you can reproduce existing work.",
+  "items": []
+ },
+ {
+  "id": "T08",
+  "title": "Internship strategy",
+  "activation": "Calendar-driven; placements map into the curriculum (Mode E).",
+  "bodyMd": "Internships are not merely CV decorations.\n\nThey should progressively increase exposure to:\n\n- real codebases\n- real users\n- real constraints\n- real teams\n- production systems\n\nPossible trajectory:\n\n```text\nUniversity projects\n→ first technical experience\n→ stronger internship\n→ SWE/ML experience\n→ top-tier internship\n→ new-grad opportunities\n```\n\nThis is a strategy, not a guaranteed sequence.\n\n**Internship evidence to seek**\n\n- meaningful code contributions\n- production exposure\n- measurable improvements where genuine\n- technical ownership\n- debugging\n- collaboration\n- architecture exposure\n\n**International / cross-border career reality**\n\nFor international students and candidates targeting opportunities outside their home country, technical strength is necessary but not always sufficient. Recruiting can also depend on:\n\n- work authorization\n- visa sponsorship\n- employer location constraints\n- relocation requirements\n- internship eligibility\n- remote-work eligibility\n- timing and application windows\n\nDo not let this become an early source of anxiety or a reason to stop building. Revisit it when targeting specific companies, countries, internships, postgraduate programmes, or work arrangements.\n\nThe roadmap should optimise first for transferable technical capability and evidence. Career logistics should then be checked against the actual opportunity.",
+  "items": [
+   {
+    "id": "T08#1",
+    "text": "real codebases"
+   },
+   {
+    "id": "T08#2",
+    "text": "real users"
+   },
+   {
+    "id": "T08#3",
+    "text": "real constraints"
+   },
+   {
+    "id": "T08#4",
+    "text": "real teams"
+   },
+   {
+    "id": "T08#5",
+    "text": "production systems"
+   },
+   {
+    "id": "T08#6",
+    "text": "meaningful code contributions"
+   },
+   {
+    "id": "T08#7",
+    "text": "production exposure"
+   },
+   {
+    "id": "T08#8",
+    "text": "measurable improvements where genuine"
+   },
+   {
+    "id": "T08#9",
+    "text": "technical ownership"
+   },
+   {
+    "id": "T08#10",
+    "text": "debugging"
+   },
+   {
+    "id": "T08#11",
+    "text": "collaboration"
+   },
+   {
+    "id": "T08#12",
+    "text": "architecture exposure"
+   },
+   {
+    "id": "T08#13",
+    "text": "work authorization"
+   },
+   {
+    "id": "T08#14",
+    "text": "visa sponsorship"
+   },
+   {
+    "id": "T08#15",
+    "text": "employer location constraints"
+   },
+   {
+    "id": "T08#16",
+    "text": "relocation requirements"
+   },
+   {
+    "id": "T08#17",
+    "text": "internship eligibility"
+   },
+   {
+    "id": "T08#18",
+    "text": "remote-work eligibility"
+   },
+   {
+    "id": "T08#19",
+    "text": "timing and application windows"
+   }
+  ]
+ },
+ {
+  "id": "T09",
+  "title": "Portfolio strategy by stage",
+  "activation": "Portfolio Stage A after S4, B after S5, C after S6, D in S8.",
+  "bodyMd": "**Stage A - Beginner**\n\nShow:\n\n- clean code\n- simple applications\n- basic data work\n\n**Stage B - Intermediate**\n\nShow:\n\n- backend\n- databases\n- testing\n- deployment\n- classical ML\n\n**Stage C - Advanced**\n\nShow:\n\n- ML engineering\n- systems\n- deep learning\n- MLOps\n- serious projects\n\n**Stage D - Elite-track candidate**\n\nShow a coherent body of:\n\n- strong projects\n- internships\n- research/open-source evidence\n- DSA readiness\n- system-design readiness\n- communication",
+  "items": [
+   {
+    "id": "T09#1",
+    "text": "clean code"
+   },
+   {
+    "id": "T09#2",
+    "text": "simple applications"
+   },
+   {
+    "id": "T09#3",
+    "text": "basic data work"
+   },
+   {
+    "id": "T09#4",
+    "text": "backend"
+   },
+   {
+    "id": "T09#5",
+    "text": "databases"
+   },
+   {
+    "id": "T09#6",
+    "text": "testing"
+   },
+   {
+    "id": "T09#7",
+    "text": "deployment"
+   },
+   {
+    "id": "T09#8",
+    "text": "classical ML"
+   },
+   {
+    "id": "T09#9",
+    "text": "ML engineering"
+   },
+   {
+    "id": "T09#10",
+    "text": "systems"
+   },
+   {
+    "id": "T09#11",
+    "text": "deep learning"
+   },
+   {
+    "id": "T09#12",
+    "text": "MLOps"
+   },
+   {
+    "id": "T09#13",
+    "text": "serious projects"
+   },
+   {
+    "id": "T09#14",
+    "text": "strong projects"
+   },
+   {
+    "id": "T09#15",
+    "text": "internships"
+   },
+   {
+    "id": "T09#16",
+    "text": "research/open-source evidence"
+   },
+   {
+    "id": "T09#17",
+    "text": "DSA readiness"
+   },
+   {
+    "id": "T09#18",
+    "text": "system-design readiness"
+   },
+   {
+    "id": "T09#19",
+    "text": "communication"
+   }
+  ]
+ },
+ {
+  "id": "T10",
+  "title": "Certification strategy",
+  "activation": "Only with a concrete reason (master).",
+  "bodyMd": "Certification hierarchy for this career:\n\n**Highest practical evidence**\n\n- strong internship\n- production experience\n- excellent project\n- meaningful open source\n- research output\n\n**Useful selectively**\n\n- cloud certification\n- role-specific certification where a target employer values it\n\n**Usually low priority**\n\n- accumulating certificates without corresponding projects\n\nAsk:\n\n> What capability does this certificate prove?\n\nIf the answer is unclear, it is probably not a core priority.",
+  "items": [
+   {
+    "id": "T10#1",
+    "text": "strong internship"
+   },
+   {
+    "id": "T10#2",
+    "text": "production experience"
+   },
+   {
+    "id": "T10#3",
+    "text": "excellent project"
+   },
+   {
+    "id": "T10#4",
+    "text": "meaningful open source"
+   },
+   {
+    "id": "T10#5",
+    "text": "research output"
+   },
+   {
+    "id": "T10#6",
+    "text": "cloud certification"
+   },
+   {
+    "id": "T10#7",
+    "text": "role-specific certification where a target employer values it"
+   },
+   {
+    "id": "T10#8",
+    "text": "accumulating certificates without corresponding projects"
+   }
+  ]
+ },
+ {
+  "id": "T11",
+  "title": "What not to get distracted by",
+  "activation": "Standing rule.",
+  "bodyMd": "**Framework collecting**\n\nDo not become an encyclopaedia of frameworks.\n\n**Premature microservices**\n\nLearn good single-service design first.\n\n**Premature Kubernetes**\n\nLearn Linux, Docker, networking, and cloud first.\n\n**Excessive frontend**\n\nBuild enough UI to make products usable.\n\n**Prompt-only AI**\n\nPrompting is a tool, not an engineering foundation.\n\n**Technology hype**\n\nAsk whether a new technology solves a problem you actually have.\n\n**Tutorial addiction**\n\nCourses are inputs. Projects and problem-solving are outputs.\n\n**Over-mathematical rabbit holes**\n\nLearn the mathematics that improves your understanding. Specialise deeper when your work requires it.\n\n**Premature optimisation**\n\nMeasure first.\n\n**Productivity-system obsession**\n\nPlanning is valuable. Excessive planning can become avoidance.",
+  "items": []
+ }
+]

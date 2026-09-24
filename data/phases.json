@@ -1,0 +1,1939 @@
+[
+ {
+  "id": "P01",
+  "number": 1,
+  "title": "Programming Foundations",
+  "masterTitle": "PROGRAMMING FOUNDATIONS",
+  "description": "Python syntax, variables, expressions, conditionals, loops, functions, collections, strings, files, exceptions, modules, OOP introduction, testing introduction, typing introduction.",
+  "priority": "🔴 Critical",
+  "target": "Python: 🔴 long-term D4 | Entry target: D2; Java: 🟠 D2; JavaScript / TypeScript: 🟡 D2",
+  "depth": {
+   "min": 2,
+   "max": 4,
+   "raw": "Python: 🔴 long-term D4 | Entry target: D2; Java: 🟠 D2; JavaScript / TypeScript: 🟡 D2"
+  },
+  "gate": "",
+  "unlockNote": "",
+  "prerequisites": [],
+  "stages": [
+   "S0",
+   "S1",
+   "S3",
+   "S4",
+   "S5A",
+   "S5B",
+   "S7A"
+  ],
+  "placement": "S0, S1, S3, S4, S5A, S5B, S7A",
+  "topicIds": [
+   "P01.1",
+   "P01.1a",
+   "P01.1b",
+   "P01.1c",
+   "P01.1d",
+   "P01.1e",
+   "P01.1f",
+   "P01.1g",
+   "P01.1h",
+   "P01.2",
+   "P01.3"
+  ],
+  "weekRange": [
+   1,
+   146
+  ],
+  "masterSection": 6
+ },
+ {
+  "id": "P02",
+  "number": 2,
+  "title": "Git, GitHub, Development Environment",
+  "masterTitle": "GIT, GITHUB, DEVELOPMENT ENVIRONMENT",
+  "description": "repositories, commits, branches, remotes, merge/rebase, conflicts, tags, pull requests, code review, GitHub workflows, SSH keys, editor/terminal workflow.",
+  "priority": "🔴 Critical",
+  "target": "Git: 🔴 D3; GitHub: 🔴 D3",
+  "depth": {
+   "min": 3,
+   "max": 3,
+   "raw": "Git: 🔴 D3; GitHub: 🔴 D3"
+  },
+  "gate": "",
+  "unlockNote": "Supporting setup allowed from Day 1 only if trivial (master Day One section); formal study after G0.",
+  "prerequisites": [
+   {
+    "id": "P01",
+    "source": "S103"
+   }
+  ],
+  "stages": [
+   "S1"
+  ],
+  "placement": "S1",
+  "topicIds": [
+   "P02.1",
+   "P02.2",
+   "P02.2a"
+  ],
+  "weekRange": [
+   5,
+   6
+  ],
+  "masterSection": 7
+ },
+ {
+  "id": "P03",
+  "number": 3,
+  "title": "Linux / CLI",
+  "masterTitle": "LINUX / CLI",
+  "description": "shell, files, permissions, processes, pipes, redirection, environment variables, SSH, text tools, package managers, process inspection, basic networking commands.",
+  "priority": "🔴 Critical",
+  "target": "Linux: 🔴 D3",
+  "depth": {
+   "min": 3,
+   "max": 3,
+   "raw": "Linux: 🔴 D3"
+  },
+  "gate": "",
+  "unlockNote": "",
+  "prerequisites": [
+   {
+    "id": "P01",
+    "source": "S103"
+   }
+  ],
+  "stages": [
+   "S1"
+  ],
+  "placement": "S1",
+  "topicIds": [
+   "P03.1",
+   "P03.1a"
+  ],
+  "weekRange": [
+   7,
+   8
+  ],
+  "masterSection": 8
+ },
+ {
+  "id": "P04",
+  "number": 4,
+  "title": "Data Structures & Algorithms",
+  "masterTitle": "DATA STRUCTURES & ALGORITHMS",
+  "description": "complexity, arrays, linked lists, stacks, queues, hashing, trees, heaps, tries, graphs, recursion, searching, sorting, greedy, backtracking, dynamic programming, graph algorithms, interview patterns.",
+  "priority": "🔴 Critical",
+  "target": "D4",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "D4"
+  },
+  "gate": "",
+  "unlockNote": "DSA becomes a maintenance track only after the programming foundation is dependable (master Section 0).",
+  "prerequisites": [
+   {
+    "id": "P01",
+    "source": "S103"
+   },
+   {
+    "id": "P02",
+    "source": "S103"
+   },
+   {
+    "id": "P03",
+    "source": "S103"
+   }
+  ],
+  "stages": [
+   "S2",
+   "DSA lane"
+  ],
+  "placement": "S2, DSA lane",
+  "topicIds": [
+   "P04.0",
+   "P04.1",
+   "P04.2",
+   "P04.3",
+   "P04.4",
+   "P04.5",
+   "P04.6",
+   "P04.7",
+   "P04.7a"
+  ],
+  "weekRange": [
+   15,
+   67
+  ],
+  "masterSection": 9
+ },
+ {
+  "id": "P05",
+  "number": 5,
+  "title": "Core Computer Science",
+  "masterTitle": "CORE COMPUTER SCIENCE",
+  "description": "",
+  "priority": "🔴 Critical",
+  "target": "Operating Systems: 🔴 D3; Networking: 🔴 D3; Computer Architecture: 🟠 D2–D3; Compilers and runtimes: 🟡 D2",
+  "depth": {
+   "min": 2,
+   "max": 3,
+   "raw": "Operating Systems: 🔴 D3; Networking: 🔴 D3; Computer Architecture: 🟠 D2–D3; Compilers and runtimes: 🟡 D2"
+  },
+  "gate": "",
+  "unlockNote": "OS, networking and database concepts are required by C2.",
+  "prerequisites": [
+   {
+    "id": "P03",
+    "source": "S79"
+   },
+   {
+    "id": "P04",
+    "source": "S79"
+   },
+   {
+    "id": "P08",
+    "source": "S101"
+   }
+  ],
+  "stages": [
+   "S5A",
+   "S6A"
+  ],
+  "placement": "S5A, S6A",
+  "topicIds": [
+   "P05.1",
+   "P05.2",
+   "P05.3",
+   "P05.4"
+  ],
+  "weekRange": [
+   47,
+   104
+  ],
+  "masterSection": 10
+ },
+ {
+  "id": "P06",
+  "number": 6,
+  "title": "Databases",
+  "masterTitle": "DATABASES",
+  "description": "relational model, SQL, schema design, normalisation, indexes, transactions, isolation, query planning, storage, replication, partitioning, NoSQL awareness, caching.",
+  "priority": "🔴 Critical",
+  "target": "Relational fundamentals: 🔴 D4; PostgreSQL: 🔴 D4; Redis: 🟠 D2–D3; NoSQL: 🟡 D1–D2",
+  "depth": {
+   "min": 1,
+   "max": 4,
+   "raw": "Relational fundamentals: 🔴 D4; PostgreSQL: 🔴 D4; Redis: 🟠 D2–D3; NoSQL: 🟡 D1–D2"
+  },
+  "gate": "",
+  "unlockNote": "",
+  "prerequisites": [
+   {
+    "id": "P01",
+    "source": "S103"
+   },
+   {
+    "id": "P02",
+    "source": "S103"
+   },
+   {
+    "id": "P03",
+    "source": "S103"
+   }
+  ],
+  "stages": [
+   "S2",
+   "S5A"
+  ],
+  "placement": "S2, S5A",
+  "topicIds": [
+   "P06.1",
+   "P06.1a",
+   "P06.1b",
+   "P06.1c",
+   "P06.1d",
+   "P06.1e",
+   "P06.2",
+   "P06.2a",
+   "P06.3",
+   "P06.4"
+  ],
+  "weekRange": [
+   18,
+   56
+  ],
+  "masterSection": 11
+ },
+ {
+  "id": "P07",
+  "number": 7,
+  "title": "Software Engineering",
+  "masterTitle": "SOFTWARE ENGINEERING",
+  "description": "clean code, modularity, SOLID, cohesion/coupling, refactoring, testing, debugging, packaging, dependency management, versioning, code review, engineering workflow.",
+  "priority": "🔴 Critical",
+  "target": "🔴 D4",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "gate": "",
+  "unlockNote": "",
+  "prerequisites": [
+   {
+    "id": "P01",
+    "source": "S101"
+   }
+  ],
+  "stages": [
+   "S1",
+   "S4"
+  ],
+  "placement": "S1, S4",
+  "topicIds": [
+   "P07.1",
+   "P07.2",
+   "P07.3",
+   "P07.4",
+   "P07.5"
+  ],
+  "weekRange": [
+   11,
+   36
+  ],
+  "masterSection": 12
+ },
+ {
+  "id": "P08",
+  "number": 8,
+  "title": "Backend Engineering",
+  "masterTitle": "BACKEND ENGINEERING",
+  "description": "HTTP, REST, API design, validation, auth, sessions, JWT, OAuth/OIDC awareness, pagination, rate limits, error contracts, background jobs, queues, async work, WebSockets, caching, configuration, security.",
+  "priority": "🔴 Critical",
+  "target": "🔴 D3–D4",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🔴 D3–D4"
+  },
+  "gate": "",
+  "unlockNote": "",
+  "prerequisites": [
+   {
+    "id": "P07",
+    "source": "S103"
+   },
+   {
+    "id": "P06",
+    "source": "S103"
+   },
+   {
+    "id": "P11",
+    "source": "S103"
+   }
+  ],
+  "stages": [
+   "S4",
+   "S5A"
+  ],
+  "placement": "S4, S5A",
+  "topicIds": [
+   "P08.0",
+   "P08.1",
+   "P08.2",
+   "P08.3",
+   "P08.4",
+   "P08.5",
+   "P08.6"
+  ],
+  "weekRange": [
+   36,
+   63
+  ],
+  "masterSection": 13
+ },
+ {
+  "id": "P09",
+  "number": 9,
+  "title": "Software Architecture",
+  "masterTitle": "SOFTWARE ARCHITECTURE",
+  "description": "modularity, boundaries, layered architecture, dependency inversion, adapters, DI, repositories, domain boundaries, event-driven systems, synchronous vs asynchronous communication, patterns.",
+  "priority": "🟠 High",
+  "target": "🟠 D3",
+  "depth": {
+   "min": 3,
+   "max": 3,
+   "raw": "🟠 D3"
+  },
+  "gate": "",
+  "unlockNote": "",
+  "prerequisites": [
+   {
+    "id": "P07",
+    "source": "S101"
+   },
+   {
+    "id": "P08",
+    "source": "S101"
+   },
+   {
+    "id": "P31",
+    "source": "S101"
+   }
+  ],
+  "stages": [
+   "S5C"
+  ],
+  "placement": "S5C",
+  "topicIds": [
+   "P09.0",
+   "P09.1",
+   "P09.2"
+  ],
+  "weekRange": [
+   91,
+   92
+  ],
+  "masterSection": 14
+ },
+ {
+  "id": "P10",
+  "number": 10,
+  "title": "Mathematics",
+  "masterTitle": "MATHEMATICS",
+  "description": "",
+  "priority": "🔴 Critical",
+  "target": "Linear Algebra: 🔴 D4; Calculus: 🔴 D3–D4; Probability: 🔴 D3–D4; Statistics: 🔴 D4; Optimisation: 🟠 D3–D4",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "Linear Algebra: 🔴 D4; Calculus: 🔴 D3–D4; Probability: 🔴 D3–D4; Statistics: 🔴 D4; Optimisation: 🟠 D3–D4"
+  },
+  "gate": "",
+  "unlockNote": "",
+  "prerequisites": [
+   {
+    "id": "P01",
+    "source": "S103"
+   },
+   {
+    "id": "P04",
+    "source": "S103"
+   },
+   {
+    "id": "P06",
+    "source": "S103"
+   }
+  ],
+  "stages": [
+   "S3",
+   "S5B"
+  ],
+  "placement": "S3, S5B",
+  "topicIds": [
+   "P10.1",
+   "P10.1a",
+   "P10.1b",
+   "P10.1c",
+   "P10.1d",
+   "P10.1e",
+   "P10.2",
+   "P10.3",
+   "P10.4",
+   "P10.5"
+  ],
+  "weekRange": [
+   22,
+   83
+  ],
+  "masterSection": 15
+ },
+ {
+  "id": "P11",
+  "number": 11,
+  "title": "Data Science",
+  "masterTitle": "DATA SCIENCE",
+  "description": "NumPy, Pandas, data cleaning, joins, transformations, EDA, visualisation, statistical analysis, feature creation, reproducibility, communication.",
+  "priority": "🔴 Critical",
+  "target": "🔴 D3–D4",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🔴 D3–D4"
+  },
+  "gate": "",
+  "unlockNote": "",
+  "prerequisites": [
+   {
+    "id": "P10",
+    "source": "S103"
+   },
+   {
+    "id": "P06",
+    "source": "S101"
+   }
+  ],
+  "stages": [
+   "S3",
+   "S5B"
+  ],
+  "placement": "S3, S5B",
+  "topicIds": [
+   "P11.1",
+   "P11.2",
+   "P11.3",
+   "P11.4",
+   "P11.5"
+  ],
+  "weekRange": [
+   29,
+   67
+  ],
+  "masterSection": 16
+ },
+ {
+  "id": "P12",
+  "number": 12,
+  "title": "Data Engineering Foundation",
+  "masterTitle": "DATA ENGINEERING FOUNDATION",
+  "description": "ingestion, ETL/ELT, batch processing, orchestration, data warehouses, streaming awareness, data quality, reproducibility.",
+  "priority": "🟡🟠 Useful–High",
+  "target": "🟡–🟠 D2–D3",
+  "depth": {
+   "min": 2,
+   "max": 3,
+   "raw": "🟡–🟠 D2–D3"
+  },
+  "gate": "",
+  "unlockNote": "",
+  "prerequisites": [
+   {
+    "id": "P11",
+    "source": "TEXT"
+   },
+   {
+    "id": "P06",
+    "source": "TEXT"
+   }
+  ],
+  "stages": [
+   "S5B"
+  ],
+  "placement": "S5B",
+  "topicIds": [
+   "P12.0",
+   "P12.1"
+  ],
+  "weekRange": [
+   68,
+   69
+  ],
+  "masterSection": 17
+ },
+ {
+  "id": "P13",
+  "number": 13,
+  "title": "Classical Machine Learning",
+  "masterTitle": "CLASSICAL MACHINE LEARNING",
+  "description": "regression, classification, trees, ensembles, boosting, clustering, dimensionality reduction, problem formulation.",
+  "priority": "🔴 Critical",
+  "target": "🔴 D4",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "gate": "",
+  "unlockNote": "Classical ML may begin only when the programming, data, and statistics gates are genuinely passing (master timeline).",
+  "prerequisites": [
+   {
+    "id": "P10",
+    "source": "S79"
+   },
+   {
+    "id": "P11",
+    "source": "S79"
+   },
+   {
+    "id": "P07",
+    "source": "S103"
+   },
+   {
+    "id": "P08",
+    "source": "S103"
+   }
+  ],
+  "stages": [
+   "S5B"
+  ],
+  "placement": "S5B",
+  "topicIds": [
+   "P13.1",
+   "P13.2",
+   "P13.3",
+   "P13.4",
+   "P13.5"
+  ],
+  "weekRange": [
+   72,
+   77
+  ],
+  "masterSection": 18
+ },
+ {
+  "id": "P14",
+  "number": 14,
+  "title": "Machine Learning Theory",
+  "masterTitle": "MACHINE LEARNING THEORY",
+  "description": "bias/variance, regularisation, generalisation, feature engineering, leakage, distribution shift, imbalance, calibration, baselines.",
+  "priority": "🔴 Critical",
+  "target": "🔴 D4",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "gate": "",
+  "unlockNote": "",
+  "prerequisites": [
+   {
+    "id": "P13",
+    "source": "S101"
+   }
+  ],
+  "stages": [
+   "S5B"
+  ],
+  "placement": "S5B",
+  "topicIds": [
+   "P14.0",
+   "P14.1",
+   "P14.2",
+   "P14.3"
+  ],
+  "weekRange": [
+   72,
+   79
+  ],
+  "masterSection": 19
+ },
+ {
+  "id": "P15",
+  "number": 15,
+  "title": "Model Evaluation",
+  "masterTitle": "MODEL EVALUATION",
+  "description": "classification metrics, regression metrics, splits, cross-validation, temporal/grouped splits, calibration, uncertainty, operational metrics.",
+  "priority": "🔴 Critical",
+  "target": "🔴 D4",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "gate": "",
+  "unlockNote": "",
+  "prerequisites": [
+   {
+    "id": "P13",
+    "source": "S101"
+   }
+  ],
+  "stages": [
+   "S5B"
+  ],
+  "placement": "S5B",
+  "topicIds": [
+   "P15.1",
+   "P15.2",
+   "P15.3",
+   "P15.4"
+  ],
+  "weekRange": [
+   80,
+   81
+  ],
+  "masterSection": 20
+ },
+ {
+  "id": "P16",
+  "number": 16,
+  "title": "From-Scratch ML Implementation",
+  "masterTitle": "FROM-SCRATCH ML IMPLEMENTATION",
+  "description": "linear regression, gradient descent, logistic regression, k-means, PCA, tree components, simple neural network, backpropagation.",
+  "priority": "not stated in master",
+  "target": "not stated in master",
+  "depth": null,
+  "gate": "",
+  "unlockNote": "",
+  "prerequisites": [
+   {
+    "id": "P13",
+    "source": "S101"
+   },
+   {
+    "id": "P10",
+    "source": "S101"
+   }
+  ],
+  "stages": [
+   "S5B",
+   "S6A"
+  ],
+  "placement": "S5B, S6A",
+  "topicIds": [
+   "P16.0"
+  ],
+  "weekRange": [
+   84,
+   103
+  ],
+  "masterSection": 21
+ },
+ {
+  "id": "P17",
+  "number": 17,
+  "title": "Time Series",
+  "masterTitle": "TIME SERIES",
+  "description": "trend, seasonality, stationarity, forecasting, validation, lags, autoregressive models, modern ML forecasting awareness.",
+  "priority": "🟠 High",
+  "target": "🟠 D2–D3",
+  "depth": {
+   "min": 2,
+   "max": 3,
+   "raw": "🟠 D2–D3"
+  },
+  "gate": "",
+  "unlockNote": "",
+  "prerequisites": [
+   {
+    "id": "P13",
+    "source": "TEXT"
+   },
+   {
+    "id": "P15",
+    "source": "TEXT"
+   }
+  ],
+  "stages": [
+   "S5B",
+   "S6A"
+  ],
+  "placement": "S5B, S6A",
+  "topicIds": [
+   "P17.0"
+  ],
+  "weekRange": [
+   86,
+   111
+  ],
+  "masterSection": 22
+ },
+ {
+  "id": "P18",
+  "number": 18,
+  "title": "Recommender Systems",
+  "masterTitle": "RECOMMENDER SYSTEMS",
+  "description": "collaborative filtering, content-based recommendation, ranking, retrieval, cold start, feedback loops, offline/online evaluation.",
+  "priority": "🟠 High",
+  "target": "🟠 D3",
+  "depth": {
+   "min": 3,
+   "max": 3,
+   "raw": "🟠 D3"
+  },
+  "gate": "",
+  "unlockNote": "",
+  "prerequisites": [
+   {
+    "id": "P13",
+    "source": "TEXT"
+   },
+   {
+    "id": "P15",
+    "source": "TEXT"
+   },
+   {
+    "id": "P19",
+    "source": "TEXT"
+   },
+   {
+    "id": "P28",
+    "source": "TEXT"
+   }
+  ],
+  "stages": [
+   "S6B"
+  ],
+  "placement": "S6B",
+  "topicIds": [
+   "P18.0"
+  ],
+  "weekRange": [
+   127,
+   128
+  ],
+  "masterSection": 23
+ },
+ {
+  "id": "P19",
+  "number": 19,
+  "title": "Deep Learning",
+  "masterTitle": "DEEP LEARNING",
+  "description": "perceptrons, MLPs, activations, loss, backpropagation, optimisers, regularisation, dropout, normalisation, initialisation, failure modes.",
+  "priority": "🔴 Critical",
+  "target": "🔴 D4",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "gate": "",
+  "unlockNote": "Decision 5: only after Classical ML and Docker/CI/CD/Cloud gates.",
+  "prerequisites": [
+   {
+    "id": "P13",
+    "source": "S103"
+   },
+   {
+    "id": "P14",
+    "source": "S103"
+   },
+   {
+    "id": "P15",
+    "source": "S103"
+   },
+   {
+    "id": "P16",
+    "source": "S101"
+   },
+   {
+    "id": "P31",
+    "source": "D5"
+   },
+   {
+    "id": "P32",
+    "source": "D5"
+   }
+  ],
+  "stages": [
+   "S6A"
+  ],
+  "placement": "S6A",
+  "topicIds": [
+   "P19.0",
+   "P19.1",
+   "P19.2",
+   "P19.3",
+   "P19.4",
+   "P19.5"
+  ],
+  "weekRange": [
+   102,
+   107
+  ],
+  "masterSection": 24
+ },
+ {
+  "id": "P20",
+  "number": 20,
+  "title": "Computer Vision",
+  "masterTitle": "COMPUTER VISION",
+  "description": "CNNs, convolutions, pooling, augmentation, transfer learning, detection, segmentation, vision transformers awareness.",
+  "priority": "🟡🟠 Useful–High",
+  "target": "🟡–🟠 D2–D3",
+  "depth": {
+   "min": 2,
+   "max": 3,
+   "raw": "🟡–🟠 D2–D3"
+  },
+  "gate": "",
+  "unlockNote": "",
+  "prerequisites": [
+   {
+    "id": "P19",
+    "source": "S101"
+   }
+  ],
+  "stages": [
+   "S6A"
+  ],
+  "placement": "S6A",
+  "topicIds": [
+   "P20.0"
+  ],
+  "weekRange": [
+   108,
+   109
+  ],
+  "masterSection": 25
+ },
+ {
+  "id": "P21",
+  "number": 21,
+  "title": "Sequence Models and NLP",
+  "masterTitle": "SEQUENCE MODELS AND NLP",
+  "description": "tokenisation concepts, sequence modelling, RNNs, LSTMs/GRUs, language modelling, embeddings, NLP pipelines.",
+  "priority": "🟠 High",
+  "target": "🟠 D3",
+  "depth": {
+   "min": 3,
+   "max": 3,
+   "raw": "🟠 D3"
+  },
+  "gate": "",
+  "unlockNote": "",
+  "prerequisites": [
+   {
+    "id": "P19",
+    "source": "S101"
+   }
+  ],
+  "stages": [
+   "S6A"
+  ],
+  "placement": "S6A",
+  "topicIds": [
+   "P21.0"
+  ],
+  "weekRange": [
+   110,
+   111
+  ],
+  "masterSection": 26
+ },
+ {
+  "id": "P22",
+  "number": 22,
+  "title": "Attention and Transformers",
+  "masterTitle": "ATTENTION AND TRANSFORMERS",
+  "description": "queries/keys/values, self-attention, multi-head attention, masking, positional encoding, encoder/decoder architectures, training objectives.",
+  "priority": "🔴 Critical",
+  "target": "🔴 D4",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "gate": "",
+  "unlockNote": "Decision 5: formal study only after ML Engineering/MLOps (C5). Optional reading exposure allowed earlier; never a gate.",
+  "prerequisites": [
+   {
+    "id": "P19",
+    "source": "S101"
+   },
+   {
+    "id": "P21",
+    "source": "S101"
+   },
+   {
+    "id": "P28",
+    "source": "D5"
+   },
+   {
+    "id": "P30",
+    "source": "D5"
+   }
+  ],
+  "stages": [
+   "S7A"
+  ],
+  "placement": "S7A",
+  "topicIds": [
+   "P22.0",
+   "P22.1",
+   "P22.2"
+  ],
+  "weekRange": [
+   139,
+   142
+  ],
+  "masterSection": 27
+ },
+ {
+  "id": "P23",
+  "number": 23,
+  "title": "Modern LLM Engineering",
+  "masterTitle": "MODERN LLM ENGINEERING",
+  "description": "tokenisers, embeddings, pretraining concepts, instruction tuning, fine-tuning, LoRA/PEFT, quantisation, inference, model serving, Hugging Face ecosystem.",
+  "priority": "🔴 Critical",
+  "target": "🔴 D3–D4",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🔴 D3–D4"
+  },
+  "gate": "",
+  "unlockNote": "",
+  "prerequisites": [
+   {
+    "id": "P22",
+    "source": "S103"
+   }
+  ],
+  "stages": [
+   "S7A"
+  ],
+  "placement": "S7A",
+  "topicIds": [
+   "P23.1",
+   "P23.2",
+   "P23.3",
+   "P23.4",
+   "P23.5",
+   "P23.6"
+  ],
+  "weekRange": [
+   143,
+   146
+  ],
+  "masterSection": 28
+ },
+ {
+  "id": "P24",
+  "number": 24,
+  "title": "Retrieval-Augmented Generation",
+  "masterTitle": "RETRIEVAL-AUGMENTED GENERATION",
+  "description": "ingestion, chunking, embeddings, retrieval, hybrid retrieval, reranking, context construction, citations, freshness, evaluation, failure modes.",
+  "priority": "🔴 Critical",
+  "target": "🔴 D3",
+  "depth": {
+   "min": 3,
+   "max": 3,
+   "raw": "🔴 D3"
+  },
+  "gate": "",
+  "unlockNote": "",
+  "prerequisites": [
+   {
+    "id": "P23",
+    "source": "S101"
+   },
+   {
+    "id": "P08",
+    "source": "TEXT"
+   },
+   {
+    "id": "P06",
+    "source": "TEXT"
+   }
+  ],
+  "stages": [
+   "S7A"
+  ],
+  "placement": "S7A",
+  "topicIds": [
+   "P24.0",
+   "P24.1",
+   "P24.2"
+  ],
+  "weekRange": [
+   147,
+   156
+  ],
+  "masterSection": 29
+ },
+ {
+  "id": "P25",
+  "number": 25,
+  "title": "AI Agents",
+  "masterTitle": "AI AGENTS",
+  "description": "tool use, planning, state, memory, orchestration, structured outputs, failure handling, retries, human-in-the-loop, agent evaluation.",
+  "priority": "🟠 High",
+  "target": "🟠 D2–D3",
+  "depth": {
+   "min": 2,
+   "max": 3,
+   "raw": "🟠 D2–D3"
+  },
+  "gate": "",
+  "unlockNote": "",
+  "prerequisites": [
+   {
+    "id": "P23",
+    "source": "S101"
+   }
+  ],
+  "stages": [
+   "S7A"
+  ],
+  "placement": "S7A",
+  "topicIds": [
+   "P25.0"
+  ],
+  "weekRange": [
+   152,
+   153
+  ],
+  "masterSection": 30
+ },
+ {
+  "id": "P26",
+  "number": 26,
+  "title": "Multimodal AI",
+  "masterTitle": "MULTIMODAL AI",
+  "description": "vision-language models, image/text alignment, audio/text awareness, multimodal preprocessing, inference pipelines.",
+  "priority": "🟡🟠 Useful–High",
+  "target": "🟡–🟠 D2–D3",
+  "depth": {
+   "min": 2,
+   "max": 3,
+   "raw": "🟡–🟠 D2–D3"
+  },
+  "gate": "",
+  "unlockNote": "",
+  "prerequisites": [
+   {
+    "id": "P20",
+    "source": "TEXT"
+   },
+   {
+    "id": "P21",
+    "source": "TEXT"
+   },
+   {
+    "id": "P22",
+    "source": "TEXT"
+   }
+  ],
+  "stages": [
+   "S7B"
+  ],
+  "placement": "S7B",
+  "topicIds": [
+   "P26.0"
+  ],
+  "weekRange": [
+   175,
+   176
+  ],
+  "masterSection": 31
+ },
+ {
+  "id": "P27",
+  "number": 27,
+  "title": "AI Evaluation",
+  "masterTitle": "AI EVALUATION",
+  "description": "unit evaluation, retrieval evaluation, generation quality, groundedness, safety, regression tests, online monitoring, experiment design.",
+  "priority": "🔴 Critical",
+  "target": "🔴 D3",
+  "depth": {
+   "min": 3,
+   "max": 3,
+   "raw": "🔴 D3"
+  },
+  "gate": "",
+  "unlockNote": "",
+  "prerequisites": [
+   {
+    "id": "P23",
+    "source": "S101"
+   },
+   {
+    "id": "P24",
+    "source": "S101"
+   },
+   {
+    "id": "P15",
+    "source": "TEXT"
+   }
+  ],
+  "stages": [
+   "S7A"
+  ],
+  "placement": "S7A",
+  "topicIds": [
+   "P27.0",
+   "P27.1",
+   "P27.2"
+  ],
+  "weekRange": [
+   150,
+   151
+  ],
+  "masterSection": 32
+ },
+ {
+  "id": "P28",
+  "number": 28,
+  "title": "ML Engineering",
+  "masterTitle": "ML ENGINEERING",
+  "description": "project structure, data validation, reproducibility, experiment tracking, configuration, training pipelines, tests, model lifecycle.",
+  "priority": "🔴 Critical",
+  "target": "🔴 D4",
+  "depth": {
+   "min": 4,
+   "max": 4,
+   "raw": "🔴 D4"
+  },
+  "gate": "",
+  "unlockNote": "",
+  "prerequisites": [
+   {
+    "id": "P19",
+    "source": "D5"
+   },
+   {
+    "id": "P31",
+    "source": "S103"
+   },
+   {
+    "id": "P32",
+    "source": "S103"
+   },
+   {
+    "id": "P12",
+    "source": "TEXT"
+   }
+  ],
+  "stages": [
+   "S6B"
+  ],
+  "placement": "S6B",
+  "topicIds": [
+   "P28.0",
+   "P28.1",
+   "P28.2"
+  ],
+  "weekRange": [
+   113,
+   114
+  ],
+  "masterSection": 33
+ },
+ {
+  "id": "P29",
+  "number": 29,
+  "title": "Model Serving",
+  "masterTitle": "MODEL SERVING",
+  "description": "batch vs online inference, APIs, latency, throughput, scaling, model packaging, health checks, canaries, rollback.",
+  "priority": "🔴 Critical",
+  "target": "🔴 D3",
+  "depth": {
+   "min": 3,
+   "max": 3,
+   "raw": "🔴 D3"
+  },
+  "gate": "",
+  "unlockNote": "Early segment (D1-D2, classical model) after Docker/Cloud per master sequence item 24; formal D3 after ML engineering.",
+  "prerequisites": [
+   {
+    "id": "P13",
+    "source": "S101"
+   },
+   {
+    "id": "P31",
+    "source": "S101"
+   },
+   {
+    "id": "P32",
+    "source": "S101"
+   }
+  ],
+  "stages": [
+   "S5C",
+   "S6B"
+  ],
+  "placement": "S5C, S6B",
+  "topicIds": [
+   "P29.1",
+   "P29.2",
+   "P29.3"
+  ],
+  "weekRange": [
+   96,
+   117
+  ],
+  "masterSection": 34
+ },
+ {
+  "id": "P30",
+  "number": 30,
+  "title": "MLOps",
+  "masterTitle": "MLOPS",
+  "description": "orchestration, data/model versioning, registries, CI/CD, monitoring, drift, retraining, governance.",
+  "priority": "🔴 Critical",
+  "target": "🔴 D3–D4",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🔴 D3–D4"
+  },
+  "gate": "",
+  "unlockNote": "",
+  "prerequisites": [
+   {
+    "id": "P28",
+    "source": "S101"
+   },
+   {
+    "id": "P29",
+    "source": "S101"
+   },
+   {
+    "id": "P31",
+    "source": "TEXT"
+   }
+  ],
+  "stages": [
+   "S6B"
+  ],
+  "placement": "S6B",
+  "topicIds": [
+   "P30.1",
+   "P30.2",
+   "P30.3",
+   "P30.4"
+  ],
+  "weekRange": [
+   118,
+   121
+  ],
+  "masterSection": 35
+ },
+ {
+  "id": "P31",
+  "number": 31,
+  "title": "DevOps",
+  "masterTitle": "DEVOPS",
+  "description": "containers, Dockerfiles, Compose, registries, CI/CD, secrets, environment management, deployment workflows.",
+  "priority": "🟠 High",
+  "target": "🟠 D3",
+  "depth": {
+   "min": 3,
+   "max": 3,
+   "raw": "🟠 D3"
+  },
+  "gate": "",
+  "unlockNote": "",
+  "prerequisites": [
+   {
+    "id": "P13",
+    "source": "D5"
+   },
+   {
+    "id": "P14",
+    "source": "D5"
+   },
+   {
+    "id": "P15",
+    "source": "D5"
+   },
+   {
+    "id": "P03",
+    "source": "TEXT"
+   },
+   {
+    "id": "P08",
+    "source": "TEXT"
+   }
+  ],
+  "stages": [
+   "S5C"
+  ],
+  "placement": "S5C",
+  "topicIds": [
+   "P31.0",
+   "P31.1",
+   "P31.2"
+  ],
+  "weekRange": [
+   88,
+   90
+  ],
+  "masterSection": 36
+ },
+ {
+  "id": "P32",
+  "number": 32,
+  "title": "Cloud",
+  "masterTitle": "CLOUD",
+  "description": "compute, networking, storage, IAM, managed databases, queues, serverless awareness, monitoring, cost.",
+  "priority": "🟠 High",
+  "target": "🟠 D2–D3",
+  "depth": {
+   "min": 2,
+   "max": 3,
+   "raw": "🟠 D2–D3"
+  },
+  "gate": "",
+  "unlockNote": "",
+  "prerequisites": [
+   {
+    "id": "P31",
+    "source": "S101"
+   }
+  ],
+  "stages": [
+   "S5C"
+  ],
+  "placement": "S5C",
+  "topicIds": [
+   "P32.0",
+   "P32.1"
+  ],
+  "weekRange": [
+   93,
+   94
+  ],
+  "masterSection": 37
+ },
+ {
+  "id": "P33",
+  "number": 33,
+  "title": "Terraform / Infrastructure as Code",
+  "masterTitle": "TERRAFORM / INFRASTRUCTURE AS CODE",
+  "description": "providers, resources, variables, modules, state, plan/apply, remote state, drift, environment separation.",
+  "priority": "🟡🟠 Useful–High",
+  "target": "🟡–🟠 D2–D3",
+  "depth": {
+   "min": 2,
+   "max": 3,
+   "raw": "🟡–🟠 D2–D3"
+  },
+  "gate": "",
+  "unlockNote": "",
+  "prerequisites": [
+   {
+    "id": "P32",
+    "source": "TEXT"
+   }
+  ],
+  "stages": [
+   "S6B"
+  ],
+  "placement": "S6B",
+  "topicIds": [
+   "P33.0"
+  ],
+  "weekRange": [
+   124,
+   124
+  ],
+  "masterSection": 38
+ },
+ {
+  "id": "P34",
+  "number": 34,
+  "title": "Kubernetes",
+  "masterTitle": "KUBERNETES",
+  "description": "pods, deployments, services, ingress, config, secrets, storage, scheduling, networking, observability, security.",
+  "priority": "🟡 Useful",
+  "target": "🟡 D2 initially, D3 later",
+  "depth": {
+   "min": 2,
+   "max": 3,
+   "raw": "🟡 D2 initially, D3 later"
+  },
+  "gate": "",
+  "unlockNote": "Master rule: Kubernetes stays deferred until Linux, networking, containers, deployment, and debugging are comfortable.",
+  "prerequisites": [
+   {
+    "id": "P03",
+    "source": "TEXT"
+   },
+   {
+    "id": "P05",
+    "source": "TEXT"
+   },
+   {
+    "id": "P31",
+    "source": "TEXT"
+   },
+   {
+    "id": "P32",
+    "source": "TEXT"
+   }
+  ],
+  "stages": [
+   "S6B"
+  ],
+  "placement": "S6B",
+  "topicIds": [
+   "P34.0"
+  ],
+  "weekRange": [
+   125,
+   126
+  ],
+  "masterSection": 39
+ },
+ {
+  "id": "P35",
+  "number": 35,
+  "title": "System Design",
+  "masterTitle": "SYSTEM DESIGN",
+  "description": "requirements, capacity, data flow, APIs, storage, caching, queues, consistency, partitioning, reliability, tradeoffs, diagrams.",
+  "priority": "🔴 Critical",
+  "target": "🔴 D3–D4",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🔴 D3–D4"
+  },
+  "gate": "",
+  "unlockNote": "",
+  "prerequisites": [
+   {
+    "id": "P05",
+    "source": "S101"
+   },
+   {
+    "id": "P06",
+    "source": "TEXT"
+   },
+   {
+    "id": "P08",
+    "source": "TEXT"
+   }
+  ],
+  "stages": [
+   "S5A",
+   "S7B"
+  ],
+  "placement": "S5A, S7B",
+  "topicIds": [
+   "P35.0",
+   "P35.1",
+   "P35.2",
+   "P35.3"
+  ],
+  "weekRange": [
+   59,
+   165
+  ],
+  "masterSection": 40
+ },
+ {
+  "id": "P36",
+  "number": 36,
+  "title": "Distributed Systems",
+  "masterTitle": "DISTRIBUTED SYSTEMS",
+  "description": "RPC, failure, time, replication, consensus, consistency, partitioning, sharding, distributed transactions, fault tolerance.",
+  "priority": "🟠 High",
+  "target": "🟠 D3",
+  "depth": {
+   "min": 3,
+   "max": 3,
+   "raw": "🟠 D3"
+  },
+  "gate": "",
+  "unlockNote": "",
+  "prerequisites": [
+   {
+    "id": "P35",
+    "source": "S101"
+   },
+   {
+    "id": "P05",
+    "source": "TEXT"
+   }
+  ],
+  "stages": [
+   "S7B"
+  ],
+  "placement": "S7B",
+  "topicIds": [
+   "P36.0"
+  ],
+  "weekRange": [
+   166,
+   168
+  ],
+  "masterSection": 41
+ },
+ {
+  "id": "P37",
+  "number": 37,
+  "title": "ML System Design",
+  "masterTitle": "ML SYSTEM DESIGN",
+  "description": "data pipelines, feature generation, training/serving split, batch/online inference, experimentation, monitoring, privacy, reliability.",
+  "priority": "🔴 Critical",
+  "target": "🔴 D3–D4",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🔴 D3–D4"
+  },
+  "gate": "",
+  "unlockNote": "",
+  "prerequisites": [
+   {
+    "id": "P35",
+    "source": "S101"
+   },
+   {
+    "id": "P28",
+    "source": "S101"
+   },
+   {
+    "id": "P29",
+    "source": "S101"
+   },
+   {
+    "id": "P30",
+    "source": "S101"
+   },
+   {
+    "id": "P18",
+    "source": "TEXT"
+   },
+   {
+    "id": "P24",
+    "source": "TEXT"
+   }
+  ],
+  "stages": [
+   "S7B"
+  ],
+  "placement": "S7B",
+  "topicIds": [
+   "P37.0",
+   "P37.1",
+   "P37.2",
+   "P37.3",
+   "P37.4",
+   "P37.5"
+  ],
+  "weekRange": [
+   169,
+   170
+  ],
+  "masterSection": 42
+ },
+ {
+  "id": "P38",
+  "number": 38,
+  "title": "Observability",
+  "masterTitle": "OBSERVABILITY",
+  "description": "metrics, logs, traces, instrumentation, SLOs, alerting, debugging production behavior.",
+  "priority": "🟠 High",
+  "target": "🟠 D3",
+  "depth": {
+   "min": 3,
+   "max": 3,
+   "raw": "🟠 D3"
+  },
+  "gate": "",
+  "unlockNote": "",
+  "prerequisites": [
+   {
+    "id": "P31",
+    "source": "TEXT"
+   },
+   {
+    "id": "P29",
+    "source": "TEXT"
+   }
+  ],
+  "stages": [
+   "S6B"
+  ],
+  "placement": "S6B",
+  "topicIds": [
+   "P38.0",
+   "P38.1",
+   "P38.2",
+   "P38.3"
+  ],
+  "weekRange": [
+   122,
+   123
+  ],
+  "masterSection": 43
+ },
+ {
+  "id": "P39",
+  "number": 39,
+  "title": "Security",
+  "masterTitle": "SECURITY",
+  "description": "authentication, authorisation, input validation, secrets, injection, SSRF, XSS, CSRF, supply chain, threat modelling, AI-specific attacks.",
+  "priority": "🔴 Critical",
+  "target": "🔴 D3",
+  "depth": {
+   "min": 3,
+   "max": 3,
+   "raw": "🔴 D3"
+  },
+  "gate": "",
+  "unlockNote": "",
+  "prerequisites": [
+   {
+    "id": "P08",
+    "source": "TEXT"
+   }
+  ],
+  "stages": [
+   "S5A",
+   "S7A"
+  ],
+  "placement": "S5A, S7A",
+  "topicIds": [
+   "P39.0",
+   "P39.1",
+   "P39.2",
+   "P39.3"
+  ],
+  "weekRange": [
+   57,
+   154
+  ],
+  "masterSection": 44
+ },
+ {
+  "id": "P40",
+  "number": 40,
+  "title": "Research Skills",
+  "masterTitle": "RESEARCH SKILLS",
+  "description": "reading papers, literature review, hypothesis, experiment design, reproduction, ablation, benchmarking, scientific writing.",
+  "priority": "🟠 High",
+  "target": "🟠 D3 → D5 if specialization demands it",
+  "depth": {
+   "min": 3,
+   "max": 5,
+   "raw": "🟠 D3 → D5 if specialization demands it"
+  },
+  "gate": "light paper reading may happen earlier, but the full research phase is unlocked after Checkpoint 5 and ideally Checkpoint 6. It must not compete with the foundational sequence.",
+  "unlockNote": "",
+  "prerequisites": [
+   {
+    "id": "C5",
+    "source": "GATE"
+   }
+  ],
+  "stages": [
+   "S8"
+  ],
+  "placement": "S8",
+  "topicIds": [
+   "P40.1",
+   "P40.2",
+   "P40.3",
+   "P40.4"
+  ],
+  "weekRange": [
+   178,
+   181
+  ],
+  "masterSection": 45
+ },
+ {
+  "id": "P41",
+  "number": 41,
+  "title": "Reinforcement Learning",
+  "masterTitle": "REINFORCEMENT LEARNING",
+  "description": "MDPs, value functions, Bellman equations, dynamic programming, Monte Carlo, TD learning, Q-learning, policy gradients, actor-critic awareness.",
+  "priority": "🟢 Optional",
+  "target": "🟢 D2 initially",
+  "depth": {
+   "min": 2,
+   "max": 2,
+   "raw": "🟢 D2 initially"
+  },
+  "gate": "optional branch. Do not enter before strong foundations and Checkpoint 5 unless a specific project or research direction requires it.",
+  "unlockNote": "",
+  "prerequisites": [
+   {
+    "id": "C5",
+    "source": "GATE"
+   }
+  ],
+  "stages": [],
+  "placement": "optional branch (after C5)",
+  "topicIds": [
+   "P41.0"
+  ],
+  "weekRange": null,
+  "masterSection": 46
+ },
+ {
+  "id": "P42",
+  "number": 42,
+  "title": "Advanced ML System Topics",
+  "masterTitle": "ADVANCED ML SYSTEM TOPICS",
+  "description": "feature stores, distributed training, model parallelism, inference optimisation, batching, accelerator utilisation.",
+  "priority": "🟠🔴 High–Critical",
+  "target": "🟠–🔴 D3–D4",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🟠–🔴 D3–D4"
+  },
+  "gate": "unlocked after Checkpoint 5 and meaningful model-serving experience.",
+  "unlockNote": "",
+  "prerequisites": [
+   {
+    "id": "C5",
+    "source": "GATE"
+   },
+   {
+    "id": "P29",
+    "source": "GATE"
+   }
+  ],
+  "stages": [
+   "S7B"
+  ],
+  "placement": "S7B",
+  "topicIds": [
+   "P42.0",
+   "P42.1",
+   "P42.2",
+   "P42.3",
+   "P42.4"
+  ],
+  "weekRange": [
+   171,
+   174
+  ],
+  "masterSection": 47
+ },
+ {
+  "id": "P43",
+  "number": 43,
+  "title": "Data / ML Infrastructure",
+  "masterTitle": "DATA / ML INFRASTRUCTURE",
+  "description": "Kafka, Spark, Airflow, feature stores, distributed ETL, online/offline feature serving.",
+  "priority": "🟡🟠 Useful–High",
+  "target": "🟡–🟠 D2–D3",
+  "depth": {
+   "min": 2,
+   "max": 3,
+   "raw": "🟡–🟠 D2–D3"
+  },
+  "gate": "learn on demand after the underlying data, backend, deployment, and ML lifecycle concepts are working.",
+  "unlockNote": "",
+  "prerequisites": [
+   {
+    "id": "P12",
+    "source": "GATE"
+   },
+   {
+    "id": "P08",
+    "source": "GATE"
+   },
+   {
+    "id": "P31",
+    "source": "GATE"
+   },
+   {
+    "id": "P28",
+    "source": "GATE"
+   }
+  ],
+  "stages": [],
+  "placement": "on demand",
+  "topicIds": [
+   "P43.0"
+  ],
+  "weekRange": null,
+  "masterSection": 48
+ },
+ {
+  "id": "P44",
+  "number": 44,
+  "title": "AI Engineering as a Systems Discipline",
+  "masterTitle": "AI ENGINEERING AS A SYSTEMS DISCIPLINE",
+  "description": "model choice, prompting, structured outputs, tool use, RAG, agents, serving, evaluation, reliability, security, cost, observability.",
+  "priority": "🔴 Critical",
+  "target": "🔴 D3–D4",
+  "depth": {
+   "min": 3,
+   "max": 4,
+   "raw": "🔴 D3–D4"
+  },
+  "gate": "unlocked after core software engineering, backend, model, evaluation, and deployment competencies are established.",
+  "unlockNote": "",
+  "prerequisites": [
+   {
+    "id": "P07",
+    "source": "GATE"
+   },
+   {
+    "id": "P08",
+    "source": "GATE"
+   },
+   {
+    "id": "P27",
+    "source": "GATE"
+   },
+   {
+    "id": "P29",
+    "source": "GATE"
+   }
+  ],
+  "stages": [
+   "S7A"
+  ],
+  "placement": "S7A",
+  "topicIds": [
+   "P44.0"
+  ],
+  "weekRange": [
+   155,
+   155
+  ],
+  "masterSection": 49
+ },
+ {
+  "id": "P45",
+  "number": 45,
+  "title": "Cost Engineering",
+  "masterTitle": "COST ENGINEERING",
+  "description": "unit economics, token/GPU/CPU costs, storage, network costs, caching, batching, model choice, capacity planning.",
+  "priority": "🟡🟠 Useful–High",
+  "target": "🟡–🟠 D2–D3",
+  "depth": {
+   "min": 2,
+   "max": 3,
+   "raw": "🟡–🟠 D2–D3"
+  },
+  "gate": "learn through real deployed systems rather than as an early standalone subject.",
+  "unlockNote": "",
+  "prerequisites": [
+   {
+    "id": "P32",
+    "source": "GATE"
+   },
+   {
+    "id": "P29",
+    "source": "GATE"
+   }
+  ],
+  "stages": [
+   "S6B"
+  ],
+  "placement": "S6B",
+  "topicIds": [
+   "P45.0"
+  ],
+  "weekRange": [
+   133,
+   134
+  ],
+  "masterSection": 50
+ },
+ {
+  "id": "P46",
+  "number": 46,
+  "title": "Product Thinking for Engineers",
+  "masterTitle": "PRODUCT THINKING FOR ENGINEERS",
+  "description": "user problem, requirements, tradeoffs, metrics, MVP thinking, iteration, feedback, technical prioritisation.",
+  "priority": "🟡 Useful",
+  "target": "🟡 D2–D3",
+  "depth": {
+   "min": 2,
+   "max": 3,
+   "raw": "🟡 D2–D3"
+  },
+  "gate": "awareness can begin early; detailed product engineering belongs alongside real projects and internships.",
+  "unlockNote": "",
+  "prerequisites": [],
+  "stages": [],
+  "placement": "continuous (awareness from S4; detailed in PR07, PR11)",
+  "topicIds": [
+   "P46.0"
+  ],
+  "weekRange": null,
+  "masterSection": 51
+ }
+]

@@ -1,0 +1,350 @@
+[
+ {
+  "id": "G0",
+  "title": "Initial Python gate",
+  "kind": "initial",
+  "source": "Master Section 0 'Start here' 14-day plan and 'The first gate'",
+  "gateWeek": 2,
+  "requires": [
+   "P01.1a"
+  ],
+  "criteria": [
+   "variables and expressions",
+   "`if / elif / else`",
+   "`for` loops",
+   "`while` loops",
+   "functions and `return`",
+   "lists, tuples, sets, dictionaries",
+   "string operations",
+   "simple input/output",
+   "basic exception handling",
+   "reading and writing simple files"
+  ],
+  "practicalGate": "You leave the beginner runway only when you can independently write and explain the core Python capabilities listed in Phase 1, complete small unseen tasks, and debug ordinary mistakes.",
+  "note": "Decision 6: the master's 14-day plan is the formal initial Python gate. Python fluency work continues afterwards; G0 does not certify proficiency."
+ },
+ {
+  "id": "C1",
+  "title": "Programmer",
+  "kind": "competency",
+  "source": "Master Competency Checkpoint 1",
+  "gateWeek": 14,
+  "requires": [
+   "P01.1a",
+   "P01.1b",
+   "P02.1",
+   "P07.4",
+   "PR01"
+  ],
+  "criteria": [
+   "write small Python programs without tutorials",
+   "use `for` and `while` loops correctly",
+   "write and call functions",
+   "use lists and dictionaries naturally",
+   "read/write simple files",
+   "handle common exceptions",
+   "debug a small program",
+   "make meaningful Git commits"
+  ],
+  "practicalGate": "Complete 3 unseen beginner programming tasks in separate sessions with at most normal documentation lookup, and build one small CLI program without following a walkthrough.",
+  "note": ""
+ },
+ {
+  "id": "SG2",
+  "title": "DSA and SQL foundations",
+  "kind": "stage",
+  "source": "Master phase-gating rule applied at a stage boundary",
+  "gateWeek": 21,
+  "requires": [
+   "P04.1",
+   "P04.2",
+   "P06.1",
+   "P06.1a",
+   "P06.2"
+  ],
+  "criteria": [
+   "identify 5-10 must-know capabilities",
+   "practise them without constant tutorial dependence",
+   "produce at least one artifact",
+   "pass a practical mastery check",
+   "re-test later"
+  ],
+  "practicalGate": "DSA fundamentals (P04.1, P04.2, P04.5#1–7) and SQL/PostgreSQL basics (P06.1, P06.1a, P06.2).",
+  "note": ""
+ },
+ {
+  "id": "SG3",
+  "title": "Data and statistics gates",
+  "kind": "stage",
+  "source": "Master phase-gating rule applied at a stage boundary",
+  "gateWeek": 33,
+  "requires": [
+   "P10.3",
+   "P10.4",
+   "P11.1",
+   "P11.2",
+   "P11.3"
+  ],
+  "criteria": [
+   "identify 5-10 must-know capabilities",
+   "practise them without constant tutorial dependence",
+   "produce at least one artifact",
+   "pass a practical mastery check",
+   "re-test later"
+  ],
+  "practicalGate": "Data gate (P11.1–P11.3) + statistics gate (P10.3#1–16, P10.4#1–11). Master: classical ML may begin only when the programming, data, and statistics gates are genuinely passing.",
+  "note": ""
+ },
+ {
+  "id": "SG4",
+  "title": "Foundation Reset exit",
+  "kind": "stage",
+  "source": "Master phase-gating rule applied at a stage boundary",
+  "gateWeek": 46,
+  "requires": [
+   "PR01",
+   "PR02",
+   "PR03",
+   "P07.5",
+   "P08.3"
+  ],
+  "criteria": [
+   "identify 5-10 must-know capabilities",
+   "practise them without constant tutorial dependence",
+   "produce at least one artifact",
+   "pass a practical mastery check",
+   "re-test later"
+  ],
+  "practicalGate": "All S0–S4 components re-tested; PR01–PR03 complete.",
+  "note": ""
+ },
+ {
+  "id": "C2",
+  "title": "CS foundation",
+  "kind": "competency",
+  "source": "Master Competency Checkpoint 2",
+  "gateWeek": 66,
+  "requires": [
+   "P04.1",
+   "P04.2",
+   "P04.3",
+   "P04.4",
+   "P04.5",
+   "P04.6",
+   "P05.1",
+   "P05.2",
+   "P06.1",
+   "P06.1c",
+   "P06.1d"
+  ],
+  "criteria": [
+   "implement common data structures",
+   "analyse basic time/space complexity",
+   "solve standard beginner/intermediate DSA problems",
+   "explain core OS, networking, and database concepts"
+  ],
+  "practicalGate": "Complete a mixed set of unseen DSA problems with at least 80% correctness over repeated attempts, explain the complexity of each solution, and implement the core structures yourself.",
+  "note": ""
+ },
+ {
+  "id": "C4",
+  "title": "Data scientist",
+  "kind": "competency",
+  "source": "Master Competency Checkpoint 4",
+  "gateWeek": 87,
+  "requires": [
+   "P06.1a",
+   "P10.3",
+   "P10.4",
+   "P11.3",
+   "P11.5",
+   "P13.3",
+   "P14.3",
+   "P15.3",
+   "PR06"
+  ],
+  "criteria": [
+   "clean messy data",
+   "perform EDA",
+   "write SQL",
+   "formulate statistical questions",
+   "use uncertainty correctly",
+   "build appropriate baselines/models",
+   "evaluate them correctly",
+   "communicate findings"
+  ],
+  "practicalGate": "Take an unfamiliar dataset, produce a reproducible analysis, answer at least five defensible questions, and explain the limitations of the conclusions.",
+  "note": ""
+ },
+ {
+  "id": "C3",
+  "title": "Backend engineer",
+  "kind": "competency",
+  "source": "Master Competency Checkpoint 3",
+  "gateWeek": 95,
+  "requires": [
+   "P08.1",
+   "P08.2",
+   "P08.3",
+   "P08.4",
+   "P06.2",
+   "P07.3",
+   "P39.2",
+   "P31.1",
+   "P31.2",
+   "P32.1",
+   "PR03",
+   "PR04"
+  ],
+  "criteria": [
+   "build an authenticated API",
+   "use PostgreSQL",
+   "validate input",
+   "write tests",
+   "handle errors",
+   "document an API",
+   "deploy an application"
+  ],
+  "practicalGate": "Ship one small service with authentication, persistence, tests, API documentation, and a real deployment.",
+  "note": ""
+ },
+ {
+  "id": "SG5",
+  "title": "Stage 5 exit",
+  "kind": "stage",
+  "source": "Master phase-gating rule applied at a stage boundary",
+  "gateWeek": 101,
+  "requires": [
+   "C2",
+   "C4",
+   "C3",
+   "PR07"
+  ],
+  "criteria": [
+   "identify 5-10 must-know capabilities",
+   "practise them without constant tutorial dependence",
+   "produce at least one artifact",
+   "pass a practical mastery check",
+   "re-test later"
+  ],
+  "practicalGate": "C2, C4 and C3 passed; PR04–PR07 complete.",
+  "note": ""
+ },
+ {
+  "id": "SG6A",
+  "title": "Deep-learning gates",
+  "kind": "stage",
+  "source": "Master phase-gating rule applied at a stage boundary",
+  "gateWeek": 112,
+  "requires": [
+   "P19.5",
+   "P20.0",
+   "P21.0"
+  ],
+  "criteria": [
+   "identify 5-10 must-know capabilities",
+   "practise them without constant tutorial dependence",
+   "produce at least one artifact",
+   "pass a practical mastery check",
+   "re-test later"
+  ],
+  "practicalGate": "Deep-learning phase gates (P19–P21).",
+  "note": ""
+ },
+ {
+  "id": "C5",
+  "title": "ML engineer",
+  "kind": "competency",
+  "source": "Master Competency Checkpoint 5",
+  "gateWeek": 137,
+  "requires": [
+   "P28.0",
+   "P29.3",
+   "P30.2",
+   "P30.4",
+   "P38.1",
+   "PR09"
+  ],
+  "criteria": [
+   "build an ML training pipeline",
+   "version data/model/code sensibly",
+   "package a model",
+   "serve it",
+   "test it",
+   "monitor key signals",
+   "diagnose a failure"
+  ],
+  "practicalGate": "Ship one end-to-end ML service from data ingestion through inference and monitoring.",
+  "note": ""
+ },
+ {
+  "id": "C6",
+  "title": "AI engineer",
+  "kind": "competency",
+  "source": "Master Competency Checkpoint 6",
+  "gateWeek": 161,
+  "requires": [
+   "P23.5",
+   "P24.0",
+   "P25.0",
+   "P27.2",
+   "P39.3",
+   "PR10"
+  ],
+  "criteria": [
+   "build LLM applications",
+   "implement RAG",
+   "use tools safely",
+   "evaluate retrieval and generation",
+   "handle failures and cost constraints"
+  ],
+  "practicalGate": "Build an evaluated AI system with a documented evaluation set, retrieval or tool-use tests, failure analysis, and basic observability.",
+  "note": ""
+ },
+ {
+  "id": "SG7",
+  "title": "Systems exit",
+  "kind": "stage",
+  "source": "Master phase-gating rule applied at a stage boundary",
+  "gateWeek": 177,
+  "requires": [
+   "P35.3",
+   "P36.0",
+   "P37.5",
+   "P42.4",
+   "P26.0"
+  ],
+  "criteria": [
+   "identify 5-10 must-know capabilities",
+   "practise them without constant tutorial dependence",
+   "produce at least one artifact",
+   "pass a practical mastery check",
+   "re-test later"
+  ],
+  "practicalGate": "Systems depth phase gates (P35–P37, P42, P26).",
+  "note": ""
+ },
+ {
+  "id": "C7",
+  "title": "Top-tier candidate",
+  "kind": "competency",
+  "source": "Master Competency Checkpoint 7",
+  "gateWeek": null,
+  "requires": [
+   "P04.6",
+   "P05.1",
+   "P05.2",
+   "P35.2"
+  ],
+  "criteria": [
+   "solve DSA problems under time pressure",
+   "explain CS fundamentals clearly",
+   "design systems",
+   "explain serious projects deeply",
+   "communicate trade-offs",
+   "provide genuine behavioural evidence"
+  ],
+  "practicalGate": "",
+  "note": "Interview readiness is trained near recruiting periods (master). C7 prep windows are placed by the calendar layer against real recruiting dates, using whatever checkpoints are passed by then. Technical floor: C2 + C3 + system-design fundamentals."
+ }
+]

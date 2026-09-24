@@ -1,0 +1,700 @@
+[
+ {
+  "id": "PR01",
+  "number": 1,
+  "title": "CLI Tool",
+  "purpose": "Canonical project 1 of the master project ladder.",
+  "requires": [
+   "G0",
+   "P02.1",
+   "P07.3"
+  ],
+  "evidenceFor": "C1",
+  "buildWeeks": [
+   13,
+   14
+  ],
+  "milestones": [
+   {
+    "id": "PR01-M1",
+    "cw": 13,
+    "text": "PR01 CLI Tool: design, implement, test."
+   },
+   {
+    "id": "PR01-M2",
+    "cw": 14,
+    "text": "PR01 finish; C1 practical gate: 3 unseen tasks in separate sessions + CLI program without walkthrough."
+   }
+  ],
+  "relatedTopics": [
+   "P02.1",
+   "P07.3"
+  ],
+  "skills": [
+   "expense tracker",
+   "task manager",
+   "file organiser",
+   "log processor",
+   "Python",
+   "functions",
+   "data structures",
+   "error handling",
+   "Git",
+   "testing"
+  ],
+  "bodyMd": "Examples:\n\n- expense tracker\n- task manager\n- file organiser\n- log processor\n\nMust demonstrate:\n\n- Python\n- functions\n- data structures\n- error handling\n- Git\n- testing",
+  "qualityProfile": [
+   "general"
+  ]
+ },
+ {
+  "id": "PR02",
+  "number": 2,
+  "title": "API Client / Automation Tool",
+  "purpose": "Build a CLI application consuming a public API.",
+  "requires": [
+   "P08.1",
+   "P01.1d"
+  ],
+  "evidenceFor": "Portfolio Stage A",
+  "buildWeeks": [
+   39,
+   40
+  ],
+  "milestones": [
+   {
+    "id": "PR02-M1",
+    "cw": 39,
+    "text": "PR02 API Client: consume a public API with retries, rate limits, logging (P01.1f#6)."
+   },
+   {
+    "id": "PR02-M2",
+    "cw": 40,
+    "text": "PR02 finish + README."
+   }
+  ],
+  "relatedTopics": [
+   "P01.1f",
+   "P08.1",
+   "P01.1d"
+  ],
+  "skills": [
+   "HTTP",
+   "JSON",
+   "authentication basics",
+   "retries",
+   "errors",
+   "rate limits",
+   "logging"
+  ],
+  "bodyMd": "Build a CLI application consuming a public API.\n\nLearn:\n\n- HTTP\n- JSON\n- authentication basics\n- retries\n- errors\n- rate limits\n- logging",
+  "qualityProfile": [
+   "general"
+  ]
+ },
+ {
+  "id": "PR03",
+  "number": 3,
+  "title": "Database-Backed API",
+  "purpose": "Build a CRUD backend.",
+  "requires": [
+   "P06.2",
+   "P08.3",
+   "P07.3"
+  ],
+  "evidenceFor": "C3 (with auth added in S5A)",
+  "buildWeeks": [
+   42,
+   43,
+   44,
+   57
+  ],
+  "milestones": [
+   {
+    "id": "PR03-M1",
+    "cw": 42,
+    "text": "PR03 Database-Backed API: routing, validation, database access."
+   },
+   {
+    "id": "PR03-M2",
+    "cw": 43,
+    "text": "PR03 migrations and tests."
+   },
+   {
+    "id": "PR03-M3",
+    "cw": 44,
+    "text": "PR03 finish + README (Build 9 P01.1f#9)."
+   },
+   {
+    "id": "PR03-M4",
+    "cw": 57,
+    "text": "Add users, password hashing, tokens, roles to PR03."
+   }
+  ],
+  "relatedTopics": [
+   "P08.6",
+   "P01.1f",
+   "P08.4",
+   "P39.0",
+   "P39.1",
+   "P06.2",
+   "P08.3",
+   "P07.3"
+  ],
+  "skills": [
+   "PostgreSQL",
+   "API",
+   "validation",
+   "migrations",
+   "tests",
+   "README"
+  ],
+  "bodyMd": "Build a CRUD backend.\n\nRequired:\n\n- PostgreSQL\n- API\n- validation\n- migrations\n- tests\n- README",
+  "qualityProfile": [
+   "general"
+  ]
+ },
+ {
+  "id": "PR04",
+  "number": 4,
+  "title": "URL Shortener",
+  "purpose": "Canonical project 4 of the master project ladder.",
+  "requires": [
+   "P06.3",
+   "P06.1d",
+   "P35.1"
+  ],
+  "evidenceFor": "C3",
+  "buildWeeks": [
+   60,
+   61,
+   62
+  ],
+  "milestones": [
+   {
+    "id": "PR04-M1",
+    "cw": 60,
+    "text": "PR04 URL Shortener: IDs, redirects, storage, constraints."
+   },
+   {
+    "id": "PR04-M2",
+    "cw": 61,
+    "text": "PR04 cache, rate limiting, analytics."
+   },
+   {
+    "id": "PR04-M3",
+    "cw": 62,
+    "text": "PR04 traffic, bottleneck, failure-mode and scaling analysis."
+   }
+  ],
+  "relatedTopics": [
+   "P08.6",
+   "P35.2",
+   "P06.3",
+   "P06.1d",
+   "P35.1"
+  ],
+  "skills": [
+   "short IDs",
+   "redirect logic",
+   "persistent storage",
+   "unique constraints",
+   "analytics",
+   "rate limiting",
+   "cache",
+   "expected traffic",
+   "bottlenecks",
+   "failure modes",
+   "scaling path"
+  ],
+  "bodyMd": "Requirements:\n\n- short IDs\n- redirect logic\n- persistent storage\n- unique constraints\n- analytics\n- rate limiting\n- cache\n\nThen analyse:\n\n- expected traffic\n- bottlenecks\n- failure modes\n- scaling path",
+  "qualityProfile": [
+   "general"
+  ]
+ },
+ {
+  "id": "PR05",
+  "number": 5,
+  "title": "Real-Time Chat Backend",
+  "purpose": "Canonical project 5 of the master project ladder.",
+  "requires": [
+   "P05.1",
+   "P05.2",
+   "P08.4"
+  ],
+  "evidenceFor": "C2/C3 depth",
+  "buildWeeks": [
+   63,
+   64,
+   65
+  ],
+  "milestones": [
+   {
+    "id": "PR05-M1",
+    "cw": 63,
+    "text": "PR05 Real-Time Chat Backend: auth + WebSockets."
+   },
+   {
+    "id": "PR05-M2",
+    "cw": 64,
+    "text": "PR05 persistence, online/offline, retries."
+   },
+   {
+    "id": "PR05-M3",
+    "cw": 65,
+    "text": "PR05 concurrency reasoning writeup."
+   }
+  ],
+  "relatedTopics": [
+   "P08.6",
+   "P05.1",
+   "P05.2",
+   "P08.4"
+  ],
+  "skills": [
+   "authentication",
+   "WebSockets",
+   "message persistence",
+   "online/offline handling",
+   "retries",
+   "concurrency reasoning",
+   "presence",
+   "delivery status",
+   "message pagination"
+  ],
+  "bodyMd": "Requirements:\n\n- authentication\n- WebSockets\n- message persistence\n- online/offline handling\n- retries\n- concurrency reasoning\n\nStretch:\n\n- presence\n- delivery status\n- message pagination",
+  "qualityProfile": [
+   "general"
+  ]
+ },
+ {
+  "id": "PR06",
+  "number": 6,
+  "title": "Analytics Platform",
+  "purpose": "Raw data",
+  "requires": [
+   "P11.3",
+   "P12.0",
+   "P06.2"
+  ],
+  "evidenceFor": "C4",
+  "buildWeeks": [
+   69,
+   70,
+   71
+  ],
+  "milestones": [
+   {
+    "id": "PR06-M1",
+    "cw": 69,
+    "text": "PR06 Analytics Platform v1: ingestion, validation, transformation, PostgreSQL."
+   },
+   {
+    "id": "PR06-M2",
+    "cw": 70,
+    "text": "PR06 SQL + Python analysis, visualisation."
+   },
+   {
+    "id": "PR06-M3",
+    "cw": 71,
+    "text": "PR06 v2 with batch scheduling and logging; data dictionary, findings, limitations."
+   }
+  ],
+  "relatedTopics": [
+   "P12.1",
+   "P11.3",
+   "P12.0",
+   "P06.2"
+  ],
+  "skills": [
+   "reproducibility",
+   "clear assumptions",
+   "data dictionary",
+   "findings",
+   "limitations"
+  ],
+  "bodyMd": "Pipeline:\n\n```text\nRaw data\n→ cleaning\n→ validation\n→ PostgreSQL\n→ SQL analysis\n→ Python analysis\n→ visualisation\n→ report\n```\n\nRequired:\n\n- reproducibility\n- clear assumptions\n- data dictionary\n- findings\n- limitations",
+  "qualityProfile": [
+   "general",
+   "ml"
+  ]
+ },
+ {
+  "id": "PR07",
+  "number": 7,
+  "title": "Fraud Detection Platform",
+  "purpose": "If you already have a fraud-detection project, do not automatically rebuild a near-duplicate. Treat the existing work as the starting artifact and upgrade it until it satisfies this project's engineering, evaluation, deployment, and monitoring requirements.",
+  "requires": [
+   "P15.3",
+   "P14.2",
+   "P31.2",
+   "P32.1",
+   "P29.2"
+  ],
+  "evidenceFor": "C4/C5 bridge; fintech flagship",
+  "buildWeeks": [
+   97,
+   98,
+   99,
+   100
+  ],
+  "milestones": [
+   {
+    "id": "PR07-M1",
+    "cw": 97,
+    "text": "PR07 Fraud Detection: data, validation, features, splits, baseline."
+   },
+   {
+    "id": "PR07-M2",
+    "cw": 98,
+    "text": "PR07 model comparison, threshold choice, error costs (P46 reasoning)."
+   },
+   {
+    "id": "PR07-M3",
+    "cw": 99,
+    "text": "PR07 API + deployment."
+   },
+   {
+    "id": "PR07-M4",
+    "cw": 100,
+    "text": "PR07 monitoring, drift discussion, temporal-leakage check."
+   }
+  ],
+  "relatedTopics": [
+   "P15.3",
+   "P14.2",
+   "P31.2",
+   "P32.1",
+   "P29.2"
+  ],
+  "skills": [
+   "How severe are false positives?",
+   "What is the class imbalance?",
+   "Is there temporal leakage?",
+   "How does drift appear?",
+   "How do you choose the threshold?"
+  ],
+  "bodyMd": "If you already have a fraud-detection project, do not automatically rebuild a near-duplicate. Treat the existing work as the starting artifact and upgrade it until it satisfies this project's engineering, evaluation, deployment, and monitoring requirements.\n\nPipeline:\n\n```text\nData\n→ validation\n→ feature engineering\n→ train/validation/test\n→ baseline\n→ model comparison\n→ evaluation\n→ API\n→ deployment\n→ monitoring\n```\n\nRequired questions:\n\n- How severe are false positives?\n- What is the class imbalance?\n- Is there temporal leakage?\n- How does drift appear?\n- How do you choose the threshold?",
+  "qualityProfile": [
+   "general",
+   "ml"
+  ]
+ },
+ {
+  "id": "PR08",
+  "number": 8,
+  "title": "Recommendation System",
+  "purpose": "Then design the production version.",
+  "requires": [
+   "P18.0",
+   "P29.3"
+  ],
+  "evidenceFor": "C5 depth",
+  "buildWeeks": [
+   129,
+   130,
+   131,
+   132
+  ],
+  "milestones": [
+   {
+    "id": "PR08-M1",
+    "cw": 129,
+    "text": "PR08 Recommendation System: event ingestion, representations."
+   },
+   {
+    "id": "PR08-M2",
+    "cw": 130,
+    "text": "PR08 retrieval + ranking."
+   },
+   {
+    "id": "PR08-M3",
+    "cw": 131,
+    "text": "PR08 evaluation + serving API."
+   },
+   {
+    "id": "PR08-M4",
+    "cw": 132,
+    "text": "PR08 production design writeup."
+   }
+  ],
+  "relatedTopics": [
+   "P18.0",
+   "P29.3"
+  ],
+  "skills": [
+   "event ingestion",
+   "user/item representations",
+   "candidate retrieval",
+   "ranking",
+   "evaluation",
+   "serving API"
+  ],
+  "bodyMd": "Build:\n\n- event ingestion\n- user/item representations\n- candidate retrieval\n- ranking\n- evaluation\n- serving API\n\nThen design the production version.",
+  "qualityProfile": [
+   "general",
+   "ml"
+  ]
+ },
+ {
+  "id": "PR09",
+  "number": 9,
+  "title": "ML Serving Platform",
+  "purpose": "Goal: turn multiple models into a consistent serving system.",
+  "requires": [
+   "P28.0",
+   "P29.3",
+   "P30.4",
+   "P38.1"
+  ],
+  "evidenceFor": "C5",
+  "buildWeeks": [
+   133,
+   134,
+   135,
+   136
+  ],
+  "milestones": [
+   {
+    "id": "PR09-M1",
+    "cw": 133,
+    "text": "PR09 ML Serving Platform: registry, model selection, versioning."
+   },
+   {
+    "id": "PR09-M2",
+    "cw": 134,
+    "text": "PR09 inference API, latency, batching."
+   },
+   {
+    "id": "PR09-M3",
+    "cw": 135,
+    "text": "PR09 health checks + monitoring."
+   },
+   {
+    "id": "PR09-M4",
+    "cw": 136,
+    "text": "PR09 cost analysis + documentation."
+   }
+  ],
+  "relatedTopics": [
+   "P45.0",
+   "P28.0",
+   "P29.3",
+   "P30.4",
+   "P38.1"
+  ],
+  "skills": [
+   "model registry",
+   "model selection",
+   "versioning",
+   "inference API",
+   "latency",
+   "batching",
+   "health checks",
+   "monitoring"
+  ],
+  "bodyMd": "Goal: turn multiple models into a consistent serving system.\n\nLearn:\n\n- model registry\n- model selection\n- versioning\n- inference API\n- latency\n- batching\n- health checks\n- monitoring",
+  "qualityProfile": [
+   "general",
+   "ml"
+  ]
+ },
+ {
+  "id": "PR10",
+  "number": 10,
+  "title": "RAG Research Platform",
+  "purpose": "Build a system that accepts a body of documents and supports grounded research.",
+  "requires": [
+   "P24.1",
+   "P27.2",
+   "P39.3",
+   "P08.4"
+  ],
+  "evidenceFor": "C6",
+  "buildWeeks": [
+   156,
+   157,
+   158,
+   159,
+   160
+  ],
+  "milestones": [
+   {
+    "id": "PR10-M1",
+    "cw": 156,
+    "text": "PR10 RAG Research Platform: ingestion, parsing, chunking, embeddings."
+   },
+   {
+    "id": "PR10-M2",
+    "cw": 157,
+    "text": "PR10 retrieval, reranking, generation, citations."
+   },
+   {
+    "id": "PR10-M3",
+    "cw": 158,
+    "text": "PR10 evaluation set + failure analysis."
+   },
+   {
+    "id": "PR10-M4",
+    "cw": 159,
+    "text": "PR10 auth, logging, security."
+   },
+   {
+    "id": "PR10-M5",
+    "cw": 160,
+    "text": "PR10 observability + cost notes."
+   }
+  ],
+  "relatedTopics": [
+   "P24.2",
+   "P24.1",
+   "P27.2",
+   "P39.3",
+   "P08.4"
+  ],
+  "skills": [
+   "ingestion",
+   "parsing",
+   "chunking",
+   "embeddings",
+   "retrieval",
+   "reranking",
+   "generation",
+   "citations",
+   "evaluation",
+   "auth",
+   "logging",
+   "security"
+  ],
+  "bodyMd": "Build a system that accepts a body of documents and supports grounded research.\n\nRequired:\n\n- ingestion\n- parsing\n- chunking\n- embeddings\n- retrieval\n- reranking\n- generation\n- citations\n- evaluation\n- auth\n- logging\n- security",
+  "qualityProfile": [
+   "general",
+   "ml",
+   "ai"
+  ]
+ },
+ {
+  "id": "PR11",
+  "number": 11,
+  "title": "Intelligent Financial Research Platform",
+  "purpose": "User",
+  "requires": [
+   "C6",
+   "P01.3",
+   "P38.3",
+   "P45.0"
+  ],
+  "evidenceFor": "Capstone; C7 deep dives",
+  "buildWeeks": [
+   195,
+   196,
+   197,
+   198,
+   199,
+   200,
+   201,
+   202,
+   203,
+   204,
+   205,
+   206
+  ],
+  "milestones": [
+   {
+    "id": "PR11-M1",
+    "cw": 195,
+    "text": "PR11 Intelligent Financial Research Platform: requirements + architecture."
+   },
+   {
+    "id": "PR11-M2",
+    "cw": 196,
+    "text": "PR11 Intelligent Financial Research Platform: data service."
+   },
+   {
+    "id": "PR11-M3",
+    "cw": 197,
+    "text": "PR11 Intelligent Financial Research Platform: data service."
+   },
+   {
+    "id": "PR11-M4",
+    "cw": 198,
+    "text": "PR11 Intelligent Financial Research Platform: analytics service."
+   },
+   {
+    "id": "PR11-M5",
+    "cw": 199,
+    "text": "PR11 Intelligent Financial Research Platform: ML layer."
+   },
+   {
+    "id": "PR11-M6",
+    "cw": 200,
+    "text": "PR11 Intelligent Financial Research Platform: ML layer."
+   },
+   {
+    "id": "PR11-M7",
+    "cw": 201,
+    "text": "PR11 Intelligent Financial Research Platform: AI service: retrieval."
+   },
+   {
+    "id": "PR11-M8",
+    "cw": 202,
+    "text": "PR11 Intelligent Financial Research Platform: AI service: evaluation."
+   },
+   {
+    "id": "PR11-M9",
+    "cw": 203,
+    "text": "PR11 Intelligent Financial Research Platform: frontend (P01.3)."
+   },
+   {
+    "id": "PR11-M10",
+    "cw": 204,
+    "text": "PR11 Intelligent Financial Research Platform: observability + security."
+   },
+   {
+    "id": "PR11-M11",
+    "cw": 205,
+    "text": "PR11 Intelligent Financial Research Platform: cost + performance reports."
+   },
+   {
+    "id": "PR11-M12",
+    "cw": 206,
+    "text": "PR11 Intelligent Financial Research Platform: documentation set + demo."
+   }
+  ],
+  "relatedTopics": [
+   "P01.3",
+   "P38.3",
+   "P45.0"
+  ],
+  "skills": [
+   "frontend",
+   "backend",
+   "authentication",
+   "PostgreSQL",
+   "analytics",
+   "ML",
+   "RAG",
+   "evaluation",
+   "Docker",
+   "CI/CD",
+   "cloud",
+   "observability",
+   "architecture diagram",
+   "requirements",
+   "API documentation",
+   "data model",
+   "model card",
+   "evaluation report",
+   "threat model",
+   "performance report",
+   "cost analysis",
+   "deployment guide"
+  ],
+  "bodyMd": "A large end-to-end capstone combining:\n\n- frontend\n- backend\n- authentication\n- PostgreSQL\n- analytics\n- ML\n- RAG\n- evaluation\n- Docker\n- CI/CD\n- cloud\n- observability\n\nPotential architecture:\n\n```text\nUser\n↓\nAPI Gateway\n├── User Service\n├── Data Service\n├── Analytics Service\n└── AI Service\n        ├── Retrieval\n        ├── Model\n        └── Evaluation\n\nData Service\n→ ingestion\n→ transformation\n→ PostgreSQL / analytical storage\n→ features\n\nML layer\n→ training\n→ evaluation\n→ registry\n→ serving\n\nObservability\n→ logs\n→ metrics\n→ traces\n```\n\nRequired documentation:\n\n- architecture diagram\n- requirements\n- API documentation\n- data model\n- model card\n- evaluation report\n- threat model\n- performance report\n- cost analysis\n- deployment guide",
+  "qualityProfile": [
+   "general",
+   "ml",
+   "ai"
+  ]
+ }
+]
