@@ -38,11 +38,11 @@ function ProblemForm({ initial, patterns, onDone }: { initial: Draft; patterns: 
     return [...m.entries()];
   }, [patterns, pf]);
   const label = (id: string) => patterns.find((p) => p.id === id)?.text ?? id;
-  const field = "w-full rounded-md border border-rule bg-surface px-3 py-2 text-sm";
+  const field = "input";
 
   return (
     <form
-      className="space-y-4 rounded-lg border border-rule bg-surface p-4"
+      className="space-y-4 card p-4"
       onSubmit={(e) => {
         e.preventDefault();
         if (!d.title.trim()) return;
@@ -65,7 +65,7 @@ function ProblemForm({ initial, patterns, onDone }: { initial: Draft; patterns: 
           <input type="number" min={0} value={d.attempts} onChange={(e) => set("attempts", Math.max(0, Number(e.target.value) || 0))} className={field} /></label>
         <div><span className="mb-1 block text-sm font-medium">Revisit on</span>
           <div className="flex flex-wrap items-center gap-1.5">
-            <input type="date" value={d.revisitOn ?? ""} onChange={(e) => set("revisitOn", e.target.value || null)} className="rounded-md border border-rule bg-surface px-2 py-1.5 text-sm" aria-label="Revisit date" />
+            <input type="date" value={d.revisitOn ?? ""} onChange={(e) => set("revisitOn", e.target.value || null)} className="w-auto input" aria-label="Revisit date" />
             {[3, 7, 30].map((n) => <button key={n} type="button" onClick={() => set("revisitOn", plusDays(n))} className="rounded border border-rule px-1.5 py-1 text-xs hover:border-accent">+{n}d</button>)}
             {d.revisitOn && <button type="button" onClick={() => set("revisitOn", null)} className="text-xs text-muted hover:underline">clear</button>}
           </div>
@@ -81,7 +81,7 @@ function ProblemForm({ initial, patterns, onDone }: { initial: Draft; patterns: 
             ))}
           </div>
         )}
-        <input value={pf} onChange={(e) => setPf(e.target.value)} placeholder="Filter patterns" aria-label="Filter patterns" className="mb-2 w-full rounded-md border border-rule bg-surface px-3 py-1.5 text-sm" />
+        <input value={pf} onChange={(e) => setPf(e.target.value)} placeholder="Filter patterns" aria-label="Filter patterns" className="mb-2 input" />
         <div className="max-h-52 overflow-y-auto rounded-md border border-rule p-2 scroll-thin">
           {groups.map(([g, ps]) => (
             <div key={g} className="mb-2">
@@ -110,8 +110,8 @@ function ProblemForm({ initial, patterns, onDone }: { initial: Draft; patterns: 
       <label className="block"><span className="mb-1 block text-sm font-medium">Notes</span><textarea rows={3} value={d.notes} onChange={(e) => set("notes", e.target.value)} className={field} placeholder="Complexity, edge cases, the key insight" /></label>
 
       <div className="flex gap-2">
-        <button type="submit" className="rounded-md bg-accent px-4 py-2 text-sm text-accent-ink hover:opacity-90">{d.id ? "Save changes" : "Add problem"}</button>
-        <button type="button" onClick={onDone} className="rounded-md border border-rule px-4 py-2 text-sm">Cancel</button>
+        <button type="submit" className="btn btn-primary btn-sm">{d.id ? "Save changes" : "Add problem"}</button>
+        <button type="button" onClick={onDone} className="btn btn-secondary btn-sm">Cancel</button>
       </div>
     </form>
   );
@@ -151,7 +151,7 @@ export function DsaJournal({ patterns, practice, laneNote }: { patterns: Pattern
 
   return (
     <div className="space-y-8">
-      <section className="grid grid-cols-2 gap-4 rounded-lg border border-rule bg-surface p-4 sm:grid-cols-4" aria-label="DSA stats">
+      <section className="grid grid-cols-2 gap-4 card p-4 sm:grid-cols-4" aria-label="DSA stats">
         <div><p className="text-xs text-muted">Problems logged</p><p className="text-xl font-semibold tabular-nums">{stats.total}</p></div>
         <div><p className="text-xs text-muted">Solved alone</p><p className="text-xl font-semibold tabular-nums">{stats.solved}</p>{stats.total > 0 && <Bar value={stats.solved / stats.total} className="mt-1" label="Solved alone" />}</div>
         <div><p className="text-xs text-muted">By difficulty</p><p className="text-sm tabular-nums">{stats.byDiff.map(([d, n]) => `${d} ${n}`).join(", ")}</p></div>
@@ -161,27 +161,27 @@ export function DsaJournal({ patterns, practice, laneNote }: { patterns: Pattern
       {editing ? (
         <ProblemForm key={formKey} initial={editing} patterns={patterns} onDone={() => setEditing(null)} />
       ) : (
-        <button type="button" onClick={() => open(blank())} className="rounded-md bg-accent px-4 py-2 text-sm text-accent-ink hover:opacity-90">Log a problem</button>
+        <button type="button" onClick={() => open(blank())} className="btn btn-primary btn-sm">Log a problem</button>
       )}
 
       <section>
         <div className="mb-3 flex flex-wrap items-center gap-2">
           <div className="flex gap-1.5" role="tablist" aria-label="Journal view">
-            <button role="tab" type="button" aria-selected={view === "problems"} onClick={() => setView("problems")} className={cx("rounded-md border px-3 py-1.5 text-sm", view === "problems" ? "border-accent bg-accent-soft text-accent" : "border-rule bg-surface")}>Problems</button>
-            <button role="tab" type="button" aria-selected={view === "mistakes"} onClick={() => setView("mistakes")} className={cx("rounded-md border px-3 py-1.5 text-sm", view === "mistakes" ? "border-accent bg-accent-soft text-accent" : "border-rule bg-surface")}>Mistake log ({mistakes.length})</button>
+            <button role="tab" type="button" aria-selected={view === "problems"} onClick={() => setView("problems")} className="chip">Problems</button>
+            <button role="tab" type="button" aria-selected={view === "mistakes"} onClick={() => setView("mistakes")} className="chip">Mistake log ({mistakes.length})</button>
           </div>
           {view === "problems" && (
             <div className="flex flex-wrap gap-2">
-              <select aria-label="Status filter" value={status} onChange={(e) => setStatus(e.target.value)} className="rounded-md border border-rule bg-surface px-2 py-1.5 text-sm">
+              <select aria-label="Status filter" value={status} onChange={(e) => setStatus(e.target.value)} className="w-auto input">
                 <option value="all">Any status</option>
                 <option value="due">Due for revisit</option>
                 {STATUS.map((x) => <option key={x.id} value={x.id}>{x.label}</option>)}
               </select>
-              <select aria-label="Difficulty filter" value={diff} onChange={(e) => setDiff(e.target.value)} className="rounded-md border border-rule bg-surface px-2 py-1.5 text-sm">
+              <select aria-label="Difficulty filter" value={diff} onChange={(e) => setDiff(e.target.value)} className="w-auto input">
                 <option value="all">Any difficulty</option>
                 {DIFF.map((x) => <option key={x}>{x}</option>)}
               </select>
-              <select aria-label="Pattern filter" value={pattern} onChange={(e) => setPattern(e.target.value)} className="max-w-56 rounded-md border border-rule bg-surface px-2 py-1.5 text-sm">
+              <select aria-label="Pattern filter" value={pattern} onChange={(e) => setPattern(e.target.value)} className="max-w-56 input">
                 <option value="all">Any pattern</option>
                 {patterns.filter((p) => s.dsa.some((x) => x.patterns.includes(p.id))).map((p) => <option key={p.id} value={p.id}>{p.text}</option>)}
               </select>
@@ -196,7 +196,7 @@ export function DsaJournal({ patterns, practice, laneNote }: { patterns: Pattern
               <p className="mt-1 text-muted">{s.dsa.length ? "Clear a filter to see more." : "Log the first one after your next DSA session. Tag it with a pattern so it shows up on that topic's page."}</p>
             </div>
           ) : (
-            <ul className="divide-y divide-rule rounded-lg border border-rule bg-surface">
+            <ul className="list-card">
               {list.map((p) => (
                 <li key={p.id} className="px-3 py-3">
                   <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
@@ -223,7 +223,7 @@ export function DsaJournal({ patterns, practice, laneNote }: { patterns: Pattern
         ) : (
           <ul className="space-y-3">
             {mistakes.map((p) => (
-              <li key={p.id} className="rounded-lg border border-rule bg-surface p-3 text-sm">
+              <li key={p.id} className="card p-3 text-sm">
                 <p className="font-medium">{p.title} <span className="text-xs font-normal text-muted">{p.patterns.map(pText).join(", ")}</span></p>
                 <dl className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-3">
                   <div><dt className="text-xs text-muted">Missed</dt><dd className="whitespace-pre-wrap">{p.missed || "—"}</dd></div>

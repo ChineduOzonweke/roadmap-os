@@ -61,16 +61,15 @@ export default async function Page({ params }: Props) {
           </>
         }
         title={t.label}
-        lead={t.meta ? t.meta : undefined}
       >
-        {isChecklist && <TopicStatus topicId={t.id} showBar />}
+        {isChecklist && <TopicStatus topicId={t.id} />}
       </PageHeader>
 
-      {t.onDemand && <p className="mb-4 rounded-md border border-rule bg-surface px-3 py-2 text-sm"><span className="font-medium">On demand.</span> {t.onDemand}</p>}
-      {isChecklist && <div className="mb-6"><ClearanceNotice topicId={t.id} /></div>}
+      {t.onDemand && <p className="mb-4 rounded-xl bg-surface-2 px-4 py-3 text-sm"><span className="font-medium">On demand.</span> {t.onDemand}</p>}
+      {isChecklist && <ClearanceNotice topicId={t.id} />}
 
-      <Section title={isChecklist ? "Checklist" : "Master text"} aside={isChecklist && units.length > 0 ? `${units.length} items` : undefined}>
-        {isChecklist && units.length > 0 && <div className="mb-3"><ChecklistSummary ids={units} /></div>}
+      <Section title={isChecklist ? "What to learn" : "From the master roadmap"}>
+        {isChecklist && units.length > 0 && <div className="mb-4"><ChecklistSummary ids={units} /></div>}
         <div className="space-y-3">
           {t.blocks.map((b, i) =>
             b.t === "md" ? (
@@ -139,12 +138,12 @@ export default async function Page({ params }: Props) {
           {resourcesAll.length === 0 ? (
             <p className="text-sm text-muted">No resources listed for this topic in the master.</p>
           ) : (
-            <ul className="space-y-2 text-sm">
+            <ul className="-mx-4 -my-1">
               {resourcesAll.map((r) => (
-                <li key={r.id}>
-                  <span className="mr-2 text-xs text-muted">{r.label}{ownRes.includes(r) ? "" : ", phase-wide"}</span>
-                  {r.url ? <ExternalLink href={r.url}>{r.name || r.url}</ExternalLink> : <InlineText text={r.name} />}
-                  {r.note && <span className="text-muted"> ({r.note})</span>}
+                <li key={r.id} className="border-b border-rule px-4 py-3 last:border-b-0">
+                  <span className="block text-xs text-muted">{r.label}{ownRes.includes(r) ? "" : ", for the whole phase"}</span>
+                  <span className="block leading-snug">{r.url ? <ExternalLink href={r.url}>{r.name || r.url}</ExternalLink> : <InlineText text={r.name} />}</span>
+                  {r.note && <span className="mt-0.5 block text-sm text-muted">{r.note}</span>}
                 </li>
               ))}
             </ul>
@@ -188,7 +187,7 @@ export default async function Page({ params }: Props) {
               <ul className="flex flex-wrap gap-2 text-sm">
                 {t.weeks.map((w, i) => (
                   <li key={i}>
-                    <Link href={`/weeks/${w.cw}`} className="inline-flex min-h-10 items-center rounded-md border border-rule bg-surface px-3 hover:border-accent">
+                    <Link href={`/weeks/${w.cw}`} className="inline-flex min-h-10 items-center rounded-xl border border-rule bg-surface px-3 hover:border-accent">
                       Week {w.cw}{w.cwEnd ? `–${w.cwEnd}` : w.lane === "dsa" && w.cwEnd === null ? " onward" : ""}
                       {w.lane !== "primary" && <span className="ml-1.5 text-muted">{LANE[w.lane]}</span>}
                     </Link>
@@ -198,7 +197,7 @@ export default async function Page({ params }: Props) {
             </>
           )}
           <dl className="mt-5 grid grid-cols-1 gap-3 text-sm sm:grid-cols-3">
-            <div><dt className="text-xs text-muted">Priority</dt><dd>{phase.priority}</dd></div>
+            <div><dt className="text-xs text-muted">Priority</dt><dd>{phase.priority}{t.meta ? `, ${t.meta}` : ""}</dd></div>
             <div><dt className="text-xs text-muted">Depth target</dt><dd>{t.depth ? t.depth.raw : "Not stated in the master"}</dd></div>
             <div><dt className="text-xs text-muted">Scheduled</dt><dd>{t.firstWeek ? `From week ${t.firstWeek}` : t.onDemand ? "On demand" : "Not scheduled"}</dd></div>
           </dl>

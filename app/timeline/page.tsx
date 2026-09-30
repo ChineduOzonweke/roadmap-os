@@ -19,7 +19,7 @@ export default function Page() {
       <Section title="Execution map"><WeekStrip /></Section>
 
       <Section title="Stages">
-        <ol className="divide-y divide-rule rounded-md border border-rule bg-surface">
+        <ol className="list-card">
           {top.map((s) => (
             <li key={s.id} className="px-3 py-3">
               <div className="flex flex-wrap items-baseline justify-between gap-2">

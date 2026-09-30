@@ -16,7 +16,7 @@ export function GET() {
     const ph = phaseTitle.get(t.phaseId) ?? "";
     return t.label.startsWith(ph) ? t.label : `${ph} › ${t.label}`;
   };
-  phases.forEach((p) => e.push({ k: "Phase", id: p.id, t: p.title, p: "Roadmap", s: p.description, h: `/phases/${p.id}` }));
+  phases.forEach((p) => e.push({ k: "Phase", id: p.id, t: p.title, s: p.description, h: `/phases/${p.id}` }));
   topics.forEach((t) => e.push({ k: t.phaseId === "P04" ? "DSA topic" : "Topic", id: t.id, t: t.label, p: phaseTitle.get(t.phaseId) ?? "", s: `${t.meta} ${t.title}`, h: `/topics/${t.id}` }));
   concepts.forEach((c) => e.push({ k: c.phaseId === "P04" ? "DSA concept" : "Concept", id: c.id, t: c.text, p: topicPath(c.topicId), s: topicLabel.get(c.topicId) ?? "", h: `/concepts/${conceptSlug(c.id)}` }));
   weeks.forEach((w) => e.push({ k: "Week", id: String(w.cw), t: `Week ${w.cw}: ${w.title}`, p: w.primary.map((x) => x.detail).filter(Boolean).join("; "), s: w.build, h: `/weeks/${w.cw}` }));

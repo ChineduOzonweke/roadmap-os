@@ -13,12 +13,13 @@ export function IdTag({ id, href, className }: { id: string; href?: string | nul
   return href ? <Link href={href} className={cx(cls, "hover:text-accent")}>{id}</Link> : <span className={cls}>{id}</span>;
 }
 
+// Status reads through a glyph plus a word; colour is secondary. Only "done" states are coloured.
 const STATUS_STYLE: Record<Status, string> = {
-  locked: "text-faint bg-surface-2",
-  available: "text-accent bg-accent-soft",
-  in_progress: "text-warn bg-warn-soft",
-  completed: "text-ok bg-ok-soft",
-  mastered: "text-ok bg-ok-soft ring-1 ring-ok/50",
+  locked: "text-faint",
+  available: "text-muted",
+  in_progress: "text-ink",
+  completed: "text-ok",
+  mastered: "text-ok",
 };
 const STATUS_TEXT: Record<Status, string> = {
   locked: "Locked",
@@ -30,18 +31,20 @@ const STATUS_TEXT: Record<Status, string> = {
 
 export function StatusPill({ status, className }: { status: Status; className?: string }) {
   return (
-    <span className={cx("inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-xs font-medium whitespace-nowrap", STATUS_STYLE[status], className)}>
+    <span className={cx("inline-flex items-center gap-1.5 text-xs font-medium whitespace-nowrap", STATUS_STYLE[status], className)}>
       <StatusGlyph status={status} />
       {STATUS_TEXT[status]}
     </span>
   );
 }
 
+/** Ring = not started, half ring = in progress, filled = done, double ring = mastered. */
 export function StatusGlyph({ status }: { status: Status }) {
-  const common = "inline-block h-2 w-2 shrink-0 rounded-full";
-  if (status === "locked") return <span aria-hidden className={cx(common, "border border-lock")} />;
-  if (status === "available") return <span aria-hidden className={cx(common, "border-2 border-accent")} />;
-  if (status === "in_progress") return <span aria-hidden className={cx(common, "bg-warn")} />;
+  const common = "inline-block h-2.5 w-2.5 shrink-0 rounded-full";
+  if (status === "locked") return <span aria-hidden className={cx(common, "border-[1.5px] border-dashed border-rule-strong")} />;
+  if (status === "available") return <span aria-hidden className={cx(common, "border-[1.5px] border-muted")} />;
+  if (status === "in_progress") return <span aria-hidden className={cx(common, "border-[1.5px] border-accent bg-[conic-gradient(var(--accent)_0_50%,transparent_50%_100%)]")} />;
+  if (status === "mastered") return <span aria-hidden className={cx(common, "bg-ok ring-2 ring-ok/35 ring-offset-1 ring-offset-surface")} />;
   return <span aria-hidden className={cx(common, "bg-ok")} />;
 }
 
@@ -50,24 +53,41 @@ export function Bar({ value, tone = "accent", className, label }: { value: numbe
   const color = tone === "ok" ? "bg-ok" : tone === "warn" ? "bg-warn" : "bg-accent";
   return (
     <div
-      className={cx("h-1.5 w-full overflow-hidden rounded-full bg-surface-2", className)}
+      className={cx("h-1.5 w-full overflow-hidden rounded-full bg-rule", className)}
       role="progressbar"
       aria-valuemin={0}
       aria-valuemax={100}
       aria-valuenow={Math.round(v * 100)}
       aria-label={label}
     >
-      <div className={cx("h-full rounded-full", color)} style={{ width: `${v * 100}%` }} />
+      <div className={cx("h-full rounded-full transition-[width] duration-300", color)} style={{ width: `${v * 100}%` }} />
+    </div>
+  );
+}
+
+/**
+ * Tally bar: one segment per checklist item, filled in order of completion.
+ * Used where the count is small enough to read (a week's checklist).
+ */
+export function Tally({ done, total, label, className }: { done: number; total: number; label: string; className?: string }) {
+  if (total <= 0) return null;
+  if (total > 40) return <Bar value={done / total} label={label} className={cx("h-2", className)} tone={done === total ? "ok" : "accent"} />;
+  const full = done === total;
+  return (
+    <div className={cx("flex gap-[3px]", className)} role="progressbar" aria-valuemin={0} aria-valuemax={total} aria-valuenow={done} aria-label={label}>
+      {Array.from({ length: total }, (_, i) => (
+        <span key={i} className={cx("h-2 flex-1 rounded-[2px] transition-colors duration-200", i < done ? (full ? "bg-ok" : "bg-accent") : "bg-rule")} />
+      ))}
     </div>
   );
 }
 
 export function PageHeader({ title, lead, meta, children }: { title: ReactNode; lead?: ReactNode; meta?: ReactNode; children?: ReactNode }) {
   return (
-    <header className="mb-6 border-b border-rule pb-5">
-      {meta && <div className="mb-2 flex flex-wrap items-center gap-2 text-sm text-muted">{meta}</div>}
-      <h1 className="text-2xl font-semibold leading-tight tracking-tight sm:text-[1.75rem]">{title}</h1>
-      {lead && <div className="mt-2 max-w-[72ch] text-muted">{lead}</div>}
+    <header className="mb-7">
+      {meta && <div className="mb-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted">{meta}</div>}
+      <h1 className="text-[1.75rem] font-semibold leading-[1.15] tracking-[-0.015em] text-balance">{title}</h1>
+      {lead && <div className="mt-2 max-w-[65ch] text-muted">{lead}</div>}
       {children && <div className="mt-4">{children}</div>}
     </header>
   );
@@ -78,7 +98,7 @@ export function Section({ title, aside, children, className, id }: { title?: Rea
     <section id={id} className={cx("mb-8", className)}>
       {(title || aside) && (
         <div className="mb-3 flex items-baseline justify-between gap-3">
-          {title && <h2 className="text-base font-semibold">{title}</h2>}
+          {title && <h2 className="h-section">{title}</h2>}
           {aside && <div className="text-sm text-muted">{aside}</div>}
         </div>
       )}
@@ -88,7 +108,7 @@ export function Section({ title, aside, children, className, id }: { title?: Rea
 }
 
 export function Panel({ children, className }: { children: ReactNode; className?: string }) {
-  return <div className={cx("rounded-lg border border-rule bg-surface p-4", className)}>{children}</div>;
+  return <div className={cx("card p-4", className)}>{children}</div>;
 }
 
 export function Empty({ title, children }: { title: string; children?: ReactNode }) {
@@ -101,7 +121,7 @@ export function Empty({ title, children }: { title: string; children?: ReactNode
 }
 
 export function Chip({ children, className }: { children: ReactNode; className?: string }) {
-  return <span className={cx("inline-flex items-center rounded border border-rule px-1.5 py-0.5 text-xs text-muted", className)}>{children}</span>;
+  return <span className={cx("inline-flex items-center rounded-md bg-surface-2 px-2 py-0.5 text-xs text-muted", className)}>{children}</span>;
 }
 
 export function DepthScale({ current, target }: { current: number | null; target: [number, number] | null }) {
@@ -154,15 +174,15 @@ export function ExternalLink({ href, children, className }: { href: string; chil
 /** Progressive disclosure: collapsed section with a large tap target. Native <details>, no JS. */
 export function Disclosure({ title, hint, open, children, id, className }: { title: ReactNode; hint?: ReactNode; open?: boolean; children: ReactNode; id?: string; className?: string }) {
   return (
-    <details id={id} open={open} className={cx("group rounded-lg border border-rule bg-surface", className)}>
-      <summary className="flex min-h-12 cursor-pointer list-none items-center gap-3 px-4 py-3 [&::-webkit-details-marker]:hidden">
+    <details id={id} open={open} className={cx("group card overflow-hidden", className)}>
+      <summary className="flex min-h-14 cursor-pointer list-none items-center gap-3 px-4 py-3 hover:bg-surface-2/60 active:bg-surface-2 [&::-webkit-details-marker]:hidden">
         <span className="min-w-0 flex-1">
           <span className="block font-medium">{title}</span>
           {hint && <span className="block text-sm text-muted">{hint}</span>}
         </span>
-        <IconChevron className="shrink-0 text-muted transition-transform group-open:rotate-90" width={18} height={18} />
+        <IconChevron className="shrink-0 text-faint transition-transform duration-150 group-open:rotate-90" width={18} height={18} />
       </summary>
-      <div className="border-t border-rule px-4 py-3">{children}</div>
+      <div className="border-t border-rule px-4 py-4">{children}</div>
     </details>
   );
 }

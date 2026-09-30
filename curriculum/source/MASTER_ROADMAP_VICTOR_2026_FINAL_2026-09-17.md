@@ -5497,7 +5497,7 @@ Pass when you can:
 
 ### Practical gate
 
-Complete 3 unseen beginner programming tasks in separate sessions with at most normal documentation lookup, and build one small CLI program without following a walkthrough. Do the unseen tasks with AI assistance off (Assess mode, section 109).
+Complete 3 unseen beginner programming tasks in separate sessions with at most normal documentation lookup, and build one small CLI program without following a walkthrough. Do the unseen tasks with AI assistance off (Assess mode).
 
 ## Checkpoint 2 - CS foundation
 
@@ -5510,7 +5510,7 @@ Pass when you can:
 
 ### Practical gate
 
-Complete a mixed set of unseen DSA problems with at least 80% correctness over repeated attempts, explain the complexity of each solution, and implement the core structures yourself. AI assistance stays off for these problems (Assess mode, section 109).
+Complete a mixed set of unseen DSA problems with at least 80% correctness over repeated attempts, explain the complexity of each solution, and implement the core structures yourself. AI assistance stays off for these problems (Assess mode).
 
 ## Checkpoint 3 - Backend engineer
 

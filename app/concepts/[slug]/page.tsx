@@ -50,7 +50,7 @@ export default async function Page({ params }: Props) {
         <Section title="Scheduled">
           {c.weeks.length ? (
             <ul className="flex flex-wrap gap-2 text-sm">
-              {c.weeks.map((w) => <li key={w}><Link className="inline-flex rounded-md border border-rule bg-surface px-2 py-1 hover:border-accent" href={`/weeks/${w}`}>Week {w}</Link></li>)}
+              {c.weeks.map((w) => <li key={w}><Link className="chip" href={`/weeks/${w}`}>Week {w}</Link></li>)}
             </ul>
           ) : <p className="text-sm text-muted">{c.onDemand ?? t.onDemand ?? "Not placed in a week."}</p>}
         </Section>

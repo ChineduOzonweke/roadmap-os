@@ -6,7 +6,7 @@
 
 | File | Status | Reason |
 |---|---|---|
-| `MASTER_ROADMAP_VICTOR_2026_FINAL_2026-09-17.md` | **Canonical curriculum authority** | Decision 1. MD5 `090f7c1c3e34bf04390f5c92373347d6`. |
+| `MASTER_ROADMAP_VICTOR_2026_FINAL_2026-09-17.md` | **Canonical curriculum authority** | Decision 1. MD5 `c85d55c0e1916af940605fe1467edc3c`. |
 | `VICTOR_MASTER_WEEKLY_EXECUTION_ROADMAP_2026_FINAL.md` | **Superseded as schedule content; role kept** | Decision 2: the execution layer is rebuilt from the master as `ROADMAP_OS_PHASE_WEEK_MAPPING.md`. MD5 `04214c8233b806aeb05afb34970b6849`. |
 | `MASTER_ROADMAP_VICTOR_2026_FINAL_2026-09-17__1_.md` | Archived | Byte-identical duplicate of the master. |
 | `01_FOUNDATION_AND_CORE_ENGINEERING.md` … `04_EXECUTION_CAREER_RESEARCH_AND_FINAL_REFERENCE.md` | Archived | Exact split of the master (concatenation is byte-identical). |

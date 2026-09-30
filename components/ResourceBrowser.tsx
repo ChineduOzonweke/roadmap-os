@@ -6,7 +6,7 @@ import { useHydrated, useUserState } from "@/lib/store";
 import { setResourceStatus } from "@/lib/actions";
 import type { Resource, Tool } from "@/types/curriculum";
 import type { ResourceStatus } from "@/types/state";
-import { ExternalLink, InlineText, cx } from "./ui";
+import { ExternalLink, InlineText } from "./ui";
 import { RefId } from "./Ref";
 
 const STATUS_OPTIONS: { id: ResourceStatus | ""; label: string }[] = [
@@ -47,7 +47,7 @@ export function ResourceBrowser({ resources, tools, phases }: { resources: Resou
     <div>
       <div className="mb-4 flex gap-2" role="tablist" aria-label="Registry">
         {(["resources", "tools"] as const).map((t) => (
-          <button key={t} role="tab" type="button" aria-selected={tab === t} onClick={() => setTab(t)} className={cx("rounded-md border px-3 py-1.5 text-sm", tab === t ? "border-accent bg-accent-soft text-accent" : "border-rule bg-surface")}>
+          <button key={t} role="tab" type="button" aria-selected={tab === t} onClick={() => setTab(t)} className="chip">
             {t === "resources" ? `Resources (${resources.length})` : `Tools (${tools.length})`}
           </button>
         ))}
@@ -56,33 +56,33 @@ export function ResourceBrowser({ resources, tools, phases }: { resources: Resou
       {tab === "resources" ? (
         <>
           <div className="mb-4 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-4">
-            <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Filter by name, note or URL" aria-label="Filter resources" className="rounded-md border border-rule bg-surface px-3 py-2 text-sm sm:col-span-2 lg:col-span-4" />
-            <select aria-label="Phase" value={phase} onChange={(e) => setPhase(e.target.value)} className="rounded-md border border-rule bg-surface px-2 py-2 text-sm">
+            <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Filter by name, note or URL" aria-label="Filter resources" className="w-auto input sm:col-span-2 lg:col-span-4" />
+            <select aria-label="Phase" value={phase} onChange={(e) => setPhase(e.target.value)} className="w-auto input">
               <option value="all">All phases</option>
               <option value="general">General (not phase-specific)</option>
               {phases.map((p) => <option key={p.id} value={p.id}>{p.id} {p.title}</option>)}
             </select>
-            <select aria-label="Type" value={label} onChange={(e) => setLabel(e.target.value)} className="rounded-md border border-rule bg-surface px-2 py-2 text-sm">
+            <select aria-label="Type" value={label} onChange={(e) => setLabel(e.target.value)} className="w-auto input">
               <option value="all">All types</option>
               {labels.map((l) => <option key={l} value={l}>{l}</option>)}
             </select>
-            <select aria-label="Status" value={status} onChange={(e) => setStatus(e.target.value)} className="rounded-md border border-rule bg-surface px-2 py-2 text-sm">
+            <select aria-label="Status" value={status} onChange={(e) => setStatus(e.target.value)} className="w-auto input">
               <option value="all">Any status</option>
               <option value="unmarked">Not marked</option>
               <option value="todo">To use</option>
               <option value="using">Using</option>
               <option value="done">Done</option>
             </select>
-            <label className="flex items-center gap-2 rounded-md border border-rule bg-surface px-3 py-2 text-sm">
-              <input type="checkbox" className="h-4 w-4 accent-[var(--accent)]" checked={linksOnly} onChange={(e) => setLinksOnly(e.target.checked)} />
+            <label className="flex min-h-11 items-center gap-2 rounded-lg border border-rule-strong bg-surface px-3 text-sm">
+              <input type="checkbox" className="shrink-0" checked={linksOnly} onChange={(e) => setLinksOnly(e.target.checked)} />
               Links only
             </label>
           </div>
           <p className="mb-2 text-xs text-muted">{list.length} shown. Entries without a link are the master&apos;s written guidance (for example practice instructions), kept as-is.</p>
           {list.length === 0 ? (
-            <p className="rounded-md border border-dashed border-rule px-4 py-6 text-center text-sm">No resources match these filters. Clear a filter to see more.</p>
+            <p className="rounded-xl border border-dashed border-rule-strong px-4 py-6 text-center text-sm">No resources match these filters. Clear a filter to see more.</p>
           ) : (
-            <ul className="divide-y divide-rule rounded-lg border border-rule bg-surface">
+            <ul className="list-card">
               {list.map((r) => (
                 <li key={r.id} className="flex flex-col gap-2 px-3 py-2.5 sm:flex-row sm:items-start sm:gap-4">
                   <div className="min-w-0 flex-1">
@@ -100,7 +100,7 @@ export function ResourceBrowser({ resources, tools, phases }: { resources: Resou
                     disabled={!ready}
                     value={ready ? s.resources[r.id] ?? "" : ""}
                     onChange={(e) => setResourceStatus(r.id, (e.target.value || null) as ResourceStatus | null)}
-                    className="shrink-0 self-start rounded-md border border-rule bg-surface px-2 py-1 text-sm"
+                    className="w-auto shrink-0 self-start input"
                   >
                     {STATUS_OPTIONS.map((o) => <option key={o.id} value={o.id}>{o.label}</option>)}
                   </select>
@@ -110,7 +110,7 @@ export function ResourceBrowser({ resources, tools, phases }: { resources: Resou
           )}
         </>
       ) : (
-        <ul className="divide-y divide-rule rounded-lg border border-rule bg-surface">
+        <ul className="list-card">
           {tools.map((t) => (
             <li key={t.id} className="px-3 py-2.5">
               <p className="text-xs text-muted"><RefId id={t.id} />, {t.activation}</p>

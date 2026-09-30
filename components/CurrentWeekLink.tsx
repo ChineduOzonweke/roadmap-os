@@ -8,7 +8,7 @@ export function CurrentWeekLink() {
   const ready = useHydrated();
   if (!ready) return null;
   return (
-    <Link href={`/weeks/${s.currentWeek}`} className="inline-flex rounded-md bg-accent px-3 py-1.5 text-sm text-accent-ink hover:opacity-90">
+    <Link href={`/weeks/${s.currentWeek}`} className="btn btn-primary btn-sm">
       Go to current week ({s.currentWeek})
     </Link>
   );

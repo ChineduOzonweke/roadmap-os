@@ -35,14 +35,14 @@ export function SettingsView({ dataInfo }: { dataInfo: { md5: string; generated:
     setMsg(r.ok ? { ok: true, text: "Imported. Your progress now matches the file." } : { ok: false, text: r.error });
   };
 
-  const btn = "rounded-md border border-rule bg-surface px-3 py-2 text-sm hover:border-accent";
+  const btn = "btn btn-secondary btn-sm";
   return (
     <div className="space-y-8">
       <section>
         <h2 className="mb-2 text-base font-semibold">Appearance</h2>
         <div className="flex flex-wrap gap-2" role="group" aria-label="Theme">
           {["system", "light", "dark"].map((t) => (
-            <button key={t} type="button" aria-pressed={mounted && theme === t} onClick={() => setTheme(t)} className={cx(btn, mounted && theme === t && "border-accent bg-accent-soft text-accent")}>
+            <button key={t} type="button" aria-pressed={mounted && theme === t} onClick={() => setTheme(t)} className="chip">
               {t === "system" ? "Match device" : t === "light" ? "Light" : "Dark"}
             </button>
           ))}
@@ -54,7 +54,7 @@ export function SettingsView({ dataInfo }: { dataInfo: { md5: string; generated:
         <p className="mb-2 text-sm text-muted">The week Today and the dashboard work from. Completing the current week moves it forward automatically.</p>
         <form className="flex flex-wrap items-center gap-2" onSubmit={(e) => { e.preventDefault(); const n = Number(week); if (n >= 1 && n <= 206) { setCurrentWeek(n); setWeek(""); } }}>
           <span className="text-sm">Now: week {ready ? s.currentWeek : "…"}</span>
-          <input type="number" min={1} max={206} value={week} onChange={(e) => setWeek(e.target.value)} placeholder="1–206" aria-label="New current week" className="w-24 rounded-md border border-rule bg-surface px-2 py-1.5 text-sm" />
+          <input type="number" min={1} max={206} value={week} onChange={(e) => setWeek(e.target.value)} placeholder="1–206" aria-label="New current week" className="w-auto w-24 input" />
           <button type="submit" className={btn}>Set week</button>
         </form>
       </section>
@@ -62,7 +62,7 @@ export function SettingsView({ dataInfo }: { dataInfo: { md5: string; generated:
       <section>
         <h2 className="mb-2 text-base font-semibold">Reference codes</h2>
         <label className="flex min-h-11 cursor-pointer items-start gap-3">
-          <input type="checkbox" className="mt-0.5 h-5 w-5 accent-[var(--accent)]" disabled={!ready} checked={ready && !!s.flags[SHOW_REFS_FLAG]} onChange={(e) => setFlag(SHOW_REFS_FLAG, e.target.checked)} />
+          <input type="checkbox" className="mt-0.5 shrink-0" disabled={!ready} checked={ready && !!s.flags[SHOW_REFS_FLAG]} onChange={(e) => setFlag(SHOW_REFS_FLAG, e.target.checked)} />
           <span className="text-sm">
             <span className="block font-medium">Show reference codes</span>
             <span className="text-muted">Adds the roadmap&apos;s internal codes (P13.2, C3, SG4, PR07) next to names, for cross-checking with the master roadmap. Off by default.</span>

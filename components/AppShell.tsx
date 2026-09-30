@@ -7,13 +7,13 @@ import { NAV, isActive } from "@/lib/nav";
 import { useHydrated, useUserState } from "@/lib/store";
 import { stageOfWeek } from "@/lib/progress";
 import { ThemeToggle } from "./ThemeToggle";
-import { IconClose, IconDashboard, IconMore, IconSearch, IconToday, IconTree } from "./icons";
+import { IconClose, IconMore, IconProgress, IconRoadmap, IconSearch, IconToday } from "./icons";
 import { cx } from "./ui";
 
 function Brand() {
   return (
     <Link href="/" className="flex items-center gap-2 font-semibold tracking-tight">
-      <span aria-hidden className="grid h-6 w-6 place-items-center rounded bg-accent font-mono text-[11px] font-medium text-accent-ink">R</span>
+      <span aria-hidden className="grid h-7 w-7 place-items-center rounded-lg bg-accent text-accent-ink"><IconRoadmap width={16} height={16} strokeWidth={2} /></span>
       Roadmap OS
     </Link>
   );
@@ -24,8 +24,7 @@ function WeekChip() {
   const ready = useHydrated();
   const stage = stageOfWeek(s.currentWeek);
   return (
-    <Link href="/" className="block rounded-md border border-rule px-3 py-2 hover:border-accent">
-      <span className="block text-xs text-muted">Current week</span>
+    <Link href="/" className="block rounded-lg bg-surface-2 px-3 py-2.5 hover:bg-rule">
       <span className="block font-medium">{ready ? `Week ${s.currentWeek} of 206` : "Loading progress"}</span>
       {ready && stage && <span className="block truncate text-xs text-muted">{stage.n}</span>}
     </Link>
@@ -38,7 +37,7 @@ function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
     <nav aria-label="Main">
       {NAV.map((g) => (
         <div key={g.group} className="mb-4">
-          <p className="mb-1 px-2 text-xs text-faint">{g.group}</p>
+          <p className="mb-1 px-3 text-xs font-medium text-faint">{g.group}</p>
           <ul>
             {g.items.map((it) => {
               const active = isActive(pathname, it.href);
@@ -49,7 +48,7 @@ function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
                     onClick={onNavigate}
                     aria-current={active ? "page" : undefined}
                     className={cx(
-                      "block rounded-md px-2 py-1.5 text-[0.93rem]",
+                      "flex min-h-10 items-center rounded-lg px-3 text-[0.9375rem]",
                       active ? "bg-accent-soft font-medium text-accent" : "text-ink hover:bg-surface-2",
                     )}
                   >
@@ -67,8 +66,8 @@ function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
 
 const BOTTOM = [
   { href: "/", label: "Today", Icon: IconToday },
-  { href: "/curriculum", label: "Roadmap", Icon: IconTree },
-  { href: "/progress", label: "Progress", Icon: IconDashboard },
+  { href: "/curriculum", label: "Roadmap", Icon: IconRoadmap },
+  { href: "/progress", label: "Progress", Icon: IconProgress },
   { href: "/search", label: "Search", Icon: IconSearch },
 ];
 
@@ -107,27 +106,27 @@ export function AppShell({ children }: { children: ReactNode }) {
           </div>
         </header>
 
-        <main id="main" className="mx-auto w-full max-w-5xl px-4 pb-28 pt-5 sm:px-6 lg:px-10 lg:pb-16 lg:pt-8">
+        <main id="main" className="mx-auto w-full max-w-4xl px-4 pb-32 pt-6 sm:px-6 lg:px-10 lg:pb-16 lg:pt-10">
           {children}
         </main>
       </div>
 
-      <nav aria-label="Quick" className="fixed inset-x-0 bottom-0 z-30 border-t border-rule bg-surface/95 pb-[env(safe-area-inset-bottom)] backdrop-blur lg:hidden">
-        <ul className="grid grid-cols-5">
+      <nav aria-label="Quick" className="fixed inset-x-0 bottom-0 z-30 border-t border-rule bg-surface/95 pb-[env(safe-area-inset-bottom)] shadow-[0_-4px_16px_rgb(0_0_0/0.04)] backdrop-blur lg:hidden">
+        <ul className="mx-auto grid max-w-md grid-cols-5 px-1">
           {BOTTOM.map(({ href, label, Icon }) => {
             const active = isActive(pathname, href);
             return (
               <li key={href}>
-                <Link href={href} aria-current={active ? "page" : undefined} className={cx("flex min-h-14 flex-col items-center justify-center gap-0.5 py-2 text-[11px]", active ? "text-accent" : "text-muted")}>
-                  <Icon />
+                <Link href={href} aria-current={active ? "page" : undefined} className={cx("group flex min-h-[3.75rem] flex-col items-center justify-center gap-1 pb-1.5 pt-2 text-xs", active ? "font-medium text-accent" : "text-muted active:text-ink")}>
+                  <span className={cx("flex h-8 w-14 items-center justify-center rounded-full transition-colors", active ? "bg-accent-soft" : "group-active:bg-surface-2")}><Icon width={22} height={22} /></span>
                   {label}
                 </Link>
               </li>
             );
           })}
           <li>
-            <button type="button" onClick={() => setMenu(true)} className="flex min-h-14 w-full flex-col items-center justify-center gap-0.5 py-2 text-[11px] text-muted" aria-expanded={menu} aria-controls="more-menu">
-              <IconMore />
+            <button type="button" onClick={() => setMenu(true)} className="group flex min-h-[3.75rem] w-full flex-col items-center justify-center gap-1 pb-1.5 pt-2 text-xs text-muted active:text-ink" aria-expanded={menu} aria-controls="more-menu">
+              <span className="flex h-8 w-14 items-center justify-center rounded-full group-active:bg-surface-2"><IconMore width={22} height={22} /></span>
               More
             </button>
           </li>
@@ -137,10 +136,11 @@ export function AppShell({ children }: { children: ReactNode }) {
       {menu && (
         <div className="fixed inset-0 z-40 lg:hidden" role="dialog" aria-modal="true" aria-label="All sections" id="more-menu">
           <button type="button" className="absolute inset-0 bg-black/40" aria-label="Close menu" onClick={() => setMenu(false)} />
-          <div className="absolute inset-x-0 bottom-0 max-h-[85dvh] overflow-y-auto rounded-t-xl border-t border-rule bg-surface px-4 pb-[calc(1.5rem+env(safe-area-inset-bottom))] pt-3">
+          <div className="absolute inset-x-0 bottom-0 max-h-[85dvh] overflow-y-auto rounded-t-2xl bg-surface px-3 pb-[calc(1.5rem+env(safe-area-inset-bottom))] pt-2 shadow-[0_-8px_32px_rgb(0_0_0/0.18)]">
+            <div aria-hidden className="mx-auto mb-2 h-1 w-10 rounded-full bg-rule-strong" />
             <div className="mb-3 flex items-center justify-between">
-              <span className="font-semibold">All sections</span>
-              <button type="button" onClick={() => setMenu(false)} className="inline-flex h-9 w-9 items-center justify-center rounded-md hover:bg-surface-2" aria-label="Close menu">
+              <span className="px-3 font-semibold">All sections</span>
+              <button type="button" onClick={() => setMenu(false)} className="inline-flex h-11 w-11 items-center justify-center rounded-lg hover:bg-surface-2" aria-label="Close menu">
                 <IconClose />
               </button>
             </div>

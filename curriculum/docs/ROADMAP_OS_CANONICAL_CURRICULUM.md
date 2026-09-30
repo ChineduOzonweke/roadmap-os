@@ -1,7 +1,7 @@
 # ROADMAP OS — CANONICAL CURRICULUM STRUCTURE
 
 **Version:** v1.0 (2026-09-24)  
-**Authority:** normalised from `MASTER_ROADMAP_VICTOR_2026_FINAL_2026-09-17.md` (MD5 `090f7c1c3e34bf04390f5c92373347d6`).  
+**Authority:** normalised from `MASTER_ROADMAP_VICTOR_2026_FINAL_2026-09-17.md` (MD5 `c85d55c0e1916af940605fe1467edc3c`).  
 **Rule:** the master decides *what* is learned and the dependency order. If this file and the master ever disagree, the master wins and this file is regenerated. Every concept line below is the master's own text; only IDs, heading levels and grouping were added.  
 **Scope:** curriculum structure only. Scheduling lives in `ROADMAP_OS_PHASE_WEEK_MAPPING.md`; decisions and fixes live in `ROADMAP_OS_RECONCILIATION_LOG.md`.
 
@@ -223,7 +223,7 @@ Pass when you can:
 
 **Practical gate**
 
-Complete 3 unseen beginner programming tasks in separate sessions with at most normal documentation lookup, and build one small CLI program without following a walkthrough. Do the unseen tasks with AI assistance off (Assess mode, section 109).
+Complete 3 unseen beginner programming tasks in separate sessions with at most normal documentation lookup, and build one small CLI program without following a walkthrough. Do the unseen tasks with AI assistance off (Assess mode).
 
 ### C2 — CS foundation
 
@@ -240,7 +240,7 @@ Pass when you can:
 
 **Practical gate**
 
-Complete a mixed set of unseen DSA problems with at least 80% correctness over repeated attempts, explain the complexity of each solution, and implement the core structures yourself. AI assistance stays off for these problems (Assess mode, section 109).
+Complete a mixed set of unseen DSA problems with at least 80% correctness over repeated attempts, explain the complexity of each solution, and implement the core structures yourself. AI assistance stays off for these problems (Assess mode).
 
 ### C3 — Backend engineer
 

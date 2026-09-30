@@ -46,7 +46,7 @@
    "debug a small program",
    "make meaningful Git commits"
   ],
-  "practicalGate": "Complete 3 unseen beginner programming tasks in separate sessions with at most normal documentation lookup, and build one small CLI program without following a walkthrough. Do the unseen tasks with AI assistance off (Assess mode, section 109).",
+  "practicalGate": "Complete 3 unseen beginner programming tasks in separate sessions with at most normal documentation lookup, and build one small CLI program without following a walkthrough. Do the unseen tasks with AI assistance off (Assess mode).",
   "note": ""
  },
  {
@@ -143,7 +143,7 @@
    "solve standard beginner/intermediate DSA problems",
    "explain core OS, networking, and database concepts"
   ],
-  "practicalGate": "Complete a mixed set of unseen DSA problems with at least 80% correctness over repeated attempts, explain the complexity of each solution, and implement the core structures yourself. AI assistance stays off for these problems (Assess mode, section 109).",
+  "practicalGate": "Complete a mixed set of unseen DSA problems with at least 80% correctness over repeated attempts, explain the complexity of each solution, and implement the core structures yourself. AI assistance stays off for these problems (Assess mode).",
   "note": ""
  },
  {

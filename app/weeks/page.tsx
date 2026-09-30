@@ -30,7 +30,7 @@ export default function Page() {
             {groups.map((g) => (
               <div key={g.id} className="mb-5">
                 {subs.length > 0 && <h3 className="mb-2 text-sm font-medium">{g.name} <RefId id={g.id} /> <span className="font-normal text-muted">(weeks {g.range[0]}–{g.range[1]})</span></h3>}
-                <ol className="divide-y divide-rule rounded-md border border-rule bg-surface">
+                <ol className="list-card">
                   {weeks.filter((w) => w.cw >= g.range[0] && w.cw <= g.range[1]).map((w) => (
                     <li key={w.cw}>
                       <Link href={`/weeks/${w.cw}`} className="flex flex-col gap-1 px-3 py-2 hover:bg-surface-2 sm:flex-row sm:items-center sm:gap-4">

@@ -5,7 +5,7 @@ import {
   checkpointName, checkpointsForPhase, dependentsOfPhase, getCheckpoint, getPhase, phases, projectsForPhase, refLabel, resources, topicsOfPhase,
 } from "@/lib/data";
 import { Markdown } from "@/components/Markdown";
-import { Chip, ExternalLink, PageHeader, Section } from "@/components/ui";
+import { Chip, Disclosure, ExternalLink, PageHeader, Section, cx } from "@/components/ui";
 import { GateBadge, NotesEditor, PhaseStatus, TopicStatus } from "@/components/progress";
 import { RefId } from "@/components/Ref";
 
@@ -46,40 +46,33 @@ export default async function Page({ params }: Props) {
         <PhaseStatus phaseId={p.id} />
       </PageHeader>
 
-      <div className="mb-8 grid grid-cols-1 gap-3 text-sm sm:grid-cols-2 lg:grid-cols-4">
-        <div><p className="text-xs text-muted">Priority</p><p>{p.priority}</p></div>
-        <div><p className="text-xs text-muted">Depth target</p><p>{p.target}</p></div>
-        <div><p className="text-xs text-muted">Position in the 206 weeks</p><p>{p.weekRange ? `Weeks ${p.weekRange[0]}–${p.weekRange[1]}` : p.placement}</p></div>
-        <div><p className="text-xs text-muted">Stages</p><p>{p.stages.join(", ") || p.placement}</p></div>
-      </div>
-
-      {(p.gate || p.unlockNote) && (
-        <Section title="Unlock rule">
-          {p.gate && <p className="text-sm"><span className="font-medium">Master gate:</span> {p.gate}</p>}
-          {p.unlockNote && <p className="mt-1 text-sm">{p.unlockNote}</p>}
-        </Section>
-      )}
-
       <Section title="Topics" aside={`${topics.filter((t) => t.kind === "concepts").length} topics`}>
-        <ul className="divide-y divide-rule rounded-md border border-rule bg-surface">
+        <ul className="list-card">
           {topics.filter((t) => t.kind === "concepts" || t.kind === "parent").map((t) => (
-            <li key={t.id} className={t.parentId ? "pl-4" : ""}>
+            <li key={t.id}>
               {t.kind === "parent" ? (
-                <div className="px-3 py-2 text-sm font-medium">{t.title} <span className="font-normal text-muted">{t.meta}</span></div>
+                <div className="bg-surface-2/60 px-4 py-2.5 text-sm font-semibold">{t.title}</div>
               ) : (
-                <div className="flex flex-wrap items-center gap-x-3 gap-y-1 px-3 py-2">
-                  <Link href={`/topics/${t.id}`} className="min-w-0 flex-1 hover:text-accent"><RefId id={t.id} /> {t.label}</Link>
-                  <span className="text-xs text-muted">
-                    {t.depth ? `D${t.depth.min}${t.depth.max !== t.depth.min ? `–D${t.depth.max}` : ""}` : ""}
-                    {t.firstWeek ? `, from week ${t.firstWeek}` : t.onDemand ? ", on demand" : ""}
+                <Link href={`/topics/${t.id}`} className={cx("flex min-h-14 items-center gap-3 py-3 pr-4 hover:bg-surface-2/60 active:bg-surface-2", t.parentId ? "pl-7" : "pl-4")}>
+                  <span className="min-w-0 flex-1">
+                    <span className="block leading-snug">{t.parentId ? t.title : t.label} <RefId id={t.id} /></span>
+                    <span className="block text-xs text-muted">{t.firstWeek ? `From week ${t.firstWeek}` : t.onDemand ? "When needed" : "Not scheduled"}</span>
                   </span>
                   <TopicStatus topicId={t.id} />
-                </div>
+                </Link>
               )}
             </li>
           ))}
         </ul>
       </Section>
+
+      <Disclosure className="mb-8" title="Phase details" hint="Priority, depth target and place in the schedule">
+        <dl className="grid grid-cols-1 gap-4 text-sm sm:grid-cols-2">
+          <div><dt className="text-xs text-muted">Priority</dt><dd>{p.priority}</dd></div>
+          <div><dt className="text-xs text-muted">Position in the 206 weeks</dt><dd>{p.weekRange ? `Weeks ${p.weekRange[0]}–${p.weekRange[1]}` : p.placement}</dd></div>
+          <div className="sm:col-span-2"><dt className="text-xs text-muted">Depth target</dt><dd>{p.target}</dd></div>
+        </dl>
+      </Disclosure>
 
       {rules.length > 0 && (
         <Section title="Mastery statements and rules">

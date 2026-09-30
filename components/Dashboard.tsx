@@ -5,22 +5,26 @@ import { useMemo } from "react";
 import { useHydrated, useUserState } from "@/lib/store";
 import {
   COMPETENCY_GATES, approachingGate, availableTopics, gateById, gateCriteriaDone, gateName, gatePassed, idx,
-  overallRollup, pct, phaseById, phaseRollup, stageOfWeek, weekByCw, weekView, weeksCompleted,
+  overallRollup, pct, phaseById, phaseRollup, stageOfWeek, unitLabel, weekByCw, weekView, weeksCompleted,
 } from "@/lib/progress";
 import { currentTier } from "@/lib/ai";
 import { WeekStrip } from "./WeekStrip";
 import { RefId } from "./Ref";
-import { Bar, Disclosure, StatusPill, cx } from "./ui";
+import { Bar, Disclosure, InlineText, StatusGlyph, StatusPill, cx } from "./ui";
 
 function Stat({ label, value, sub, bar }: { label: string; value: string; sub?: string; bar?: number }) {
   return (
     <div className="min-w-0">
-      <p className="text-xs text-muted">{label}</p>
-      <p className="text-xl font-semibold tabular-nums">{value}</p>
-      {bar != null && <Bar value={bar} className="mt-1" label={label} />}
-      {sub && <p className="mt-1 text-xs text-muted">{sub}</p>}
+      <p className="text-2xl font-semibold leading-none tabular-nums tracking-tight">{value}{sub && <span className="ml-1 text-sm font-normal text-muted">{sub}</span>}</p>
+      <p className="mt-1.5 text-sm text-muted">{label}</p>
+      {bar != null && <Bar value={bar} className="mt-2.5" label={label} />}
     </div>
   );
+}
+
+function ago(iso: string) {
+  const d = Math.floor((Date.now() - new Date(iso).getTime()) / 86400000);
+  return d <= 0 ? "Today" : d === 1 ? "Yesterday" : d < 7 ? `${d} days ago` : new Date(iso).toLocaleDateString();
 }
 
 /** Progress: what I have done, where I am, what comes next. The daily work lives on Today. */
@@ -42,6 +46,7 @@ export function Dashboard() {
       active: idx.projects.filter((p) => s.projects[p.id]?.status === "in_progress"),
       available: availableTopics(s, 6),
       weeksDone: weeksCompleted(s),
+      recent: Object.entries(s.checks).sort((a, b) => b[1].localeCompare(a[1])).slice(0, 5),
       upcoming: [cw + 1, cw + 2, cw + 3].filter((x) => x <= 206).map(weekByCw),
       tier: currentTier(s),
     };
@@ -55,15 +60,16 @@ export function Dashboard() {
   return (
     <div className="space-y-8">
       <header>
-        <h1 className="text-[1.6rem] font-semibold leading-tight tracking-tight">Progress</h1>
-        <p className="mt-1 text-muted">What you have done, where you are, and what comes next.</p>
+        <h1 className="text-[1.75rem] font-semibold leading-[1.15] tracking-[-0.015em]">Progress</h1>
+        <p className="mt-2 text-muted">What you have done, where you are, and what comes next.</p>
       </header>
 
-      <section aria-labelledby="where" className="rounded-lg border border-rule bg-surface p-4">
-        <h2 id="where" className="text-sm font-medium text-muted">Where you are</h2>
-        <p className="mt-1 text-lg font-semibold">Week {cw} of 206: {w.t}</p>
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-start lg:gap-6">
+      <section aria-labelledby="where" className="card p-5">
+        <h2 id="where" className="text-sm text-muted">Where you are</h2>
+        <p className="mt-1 text-lg font-semibold leading-snug">Week {cw} of 206: {w.t}</p>
         <p className="mt-0.5 text-sm text-muted">
-          {phase && <><Link href={`/phases/${data.phaseId}`} className="hover:text-accent">{phase.t}</Link> <RefId id={data.phaseId} /> · </>}
+          {phase && <><Link href={`/phases/${data.phaseId}`} className="hover:text-accent">{phase.t}</Link> <RefId id={data.phaseId} />, </>}
           {stage?.n} <RefId id={stage?.id ?? ""} />
         </p>
         {data.wv.total > 0 && (
@@ -78,31 +84,21 @@ export function Dashboard() {
             <span className="tabular-nums text-muted">{pct(data.phaseR.pct)} of this phase</span>
           </div>
         )}
-        <Link href="/" className="mt-4 flex min-h-11 w-full items-center justify-center rounded-md bg-accent px-4 font-medium text-accent-ink hover:opacity-90">Continue today&apos;s work</Link>
-      </section>
-
-      <section aria-labelledby="done">
-        <h2 id="done" className="mb-3 text-base font-semibold">Completed so far</h2>
-        <div className="grid grid-cols-2 gap-5 rounded-lg border border-rule bg-surface p-4 sm:grid-cols-4">
-          <Stat label="Weeks complete" value={`${data.weeksDone}`} sub="of 206" bar={data.weeksDone / 206} />
-          <Stat label="Checklist items" value={pct(data.overall.pct)} sub={`${data.overall.done} of ${data.overall.total}`} bar={data.overall.pct} />
-          <Stat label="Topics mastered" value={`${data.overall.mastered}`} sub={`of ${data.overall.topics}`} bar={data.overall.mastered / data.overall.topics} />
-          <Stat label="Checkpoints passed" value={`${data.gatesPassed} of 8`} bar={data.gatesPassed / 8} />
-        </div>
+        <Link href="/" className="btn btn-primary btn-block mt-5">Continue today&apos;s work</Link>
       </section>
 
       <section aria-labelledby="next">
-        <h2 id="next" className="mb-3 text-base font-semibold">What comes next</h2>
+        <h2 id="next" className="h-section mb-3">What comes next</h2>
         <div className="space-y-3">
           {gate && (
-            <Link href={`/checkpoints/${gate.id}`} className="block rounded-lg border border-rule bg-surface p-4 hover:border-accent">
+            <Link href={`/checkpoints/${gate.id}`} className="card block p-4 hover:bg-surface-2/60">
               <p className="text-xs text-muted">{data.ap?.blocking ? "Checkpoint behind you, not yet passed" : "Next checkpoint"}</p>
               <p className="font-medium">{gateName(gate.id)} <RefId id={gate.id} /></p>
               <p className="text-sm text-muted">{gate.w ? (gate.w > cw ? `Planned for week ${gate.w}, ${gate.w - cw} week(s) ahead` : `Planned for week ${gate.w}`) : "Timed to recruiting periods"}</p>
               {gate.n > 0 && <Bar value={gateCriteriaDone(s, gate) / gate.n} className="mt-2" label="Checkpoint criteria" />}
             </Link>
           )}
-          <ul className="divide-y divide-rule rounded-lg border border-rule bg-surface">
+          <ul className="list-card">
             {data.upcoming.map((u) => (
               <li key={u.cw}>
                 <Link href={`/weeks/${u.cw}`} className="flex min-h-12 flex-col justify-center px-4 py-2 hover:bg-surface-2">
@@ -114,10 +110,35 @@ export function Dashboard() {
           </ul>
         </div>
       </section>
+      </div>
+
+      <section aria-labelledby="done">
+        <h2 id="done" className="h-section mb-3">Completed so far</h2>
+        <div className="card grid grid-cols-2 gap-x-6 gap-y-6 p-5 sm:grid-cols-4">
+          <Stat label="Weeks complete" value={`${data.weeksDone}`} sub="/ 206" bar={data.weeksDone / 206} />
+          <Stat label={`Checklist items (${pct(data.overall.pct)})`} value={`${data.overall.done}`} sub={`/ ${data.overall.total}`} bar={data.overall.pct} />
+          <Stat label="Topics mastered" value={`${data.overall.mastered}`} sub={`/ ${data.overall.topics}`} bar={data.overall.mastered / data.overall.topics} />
+          <Stat label="Checkpoints passed" value={`${data.gatesPassed}`} sub="/ 8" bar={data.gatesPassed / 8} />
+        </div>
+        {data.recent.length > 0 && (
+          <div className="mt-4">
+            <h3 className="mb-2 text-sm font-medium text-muted">Recently ticked</h3>
+            <ul className="list-card">
+              {data.recent.map(([id, at]) => (
+                <li key={id} className="flex items-center gap-3 px-4 py-2.5">
+                  <StatusGlyph status="completed" />
+                  <span className="min-w-0 flex-1 truncate"><InlineText text={unitLabel(id)} /></span>
+                  <span className="shrink-0 text-xs text-muted">{ago(at)}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </section>
 
       <section aria-labelledby="map">
         <div className="mb-3 flex items-baseline justify-between">
-          <h2 id="map" className="text-base font-semibold">All 206 weeks</h2>
+          <h2 id="map" className="h-section">All 206 weeks</h2>
           <Link href="/weeks" className="text-sm text-accent hover:underline">Week list</Link>
         </div>
         <WeekStrip />
@@ -131,7 +152,8 @@ export function Dashboard() {
               const info = gateById.get(g);
               return (
                 <li key={g}>
-                  <Link href={`/checkpoints/${g}`} className={cx("flex min-h-11 items-center gap-3 rounded-md border px-3 py-2 text-sm", passed ? "border-ok bg-ok-soft" : "border-rule hover:border-accent")}>
+                  <Link href={`/checkpoints/${g}`} className={cx("flex min-h-12 items-center gap-3 rounded-lg px-3 py-2 text-sm hover:bg-surface-2", passed && "text-ok")}>
+                    <StatusGlyph status={passed ? "completed" : "available"} />
                     <span className="flex-1">{gateName(g)} <RefId id={g} /></span>
                     <span className="text-xs text-muted">{passed ? "Passed" : info?.w ? `Week ${info.w}` : "Recruiting periods"}</span>
                   </Link>

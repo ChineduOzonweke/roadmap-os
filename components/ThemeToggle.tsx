@@ -19,7 +19,7 @@ export function ThemeToggle({ withLabel = false }: { withLabel?: boolean }) {
       aria-label={label}
       title={label}
     >
-      {mounted ? dark ? <IconSun /> : <IconMoon /> : <span className="h-5 w-5" />}
+      {mounted ? dark ? <IconSun /> : <IconMoon /> : <span className="shrink-0" />}
       {withLabel && <span className="text-sm">{dark ? "Light mode" : "Dark mode"}</span>}
     </button>
   );

@@ -5,7 +5,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useDraft } from "@/lib/useDraft";
 import { useHydrated, useUserState } from "@/lib/store";
 import {
-  conceptBlocker, gatePassed, gateById, gateName, nameOf, nextReviewDate, phaseRollup, topicById, topicView, weekByCw, weekView, pct,
+  conceptBlocker, gatePassed, gateById, gateName, nameOf, nextReviewDate, phaseRollup, topicById, topicView, weekByCw, weekView,
 } from "@/lib/progress";
 import {
   recordReview, setCheck, setChecks, setCurrentWeek, setDepth, setEvidence, setGateCriterion, setGateEvidence,
@@ -13,7 +13,7 @@ import {
 } from "@/lib/actions";
 import { conceptSlug, hrefFor } from "@/lib/ids";
 import type { DepthLevel, GateStatus, MasteryLevel } from "@/types/state";
-import { Bar, InlineText, StatusPill, cx } from "./ui";
+import { Bar, InlineText, StatusGlyph, StatusPill, cx } from "./ui";
 import { IconChevron, IconLock } from "./icons";
 import { RefId } from "./Ref";
 
@@ -71,26 +71,33 @@ export function WeekStatusPill({ cw }: { cw: number }) {
 // ------------------------------------------------------------------ checklists
 export type ChecklistItem = { id: string; text: string };
 
-export function ConceptChecklist({ items, showIds = true, linkConcepts = true, onToggle }: { items: ChecklistItem[]; showIds?: boolean; linkConcepts?: boolean; onToggle?: (id: string, checked: boolean) => void }) {
+/**
+ * The checklist. `lead` gives the first row the "do this next" treatment on Today:
+ * larger text and a petrol rule on the left, nothing louder.
+ */
+export function ConceptChecklist({ items, showIds = true, linkConcepts = true, onToggle, lead = false }: { items: ChecklistItem[]; showIds?: boolean; linkConcepts?: boolean; onToggle?: (id: string, checked: boolean) => void; lead?: boolean }) {
   const s = useUserState();
   const ready = useHydrated();
   return (
-    <ul className="divide-y divide-rule rounded-md border border-rule bg-surface">
-      {items.map((it) => {
+    <ul className="list-card">
+      {items.map((it, i) => {
         const checked = ready && !!s.checks[it.id];
         const blocker = ready ? conceptBlocker(s, it.id) : null;
+        const isLead = lead && i === 0 && !checked;
         return (
-          <li key={it.id} className="flex items-stretch">
-            <label className="flex min-h-11 flex-1 cursor-pointer items-start gap-3 px-3 py-2.5 active:bg-surface-2">
+          <li key={it.id} className={cx("relative flex items-stretch transition-colors", checked && "bg-surface-2/40", isLead && "bg-accent-soft/45")}>
+            {isLead && <span aria-hidden className="absolute inset-y-0 left-0 w-[3px] bg-accent" />}
+            <label className={cx("flex flex-1 cursor-pointer items-start gap-3 px-4 hover:bg-surface-2/50 active:bg-surface-2", isLead ? "min-h-16 py-4" : "min-h-12 py-3")}>
               <input
                 type="checkbox"
-                className="mt-0.5 h-5 w-5 shrink-0 accent-[var(--accent)]"
+                className={cx("shrink-0", isLead ? "mt-[3px]" : "mt-0.5")}
                 checked={checked}
                 disabled={!ready}
                 onChange={(e) => { setCheck(it.id, e.target.checked); onToggle?.(it.id, e.target.checked); }}
               />
               <span className="min-w-0 flex-1">
-                <span className={cx(checked && "text-muted line-through decoration-rule")}>
+                {isLead && <span className="mb-0.5 block text-xs font-medium text-accent">Next</span>}
+                <span className={cx(checked ? "text-faint line-through decoration-rule-strong" : isLead ? "text-lg font-medium leading-snug" : "")}>
                   <InlineText text={it.text} />
                 </span>
                 {blocker && (
@@ -104,7 +111,7 @@ export function ConceptChecklist({ items, showIds = true, linkConcepts = true, o
             {linkConcepts && it.id.includes("#") && (
               <Link
                 href={`/concepts/${conceptSlug(it.id)}`}
-                className="flex w-10 shrink-0 items-center justify-center text-faint hover:text-accent"
+                className="flex w-11 shrink-0 items-center justify-center text-faint hover:bg-surface-2/50 hover:text-accent"
                 aria-label="Details and notes"
                 title="Details and notes"
               >
@@ -125,12 +132,18 @@ export function ChecklistSummary({ ids }: { ids: string[] }) {
   const done = ids.filter((i) => !!s.checks[i]).length;
   const all = done === ids.length;
   return (
-    <div className="flex flex-wrap items-center gap-3 text-sm">
-      <span className="tabular-nums text-muted">{done} of {ids.length} checked ({pct(done / ids.length)})</span>
-      <Bar value={done / ids.length} className="w-32" tone={all ? "ok" : "accent"} label="Checklist progress" />
-      <button type="button" className="text-accent hover:underline" onClick={() => setChecks(ids, !all)}>
-        {all ? "Uncheck all" : "Check all"}
-      </button>
+    <div>
+      <div className="mb-1.5 flex items-baseline justify-between gap-3 text-sm">
+        <span className="tabular-nums"><span className="font-medium">{done}</span><span className="text-muted"> of {ids.length} done</span></span>
+        <button
+          type="button"
+          className="btn btn-quiet btn-sm -mr-2"
+          onClick={() => { if (all || window.confirm(`Mark all ${ids.length} items as done?`)) setChecks(ids, !all); }}
+        >
+          {all ? "Clear all" : "Mark all done"}
+        </button>
+      </div>
+      <Bar value={done / ids.length} tone={all ? "ok" : "accent"} label="Checklist progress" />
     </div>
   );
 }
@@ -140,8 +153,8 @@ export function SingleCheck({ id, label }: { id: string; label: string }) {
   const ready = useHydrated();
   const checked = ready && !!s.checks[id];
   return (
-    <label className="inline-flex cursor-pointer items-center gap-2 rounded-md border border-rule bg-surface px-3 py-2">
-      <input type="checkbox" className="h-4 w-4 accent-[var(--accent)]" checked={checked} disabled={!ready} onChange={(e) => setCheck(id, e.target.checked)} />
+    <label className="inline-flex min-h-12 cursor-pointer items-center gap-3 rounded-xl border border-rule bg-surface px-4 py-2">
+      <input type="checkbox" className="shrink-0" checked={checked} disabled={!ready} onChange={(e) => setCheck(id, e.target.checked)} />
       <span>{label}</span>
     </label>
   );
@@ -154,16 +167,9 @@ export function ClearanceNotice({ topicId }: { topicId: string }) {
   const t = topicById.get(topicId);
   if (!ready || !t) return null;
   const v = topicView(s, t);
-  if (v.cleared) {
-    return (
-      <p className="rounded-md border border-rule bg-surface px-3 py-2 text-sm">
-        <span className="font-medium text-ok">Cleared to work on.</span>{" "}
-        <span className="text-muted">{t.g ? `${t.g} is passed.` : "No gate is required before this topic."}</span>
-      </p>
-    );
-  }
+  if (v.cleared) return null; // cleared is the normal case; only a block needs saying
   return (
-    <div className="rounded-md border border-warn/40 bg-warn-soft px-3 py-2 text-sm">
+    <div className="mb-6 rounded-xl border border-warn/30 bg-warn-soft px-4 py-3 text-sm">
       <p className="flex items-center gap-2 font-medium text-warn"><IconLock width={16} height={16} /> Not cleared yet. You can read it, but it is not your current work.</p>
       <ul className="mt-1 list-disc pl-5 text-ink">
         {v.blockers.map((b) => (
@@ -208,11 +214,11 @@ export function MasteryPanel({ topicId, states, depths, target }: { topicId: str
                   onClick={() => setMastery(topicId, st.level as MasteryLevel)}
                   aria-pressed={active}
                   className={cx(
-                    "w-full rounded-md border px-2.5 py-2 text-left text-sm",
-                    active ? "border-accent bg-accent-soft" : reached ? "border-rule bg-surface-2" : "border-rule bg-surface hover:border-accent/60",
+                    "w-full rounded-lg border px-3 py-2.5 text-left text-sm transition-colors",
+                    active ? "border-accent bg-accent-soft" : reached ? "border-rule bg-surface-2" : "border-rule bg-surface hover:bg-surface-2",
                   )}
                 >
-                  <span className="flex items-center gap-2 font-medium"><span className="font-mono text-xs text-muted">{st.level}</span>{st.name}</span>
+                  <span className="flex items-center gap-2 font-medium"><span className="tabular-nums text-xs text-faint">{st.level}</span>{st.name}</span>
                   <span className="mt-0.5 block text-xs leading-snug text-muted">{st.master}</span>
                 </button>
               </li>
@@ -227,7 +233,7 @@ export function MasteryPanel({ topicId, states, depths, target }: { topicId: str
       <div>
         <p className="mb-1 text-sm font-medium">Current depth</p>
         <p className="mb-2 text-xs text-muted">
-          Target {target ? `D${target[0]}${target[1] !== target[0] ? `–D${target[1]}` : ""}` : "not stated in the master"}. Set the level you can honestly demonstrate today.
+          {target ? `Target: ${depths[target[0]]?.name}${target[1] !== target[0] ? ` to ${depths[target[1]]?.name}` : ""} (outlined).` : "No target stated in the master."} Set the level you can honestly demonstrate today.
         </p>
         <div className="flex flex-wrap gap-1.5">
           {depths.map((d) => {
@@ -240,17 +246,16 @@ export function MasteryPanel({ topicId, states, depths, target }: { topicId: str
                 aria-pressed={depth === d.level}
                 onClick={() => setDepth(topicId, depth === d.level ? null : (d.level as DepthLevel))}
                 className={cx(
-                  "rounded-md border px-2.5 py-1.5 text-sm",
-                  depth === d.level ? "border-accent bg-accent text-accent-ink" : "border-rule bg-surface hover:border-accent/60",
-                  inTarget && depth !== d.level && "ring-1 ring-accent/50",
+                  "chip",
+                  inTarget && depth !== d.level && "border-accent",
                 )}
               >
-                <span className="font-mono">D{d.level}</span> {d.name}
+                <span className="tabular-nums text-faint">{d.level}</span> {d.name}
               </button>
             );
           })}
         </div>
-        {depth != null && <p className="mt-2 text-sm text-muted">D{depth}: {depths[depth]?.definition}</p>}
+        {depth != null && <p className="mt-2 text-sm text-muted">{depths[depth]?.name}: {depths[depth]?.definition}</p>}
       </div>
 
       <div>
@@ -262,19 +267,19 @@ export function MasteryPanel({ topicId, states, depths, target }: { topicId: str
           onChange={(e) => setEv(e.target.value)}
           onBlur={() => evidence !== (tp?.evidence ?? "") && setEvidence(topicId, evidence)}
           rows={2}
-          className="w-full rounded-md border border-rule bg-surface px-3 py-2 text-sm"
+          className="input text-sm"
           placeholder="e.g. github.com/you/repo, unseen task solved on paper"
         />
       </div>
 
       {mastery >= 4 && (
-        <div className="rounded-md border border-rule bg-surface px-3 py-2 text-sm">
+        <div className="rounded-xl border border-rule bg-surface px-4 py-3 text-sm">
           <p className="font-medium">Spaced re-test</p>
           <p className="text-muted">
             {tp?.reviews?.count ?? 0} re-test(s) recorded.{" "}
             {next ? <>Next re-test due {next.toLocaleDateString()}.</> : "All scheduled re-tests are done."}
           </p>
-          <button type="button" onClick={() => recordReview(topicId)} className="mt-2 rounded-md border border-accent px-2.5 py-1 text-accent hover:bg-accent-soft">
+          <button type="button" onClick={() => recordReview(topicId)} className="btn btn-secondary btn-sm mt-2">
             Record a passed re-test
           </button>
         </div>
@@ -307,7 +312,7 @@ export function NotesEditor({ entityId, title = "Notes" }: { entityId: string; t
         disabled={!ready}
         onChange={(e) => { setText(e.target.value); setDirty(true); }}
         rows={5}
-        className="w-full rounded-md border border-rule bg-surface px-3 py-2 text-sm leading-relaxed"
+        className="input text-sm leading-relaxed"
         placeholder="What clicked, what still breaks, questions to revisit"
       />
     </div>
@@ -323,18 +328,21 @@ export function WeekControls({ cw }: { cw: number }) {
   const v = weekView(s, w);
   const current = s.currentWeek === cw;
   return (
-    <div className="flex flex-wrap items-center gap-3">
-      <StatusPill status={v.status} />
-      {v.total > 0 && (
-        <span className="flex items-center gap-2 text-sm text-muted">
-          <span className="tabular-nums">{v.done}/{v.total} items</span>
-          <Bar value={v.pct} className="w-28" label="Week progress" />
-        </span>
-      )}
+    <div className="space-y-3">
+      <div className="flex items-center gap-3">
+        <StatusPill status={v.status} />
+        {v.total > 0 && (
+          <>
+            <Bar value={v.pct} className="flex-1" label="Week progress" tone={v.pct === 1 ? "ok" : "accent"} />
+            <span className="shrink-0 text-sm tabular-nums text-muted">{v.done} of {v.total}</span>
+          </>
+        )}
+      </div>
+      <div className="flex flex-wrap items-center gap-2">
       {current ? (
-        <span className="rounded-md bg-accent px-2.5 py-1 text-sm text-accent-ink">Current week</span>
+        <span className="inline-flex min-h-9 items-center rounded-lg bg-accent-soft px-3 text-sm font-medium text-accent">Your current week</span>
       ) : (
-        <button type="button" onClick={() => setCurrentWeek(cw)} className="rounded-md border border-rule px-2.5 py-1 text-sm hover:border-accent">
+        <button type="button" onClick={() => setCurrentWeek(cw)} className="btn btn-secondary btn-sm">
           Make this my current week
         </button>
       )}
@@ -345,13 +353,14 @@ export function WeekControls({ cw }: { cw: number }) {
           setWeekDone(cw, done);
           if (done && current && cw < 206) setCurrentWeek(cw + 1);
         }}
-        className={cx("rounded-md px-2.5 py-1 text-sm", s.weeks[cw]?.done ? "border border-rule hover:border-accent" : "bg-ok text-white hover:opacity-90")}
+        className={cx("btn btn-sm", s.weeks[cw]?.done ? "btn-secondary" : "btn-ok")}
       >
         {s.weeks[cw]?.done ? "Mark week not complete" : current ? "Complete week and move on" : "Mark week complete"}
       </button>
       {!v.cleared && w.rg && (
         <span className="text-sm text-warn">{gateName(w.rg)} is not passed yet.</span>
       )}
+      </div>
     </div>
   );
 }
@@ -391,8 +400,8 @@ export function GateControls({ gateId, criteria, requires }: { gateId: string; c
             aria-pressed={(g?.status ?? "not_attempted") === o.id}
             onClick={() => setGateStatus(gateId, o.id)}
             className={cx(
-              "rounded-md border px-3 py-1.5 text-sm",
-              (g?.status ?? "not_attempted") === o.id ? (o.id === "passed" ? "border-ok bg-ok text-white" : "border-accent bg-accent-soft") : "border-rule bg-surface hover:border-accent/60",
+              "btn btn-sm",
+              (g?.status ?? "not_attempted") === o.id ? (o.id === "passed" ? "btn-ok" : "btn-primary") : "btn-secondary",
             )}
           >
             {o.label}
@@ -406,10 +415,10 @@ export function GateControls({ gateId, criteria, requires }: { gateId: string; c
       {criteria.length > 0 && (
         <div>
           <p className="mb-2 text-sm font-medium">Pass criteria <span className="font-normal text-muted">({done}/{criteria.length})</span></p>
-          <ul className="divide-y divide-rule rounded-md border border-rule bg-surface">
+          <ul className="list-card">
             {criteria.map((c, i) => (
               <li key={i} className="flex items-start gap-3 px-3 py-2">
-                <input type="checkbox" className="mt-1 h-4 w-4 accent-[var(--accent)]" checked={!!g?.criteria?.[i]} onChange={(e) => setGateCriterion(gateId, i, e.target.checked)} aria-label={`Criterion ${i + 1}`} />
+                <input type="checkbox" className="mt-1 shrink-0" checked={!!g?.criteria?.[i]} onChange={(e) => setGateCriterion(gateId, i, e.target.checked)} aria-label={`Criterion ${i + 1}`} />
                 <span><InlineText text={c} /></span>
               </li>
             ))}
@@ -430,7 +439,7 @@ export function GateControls({ gateId, criteria, requires }: { gateId: string; c
       </div>
       <div>
         <label htmlFor={`gev-${gateId}`} className="mb-1 block text-sm font-medium">Evidence for this gate</label>
-        <textarea id={`gev-${gateId}`} rows={2} value={ev} onChange={(e) => setEv(e.target.value)} onBlur={() => setGateEvidence(gateId, ev)} className="w-full rounded-md border border-rule bg-surface px-3 py-2 text-sm" placeholder="Unseen tasks attempted, links to the artifact, what was checked" />
+        <textarea id={`gev-${gateId}`} rows={2} value={ev} onChange={(e) => setEv(e.target.value)} onBlur={() => setGateEvidence(gateId, ev)} className="input text-sm" placeholder="Unseen tasks attempted, links to the artifact, what was checked" />
       </div>
     </div>
   );
@@ -441,7 +450,11 @@ export function GateBadge({ gateId }: { gateId: string }) {
   const ready = useHydrated();
   if (!ready) return <Placeholder className="w-16" />;
   const st = s.gates[gateId]?.status ?? "not_attempted";
-  const style = st === "passed" ? "bg-ok-soft text-ok" : st === "attempting" ? "bg-warn-soft text-warn" : "bg-surface-2 text-muted";
-  const text = st === "passed" ? "Passed" : st === "attempting" ? "Attempting" : "Not passed";
-  return <span className={cx("inline-flex rounded px-1.5 py-0.5 text-xs font-medium", style)}>{text}</span>;
+  const text = st === "passed" ? "Passed" : st === "attempting" ? "Attempting" : "Not yet";
+  return (
+    <span className={cx("inline-flex items-center gap-1.5 whitespace-nowrap text-xs font-medium", st === "passed" ? "text-ok" : st === "attempting" ? "text-ink" : "text-muted")}>
+      <StatusGlyph status={st === "passed" ? "completed" : st === "attempting" ? "in_progress" : "available"} />
+      {text}
+    </span>
+  );
 }

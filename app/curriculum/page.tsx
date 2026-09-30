@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { meta, phases, topicsOfPhase } from "@/lib/data";
+import { phases, stages, topicsOfPhase } from "@/lib/data";
 import { PageHeader } from "@/components/ui";
 import { CurriculumExplorer, type ExplorerPhase } from "@/components/CurriculumExplorer";
 
-export const metadata: Metadata = { title: "Phases" };
+export const metadata: Metadata = { title: "Roadmap" };
 
 export default function Page() {
   const data: ExplorerPhase[] = phases.map((p) => ({
@@ -31,10 +31,9 @@ export default function Page() {
     <>
       <PageHeader
         title="Roadmap"
-        lead={<>46 phases from the master roadmap. Open a phase to see its topics, then a topic to see its checklist, mastery criteria and dependencies. Locked content stays readable: locked only means you are not cleared to work on it yet. <Link className="text-accent underline" href="/guide">How status works</Link>.</>}
+        lead={<>Every phase of the 206 weeks, in the order you reach them. Open a phase to see its topics. <Link className="text-accent underline underline-offset-2" href="/guide">How status works</Link></>}
       />
-      <CurriculumExplorer phases={data} />
-      <p className="mt-6 text-xs text-muted [overflow-wrap:anywhere]">Source: {meta.source.file}, MD5 {meta.source.md5}.</p>
+      <CurriculumExplorer phases={data} stages={stages.filter((st) => !st.parent).map((st) => ({ id: st.id, name: st.name, range: st.range }))} />
     </>
   );
 }

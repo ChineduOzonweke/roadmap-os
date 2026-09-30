@@ -11,7 +11,7 @@ export default function Page() {
   return (
     <>
       <PageHeader title="Projects" lead="The 11 canonical projects from the master project ladder. Each one is evidence for specific phases and checkpoints." />
-      <ol className="divide-y divide-rule rounded-lg border border-rule bg-surface">
+      <ol className="list-card">
         {projects.map((p) => (
           <li key={p.id}>
             <Link href={`/projects/${p.id}`} className="flex flex-col gap-1 px-4 py-3 hover:bg-surface-2 sm:flex-row sm:items-center sm:gap-4">

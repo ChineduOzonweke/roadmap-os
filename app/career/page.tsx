@@ -19,15 +19,15 @@ export default function Page() {
       >
         <nav className="flex flex-wrap gap-2 text-sm" aria-label="Career sections">
           {[["#tracks", "Tracks"], ["#portfolio", "Portfolio"], ["#stories", "Story bank"], ["#applications", "Applications"]].map(([h, l]) => (
-            <a key={h} href={h} className="rounded-md border border-rule bg-surface px-2.5 py-1 hover:border-accent">{l}</a>
+            <a key={h} href={h} className="chip">{l}</a>
           ))}
-          <Link href="/dsa" className="rounded-md border border-rule bg-surface px-2.5 py-1 hover:border-accent">DSA journal</Link>
-          <Link href="/projects" className="rounded-md border border-rule bg-surface px-2.5 py-1 hover:border-accent">Projects</Link>
+          <Link href="/dsa" className="chip">DSA journal</Link>
+          <Link href="/projects" className="chip">Projects</Link>
         </nav>
       </PageHeader>
 
       <Section title="Interview readiness">
-        <div className="flex flex-wrap items-center gap-3 rounded-lg border border-rule bg-surface p-4 text-sm">
+        <div className="flex flex-wrap items-center gap-3 card p-4 text-sm">
           <Link href="/checkpoints/C7" className="font-medium hover:text-accent">C7 {c7.title}</Link>
           <GateBadge gateId="C7" />
           <span className="w-full text-muted">{c7.note}</span>

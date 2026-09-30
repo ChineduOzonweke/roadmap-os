@@ -1,7 +1,7 @@
 # ROADMAP OS — RECONCILED PHASE-TO-WEEK MAPPING
 
 **Version:** v1.0 (2026-09-24) · **Status:** reconciled, **undated** (decision 9).  
-**Built from:** `ROADMAP_OS_CANONICAL_CURRICULUM.md` (master MD5 `090f7c1c3e34bf04390f5c92373347d6`).  
+**Built from:** `ROADMAP_OS_CANONICAL_CURRICULUM.md` (master MD5 `c85d55c0e1916af940605fe1467edc3c`).  
 **Replaces as scheduling source:** `VICTOR_MASTER_WEEKLY_EXECUTION_ROADMAP_2026_FINAL.md` (rebuilt from the master; not an equal authority).
 
 ## 1. Units and lanes

@@ -54,16 +54,16 @@ export function NotesView() {
   return (
     <div>
       <div className="mb-4 flex flex-wrap items-center gap-2">
-        <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Filter notes" aria-label="Filter notes" className="min-w-0 flex-1 rounded-md border border-rule bg-surface px-3 py-2 text-sm" />
-        <select aria-label="Note type" value={kind} onChange={(e) => setKind(e.target.value)} className="rounded-md border border-rule bg-surface px-2 py-2 text-sm">
+        <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Filter notes" aria-label="Filter notes" className="min-w-0 flex-1 input" />
+        <select aria-label="Note type" value={kind} onChange={(e) => setKind(e.target.value)} className="w-auto input">
           {kinds.map((k) => <option key={k}>{k}</option>)}
         </select>
-        <button type="button" onClick={download} className="rounded-md border border-rule bg-surface px-3 py-2 text-sm hover:border-accent">Download as Markdown</button>
+        <button type="button" onClick={download} className="btn btn-secondary btn-sm">Download as Markdown</button>
       </div>
       <p className="mb-2 text-xs text-muted">{list.length} of {notes.length} notes</p>
       <ul className="space-y-3">
         {list.map((n) => (
-          <li key={n.id} className="rounded-lg border border-rule bg-surface p-3">
+          <li key={n.id} className="card p-3">
             <div className="flex flex-wrap items-baseline justify-between gap-2">
               <Link href={n.href} className="font-medium hover:text-accent">{n.title}</Link>
               <span className="text-xs text-muted">{n.kind}, {new Date(n.updatedAt).toLocaleString()}</span>

@@ -3,8 +3,8 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { useHydrated, useUserState } from "@/lib/store";
-import { phaseRollup, topicById, topicView, type Status } from "@/lib/progress";
-import { Bar, StatusPill, cx } from "./ui";
+import { phaseRollup, topicById, topicView, weekByCw, type Status } from "@/lib/progress";
+import { Bar, StatusGlyph, StatusPill, cx } from "./ui";
 import { IconChevron } from "./icons";
 import { RefId } from "./Ref";
 
@@ -19,30 +19,34 @@ export type ExplorerPhase = {
   placement: string;
   topics: { id: string; label: string; depth: string; firstWeek: number | null; items: number; indent: boolean }[];
 };
+export type ExplorerStage = { id: string; name: string; range: [number, number] };
 
-const STAGES = ["S0", "S1", "S2", "S3", "S4", "S5", "S6", "S7", "S8"];
 const STATUS_FILTERS: { id: "all" | Status | "done"; label: string }[] = [
-  { id: "all", label: "All" },
-  { id: "available", label: "Available" },
+  { id: "all", label: "All phases" },
   { id: "in_progress", label: "In progress" },
+  { id: "available", label: "Ready to start" },
   { id: "done", label: "Done" },
-  { id: "locked", label: "Locked" },
+  { id: "locked", label: "Later" },
 ];
 
-export function CurriculumExplorer({ phases }: { phases: ExplorerPhase[] }) {
+/**
+ * The roadmap as a map: stages in order, the phases that begin in each stage,
+ * and topics inside a phase on demand. The phase you are in is marked and open.
+ */
+export function CurriculumExplorer({ phases, stages }: { phases: ExplorerPhase[]; stages: ExplorerStage[] }) {
   const s = useUserState();
   const ready = useHydrated();
-  const [stage, setStage] = useState<string>("all");
   const [status, setStatus] = useState<string>("all");
   const [q, setQ] = useState("");
   const [open, setOpen] = useState<Record<string, boolean>>({});
+
+  const currentPhase = ready ? (weekByCw(s.currentWeek)?.pu[0] ?? "").split(".")[0] : "";
 
   const rows = useMemo(() => {
     const query = q.trim().toLowerCase();
     return phases
       .map((p) => ({ p, r: ready ? phaseRollup(s, p.id) : null }))
       .filter(({ p, r }) => {
-        if (stage !== "all" && !p.stages.some((x) => x.startsWith(stage))) return false;
         if (status !== "all" && r) {
           if (status === "done" && !(r.status === "completed" || r.status === "mastered")) return false;
           if (status !== "done" && r.status !== status) return false;
@@ -50,98 +54,118 @@ export function CurriculumExplorer({ phases }: { phases: ExplorerPhase[] }) {
         if (query && !`${p.id} ${p.title} ${p.description} ${p.topics.map((t) => t.label).join(" ")}`.toLowerCase().includes(query)) return false;
         return true;
       });
-  }, [phases, s, ready, stage, status, q]);
+  }, [phases, s, ready, status, q]);
 
-  const allOpen = rows.length > 0 && rows.every(({ p }) => open[p.id]);
+  const groups = useMemo(() => {
+    const byStage = stages.map((st) => ({
+      st,
+      rows: rows
+        .filter(({ p }) => p.weekRange && p.weekRange[0] >= st.range[0] && p.weekRange[0] <= st.range[1])
+        .sort((a, b) => a.p.weekRange![0] - b.p.weekRange![0]),
+    }));
+    const later = rows.filter(({ p }) => !p.weekRange);
+    return { byStage: byStage.filter((g) => g.rows.length), later };
+  }, [rows, stages]);
+
+  const filtered = rows.length !== phases.length;
+  const isOpen = (id: string) => open[id] ?? (id === currentPhase && !q && status === "all");
+
+  const PhaseRow = ({ p, r }: { p: ExplorerPhase; r: ReturnType<typeof phaseRollup> | null }) => {
+    const here = p.id === currentPhase;
+    const o = isOpen(p.id);
+    return (
+      <li className={cx("card overflow-hidden", here && "border-accent/60")}>
+        <button
+          type="button"
+          onClick={() => setOpen({ ...open, [p.id]: !o })}
+          aria-expanded={o}
+          aria-controls={`ph-${p.id}`}
+          className="flex w-full items-start gap-3 px-4 py-4 text-left hover:bg-surface-2/60 active:bg-surface-2"
+        >
+          <span className="min-w-0 flex-1">
+            {here && <span className="mb-1 block text-xs font-medium text-accent">You are here</span>}
+            <span className="block font-semibold leading-snug">{p.title} <RefId id={p.id} /></span>
+            {p.description && <span className="mt-1 line-clamp-2 text-sm text-muted">{p.description}</span>}
+            {r && r.total > 0 && (
+              <span className="mt-3 flex items-center gap-3">
+                <Bar value={r.pct} className="flex-1" tone={r.status === "completed" || r.status === "mastered" ? "ok" : "accent"} label={`${p.title} progress`} />
+                <span className="shrink-0 text-xs tabular-nums text-muted">{r.done} of {r.total}</span>
+              </span>
+            )}
+          </span>
+          <IconChevron className={cx("mt-1 shrink-0 text-faint transition-transform duration-150", o && "rotate-90")} width={18} height={18} />
+        </button>
+        {o && (
+          <div id={`ph-${p.id}`} className="border-t border-rule">
+            <ul>
+              {p.topics.map((t) => {
+                const it = topicById.get(t.id);
+                const v = it && ready ? topicView(s, it) : null;
+                return (
+                  <li key={t.id} className="border-b border-rule last:border-b-0">
+                    <Link href={`/topics/${t.id}`} className={cx("flex min-h-12 items-center gap-3 py-2.5 pr-4 hover:bg-surface-2/60 active:bg-surface-2", t.indent ? "pl-8" : "pl-4")}>
+                      {v && <StatusGlyph status={v.status} />}
+                      <span className="min-w-0 flex-1">
+                        <span className="block leading-snug">{t.label} <RefId id={t.id} /></span>
+                        <span className="block text-xs text-muted">{t.firstWeek ? `From week ${t.firstWeek}` : "When needed"}{t.items > 1 ? `, ${t.items} items` : ""}</span>
+                      </span>
+                      {v && v.done > 0 && <span className="shrink-0 text-xs tabular-nums text-muted">{v.done}/{v.total}</span>}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+            <div className="flex items-center justify-between gap-3 border-t border-rule px-4 py-2.5">
+              {r && <StatusPill status={r.status} />}
+              <Link href={`/phases/${p.id}`} className="btn btn-quiet btn-sm -mr-2">Phase overview</Link>
+            </div>
+          </div>
+        )}
+      </li>
+    );
+  };
 
   return (
     <div>
-      <div className="mb-4 space-y-3">
+      <div className="mb-6 space-y-3">
         <input
           type="search"
           value={q}
           onChange={(e) => setQ(e.target.value)}
-          placeholder="Filter phases and topics"
-          className="w-full rounded-md border border-rule bg-surface px-3 py-2"
-          aria-label="Filter phases and topics"
+          placeholder="Find a phase or topic"
+          className="input"
+          aria-label="Find a phase or topic"
         />
-        <div className="flex flex-wrap items-center gap-1.5" role="group" aria-label="Stage filter">
-          <span className="mr-1 text-xs text-muted">Stage</span>
-          {["all", ...STAGES].map((x) => (
-            <button key={x} type="button" aria-pressed={stage === x} onClick={() => setStage(x)} className={cx("rounded-md border px-2 py-1 text-xs", stage === x ? "border-accent bg-accent-soft text-accent" : "border-rule bg-surface")}>
-              {x === "all" ? "All" : x.slice(1)}
-            </button>
-          ))}
-        </div>
-        <div className="flex flex-wrap items-center gap-1.5" role="group" aria-label="Status filter">
-          <span className="mr-1 text-xs text-muted">Status</span>
+        <div className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 scroll-thin sm:mx-0 sm:flex-wrap sm:px-0" role="group" aria-label="Filter by status">
           {STATUS_FILTERS.map((x) => (
-            <button key={x.id} type="button" aria-pressed={status === x.id} onClick={() => setStatus(x.id)} className={cx("rounded-md border px-2 py-1 text-xs", status === x.id ? "border-accent bg-accent-soft text-accent" : "border-rule bg-surface")}>
+            <button key={x.id} type="button" aria-pressed={status === x.id} onClick={() => setStatus(x.id)} className="chip">
               {x.label}
             </button>
           ))}
-          <button type="button" className="ml-auto text-xs text-accent hover:underline" onClick={() => setOpen(allOpen ? {} : Object.fromEntries(rows.map(({ p }) => [p.id, true])))}>
-            {allOpen ? "Collapse all" : "Expand all"}
-          </button>
         </div>
-        <p className="text-xs text-muted">{rows.length} of {phases.length} phases shown</p>
+        {filtered && <p className="text-sm text-muted">{rows.length} of {phases.length} phases match.</p>}
       </div>
 
-      <ol className="divide-y divide-rule rounded-lg border border-rule bg-surface">
-        {rows.map(({ p, r }) => {
-          const isOpen = !!open[p.id];
-          return (
-            <li key={p.id}>
-              <div className="flex items-start gap-2 px-3 py-3">
-                <button
-                  type="button"
-                  onClick={() => setOpen({ ...open, [p.id]: !isOpen })}
-                  aria-expanded={isOpen}
-                  aria-controls={`ph-${p.id}`}
-                  aria-label={`${isOpen ? "Collapse" : "Expand"} ${p.id}`}
-                  className="mt-0.5 rounded p-0.5 text-muted hover:bg-surface-2"
-                >
-                  <IconChevron className={cx("transition-transform", isOpen && "rotate-90")} width={18} height={18} />
-                </button>
-                <div className="min-w-0 flex-1">
-                  <div className="flex flex-wrap items-baseline gap-x-2">
-                    <Link href={`/phases/${p.id}`} className="font-medium hover:text-accent"><RefId id={p.id} /> {p.title}</Link>
-                    <span className="text-xs text-muted">{p.priority}, target {p.target.replace(/[🔴🟠🟡🟢⚪]/gu, "").trim()}</span>
-                  </div>
-                  <p className="mt-0.5 text-xs text-muted">{p.weekRange ? `Weeks ${p.weekRange[0]}–${p.weekRange[1]}` : p.placement}</p>
-                  {r && r.total > 0 && (
-                    <div className="mt-1.5 flex items-center gap-2">
-                      <Bar value={r.pct} className="max-w-48" tone={r.status === "completed" || r.status === "mastered" ? "ok" : "accent"} label={`${p.id} progress`} />
-                      <span className="text-xs tabular-nums text-muted">{r.done}/{r.total}</span>
-                    </div>
-                  )}
-                </div>
-                {r && <StatusPill status={r.status} className="shrink-0" />}
-              </div>
-              {isOpen && (
-                <div id={`ph-${p.id}`} className="border-t border-rule bg-bg/40 px-3 pb-3 pt-2 sm:pl-10">
-                  {p.description && <p className="mb-2 text-sm text-muted">{p.description}</p>}
-                  <ul className="space-y-1">
-                    {p.topics.map((t) => {
-                      const it = topicById.get(t.id);
-                      const v = it && ready ? topicView(s, it) : null;
-                      return (
-                        <li key={t.id} className={cx("flex flex-wrap items-center gap-x-3 gap-y-1 rounded px-1 py-1 hover:bg-surface-2", t.indent && "pl-5")}>
-                          <Link href={`/topics/${t.id}`} className="min-w-0 flex-1 hover:text-accent">
-                            <RefId id={t.id} /> {t.label}
-                          </Link>
-                          <span className="text-xs text-muted">{t.depth}{t.firstWeek ? `, wk ${t.firstWeek}` : ""}{t.items > 1 ? `, ${t.items} items` : ""}</span>
-                          {v && <StatusPill status={v.status} />}
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              )}
-            </li>
-          );
-        })}
-      </ol>
+      {groups.byStage.map(({ st, rows: rs }) => (
+        <section key={st.id} className="mb-8" aria-labelledby={`st-${st.id}`}>
+          <div className="mb-3 flex items-baseline justify-between gap-3 border-b border-rule pb-2">
+            <h2 id={`st-${st.id}`} className="h-section">{st.name} <RefId id={st.id} /></h2>
+            <span className="shrink-0 text-sm tabular-nums text-muted">Weeks {st.range[0]}–{st.range[1]}</span>
+          </div>
+          <ol className="space-y-3 lg:grid lg:grid-cols-2 lg:items-start lg:gap-3 lg:space-y-0">{rs.map(({ p, r }) => <PhaseRow key={p.id} p={p} r={r} />)}</ol>
+        </section>
+      ))}
+
+      {groups.later.length > 0 && (
+        <section className="mb-8" aria-labelledby="st-later">
+          <div className="mb-3 border-b border-rule pb-2">
+            <h2 id="st-later" className="h-section">When you need them</h2>
+          </div>
+          <ol className="space-y-3 lg:grid lg:grid-cols-2 lg:items-start lg:gap-3 lg:space-y-0">{groups.later.map(({ p, r }) => <PhaseRow key={p.id} p={p} r={r} />)}</ol>
+        </section>
+      )}
+
+      {rows.length === 0 && <p className="card px-4 py-6 text-center text-muted">No phase matches. Try another word or show all phases.</p>}
     </div>
   );
 }

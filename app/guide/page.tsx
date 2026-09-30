@@ -33,7 +33,7 @@ export default function Page() {
       </Section>
 
       <Section title="Status and unlocking">
-        <dl className="divide-y divide-rule rounded-lg border border-rule bg-surface text-sm">
+        <dl className="list-card text-sm">
           {STATUS_RULES.map(([k, v]) => <div key={k} className="grid grid-cols-1 gap-1 px-4 py-2 sm:grid-cols-[9rem_1fr]"><dt className="font-medium">{k}</dt><dd>{v}</dd></div>)}
         </dl>
         <p className="mt-3 max-w-[72ch] text-sm text-muted">
@@ -42,14 +42,14 @@ export default function Page() {
       </Section>
 
       <Section title="Mastery stages" id="mastery">
-        <ol className="divide-y divide-rule rounded-lg border border-rule bg-surface text-sm">
+        <ol className="list-card text-sm">
           {meta.masteryStates.map((m) => <li key={m.id} className="grid grid-cols-1 gap-1 px-4 py-2 sm:grid-cols-[9rem_1fr]"><span className="font-medium"><span className="font-mono text-muted">{m.level}</span> {m.name}</span><span>{m.master}</span></li>)}
         </ol>
         <p className="mt-2 max-w-[72ch] text-sm text-muted">These stages are the master evidence loop grouped into steps. Recording a passed spaced re-test moves a Demonstrated topic to Retained.</p>
       </Section>
 
       <Section title="Depth model" id="depth">
-        <ol className="divide-y divide-rule rounded-lg border border-rule bg-surface text-sm">
+        <ol className="list-card text-sm">
           {meta.depthModel.map((d) => <li key={d.level} className="grid grid-cols-1 gap-1 px-4 py-2 sm:grid-cols-[11rem_1fr]"><span className="font-medium"><span className="font-mono">D{d.level}</span> {d.name}</span><span>{d.definition}</span></li>)}
         </ol>
         {meta.depthNotes.length > 0 && <p className="mt-2 max-w-[72ch] text-sm text-muted">{meta.depthNotes.join(" ")}</p>}
@@ -57,7 +57,7 @@ export default function Page() {
       </Section>
 
       <Section title="Priority model">
-        <ul className="divide-y divide-rule rounded-lg border border-rule bg-surface text-sm">
+        <ul className="list-card text-sm">
           {meta.priorityModel.map((p) => <li key={p.name} className="grid grid-cols-1 gap-1 px-4 py-2 sm:grid-cols-[13rem_1fr]"><span className="font-medium">{p.symbol} {p.name}</span><span>{p.definition}</span></li>)}
         </ul>
       </Section>
@@ -73,12 +73,12 @@ export default function Page() {
       </div>
 
       <Section title="Daily work unit">
-        <ol className="grid grid-cols-1 gap-1.5 text-sm sm:grid-cols-3">{meta.dailyWorkUnit.map((d) => <li key={d.step} className="rounded-md border border-rule bg-surface px-3 py-2"><span className="tabular-nums text-muted">{d.minutes} min</span> {d.step}</li>)}</ol>
+        <ol className="grid grid-cols-1 gap-1.5 text-sm sm:grid-cols-3">{meta.dailyWorkUnit.map((d) => <li key={d.step} className="card px-3 py-2"><span className="tabular-nums text-muted">{d.minutes} min</span> {d.step}</li>)}</ol>
       </Section>
 
       <Section title="Master operating rules">
         {[["Operating system rules", meta.operatingRulesMd], ["Weekly execution model", meta.weeklyModelMd], ["Monthly review", meta.monthlyReviewMd], ["Foundation recovery", meta.recoveryMd]].map(([t, md]) => (
-          <details key={t} className="mb-2 rounded-lg border border-rule bg-surface">
+          <details key={t} className="mb-2 card">
             <summary className="cursor-pointer px-4 py-2.5 font-medium">{t}</summary>
             <div className="border-t border-rule px-4 py-3 text-sm"><Markdown md={md} /></div>
           </details>

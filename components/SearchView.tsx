@@ -6,7 +6,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useHydrated, useUserState } from "@/lib/store";
 import { hrefFor } from "@/lib/ids";
 import type { SearchEntry } from "@/types/curriculum";
-import { InlineText, cx } from "./ui";
+import { InlineText } from "./ui";
 import { RefId } from "./Ref";
 
 let indexPromise: Promise<SearchEntry[]> | null = null;
@@ -101,7 +101,7 @@ export function SearchView() {
         onChange={(e) => { setQ(e.target.value); setKind("All"); }}
         placeholder="Search the roadmap, your notes and journals"
         aria-label="Search Roadmap OS"
-        className="w-full rounded-lg border border-rule bg-surface px-4 py-3 text-base"
+        className="input min-h-12 text-base"
       />
       <p className="mt-2 text-xs text-muted">Try words (&quot;normalization&quot;, &quot;sliding window&quot;, &quot;docker&quot;) or a week (&quot;week 88&quot;).</p>
 
@@ -109,10 +109,10 @@ export function SearchView() {
       {!index && !error && <p className="mt-4 text-sm text-muted">Loading the search index.</p>}
 
       {kinds.length > 1 && (
-        <div className="mt-4 flex flex-wrap gap-1.5" role="group" aria-label="Result type">
+        <div className="-mx-4 mt-4 flex gap-2 overflow-x-auto px-4 pb-1 scroll-thin sm:mx-0 sm:flex-wrap sm:px-0" role="group" aria-label="Result type">
           {[["All", hits.length] as [string, number], ...kinds].map(([k, n]) => (
-            <button key={k} type="button" aria-pressed={kind === k} onClick={() => setKind(k)} className={cx("rounded-md border px-2 py-1 text-xs", kind === k ? "border-accent bg-accent-soft text-accent" : "border-rule bg-surface")}>
-              {k} <span className="tabular-nums text-muted">{n}</span>
+            <button key={k} type="button" aria-pressed={kind === k} onClick={() => setKind(k)} className="chip">
+              {k} <span className="tabular-nums opacity-70">{n}</span>
             </button>
           ))}
         </div>
@@ -120,12 +120,15 @@ export function SearchView() {
 
       {q.trim() && index && (
         shown.length ? (
-          <ul className="mt-4 divide-y divide-rule rounded-lg border border-rule bg-surface">
+          <ul className="list-card mt-4">
             {shown.map((h, i) => (
               <li key={`${h.k}-${h.id}-${i}`}>
-                <Link href={h.h} className="block px-3 py-2.5 hover:bg-surface-2">
-                  <span className="block"><InlineText text={h.t} /></span>
-                  <span className="block truncate text-sm text-muted">{h.p ? `${h.p} · ${h.k}` : h.k}{h.p ? "" : h.s ? ` · ${h.s}` : ""} <RefId id={h.id} /></span>
+                <Link href={h.h} className="flex min-h-14 items-start gap-3 px-4 py-3 hover:bg-surface-2/60 active:bg-surface-2">
+                  <span className="min-w-0 flex-1">
+                    <span className="block font-medium leading-snug"><InlineText text={h.t} /></span>
+                    {(h.p || h.s) && <span className="mt-0.5 line-clamp-2 text-sm text-muted">{h.p || h.s} <RefId id={h.id} /></span>}
+                  </span>
+                  <span className="mt-0.5 shrink-0 text-xs text-faint">{h.k}</span>
                 </Link>
               </li>
             ))}

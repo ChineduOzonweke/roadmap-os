@@ -40,7 +40,7 @@ export function ProjectControls({ id, milestones, quality }: {
       <div className="flex flex-wrap gap-2" role="group" aria-label="Project status">
         {STATUS.map((o) => (
           <button key={o.id} type="button" aria-pressed={status === o.id} onClick={() => setProjectStatus(id, o.id)}
-            className={cx("rounded-md border px-3 py-1.5 text-sm", status === o.id ? (o.id === "complete" ? "border-ok bg-ok text-white" : "border-accent bg-accent-soft") : "border-rule bg-surface hover:border-accent/60")}>
+            className="chip">
             {o.label}
           </button>
         ))}
@@ -52,10 +52,10 @@ export function ProjectControls({ id, milestones, quality }: {
           <span className="text-xs tabular-nums text-muted">{msDone}/{milestones.length}</span>
           <Bar value={milestones.length ? msDone / milestones.length : 0} className="w-24" label="Milestones" />
         </div>
-        <ul className="divide-y divide-rule rounded-md border border-rule bg-surface">
+        <ul className="list-card">
           {milestones.map((m) => (
             <li key={m.id} className="flex items-start gap-3 px-3 py-2">
-              <input type="checkbox" className="mt-1 h-4 w-4 accent-[var(--accent)]" checked={!!p?.milestones?.[m.id]} onChange={(e) => setProjectFlag(id, "milestones", m.id, e.target.checked)} aria-label={`Milestone ${m.id}`} />
+              <input type="checkbox" className="mt-1 shrink-0" checked={!!p?.milestones?.[m.id]} onChange={(e) => setProjectFlag(id, "milestones", m.id, e.target.checked)} aria-label={`Milestone ${m.id}`} />
               <span className="min-w-0 flex-1">{m.text}</span>
               <a href={`/weeks/${m.cw}`} className="shrink-0 text-xs text-muted hover:text-accent">week {m.cw}</a>
             </li>
@@ -77,7 +77,7 @@ export function ProjectControls({ id, milestones, quality }: {
               {quality.filter((q) => q.group === g).map((q) => (
                 <li key={q.key}>
                   <label className="flex cursor-pointer items-start gap-2 rounded px-1 py-1 text-sm hover:bg-surface-2">
-                    <input type="checkbox" className="mt-0.5 h-4 w-4 accent-[var(--accent)]" checked={!!p?.quality?.[q.key]} onChange={(e) => setProjectFlag(id, "quality", q.key, e.target.checked)} />
+                    <input type="checkbox" className="mt-0.5 shrink-0" checked={!!p?.quality?.[q.key]} onChange={(e) => setProjectFlag(id, "quality", q.key, e.target.checked)} />
                     <span>{q.text}</span>
                   </label>
                 </li>
@@ -90,7 +90,7 @@ export function ProjectControls({ id, milestones, quality }: {
       <div>
         <label htmlFor={`repo-${id}`} className="mb-1 block text-sm font-medium">Repository or demo link</label>
         <div className="flex flex-wrap items-center gap-3">
-          <input id={`repo-${id}`} type="url" value={repo} onChange={(e) => setRepo(e.target.value)} onBlur={() => setProjectRepo(id, repo.trim())} placeholder="https://github.com/..." className="min-w-0 flex-1 rounded-md border border-rule bg-surface px-3 py-2 text-sm" />
+          <input id={`repo-${id}`} type="url" value={repo} onChange={(e) => setRepo(e.target.value)} onBlur={() => setProjectRepo(id, repo.trim())} placeholder="https://github.com/..." className="min-w-0 flex-1 input" />
           {p?.repoUrl && /^https?:\/\//.test(p.repoUrl) && <ExternalLink href={p.repoUrl}>Open</ExternalLink>}
         </div>
       </div>

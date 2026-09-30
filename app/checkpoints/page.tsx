@@ -26,11 +26,11 @@ export default function Page() {
         lead="Later work unlocks when you can show the skill, not when time passes. The initial Python gate and seven competency checkpoints are the main milestones; stage gates mark the end of each stage."
       />
       <Section title="Competency checkpoints">
-        <ol className="divide-y divide-rule rounded-md border border-rule bg-surface">{competency.map((c) => <Row key={c.id} c={c} />)}</ol>
+        <ol className="list-card">{competency.map((c) => <Row key={c.id} c={c} />)}</ol>
         <p className="mt-2 text-xs text-muted">C4 is placed before C3 in the schedule: C4&apos;s required build is the first ML project, which comes before the cloud project that C3 requires.</p>
       </Section>
       <Section title="Stage gates">
-        <ol className="divide-y divide-rule rounded-md border border-rule bg-surface">{stage.map((c) => <Row key={c.id} c={c} />)}</ol>
+        <ol className="list-card">{stage.map((c) => <Row key={c.id} c={c} />)}</ol>
       </Section>
     </>
   );

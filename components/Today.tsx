@@ -10,7 +10,7 @@ import { recordReview, setCheck, setCurrentWeek, setWeekDone } from "@/lib/actio
 import { AiModeLine } from "./AiModeLine";
 import { ConceptChecklist, NotesEditor } from "./progress";
 import { RefId } from "./Ref";
-import { Bar, Disclosure, cx } from "./ui";
+import { Disclosure, Tally, cx } from "./ui";
 
 type DayPlan = { days: string; plan: { days: string; focus: string }[] } | null;
 
@@ -59,51 +59,51 @@ export function Today({ dayPlans, dailyUnit, lanes }: {
   const onToggle = (id: string, checked: boolean) => setUndo(checked ? { id, text: unitLabel(id) } : null);
 
   return (
-    <div className="space-y-6">
+    <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_17.5rem] lg:gap-10 xl:grid-cols-[minmax(0,1fr)_19rem]">
+     <div className="min-w-0 space-y-7">
       <header>
         <p className="text-sm text-muted">
-          Week {cw} of 206{phase ? ` · ${phase.t}` : stage ? ` · ${stage.n}` : ""}
+          <span className="font-medium text-ink">Week {cw}</span> of 206{phase ? `, ${phase.t}` : stage ? `, ${stage.n}` : ""}
         </p>
-        <h1 className="mt-1 text-[1.6rem] font-semibold leading-tight tracking-tight sm:text-[1.75rem]">{w.t}</h1>
+        <h1 className="mt-1.5 text-[1.75rem] font-semibold leading-[1.15] tracking-[-0.015em] text-balance sm:text-[2rem]">{w.t}</h1>
         {v.total > 0 && (
-          <div className="mt-3">
-            <div className="mb-1 flex items-baseline justify-between text-sm">
-              <span className="text-muted">This week</span>
-              <span className="tabular-nums">{v.done} of {v.total} done</span>
-            </div>
-            <Bar value={v.pct} tone={v.pct === 1 ? "ok" : "accent"} label="This week's progress" className="h-2" />
+          <div className="mt-5">
+            <Tally done={v.done} total={v.total} label="This week's checklist" />
+            <p className="mt-2 text-sm tabular-nums text-muted">
+              <span className="font-medium text-ink">{v.done} of {v.total}</span> done this week
+            </p>
           </div>
         )}
       </header>
 
       {gateBlocked && (
-        <p className="rounded-md border border-warn/40 bg-warn-soft px-3 py-2 text-sm">
+        <p className="rounded-xl border border-warn/30 bg-warn-soft px-4 py-3 text-sm">
           This week comes after the <Link className="font-medium text-warn underline" href={`/checkpoints/${w.rg}`}>{gateName(w.rg!)}</Link>, which is not marked passed yet. Attempt it first, unless you already have the evidence.
         </p>
       )}
 
-      <AiModeLine cw={cw} />
+      <div className="lg:hidden"><AiModeLine cw={cw} /></div>
 
       <section aria-labelledby="next">
-        <h2 id="next" className="mb-2 text-base font-semibold">{focus.length ? "Next up" : "This week"}</h2>
+        <h2 id="next" className="h-section mb-3">{focus.length ? "Up next" : "This week"}</h2>
         {focus.length ? (
           <>
-            <ConceptChecklist items={focus.map((u) => ({ id: u, text: unitLabel(u) }))} showIds={false} onToggle={onToggle} />
-            <p className="mt-2 text-sm text-muted">
+            <ConceptChecklist items={focus.map((u) => ({ id: u, text: unitLabel(u) }))} showIds={false} onToggle={onToggle} lead />
+            <p className="mt-2.5 text-sm text-muted">
               Tick an item when you can do it without the tutorial open.
               {open.length > focus.length && <> {open.length - focus.length} more after these.</>}
             </p>
           </>
         ) : (
-          <p className="rounded-md border border-rule bg-surface px-3 py-2.5">
+          <p className="card px-4 py-3">
             {primaryDone ? "Every checklist item for this week is ticked." : "No checklist this week: it is a build, project or consolidation week."}
           </p>
         )}
       </section>
 
-      <section aria-labelledby="build" className="rounded-lg border border-rule bg-surface px-4 py-3">
-        <h2 id="build" className="text-sm font-medium text-muted">This week&apos;s build</h2>
-        <p className="mt-1">{w.b}</p>
+      <section aria-labelledby="build" className="border-l-2 border-rule-strong py-0.5 pl-4">
+        <h2 id="build" className="text-sm text-muted">This week&apos;s build</h2>
+        <p className="mt-0.5 leading-relaxed">{w.b}</p>
         {w.pj && <p className="mt-2 text-sm"><Link className="text-accent hover:underline" href={`/projects/${w.pj}`}>Open the project: {nameOf(w.pj)}</Link></p>}
         {w.g && (
           <p className="mt-2 text-sm">
@@ -116,13 +116,16 @@ export function Today({ dayPlans, dailyUnit, lanes }: {
         <button
           type="button"
           onClick={() => { setWeekDone(cw, true); if (cw < 206) setCurrentWeek(cw + 1); }}
-          className="w-full rounded-lg bg-ok px-4 py-3 font-medium text-white hover:opacity-90"
+          className="btn btn-ok btn-block min-h-12"
         >
           Build done too? Complete week {cw}{cw < 206 ? ` and start week ${cw + 1}` : ""}
         </button>
       )}
 
-      <div className="space-y-3">
+     </div>
+
+      <aside className="mt-7 space-y-3 lg:mt-0 lg:pt-1" aria-label="More for this week">
+        <div className="hidden lg:block"><AiModeLine cw={cw} /></div>
         {doneItems.length > 0 && (
           <Disclosure title={`Done this week (${doneItems.length})`} hint="Untick anything you ticked by mistake">
             <ConceptChecklist items={doneItems.map((u) => ({ id: u, text: unitLabel(u) }))} showIds={false} />
@@ -173,7 +176,7 @@ export function Today({ dayPlans, dailyUnit, lanes }: {
                   <li key={r.topicId} className="flex flex-wrap items-center gap-3 py-2">
                     <Link href={`/topics/${r.topicId}`} className="min-w-0 flex-1 hover:text-accent">{topicById.get(r.topicId)?.t}</Link>
                     <span className="text-xs text-muted">re-test {r.count + 1}</span>
-                    <button type="button" onClick={() => recordReview(r.topicId)} className="min-h-10 rounded-md border border-accent px-3 text-sm text-accent hover:bg-accent-soft">Passed</button>
+                    <button type="button" onClick={() => recordReview(r.topicId)} className="btn btn-secondary btn-sm">Passed</button>
                   </li>
                 ))}
               </ul>
@@ -186,7 +189,7 @@ export function Today({ dayPlans, dailyUnit, lanes }: {
             {dailyUnit.map((d, i) => (
               <li key={i}>
                 <label className="flex min-h-11 cursor-pointer items-center gap-3">
-                  <input type="checkbox" className="h-5 w-5 accent-[var(--accent)]" checked={!!session[i]} onChange={(e) => setSession({ ...session, [i]: e.target.checked })} />
+                  <input type="checkbox" checked={!!session[i]} onChange={(e) => setSession({ ...session, [i]: e.target.checked })} />
                   <span className="w-16 shrink-0 text-sm tabular-nums text-muted">{d.minutes} min</span>
                   <span className={cx(session[i] && "text-muted line-through")}>{d.step}</span>
                 </label>
@@ -204,18 +207,18 @@ export function Today({ dayPlans, dailyUnit, lanes }: {
             <p><Link href={`/weeks/${cw}`} className="text-accent hover:underline">Open week {cw} in full</Link></p>
             <div className="flex flex-wrap items-center gap-2">
               <span className="text-muted">Current week:</span>
-              <button type="button" disabled={cw <= 1} onClick={() => setCurrentWeek(cw - 1)} className="min-h-10 rounded-md border border-rule px-3 disabled:opacity-40">Back to week {Math.max(1, cw - 1)}</button>
-              <button type="button" disabled={cw >= 206} onClick={() => setCurrentWeek(cw + 1)} className="min-h-10 rounded-md border border-rule px-3 disabled:opacity-40">Skip to week {Math.min(206, cw + 1)}</button>
+              <button type="button" disabled={cw <= 1} onClick={() => setCurrentWeek(cw - 1)} className="btn btn-secondary btn-sm">Back to week {Math.max(1, cw - 1)}</button>
+              <button type="button" disabled={cw >= 206} onClick={() => setCurrentWeek(cw + 1)} className="btn btn-secondary btn-sm">Skip to week {Math.min(206, cw + 1)}</button>
             </div>
             {stage && <p className="text-muted">Stage: {stage.n} <RefId id={stage.id} /></p>}
           </div>
         </Disclosure>
-      </div>
+      </aside>
 
       {undo && (
-        <div role="status" className="fixed inset-x-3 bottom-[calc(4.5rem+env(safe-area-inset-bottom))] z-40 mx-auto flex max-w-md items-center gap-3 rounded-lg bg-ink px-4 py-3 text-sm text-bg shadow-lg lg:bottom-6">
+        <div role="status" className="fixed inset-x-3 bottom-[calc(4.75rem+env(safe-area-inset-bottom))] z-40 mx-auto flex max-w-md items-center gap-3 rounded-xl bg-ink py-2 pl-4 pr-2 text-sm text-bg shadow-[0_8px_24px_rgb(0_0_0/0.22)] lg:bottom-6">
           <span className="min-w-0 flex-1 truncate">Done: {undo.text}</span>
-          <button type="button" className="min-h-9 shrink-0 rounded px-2 font-medium underline" onClick={() => { setCheck(undo.id, false); setUndo(null); }}>Undo</button>
+          <button type="button" className="min-h-10 shrink-0 rounded-lg px-3 font-semibold text-accent-soft hover:bg-white/10" onClick={() => { setCheck(undo.id, false); setUndo(null); }}>Undo</button>
         </div>
       )}
 

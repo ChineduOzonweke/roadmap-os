@@ -110,19 +110,19 @@ export function DependencyGraph({ nodes }: { nodes: GraphNode[] }) {
       <div className="mb-3 flex flex-wrap items-center gap-1.5" role="group" aria-label="Stage filter">
         <span className="mr-1 text-xs text-muted">Stage</span>
         {["all", ...STAGES].map((x) => (
-          <button key={x} type="button" aria-pressed={stage === x} onClick={() => { setStage(x); setSel(null); }} className={cx("rounded-md border px-2 py-1 text-xs", stage === x ? "border-accent bg-accent-soft text-accent" : "border-rule bg-surface")}>
+          <button key={x} type="button" aria-pressed={stage === x} onClick={() => { setStage(x); setSel(null); }} className="chip">
             {x === "all" ? "All" : x}
           </button>
         ))}
         <span className="ml-auto flex gap-1.5" role="group" aria-label="View">
-          <button type="button" aria-pressed={view === "graph"} onClick={() => setView(view === "graph" ? "auto" : "graph")} className={cx("rounded-md border px-2 py-1 text-xs", view === "graph" ? "border-accent bg-accent-soft text-accent" : "border-rule bg-surface")}>Graph</button>
-          <button type="button" aria-pressed={view === "list"} onClick={() => setView(view === "list" ? "auto" : "list")} className={cx("rounded-md border px-2 py-1 text-xs", view === "list" ? "border-accent bg-accent-soft text-accent" : "border-rule bg-surface")}>Focus list</button>
+          <button type="button" aria-pressed={view === "graph"} onClick={() => setView(view === "graph" ? "auto" : "graph")} className="chip">Graph</button>
+          <button type="button" aria-pressed={view === "list"} onClick={() => setView(view === "list" ? "auto" : "list")} className="chip">Focus list</button>
         </span>
       </div>
 
       <div className="mb-4">
         <label htmlFor="focus-node" className="mb-1 block text-sm font-medium">Focus on a phase</label>
-        <select id="focus-node" value={sel ?? ""} onChange={(e) => setSel(e.target.value || null)} className="w-full max-w-md rounded-md border border-rule bg-surface px-3 py-2 text-sm">
+        <select id="focus-node" value={sel ?? ""} onChange={(e) => setSel(e.target.value || null)} className="max-w-md input">
           <option value="">Nothing selected: show everything</option>
           {nodes.map((n) => <option key={n.id} value={n.id}>{n.id} {n.title}</option>)}
         </select>
@@ -130,7 +130,7 @@ export function DependencyGraph({ nodes }: { nodes: GraphNode[] }) {
       </div>
 
       {selected && (
-        <div className="mb-4 rounded-lg border border-rule bg-surface p-4 text-sm">
+        <div className="mb-4 card p-4 text-sm">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <p className="font-medium">
               {selected.kind === "phase" ? <Link href={`/phases/${selected.id}`} className="hover:text-accent">{selected.id} {selected.title}</Link> : <Link href={`/checkpoints/${selected.id}`} className="hover:text-accent">{selected.id} {selected.title}</Link>}
@@ -194,7 +194,7 @@ export function DependencyGraph({ nodes }: { nodes: GraphNode[] }) {
       </div>
 
       <div className={cx(view === "graph" ? "hidden" : view === "list" ? "block" : "md:hidden")}>
-        <ol className="divide-y divide-rule rounded-lg border border-rule bg-surface">
+        <ol className="list-card">
           {nodes.filter((n) => !dim(n.id)).map((n) => (
             <li key={n.id} className="px-3 py-2.5">
               <div className="flex items-center gap-2">

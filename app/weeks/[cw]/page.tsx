@@ -98,7 +98,7 @@ export default async function Page({ params }: Props) {
 
       {w.dayPlan && (
         <Section title={`Master 14-day plan (days ${w.dayPlan.days} this week)`}>
-          <ul className="divide-y divide-rule rounded-md border border-rule bg-surface text-sm">
+          <ul className="list-card text-sm">
             {w.dayPlan.plan.map((d) => (
               <li key={d.days} className="flex gap-3 px-3 py-2"><span className="w-24 shrink-0 text-muted">{d.days}</span>{d.focus}</li>
             ))}

@@ -79,7 +79,7 @@ The code is structured for the next stage:
 ## How the curriculum data works
 
 ```
-curriculum/source/MASTER_ROADMAP_VICTOR_2026_FINAL_2026-09-17.md   canonical source (MD5 090f7c1c3e34bf04390f5c92373347d6)
+curriculum/source/MASTER_ROADMAP_VICTOR_2026_FINAL_2026-09-17.md   canonical source (MD5 c85d55c0e1916af940605fe1467edc3c)
         |  curriculum/generator/parse_master.py
         v
 curriculum/generator/_build/master_phases.json                    parsed phases, components, items

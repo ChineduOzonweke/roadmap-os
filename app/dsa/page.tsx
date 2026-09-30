@@ -19,7 +19,7 @@ export default function Page() {
     <>
       <PageHeader
         title="DSA journal"
-        lead={<>Problems, the patterns they practise, and the mistakes behind them. Patterns are the canonical items of <Link className="text-accent underline" href="/topics/P04.6">P04.6</Link> and the P04 structure and algorithm topics, so each problem feeds its topic page.</>}
+        lead={<>Problems, the patterns they practise, and the mistakes behind them. Tag each problem with patterns from <Link className="text-accent underline underline-offset-2" href="/topics/P04.6">Problem-solving patterns</Link> and the data-structure topics, and it shows up on those topic pages.</>}
       />
       <DsaJournal patterns={patterns} practice={practice} laneNote={laneNote} />
     </>

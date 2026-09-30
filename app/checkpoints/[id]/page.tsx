@@ -34,12 +34,12 @@ export default async function Page({ params }: Props) {
       <PageHeader
         meta={<><Link href="/checkpoints" className="hover:text-accent">Checkpoints</Link><RefId id={c.id} /></>}
         title={checkpointName(c.id)}
-        lead={<>{c.gateWeek ? <>Planned at <Link className="text-accent hover:underline" href={`/weeks/${c.gateWeek}`}>week {c.gateWeek}</Link>. </> : "Calendar-driven. "}{c.source}.</>}
+        lead={<>{c.gateWeek ? <>Planned at <Link className="text-accent hover:underline" href={`/weeks/${c.gateWeek}`}>week {c.gateWeek}</Link>.</> : "Timed to recruiting periods rather than a fixed week."}</>}
       />
 
       {c.practicalGate && (
         <Section title={c.kind === "stage" ? "What this covers" : "Practical check"}>
-          <p className="max-w-[72ch] rounded-lg border border-rule bg-surface p-4">{c.practicalGate}</p>
+          <p className="max-w-[72ch] card p-4">{c.practicalGate}</p>
         </Section>
       )}
       {c.note && <p className="mb-6 max-w-[72ch] text-sm text-muted">{c.note}</p>}
@@ -53,11 +53,11 @@ export default async function Page({ params }: Props) {
           <div className="space-y-3">
             {[...byPhase.entries()].map(([ph, ts]) => (
               <div key={ph}>
-                <p className="text-sm font-medium"><Link href={`/phases/${ph}`} className="hover:text-accent">{ph} {getPhase(ph)?.title}</Link></p>
+                <p className="text-sm font-medium"><Link href={`/phases/${ph}`} className="hover:text-accent">{getPhase(ph)?.title}</Link></p>
                 <ul className="mt-1 space-y-1">
                   {ts.map((t) => (
                     <li key={t.id} className="flex flex-wrap items-center gap-2 text-sm">
-                      <Link href={`/topics/${t.id}`} className="min-w-0 flex-1 hover:text-accent"><RefId id={t.id} /> {t.label}</Link>
+                      <Link href={`/topics/${t.id}`} className="min-w-0 flex-1 hover:text-accent">{t.label} <RefId id={t.id} /></Link>
                       <TopicStatus topicId={t.id} />
                     </li>
                   ))}

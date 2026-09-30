@@ -37,15 +37,15 @@ export default async function Page({ params }: Props) {
         lead={p.purpose}
       />
       <div className="mb-8 grid grid-cols-1 gap-3 text-sm sm:grid-cols-3">
-        <div><p className="text-xs text-muted">Evidence for</p><p>{p.evidenceFor}</p></div>
+        <div><p className="text-xs text-muted">Evidence for</p><p>{p.evidenceFor.split(/,\s*/).map((e) => refLabel(e.trim()).label).join(", ")}</p></div>
         <div><p className="text-xs text-muted">Build weeks</p><p>{p.buildWeeks.map((w, i) => <span key={w}>{i > 0 && ", "}<Link className="hover:text-accent" href={`/weeks/${w}`}>{w}</Link></span>)}</p></div>
-        <div><p className="text-xs text-muted">Requires</p><p>{p.requires.map((r, i) => { const x = refLabel(r); return <span key={r}>{i > 0 && ", "}{x.href ? <Link className="hover:text-accent" href={x.href}>{r}</Link> : r}</span>; })}</p></div>
+        <div><p className="text-xs text-muted">Requires</p><p>{p.requires.map((r, i) => { const x = refLabel(r); return <span key={r}>{i > 0 && ", "}{x.href ? <Link className="hover:text-accent" href={x.href}>{x.label}</Link> : x.label}</span>; })}</p></div>
       </div>
 
       <Section title="Your project record"><ProjectControls id={p.id} milestones={p.milestones} quality={quality} /></Section>
 
       <Section title="Master specification">
-        <div className="rounded-lg border border-rule bg-surface p-4"><Markdown md={p.bodyMd} /></div>
+        <div className="card p-4"><Markdown md={p.bodyMd} /></div>
       </Section>
 
       <Section title="Curriculum it draws on">

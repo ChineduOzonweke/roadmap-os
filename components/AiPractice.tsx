@@ -47,8 +47,8 @@ function LogForm({ missions, onDone, presetMission }: { missions: AiMission[]; o
   const [aiErrorCaught, setCaught] = useState(false);
   const [canDoAlone, setAlone] = useState<AiCanDoAlone>("partly");
   const [missionId, setMission] = useState<string | null>(presetMission);
-  const field = "w-full rounded-md border border-rule bg-surface px-3 py-2.5 text-base";
-  const seg = (on: boolean) => cx("min-h-10 flex-1 rounded-md border px-2 text-sm", on ? "border-accent bg-accent-soft text-accent" : "border-rule bg-surface");
+  const field = "input";
+  const seg = "chip flex-1 justify-center";
   return (
     <form
       className="space-y-3"
@@ -64,7 +64,7 @@ function LogForm({ missions, onDone, presetMission }: { missions: AiMission[]; o
       </label>
       <div>
         <span className="mb-1 block text-sm font-medium">Tried it myself first?</span>
-        <div className="flex gap-2"><button type="button" className={seg(attemptedFirst)} onClick={() => setAttempted(true)}>Yes</button><button type="button" className={seg(!attemptedFirst)} onClick={() => setAttempted(false)}>No</button></div>
+        <div className="flex gap-2"><button type="button" aria-pressed={attemptedFirst} className={seg} onClick={() => setAttempted(true)}>Yes</button><button type="button" aria-pressed={!attemptedFirst} className={seg} onClick={() => setAttempted(false)}>No</button></div>
       </div>
       <label className="block"><span className="mb-1 block text-sm font-medium">What the AI did</span>
         <input className={field} value={aiDid} onChange={(e) => setAiDid(e.target.value)} placeholder="e.g. explained why the loop never ends" />
@@ -73,13 +73,13 @@ function LogForm({ missions, onDone, presetMission }: { missions: AiMission[]; o
         <input className={field} value={verified} onChange={(e) => setVerified(e.target.value)} placeholder="e.g. ran it with 3 inputs, read the docs for range()" />
       </label>
       <label className="flex min-h-11 items-center gap-3">
-        <input type="checkbox" className="h-5 w-5 accent-[var(--accent)]" checked={aiErrorCaught} onChange={(e) => setCaught(e.target.checked)} />
+        <input type="checkbox" checked={aiErrorCaught} onChange={(e) => setCaught(e.target.checked)} />
         <span className="text-sm">I caught an AI mistake</span>
       </label>
       <div>
         <span className="mb-1 block text-sm font-medium">Can I do it alone now?</span>
         <div className="flex gap-2">
-          {(["yes", "partly", "no"] as AiCanDoAlone[]).map((x) => <button key={x} type="button" className={seg(canDoAlone === x)} onClick={() => setAlone(x)}>{x[0].toUpperCase() + x.slice(1)}</button>)}
+          {(["yes", "partly", "no"] as AiCanDoAlone[]).map((x) => <button key={x} type="button" aria-pressed={canDoAlone === x} className={seg} onClick={() => setAlone(x)}>{x[0].toUpperCase() + x.slice(1)}</button>)}
         </div>
       </div>
       <label className="block"><span className="mb-1 block text-sm font-medium">Mission (optional)</span>
@@ -89,8 +89,8 @@ function LogForm({ missions, onDone, presetMission }: { missions: AiMission[]; o
         </select>
       </label>
       <div className="flex gap-2">
-        <button type="submit" className="min-h-11 flex-1 rounded-md bg-accent px-4 font-medium text-accent-ink">Save</button>
-        <button type="button" onClick={onDone} className="min-h-11 rounded-md border border-rule px-4">Cancel</button>
+        <button type="submit" className="btn btn-primary flex-1">Save</button>
+        <button type="button" onClick={onDone} className="btn btn-secondary">Cancel</button>
       </div>
     </form>
   );
@@ -126,9 +126,9 @@ export function AiPractice() {
         <div><dt className="text-muted">Roadmap link</dt><dd><RefLinks ids={m.requires} /></dd></div>
       </dl>
       <div className="mt-3 flex flex-wrap gap-2">
-        {state !== "locked" && <button type="button" onClick={() => setLogging({ mission: m.id })} className="min-h-10 rounded-md border border-accent px-3 text-sm text-accent">Log evidence</button>}
+        {state !== "locked" && <button type="button" onClick={() => setLogging({ mission: m.id })} className="btn btn-secondary btn-sm">Log evidence</button>}
         {state !== "locked" && (
-          <button type="button" onClick={() => setFlag(m.id, state !== "done")} className={cx("min-h-10 rounded-md px-3 text-sm", state === "done" ? "border border-rule" : "bg-ok text-white")}>
+          <button type="button" onClick={() => setFlag(m.id, state !== "done")} className={cx("btn btn-sm", state === "done" ? "btn-secondary" : "btn-ok")}>
             {state === "done" ? "Mark not done" : "Mark done"}
           </button>
         )}
@@ -143,7 +143,7 @@ export function AiPractice() {
         <p className="mt-1 text-muted">AI output is an input to engineering, not proof of correctness. Use AI to get more capable, not to skip the learning.</p>
       </header>
 
-      <section className="rounded-lg border border-rule bg-surface p-4">
+      <section className="card p-4">
         <p className="text-sm text-muted">Your tier now</p>
         <p className="text-lg font-semibold">Tier {n}: {tier.title}</p>
         <p className="mt-1">{tier.summary}</p>
@@ -193,15 +193,15 @@ export function AiPractice() {
       <section aria-labelledby="log">
         <div className="mb-2 flex items-baseline justify-between gap-3">
           <h2 id="log" className="text-base font-semibold">AI log</h2>
-          {!logging && <button type="button" onClick={() => setLogging({ mission: null })} className="min-h-10 rounded-md bg-accent px-3 text-sm font-medium text-accent-ink">Log a task</button>}
+          {!logging && <button type="button" onClick={() => setLogging({ mission: null })} className="btn btn-primary btn-sm">Log a task</button>}
         </div>
         {logging && (
-          <div className="mb-3 rounded-lg border border-rule bg-surface p-4">
+          <div className="mb-3 card p-4">
             <LogForm missions={overlay.missions} presetMission={logging.mission} onDone={() => setLogging(null)} />
           </div>
         )}
         {s.aiLog.length ? (
-          <ul className="divide-y divide-rule rounded-lg border border-rule bg-surface">
+          <ul className="list-card">
             {s.aiLog.slice(0, 20).map((e) => (
               <li key={e.id} className="px-4 py-3 text-sm">
                 <p className="font-medium">{e.task}</p>

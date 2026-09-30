@@ -17,3 +17,6 @@ export const IconMoon = (p: SVGProps<SVGSVGElement>) => (<svg {...base(p)}><path
 export const IconClose = (p: SVGProps<SVGSVGElement>) => (<svg {...base(p)}><path d="M6 6l12 12M18 6 6 18" /></svg>);
 export const IconLock = (p: SVGProps<SVGSVGElement>) => (<svg {...base(p)}><rect x="5" y="11" width="14" height="9" rx="1.5" /><path d="M8 11V8a4 4 0 0 1 8 0v3" /></svg>);
 export const IconChevron = (p: SVGProps<SVGSVGElement>) => (<svg {...base(p)}><path d="m9 6 6 6-6 6" /></svg>);
+export const IconRoadmap = (p: SVGProps<SVGSVGElement>) => (<svg {...base(p)}><circle cx="6" cy="18" r="2" /><circle cx="18" cy="6" r="2" /><path d="M8 18h7a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h7" /></svg>);
+export const IconProgress = (p: SVGProps<SVGSVGElement>) => (<svg {...base(p)}><path d="M5 20v-5M12 20V10M19 20V4" /></svg>);
+export const IconCheck = (p: SVGProps<SVGSVGElement>) => (<svg {...base(p)}><path d="m5 12.5 4.5 4.5L19 7.5" /></svg>);
