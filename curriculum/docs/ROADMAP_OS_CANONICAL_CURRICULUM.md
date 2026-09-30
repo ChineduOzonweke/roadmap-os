@@ -1,7 +1,7 @@
 # ROADMAP OS — CANONICAL CURRICULUM STRUCTURE
 
 **Version:** v1.0 (2026-09-24)  
-**Authority:** normalised from `MASTER_ROADMAP_VICTOR_2026_FINAL_2026-09-17.md` (MD5 `2951e64c4a6cd61691e30420b1f98f10`).  
+**Authority:** normalised from `MASTER_ROADMAP_VICTOR_2026_FINAL_2026-09-17.md` (MD5 `090f7c1c3e34bf04390f5c92373347d6`).  
 **Rule:** the master decides *what* is learned and the dependency order. If this file and the master ever disagree, the master wins and this file is regenerated. Every concept line below is the master's own text; only IDs, heading levels and grouping were added.  
 **Scope:** curriculum structure only. Scheduling lives in `ROADMAP_OS_PHASE_WEEK_MAPPING.md`; decisions and fixes live in `ROADMAP_OS_RECONCILIATION_LOG.md`.
 
@@ -223,7 +223,7 @@ Pass when you can:
 
 **Practical gate**
 
-Complete 3 unseen beginner programming tasks in separate sessions with at most normal documentation lookup, and build one small CLI program without following a walkthrough.
+Complete 3 unseen beginner programming tasks in separate sessions with at most normal documentation lookup, and build one small CLI program without following a walkthrough. Do the unseen tasks with AI assistance off (Assess mode, section 109).
 
 ### C2 — CS foundation
 
@@ -240,7 +240,7 @@ Pass when you can:
 
 **Practical gate**
 
-Complete a mixed set of unseen DSA problems with at least 80% correctness over repeated attempts, explain the complexity of each solution, and implement the core structures yourself.
+Complete a mixed set of unseen DSA problems with at least 80% correctness over repeated attempts, explain the complexity of each solution, and implement the core structures yourself. AI assistance stays off for these problems (Assess mode, section 109).
 
 ### C3 — Backend engineer
 
@@ -257,6 +257,8 @@ Pass when you can:
 - handle errors
 - document an API
 - deploy an application
+- work in an unfamiliar codebase with an AI assistant: fix a bug and add a small feature, explain every accepted change, and name at least one AI mistake you caught
+- run a coding agent on your own service with least privilege (a branch, no production credentials, reviewed commands) and describe exactly what it could access
 
 **Practical gate**
 
@@ -316,6 +318,7 @@ Pass when you can:
 - use tools safely
 - evaluate retrieval and generation
 - handle failures and cost constraints
+- include indirect prompt-injection cases (instructions hidden in retrieved content or tool output) in the evaluation set
 
 **Practical gate**
 
@@ -336,6 +339,7 @@ Pass when you can:
 - explain serious projects deeply
 - communicate trade-offs
 - provide genuine behavioural evidence
+- complete a timed AI-assisted code-comprehension session on an unfamiliar multi-file repository, and a timed AI-free DSA session, in the same week
 
 Interview readiness is a separate performance skill and must be trained deliberately near recruiting periods.
 

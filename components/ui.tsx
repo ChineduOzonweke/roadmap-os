@@ -2,6 +2,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import type { Status } from "@/lib/progress";
+import { IconChevron } from "./icons";
 
 export function cx(...xs: (string | false | null | undefined)[]) {
   return xs.filter(Boolean).join(" ");
@@ -147,5 +148,21 @@ export function ExternalLink({ href, children, className }: { href: string; chil
     <a href={href} target="_blank" rel="noopener noreferrer" className={cx("text-accent underline underline-offset-2 [overflow-wrap:anywhere] hover:no-underline", className)}>
       {children}
     </a>
+  );
+}
+
+/** Progressive disclosure: collapsed section with a large tap target. Native <details>, no JS. */
+export function Disclosure({ title, hint, open, children, id, className }: { title: ReactNode; hint?: ReactNode; open?: boolean; children: ReactNode; id?: string; className?: string }) {
+  return (
+    <details id={id} open={open} className={cx("group rounded-lg border border-rule bg-surface", className)}>
+      <summary className="flex min-h-12 cursor-pointer list-none items-center gap-3 px-4 py-3 [&::-webkit-details-marker]:hidden">
+        <span className="min-w-0 flex-1">
+          <span className="block font-medium">{title}</span>
+          {hint && <span className="block text-sm text-muted">{hint}</span>}
+        </span>
+        <IconChevron className="shrink-0 text-muted transition-transform group-open:rotate-90" width={18} height={18} />
+      </summary>
+      <div className="border-t border-rule px-4 py-3">{children}</div>
+    </details>
   );
 }

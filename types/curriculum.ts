@@ -119,12 +119,13 @@ export type Tool = {
 };
 
 export type WeekSlice =
-  | { ref: string; kind: "topic"; topicId: string; conceptIds: string[] | null; label: string }
-  | { ref: string; kind: "project"; projectId: string; label: string }
-  | { ref: string; kind: "activity"; activity: string; label: string };
+  | { ref: string; kind: "topic"; topicId: string; conceptIds: string[] | null; label: string; title: string; detail: string }
+  | { ref: string; kind: "project"; projectId: string; label: string; title: string; detail: string }
+  | { ref: string; kind: "activity"; activity: string; label: string; title: string; detail: string };
 
 export type Week = {
   cw: number;
+  title: string; // learner-facing week title, no IDs
   stage: string;
   mainStage: string;
   type: "study" | "project" | "consolidation" | "open";
@@ -214,4 +215,5 @@ export type ClientIndex = {
 };
 
 // One row of the static search index served at /search-index.json.
-export type SearchEntry = { k: string; id: string; t: string; s: string; h: string };
+/** k kind, id reference code, t title, p human-readable location, s extra searchable text, h link. */
+export type SearchEntry = { k: string; id: string; t: string; p?: string; s: string; h: string };

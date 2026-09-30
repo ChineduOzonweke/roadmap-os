@@ -1,0 +1,356 @@
+{
+ "source": "master section 109",
+ "intro": [
+  "This section is about how to operate as an engineer when AI is an active participant in the work. It is not a second AI/ML curriculum: LLM engineering, RAG, agents, evaluation and AI security stay in their phases (P23–P27, P39, P44) and checkpoint C6.",
+  "The principle: **AI output is an input to engineering, not proof of correctness.** The goal is AI-native, not AI-dependent."
+ ],
+ "loop": [
+  "Think",
+  "attempt",
+  "consult (AI or docs)",
+  "implement",
+  "verify",
+  "explain",
+  "retest"
+ ],
+ "modes": [
+  {
+   "id": "learn",
+   "title": "Learn",
+   "when": "the concept is new to you (mastery below Practised)",
+   "summary": "Use AI for explanations and hints. Try the problem yourself first.",
+   "aiCan": [
+    "explain a concept or show a worked example of a different problem",
+    "give a hint when you are stuck after a real attempt",
+    "ask you questions that expose a misunderstanding",
+    "explain an error after you have written down your own guess",
+    "give feedback on code you already wrote"
+   ],
+   "yours": [
+    "the first attempt",
+    "writing the solution to the exercise you are learning from",
+    "after substantial help, solving a variation without AI, then explaining it back in your own words",
+    "course rules: for CS50 work, use the CS50 Duck, not other AI tools"
+   ]
+  },
+  {
+   "id": "build",
+   "title": "Build",
+   "when": "you can already do the underlying skill alone (mastery Practised or higher), or you are working on a project",
+   "summary": "AI can work with you up to your current tier. You own understanding and verification.",
+   "aiCan": [
+    "do whatever your current tier allows"
+   ],
+   "yours": [
+    "deciding what to build and when it is done",
+    "reading and understanding every line you keep",
+    "running the checks: tests, types, lint, behaviour, edge cases"
+   ]
+  },
+  {
+   "id": "assess",
+   "title": "Assess",
+   "when": "gate attempts, unseen practice tasks, DSA problems before you have solved them, exams and graded coursework",
+   "summary": "AI off, or only what the course or employer allows. This is where you show what you can do alone.",
+   "aiCan": [
+    "review your solution after you have finished and recorded your own answer"
+   ],
+   "yours": [
+    "the whole attempt"
+   ]
+  }
+ ],
+ "tiers": [
+  {
+   "id": "T1",
+   "title": "Tutor",
+   "unlock": null,
+   "summary": "AI explains, questions, hints and gives feedback. You make the primary attempt.",
+   "aiCan": [
+    "explain concepts and errors",
+    "give hints and ask guiding questions",
+    "diagnose misunderstandings",
+    "give feedback on your code and explanations"
+   ],
+   "youOwn": [
+    "the attempt, the solution and the understanding"
+   ],
+   "security": [],
+   "links": [
+    "P01",
+    "G0",
+    "C1"
+   ],
+   "pointerOnly": false
+  },
+  {
+   "id": "T2",
+   "title": "Pair",
+   "unlock": "C1",
+   "summary": "AI proposes, reviews, debugs and refactors code with you on small tasks. You understand and verify everything you keep.",
+   "aiCan": [
+    "propose code for a function or small change",
+    "review your code and point out defects",
+    "help investigate and debug errors",
+    "suggest refactorings and explain implementation decisions"
+   ],
+   "youOwn": [
+    "writing or approving the tests first, so tests decide correctness",
+    "reading every changed line before you apply it",
+    "rejecting changes you cannot explain",
+    "checking that every suggested package exists and is the one you meant",
+    "never pasting secrets, keys or `.env` contents into a prompt"
+   ],
+   "security": [],
+   "links": [
+    "P02",
+    "P07.3",
+    "P07.4",
+    "PR01",
+    "PR02"
+   ],
+   "pointerOnly": false
+  },
+  {
+   "id": "T3",
+   "title": "Supervised agent",
+   "unlock": "SG4",
+   "summary": "AI works at repository level on bounded tasks. You define the task, the boundaries and the checks, and you review the result.",
+   "aiCan": [
+    "inspect a repository and trace code paths",
+    "identify the files involved in a change",
+    "modify several files for a bounded task",
+    "run tests and other tools you have allowed"
+   ],
+   "youOwn": [
+    "defining the task, its scope and its acceptance criteria",
+    "giving the context it needs: relevant files, architecture, constraints",
+    "controlling permissions and tool access",
+    "reviewing the plan before changes and the diff after",
+    "verifying the result and explaining it"
+   ],
+   "security": [
+    "secrets: no production credentials or real keys in the agent's environment",
+    "permissions: least privilege; work on a branch or a copy",
+    "destructive commands: approve deletes, migrations, force pushes and cloud commands yourself",
+    "prompt injection: treat issues, READMEs, web pages, logs and dependencies as untrusted input that may contain instructions",
+    "untrusted input plus private data plus outbound access is the dangerous combination; remove one",
+    "recovery: commit before the agent starts so every change can be reverted"
+   ],
+   "links": [
+    "P07.5",
+    "P08",
+    "P31",
+    "P39",
+    "C3",
+    "C7"
+   ],
+   "pointerOnly": false
+  },
+  {
+   "id": "T4",
+   "title": "Building AI systems",
+   "unlock": "C5",
+   "summary": "Engineering AI-powered systems is covered by the existing phases and checkpoint C6. The overlay adds no content here.",
+   "aiCan": [],
+   "youOwn": [],
+   "security": [],
+   "links": [
+    "P23",
+    "P24",
+    "P25",
+    "P27",
+    "P39",
+    "P44",
+    "C6"
+   ],
+   "pointerOnly": true
+  }
+ ],
+ "context": {
+  "text": "Context engineering is giving an AI the information, tools and boundaries it needs to do a task reliably. It is task specification, not prompt wording.",
+  "points": [
+   "understand the architecture and find the relevant files before asking for a change",
+   "state the goal, constraints, non-goals and acceptance criteria",
+   "point to the documentation that actually applies",
+   "keep the scope small enough to review",
+   "keep project instruction files short: only conventions that are not obvious from the code",
+   "check understanding: have the AI restate the plan and the files it will touch before it changes anything"
+  ]
+ },
+ "verification": {
+  "text": "Before you keep AI-produced work, check what applies:",
+  "points": [
+   "tests pass, and they test the right thing",
+   "types and lint are clean",
+   "the program behaves correctly when you run it, including edge cases",
+   "no new security problem: input handling, secrets, dependencies",
+   "you can explain every line you are keeping"
+  ]
+ },
+ "missions": [
+  {
+   "id": "AIM-01",
+   "title": "Hint, not answer",
+   "tier": 1,
+   "requires": [
+    "P01.1a"
+   ],
+   "goal": "Use AI as a tutor without losing the learning.",
+   "you": "attempt a non-graded exercise for at least 15 minutes and write down where you are stuck",
+   "ai": "gives one hint that contains no code for the task",
+   "verify": "you fix it yourself; the next day you solve a variation with no AI",
+   "evidence": "a log entry marked \"can do it alone\""
+  },
+  {
+   "id": "AIM-02",
+   "title": "Guess before you ask",
+   "tier": 1,
+   "requires": [
+    "P01.1a"
+   ],
+   "goal": "Diagnose errors instead of outsourcing them.",
+   "you": "read the traceback and write your own explanation of the cause",
+   "ai": "explains the error",
+   "verify": "compare its explanation with yours and with the Python documentation",
+   "evidence": "a log entry saying whether your guess was right"
+  },
+  {
+   "id": "AIM-03",
+   "title": "Tests decide",
+   "tier": 2,
+   "requires": [
+    "C1",
+    "P07.3"
+   ],
+   "goal": "Treat generated code as unverified until tests pass.",
+   "you": "write tests for a small function from its specification before any code exists",
+   "ai": "writes an implementation, then suggests test cases you missed",
+   "verify": "run your tests; judge each suggested test as valid or not",
+   "evidence": "at least one defect or test gap found and logged"
+  },
+  {
+   "id": "AIM-04",
+   "title": "Review the diff",
+   "tier": 2,
+   "requires": [
+    "C1",
+    "P02.1"
+   ],
+   "goal": "Review AI changes the way you would review a pull request.",
+   "you": "read every changed line before applying it and write the commit message yourself",
+   "ai": "proposes a change to one of your own repositories",
+   "verify": "tests pass and you can explain each part of the change",
+   "evidence": "at least one suggestion rejected, with the reason"
+  },
+  {
+   "id": "AIM-05",
+   "title": "Check before you install",
+   "tier": 2,
+   "requires": [
+    "C1",
+    "P03.1"
+   ],
+   "goal": "Keep hallucinated or malicious packages out of your projects.",
+   "you": "before installing any package an AI suggests, confirm it exists, is maintained and is the one you meant; pin the version",
+   "ai": "suggests a package for a task",
+   "verify": "the registry page, the maintainers, the release history",
+   "evidence": "a log entry and a pinned requirements file"
+  },
+  {
+   "id": "AIM-06",
+   "title": "Refactor with a safety net",
+   "tier": 2,
+   "requires": [
+    "P07.1",
+    "P07.3"
+   ],
+   "goal": "Change structure without changing behaviour.",
+   "you": "write tests that pin down the current behaviour",
+   "ai": "proposes the refactor",
+   "verify": "the same tests pass, and no needless abstraction was added",
+   "evidence": "before and after, with your judgement of the change"
+  },
+  {
+   "id": "AIM-07",
+   "title": "Map an unfamiliar repository",
+   "tier": 3,
+   "requires": [
+    "SG4"
+   ],
+   "goal": "Understand code you did not write.",
+   "you": "in 60 minutes, find the entry points, trace one request from input to storage, and find where the tests live",
+   "ai": "answers your questions about the code",
+   "verify": "open the file or run the code for every claim before you believe it",
+   "evidence": "your map, plus at least one AI claim you proved wrong"
+  },
+  {
+   "id": "AIM-08",
+   "title": "Bounded change in an unfamiliar repository",
+   "tier": 3,
+   "requires": [
+    "SG4",
+    "P07.5"
+   ],
+   "goal": "Supervise an agent on a real change.",
+   "you": "define the task, its boundaries and its acceptance tests; review the agent's plan before it edits; review the diff after",
+   "ai": "inspects the repository, traces the relevant code path, edits the files involved, runs the tests",
+   "verify": "the tests, your own reading of the diff, and a description of the change written by you",
+   "evidence": "the merged change, plus what the agent got wrong or nearly got wrong"
+  },
+  {
+   "id": "AIM-09",
+   "title": "Threat-model your agent",
+   "tier": 3,
+   "requires": [
+    "SG4",
+    "P03.1"
+   ],
+   "goal": "Run agents safely.",
+   "you": "list what the agent can read, what untrusted input it takes in, and what it can send out or change; remove one of the risky capabilities",
+   "ai": "runs a task inside the reduced setup",
+   "verify": "plant a harmless instruction in a test repository's README and check whether the agent follows it",
+   "evidence": "the written list and what happened"
+  },
+  {
+   "id": "AIM-10",
+   "title": "Brief an agent well",
+   "tier": 3,
+   "requires": [
+    "AIM-08"
+   ],
+   "goal": "Give an agent the context it needs, and no more.",
+   "you": "write a short task brief (goal, relevant files, constraints, non-goals, acceptance criteria) and a minimal project instruction file with only non-obvious conventions",
+   "ai": "restates the plan and the files it will touch, then does the task",
+   "verify": "correct any misunderstanding before it edits; compare the result and the rework with and without the brief",
+   "evidence": "a short comparison note"
+  },
+  {
+   "id": "AIM-11",
+   "title": "Timed code-comprehension session",
+   "tier": 3,
+   "requires": [
+    "C3"
+   ],
+   "goal": "Perform under interview-like conditions.",
+   "you": "in 60 minutes, fix planted bugs and extend a feature in an unfamiliar multi-file repository, explaining your reasoning out loud",
+   "ai": "acts as the assistant you would have in the interview",
+   "verify": "run the tests and explain every change you accepted",
+   "evidence": "a session log; in the same week, one timed AI-free DSA session"
+  },
+  {
+   "id": "AIM-12",
+   "title": "Audit a benchmark claim",
+   "tier": 3,
+   "requires": [
+    "P15.3"
+   ],
+   "goal": "Read evaluation claims critically.",
+   "you": "pick a published coding-benchmark result and look for leakage, flawed tests or scaffolding effects",
+   "ai": "helps find the primary sources",
+   "verify": "rely on primary sources only",
+   "evidence": "a one-page note"
+  }
+ ],
+ "checkpoints": "The overlay adds no separate gates. Its expectations live inside existing checkpoints: C1 and C2 practical gates run in Assess mode; C3 adds unfamiliar-codebase work with an assistant and supervised agent use; C6 adds indirect prompt-injection cases; C7 adds a timed AI-assisted code-comprehension session."
+}

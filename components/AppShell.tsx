@@ -7,7 +7,7 @@ import { NAV, isActive } from "@/lib/nav";
 import { useHydrated, useUserState } from "@/lib/store";
 import { stageOfWeek } from "@/lib/progress";
 import { ThemeToggle } from "./ThemeToggle";
-import { IconClose, IconDashboard, IconMore, IconSearch, IconToday, IconTree, IconWeeks } from "./icons";
+import { IconClose, IconDashboard, IconMore, IconSearch, IconToday, IconTree } from "./icons";
 import { cx } from "./ui";
 
 function Brand() {
@@ -24,10 +24,10 @@ function WeekChip() {
   const ready = useHydrated();
   const stage = stageOfWeek(s.currentWeek);
   return (
-    <Link href={`/weeks/${s.currentWeek}`} className="block rounded-md border border-rule px-3 py-2 hover:border-accent">
+    <Link href="/" className="block rounded-md border border-rule px-3 py-2 hover:border-accent">
       <span className="block text-xs text-muted">Current week</span>
       <span className="block font-medium">{ready ? `Week ${s.currentWeek} of 206` : "Loading progress"}</span>
-      {ready && stage && <span className="block truncate text-xs text-muted">{stage.id} {stage.n}</span>}
+      {ready && stage && <span className="block truncate text-xs text-muted">{stage.n}</span>}
     </Link>
   );
 }
@@ -66,10 +66,10 @@ function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
 }
 
 const BOTTOM = [
-  { href: "/today", label: "Today", Icon: IconToday },
-  { href: "/", label: "Dashboard", Icon: IconDashboard },
-  { href: "/weeks", label: "Weeks", Icon: IconWeeks },
-  { href: "/curriculum", label: "Phases", Icon: IconTree },
+  { href: "/", label: "Today", Icon: IconToday },
+  { href: "/curriculum", label: "Roadmap", Icon: IconTree },
+  { href: "/progress", label: "Progress", Icon: IconDashboard },
+  { href: "/search", label: "Search", Icon: IconSearch },
 ];
 
 export function AppShell({ children }: { children: ReactNode }) {
@@ -103,9 +103,6 @@ export function AppShell({ children }: { children: ReactNode }) {
         <header className="sticky top-0 z-30 flex h-14 items-center justify-between border-b border-rule bg-surface/95 px-4 backdrop-blur lg:hidden">
           <Brand />
           <div className="flex items-center">
-            <Link href="/search" aria-label="Search" className="inline-flex h-9 w-9 items-center justify-center rounded-md text-muted hover:bg-surface-2">
-              <IconSearch />
-            </Link>
             <ThemeToggle />
           </div>
         </header>
@@ -121,7 +118,7 @@ export function AppShell({ children }: { children: ReactNode }) {
             const active = isActive(pathname, href);
             return (
               <li key={href}>
-                <Link href={href} aria-current={active ? "page" : undefined} className={cx("flex flex-col items-center gap-0.5 py-2 text-[11px]", active ? "text-accent" : "text-muted")}>
+                <Link href={href} aria-current={active ? "page" : undefined} className={cx("flex min-h-14 flex-col items-center justify-center gap-0.5 py-2 text-[11px]", active ? "text-accent" : "text-muted")}>
                   <Icon />
                   {label}
                 </Link>
@@ -129,7 +126,7 @@ export function AppShell({ children }: { children: ReactNode }) {
             );
           })}
           <li>
-            <button type="button" onClick={() => setMenu(true)} className="flex w-full flex-col items-center gap-0.5 py-2 text-[11px] text-muted" aria-expanded={menu} aria-controls="more-menu">
+            <button type="button" onClick={() => setMenu(true)} className="flex min-h-14 w-full flex-col items-center justify-center gap-0.5 py-2 text-[11px] text-muted" aria-expanded={menu} aria-controls="more-menu">
               <IconMore />
               More
             </button>

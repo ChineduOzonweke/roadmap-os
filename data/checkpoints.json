@@ -46,7 +46,7 @@
    "debug a small program",
    "make meaningful Git commits"
   ],
-  "practicalGate": "Complete 3 unseen beginner programming tasks in separate sessions with at most normal documentation lookup, and build one small CLI program without following a walkthrough.",
+  "practicalGate": "Complete 3 unseen beginner programming tasks in separate sessions with at most normal documentation lookup, and build one small CLI program without following a walkthrough. Do the unseen tasks with AI assistance off (Assess mode, section 109).",
   "note": ""
  },
  {
@@ -143,7 +143,7 @@
    "solve standard beginner/intermediate DSA problems",
    "explain core OS, networking, and database concepts"
   ],
-  "practicalGate": "Complete a mixed set of unseen DSA problems with at least 80% correctness over repeated attempts, explain the complexity of each solution, and implement the core structures yourself.",
+  "practicalGate": "Complete a mixed set of unseen DSA problems with at least 80% correctness over repeated attempts, explain the complexity of each solution, and implement the core structures yourself. AI assistance stays off for these problems (Assess mode, section 109).",
   "note": ""
  },
  {
@@ -203,7 +203,9 @@
    "write tests",
    "handle errors",
    "document an API",
-   "deploy an application"
+   "deploy an application",
+   "work in an unfamiliar codebase with an AI assistant: fix a bug and add a small feature, explain every accepted change, and name at least one AI mistake you caught",
+   "run a coding agent on your own service with least privilege (a branch, no production credentials, reviewed commands) and describe exactly what it could access"
   ],
   "practicalGate": "Ship one small service with authentication, persistence, tests, API documentation, and a real deployment.",
   "note": ""
@@ -296,7 +298,8 @@
    "implement RAG",
    "use tools safely",
    "evaluate retrieval and generation",
-   "handle failures and cost constraints"
+   "handle failures and cost constraints",
+   "include indirect prompt-injection cases (instructions hidden in retrieved content or tool output) in the evaluation set"
   ],
   "practicalGate": "Build an evaluated AI system with a documented evaluation set, retrieval or tool-use tests, failure analysis, and basic observability.",
   "note": ""
@@ -342,7 +345,8 @@
    "design systems",
    "explain serious projects deeply",
    "communicate trade-offs",
-   "provide genuine behavioural evidence"
+   "provide genuine behavioural evidence",
+   "complete a timed AI-assisted code-comprehension session on an unfamiliar multi-file repository, and a timed AI-free DSA session, in the same week"
   ],
   "practicalGate": "",
   "note": "Interview readiness is trained near recruiting periods (master). C7 prep windows are placed by the calendar layer against real recruiting dates, using whatever checkpoints are passed by then. Technical floor: C2 + C3 + system-design fundamentals."

@@ -150,6 +150,27 @@ resources.forEach((r) => {
 tools.forEach((t) => { if (t.url) { try { new URL(t.url); } catch { err(`tool ${t.id} malformed url`); } } });
 meta.componentEdges.forEach((e) => { [e.from, e.to].forEach((x) => { if (!isRef(x)) err(`component edge references missing ${x}`); }); });
 
+// ---- AI-native engineering overlay (master section 109)
+{
+  const ai = load("ai-overlay.json");
+  const missionIds = new Set(ai.missions.map((m) => m.id));
+  const known = (id) => isRef(id) || missionIds.has(id);
+  if (ai.tiers.length !== 4) err(`ai-overlay: expected 3 tiers plus the AI-systems pointer, found ${ai.tiers.length}`);
+  ai.tiers.forEach((t) => {
+    if (t.unlock && !gateIds.has(t.unlock)) err(`ai-overlay tier ${t.id} unlock gate ${t.unlock} missing`);
+    t.links.forEach((l) => { if (!known(l)) err(`ai-overlay tier ${t.id} link ${l} missing`); });
+  });
+  if (ai.modes.map((m) => m.id).join(",") !== "learn,build,assess") err("ai-overlay: modes must be learn, build, assess");
+  if (missionIds.size !== ai.missions.length) err("ai-overlay: duplicate mission id");
+  ai.missions.forEach((m) => {
+    if (![1, 2, 3].includes(m.tier)) err(`ai-overlay ${m.id} has invalid tier ${m.tier}`);
+    if (!m.requires.length) err(`ai-overlay ${m.id} has no prerequisite`);
+    m.requires.forEach((r) => { if (!known(r)) err(`ai-overlay ${m.id} requires missing ${r}`); });
+    ["goal", "you", "ai", "verify", "evidence"].forEach((f) => { if (!m[f]) err(`ai-overlay ${m.id} missing ${f}`); });
+  });
+  console.log(`  ai overlay        ${ai.tiers.length - 1} tiers, ${ai.modes.length} modes, ${ai.missions.length} missions`);
+}
+
 // ---- report
 const withUrl = resources.filter((r) => r.url).length;
 console.log("Roadmap OS data validation");

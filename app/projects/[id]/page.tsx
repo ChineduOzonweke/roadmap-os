@@ -6,6 +6,7 @@ import { Markdown } from "@/components/Markdown";
 import { ExternalLink, PageHeader, Section } from "@/components/ui";
 import { NotesEditor, TopicStatus } from "@/components/progress";
 import { ProjectControls } from "@/components/ProjectControls";
+import { RefId } from "@/components/Ref";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -31,7 +32,7 @@ export default async function Page({ params }: Props) {
   return (
     <>
       <PageHeader
-        meta={<><Link href="/projects" className="hover:text-accent">Projects</Link><span aria-hidden>/</span><span className="font-mono">{p.id}</span></>}
+        meta={<><Link href="/projects" className="hover:text-accent">Projects</Link><RefId id={p.id} /></>}
         title={p.title}
         lead={p.purpose}
       />
@@ -53,7 +54,7 @@ export default async function Page({ params }: Props) {
             const t = getTopic(tid);
             return t ? (
               <li key={tid} className="flex flex-wrap items-center gap-2">
-                <Link href={`/topics/${tid}`} className="min-w-0 flex-1 hover:text-accent"><span className="font-mono text-xs text-muted">{tid}</span> {t.label}</Link>
+                <Link href={`/topics/${tid}`} className="min-w-0 flex-1 hover:text-accent"><RefId id={tid} /> {t.label}</Link>
                 <TopicStatus topicId={tid} />
               </li>
             ) : null;

@@ -6,6 +6,7 @@ import { useHydrated, useUserState } from "@/lib/store";
 import { phaseRollup, topicById, topicView, type Status } from "@/lib/progress";
 import { Bar, StatusPill, cx } from "./ui";
 import { IconChevron } from "./icons";
+import { RefId } from "./Ref";
 
 export type ExplorerPhase = {
   id: string;
@@ -68,7 +69,7 @@ export function CurriculumExplorer({ phases }: { phases: ExplorerPhase[] }) {
           <span className="mr-1 text-xs text-muted">Stage</span>
           {["all", ...STAGES].map((x) => (
             <button key={x} type="button" aria-pressed={stage === x} onClick={() => setStage(x)} className={cx("rounded-md border px-2 py-1 text-xs", stage === x ? "border-accent bg-accent-soft text-accent" : "border-rule bg-surface")}>
-              {x === "all" ? "All" : x}
+              {x === "all" ? "All" : x.slice(1)}
             </button>
           ))}
         </div>
@@ -104,10 +105,10 @@ export function CurriculumExplorer({ phases }: { phases: ExplorerPhase[] }) {
                 </button>
                 <div className="min-w-0 flex-1">
                   <div className="flex flex-wrap items-baseline gap-x-2">
-                    <Link href={`/phases/${p.id}`} className="font-medium hover:text-accent"><span className="font-mono text-sm text-muted">{p.id}</span> {p.title}</Link>
+                    <Link href={`/phases/${p.id}`} className="font-medium hover:text-accent"><RefId id={p.id} /> {p.title}</Link>
                     <span className="text-xs text-muted">{p.priority}, target {p.target.replace(/[🔴🟠🟡🟢⚪]/gu, "").trim()}</span>
                   </div>
-                  <p className="mt-0.5 text-xs text-muted">{p.weekRange ? `Weeks ${p.weekRange[0]}–${p.weekRange[1]}` : p.placement}{p.stages.length ? `, ${p.stages.join(", ")}` : ""}</p>
+                  <p className="mt-0.5 text-xs text-muted">{p.weekRange ? `Weeks ${p.weekRange[0]}–${p.weekRange[1]}` : p.placement}</p>
                   {r && r.total > 0 && (
                     <div className="mt-1.5 flex items-center gap-2">
                       <Bar value={r.pct} className="max-w-48" tone={r.status === "completed" || r.status === "mastered" ? "ok" : "accent"} label={`${p.id} progress`} />
@@ -127,7 +128,7 @@ export function CurriculumExplorer({ phases }: { phases: ExplorerPhase[] }) {
                       return (
                         <li key={t.id} className={cx("flex flex-wrap items-center gap-x-3 gap-y-1 rounded px-1 py-1 hover:bg-surface-2", t.indent && "pl-5")}>
                           <Link href={`/topics/${t.id}`} className="min-w-0 flex-1 hover:text-accent">
-                            <span className="font-mono text-xs text-muted">{t.id}</span> {t.label}
+                            <RefId id={t.id} /> {t.label}
                           </Link>
                           <span className="text-xs text-muted">{t.depth}{t.firstWeek ? `, wk ${t.firstWeek}` : ""}{t.items > 1 ? `, ${t.items} items` : ""}</span>
                           {v && <StatusPill status={v.status} />}

@@ -5,6 +5,7 @@ import { useHydrated, useUserState } from "@/lib/store";
 import { deleteApplication, deleteStory, saveApplication, saveStory, setFlag } from "@/lib/actions";
 import type { Application, ApplicationStage, Story } from "@/types/state";
 import { Bar, ExternalLink, InlineText, cx } from "./ui";
+import { RefId } from "./Ref";
 
 type TrackItem = { id: string; text: string };
 export type CareerTrack = { id: string; title: string; activation: string; items: TrackItem[] };
@@ -41,7 +42,7 @@ export function TracksSection({ tracks, bodies }: { tracks: CareerTrack[]; bodie
         <li key={t.id} id={t.id} className="scroll-mt-20">
           <details className="rounded-lg border border-rule bg-surface">
             <summary className="flex cursor-pointer flex-wrap items-center gap-x-3 gap-y-1 px-4 py-3">
-              <span className="min-w-0 flex-1"><span className="font-mono text-sm text-muted">{t.id}</span> <span className="font-medium">{t.title}</span>
+              <span className="min-w-0 flex-1"><RefId id={t.id} /> <span className="font-medium">{t.title}</span>
                 <span className="block text-xs text-muted">Active from {t.activation}</span></span>
               <Count ids={t.items.map((i) => i.id)} />
             </summary>

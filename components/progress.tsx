@@ -5,7 +5,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useDraft } from "@/lib/useDraft";
 import { useHydrated, useUserState } from "@/lib/store";
 import {
-  conceptBlocker, gatePassed, gateById, nextReviewDate, phaseRollup, topicById, topicView, weekByCw, weekView, pct,
+  conceptBlocker, gatePassed, gateById, gateName, nameOf, nextReviewDate, phaseRollup, topicById, topicView, weekByCw, weekView, pct,
 } from "@/lib/progress";
 import {
   recordReview, setCheck, setChecks, setCurrentWeek, setDepth, setEvidence, setGateCriterion, setGateEvidence,
@@ -14,7 +14,8 @@ import {
 import { conceptSlug, hrefFor } from "@/lib/ids";
 import type { DepthLevel, GateStatus, MasteryLevel } from "@/types/state";
 import { Bar, InlineText, StatusPill, cx } from "./ui";
-import { IconLock } from "./icons";
+import { IconChevron, IconLock } from "./icons";
+import { RefId } from "./Ref";
 
 function Placeholder({ className }: { className?: string }) {
   return <span className={cx("inline-block h-5 w-24 animate-pulse rounded bg-surface-2", className)} aria-hidden />;
@@ -70,7 +71,7 @@ export function WeekStatusPill({ cw }: { cw: number }) {
 // ------------------------------------------------------------------ checklists
 export type ChecklistItem = { id: string; text: string };
 
-export function ConceptChecklist({ items, showIds = true, linkConcepts = true }: { items: ChecklistItem[]; showIds?: boolean; linkConcepts?: boolean }) {
+export function ConceptChecklist({ items, showIds = true, linkConcepts = true, onToggle }: { items: ChecklistItem[]; showIds?: boolean; linkConcepts?: boolean; onToggle?: (id: string, checked: boolean) => void }) {
   const s = useUserState();
   const ready = useHydrated();
   return (
@@ -79,31 +80,37 @@ export function ConceptChecklist({ items, showIds = true, linkConcepts = true }:
         const checked = ready && !!s.checks[it.id];
         const blocker = ready ? conceptBlocker(s, it.id) : null;
         return (
-          <li key={it.id} className="flex items-start gap-3 px-3 py-2">
-            <input
-              type="checkbox"
-              className="mt-1 h-4 w-4 shrink-0 accent-[var(--accent)]"
-              checked={checked}
-              disabled={!ready}
-              onChange={(e) => setCheck(it.id, e.target.checked)}
-              aria-label={`Mark ${it.id} complete`}
-            />
-            <div className="min-w-0 flex-1">
-              <span className={cx(checked && "text-muted line-through decoration-rule")}>
-                <InlineText text={it.text} />
-              </span>
-              {blocker && (
-                <span className="ml-2 inline-flex items-center gap-1 text-xs text-warn">
-                  <IconLock width={12} height={12} /> needs {blocker}
+          <li key={it.id} className="flex items-stretch">
+            <label className="flex min-h-11 flex-1 cursor-pointer items-start gap-3 px-3 py-2.5 active:bg-surface-2">
+              <input
+                type="checkbox"
+                className="mt-0.5 h-5 w-5 shrink-0 accent-[var(--accent)]"
+                checked={checked}
+                disabled={!ready}
+                onChange={(e) => { setCheck(it.id, e.target.checked); onToggle?.(it.id, e.target.checked); }}
+              />
+              <span className="min-w-0 flex-1">
+                <span className={cx(checked && "text-muted line-through decoration-rule")}>
+                  <InlineText text={it.text} />
                 </span>
-              )}
-            </div>
-            {showIds &&
-              (linkConcepts && it.id.includes("#") ? (
-                <Link href={`/concepts/${conceptSlug(it.id)}`} className="shrink-0 font-mono text-xs text-faint hover:text-accent">{it.id}</Link>
-              ) : (
-                <span className="shrink-0 font-mono text-xs text-faint">{it.id}</span>
-              ))}
+                {blocker && (
+                  <span className="ml-2 inline-flex items-center gap-1 text-xs text-warn">
+                    <IconLock width={12} height={12} /> after {nameOf(blocker)}
+                  </span>
+                )}
+                {showIds && <> <RefId id={it.id} /></>}
+              </span>
+            </label>
+            {linkConcepts && it.id.includes("#") && (
+              <Link
+                href={`/concepts/${conceptSlug(it.id)}`}
+                className="flex w-10 shrink-0 items-center justify-center text-faint hover:text-accent"
+                aria-label="Details and notes"
+                title="Details and notes"
+              >
+                <IconChevron width={16} height={16} />
+              </Link>
+            )}
           </li>
         );
       })}
@@ -162,7 +169,7 @@ export function ClearanceNotice({ topicId }: { topicId: string }) {
         {v.blockers.map((b) => (
           <li key={b}>
             {gateById.has(b) ? "Pass " : "Complete "}
-            <Link className="text-accent underline" href={hrefFor(b) ?? "#"}>{b} {gateById.get(b)?.t ?? topicById.get(b)?.t ?? ""}</Link>
+            <Link className="text-accent underline" href={hrefFor(b) ?? "#"}>{gateById.has(b) ? gateName(b) : nameOf(b)}</Link> <RefId id={b} />
           </li>
         ))}
       </ul>
@@ -343,7 +350,7 @@ export function WeekControls({ cw }: { cw: number }) {
         {s.weeks[cw]?.done ? "Mark week not complete" : current ? "Complete week and move on" : "Mark week complete"}
       </button>
       {!v.cleared && w.rg && (
-        <span className="text-sm text-warn">Gate {w.rg} is not passed yet.</span>
+        <span className="text-sm text-warn">{gateName(w.rg)} is not passed yet.</span>
       )}
     </div>
   );
@@ -415,8 +422,8 @@ export function GateControls({ gateId, criteria, requires }: { gateId: string; c
           {reqStatus.map((r) => (
             <li key={r.id} className="flex items-center gap-2 text-sm">
               <span aria-hidden className={cx("h-2 w-2 rounded-full", r.ok ? "bg-ok" : "border border-lock")} />
-              <Link href={hrefFor(r.id) ?? "#"} className="font-mono text-xs text-muted hover:text-accent">{r.id}</Link>
-              <span className="truncate">{r.label}</span>
+              <Link href={hrefFor(r.id) ?? "#"} className="truncate hover:text-accent">{gateById.has(r.id) ? gateName(r.id) : nameOf(r.id)}</Link>
+              <RefId id={r.id} />
             </li>
           ))}
         </ul>

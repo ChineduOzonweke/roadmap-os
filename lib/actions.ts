@@ -4,6 +4,7 @@ import { update, replaceState } from "@/lib/store";
 import { newId } from "@/lib/ids";
 import {
   emptyState,
+  type AiLogEntry,
   type Application, type DepthLevel, type DsaProblem, type GateStatus, type MasteryLevel,
   type ProjectProgress, type ProjectStatus, type ResourceStatus, type Story, type TopicProgress, type UserState,
 } from "@/types/state";
@@ -186,6 +187,19 @@ export function saveApplication(p: Omit<Application, "id" | "updatedAt"> & { id?
 }
 export function deleteApplication(id: string) {
   update((s) => ({ ...s, applications: s.applications.filter((x) => x.id !== id) }));
+}
+
+// ---- AI practice log (overlay missions and everyday AI use)
+export function saveAiLog(p: Omit<AiLogEntry, "id" | "createdAt" | "updatedAt"> & { id?: string; createdAt?: string }) {
+  update((s) => {
+    const id = p.id ?? newId("ai");
+    const item: AiLogEntry = { ...p, id, createdAt: p.createdAt ?? now(), updatedAt: now() };
+    const exists = s.aiLog.some((x) => x.id === id);
+    return { ...s, aiLog: exists ? s.aiLog.map((x) => (x.id === id ? item : x)) : [item, ...s.aiLog] };
+  });
+}
+export function deleteAiLog(id: string) {
+  update((s) => ({ ...s, aiLog: s.aiLog.filter((x) => x.id !== id) }));
 }
 
 // ---- whole-state operations

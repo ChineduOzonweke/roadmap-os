@@ -3,7 +3,8 @@
 import { useTheme } from "next-themes";
 import { useRef, useState, useSyncExternalStore } from "react";
 import { useHydrated, useUserState, persistenceInfo, getState } from "@/lib/store";
-import { importState, resetState, setCurrentWeek } from "@/lib/actions";
+import { importState, resetState, setCurrentWeek, setFlag } from "@/lib/actions";
+import { SHOW_REFS_FLAG } from "./Ref";
 import { cx } from "./ui";
 
 const noop = () => () => {};
@@ -59,10 +60,21 @@ export function SettingsView({ dataInfo }: { dataInfo: { md5: string; generated:
       </section>
 
       <section>
+        <h2 className="mb-2 text-base font-semibold">Reference codes</h2>
+        <label className="flex min-h-11 cursor-pointer items-start gap-3">
+          <input type="checkbox" className="mt-0.5 h-5 w-5 accent-[var(--accent)]" disabled={!ready} checked={ready && !!s.flags[SHOW_REFS_FLAG]} onChange={(e) => setFlag(SHOW_REFS_FLAG, e.target.checked)} />
+          <span className="text-sm">
+            <span className="block font-medium">Show reference codes</span>
+            <span className="text-muted">Adds the roadmap&apos;s internal codes (P13.2, C3, SG4, PR07) next to names, for cross-checking with the master roadmap. Off by default.</span>
+          </span>
+        </label>
+      </section>
+
+      <section>
         <h2 className="mb-2 text-base font-semibold">Where your progress lives</h2>
         <p className="text-sm">{info ? info.description : "Loading."}</p>
         <p className="mt-1 text-sm text-muted">Until cloud sync is added, use export and import to move progress between your phone and laptop. Clearing browser data deletes local progress, so export regularly.</p>
-        {ready && <p className="mt-1 text-xs text-muted">Last change {s.updatedAt.startsWith("1970") ? "never" : new Date(s.updatedAt).toLocaleString()}. {Object.keys(s.checks).length} items ticked, {Object.keys(s.notes).length} notes, {s.dsa.length} DSA problems.</p>}
+        {ready && <p className="mt-1 text-xs text-muted">Last change {s.updatedAt.startsWith("1970") ? "never" : new Date(s.updatedAt).toLocaleString()}. {Object.keys(s.checks).length} items ticked, {Object.keys(s.notes).length} notes, {s.dsa.length} DSA problems, {s.aiLog.length} AI log entries.</p>}
         <div className="mt-3 flex flex-wrap gap-2">
           <button type="button" onClick={exportJson} disabled={!ready} className={btn}>Export progress (JSON)</button>
           <button type="button" onClick={() => file.current?.click()} disabled={!ready} className={btn}>Import progress</button>

@@ -5,6 +5,8 @@ import { getCheckpoint, getConcept, getProject, getStage, getTopic, getWeek, wee
 import type { WeekSlice } from "@/types/curriculum";
 import { Markdown } from "@/components/Markdown";
 import { PageHeader, Section, Chip } from "@/components/ui";
+import { RefId } from "@/components/Ref";
+import { AiModeLine } from "@/components/AiModeLine";
 import { ConceptChecklist, NotesEditor, SingleCheck, TopicStatus, WeekControls } from "@/components/progress";
 
 export const dynamicParams = false;
@@ -28,11 +30,11 @@ function SliceView({ slice, cw }: { slice: WeekSlice; cw: number }) {
       <div className="space-y-2">
         <div className="flex flex-wrap items-center justify-between gap-2">
           <Link href={`/topics/${t.id}`} className="font-medium hover:text-accent">
-            <span className="font-mono text-sm text-muted">{t.id}</span> {t.label}
+            {slice.title} <RefId id={t.id} />
           </Link>
           {t.kind === "concepts" && <TopicStatus topicId={t.id} />}
         </div>
-        {slice.conceptIds && <p className="text-xs text-muted">Items {slice.label.split(" · ")[1]}</p>}
+        {slice.detail && <p className="text-sm text-muted">{slice.detail}</p>}
         {t.kind === "concepts" && ids.length > 0 && (
           <ConceptChecklist items={ids.map((id) => ({ id, text: getConcept(id)?.text ?? id }))} />
         )}
@@ -52,12 +54,12 @@ function SliceView({ slice, cw }: { slice: WeekSlice; cw: number }) {
     const ms = p.milestones.filter((m) => m.cw === cw);
     return (
       <div>
-        <Link href={`/projects/${p.id}`} className="font-medium hover:text-accent"><span className="font-mono text-sm text-muted">{p.id}</span> {p.title}</Link>
+        <Link href={`/projects/${p.id}`} className="font-medium hover:text-accent">{p.title} <RefId id={p.id} /></Link>
         <p className="text-sm text-muted">Project build week{ms.length ? `: milestone ${ms.map((m) => m.id).join(", ")}` : ""}. Track milestones on the project page.</p>
       </div>
     );
   }
-  return <p>{slice.label}</p>;
+  return <p>{slice.title}</p>;
 }
 
 export default async function Page({ params }: Props) {
@@ -76,20 +78,22 @@ export default async function Page({ params }: Props) {
           <>
             <Link href="/weeks" className="hover:text-accent">Weeks</Link>
             <span aria-hidden>/</span>
-            <span>{main?.id} {main?.name}{stage && stage.id !== main?.id ? `, ${stage.id} ${stage.name}` : ""}</span>
+            <span>{main?.name}{stage && stage.id !== main?.id ? `, ${stage.name}` : ""}</span>
           </>
         }
         title={`Week ${cw}`}
-        lead={w.primary.map((p) => p.label.replace(" · ", ", ")).join(" + ")}
+        lead={w.title}
       >
         <WeekControls cw={cw} />
       </PageHeader>
 
+      <div className="mb-4"><AiModeLine cw={cw} /></div>
+
       <div className="mb-6 flex flex-wrap gap-2 text-sm">
         <Chip>{w.type === "study" ? "Study week" : w.type === "project" ? "Project build week" : w.type === "consolidation" ? "Consolidation week" : "Open work"}</Chip>
         {w.conceptCount > 0 && <Chip>{w.conceptCount} checklist items scheduled</Chip>}
-        {req && <Chip>Requires <Link className="ml-1 text-accent" href={`/checkpoints/${req.id}`}>{req.id}</Link></Chip>}
-        {gate && <Chip>Gate week: <Link className="ml-1 text-accent" href={`/checkpoints/${gate.id}`}>{gate.id} {gate.title}</Link></Chip>}
+        {req && <Chip>After the <Link className="ml-1 text-accent" href={`/checkpoints/${req.id}`}>{req.kind === "competency" ? `${req.title} checkpoint` : req.title}</Link></Chip>}
+        {gate && <Chip>Checkpoint week: <Link className="ml-1 text-accent" href={`/checkpoints/${gate.id}`}>{gate.kind === "competency" ? `${gate.title} checkpoint` : gate.title}</Link></Chip>}
       </div>
 
       {w.dayPlan && (
@@ -126,7 +130,7 @@ export default async function Page({ params }: Props) {
           {w.dsaLane.slices.length > 0 ? (
             <ul className="list-disc pl-5 text-sm">
               {w.dsaLane.slices.map((s) => (
-                <li key={s.ref}>{s.kind === "topic" ? <Link href={`/topics/${s.topicId}`} className="hover:text-accent">{s.label.replace(" · ", ", ")}</Link> : s.label}</li>
+                <li key={s.ref}>{s.kind === "topic" ? <Link href={`/topics/${s.topicId}`} className="hover:text-accent">{s.title}</Link> : s.title}</li>
               ))}
             </ul>
           ) : null}
@@ -135,7 +139,7 @@ export default async function Page({ params }: Props) {
       )}
 
       {gate && (
-        <Section title={`Gate ${gate.id}: ${gate.title}`} aside={<Link className="text-accent hover:underline" href={`/checkpoints/${gate.id}`}>Open gate</Link>}>
+        <Section title={gate.kind === "competency" ? `${gate.title} checkpoint` : gate.title} aside={<Link className="text-accent hover:underline" href={`/checkpoints/${gate.id}`}>Open</Link>}>
           {gate.practicalGate && <p className="text-sm"><span className="font-medium">Practical gate.</span> {gate.practicalGate}</p>}
         </Section>
       )}

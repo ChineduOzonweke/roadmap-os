@@ -50,6 +50,7 @@ export function normalize(input: Partial<UserState> | null | undefined): UserSta
     dsa: Array.isArray(input.dsa) ? input.dsa : [],
     stories: Array.isArray(input.stories) ? input.stories : [],
     applications: Array.isArray(input.applications) ? input.applications : [],
+    aiLog: Array.isArray(input.aiLog) ? input.aiLog : [],
   };
 }
 

@@ -5,6 +5,7 @@ import { concepts, getConcept, getPhase, getTopic, meta } from "@/lib/data";
 import { conceptIdFromSlug, conceptSlug } from "@/lib/ids";
 import { InlineText, PageHeader, Section } from "@/components/ui";
 import { ClearanceNotice, NotesEditor, SingleCheck, TopicStatus } from "@/components/progress";
+import { RefId } from "@/components/Ref";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -32,9 +33,9 @@ export default async function Page({ params }: Props) {
       <PageHeader
         meta={
           <>
-            <Link href={`/phases/${p.id}`} className="hover:text-accent">{p.id} {p.title}</Link><span aria-hidden>/</span>
-            <Link href={`/topics/${t.id}`} className="hover:text-accent">{t.id} {t.label}</Link><span aria-hidden>/</span>
-            <span className="font-mono">{c.id}</span>
+            <Link href={`/phases/${p.id}`} className="hover:text-accent">{p.title}</Link><span aria-hidden>/</span>
+            <Link href={`/topics/${t.id}`} className="hover:text-accent">{t.label}</Link><span aria-hidden>/</span>
+            <RefId id={c.id} />
           </>
         }
         title={<InlineText text={c.text} />}

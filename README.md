@@ -79,7 +79,7 @@ The code is structured for the next stage:
 ## How the curriculum data works
 
 ```
-curriculum/source/MASTER_ROADMAP_VICTOR_2026_FINAL_2026-09-17.md   canonical source (MD5 2951e64c4a6cd61691e30420b1f98f10)
+curriculum/source/MASTER_ROADMAP_VICTOR_2026_FINAL_2026-09-17.md   canonical source (MD5 090f7c1c3e34bf04390f5c92373347d6)
         |  curriculum/generator/parse_master.py
         v
 curriculum/generator/_build/master_phases.json                    parsed phases, components, items
@@ -116,6 +116,20 @@ Stable IDs are used everywhere instead of section numbers or titles:
 ### Validation
 
 `npm run data:validate` checks unique IDs across every collection; that every topic, concept, week slice, prerequisite, component edge, gate requirement, project reference and resource reference points at a real entity; that there are exactly 46 phases and 206 contiguous weeks; that the phase prerequisite graph has no cycles; that every non-optional concept is mapped to a week; that the 11 projects and 8 canonical checkpoints exist; and that every resource URL is well formed.
+
+## AI-native engineering overlay
+
+Master section 109 defines how to work with AI as an engineer. `build_data.py` parses it into `data/ai-overlay.json`; `validate-data.mjs` checks every unlock gate, link and mission prerequisite.
+
+- **Tiers** (how much AI may do), unlocked by existing gates: Tutor from the start, Pair after `C1`, Supervised agent after `SG4`. "Building AI systems" (after `C5`) only points to P23–P27, P39, P44 and C6.
+- **Modes** (what you are doing): Learn, Build, Assess. The app derives the week's mode from the mastery of that week's main topic.
+- **Missions** `AIM-01`–`AIM-12`: completion is stored in `flags`, evidence in `aiLog`.
+- **Checkpoints:** new criteria were appended to the end of the C3, C6 and C7 lists (criteria ticks are stored by position, so never insert in the middle), and one sentence was added to the C1 and C2 practical gates.
+- UI: one AI line on Today and week pages, and the `/ai` page.
+
+## Learner-facing names vs reference codes
+
+IDs (P13.2, C3, SG4, PR07) stay in the data, URLs and validator. The UI shows names by default (`nameOf`, `gateName`, `refLabel`, week `title`, slice `title`/`detail`). Settings has "Show reference codes", which reveals codes through `components/Ref.tsx`. `/` is Today; the old dashboard is `/progress`.
 
 ## Implementation decisions
 

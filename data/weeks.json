@@ -1,6 +1,7 @@
 [
  {
   "cw": 1,
+  "title": "Python › Zero-level runway",
   "stage": "S0",
   "mainStage": "S0",
   "type": "study",
@@ -24,7 +25,9 @@
      "P01.1a#16",
      "P01.1a#27"
     ],
-    "label": "P01.1a Python › Zero-level runway · #1–9 (print() → for); #14–16 (defining functions → return values); #27 (input/output)"
+    "label": "P01.1a Python › Zero-level runway · #1–9 (print() → for); #14–16 (defining functions → return values); #27 (input/output)",
+    "title": "Python › Zero-level runway",
+    "detail": "print() → for; defining functions → return values; input/output"
    }
   ],
   "supporting": [
@@ -32,7 +35,9 @@
     "ref": "SETUP",
     "kind": "activity",
     "activity": "SETUP",
-    "label": "Environment setup (editor, Python, terminal; Git repo only if trivial)"
+    "label": "Environment setup (editor, Python, terminal; Git repo only if trivial)",
+    "title": "Environment setup (editor, Python, terminal; Git repo only if trivial)",
+    "detail": ""
    }
   ],
   "dsaLane": null,
@@ -74,6 +79,7 @@
  },
  {
   "cw": 2,
+  "title": "Python › Zero-level runway",
   "stage": "S0",
   "mainStage": "S0",
   "type": "study",
@@ -111,7 +117,9 @@
      "P01.1a#38",
      "P01.1a#39"
     ],
-    "label": "P01.1a Python › Zero-level runway · #9–13 (for → continue); #17–26 (local vs global scope → nested structures); #28–39 (text files → Build a small program of roughly 100-200 lines without copying a walkthrough.)"
+    "label": "P01.1a Python › Zero-level runway · #9–13 (for → continue); #17–26 (local vs global scope → nested structures); #28–39 (text files → Build a small program of roughly 100-200 lines without copying a walkthrough.)",
+    "title": "Python › Zero-level runway",
+    "detail": "for → continue; local vs global scope → nested structures; text files → Build a small program of roughly 100-200 lines without copying a walkthrough."
    }
   ],
   "supporting": [],
@@ -154,6 +162,7 @@
  },
  {
   "cw": 3,
+  "title": "Python › Core language + Required implementations",
   "stage": "S1",
   "mainStage": "S1",
   "type": "study",
@@ -177,7 +186,9 @@
      "P01.1b#12",
      "P01.1b#13"
     ],
-    "label": "P01.1b Python › Core language · #1–13 (literals → default arguments)"
+    "label": "P01.1b Python › Core language · #1–13 (literals → default arguments)",
+    "title": "Python › Core language",
+    "detail": "literals → default arguments"
    },
    {
     "ref": "P01.1f:1",
@@ -186,7 +197,9 @@
     "conceptIds": [
      "P01.1f#1"
     ],
-    "label": "P01.1f Python › Required implementations · #1 (CLI calculator)"
+    "label": "P01.1f Python › Required implementations · #1 (CLI calculator)",
+    "title": "Python › Required implementations",
+    "detail": "CLI calculator"
    }
   ],
   "supporting": [],
@@ -201,6 +214,7 @@
  },
  {
   "cw": 4,
+  "title": "Python › Core language + Required implementations",
   "stage": "S1",
   "mainStage": "S1",
   "type": "study",
@@ -225,7 +239,9 @@
      "P01.1b#26",
      "P01.1b#27"
     ],
-    "label": "P01.1b Python › Core language · #14–27 (scopes → comprehensions)"
+    "label": "P01.1b Python › Core language · #14–27 (scopes → comprehensions)",
+    "title": "Python › Core language",
+    "detail": "scopes → comprehensions"
    },
    {
     "ref": "P01.1f:2",
@@ -234,7 +250,9 @@
     "conceptIds": [
      "P01.1f#2"
     ],
-    "label": "P01.1f Python › Required implementations · #2 (File organiser)"
+    "label": "P01.1f Python › Required implementations · #2 (File organiser)",
+    "title": "Python › Required implementations",
+    "detail": "File organiser"
    }
   ],
   "supporting": [],
@@ -249,6 +267,7 @@
  },
  {
   "cw": 5,
+  "title": "Git",
   "stage": "S1",
   "mainStage": "S1",
   "type": "study",
@@ -258,7 +277,9 @@
     "kind": "topic",
     "topicId": "P02.1",
     "conceptIds": null,
-    "label": "P02.1 Git"
+    "label": "P02.1 Git",
+    "title": "Git",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -273,6 +294,7 @@
  },
  {
   "cw": 6,
+  "title": "GitHub",
   "stage": "S1",
   "mainStage": "S1",
   "type": "study",
@@ -282,7 +304,9 @@
     "kind": "topic",
     "topicId": "P02.2",
     "conceptIds": null,
-    "label": "P02.2 GitHub"
+    "label": "P02.2 GitHub",
+    "title": "GitHub",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -297,6 +321,7 @@
  },
  {
   "cw": 7,
+  "title": "Linux",
   "stage": "S1",
   "mainStage": "S1",
   "type": "study",
@@ -339,7 +364,9 @@
      "P03.1#39",
      "P03.1#40"
     ],
-    "label": "P03.1 Linux · #1–13 (filesystem hierarchy → shell scripts); #22–40 (pwd → xargs)"
+    "label": "P03.1 Linux · #1–13 (filesystem hierarchy → shell scripts); #22–40 (pwd → xargs)",
+    "title": "Linux",
+    "detail": "filesystem hierarchy → shell scripts; pwd → xargs"
    }
   ],
   "supporting": [],
@@ -354,6 +381,7 @@
  },
  {
   "cw": 8,
+  "title": "Linux + Linux › Projects",
   "stage": "S1",
   "mainStage": "S1",
   "type": "study",
@@ -380,14 +408,18 @@
      "P03.1#47",
      "P03.1#48"
     ],
-    "label": "P03.1 Linux · #14–21 (package managers → cron awareness); #41–48 (curl → chown)"
+    "label": "P03.1 Linux · #14–21 (package managers → cron awareness); #41–48 (curl → chown)",
+    "title": "Linux",
+    "detail": "package managers → cron awareness; curl → chown"
    },
    {
     "ref": "P03.1a",
     "kind": "topic",
     "topicId": "P03.1a",
     "conceptIds": null,
-    "label": "P03.1a Linux › Projects"
+    "label": "P03.1a Linux › Projects",
+    "title": "Linux › Projects",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -402,6 +434,7 @@
  },
  {
   "cw": 9,
+  "title": "Python › Intermediate Python + Required implementations",
   "stage": "S1",
   "mainStage": "S1",
   "type": "study",
@@ -421,7 +454,9 @@
      "P01.1c#8",
      "P01.1c#9"
     ],
-    "label": "P01.1c Python › Intermediate Python · #1–9 (iterators → dataclasses)"
+    "label": "P01.1c Python › Intermediate Python · #1–9 (iterators → dataclasses)",
+    "title": "Python › Intermediate Python",
+    "detail": "iterators → dataclasses"
    },
    {
     "ref": "P01.1f:3",
@@ -430,7 +465,9 @@
     "conceptIds": [
      "P01.1f#3"
     ],
-    "label": "P01.1f Python › Required implementations · #3 (Expense tracker)"
+    "label": "P01.1f Python › Required implementations · #3 (Expense tracker)",
+    "title": "Python › Required implementations",
+    "detail": "Expense tracker"
    }
   ],
   "supporting": [],
@@ -445,6 +482,7 @@
  },
  {
   "cw": 10,
+  "title": "Python › Intermediate Python + Required implementations",
   "stage": "S1",
   "mainStage": "S1",
   "type": "study",
@@ -464,7 +502,9 @@
      "P01.1c#17",
      "P01.1c#18"
     ],
-    "label": "P01.1c Python › Intermediate Python · #10–18 (enums → structural typing concepts)"
+    "label": "P01.1c Python › Intermediate Python · #10–18 (enums → structural typing concepts)",
+    "title": "Python › Intermediate Python",
+    "detail": "enums → structural typing concepts"
    },
    {
     "ref": "P01.1f:4",
@@ -473,7 +513,9 @@
     "conceptIds": [
      "P01.1f#4"
     ],
-    "label": "P01.1f Python › Required implementations · #4 (Log analyser)"
+    "label": "P01.1f Python › Required implementations · #4 (Log analyser)",
+    "title": "Python › Required implementations",
+    "detail": "Log analyser"
    }
   ],
   "supporting": [],
@@ -488,6 +530,7 @@
  },
  {
   "cw": 11,
+  "title": "Software Engineering › Testing + Debugging",
   "stage": "S1",
   "mainStage": "S1",
   "type": "study",
@@ -497,14 +540,18 @@
     "kind": "topic",
     "topicId": "P07.3",
     "conceptIds": null,
-    "label": "P07.3 Testing"
+    "label": "P07.3 Testing",
+    "title": "Software Engineering › Testing",
+    "detail": ""
    },
    {
     "ref": "P07.4",
     "kind": "topic",
     "topicId": "P07.4",
     "conceptIds": null,
-    "label": "P07.4 Debugging"
+    "label": "P07.4 Debugging",
+    "title": "Software Engineering › Debugging",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -519,6 +566,7 @@
  },
  {
   "cw": 12,
+  "title": "Python › Professional Python + Required implementations",
   "stage": "S1",
   "mainStage": "S1",
   "type": "study",
@@ -539,7 +587,9 @@
      "P01.1d#9",
      "P01.1d#10"
     ],
-    "label": "P01.1d Python › Professional Python · #1–10 (virtual environments → environment variables)"
+    "label": "P01.1d Python › Professional Python · #1–10 (virtual environments → environment variables)",
+    "title": "Python › Professional Python",
+    "detail": "virtual environments → environment variables"
    },
    {
     "ref": "P01.1f:5",
@@ -548,7 +598,9 @@
     "conceptIds": [
      "P01.1f#5"
     ],
-    "label": "P01.1f Python › Required implementations · #5 (CSV/JSON processor)"
+    "label": "P01.1f Python › Required implementations · #5 (CSV/JSON processor)",
+    "title": "Python › Required implementations",
+    "detail": "CSV/JSON processor"
    }
   ],
   "supporting": [],
@@ -563,6 +615,7 @@
  },
  {
   "cw": 13,
+  "title": "CLI Tool (project)",
   "stage": "S1",
   "mainStage": "S1",
   "type": "project",
@@ -571,7 +624,9 @@
     "ref": "PR01",
     "kind": "project",
     "projectId": "PR01",
-    "label": "PR01 CLI Tool (build)"
+    "label": "PR01 CLI Tool (build)",
+    "title": "CLI Tool (project)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -586,6 +641,7 @@
  },
  {
   "cw": 14,
+  "title": "CLI Tool (project)",
   "stage": "S1",
   "mainStage": "S1",
   "type": "project",
@@ -594,7 +650,9 @@
     "ref": "PR01",
     "kind": "project",
     "projectId": "PR01",
-    "label": "PR01 CLI Tool (build)"
+    "label": "PR01 CLI Tool (build)",
+    "title": "CLI Tool (project)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -609,6 +667,7 @@
  },
  {
   "cw": 15,
+  "title": "Data Structures & Algorithms + Data Structures & Algorithms › Complexity + Linear structures",
   "stage": "S2",
   "mainStage": "S2",
   "type": "study",
@@ -618,14 +677,18 @@
     "kind": "topic",
     "topicId": "P04.0",
     "conceptIds": null,
-    "label": "P04.0 Data Structures & Algorithms (core scope)"
+    "label": "P04.0 Data Structures & Algorithms (core scope)",
+    "title": "Data Structures & Algorithms",
+    "detail": ""
    },
    {
     "ref": "P04.1",
     "kind": "topic",
     "topicId": "P04.1",
     "conceptIds": null,
-    "label": "P04.1 Complexity"
+    "label": "P04.1 Complexity",
+    "title": "Data Structures & Algorithms › Complexity",
+    "detail": ""
    },
    {
     "ref": "P04.2:1-3,12-15",
@@ -640,7 +703,9 @@
      "P04.2#14",
      "P04.2#15"
     ],
-    "label": "P04.2 Linear structures · #1–3 (arrays → strings); #12–15 (memory trade-offs → locality)"
+    "label": "P04.2 Linear structures · #1–3 (arrays → strings); #12–15 (memory trade-offs → locality)",
+    "title": "Data Structures & Algorithms › Linear structures",
+    "detail": "arrays → strings; memory trade-offs → locality"
    }
   ],
   "supporting": [],
@@ -655,6 +720,7 @@
  },
  {
   "cw": 16,
+  "title": "Data Structures & Algorithms › Linear structures",
   "stage": "S2",
   "mainStage": "S2",
   "type": "study",
@@ -671,7 +737,9 @@
      "P04.2#8",
      "P04.2#9"
     ],
-    "label": "P04.2 Linear structures · #4–9 (linked lists → deques)"
+    "label": "P04.2 Linear structures · #4–9 (linked lists → deques)",
+    "title": "Data Structures & Algorithms › Linear structures",
+    "detail": "linked lists → deques"
    }
   ],
   "supporting": [],
@@ -686,6 +754,7 @@
  },
  {
   "cw": 17,
+  "title": "Data Structures & Algorithms › Linear structures + Algorithm families",
   "stage": "S2",
   "mainStage": "S2",
   "type": "study",
@@ -699,7 +768,9 @@
      "P04.2#11",
      "P04.2#16"
     ],
-    "label": "P04.2 Linear structures · #10–11 (hash tables → sets); #16 (collision handling)"
+    "label": "P04.2 Linear structures · #10–11 (hash tables → sets); #16 (collision handling)",
+    "title": "Data Structures & Algorithms › Linear structures",
+    "detail": "hash tables → sets; collision handling"
    },
    {
     "ref": "P04.5:1-7",
@@ -714,7 +785,9 @@
      "P04.5#6",
      "P04.5#7"
     ],
-    "label": "P04.5 Algorithm families · #1–7 (linear search → recursion)"
+    "label": "P04.5 Algorithm families · #1–7 (linear search → recursion)",
+    "title": "Data Structures & Algorithms › Algorithm families",
+    "detail": "linear search → recursion"
    }
   ],
   "supporting": [],
@@ -729,6 +802,7 @@
  },
  {
   "cw": 18,
+  "title": "Databases › Relational fundamentals + Relational fundamentals › SQL mastery",
   "stage": "S2",
   "mainStage": "S2",
   "type": "study",
@@ -738,7 +812,9 @@
     "kind": "topic",
     "topicId": "P06.1",
     "conceptIds": null,
-    "label": "P06.1 Relational fundamentals"
+    "label": "P06.1 Relational fundamentals",
+    "title": "Databases › Relational fundamentals",
+    "detail": ""
    },
    {
     "ref": "P06.1a:1-6",
@@ -752,7 +828,9 @@
      "P06.1a#5",
      "P06.1a#6"
     ],
-    "label": "P06.1a Relational fundamentals › SQL mastery · #1–6 (SELECT → aggregate functions)"
+    "label": "P06.1a Relational fundamentals › SQL mastery · #1–6 (SELECT → aggregate functions)",
+    "title": "Relational fundamentals › SQL mastery",
+    "detail": "SELECT → aggregate functions"
    }
   ],
   "supporting": [],
@@ -763,7 +841,9 @@
      "kind": "topic",
      "topicId": "P04.2",
      "conceptIds": null,
-     "label": "P04.2 Linear structures"
+     "label": "P04.2 Linear structures",
+     "title": "Data Structures & Algorithms › Linear structures",
+     "detail": ""
     },
     {
      "ref": "P04.5:1-7",
@@ -778,7 +858,9 @@
       "P04.5#6",
       "P04.5#7"
      ],
-     "label": "P04.5 Algorithm families · #1–7 (linear search → recursion)"
+     "label": "P04.5 Algorithm families · #1–7 (linear search → recursion)",
+     "title": "Data Structures & Algorithms › Algorithm families",
+     "detail": "linear search → recursion"
     }
    ],
    "note": "Re-test linear structures, hashing, search/sort (2-3 sessions/week)."
@@ -793,6 +875,7 @@
  },
  {
   "cw": 19,
+  "title": "Relational fundamentals › SQL mastery",
   "stage": "S2",
   "mainStage": "S2",
   "type": "study",
@@ -809,7 +892,9 @@
      "P06.1a#11",
      "P06.1a#12"
     ],
-    "label": "P06.1a Relational fundamentals › SQL mastery · #7–12 (joins → CASE)"
+    "label": "P06.1a Relational fundamentals › SQL mastery · #7–12 (joins → CASE)",
+    "title": "Relational fundamentals › SQL mastery",
+    "detail": "joins → CASE"
    }
   ],
   "supporting": [],
@@ -820,7 +905,9 @@
      "kind": "topic",
      "topicId": "P04.2",
      "conceptIds": null,
-     "label": "P04.2 Linear structures"
+     "label": "P04.2 Linear structures",
+     "title": "Data Structures & Algorithms › Linear structures",
+     "detail": ""
     },
     {
      "ref": "P04.5:1-7",
@@ -835,7 +922,9 @@
       "P04.5#6",
       "P04.5#7"
      ],
-     "label": "P04.5 Algorithm families · #1–7 (linear search → recursion)"
+     "label": "P04.5 Algorithm families · #1–7 (linear search → recursion)",
+     "title": "Data Structures & Algorithms › Algorithm families",
+     "detail": "linear search → recursion"
     }
    ],
    "note": "Re-test linear structures, hashing, search/sort (2-3 sessions/week)."
@@ -850,6 +939,7 @@
  },
  {
   "cw": 20,
+  "title": "Relational fundamentals › SQL mastery + Databases › PostgreSQL",
   "stage": "S2",
   "mainStage": "S2",
   "type": "study",
@@ -865,14 +955,18 @@
      "P06.1a#16",
      "P06.1a#17"
     ],
-    "label": "P06.1a Relational fundamentals › SQL mastery · #13–17 (string functions → materialised-view awareness)"
+    "label": "P06.1a Relational fundamentals › SQL mastery · #13–17 (string functions → materialised-view awareness)",
+    "title": "Relational fundamentals › SQL mastery",
+    "detail": "string functions → materialised-view awareness"
    },
    {
     "ref": "P06.2",
     "kind": "topic",
     "topicId": "P06.2",
     "conceptIds": null,
-    "label": "P06.2 PostgreSQL"
+    "label": "P06.2 PostgreSQL",
+    "title": "Databases › PostgreSQL",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -883,7 +977,9 @@
      "kind": "topic",
      "topicId": "P04.2",
      "conceptIds": null,
-     "label": "P04.2 Linear structures"
+     "label": "P04.2 Linear structures",
+     "title": "Data Structures & Algorithms › Linear structures",
+     "detail": ""
     },
     {
      "ref": "P04.5:1-7",
@@ -898,7 +994,9 @@
       "P04.5#6",
       "P04.5#7"
      ],
-     "label": "P04.5 Algorithm families · #1–7 (linear search → recursion)"
+     "label": "P04.5 Algorithm families · #1–7 (linear search → recursion)",
+     "title": "Data Structures & Algorithms › Algorithm families",
+     "detail": "linear search → recursion"
     }
    ],
    "note": "Re-test linear structures, hashing, search/sort (2-3 sessions/week)."
@@ -913,6 +1011,7 @@
  },
  {
   "cw": 21,
+  "title": "Consolidation: gate attempt, spaced re-tests, targeted repair",
   "stage": "S2",
   "mainStage": "S2",
   "type": "consolidation",
@@ -921,7 +1020,9 @@
     "ref": "CONSOLIDATE",
     "kind": "activity",
     "activity": "CONSOLIDATE",
-    "label": "Consolidation: gate attempt, spaced re-tests, targeted repair"
+    "label": "Consolidation: gate attempt, spaced re-tests, targeted repair",
+    "title": "Consolidation: gate attempt, spaced re-tests, targeted repair",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -932,7 +1033,9 @@
      "kind": "topic",
      "topicId": "P04.2",
      "conceptIds": null,
-     "label": "P04.2 Linear structures"
+     "label": "P04.2 Linear structures",
+     "title": "Data Structures & Algorithms › Linear structures",
+     "detail": ""
     },
     {
      "ref": "P04.5:1-7",
@@ -947,7 +1050,9 @@
       "P04.5#6",
       "P04.5#7"
      ],
-     "label": "P04.5 Algorithm families · #1–7 (linear search → recursion)"
+     "label": "P04.5 Algorithm families · #1–7 (linear search → recursion)",
+     "title": "Data Structures & Algorithms › Algorithm families",
+     "detail": "linear search → recursion"
     }
    ],
    "note": "Re-test linear structures, hashing, search/sort (2-3 sessions/week)."
@@ -962,6 +1067,7 @@
  },
  {
   "cw": 22,
+  "title": "Mathematics › Probability",
   "stage": "S3",
   "mainStage": "S3",
   "type": "study",
@@ -981,7 +1087,9 @@
      "P10.3#8",
      "P10.3#9"
     ],
-    "label": "P10.3 Probability · #1–9 (sample spaces → CDF)"
+    "label": "P10.3 Probability · #1–9 (sample spaces → CDF)",
+    "title": "Mathematics › Probability",
+    "detail": "sample spaces → CDF"
    }
   ],
   "supporting": [],
@@ -992,7 +1100,9 @@
      "kind": "topic",
      "topicId": "P04.3",
      "conceptIds": null,
-     "label": "P04.3 Trees"
+     "label": "P04.3 Trees",
+     "title": "Data Structures & Algorithms › Trees",
+     "detail": ""
     }
    ],
    "note": "Trees, heaps, priority queues, tries."
@@ -1007,6 +1117,7 @@
  },
  {
   "cw": 23,
+  "title": "Mathematics › Probability",
   "stage": "S3",
   "mainStage": "S3",
   "type": "study",
@@ -1024,7 +1135,9 @@
      "P10.3#15",
      "P10.3#16"
     ],
-    "label": "P10.3 Probability · #10–16 (expectation → central limit theorem)"
+    "label": "P10.3 Probability · #10–16 (expectation → central limit theorem)",
+    "title": "Mathematics › Probability",
+    "detail": "expectation → central limit theorem"
    }
   ],
   "supporting": [],
@@ -1035,7 +1148,9 @@
      "kind": "topic",
      "topicId": "P04.3",
      "conceptIds": null,
-     "label": "P04.3 Trees"
+     "label": "P04.3 Trees",
+     "title": "Data Structures & Algorithms › Trees",
+     "detail": ""
     }
    ],
    "note": "Trees, heaps, priority queues, tries."
@@ -1050,6 +1165,7 @@
  },
  {
   "cw": 24,
+  "title": "Mathematics › Statistics",
   "stage": "S3",
   "mainStage": "S3",
   "type": "study",
@@ -1066,7 +1182,9 @@
      "P10.4#5",
      "P10.4#6"
     ],
-    "label": "P10.4 Statistics · #1–6 (descriptive statistics → consistency)"
+    "label": "P10.4 Statistics · #1–6 (descriptive statistics → consistency)",
+    "title": "Mathematics › Statistics",
+    "detail": "descriptive statistics → consistency"
    }
   ],
   "supporting": [],
@@ -1077,7 +1195,9 @@
      "kind": "topic",
      "topicId": "P04.3",
      "conceptIds": null,
-     "label": "P04.3 Trees"
+     "label": "P04.3 Trees",
+     "title": "Data Structures & Algorithms › Trees",
+     "detail": ""
     }
    ],
    "note": "Trees, heaps, priority queues, tries."
@@ -1092,6 +1212,7 @@
  },
  {
   "cw": 25,
+  "title": "Mathematics › Statistics",
   "stage": "S3",
   "mainStage": "S3",
   "type": "study",
@@ -1107,7 +1228,9 @@
      "P10.4#10",
      "P10.4#11"
     ],
-    "label": "P10.4 Statistics · #7–11 (confidence intervals → effect sizes)"
+    "label": "P10.4 Statistics · #7–11 (confidence intervals → effect sizes)",
+    "title": "Mathematics › Statistics",
+    "detail": "confidence intervals → effect sizes"
    }
   ],
   "supporting": [],
@@ -1118,7 +1241,9 @@
      "kind": "topic",
      "topicId": "P04.3",
      "conceptIds": null,
-     "label": "P04.3 Trees"
+     "label": "P04.3 Trees",
+     "title": "Data Structures & Algorithms › Trees",
+     "detail": ""
     }
    ],
    "note": "Trees, heaps, priority queues, tries."
@@ -1133,6 +1258,7 @@
  },
  {
   "cw": 26,
+  "title": "Linear Algebra › Foundations",
   "stage": "S3",
   "mainStage": "S3",
   "type": "study",
@@ -1142,7 +1268,9 @@
     "kind": "topic",
     "topicId": "P10.1a",
     "conceptIds": null,
-    "label": "P10.1a Linear Algebra › Foundations"
+    "label": "P10.1a Linear Algebra › Foundations",
+    "title": "Linear Algebra › Foundations",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -1153,7 +1281,9 @@
      "kind": "topic",
      "topicId": "P04.3",
      "conceptIds": null,
-     "label": "P04.3 Trees"
+     "label": "P04.3 Trees",
+     "title": "Data Structures & Algorithms › Trees",
+     "detail": ""
     }
    ],
    "note": "Trees, heaps, priority queues, tries."
@@ -1168,6 +1298,7 @@
  },
  {
   "cw": 27,
+  "title": "Linear Algebra › Vector spaces",
   "stage": "S3",
   "mainStage": "S3",
   "type": "study",
@@ -1177,7 +1308,9 @@
     "kind": "topic",
     "topicId": "P10.1b",
     "conceptIds": null,
-    "label": "P10.1b Linear Algebra › Vector spaces"
+    "label": "P10.1b Linear Algebra › Vector spaces",
+    "title": "Linear Algebra › Vector spaces",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -1188,7 +1321,9 @@
      "kind": "topic",
      "topicId": "P04.3",
      "conceptIds": null,
-     "label": "P04.3 Trees"
+     "label": "P04.3 Trees",
+     "title": "Data Structures & Algorithms › Trees",
+     "detail": ""
     }
    ],
    "note": "Trees, heaps, priority queues, tries."
@@ -1203,6 +1338,7 @@
  },
  {
   "cw": 28,
+  "title": "Linear Algebra › Geometry",
   "stage": "S3",
   "mainStage": "S3",
   "type": "study",
@@ -1212,7 +1348,9 @@
     "kind": "topic",
     "topicId": "P10.1c",
     "conceptIds": null,
-    "label": "P10.1c Linear Algebra › Geometry"
+    "label": "P10.1c Linear Algebra › Geometry",
+    "title": "Linear Algebra › Geometry",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -1223,7 +1361,9 @@
      "kind": "topic",
      "topicId": "P04.3",
      "conceptIds": null,
-     "label": "P04.3 Trees"
+     "label": "P04.3 Trees",
+     "title": "Data Structures & Algorithms › Trees",
+     "detail": ""
     }
    ],
    "note": "Trees, heaps, priority queues, tries."
@@ -1238,6 +1378,7 @@
  },
  {
   "cw": 29,
+  "title": "Data Science › Core stack",
   "stage": "S3",
   "mainStage": "S3",
   "type": "study",
@@ -1247,7 +1388,9 @@
     "kind": "topic",
     "topicId": "P11.1",
     "conceptIds": null,
-    "label": "P11.1 Core stack"
+    "label": "P11.1 Core stack",
+    "title": "Data Science › Core stack",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -1258,7 +1401,9 @@
      "kind": "topic",
      "topicId": "P04.3",
      "conceptIds": null,
-     "label": "P04.3 Trees"
+     "label": "P04.3 Trees",
+     "title": "Data Structures & Algorithms › Trees",
+     "detail": ""
     }
    ],
    "note": "Trees, heaps, priority queues, tries."
@@ -1273,6 +1418,7 @@
  },
  {
   "cw": 30,
+  "title": "Data Science › Core stack + Python › Required implementations",
   "stage": "S3",
   "mainStage": "S3",
   "type": "study",
@@ -1282,7 +1428,9 @@
     "kind": "topic",
     "topicId": "P11.1",
     "conceptIds": null,
-    "label": "P11.1 Core stack"
+    "label": "P11.1 Core stack",
+    "title": "Data Science › Core stack",
+    "detail": ""
    },
    {
     "ref": "P01.1f:7",
@@ -1291,7 +1439,9 @@
     "conceptIds": [
      "P01.1f#7"
     ],
-    "label": "P01.1f Python › Required implementations · #7 (CLI data-analysis tool)"
+    "label": "P01.1f Python › Required implementations · #7 (CLI data-analysis tool)",
+    "title": "Python › Required implementations",
+    "detail": "CLI data-analysis tool"
    }
   ],
   "supporting": [],
@@ -1302,7 +1452,9 @@
      "kind": "topic",
      "topicId": "P04.3",
      "conceptIds": null,
-     "label": "P04.3 Trees"
+     "label": "P04.3 Trees",
+     "title": "Data Structures & Algorithms › Trees",
+     "detail": ""
     }
    ],
    "note": "Trees, heaps, priority queues, tries."
@@ -1317,6 +1469,7 @@
  },
  {
   "cw": 31,
+  "title": "Data Science › Data workflow + Data-quality reasoning",
   "stage": "S3",
   "mainStage": "S3",
   "type": "study",
@@ -1326,7 +1479,9 @@
     "kind": "topic",
     "topicId": "P11.2",
     "conceptIds": null,
-    "label": "P11.2 Data workflow"
+    "label": "P11.2 Data workflow",
+    "title": "Data Science › Data workflow",
+    "detail": ""
    },
    {
     "ref": "P11.3:1-6",
@@ -1340,7 +1495,9 @@
      "P11.3#5",
      "P11.3#6"
     ],
-    "label": "P11.3 Data-quality reasoning · #1–6 (missing values → distributions)"
+    "label": "P11.3 Data-quality reasoning · #1–6 (missing values → distributions)",
+    "title": "Data Science › Data-quality reasoning",
+    "detail": "missing values → distributions"
    }
   ],
   "supporting": [],
@@ -1351,7 +1508,9 @@
      "kind": "topic",
      "topicId": "P04.3",
      "conceptIds": null,
-     "label": "P04.3 Trees"
+     "label": "P04.3 Trees",
+     "title": "Data Structures & Algorithms › Trees",
+     "detail": ""
     }
    ],
    "note": "Trees, heaps, priority queues, tries."
@@ -1366,6 +1525,7 @@
  },
  {
   "cw": 32,
+  "title": "Data Science › Data-quality reasoning",
   "stage": "S3",
   "mainStage": "S3",
   "type": "study",
@@ -1382,7 +1542,9 @@
      "P11.3#11",
      "P11.3#12"
     ],
-    "label": "P11.3 Data-quality reasoning · #7–12 (class imbalance → inconsistent categories)"
+    "label": "P11.3 Data-quality reasoning · #7–12 (class imbalance → inconsistent categories)",
+    "title": "Data Science › Data-quality reasoning",
+    "detail": "class imbalance → inconsistent categories"
    }
   ],
   "supporting": [],
@@ -1393,7 +1555,9 @@
      "kind": "topic",
      "topicId": "P04.3",
      "conceptIds": null,
-     "label": "P04.3 Trees"
+     "label": "P04.3 Trees",
+     "title": "Data Structures & Algorithms › Trees",
+     "detail": ""
     }
    ],
    "note": "Trees, heaps, priority queues, tries."
@@ -1408,6 +1572,7 @@
  },
  {
   "cw": 33,
+  "title": "Consolidation: gate attempt, spaced re-tests, targeted repair",
   "stage": "S3",
   "mainStage": "S3",
   "type": "consolidation",
@@ -1416,7 +1581,9 @@
     "ref": "CONSOLIDATE",
     "kind": "activity",
     "activity": "CONSOLIDATE",
-    "label": "Consolidation: gate attempt, spaced re-tests, targeted repair"
+    "label": "Consolidation: gate attempt, spaced re-tests, targeted repair",
+    "title": "Consolidation: gate attempt, spaced re-tests, targeted repair",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -1427,7 +1594,9 @@
      "kind": "topic",
      "topicId": "P04.3",
      "conceptIds": null,
-     "label": "P04.3 Trees"
+     "label": "P04.3 Trees",
+     "title": "Data Structures & Algorithms › Trees",
+     "detail": ""
     }
    ],
    "note": "Trees, heaps, priority queues, tries."
@@ -1442,6 +1611,7 @@
  },
  {
   "cw": 34,
+  "title": "Software Engineering › Code quality + Principles",
   "stage": "S4",
   "mainStage": "S4",
   "type": "study",
@@ -1451,14 +1621,18 @@
     "kind": "topic",
     "topicId": "P07.1",
     "conceptIds": null,
-    "label": "P07.1 Code quality"
+    "label": "P07.1 Code quality",
+    "title": "Software Engineering › Code quality",
+    "detail": ""
    },
    {
     "ref": "P07.2",
     "kind": "topic",
     "topicId": "P07.2",
     "conceptIds": null,
-    "label": "P07.2 Principles"
+    "label": "P07.2 Principles",
+    "title": "Software Engineering › Principles",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -1469,7 +1643,9 @@
      "kind": "topic",
      "topicId": "P04.4",
      "conceptIds": null,
-     "label": "P04.4 Graphs"
+     "label": "P04.4 Graphs",
+     "title": "Data Structures & Algorithms › Graphs",
+     "detail": ""
     }
    ],
    "note": "Graphs."
@@ -1484,6 +1660,7 @@
  },
  {
   "cw": 35,
+  "title": "Software Engineering › Testing + Debugging + Python › Professional Python",
   "stage": "S4",
   "mainStage": "S4",
   "type": "study",
@@ -1493,14 +1670,18 @@
     "kind": "topic",
     "topicId": "P07.3",
     "conceptIds": null,
-    "label": "P07.3 Testing"
+    "label": "P07.3 Testing",
+    "title": "Software Engineering › Testing",
+    "detail": ""
    },
    {
     "ref": "P07.4",
     "kind": "topic",
     "topicId": "P07.4",
     "conceptIds": null,
-    "label": "P07.4 Debugging"
+    "label": "P07.4 Debugging",
+    "title": "Software Engineering › Debugging",
+    "detail": ""
    },
    {
     "ref": "P01.1d:11-16",
@@ -1514,7 +1695,9 @@
      "P01.1d#15",
      "P01.1d#16"
     ],
-    "label": "P01.1d Python › Professional Python · #11–16 (secrets handling → debugging)"
+    "label": "P01.1d Python › Professional Python · #11–16 (secrets handling → debugging)",
+    "title": "Python › Professional Python",
+    "detail": "secrets handling → debugging"
    }
   ],
   "supporting": [],
@@ -1525,7 +1708,9 @@
      "kind": "topic",
      "topicId": "P04.4",
      "conceptIds": null,
-     "label": "P04.4 Graphs"
+     "label": "P04.4 Graphs",
+     "title": "Data Structures & Algorithms › Graphs",
+     "detail": ""
     }
    ],
    "note": "Graphs."
@@ -1540,6 +1725,7 @@
  },
  {
   "cw": 36,
+  "title": "Software Engineering › Engineering workflow + Backend Engineering + Python › Required implementations",
   "stage": "S4",
   "mainStage": "S4",
   "type": "study",
@@ -1549,14 +1735,18 @@
     "kind": "topic",
     "topicId": "P07.5",
     "conceptIds": null,
-    "label": "P07.5 Engineering workflow"
+    "label": "P07.5 Engineering workflow",
+    "title": "Software Engineering › Engineering workflow",
+    "detail": ""
    },
    {
     "ref": "P08.0",
     "kind": "topic",
     "topicId": "P08.0",
     "conceptIds": null,
-    "label": "P08.0 Backend Engineering (core scope)"
+    "label": "P08.0 Backend Engineering (core scope)",
+    "title": "Backend Engineering",
+    "detail": ""
    },
    {
     "ref": "P01.1f:8",
@@ -1565,7 +1755,9 @@
     "conceptIds": [
      "P01.1f#8"
     ],
-    "label": "P01.1f Python › Required implementations · #8 (reusable Python package)"
+    "label": "P01.1f Python › Required implementations · #8 (reusable Python package)",
+    "title": "Python › Required implementations",
+    "detail": "reusable Python package"
    }
   ],
   "supporting": [],
@@ -1576,7 +1768,9 @@
      "kind": "topic",
      "topicId": "P04.4",
      "conceptIds": null,
-     "label": "P04.4 Graphs"
+     "label": "P04.4 Graphs",
+     "title": "Data Structures & Algorithms › Graphs",
+     "detail": ""
     }
    ],
    "note": "Graphs."
@@ -1591,6 +1785,7 @@
  },
  {
   "cw": 37,
+  "title": "Backend Engineering › HTTP",
   "stage": "S4",
   "mainStage": "S4",
   "type": "study",
@@ -1600,7 +1795,9 @@
     "kind": "topic",
     "topicId": "P08.1",
     "conceptIds": null,
-    "label": "P08.1 HTTP"
+    "label": "P08.1 HTTP",
+    "title": "Backend Engineering › HTTP",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -1611,7 +1808,9 @@
      "kind": "topic",
      "topicId": "P04.4",
      "conceptIds": null,
-     "label": "P04.4 Graphs"
+     "label": "P04.4 Graphs",
+     "title": "Data Structures & Algorithms › Graphs",
+     "detail": ""
     }
    ],
    "note": "Graphs."
@@ -1626,6 +1825,7 @@
  },
  {
   "cw": 38,
+  "title": "Backend Engineering › REST",
   "stage": "S4",
   "mainStage": "S4",
   "type": "study",
@@ -1635,7 +1835,9 @@
     "kind": "topic",
     "topicId": "P08.2",
     "conceptIds": null,
-    "label": "P08.2 REST"
+    "label": "P08.2 REST",
+    "title": "Backend Engineering › REST",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -1646,7 +1848,9 @@
      "kind": "topic",
      "topicId": "P04.4",
      "conceptIds": null,
-     "label": "P04.4 Graphs"
+     "label": "P04.4 Graphs",
+     "title": "Data Structures & Algorithms › Graphs",
+     "detail": ""
     }
    ],
    "note": "Graphs."
@@ -1661,6 +1865,7 @@
  },
  {
   "cw": 39,
+  "title": "API Client / Automation Tool (project) + Python › Required implementations",
   "stage": "S4",
   "mainStage": "S4",
   "type": "project",
@@ -1669,7 +1874,9 @@
     "ref": "PR02",
     "kind": "project",
     "projectId": "PR02",
-    "label": "PR02 API Client / Automation Tool (build)"
+    "label": "PR02 API Client / Automation Tool (build)",
+    "title": "API Client / Automation Tool (project)",
+    "detail": ""
    },
    {
     "ref": "P01.1f:6",
@@ -1678,7 +1885,9 @@
     "conceptIds": [
      "P01.1f#6"
     ],
-    "label": "P01.1f Python › Required implementations · #6 (API client)"
+    "label": "P01.1f Python › Required implementations · #6 (API client)",
+    "title": "Python › Required implementations",
+    "detail": "API client"
    }
   ],
   "supporting": [],
@@ -1689,7 +1898,9 @@
      "kind": "topic",
      "topicId": "P04.4",
      "conceptIds": null,
-     "label": "P04.4 Graphs"
+     "label": "P04.4 Graphs",
+     "title": "Data Structures & Algorithms › Graphs",
+     "detail": ""
     }
    ],
    "note": "Graphs."
@@ -1704,6 +1915,7 @@
  },
  {
   "cw": 40,
+  "title": "API Client / Automation Tool (project)",
   "stage": "S4",
   "mainStage": "S4",
   "type": "project",
@@ -1712,7 +1924,9 @@
     "ref": "PR02",
     "kind": "project",
     "projectId": "PR02",
-    "label": "PR02 API Client / Automation Tool (build)"
+    "label": "PR02 API Client / Automation Tool (build)",
+    "title": "API Client / Automation Tool (project)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -1723,7 +1937,9 @@
      "kind": "topic",
      "topicId": "P04.4",
      "conceptIds": null,
-     "label": "P04.4 Graphs"
+     "label": "P04.4 Graphs",
+     "title": "Data Structures & Algorithms › Graphs",
+     "detail": ""
     }
    ],
    "note": "Graphs."
@@ -1738,6 +1954,7 @@
  },
  {
   "cw": 41,
+  "title": "Backend Engineering › API design",
   "stage": "S4",
   "mainStage": "S4",
   "type": "study",
@@ -1747,7 +1964,9 @@
     "kind": "topic",
     "topicId": "P08.3",
     "conceptIds": null,
-    "label": "P08.3 API design"
+    "label": "P08.3 API design",
+    "title": "Backend Engineering › API design",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -1758,7 +1977,9 @@
      "kind": "topic",
      "topicId": "P04.4",
      "conceptIds": null,
-     "label": "P04.4 Graphs"
+     "label": "P04.4 Graphs",
+     "title": "Data Structures & Algorithms › Graphs",
+     "detail": ""
     }
    ],
    "note": "Graphs."
@@ -1773,6 +1994,7 @@
  },
  {
   "cw": 42,
+  "title": "Database-Backed API (project) + Backend Engineering › Backend projects",
   "stage": "S4",
   "mainStage": "S4",
   "type": "project",
@@ -1781,7 +2003,9 @@
     "ref": "PR03",
     "kind": "project",
     "projectId": "PR03",
-    "label": "PR03 Database-Backed API (build)"
+    "label": "PR03 Database-Backed API (build)",
+    "title": "Database-Backed API (project)",
+    "detail": ""
    },
    {
     "ref": "P08.6:1-4",
@@ -1793,7 +2017,9 @@
      "P08.6#3",
      "P08.6#4"
     ],
-    "label": "P08.6 Backend projects · #1–4 (routing → testing)"
+    "label": "P08.6 Backend projects · #1–4 (routing → testing)",
+    "title": "Backend Engineering › Backend projects",
+    "detail": "routing → testing"
    }
   ],
   "supporting": [],
@@ -1804,7 +2030,9 @@
      "kind": "topic",
      "topicId": "P04.4",
      "conceptIds": null,
-     "label": "P04.4 Graphs"
+     "label": "P04.4 Graphs",
+     "title": "Data Structures & Algorithms › Graphs",
+     "detail": ""
     }
    ],
    "note": "Graphs."
@@ -1819,6 +2047,7 @@
  },
  {
   "cw": 43,
+  "title": "Database-Backed API (project)",
   "stage": "S4",
   "mainStage": "S4",
   "type": "project",
@@ -1827,7 +2056,9 @@
     "ref": "PR03",
     "kind": "project",
     "projectId": "PR03",
-    "label": "PR03 Database-Backed API (build)"
+    "label": "PR03 Database-Backed API (build)",
+    "title": "Database-Backed API (project)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -1838,7 +2069,9 @@
      "kind": "topic",
      "topicId": "P04.4",
      "conceptIds": null,
-     "label": "P04.4 Graphs"
+     "label": "P04.4 Graphs",
+     "title": "Data Structures & Algorithms › Graphs",
+     "detail": ""
     }
    ],
    "note": "Graphs."
@@ -1853,6 +2086,7 @@
  },
  {
   "cw": 44,
+  "title": "Database-Backed API (project) + Python › Required implementations",
   "stage": "S4",
   "mainStage": "S4",
   "type": "project",
@@ -1861,7 +2095,9 @@
     "ref": "PR03",
     "kind": "project",
     "projectId": "PR03",
-    "label": "PR03 Database-Backed API (build)"
+    "label": "PR03 Database-Backed API (build)",
+    "title": "Database-Backed API (project)",
+    "detail": ""
    },
    {
     "ref": "P01.1f:9",
@@ -1870,7 +2106,9 @@
     "conceptIds": [
      "P01.1f#9"
     ],
-    "label": "P01.1f Python › Required implementations · #9 (tested backend service)"
+    "label": "P01.1f Python › Required implementations · #9 (tested backend service)",
+    "title": "Python › Required implementations",
+    "detail": "tested backend service"
    }
   ],
   "supporting": [],
@@ -1881,7 +2119,9 @@
      "kind": "topic",
      "topicId": "P04.4",
      "conceptIds": null,
-     "label": "P04.4 Graphs"
+     "label": "P04.4 Graphs",
+     "title": "Data Structures & Algorithms › Graphs",
+     "detail": ""
     }
    ],
    "note": "Graphs."
@@ -1896,6 +2136,7 @@
  },
  {
   "cw": 45,
+  "title": "Consolidation: gate attempt, spaced re-tests, targeted repair",
   "stage": "S4",
   "mainStage": "S4",
   "type": "consolidation",
@@ -1904,7 +2145,9 @@
     "ref": "CONSOLIDATE",
     "kind": "activity",
     "activity": "CONSOLIDATE",
-    "label": "Consolidation: gate attempt, spaced re-tests, targeted repair"
+    "label": "Consolidation: gate attempt, spaced re-tests, targeted repair",
+    "title": "Consolidation: gate attempt, spaced re-tests, targeted repair",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -1915,7 +2158,9 @@
      "kind": "topic",
      "topicId": "P04.4",
      "conceptIds": null,
-     "label": "P04.4 Graphs"
+     "label": "P04.4 Graphs",
+     "title": "Data Structures & Algorithms › Graphs",
+     "detail": ""
     }
    ],
    "note": "Graphs."
@@ -1930,6 +2175,7 @@
  },
  {
   "cw": 46,
+  "title": "Consolidation: gate attempt, spaced re-tests, targeted repair",
   "stage": "S4",
   "mainStage": "S4",
   "type": "consolidation",
@@ -1938,7 +2184,9 @@
     "ref": "CONSOLIDATE",
     "kind": "activity",
     "activity": "CONSOLIDATE",
-    "label": "Consolidation: gate attempt, spaced re-tests, targeted repair"
+    "label": "Consolidation: gate attempt, spaced re-tests, targeted repair",
+    "title": "Consolidation: gate attempt, spaced re-tests, targeted repair",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -1949,7 +2197,9 @@
      "kind": "topic",
      "topicId": "P04.4",
      "conceptIds": null,
-     "label": "P04.4 Graphs"
+     "label": "P04.4 Graphs",
+     "title": "Data Structures & Algorithms › Graphs",
+     "detail": ""
     }
    ],
    "note": "Graphs."
@@ -1964,6 +2214,7 @@
  },
  {
   "cw": 47,
+  "title": "Core Computer Science › Networking",
   "stage": "S5A",
   "mainStage": "S5",
   "type": "study",
@@ -1983,7 +2234,9 @@
      "P05.2#8",
      "P05.2#9"
     ],
-    "label": "P05.2 Networking · #1–9 (packets → sockets)"
+    "label": "P05.2 Networking · #1–9 (packets → sockets)",
+    "title": "Core Computer Science › Networking",
+    "detail": "packets → sockets"
    }
   ],
   "supporting": [
@@ -1998,7 +2251,9 @@
      "P01.2#4",
      "P01.2#5"
     ],
-    "label": "P01.2 Java · #1–5 (syntax → constructors)"
+    "label": "P01.2 Java · #1–5 (syntax → constructors)",
+    "title": "Programming Foundations › Java",
+    "detail": "syntax → constructors"
    }
   ],
   "dsaLane": {
@@ -2015,14 +2270,18 @@
       "P04.5#12",
       "P04.5#13"
      ],
-     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)"
+     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)",
+     "title": "Data Structures & Algorithms › Algorithm families",
+     "detail": "divide and conquer → bit manipulation"
     },
     {
      "ref": "P04.6",
      "kind": "topic",
      "topicId": "P04.6",
      "conceptIds": null,
-     "label": "P04.6 Problem-solving patterns"
+     "label": "P04.6 Problem-solving patterns",
+     "title": "Data Structures & Algorithms › Problem-solving patterns",
+     "detail": ""
     }
    ],
    "note": "Algorithm families and problem-solving patterns; target C2 at CW66."
@@ -2037,6 +2296,7 @@
  },
  {
   "cw": 48,
+  "title": "Core Computer Science › Networking",
   "stage": "S5A",
   "mainStage": "S5",
   "type": "study",
@@ -2054,7 +2314,9 @@
      "P05.2#15",
      "P05.2#16"
     ],
-    "label": "P05.2 Networking · #10–16 (DNS → sessions)"
+    "label": "P05.2 Networking · #10–16 (DNS → sessions)",
+    "title": "Core Computer Science › Networking",
+    "detail": "DNS → sessions"
    }
   ],
   "supporting": [
@@ -2069,7 +2331,9 @@
      "P01.2#9",
      "P01.2#10"
     ],
-    "label": "P01.2 Java · #6–10 (inheritance → composition)"
+    "label": "P01.2 Java · #6–10 (inheritance → composition)",
+    "title": "Programming Foundations › Java",
+    "detail": "inheritance → composition"
    }
   ],
   "dsaLane": {
@@ -2086,14 +2350,18 @@
       "P04.5#12",
       "P04.5#13"
      ],
-     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)"
+     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)",
+     "title": "Data Structures & Algorithms › Algorithm families",
+     "detail": "divide and conquer → bit manipulation"
     },
     {
      "ref": "P04.6",
      "kind": "topic",
      "topicId": "P04.6",
      "conceptIds": null,
-     "label": "P04.6 Problem-solving patterns"
+     "label": "P04.6 Problem-solving patterns",
+     "title": "Data Structures & Algorithms › Problem-solving patterns",
+     "detail": ""
     }
    ],
    "note": "Algorithm families and problem-solving patterns; target C2 at CW66."
@@ -2108,6 +2376,7 @@
  },
  {
   "cw": 49,
+  "title": "Core Computer Science › Networking",
   "stage": "S5A",
   "mainStage": "S5",
   "type": "study",
@@ -2126,7 +2395,9 @@
      "P05.2#23",
      "P05.2#24"
     ],
-    "label": "P05.2 Networking · #17–24 (proxies → local HTTP servers)"
+    "label": "P05.2 Networking · #17–24 (proxies → local HTTP servers)",
+    "title": "Core Computer Science › Networking",
+    "detail": "proxies → local HTTP servers"
    }
   ],
   "supporting": [
@@ -2141,7 +2412,9 @@
      "P01.2#14",
      "P01.2#15"
     ],
-    "label": "P01.2 Java · #11–15 (packages → streams)"
+    "label": "P01.2 Java · #11–15 (packages → streams)",
+    "title": "Programming Foundations › Java",
+    "detail": "packages → streams"
    }
   ],
   "dsaLane": {
@@ -2158,14 +2431,18 @@
       "P04.5#12",
       "P04.5#13"
      ],
-     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)"
+     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)",
+     "title": "Data Structures & Algorithms › Algorithm families",
+     "detail": "divide and conquer → bit manipulation"
     },
     {
      "ref": "P04.6",
      "kind": "topic",
      "topicId": "P04.6",
      "conceptIds": null,
-     "label": "P04.6 Problem-solving patterns"
+     "label": "P04.6 Problem-solving patterns",
+     "title": "Data Structures & Algorithms › Problem-solving patterns",
+     "detail": ""
     }
    ],
    "note": "Algorithm families and problem-solving patterns; target C2 at CW66."
@@ -2180,6 +2457,7 @@
  },
  {
   "cw": 50,
+  "title": "Core Computer Science › Operating Systems",
   "stage": "S5A",
   "mainStage": "S5",
   "type": "study",
@@ -2197,7 +2475,9 @@
      "P05.1#6",
      "P05.1#22"
     ],
-    "label": "P05.1 Operating Systems · #1–6 (kernel vs user space → system calls); #22 (CPU scheduling concepts)"
+    "label": "P05.1 Operating Systems · #1–6 (kernel vs user space → system calls); #22 (CPU scheduling concepts)",
+    "title": "Core Computer Science › Operating Systems",
+    "detail": "kernel vs user space → system calls; CPU scheduling concepts"
    }
   ],
   "supporting": [
@@ -2212,7 +2492,9 @@
      "P01.2#19",
      "P01.2#20"
     ],
-    "label": "P01.2 Java · #16–20 (lambdas → threads)"
+    "label": "P01.2 Java · #16–20 (lambdas → threads)",
+    "title": "Programming Foundations › Java",
+    "detail": "lambdas → threads"
    }
   ],
   "dsaLane": {
@@ -2229,14 +2511,18 @@
       "P04.5#12",
       "P04.5#13"
      ],
-     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)"
+     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)",
+     "title": "Data Structures & Algorithms › Algorithm families",
+     "detail": "divide and conquer → bit manipulation"
     },
     {
      "ref": "P04.6",
      "kind": "topic",
      "topicId": "P04.6",
      "conceptIds": null,
-     "label": "P04.6 Problem-solving patterns"
+     "label": "P04.6 Problem-solving patterns",
+     "title": "Data Structures & Algorithms › Problem-solving patterns",
+     "detail": ""
     }
    ],
    "note": "Algorithm families and problem-solving patterns; target C2 at CW66."
@@ -2251,6 +2537,7 @@
  },
  {
   "cw": 51,
+  "title": "Core Computer Science › Operating Systems",
   "stage": "S5A",
   "mainStage": "S5",
   "type": "study",
@@ -2271,7 +2558,9 @@
      "P05.1#20",
      "P05.1#21"
     ],
-    "label": "P05.1 Operating Systems · #7–14 (virtual memory → sockets awareness); #20–21 (memory allocation concepts → caching)"
+    "label": "P05.1 Operating Systems · #7–14 (virtual memory → sockets awareness); #20–21 (memory allocation concepts → caching)",
+    "title": "Core Computer Science › Operating Systems",
+    "detail": "virtual memory → sockets awareness; memory allocation concepts → caching"
    }
   ],
   "supporting": [
@@ -2287,7 +2576,9 @@
      "P01.2#25",
      "P01.2#26"
     ],
-    "label": "P01.2 Java · #21–26 (executors → JUnit)"
+    "label": "P01.2 Java · #21–26 (executors → JUnit)",
+    "title": "Programming Foundations › Java",
+    "detail": "executors → JUnit"
    }
   ],
   "dsaLane": {
@@ -2304,14 +2595,18 @@
       "P04.5#12",
       "P04.5#13"
      ],
-     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)"
+     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)",
+     "title": "Data Structures & Algorithms › Algorithm families",
+     "detail": "divide and conquer → bit manipulation"
     },
     {
      "ref": "P04.6",
      "kind": "topic",
      "topicId": "P04.6",
      "conceptIds": null,
-     "label": "P04.6 Problem-solving patterns"
+     "label": "P04.6 Problem-solving patterns",
+     "title": "Data Structures & Algorithms › Problem-solving patterns",
+     "detail": ""
     }
    ],
    "note": "Algorithm families and problem-solving patterns; target C2 at CW66."
@@ -2326,6 +2621,7 @@
  },
  {
   "cw": 52,
+  "title": "Core Computer Science › Operating Systems",
   "stage": "S5A",
   "mainStage": "S5",
   "type": "study",
@@ -2345,7 +2641,9 @@
      "P05.1#25",
      "P05.1#26"
     ],
-    "label": "P05.1 Operating Systems · #15–19 (synchronization → deadlocks); #23–26 (process monitor → file-system exploration tool)"
+    "label": "P05.1 Operating Systems · #15–19 (synchronization → deadlocks); #23–26 (process monitor → file-system exploration tool)",
+    "title": "Core Computer Science › Operating Systems",
+    "detail": "synchronization → deadlocks; process monitor → file-system exploration tool"
    }
   ],
   "supporting": [
@@ -2359,7 +2657,9 @@
      "P01.2#29",
      "P01.2#30"
     ],
-    "label": "P01.2 Java · #27–30 (OOP mastery → understanding enterprise systems)"
+    "label": "P01.2 Java · #27–30 (OOP mastery → understanding enterprise systems)",
+    "title": "Programming Foundations › Java",
+    "detail": "OOP mastery → understanding enterprise systems"
    }
   ],
   "dsaLane": {
@@ -2376,14 +2676,18 @@
       "P04.5#12",
       "P04.5#13"
      ],
-     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)"
+     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)",
+     "title": "Data Structures & Algorithms › Algorithm families",
+     "detail": "divide and conquer → bit manipulation"
     },
     {
      "ref": "P04.6",
      "kind": "topic",
      "topicId": "P04.6",
      "conceptIds": null,
-     "label": "P04.6 Problem-solving patterns"
+     "label": "P04.6 Problem-solving patterns",
+     "title": "Data Structures & Algorithms › Problem-solving patterns",
+     "detail": ""
     }
    ],
    "note": "Algorithm families and problem-solving patterns; target C2 at CW66."
@@ -2398,6 +2702,7 @@
  },
  {
   "cw": 53,
+  "title": "Relational fundamentals › Database design",
   "stage": "S5A",
   "mainStage": "S5",
   "type": "study",
@@ -2407,7 +2712,9 @@
     "kind": "topic",
     "topicId": "P06.1b",
     "conceptIds": null,
-    "label": "P06.1b Relational fundamentals › Database design"
+    "label": "P06.1b Relational fundamentals › Database design",
+    "title": "Relational fundamentals › Database design",
+    "detail": ""
    }
   ],
   "supporting": [
@@ -2425,7 +2732,9 @@
      "P01.1e#7",
      "P01.1e#8"
     ],
-    "label": "P01.1e Python › Deeper internals · #1–8 (object model → import machinery)"
+    "label": "P01.1e Python › Deeper internals · #1–8 (object model → import machinery)",
+    "title": "Python › Deeper internals",
+    "detail": "object model → import machinery"
    }
   ],
   "dsaLane": {
@@ -2442,14 +2751,18 @@
       "P04.5#12",
       "P04.5#13"
      ],
-     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)"
+     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)",
+     "title": "Data Structures & Algorithms › Algorithm families",
+     "detail": "divide and conquer → bit manipulation"
     },
     {
      "ref": "P04.6",
      "kind": "topic",
      "topicId": "P04.6",
      "conceptIds": null,
-     "label": "P04.6 Problem-solving patterns"
+     "label": "P04.6 Problem-solving patterns",
+     "title": "Data Structures & Algorithms › Problem-solving patterns",
+     "detail": ""
     }
    ],
    "note": "Algorithm families and problem-solving patterns; target C2 at CW66."
@@ -2464,6 +2777,7 @@
  },
  {
   "cw": 54,
+  "title": "Relational fundamentals › Transactions",
   "stage": "S5A",
   "mainStage": "S5",
   "type": "study",
@@ -2473,7 +2787,9 @@
     "kind": "topic",
     "topicId": "P06.1c",
     "conceptIds": null,
-    "label": "P06.1c Relational fundamentals › Transactions"
+    "label": "P06.1c Relational fundamentals › Transactions",
+    "title": "Relational fundamentals › Transactions",
+    "detail": ""
    }
   ],
   "supporting": [
@@ -2490,7 +2806,9 @@
      "P01.1e#14",
      "P01.1e#15"
     ],
-    "label": "P01.1e Python › Deeper internals · #9–15 (bytecode/interpreter concepts → current Python concurrency evolution)"
+    "label": "P01.1e Python › Deeper internals · #9–15 (bytecode/interpreter concepts → current Python concurrency evolution)",
+    "title": "Python › Deeper internals",
+    "detail": "bytecode/interpreter concepts → current Python concurrency evolution"
    }
   ],
   "dsaLane": {
@@ -2507,14 +2825,18 @@
       "P04.5#12",
       "P04.5#13"
      ],
-     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)"
+     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)",
+     "title": "Data Structures & Algorithms › Algorithm families",
+     "detail": "divide and conquer → bit manipulation"
     },
     {
      "ref": "P04.6",
      "kind": "topic",
      "topicId": "P04.6",
      "conceptIds": null,
-     "label": "P04.6 Problem-solving patterns"
+     "label": "P04.6 Problem-solving patterns",
+     "title": "Data Structures & Algorithms › Problem-solving patterns",
+     "detail": ""
     }
    ],
    "note": "Algorithm families and problem-solving patterns; target C2 at CW66."
@@ -2529,6 +2851,7 @@
  },
  {
   "cw": 55,
+  "title": "Relational fundamentals › Performance + Databases › PostgreSQL",
   "stage": "S5A",
   "mainStage": "S5",
   "type": "study",
@@ -2538,14 +2861,18 @@
     "kind": "topic",
     "topicId": "P06.1d",
     "conceptIds": null,
-    "label": "P06.1d Relational fundamentals › Performance"
+    "label": "P06.1d Relational fundamentals › Performance",
+    "title": "Relational fundamentals › Performance",
+    "detail": ""
    },
    {
     "ref": "P06.2",
     "kind": "topic",
     "topicId": "P06.2",
     "conceptIds": null,
-    "label": "P06.2 PostgreSQL"
+    "label": "P06.2 PostgreSQL",
+    "title": "Databases › PostgreSQL",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -2563,14 +2890,18 @@
       "P04.5#12",
       "P04.5#13"
      ],
-     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)"
+     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)",
+     "title": "Data Structures & Algorithms › Algorithm families",
+     "detail": "divide and conquer → bit manipulation"
     },
     {
      "ref": "P04.6",
      "kind": "topic",
      "topicId": "P04.6",
      "conceptIds": null,
-     "label": "P04.6 Problem-solving patterns"
+     "label": "P04.6 Problem-solving patterns",
+     "title": "Data Structures & Algorithms › Problem-solving patterns",
+     "detail": ""
     }
    ],
    "note": "Algorithm families and problem-solving patterns; target C2 at CW66."
@@ -2585,6 +2916,7 @@
  },
  {
   "cw": 56,
+  "title": "Databases › Redis + Relational fundamentals › Distributed concepts + Databases › NoSQL",
   "stage": "S5A",
   "mainStage": "S5",
   "type": "study",
@@ -2594,21 +2926,27 @@
     "kind": "topic",
     "topicId": "P06.3",
     "conceptIds": null,
-    "label": "P06.3 Redis"
+    "label": "P06.3 Redis",
+    "title": "Databases › Redis",
+    "detail": ""
    },
    {
     "ref": "P06.1e",
     "kind": "topic",
     "topicId": "P06.1e",
     "conceptIds": null,
-    "label": "P06.1e Relational fundamentals › Distributed concepts"
+    "label": "P06.1e Relational fundamentals › Distributed concepts",
+    "title": "Relational fundamentals › Distributed concepts",
+    "detail": ""
    },
    {
     "ref": "P06.4",
     "kind": "topic",
     "topicId": "P06.4",
     "conceptIds": null,
-    "label": "P06.4 NoSQL"
+    "label": "P06.4 NoSQL",
+    "title": "Databases › NoSQL",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -2626,14 +2964,18 @@
       "P04.5#12",
       "P04.5#13"
      ],
-     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)"
+     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)",
+     "title": "Data Structures & Algorithms › Algorithm families",
+     "detail": "divide and conquer → bit manipulation"
     },
     {
      "ref": "P04.6",
      "kind": "topic",
      "topicId": "P04.6",
      "conceptIds": null,
-     "label": "P04.6 Problem-solving patterns"
+     "label": "P04.6 Problem-solving patterns",
+     "title": "Data Structures & Algorithms › Problem-solving patterns",
+     "detail": ""
     }
    ],
    "note": "Algorithm families and problem-solving patterns; target C2 at CW66."
@@ -2648,6 +2990,7 @@
  },
  {
   "cw": 57,
+  "title": "Backend Engineering › Identity + Backend projects + Security + Security › General",
   "stage": "S5A",
   "mainStage": "S5",
   "type": "study",
@@ -2657,7 +3000,9 @@
     "kind": "topic",
     "topicId": "P08.4",
     "conceptIds": null,
-    "label": "P08.4 Identity"
+    "label": "P08.4 Identity",
+    "title": "Backend Engineering › Identity",
+    "detail": ""
    },
    {
     "ref": "P08.6:5-8",
@@ -2669,21 +3014,27 @@
      "P08.6#7",
      "P08.6#8"
     ],
-    "label": "P08.6 Backend projects · #5–8 (users → roles)"
+    "label": "P08.6 Backend projects · #5–8 (users → roles)",
+    "title": "Backend Engineering › Backend projects",
+    "detail": "users → roles"
    },
    {
     "ref": "P39.0",
     "kind": "topic",
     "topicId": "P39.0",
     "conceptIds": null,
-    "label": "P39.0 Security (core scope)"
+    "label": "P39.0 Security (core scope)",
+    "title": "Security",
+    "detail": ""
    },
    {
     "ref": "P39.1",
     "kind": "topic",
     "topicId": "P39.1",
     "conceptIds": null,
-    "label": "P39.1 General"
+    "label": "P39.1 General",
+    "title": "Security › General",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -2701,14 +3052,18 @@
       "P04.5#12",
       "P04.5#13"
      ],
-     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)"
+     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)",
+     "title": "Data Structures & Algorithms › Algorithm families",
+     "detail": "divide and conquer → bit manipulation"
     },
     {
      "ref": "P04.6",
      "kind": "topic",
      "topicId": "P04.6",
      "conceptIds": null,
-     "label": "P04.6 Problem-solving patterns"
+     "label": "P04.6 Problem-solving patterns",
+     "title": "Data Structures & Algorithms › Problem-solving patterns",
+     "detail": ""
     }
    ],
    "note": "Algorithm families and problem-solving patterns; target C2 at CW66."
@@ -2723,6 +3078,7 @@
  },
  {
   "cw": 58,
+  "title": "Security › Common web risks + Backend Engineering › Application infrastructure",
   "stage": "S5A",
   "mainStage": "S5",
   "type": "study",
@@ -2732,14 +3088,18 @@
     "kind": "topic",
     "topicId": "P39.2",
     "conceptIds": null,
-    "label": "P39.2 Common web risks"
+    "label": "P39.2 Common web risks",
+    "title": "Security › Common web risks",
+    "detail": ""
    },
    {
     "ref": "P08.5",
     "kind": "topic",
     "topicId": "P08.5",
     "conceptIds": null,
-    "label": "P08.5 Application infrastructure"
+    "label": "P08.5 Application infrastructure",
+    "title": "Backend Engineering › Application infrastructure",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -2757,14 +3117,18 @@
       "P04.5#12",
       "P04.5#13"
      ],
-     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)"
+     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)",
+     "title": "Data Structures & Algorithms › Algorithm families",
+     "detail": "divide and conquer → bit manipulation"
     },
     {
      "ref": "P04.6",
      "kind": "topic",
      "topicId": "P04.6",
      "conceptIds": null,
-     "label": "P04.6 Problem-solving patterns"
+     "label": "P04.6 Problem-solving patterns",
+     "title": "Data Structures & Algorithms › Problem-solving patterns",
+     "detail": ""
     }
    ],
    "note": "Algorithm families and problem-solving patterns; target C2 at CW66."
@@ -2779,6 +3143,7 @@
  },
  {
   "cw": 59,
+  "title": "System Design + System Design › Standard design process + Core concepts",
   "stage": "S5A",
   "mainStage": "S5",
   "type": "study",
@@ -2788,14 +3153,18 @@
     "kind": "topic",
     "topicId": "P35.0",
     "conceptIds": null,
-    "label": "P35.0 System Design (core scope)"
+    "label": "P35.0 System Design (core scope)",
+    "title": "System Design",
+    "detail": ""
    },
    {
     "ref": "P35.1",
     "kind": "topic",
     "topicId": "P35.1",
     "conceptIds": null,
-    "label": "P35.1 Standard design process"
+    "label": "P35.1 Standard design process",
+    "title": "System Design › Standard design process",
+    "detail": ""
    },
    {
     "ref": "P35.2:1-10",
@@ -2813,7 +3182,9 @@
      "P35.2#9",
      "P35.2#10"
     ],
-    "label": "P35.2 Core concepts · #1–10 (availability → backpressure)"
+    "label": "P35.2 Core concepts · #1–10 (availability → backpressure)",
+    "title": "System Design › Core concepts",
+    "detail": "availability → backpressure"
    }
   ],
   "supporting": [],
@@ -2831,14 +3202,18 @@
       "P04.5#12",
       "P04.5#13"
      ],
-     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)"
+     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)",
+     "title": "Data Structures & Algorithms › Algorithm families",
+     "detail": "divide and conquer → bit manipulation"
     },
     {
      "ref": "P04.6",
      "kind": "topic",
      "topicId": "P04.6",
      "conceptIds": null,
-     "label": "P04.6 Problem-solving patterns"
+     "label": "P04.6 Problem-solving patterns",
+     "title": "Data Structures & Algorithms › Problem-solving patterns",
+     "detail": ""
     }
    ],
    "note": "Algorithm families and problem-solving patterns; target C2 at CW66."
@@ -2853,6 +3228,7 @@
  },
  {
   "cw": 60,
+  "title": "URL Shortener (project) + Backend Engineering › Backend projects",
   "stage": "S5A",
   "mainStage": "S5",
   "type": "project",
@@ -2861,7 +3237,9 @@
     "ref": "PR04",
     "kind": "project",
     "projectId": "PR04",
-    "label": "PR04 URL Shortener (build)"
+    "label": "PR04 URL Shortener (build)",
+    "title": "URL Shortener (project)",
+    "detail": ""
    },
    {
     "ref": "P08.6:9-13",
@@ -2874,7 +3252,9 @@
      "P08.6#12",
      "P08.6#13"
     ],
-    "label": "P08.6 Backend projects · #9–13 (unique IDs → analytics)"
+    "label": "P08.6 Backend projects · #9–13 (unique IDs → analytics)",
+    "title": "Backend Engineering › Backend projects",
+    "detail": "unique IDs → analytics"
    }
   ],
   "supporting": [],
@@ -2892,14 +3272,18 @@
       "P04.5#12",
       "P04.5#13"
      ],
-     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)"
+     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)",
+     "title": "Data Structures & Algorithms › Algorithm families",
+     "detail": "divide and conquer → bit manipulation"
     },
     {
      "ref": "P04.6",
      "kind": "topic",
      "topicId": "P04.6",
      "conceptIds": null,
-     "label": "P04.6 Problem-solving patterns"
+     "label": "P04.6 Problem-solving patterns",
+     "title": "Data Structures & Algorithms › Problem-solving patterns",
+     "detail": ""
     }
    ],
    "note": "Algorithm families and problem-solving patterns; target C2 at CW66."
@@ -2914,6 +3298,7 @@
  },
  {
   "cw": 61,
+  "title": "URL Shortener (project) + System Design › Core concepts",
   "stage": "S5A",
   "mainStage": "S5",
   "type": "project",
@@ -2922,7 +3307,9 @@
     "ref": "PR04",
     "kind": "project",
     "projectId": "PR04",
-    "label": "PR04 URL Shortener (build)"
+    "label": "PR04 URL Shortener (build)",
+    "title": "URL Shortener (project)",
+    "detail": ""
    },
    {
     "ref": "P35.2:11-19",
@@ -2939,7 +3326,9 @@
      "P35.2#18",
      "P35.2#19"
     ],
-    "label": "P35.2 Core concepts · #11–19 (caching → observability)"
+    "label": "P35.2 Core concepts · #11–19 (caching → observability)",
+    "title": "System Design › Core concepts",
+    "detail": "caching → observability"
    }
   ],
   "supporting": [],
@@ -2957,14 +3346,18 @@
       "P04.5#12",
       "P04.5#13"
      ],
-     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)"
+     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)",
+     "title": "Data Structures & Algorithms › Algorithm families",
+     "detail": "divide and conquer → bit manipulation"
     },
     {
      "ref": "P04.6",
      "kind": "topic",
      "topicId": "P04.6",
      "conceptIds": null,
-     "label": "P04.6 Problem-solving patterns"
+     "label": "P04.6 Problem-solving patterns",
+     "title": "Data Structures & Algorithms › Problem-solving patterns",
+     "detail": ""
     }
    ],
    "note": "Algorithm families and problem-solving patterns; target C2 at CW66."
@@ -2979,6 +3372,7 @@
  },
  {
   "cw": 62,
+  "title": "URL Shortener (project)",
   "stage": "S5A",
   "mainStage": "S5",
   "type": "project",
@@ -2987,7 +3381,9 @@
     "ref": "PR04",
     "kind": "project",
     "projectId": "PR04",
-    "label": "PR04 URL Shortener (build)"
+    "label": "PR04 URL Shortener (build)",
+    "title": "URL Shortener (project)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -3005,14 +3401,18 @@
       "P04.5#12",
       "P04.5#13"
      ],
-     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)"
+     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)",
+     "title": "Data Structures & Algorithms › Algorithm families",
+     "detail": "divide and conquer → bit manipulation"
     },
     {
      "ref": "P04.6",
      "kind": "topic",
      "topicId": "P04.6",
      "conceptIds": null,
-     "label": "P04.6 Problem-solving patterns"
+     "label": "P04.6 Problem-solving patterns",
+     "title": "Data Structures & Algorithms › Problem-solving patterns",
+     "detail": ""
     }
    ],
    "note": "Algorithm families and problem-solving patterns; target C2 at CW66."
@@ -3027,6 +3427,7 @@
  },
  {
   "cw": 63,
+  "title": "Real-Time Chat Backend (project) + Backend Engineering › Backend projects",
   "stage": "S5A",
   "mainStage": "S5",
   "type": "project",
@@ -3035,7 +3436,9 @@
     "ref": "PR05",
     "kind": "project",
     "projectId": "PR05",
-    "label": "PR05 Real-Time Chat Backend (build)"
+    "label": "PR05 Real-Time Chat Backend (build)",
+    "title": "Real-Time Chat Backend (project)",
+    "detail": ""
    },
    {
     "ref": "P08.6:14-17",
@@ -3047,7 +3450,9 @@
      "P08.6#16",
      "P08.6#17"
     ],
-    "label": "P08.6 Backend projects · #14–17 (WebSockets → concurrency reasoning)"
+    "label": "P08.6 Backend projects · #14–17 (WebSockets → concurrency reasoning)",
+    "title": "Backend Engineering › Backend projects",
+    "detail": "WebSockets → concurrency reasoning"
    }
   ],
   "supporting": [],
@@ -3065,14 +3470,18 @@
       "P04.5#12",
       "P04.5#13"
      ],
-     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)"
+     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)",
+     "title": "Data Structures & Algorithms › Algorithm families",
+     "detail": "divide and conquer → bit manipulation"
     },
     {
      "ref": "P04.6",
      "kind": "topic",
      "topicId": "P04.6",
      "conceptIds": null,
-     "label": "P04.6 Problem-solving patterns"
+     "label": "P04.6 Problem-solving patterns",
+     "title": "Data Structures & Algorithms › Problem-solving patterns",
+     "detail": ""
     }
    ],
    "note": "Algorithm families and problem-solving patterns; target C2 at CW66."
@@ -3087,6 +3496,7 @@
  },
  {
   "cw": 64,
+  "title": "Real-Time Chat Backend (project)",
   "stage": "S5A",
   "mainStage": "S5",
   "type": "project",
@@ -3095,7 +3505,9 @@
     "ref": "PR05",
     "kind": "project",
     "projectId": "PR05",
-    "label": "PR05 Real-Time Chat Backend (build)"
+    "label": "PR05 Real-Time Chat Backend (build)",
+    "title": "Real-Time Chat Backend (project)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -3113,14 +3525,18 @@
       "P04.5#12",
       "P04.5#13"
      ],
-     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)"
+     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)",
+     "title": "Data Structures & Algorithms › Algorithm families",
+     "detail": "divide and conquer → bit manipulation"
     },
     {
      "ref": "P04.6",
      "kind": "topic",
      "topicId": "P04.6",
      "conceptIds": null,
-     "label": "P04.6 Problem-solving patterns"
+     "label": "P04.6 Problem-solving patterns",
+     "title": "Data Structures & Algorithms › Problem-solving patterns",
+     "detail": ""
     }
    ],
    "note": "Algorithm families and problem-solving patterns; target C2 at CW66."
@@ -3135,6 +3551,7 @@
  },
  {
   "cw": 65,
+  "title": "Real-Time Chat Backend (project)",
   "stage": "S5A",
   "mainStage": "S5",
   "type": "project",
@@ -3143,7 +3560,9 @@
     "ref": "PR05",
     "kind": "project",
     "projectId": "PR05",
-    "label": "PR05 Real-Time Chat Backend (build)"
+    "label": "PR05 Real-Time Chat Backend (build)",
+    "title": "Real-Time Chat Backend (project)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -3161,14 +3580,18 @@
       "P04.5#12",
       "P04.5#13"
      ],
-     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)"
+     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)",
+     "title": "Data Structures & Algorithms › Algorithm families",
+     "detail": "divide and conquer → bit manipulation"
     },
     {
      "ref": "P04.6",
      "kind": "topic",
      "topicId": "P04.6",
      "conceptIds": null,
-     "label": "P04.6 Problem-solving patterns"
+     "label": "P04.6 Problem-solving patterns",
+     "title": "Data Structures & Algorithms › Problem-solving patterns",
+     "detail": ""
     }
    ],
    "note": "Algorithm families and problem-solving patterns; target C2 at CW66."
@@ -3183,6 +3606,7 @@
  },
  {
   "cw": 66,
+  "title": "Consolidation: gate attempt, spaced re-tests, targeted repair",
   "stage": "S5A",
   "mainStage": "S5",
   "type": "consolidation",
@@ -3191,7 +3615,9 @@
     "ref": "CONSOLIDATE",
     "kind": "activity",
     "activity": "CONSOLIDATE",
-    "label": "Consolidation: gate attempt, spaced re-tests, targeted repair"
+    "label": "Consolidation: gate attempt, spaced re-tests, targeted repair",
+    "title": "Consolidation: gate attempt, spaced re-tests, targeted repair",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -3209,14 +3635,18 @@
       "P04.5#12",
       "P04.5#13"
      ],
-     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)"
+     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)",
+     "title": "Data Structures & Algorithms › Algorithm families",
+     "detail": "divide and conquer → bit manipulation"
     },
     {
      "ref": "P04.6",
      "kind": "topic",
      "topicId": "P04.6",
      "conceptIds": null,
-     "label": "P04.6 Problem-solving patterns"
+     "label": "P04.6 Problem-solving patterns",
+     "title": "Data Structures & Algorithms › Problem-solving patterns",
+     "detail": ""
     }
    ],
    "note": "Algorithm families and problem-solving patterns; target C2 at CW66."
@@ -3231,6 +3661,7 @@
  },
  {
   "cw": 67,
+  "title": "Data Science › Data projects + Communication",
   "stage": "S5B",
   "mainStage": "S5",
   "type": "study",
@@ -3240,14 +3671,18 @@
     "kind": "topic",
     "topicId": "P11.4",
     "conceptIds": null,
-    "label": "P11.4 Data projects"
+    "label": "P11.4 Data projects",
+    "title": "Data Science › Data projects",
+    "detail": ""
    },
    {
     "ref": "P11.5",
     "kind": "topic",
     "topicId": "P11.5",
     "conceptIds": null,
-    "label": "P11.5 Communication"
+    "label": "P11.5 Communication",
+    "title": "Data Science › Communication",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -3258,7 +3693,9 @@
      "kind": "topic",
      "topicId": "P04.7",
      "conceptIds": null,
-     "label": "P04.7 Interview progression"
+     "label": "P04.7 Interview progression",
+     "title": "Data Structures & Algorithms › Interview progression",
+     "detail": ""
     }
    ],
    "note": "Interview progression: easy to medium, mistake log (master DSA track)."
@@ -3273,6 +3710,7 @@
  },
  {
   "cw": 68,
+  "title": "Data Engineering Foundation",
   "stage": "S5B",
   "mainStage": "S5",
   "type": "study",
@@ -3296,7 +3734,9 @@
      "P12.0#12",
      "P12.0#13"
     ],
-    "label": "P12.0 Data Engineering Foundation (core scope) · #1–13 (ETL → basic orchestration)"
+    "label": "P12.0 Data Engineering Foundation (core scope) · #1–13 (ETL → basic orchestration)",
+    "title": "Data Engineering Foundation",
+    "detail": "ETL → basic orchestration"
    }
   ],
   "supporting": [],
@@ -3307,7 +3747,9 @@
      "kind": "topic",
      "topicId": "P04.7",
      "conceptIds": null,
-     "label": "P04.7 Interview progression"
+     "label": "P04.7 Interview progression",
+     "title": "Data Structures & Algorithms › Interview progression",
+     "detail": ""
     }
    ],
    "note": "Interview progression: easy to medium, mistake log (master DSA track)."
@@ -3322,6 +3764,7 @@
  },
  {
   "cw": 69,
+  "title": "Analytics Platform (project) + Data Engineering Foundation › Data engineering project",
   "stage": "S5B",
   "mainStage": "S5",
   "type": "project",
@@ -3330,14 +3773,18 @@
     "ref": "PR06",
     "kind": "project",
     "projectId": "PR06",
-    "label": "PR06 Analytics Platform (build)"
+    "label": "PR06 Analytics Platform (build)",
+    "title": "Analytics Platform (project)",
+    "detail": ""
    },
    {
     "ref": "P12.1",
     "kind": "topic",
     "topicId": "P12.1",
     "conceptIds": null,
-    "label": "P12.1 Data engineering project"
+    "label": "P12.1 Data engineering project",
+    "title": "Data Engineering Foundation › Data engineering project",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -3348,7 +3795,9 @@
      "kind": "topic",
      "topicId": "P04.7",
      "conceptIds": null,
-     "label": "P04.7 Interview progression"
+     "label": "P04.7 Interview progression",
+     "title": "Data Structures & Algorithms › Interview progression",
+     "detail": ""
     }
    ],
    "note": "Interview progression: easy to medium, mistake log (master DSA track)."
@@ -3363,6 +3812,7 @@
  },
  {
   "cw": 70,
+  "title": "Analytics Platform (project)",
   "stage": "S5B",
   "mainStage": "S5",
   "type": "project",
@@ -3371,7 +3821,9 @@
     "ref": "PR06",
     "kind": "project",
     "projectId": "PR06",
-    "label": "PR06 Analytics Platform (build)"
+    "label": "PR06 Analytics Platform (build)",
+    "title": "Analytics Platform (project)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -3382,7 +3834,9 @@
      "kind": "topic",
      "topicId": "P04.7",
      "conceptIds": null,
-     "label": "P04.7 Interview progression"
+     "label": "P04.7 Interview progression",
+     "title": "Data Structures & Algorithms › Interview progression",
+     "detail": ""
     }
    ],
    "note": "Interview progression: easy to medium, mistake log (master DSA track)."
@@ -3397,6 +3851,7 @@
  },
  {
   "cw": 71,
+  "title": "Analytics Platform (project)",
   "stage": "S5B",
   "mainStage": "S5",
   "type": "project",
@@ -3405,7 +3860,9 @@
     "ref": "PR06",
     "kind": "project",
     "projectId": "PR06",
-    "label": "PR06 Analytics Platform (build)"
+    "label": "PR06 Analytics Platform (build)",
+    "title": "Analytics Platform (project)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -3416,7 +3873,9 @@
      "kind": "topic",
      "topicId": "P04.7",
      "conceptIds": null,
-     "label": "P04.7 Interview progression"
+     "label": "P04.7 Interview progression",
+     "title": "Data Structures & Algorithms › Interview progression",
+     "detail": ""
     }
    ],
    "note": "Interview progression: easy to medium, mistake log (master DSA track)."
@@ -3431,6 +3890,7 @@
  },
  {
   "cw": 72,
+  "title": "Classical Machine Learning › Problem formulation + Machine Learning Theory › Baselines",
   "stage": "S5B",
   "mainStage": "S5",
   "type": "study",
@@ -3440,14 +3900,18 @@
     "kind": "topic",
     "topicId": "P13.1",
     "conceptIds": null,
-    "label": "P13.1 Problem formulation"
+    "label": "P13.1 Problem formulation",
+    "title": "Classical Machine Learning › Problem formulation",
+    "detail": ""
    },
    {
     "ref": "P14.3",
     "kind": "topic",
     "topicId": "P14.3",
     "conceptIds": null,
-    "label": "P14.3 Baselines"
+    "label": "P14.3 Baselines",
+    "title": "Machine Learning Theory › Baselines",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -3458,7 +3922,9 @@
      "kind": "topic",
      "topicId": "P04.7",
      "conceptIds": null,
-     "label": "P04.7 Interview progression"
+     "label": "P04.7 Interview progression",
+     "title": "Data Structures & Algorithms › Interview progression",
+     "detail": ""
     }
    ],
    "note": "Interview progression: easy to medium, mistake log (master DSA track)."
@@ -3473,6 +3939,7 @@
  },
  {
   "cw": 73,
+  "title": "Classical Machine Learning › Regression + Mathematics › Statistics",
   "stage": "S5B",
   "mainStage": "S5",
   "type": "study",
@@ -3482,7 +3949,9 @@
     "kind": "topic",
     "topicId": "P13.2",
     "conceptIds": null,
-    "label": "P13.2 Regression"
+    "label": "P13.2 Regression",
+    "title": "Classical Machine Learning › Regression",
+    "detail": ""
    },
    {
     "ref": "P10.4:12-13",
@@ -3492,7 +3961,9 @@
      "P10.4#12",
      "P10.4#13"
     ],
-    "label": "P10.4 Statistics · #12–13 (regression → ANOVA)"
+    "label": "P10.4 Statistics · #12–13 (regression → ANOVA)",
+    "title": "Mathematics › Statistics",
+    "detail": "regression → ANOVA"
    }
   ],
   "supporting": [],
@@ -3503,7 +3974,9 @@
      "kind": "topic",
      "topicId": "P04.7",
      "conceptIds": null,
-     "label": "P04.7 Interview progression"
+     "label": "P04.7 Interview progression",
+     "title": "Data Structures & Algorithms › Interview progression",
+     "detail": ""
     }
    ],
    "note": "Interview progression: easy to medium, mistake log (master DSA track)."
@@ -3518,6 +3991,7 @@
  },
  {
   "cw": 74,
+  "title": "Classical Machine Learning › Classification + Mathematics › Probability",
   "stage": "S5B",
   "mainStage": "S5",
   "type": "study",
@@ -3527,7 +4001,9 @@
     "kind": "topic",
     "topicId": "P13.3",
     "conceptIds": null,
-    "label": "P13.3 Classification"
+    "label": "P13.3 Classification",
+    "title": "Classical Machine Learning › Classification",
+    "detail": ""
    },
    {
     "ref": "P10.3:17-20",
@@ -3539,7 +4015,9 @@
      "P10.3#19",
      "P10.3#20"
     ],
-    "label": "P10.3 Probability · #17–20 (likelihood → Bayesian reasoning)"
+    "label": "P10.3 Probability · #17–20 (likelihood → Bayesian reasoning)",
+    "title": "Mathematics › Probability",
+    "detail": "likelihood → Bayesian reasoning"
    }
   ],
   "supporting": [],
@@ -3550,7 +4028,9 @@
      "kind": "topic",
      "topicId": "P04.7",
      "conceptIds": null,
-     "label": "P04.7 Interview progression"
+     "label": "P04.7 Interview progression",
+     "title": "Data Structures & Algorithms › Interview progression",
+     "detail": ""
     }
    ],
    "note": "Interview progression: easy to medium, mistake log (master DSA track)."
@@ -3565,6 +4045,7 @@
  },
  {
   "cw": 75,
+  "title": "Classical Machine Learning › Boosting",
   "stage": "S5B",
   "mainStage": "S5",
   "type": "study",
@@ -3574,7 +4055,9 @@
     "kind": "topic",
     "topicId": "P13.4",
     "conceptIds": null,
-    "label": "P13.4 Boosting"
+    "label": "P13.4 Boosting",
+    "title": "Classical Machine Learning › Boosting",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -3585,7 +4068,9 @@
      "kind": "topic",
      "topicId": "P04.7",
      "conceptIds": null,
-     "label": "P04.7 Interview progression"
+     "label": "P04.7 Interview progression",
+     "title": "Data Structures & Algorithms › Interview progression",
+     "detail": ""
     }
    ],
    "note": "Interview progression: easy to medium, mistake log (master DSA track)."
@@ -3600,6 +4085,7 @@
  },
  {
   "cw": 76,
+  "title": "Linear Algebra › Advanced + ML connections",
   "stage": "S5B",
   "mainStage": "S5",
   "type": "study",
@@ -3609,14 +4095,18 @@
     "kind": "topic",
     "topicId": "P10.1d",
     "conceptIds": null,
-    "label": "P10.1d Linear Algebra › Advanced"
+    "label": "P10.1d Linear Algebra › Advanced",
+    "title": "Linear Algebra › Advanced",
+    "detail": ""
    },
    {
     "ref": "P10.1e",
     "kind": "topic",
     "topicId": "P10.1e",
     "conceptIds": null,
-    "label": "P10.1e Linear Algebra › ML connections"
+    "label": "P10.1e Linear Algebra › ML connections",
+    "title": "Linear Algebra › ML connections",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -3627,7 +4117,9 @@
      "kind": "topic",
      "topicId": "P04.7",
      "conceptIds": null,
-     "label": "P04.7 Interview progression"
+     "label": "P04.7 Interview progression",
+     "title": "Data Structures & Algorithms › Interview progression",
+     "detail": ""
     }
    ],
    "note": "Interview progression: easy to medium, mistake log (master DSA track)."
@@ -3642,6 +4134,7 @@
  },
  {
   "cw": 77,
+  "title": "Classical Machine Learning › Unsupervised learning",
   "stage": "S5B",
   "mainStage": "S5",
   "type": "study",
@@ -3651,7 +4144,9 @@
     "kind": "topic",
     "topicId": "P13.5",
     "conceptIds": null,
-    "label": "P13.5 Unsupervised learning"
+    "label": "P13.5 Unsupervised learning",
+    "title": "Classical Machine Learning › Unsupervised learning",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -3662,7 +4157,9 @@
      "kind": "topic",
      "topicId": "P04.7",
      "conceptIds": null,
-     "label": "P04.7 Interview progression"
+     "label": "P04.7 Interview progression",
+     "title": "Data Structures & Algorithms › Interview progression",
+     "detail": ""
     }
    ],
    "note": "Interview progression: easy to medium, mistake log (master DSA track)."
@@ -3677,6 +4174,7 @@
  },
  {
   "cw": 78,
+  "title": "Machine Learning Theory",
   "stage": "S5B",
   "mainStage": "S5",
   "type": "study",
@@ -3686,7 +4184,9 @@
     "kind": "topic",
     "topicId": "P14.0",
     "conceptIds": null,
-    "label": "P14.0 Machine Learning Theory (core scope)"
+    "label": "P14.0 Machine Learning Theory (core scope)",
+    "title": "Machine Learning Theory",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -3697,7 +4197,9 @@
      "kind": "topic",
      "topicId": "P04.7",
      "conceptIds": null,
-     "label": "P04.7 Interview progression"
+     "label": "P04.7 Interview progression",
+     "title": "Data Structures & Algorithms › Interview progression",
+     "detail": ""
     }
    ],
    "note": "Interview progression: easy to medium, mistake log (master DSA track)."
@@ -3712,6 +4214,7 @@
  },
  {
   "cw": 79,
+  "title": "Machine Learning Theory › Feature engineering + Leakage",
   "stage": "S5B",
   "mainStage": "S5",
   "type": "study",
@@ -3721,14 +4224,18 @@
     "kind": "topic",
     "topicId": "P14.1",
     "conceptIds": null,
-    "label": "P14.1 Feature engineering"
+    "label": "P14.1 Feature engineering",
+    "title": "Machine Learning Theory › Feature engineering",
+    "detail": ""
    },
    {
     "ref": "P14.2",
     "kind": "topic",
     "topicId": "P14.2",
     "conceptIds": null,
-    "label": "P14.2 Leakage"
+    "label": "P14.2 Leakage",
+    "title": "Machine Learning Theory › Leakage",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -3739,7 +4246,9 @@
      "kind": "topic",
      "topicId": "P04.7",
      "conceptIds": null,
-     "label": "P04.7 Interview progression"
+     "label": "P04.7 Interview progression",
+     "title": "Data Structures & Algorithms › Interview progression",
+     "detail": ""
     }
    ],
    "note": "Interview progression: easy to medium, mistake log (master DSA track)."
@@ -3754,6 +4263,7 @@
  },
  {
   "cw": 80,
+  "title": "Model Evaluation › Classification metrics + Regression metrics",
   "stage": "S5B",
   "mainStage": "S5",
   "type": "study",
@@ -3763,14 +4273,18 @@
     "kind": "topic",
     "topicId": "P15.1",
     "conceptIds": null,
-    "label": "P15.1 Classification metrics"
+    "label": "P15.1 Classification metrics",
+    "title": "Model Evaluation › Classification metrics",
+    "detail": ""
    },
    {
     "ref": "P15.2",
     "kind": "topic",
     "topicId": "P15.2",
     "conceptIds": null,
-    "label": "P15.2 Regression metrics"
+    "label": "P15.2 Regression metrics",
+    "title": "Model Evaluation › Regression metrics",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -3781,7 +4295,9 @@
      "kind": "topic",
      "topicId": "P04.7",
      "conceptIds": null,
-     "label": "P04.7 Interview progression"
+     "label": "P04.7 Interview progression",
+     "title": "Data Structures & Algorithms › Interview progression",
+     "detail": ""
     }
    ],
    "note": "Interview progression: easy to medium, mistake log (master DSA track)."
@@ -3796,6 +4312,7 @@
  },
  {
   "cw": 81,
+  "title": "Model Evaluation › Evaluation design + Metric selection + Mathematics › Statistics",
   "stage": "S5B",
   "mainStage": "S5",
   "type": "study",
@@ -3805,14 +4322,18 @@
     "kind": "topic",
     "topicId": "P15.3",
     "conceptIds": null,
-    "label": "P15.3 Evaluation design"
+    "label": "P15.3 Evaluation design",
+    "title": "Model Evaluation › Evaluation design",
+    "detail": ""
    },
    {
     "ref": "P15.4",
     "kind": "topic",
     "topicId": "P15.4",
     "conceptIds": null,
-    "label": "P15.4 Metric selection"
+    "label": "P15.4 Metric selection",
+    "title": "Model Evaluation › Metric selection",
+    "detail": ""
    },
    {
     "ref": "P10.4:14-16",
@@ -3823,7 +4344,9 @@
      "P10.4#15",
      "P10.4#16"
     ],
-    "label": "P10.4 Statistics · #14–16 (experimental design → Bayesian statistics)"
+    "label": "P10.4 Statistics · #14–16 (experimental design → Bayesian statistics)",
+    "title": "Mathematics › Statistics",
+    "detail": "experimental design → Bayesian statistics"
    }
   ],
   "supporting": [],
@@ -3834,7 +4357,9 @@
      "kind": "topic",
      "topicId": "P04.7",
      "conceptIds": null,
-     "label": "P04.7 Interview progression"
+     "label": "P04.7 Interview progression",
+     "title": "Data Structures & Algorithms › Interview progression",
+     "detail": ""
     }
    ],
    "note": "Interview progression: easy to medium, mistake log (master DSA track)."
@@ -3849,6 +4374,7 @@
  },
  {
   "cw": 82,
+  "title": "Mathematics › Calculus",
   "stage": "S5B",
   "mainStage": "S5",
   "type": "study",
@@ -3858,7 +4384,9 @@
     "kind": "topic",
     "topicId": "P10.2",
     "conceptIds": null,
-    "label": "P10.2 Calculus"
+    "label": "P10.2 Calculus",
+    "title": "Mathematics › Calculus",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -3869,7 +4397,9 @@
      "kind": "topic",
      "topicId": "P04.7",
      "conceptIds": null,
-     "label": "P04.7 Interview progression"
+     "label": "P04.7 Interview progression",
+     "title": "Data Structures & Algorithms › Interview progression",
+     "detail": ""
     }
    ],
    "note": "Interview progression: easy to medium, mistake log (master DSA track)."
@@ -3884,6 +4414,7 @@
  },
  {
   "cw": 83,
+  "title": "Mathematics › Optimisation",
   "stage": "S5B",
   "mainStage": "S5",
   "type": "study",
@@ -3893,7 +4424,9 @@
     "kind": "topic",
     "topicId": "P10.5",
     "conceptIds": null,
-    "label": "P10.5 Optimisation"
+    "label": "P10.5 Optimisation",
+    "title": "Mathematics › Optimisation",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -3904,7 +4437,9 @@
      "kind": "topic",
      "topicId": "P04.7",
      "conceptIds": null,
-     "label": "P04.7 Interview progression"
+     "label": "P04.7 Interview progression",
+     "title": "Data Structures & Algorithms › Interview progression",
+     "detail": ""
     }
    ],
    "note": "Interview progression: easy to medium, mistake log (master DSA track)."
@@ -3919,6 +4454,7 @@
  },
  {
   "cw": 84,
+  "title": "From-Scratch ML Implementation",
   "stage": "S5B",
   "mainStage": "S5",
   "type": "study",
@@ -3938,7 +4474,9 @@
      "P16.0#13",
      "P16.0#14"
     ],
-    "label": "P16.0 From-Scratch ML Implementation (core scope) · #1–3 (Linear regression → Logistic regression); #9–14 (mathematical formulation → comparison with library implementation)"
+    "label": "P16.0 From-Scratch ML Implementation (core scope) · #1–3 (Linear regression → Logistic regression); #9–14 (mathematical formulation → comparison with library implementation)",
+    "title": "From-Scratch ML Implementation",
+    "detail": "Linear regression → Logistic regression; mathematical formulation → comparison with library implementation"
    }
   ],
   "supporting": [],
@@ -3949,7 +4487,9 @@
      "kind": "topic",
      "topicId": "P04.7",
      "conceptIds": null,
-     "label": "P04.7 Interview progression"
+     "label": "P04.7 Interview progression",
+     "title": "Data Structures & Algorithms › Interview progression",
+     "detail": ""
     }
    ],
    "note": "Interview progression: easy to medium, mistake log (master DSA track)."
@@ -3964,6 +4504,7 @@
  },
  {
   "cw": 85,
+  "title": "From-Scratch ML Implementation + Python › Required implementations",
   "stage": "S5B",
   "mainStage": "S5",
   "type": "study",
@@ -3983,7 +4524,9 @@
      "P16.0#13",
      "P16.0#14"
     ],
-    "label": "P16.0 From-Scratch ML Implementation (core scope) · #4–6 (k-means → Selected decision-tree components); #9–14 (mathematical formulation → comparison with library implementation)"
+    "label": "P16.0 From-Scratch ML Implementation (core scope) · #4–6 (k-means → Selected decision-tree components); #9–14 (mathematical formulation → comparison with library implementation)",
+    "title": "From-Scratch ML Implementation",
+    "detail": "k-means → Selected decision-tree components; mathematical formulation → comparison with library implementation"
    },
    {
     "ref": "P01.1f:10",
@@ -3992,7 +4535,9 @@
     "conceptIds": [
      "P01.1f#10"
     ],
-    "label": "P01.1f Python › Required implementations · #10 (small ML package)"
+    "label": "P01.1f Python › Required implementations · #10 (small ML package)",
+    "title": "Python › Required implementations",
+    "detail": "small ML package"
    }
   ],
   "supporting": [],
@@ -4003,7 +4548,9 @@
      "kind": "topic",
      "topicId": "P04.7",
      "conceptIds": null,
-     "label": "P04.7 Interview progression"
+     "label": "P04.7 Interview progression",
+     "title": "Data Structures & Algorithms › Interview progression",
+     "detail": ""
     }
    ],
    "note": "Interview progression: easy to medium, mistake log (master DSA track)."
@@ -4018,6 +4565,7 @@
  },
  {
   "cw": 86,
+  "title": "Time Series",
   "stage": "S5B",
   "mainStage": "S5",
   "type": "study",
@@ -4038,7 +4586,9 @@
      "P17.0#9",
      "P17.0#10"
     ],
-    "label": "P17.0 Time Series (core scope) · #1–10 (temporal indexing → error evaluation)"
+    "label": "P17.0 Time Series (core scope) · #1–10 (temporal indexing → error evaluation)",
+    "title": "Time Series",
+    "detail": "temporal indexing → error evaluation"
    }
   ],
   "supporting": [],
@@ -4049,7 +4599,9 @@
      "kind": "topic",
      "topicId": "P04.7",
      "conceptIds": null,
-     "label": "P04.7 Interview progression"
+     "label": "P04.7 Interview progression",
+     "title": "Data Structures & Algorithms › Interview progression",
+     "detail": ""
     }
    ],
    "note": "Interview progression: easy to medium, mistake log (master DSA track)."
@@ -4064,6 +4616,7 @@
  },
  {
   "cw": 87,
+  "title": "Consolidation: gate attempt, spaced re-tests, targeted repair",
   "stage": "S5B",
   "mainStage": "S5",
   "type": "consolidation",
@@ -4072,7 +4625,9 @@
     "ref": "CONSOLIDATE",
     "kind": "activity",
     "activity": "CONSOLIDATE",
-    "label": "Consolidation: gate attempt, spaced re-tests, targeted repair"
+    "label": "Consolidation: gate attempt, spaced re-tests, targeted repair",
+    "title": "Consolidation: gate attempt, spaced re-tests, targeted repair",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -4083,7 +4638,9 @@
      "kind": "topic",
      "topicId": "P04.7",
      "conceptIds": null,
-     "label": "P04.7 Interview progression"
+     "label": "P04.7 Interview progression",
+     "title": "Data Structures & Algorithms › Interview progression",
+     "detail": ""
     }
    ],
    "note": "Interview progression: easy to medium, mistake log (master DSA track)."
@@ -4098,6 +4655,7 @@
  },
  {
   "cw": 88,
+  "title": "DevOps + DevOps › Docker",
   "stage": "S5C",
   "mainStage": "S5",
   "type": "study",
@@ -4107,7 +4665,9 @@
     "kind": "topic",
     "topicId": "P31.0",
     "conceptIds": null,
-    "label": "P31.0 DevOps (core scope)"
+    "label": "P31.0 DevOps (core scope)",
+    "title": "DevOps",
+    "detail": ""
    },
    {
     "ref": "P31.1:1-5",
@@ -4120,7 +4680,9 @@
      "P31.1#4",
      "P31.1#5"
     ],
-    "label": "P31.1 Docker · #1–5 (images → volumes)"
+    "label": "P31.1 Docker · #1–5 (images → volumes)",
+    "title": "DevOps › Docker",
+    "detail": "images → volumes"
    }
   ],
   "supporting": [],
@@ -4131,7 +4693,9 @@
      "kind": "topic",
      "topicId": "P04.7",
      "conceptIds": null,
-     "label": "P04.7 Interview progression"
+     "label": "P04.7 Interview progression",
+     "title": "Data Structures & Algorithms › Interview progression",
+     "detail": ""
     }
    ],
    "note": "Interview progression: easy to medium, mistake log (master DSA track)."
@@ -4146,6 +4710,7 @@
  },
  {
   "cw": 89,
+  "title": "DevOps › Docker",
   "stage": "S5C",
   "mainStage": "S5",
   "type": "study",
@@ -4160,7 +4725,9 @@
      "P31.1#8",
      "P31.1#9"
     ],
-    "label": "P31.1 Docker · #6–9 (networks → environment configuration)"
+    "label": "P31.1 Docker · #6–9 (networks → environment configuration)",
+    "title": "DevOps › Docker",
+    "detail": "networks → environment configuration"
    }
   ],
   "supporting": [],
@@ -4171,7 +4738,9 @@
      "kind": "topic",
      "topicId": "P04.7",
      "conceptIds": null,
-     "label": "P04.7 Interview progression"
+     "label": "P04.7 Interview progression",
+     "title": "Data Structures & Algorithms › Interview progression",
+     "detail": ""
     }
    ],
    "note": "Interview progression: easy to medium, mistake log (master DSA track)."
@@ -4186,6 +4755,7 @@
  },
  {
   "cw": 90,
+  "title": "DevOps › CI/CD",
   "stage": "S5C",
   "mainStage": "S5",
   "type": "study",
@@ -4195,7 +4765,9 @@
     "kind": "topic",
     "topicId": "P31.2",
     "conceptIds": null,
-    "label": "P31.2 CI/CD"
+    "label": "P31.2 CI/CD",
+    "title": "DevOps › CI/CD",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -4206,7 +4778,9 @@
      "kind": "topic",
      "topicId": "P04.7",
      "conceptIds": null,
-     "label": "P04.7 Interview progression"
+     "label": "P04.7 Interview progression",
+     "title": "Data Structures & Algorithms › Interview progression",
+     "detail": ""
     }
    ],
    "note": "Interview progression: easy to medium, mistake log (master DSA track)."
@@ -4221,6 +4795,7 @@
  },
  {
   "cw": 91,
+  "title": "Software Architecture",
   "stage": "S5C",
   "mainStage": "S5",
   "type": "study",
@@ -4239,7 +4814,9 @@
      "P09.0#7",
      "P09.0#8"
     ],
-    "label": "P09.0 Software Architecture (core scope) · #1–8 (separation of concerns → service boundaries)"
+    "label": "P09.0 Software Architecture (core scope) · #1–8 (separation of concerns → service boundaries)",
+    "title": "Software Architecture",
+    "detail": "separation of concerns → service boundaries"
    }
   ],
   "supporting": [],
@@ -4250,7 +4827,9 @@
      "kind": "topic",
      "topicId": "P04.7",
      "conceptIds": null,
-     "label": "P04.7 Interview progression"
+     "label": "P04.7 Interview progression",
+     "title": "Data Structures & Algorithms › Interview progression",
+     "detail": ""
     }
    ],
    "note": "Interview progression: easy to medium, mistake log (master DSA track)."
@@ -4265,6 +4844,7 @@
  },
  {
   "cw": 92,
+  "title": "Software Architecture + Software Architecture › Design-pattern families + Critical rule",
   "stage": "S5C",
   "mainStage": "S5",
   "type": "study",
@@ -4281,21 +4861,27 @@
      "P09.0#13",
      "P09.0#14"
     ],
-    "label": "P09.0 Software Architecture (core scope) · #9–14 (domain boundaries → architectural patterns)"
+    "label": "P09.0 Software Architecture (core scope) · #9–14 (domain boundaries → architectural patterns)",
+    "title": "Software Architecture",
+    "detail": "domain boundaries → architectural patterns"
    },
    {
     "ref": "P09.1",
     "kind": "topic",
     "topicId": "P09.1",
     "conceptIds": null,
-    "label": "P09.1 Design-pattern families"
+    "label": "P09.1 Design-pattern families",
+    "title": "Software Architecture › Design-pattern families",
+    "detail": ""
    },
    {
     "ref": "P09.2",
     "kind": "topic",
     "topicId": "P09.2",
     "conceptIds": null,
-    "label": "P09.2 Critical rule"
+    "label": "P09.2 Critical rule",
+    "title": "Software Architecture › Critical rule",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -4306,7 +4892,9 @@
      "kind": "topic",
      "topicId": "P04.7",
      "conceptIds": null,
-     "label": "P04.7 Interview progression"
+     "label": "P04.7 Interview progression",
+     "title": "Data Structures & Algorithms › Interview progression",
+     "detail": ""
     }
    ],
    "note": "Interview progression: easy to medium, mistake log (master DSA track)."
@@ -4321,6 +4909,7 @@
  },
  {
   "cw": 93,
+  "title": "Cloud",
   "stage": "S5C",
   "mainStage": "S5",
   "type": "study",
@@ -4330,7 +4919,9 @@
     "kind": "topic",
     "topicId": "P32.0",
     "conceptIds": null,
-    "label": "P32.0 Cloud (core scope)"
+    "label": "P32.0 Cloud (core scope)",
+    "title": "Cloud",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -4341,7 +4932,9 @@
      "kind": "topic",
      "topicId": "P04.7",
      "conceptIds": null,
-     "label": "P04.7 Interview progression"
+     "label": "P04.7 Interview progression",
+     "title": "Data Structures & Algorithms › Interview progression",
+     "detail": ""
     }
    ],
    "note": "Interview progression: easy to medium, mistake log (master DSA track)."
@@ -4356,6 +4949,7 @@
  },
  {
   "cw": 94,
+  "title": "Cloud › Required cloud project",
   "stage": "S5C",
   "mainStage": "S5",
   "type": "study",
@@ -4365,7 +4959,9 @@
     "kind": "topic",
     "topicId": "P32.1",
     "conceptIds": null,
-    "label": "P32.1 Required cloud project"
+    "label": "P32.1 Required cloud project",
+    "title": "Cloud › Required cloud project",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -4376,7 +4972,9 @@
      "kind": "topic",
      "topicId": "P04.7",
      "conceptIds": null,
-     "label": "P04.7 Interview progression"
+     "label": "P04.7 Interview progression",
+     "title": "Data Structures & Algorithms › Interview progression",
+     "detail": ""
     }
    ],
    "note": "Interview progression: easy to medium, mistake log (master DSA track)."
@@ -4391,6 +4989,7 @@
  },
  {
   "cw": 95,
+  "title": "Consolidation: gate attempt, spaced re-tests, targeted repair",
   "stage": "S5C",
   "mainStage": "S5",
   "type": "consolidation",
@@ -4399,7 +4998,9 @@
     "ref": "CONSOLIDATE",
     "kind": "activity",
     "activity": "CONSOLIDATE",
-    "label": "Consolidation: gate attempt, spaced re-tests, targeted repair"
+    "label": "Consolidation: gate attempt, spaced re-tests, targeted repair",
+    "title": "Consolidation: gate attempt, spaced re-tests, targeted repair",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -4410,7 +5011,9 @@
      "kind": "topic",
      "topicId": "P04.7",
      "conceptIds": null,
-     "label": "P04.7 Interview progression"
+     "label": "P04.7 Interview progression",
+     "title": "Data Structures & Algorithms › Interview progression",
+     "detail": ""
     }
    ],
    "note": "Interview progression: easy to medium, mistake log (master DSA track)."
@@ -4425,6 +5028,7 @@
  },
  {
   "cw": 96,
+  "title": "Model Serving › Batch inference + Online inference",
   "stage": "S5C",
   "mainStage": "S5",
   "type": "study",
@@ -4434,14 +5038,18 @@
     "kind": "topic",
     "topicId": "P29.1",
     "conceptIds": null,
-    "label": "P29.1 Batch inference"
+    "label": "P29.1 Batch inference",
+    "title": "Model Serving › Batch inference",
+    "detail": ""
    },
    {
     "ref": "P29.2",
     "kind": "topic",
     "topicId": "P29.2",
     "conceptIds": null,
-    "label": "P29.2 Online inference"
+    "label": "P29.2 Online inference",
+    "title": "Model Serving › Online inference",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -4452,7 +5060,9 @@
      "kind": "topic",
      "topicId": "P04.7",
      "conceptIds": null,
-     "label": "P04.7 Interview progression"
+     "label": "P04.7 Interview progression",
+     "title": "Data Structures & Algorithms › Interview progression",
+     "detail": ""
     }
    ],
    "note": "Interview progression: easy to medium, mistake log (master DSA track)."
@@ -4467,6 +5077,7 @@
  },
  {
   "cw": 97,
+  "title": "Fraud Detection Platform (project)",
   "stage": "S5C",
   "mainStage": "S5",
   "type": "project",
@@ -4475,7 +5086,9 @@
     "ref": "PR07",
     "kind": "project",
     "projectId": "PR07",
-    "label": "PR07 Fraud Detection Platform (build)"
+    "label": "PR07 Fraud Detection Platform (build)",
+    "title": "Fraud Detection Platform (project)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -4486,7 +5099,9 @@
      "kind": "topic",
      "topicId": "P04.7",
      "conceptIds": null,
-     "label": "P04.7 Interview progression"
+     "label": "P04.7 Interview progression",
+     "title": "Data Structures & Algorithms › Interview progression",
+     "detail": ""
     }
    ],
    "note": "Interview progression: easy to medium, mistake log (master DSA track)."
@@ -4501,6 +5116,7 @@
  },
  {
   "cw": 98,
+  "title": "Fraud Detection Platform (project)",
   "stage": "S5C",
   "mainStage": "S5",
   "type": "project",
@@ -4509,7 +5125,9 @@
     "ref": "PR07",
     "kind": "project",
     "projectId": "PR07",
-    "label": "PR07 Fraud Detection Platform (build)"
+    "label": "PR07 Fraud Detection Platform (build)",
+    "title": "Fraud Detection Platform (project)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -4520,7 +5138,9 @@
      "kind": "topic",
      "topicId": "P04.7",
      "conceptIds": null,
-     "label": "P04.7 Interview progression"
+     "label": "P04.7 Interview progression",
+     "title": "Data Structures & Algorithms › Interview progression",
+     "detail": ""
     }
    ],
    "note": "Interview progression: easy to medium, mistake log (master DSA track)."
@@ -4535,6 +5155,7 @@
  },
  {
   "cw": 99,
+  "title": "Fraud Detection Platform (project)",
   "stage": "S5C",
   "mainStage": "S5",
   "type": "project",
@@ -4543,7 +5164,9 @@
     "ref": "PR07",
     "kind": "project",
     "projectId": "PR07",
-    "label": "PR07 Fraud Detection Platform (build)"
+    "label": "PR07 Fraud Detection Platform (build)",
+    "title": "Fraud Detection Platform (project)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -4554,7 +5177,9 @@
      "kind": "topic",
      "topicId": "P04.7",
      "conceptIds": null,
-     "label": "P04.7 Interview progression"
+     "label": "P04.7 Interview progression",
+     "title": "Data Structures & Algorithms › Interview progression",
+     "detail": ""
     }
    ],
    "note": "Interview progression: easy to medium, mistake log (master DSA track)."
@@ -4569,6 +5194,7 @@
  },
  {
   "cw": 100,
+  "title": "Fraud Detection Platform (project)",
   "stage": "S5C",
   "mainStage": "S5",
   "type": "project",
@@ -4577,7 +5203,9 @@
     "ref": "PR07",
     "kind": "project",
     "projectId": "PR07",
-    "label": "PR07 Fraud Detection Platform (build)"
+    "label": "PR07 Fraud Detection Platform (build)",
+    "title": "Fraud Detection Platform (project)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -4588,7 +5216,9 @@
      "kind": "topic",
      "topicId": "P04.7",
      "conceptIds": null,
-     "label": "P04.7 Interview progression"
+     "label": "P04.7 Interview progression",
+     "title": "Data Structures & Algorithms › Interview progression",
+     "detail": ""
     }
    ],
    "note": "Interview progression: easy to medium, mistake log (master DSA track)."
@@ -4603,6 +5233,7 @@
  },
  {
   "cw": 101,
+  "title": "Consolidation: gate attempt, spaced re-tests, targeted repair",
   "stage": "S5C",
   "mainStage": "S5",
   "type": "consolidation",
@@ -4611,7 +5242,9 @@
     "ref": "CONSOLIDATE",
     "kind": "activity",
     "activity": "CONSOLIDATE",
-    "label": "Consolidation: gate attempt, spaced re-tests, targeted repair"
+    "label": "Consolidation: gate attempt, spaced re-tests, targeted repair",
+    "title": "Consolidation: gate attempt, spaced re-tests, targeted repair",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -4622,7 +5255,9 @@
      "kind": "topic",
      "topicId": "P04.7",
      "conceptIds": null,
-     "label": "P04.7 Interview progression"
+     "label": "P04.7 Interview progression",
+     "title": "Data Structures & Algorithms › Interview progression",
+     "detail": ""
     }
    ],
    "note": "Interview progression: easy to medium, mistake log (master DSA track)."
@@ -4637,6 +5272,7 @@
  },
  {
   "cw": 102,
+  "title": "Deep Learning + Deep Learning › Neural-network foundations",
   "stage": "S6A",
   "mainStage": "S6",
   "type": "study",
@@ -4646,14 +5282,18 @@
     "kind": "topic",
     "topicId": "P19.0",
     "conceptIds": null,
-    "label": "P19.0 Deep Learning (core scope)"
+    "label": "P19.0 Deep Learning (core scope)",
+    "title": "Deep Learning",
+    "detail": ""
    },
    {
     "ref": "P19.1",
     "kind": "topic",
     "topicId": "P19.1",
     "conceptIds": null,
-    "label": "P19.1 Neural-network foundations"
+    "label": "P19.1 Neural-network foundations",
+    "title": "Deep Learning › Neural-network foundations",
+    "detail": ""
    }
   ],
   "supporting": [
@@ -4669,7 +5309,9 @@
      "P05.3#5",
      "P05.3#6"
     ],
-    "label": "P05.3 Computer Architecture · #1–6 (CPU → cache)"
+    "label": "P05.3 Computer Architecture · #1–6 (CPU → cache)",
+    "title": "Core Computer Science › Computer Architecture",
+    "detail": "CPU → cache"
    }
   ],
   "dsaLane": {
@@ -4686,6 +5328,7 @@
  },
  {
   "cw": 103,
+  "title": "Deep Learning › Activations + From-Scratch ML Implementation",
   "stage": "S6A",
   "mainStage": "S6",
   "type": "study",
@@ -4695,7 +5338,9 @@
     "kind": "topic",
     "topicId": "P19.2",
     "conceptIds": null,
-    "label": "P19.2 Activations"
+    "label": "P19.2 Activations",
+    "title": "Deep Learning › Activations",
+    "detail": ""
    },
    {
     "ref": "P16.0:7-8",
@@ -4705,7 +5350,9 @@
      "P16.0#7",
      "P16.0#8"
     ],
-    "label": "P16.0 From-Scratch ML Implementation (core scope) · #7–8 (Simple neural network → Backpropagation)"
+    "label": "P16.0 From-Scratch ML Implementation (core scope) · #7–8 (Simple neural network → Backpropagation)",
+    "title": "From-Scratch ML Implementation",
+    "detail": "Simple neural network → Backpropagation"
    }
   ],
   "supporting": [
@@ -4721,7 +5368,9 @@
      "P05.3#11",
      "P05.3#12"
     ],
-    "label": "P05.3 Computer Architecture · #7–12 (RAM → integer representation)"
+    "label": "P05.3 Computer Architecture · #7–12 (RAM → integer representation)",
+    "title": "Core Computer Science › Computer Architecture",
+    "detail": "RAM → integer representation"
    }
   ],
   "dsaLane": {
@@ -4738,6 +5387,7 @@
  },
  {
   "cw": 104,
+  "title": "Deep Learning › Training",
   "stage": "S6A",
   "mainStage": "S6",
   "type": "study",
@@ -4754,7 +5404,9 @@
      "P19.3#5",
      "P19.3#6"
     ],
-    "label": "P19.3 Training · #1–6 (initialisation → momentum)"
+    "label": "P19.3 Training · #1–6 (initialisation → momentum)",
+    "title": "Deep Learning › Training",
+    "detail": "initialisation → momentum"
    }
   ],
   "supporting": [
@@ -4771,7 +5423,9 @@
      "P05.3#18",
      "P05.3#19"
     ],
-    "label": "P05.3 Computer Architecture · #13–19 (floating-point awareness → compiled code can outperform interpreted code in appropriate workloads)"
+    "label": "P05.3 Computer Architecture · #13–19 (floating-point awareness → compiled code can outperform interpreted code in appropriate workloads)",
+    "title": "Core Computer Science › Computer Architecture",
+    "detail": "floating-point awareness → compiled code can outperform interpreted code in appropriate workloads"
    }
   ],
   "dsaLane": {
@@ -4788,6 +5442,7 @@
  },
  {
   "cw": 105,
+  "title": "Deep Learning › Training",
   "stage": "S6A",
   "mainStage": "S6",
   "type": "study",
@@ -4804,7 +5459,9 @@
      "P19.3#11",
      "P19.3#12"
     ],
-    "label": "P19.3 Training · #7–12 (Adam → early stopping)"
+    "label": "P19.3 Training · #7–12 (Adam → early stopping)",
+    "title": "Deep Learning › Training",
+    "detail": "Adam → early stopping"
    }
   ],
   "supporting": [],
@@ -4822,6 +5479,7 @@
  },
  {
   "cw": 106,
+  "title": "Deep Learning › Failure modes",
   "stage": "S6A",
   "mainStage": "S6",
   "type": "study",
@@ -4831,7 +5489,9 @@
     "kind": "topic",
     "topicId": "P19.4",
     "conceptIds": null,
-    "label": "P19.4 Failure modes"
+    "label": "P19.4 Failure modes",
+    "title": "Deep Learning › Failure modes",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -4849,6 +5509,7 @@
  },
  {
   "cw": 107,
+  "title": "Deep Learning › Required builds",
   "stage": "S6A",
   "mainStage": "S6",
   "type": "study",
@@ -4858,7 +5519,9 @@
     "kind": "topic",
     "topicId": "P19.5",
     "conceptIds": null,
-    "label": "P19.5 Required builds"
+    "label": "P19.5 Required builds",
+    "title": "Deep Learning › Required builds",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -4876,6 +5539,7 @@
  },
  {
   "cw": 108,
+  "title": "Computer Vision",
   "stage": "S6A",
   "mainStage": "S6",
   "type": "study",
@@ -4898,7 +5562,9 @@
      "P20.0#11",
      "P20.0#12"
     ],
-    "label": "P20.0 Computer Vision (core scope) · #1–12 (image representation → segmentation awareness)"
+    "label": "P20.0 Computer Vision (core scope) · #1–12 (image representation → segmentation awareness)",
+    "title": "Computer Vision",
+    "detail": "image representation → segmentation awareness"
    }
   ],
   "supporting": [],
@@ -4916,6 +5582,7 @@
  },
  {
   "cw": 109,
+  "title": "Computer Vision",
   "stage": "S6A",
   "mainStage": "S6",
   "type": "study",
@@ -4934,7 +5601,9 @@
      "P20.0#19",
      "P20.0#20"
     ],
-    "label": "P20.0 Computer Vision (core scope) · #13–20 (LeNet → document/industrial image analysis)"
+    "label": "P20.0 Computer Vision (core scope) · #13–20 (LeNet → document/industrial image analysis)",
+    "title": "Computer Vision",
+    "detail": "LeNet → document/industrial image analysis"
    }
   ],
   "supporting": [],
@@ -4952,6 +5621,7 @@
  },
  {
   "cw": 110,
+  "title": "Sequence Models and NLP",
   "stage": "S6A",
   "mainStage": "S6",
   "type": "study",
@@ -4968,7 +5638,9 @@
      "P21.0#5",
      "P21.0#6"
     ],
-    "label": "P21.0 Sequence Models and NLP (core scope) · #1–6 (sequences → RNNs)"
+    "label": "P21.0 Sequence Models and NLP (core scope) · #1–6 (sequences → RNNs)",
+    "title": "Sequence Models and NLP",
+    "detail": "sequences → RNNs"
    }
   ],
   "supporting": [],
@@ -4986,6 +5658,7 @@
  },
  {
   "cw": 111,
+  "title": "Sequence Models and NLP + Time Series",
   "stage": "S6A",
   "mainStage": "S6",
   "type": "study",
@@ -5001,7 +5674,9 @@
      "P21.0#10",
      "P21.0#11"
     ],
-    "label": "P21.0 Sequence Models and NLP (core scope) · #7–11 (hidden state → teacher forcing awareness)"
+    "label": "P21.0 Sequence Models and NLP (core scope) · #7–11 (hidden state → teacher forcing awareness)",
+    "title": "Sequence Models and NLP",
+    "detail": "hidden state → teacher forcing awareness"
    },
    {
     "ref": "P17.0:11-15",
@@ -5014,7 +5689,9 @@
      "P17.0#14",
      "P17.0#15"
     ],
-    "label": "P17.0 Time Series (core scope) · #11–15 (ARIMA awareness → deep-learning forecasting awareness)"
+    "label": "P17.0 Time Series (core scope) · #11–15 (ARIMA awareness → deep-learning forecasting awareness)",
+    "title": "Time Series",
+    "detail": "ARIMA awareness → deep-learning forecasting awareness"
    }
   ],
   "supporting": [],
@@ -5032,6 +5709,7 @@
  },
  {
   "cw": 112,
+  "title": "Consolidation: gate attempt, spaced re-tests, targeted repair",
   "stage": "S6A",
   "mainStage": "S6",
   "type": "consolidation",
@@ -5040,7 +5718,9 @@
     "ref": "CONSOLIDATE",
     "kind": "activity",
     "activity": "CONSOLIDATE",
-    "label": "Consolidation: gate attempt, spaced re-tests, targeted repair"
+    "label": "Consolidation: gate attempt, spaced re-tests, targeted repair",
+    "title": "Consolidation: gate attempt, spaced re-tests, targeted repair",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -5058,6 +5738,7 @@
  },
  {
   "cw": 113,
+  "title": "ML Engineering + ML Engineering › Standard lifecycle",
   "stage": "S6B",
   "mainStage": "S6",
   "type": "study",
@@ -5078,14 +5759,18 @@
      "P28.0#9",
      "P28.0#10"
     ],
-    "label": "P28.0 ML Engineering (core scope) · #1–10 (project structure → experiment tracking)"
+    "label": "P28.0 ML Engineering (core scope) · #1–10 (project structure → experiment tracking)",
+    "title": "ML Engineering",
+    "detail": "project structure → experiment tracking"
    },
    {
     "ref": "P28.1",
     "kind": "topic",
     "topicId": "P28.1",
     "conceptIds": null,
-    "label": "P28.1 Standard lifecycle"
+    "label": "P28.1 Standard lifecycle",
+    "title": "ML Engineering › Standard lifecycle",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -5103,6 +5788,7 @@
  },
  {
   "cw": 114,
+  "title": "ML Engineering + ML Engineering › Production questions",
   "stage": "S6B",
   "mainStage": "S6",
   "type": "study",
@@ -5124,14 +5810,18 @@
      "P28.0#20",
      "P28.0#21"
     ],
-    "label": "P28.0 ML Engineering (core scope) · #11–21 (data versioning → retraining)"
+    "label": "P28.0 ML Engineering (core scope) · #11–21 (data versioning → retraining)",
+    "title": "ML Engineering",
+    "detail": "data versioning → retraining"
    },
    {
     "ref": "P28.2",
     "kind": "topic",
     "topicId": "P28.2",
     "conceptIds": null,
-    "label": "P28.2 Production questions"
+    "label": "P28.2 Production questions",
+    "title": "ML Engineering › Production questions",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -5149,6 +5839,7 @@
  },
  {
   "cw": 115,
+  "title": "Model Serving › Batch inference",
   "stage": "S6B",
   "mainStage": "S6",
   "type": "study",
@@ -5158,7 +5849,9 @@
     "kind": "topic",
     "topicId": "P29.1",
     "conceptIds": null,
-    "label": "P29.1 Batch inference"
+    "label": "P29.1 Batch inference",
+    "title": "Model Serving › Batch inference",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -5176,6 +5869,7 @@
  },
  {
   "cw": 116,
+  "title": "Model Serving › Online inference",
   "stage": "S6B",
   "mainStage": "S6",
   "type": "study",
@@ -5185,7 +5879,9 @@
     "kind": "topic",
     "topicId": "P29.2",
     "conceptIds": null,
-    "label": "P29.2 Online inference"
+    "label": "P29.2 Online inference",
+    "title": "Model Serving › Online inference",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -5203,6 +5899,7 @@
  },
  {
   "cw": 117,
+  "title": "Model Serving › Serving project",
   "stage": "S6B",
   "mainStage": "S6",
   "type": "study",
@@ -5212,7 +5909,9 @@
     "kind": "topic",
     "topicId": "P29.3",
     "conceptIds": null,
-    "label": "P29.3 Serving project"
+    "label": "P29.3 Serving project",
+    "title": "Model Serving › Serving project",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -5230,6 +5929,7 @@
  },
  {
   "cw": 118,
+  "title": "MLOps › Level 1",
   "stage": "S6B",
   "mainStage": "S6",
   "type": "study",
@@ -5239,7 +5939,9 @@
     "kind": "topic",
     "topicId": "P30.1",
     "conceptIds": null,
-    "label": "P30.1 Level 1"
+    "label": "P30.1 Level 1",
+    "title": "MLOps › Level 1",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -5257,6 +5959,7 @@
  },
  {
   "cw": 119,
+  "title": "MLOps › Level 2",
   "stage": "S6B",
   "mainStage": "S6",
   "type": "study",
@@ -5266,7 +5969,9 @@
     "kind": "topic",
     "topicId": "P30.2",
     "conceptIds": null,
-    "label": "P30.2 Level 2"
+    "label": "P30.2 Level 2",
+    "title": "MLOps › Level 2",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -5284,6 +5989,7 @@
  },
  {
   "cw": 120,
+  "title": "MLOps › Level 3",
   "stage": "S6B",
   "mainStage": "S6",
   "type": "study",
@@ -5293,7 +5999,9 @@
     "kind": "topic",
     "topicId": "P30.3",
     "conceptIds": null,
-    "label": "P30.3 Level 3"
+    "label": "P30.3 Level 3",
+    "title": "MLOps › Level 3",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -5311,6 +6019,7 @@
  },
  {
   "cw": 121,
+  "title": "MLOps › Level 4",
   "stage": "S6B",
   "mainStage": "S6",
   "type": "study",
@@ -5320,7 +6029,9 @@
     "kind": "topic",
     "topicId": "P30.4",
     "conceptIds": null,
-    "label": "P30.4 Level 4"
+    "label": "P30.4 Level 4",
+    "title": "MLOps › Level 4",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -5338,6 +6049,7 @@
  },
  {
   "cw": 122,
+  "title": "Observability + Observability › Metrics",
   "stage": "S6B",
   "mainStage": "S6",
   "type": "study",
@@ -5347,14 +6059,18 @@
     "kind": "topic",
     "topicId": "P38.0",
     "conceptIds": null,
-    "label": "P38.0 Observability (core scope)"
+    "label": "P38.0 Observability (core scope)",
+    "title": "Observability",
+    "detail": ""
    },
    {
     "ref": "P38.1",
     "kind": "topic",
     "topicId": "P38.1",
     "conceptIds": null,
-    "label": "P38.1 Metrics"
+    "label": "P38.1 Metrics",
+    "title": "Observability › Metrics",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -5372,6 +6088,7 @@
  },
  {
   "cw": 123,
+  "title": "Observability › Logging + Tracing",
   "stage": "S6B",
   "mainStage": "S6",
   "type": "study",
@@ -5381,14 +6098,18 @@
     "kind": "topic",
     "topicId": "P38.2",
     "conceptIds": null,
-    "label": "P38.2 Logging"
+    "label": "P38.2 Logging",
+    "title": "Observability › Logging",
+    "detail": ""
    },
    {
     "ref": "P38.3",
     "kind": "topic",
     "topicId": "P38.3",
     "conceptIds": null,
-    "label": "P38.3 Tracing"
+    "label": "P38.3 Tracing",
+    "title": "Observability › Tracing",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -5406,6 +6127,7 @@
  },
  {
   "cw": 124,
+  "title": "Terraform / Infrastructure as Code",
   "stage": "S6B",
   "mainStage": "S6",
   "type": "study",
@@ -5415,7 +6137,9 @@
     "kind": "topic",
     "topicId": "P33.0",
     "conceptIds": null,
-    "label": "P33.0 Terraform / Infrastructure as Code (core scope)"
+    "label": "P33.0 Terraform / Infrastructure as Code (core scope)",
+    "title": "Terraform / Infrastructure as Code",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -5433,6 +6157,7 @@
  },
  {
   "cw": 125,
+  "title": "Kubernetes",
   "stage": "S6B",
   "mainStage": "S6",
   "type": "study",
@@ -5454,7 +6179,9 @@
      "P34.0#10",
      "P34.0#11"
     ],
-    "label": "P34.0 Kubernetes (core scope) · #1–11 (Linux → ConfigMaps)"
+    "label": "P34.0 Kubernetes (core scope) · #1–11 (Linux → ConfigMaps)",
+    "title": "Kubernetes",
+    "detail": "Linux → ConfigMaps"
    }
   ],
   "supporting": [],
@@ -5472,6 +6199,7 @@
  },
  {
   "cw": 126,
+  "title": "Kubernetes",
   "stage": "S6B",
   "mainStage": "S6",
   "type": "study",
@@ -5489,7 +6217,9 @@
      "P34.0#17",
      "P34.0#18"
     ],
-    "label": "P34.0 Kubernetes (core scope) · #12–18 (Secrets → namespaces)"
+    "label": "P34.0 Kubernetes (core scope) · #12–18 (Secrets → namespaces)",
+    "title": "Kubernetes",
+    "detail": "Secrets → namespaces"
    }
   ],
   "supporting": [],
@@ -5507,6 +6237,7 @@
  },
  {
   "cw": 127,
+  "title": "Recommender Systems",
   "stage": "S6B",
   "mainStage": "S6",
   "type": "study",
@@ -5524,7 +6255,9 @@
      "P18.0#6",
      "P18.0#7"
     ],
-    "label": "P18.0 Recommender Systems (core scope) · #1–7 (recommendation problem formulation → similarity)"
+    "label": "P18.0 Recommender Systems (core scope) · #1–7 (recommendation problem formulation → similarity)",
+    "title": "Recommender Systems",
+    "detail": "recommendation problem formulation → similarity"
    }
   ],
   "supporting": [],
@@ -5542,6 +6275,7 @@
  },
  {
   "cw": 128,
+  "title": "Recommender Systems",
   "stage": "S6B",
   "mainStage": "S6",
   "type": "study",
@@ -5558,7 +6292,9 @@
      "P18.0#12",
      "P18.0#13"
     ],
-    "label": "P18.0 Recommender Systems (core scope) · #8–13 (cold start → online experimentation)"
+    "label": "P18.0 Recommender Systems (core scope) · #8–13 (cold start → online experimentation)",
+    "title": "Recommender Systems",
+    "detail": "cold start → online experimentation"
    }
   ],
   "supporting": [],
@@ -5576,6 +6312,7 @@
  },
  {
   "cw": 129,
+  "title": "Recommendation System (project)",
   "stage": "S6B",
   "mainStage": "S6",
   "type": "project",
@@ -5584,7 +6321,9 @@
     "ref": "PR08",
     "kind": "project",
     "projectId": "PR08",
-    "label": "PR08 Recommendation System (build)"
+    "label": "PR08 Recommendation System (build)",
+    "title": "Recommendation System (project)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -5602,6 +6341,7 @@
  },
  {
   "cw": 130,
+  "title": "Recommendation System (project)",
   "stage": "S6B",
   "mainStage": "S6",
   "type": "project",
@@ -5610,7 +6350,9 @@
     "ref": "PR08",
     "kind": "project",
     "projectId": "PR08",
-    "label": "PR08 Recommendation System (build)"
+    "label": "PR08 Recommendation System (build)",
+    "title": "Recommendation System (project)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -5628,6 +6370,7 @@
  },
  {
   "cw": 131,
+  "title": "Recommendation System (project)",
   "stage": "S6B",
   "mainStage": "S6",
   "type": "project",
@@ -5636,7 +6379,9 @@
     "ref": "PR08",
     "kind": "project",
     "projectId": "PR08",
-    "label": "PR08 Recommendation System (build)"
+    "label": "PR08 Recommendation System (build)",
+    "title": "Recommendation System (project)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -5654,6 +6399,7 @@
  },
  {
   "cw": 132,
+  "title": "Recommendation System (project)",
   "stage": "S6B",
   "mainStage": "S6",
   "type": "project",
@@ -5662,7 +6408,9 @@
     "ref": "PR08",
     "kind": "project",
     "projectId": "PR08",
-    "label": "PR08 Recommendation System (build)"
+    "label": "PR08 Recommendation System (build)",
+    "title": "Recommendation System (project)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -5680,6 +6428,7 @@
  },
  {
   "cw": 133,
+  "title": "ML Serving Platform (project)",
   "stage": "S6B",
   "mainStage": "S6",
   "type": "project",
@@ -5688,7 +6437,9 @@
     "ref": "PR09",
     "kind": "project",
     "projectId": "PR09",
-    "label": "PR09 ML Serving Platform (build)"
+    "label": "PR09 ML Serving Platform (build)",
+    "title": "ML Serving Platform (project)",
+    "detail": ""
    }
   ],
   "supporting": [
@@ -5706,7 +6457,9 @@
      "P45.0#7",
      "P45.0#8"
     ],
-    "label": "P45.0 Cost Engineering (core scope) · #1–8 (compute cost → operational complexity)"
+    "label": "P45.0 Cost Engineering (core scope) · #1–8 (compute cost → operational complexity)",
+    "title": "Cost Engineering",
+    "detail": "compute cost → operational complexity"
    }
   ],
   "dsaLane": {
@@ -5723,6 +6476,7 @@
  },
  {
   "cw": 134,
+  "title": "ML Serving Platform (project)",
   "stage": "S6B",
   "mainStage": "S6",
   "type": "project",
@@ -5731,7 +6485,9 @@
     "ref": "PR09",
     "kind": "project",
     "projectId": "PR09",
-    "label": "PR09 ML Serving Platform (build)"
+    "label": "PR09 ML Serving Platform (build)",
+    "title": "ML Serving Platform (project)",
+    "detail": ""
    }
   ],
   "supporting": [
@@ -5748,7 +6504,9 @@
      "P45.0#14",
      "P45.0#15"
     ],
-    "label": "P45.0 Cost Engineering (core scope) · #9–15 (tokens → model quality vs cost)"
+    "label": "P45.0 Cost Engineering (core scope) · #9–15 (tokens → model quality vs cost)",
+    "title": "Cost Engineering",
+    "detail": "tokens → model quality vs cost"
    }
   ],
   "dsaLane": {
@@ -5765,6 +6523,7 @@
  },
  {
   "cw": 135,
+  "title": "ML Serving Platform (project)",
   "stage": "S6B",
   "mainStage": "S6",
   "type": "project",
@@ -5773,7 +6532,9 @@
     "ref": "PR09",
     "kind": "project",
     "projectId": "PR09",
-    "label": "PR09 ML Serving Platform (build)"
+    "label": "PR09 ML Serving Platform (build)",
+    "title": "ML Serving Platform (project)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -5791,6 +6552,7 @@
  },
  {
   "cw": 136,
+  "title": "ML Serving Platform (project)",
   "stage": "S6B",
   "mainStage": "S6",
   "type": "project",
@@ -5799,7 +6561,9 @@
     "ref": "PR09",
     "kind": "project",
     "projectId": "PR09",
-    "label": "PR09 ML Serving Platform (build)"
+    "label": "PR09 ML Serving Platform (build)",
+    "title": "ML Serving Platform (project)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -5817,6 +6581,7 @@
  },
  {
   "cw": 137,
+  "title": "Consolidation: gate attempt, spaced re-tests, targeted repair",
   "stage": "S6B",
   "mainStage": "S6",
   "type": "consolidation",
@@ -5825,7 +6590,9 @@
     "ref": "CONSOLIDATE",
     "kind": "activity",
     "activity": "CONSOLIDATE",
-    "label": "Consolidation: gate attempt, spaced re-tests, targeted repair"
+    "label": "Consolidation: gate attempt, spaced re-tests, targeted repair",
+    "title": "Consolidation: gate attempt, spaced re-tests, targeted repair",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -5843,6 +6610,7 @@
  },
  {
   "cw": 138,
+  "title": "Consolidation: gate attempt, spaced re-tests, targeted repair",
   "stage": "S6B",
   "mainStage": "S6",
   "type": "consolidation",
@@ -5851,7 +6619,9 @@
     "ref": "CONSOLIDATE",
     "kind": "activity",
     "activity": "CONSOLIDATE",
-    "label": "Consolidation: gate attempt, spaced re-tests, targeted repair"
+    "label": "Consolidation: gate attempt, spaced re-tests, targeted repair",
+    "title": "Consolidation: gate attempt, spaced re-tests, targeted repair",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -5869,6 +6639,7 @@
  },
  {
   "cw": 139,
+  "title": "Attention and Transformers",
   "stage": "S7A",
   "mainStage": "S7",
   "type": "study",
@@ -5887,7 +6658,9 @@
      "P22.0#7",
      "P22.0#8"
     ],
-    "label": "P22.0 Attention and Transformers (core scope) · #1–8 (query → multi-head attention)"
+    "label": "P22.0 Attention and Transformers (core scope) · #1–8 (query → multi-head attention)",
+    "title": "Attention and Transformers",
+    "detail": "query → multi-head attention"
    }
   ],
   "supporting": [],
@@ -5905,6 +6678,7 @@
  },
  {
   "cw": 140,
+  "title": "Attention and Transformers + Attention and Transformers › Required understanding",
   "stage": "S7A",
   "mainStage": "S7",
   "type": "study",
@@ -5922,14 +6696,18 @@
      "P22.0#14",
      "P22.0#15"
     ],
-    "label": "P22.0 Attention and Transformers (core scope) · #9–15 (positional information → autoregressive generation)"
+    "label": "P22.0 Attention and Transformers (core scope) · #9–15 (positional information → autoregressive generation)",
+    "title": "Attention and Transformers",
+    "detail": "positional information → autoregressive generation"
    },
    {
     "ref": "P22.1",
     "kind": "topic",
     "topicId": "P22.1",
     "conceptIds": null,
-    "label": "P22.1 Required understanding"
+    "label": "P22.1 Required understanding",
+    "title": "Attention and Transformers › Required understanding",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -5947,6 +6725,7 @@
  },
  {
   "cw": 141,
+  "title": "Attention and Transformers › Required build",
   "stage": "S7A",
   "mainStage": "S7",
   "type": "study",
@@ -5962,7 +6741,9 @@
      "P22.2#4",
      "P22.2#5"
     ],
-    "label": "P22.2 Required build · #1–5 (token embeddings → feed-forward block)"
+    "label": "P22.2 Required build · #1–5 (token embeddings → feed-forward block)",
+    "title": "Attention and Transformers › Required build",
+    "detail": "token embeddings → feed-forward block"
    }
   ],
   "supporting": [],
@@ -5980,6 +6761,7 @@
  },
  {
   "cw": 142,
+  "title": "Attention and Transformers › Required build",
   "stage": "S7A",
   "mainStage": "S7",
   "type": "study",
@@ -5995,7 +6777,9 @@
      "P22.2#9",
      "P22.2#10"
     ],
-    "label": "P22.2 Required build · #6–10 (residual connections → text generation)"
+    "label": "P22.2 Required build · #6–10 (residual connections → text generation)",
+    "title": "Attention and Transformers › Required build",
+    "detail": "residual connections → text generation"
    }
   ],
   "supporting": [],
@@ -6013,6 +6797,7 @@
  },
  {
   "cw": 143,
+  "title": "Modern LLM Engineering › Tokenisation + Embeddings",
   "stage": "S7A",
   "mainStage": "S7",
   "type": "study",
@@ -6022,14 +6807,18 @@
     "kind": "topic",
     "topicId": "P23.1",
     "conceptIds": null,
-    "label": "P23.1 Tokenisation"
+    "label": "P23.1 Tokenisation",
+    "title": "Modern LLM Engineering › Tokenisation",
+    "detail": ""
    },
    {
     "ref": "P23.2",
     "kind": "topic",
     "topicId": "P23.2",
     "conceptIds": null,
-    "label": "P23.2 Embeddings"
+    "label": "P23.2 Embeddings",
+    "title": "Modern LLM Engineering › Embeddings",
+    "detail": ""
    }
   ],
   "supporting": [
@@ -6044,7 +6833,9 @@
      "P01.3#4",
      "P01.3#5"
     ],
-    "label": "P01.3 JavaScript / TypeScript · #1–5 (variables → modules)"
+    "label": "P01.3 JavaScript / TypeScript · #1–5 (variables → modules)",
+    "title": "Programming Foundations › JavaScript / TypeScript",
+    "detail": "variables → modules"
    }
   ],
   "dsaLane": {
@@ -6061,6 +6852,7 @@
  },
  {
   "cw": 144,
+  "title": "Modern LLM Engineering › Model lifecycle",
   "stage": "S7A",
   "mainStage": "S7",
   "type": "study",
@@ -6070,7 +6862,9 @@
     "kind": "topic",
     "topicId": "P23.3",
     "conceptIds": null,
-    "label": "P23.3 Model lifecycle"
+    "label": "P23.3 Model lifecycle",
+    "title": "Modern LLM Engineering › Model lifecycle",
+    "detail": ""
    }
   ],
   "supporting": [
@@ -6085,7 +6879,9 @@
      "P01.3#9",
      "P01.3#10"
     ],
-    "label": "P01.3 JavaScript / TypeScript · #6–10 (scope → event loop concepts)"
+    "label": "P01.3 JavaScript / TypeScript · #6–10 (scope → event loop concepts)",
+    "title": "Programming Foundations › JavaScript / TypeScript",
+    "detail": "scope → event loop concepts"
    }
   ],
   "dsaLane": {
@@ -6102,6 +6898,7 @@
  },
  {
   "cw": 145,
+  "title": "Modern LLM Engineering › Fine-tuning",
   "stage": "S7A",
   "mainStage": "S7",
   "type": "study",
@@ -6111,7 +6908,9 @@
     "kind": "topic",
     "topicId": "P23.4",
     "conceptIds": null,
-    "label": "P23.4 Fine-tuning"
+    "label": "P23.4 Fine-tuning",
+    "title": "Modern LLM Engineering › Fine-tuning",
+    "detail": ""
    }
   ],
   "supporting": [
@@ -6126,7 +6925,9 @@
      "P01.3#14",
      "P01.3#15"
     ],
-    "label": "P01.3 JavaScript / TypeScript · #11–15 (HTTP requests → TypeScript types)"
+    "label": "P01.3 JavaScript / TypeScript · #11–15 (HTTP requests → TypeScript types)",
+    "title": "Programming Foundations › JavaScript / TypeScript",
+    "detail": "HTTP requests → TypeScript types"
    }
   ],
   "dsaLane": {
@@ -6143,6 +6944,7 @@
  },
  {
   "cw": 146,
+  "title": "Modern LLM Engineering › Inference + Tooling",
   "stage": "S7A",
   "mainStage": "S7",
   "type": "study",
@@ -6152,14 +6954,18 @@
     "kind": "topic",
     "topicId": "P23.5",
     "conceptIds": null,
-    "label": "P23.5 Inference"
+    "label": "P23.5 Inference",
+    "title": "Modern LLM Engineering › Inference",
+    "detail": ""
    },
    {
     "ref": "P23.6",
     "kind": "topic",
     "topicId": "P23.6",
     "conceptIds": null,
-    "label": "P23.6 Tooling"
+    "label": "P23.6 Tooling",
+    "title": "Modern LLM Engineering › Tooling",
+    "detail": ""
    }
   ],
   "supporting": [
@@ -6173,7 +6979,9 @@
      "P01.3#18",
      "P01.3#19"
     ],
-    "label": "P01.3 JavaScript / TypeScript · #16–19 (interfaces → basic React)"
+    "label": "P01.3 JavaScript / TypeScript · #16–19 (interfaces → basic React)",
+    "title": "Programming Foundations › JavaScript / TypeScript",
+    "detail": "interfaces → basic React"
    }
   ],
   "dsaLane": {
@@ -6190,6 +6998,7 @@
  },
  {
   "cw": 147,
+  "title": "Retrieval-Augmented Generation",
   "stage": "S7A",
   "mainStage": "S7",
   "type": "study",
@@ -6208,7 +7017,9 @@
      "P24.0#7",
      "P24.0#8"
     ],
-    "label": "P24.0 Retrieval-Augmented Generation (core scope) · #1–8 (document ingestion → hybrid retrieval)"
+    "label": "P24.0 Retrieval-Augmented Generation (core scope) · #1–8 (document ingestion → hybrid retrieval)",
+    "title": "Retrieval-Augmented Generation",
+    "detail": "document ingestion → hybrid retrieval"
    }
   ],
   "supporting": [],
@@ -6226,6 +7037,7 @@
  },
  {
   "cw": 148,
+  "title": "Retrieval-Augmented Generation",
   "stage": "S7A",
   "mainStage": "S7",
   "type": "study",
@@ -6243,7 +7055,9 @@
      "P24.0#14",
      "P24.0#15"
     ],
-    "label": "P24.0 Retrieval-Augmented Generation (core scope) · #9–15 (vector indexes → generation metrics)"
+    "label": "P24.0 Retrieval-Augmented Generation (core scope) · #9–15 (vector indexes → generation metrics)",
+    "title": "Retrieval-Augmented Generation",
+    "detail": "vector indexes → generation metrics"
    }
   ],
   "supporting": [],
@@ -6261,6 +7075,7 @@
  },
  {
   "cw": 149,
+  "title": "Retrieval-Augmented Generation › Failure modes",
   "stage": "S7A",
   "mainStage": "S7",
   "type": "study",
@@ -6270,7 +7085,9 @@
     "kind": "topic",
     "topicId": "P24.1",
     "conceptIds": null,
-    "label": "P24.1 Failure modes"
+    "label": "P24.1 Failure modes",
+    "title": "Retrieval-Augmented Generation › Failure modes",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -6288,6 +7105,7 @@
  },
  {
   "cw": 150,
+  "title": "AI Evaluation + AI Evaluation › Evaluation loop",
   "stage": "S7A",
   "mainStage": "S7",
   "type": "study",
@@ -6297,14 +7115,18 @@
     "kind": "topic",
     "topicId": "P27.0",
     "conceptIds": null,
-    "label": "P27.0 AI Evaluation (core scope)"
+    "label": "P27.0 AI Evaluation (core scope)",
+    "title": "AI Evaluation",
+    "detail": ""
    },
    {
     "ref": "P27.1",
     "kind": "topic",
     "topicId": "P27.1",
     "conceptIds": null,
-    "label": "P27.1 Evaluation loop"
+    "label": "P27.1 Evaluation loop",
+    "title": "AI Evaluation › Evaluation loop",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -6322,6 +7144,7 @@
  },
  {
   "cw": 151,
+  "title": "AI Evaluation › Evaluation levels",
   "stage": "S7A",
   "mainStage": "S7",
   "type": "study",
@@ -6331,7 +7154,9 @@
     "kind": "topic",
     "topicId": "P27.2",
     "conceptIds": null,
-    "label": "P27.2 Evaluation levels"
+    "label": "P27.2 Evaluation levels",
+    "title": "AI Evaluation › Evaluation levels",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -6349,6 +7174,7 @@
  },
  {
   "cw": 152,
+  "title": "AI Agents",
   "stage": "S7A",
   "mainStage": "S7",
   "type": "study",
@@ -6366,7 +7192,9 @@
      "P25.0#6",
      "P25.0#7"
     ],
-    "label": "P25.0 AI Agents (core scope) · #1–7 (function calling → execution)"
+    "label": "P25.0 AI Agents (core scope) · #1–7 (function calling → execution)",
+    "title": "AI Agents",
+    "detail": "function calling → execution"
    }
   ],
   "supporting": [],
@@ -6384,6 +7212,7 @@
  },
  {
   "cw": 153,
+  "title": "AI Agents",
   "stage": "S7A",
   "mainStage": "S7",
   "type": "study",
@@ -6400,7 +7229,9 @@
      "P25.0#12",
      "P25.0#13"
     ],
-    "label": "P25.0 AI Agents (core scope) · #8–13 (retries → evaluation)"
+    "label": "P25.0 AI Agents (core scope) · #8–13 (retries → evaluation)",
+    "title": "AI Agents",
+    "detail": "retries → evaluation"
    }
   ],
   "supporting": [],
@@ -6418,6 +7249,7 @@
  },
  {
   "cw": 154,
+  "title": "Security › AI security",
   "stage": "S7A",
   "mainStage": "S7",
   "type": "study",
@@ -6427,7 +7259,9 @@
     "kind": "topic",
     "topicId": "P39.3",
     "conceptIds": null,
-    "label": "P39.3 AI security"
+    "label": "P39.3 AI security",
+    "title": "Security › AI security",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -6445,6 +7279,7 @@
  },
  {
   "cw": 155,
+  "title": "AI Engineering as a Systems Discipline",
   "stage": "S7A",
   "mainStage": "S7",
   "type": "study",
@@ -6454,7 +7289,9 @@
     "kind": "topic",
     "topicId": "P44.0",
     "conceptIds": null,
-    "label": "P44.0 AI Engineering as a Systems Discipline (core scope)"
+    "label": "P44.0 AI Engineering as a Systems Discipline (core scope)",
+    "title": "AI Engineering as a Systems Discipline",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -6472,6 +7309,7 @@
  },
  {
   "cw": 156,
+  "title": "RAG Research Platform (project) + Retrieval-Augmented Generation › Required project",
   "stage": "S7A",
   "mainStage": "S7",
   "type": "project",
@@ -6480,14 +7318,18 @@
     "ref": "PR10",
     "kind": "project",
     "projectId": "PR10",
-    "label": "PR10 RAG Research Platform (build)"
+    "label": "PR10 RAG Research Platform (build)",
+    "title": "RAG Research Platform (project)",
+    "detail": ""
    },
    {
     "ref": "P24.2",
     "kind": "topic",
     "topicId": "P24.2",
     "conceptIds": null,
-    "label": "P24.2 Required project"
+    "label": "P24.2 Required project",
+    "title": "Retrieval-Augmented Generation › Required project",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -6505,6 +7347,7 @@
  },
  {
   "cw": 157,
+  "title": "RAG Research Platform (project)",
   "stage": "S7A",
   "mainStage": "S7",
   "type": "project",
@@ -6513,7 +7356,9 @@
     "ref": "PR10",
     "kind": "project",
     "projectId": "PR10",
-    "label": "PR10 RAG Research Platform (build)"
+    "label": "PR10 RAG Research Platform (build)",
+    "title": "RAG Research Platform (project)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -6531,6 +7376,7 @@
  },
  {
   "cw": 158,
+  "title": "RAG Research Platform (project)",
   "stage": "S7A",
   "mainStage": "S7",
   "type": "project",
@@ -6539,7 +7385,9 @@
     "ref": "PR10",
     "kind": "project",
     "projectId": "PR10",
-    "label": "PR10 RAG Research Platform (build)"
+    "label": "PR10 RAG Research Platform (build)",
+    "title": "RAG Research Platform (project)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -6557,6 +7405,7 @@
  },
  {
   "cw": 159,
+  "title": "RAG Research Platform (project)",
   "stage": "S7A",
   "mainStage": "S7",
   "type": "project",
@@ -6565,7 +7414,9 @@
     "ref": "PR10",
     "kind": "project",
     "projectId": "PR10",
-    "label": "PR10 RAG Research Platform (build)"
+    "label": "PR10 RAG Research Platform (build)",
+    "title": "RAG Research Platform (project)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -6583,6 +7434,7 @@
  },
  {
   "cw": 160,
+  "title": "RAG Research Platform (project)",
   "stage": "S7A",
   "mainStage": "S7",
   "type": "project",
@@ -6591,7 +7443,9 @@
     "ref": "PR10",
     "kind": "project",
     "projectId": "PR10",
-    "label": "PR10 RAG Research Platform (build)"
+    "label": "PR10 RAG Research Platform (build)",
+    "title": "RAG Research Platform (project)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -6609,6 +7463,7 @@
  },
  {
   "cw": 161,
+  "title": "Consolidation: gate attempt, spaced re-tests, targeted repair",
   "stage": "S7A",
   "mainStage": "S7",
   "type": "consolidation",
@@ -6617,7 +7472,9 @@
     "ref": "CONSOLIDATE",
     "kind": "activity",
     "activity": "CONSOLIDATE",
-    "label": "Consolidation: gate attempt, spaced re-tests, targeted repair"
+    "label": "Consolidation: gate attempt, spaced re-tests, targeted repair",
+    "title": "Consolidation: gate attempt, spaced re-tests, targeted repair",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -6635,6 +7492,7 @@
  },
  {
   "cw": 162,
+  "title": "System Design › Standard design process + Core concepts",
   "stage": "S7B",
   "mainStage": "S7",
   "type": "study",
@@ -6644,7 +7502,9 @@
     "kind": "topic",
     "topicId": "P35.1",
     "conceptIds": null,
-    "label": "P35.1 Standard design process"
+    "label": "P35.1 Standard design process",
+    "title": "System Design › Standard design process",
+    "detail": ""
    },
    {
     "ref": "P35.2:1-10",
@@ -6662,7 +7522,9 @@
      "P35.2#9",
      "P35.2#10"
     ],
-    "label": "P35.2 Core concepts · #1–10 (availability → backpressure)"
+    "label": "P35.2 Core concepts · #1–10 (availability → backpressure)",
+    "title": "System Design › Core concepts",
+    "detail": "availability → backpressure"
    }
   ],
   "supporting": [],
@@ -6680,6 +7542,7 @@
  },
  {
   "cw": 163,
+  "title": "System Design › Core concepts",
   "stage": "S7B",
   "mainStage": "S7",
   "type": "study",
@@ -6699,7 +7562,9 @@
      "P35.2#18",
      "P35.2#19"
     ],
-    "label": "P35.2 Core concepts · #11–19 (caching → observability)"
+    "label": "P35.2 Core concepts · #11–19 (caching → observability)",
+    "title": "System Design › Core concepts",
+    "detail": "caching → observability"
    }
   ],
   "supporting": [],
@@ -6717,6 +7582,7 @@
  },
  {
   "cw": 164,
+  "title": "System Design › Systems to design",
   "stage": "S7B",
   "mainStage": "S7",
   "type": "study",
@@ -6726,7 +7592,9 @@
     "kind": "topic",
     "topicId": "P35.3",
     "conceptIds": null,
-    "label": "P35.3 Systems to design"
+    "label": "P35.3 Systems to design",
+    "title": "System Design › Systems to design",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -6744,6 +7612,7 @@
  },
  {
   "cw": 165,
+  "title": "System Design › Systems to design",
   "stage": "S7B",
   "mainStage": "S7",
   "type": "study",
@@ -6753,7 +7622,9 @@
     "kind": "topic",
     "topicId": "P35.3",
     "conceptIds": null,
-    "label": "P35.3 Systems to design"
+    "label": "P35.3 Systems to design",
+    "title": "System Design › Systems to design",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -6771,6 +7642,7 @@
  },
  {
   "cw": 166,
+  "title": "Distributed Systems",
   "stage": "S7B",
   "mainStage": "S7",
   "type": "study",
@@ -6789,7 +7661,9 @@
      "P36.0#7",
      "P36.0#8"
     ],
-    "label": "P36.0 Distributed Systems (core scope) · #1–8 (distributed-system characteristics → quorum concepts)"
+    "label": "P36.0 Distributed Systems (core scope) · #1–8 (distributed-system characteristics → quorum concepts)",
+    "title": "Distributed Systems",
+    "detail": "distributed-system characteristics → quorum concepts"
    }
   ],
   "supporting": [],
@@ -6807,6 +7681,7 @@
  },
  {
   "cw": 167,
+  "title": "Distributed Systems",
   "stage": "S7B",
   "mainStage": "S7",
   "type": "study",
@@ -6824,7 +7699,9 @@
      "P36.0#14",
      "P36.0#15"
     ],
-    "label": "P36.0 Distributed Systems (core scope) · #9–15 (partitioning → fault tolerance)"
+    "label": "P36.0 Distributed Systems (core scope) · #9–15 (partitioning → fault tolerance)",
+    "title": "Distributed Systems",
+    "detail": "partitioning → fault tolerance"
    }
   ],
   "supporting": [],
@@ -6842,6 +7719,7 @@
  },
  {
   "cw": 168,
+  "title": "Distributed Systems",
   "stage": "S7B",
   "mainStage": "S7",
   "type": "study",
@@ -6857,7 +7735,9 @@
      "P36.0#19",
      "P36.0#20"
     ],
-    "label": "P36.0 Distributed Systems (core scope) · #16–20 (consensus → event sourcing)"
+    "label": "P36.0 Distributed Systems (core scope) · #16–20 (consensus → event sourcing)",
+    "title": "Distributed Systems",
+    "detail": "consensus → event sourcing"
    }
   ],
   "supporting": [],
@@ -6875,6 +7755,7 @@
  },
  {
   "cw": 169,
+  "title": "ML System Design + ML System Design › Recommendation system + Fraud detection",
   "stage": "S7B",
   "mainStage": "S7",
   "type": "study",
@@ -6884,21 +7765,27 @@
     "kind": "topic",
     "topicId": "P37.0",
     "conceptIds": null,
-    "label": "P37.0 ML System Design (core scope)"
+    "label": "P37.0 ML System Design (core scope)",
+    "title": "ML System Design",
+    "detail": ""
    },
    {
     "ref": "P37.1",
     "kind": "topic",
     "topicId": "P37.1",
     "conceptIds": null,
-    "label": "P37.1 Recommendation system"
+    "label": "P37.1 Recommendation system",
+    "title": "ML System Design › Recommendation system",
+    "detail": ""
    },
    {
     "ref": "P37.2",
     "kind": "topic",
     "topicId": "P37.2",
     "conceptIds": null,
-    "label": "P37.2 Fraud detection"
+    "label": "P37.2 Fraud detection",
+    "title": "ML System Design › Fraud detection",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -6916,6 +7803,7 @@
  },
  {
   "cw": 170,
+  "title": "ML System Design › Search + Model-serving platform + RAG system",
   "stage": "S7B",
   "mainStage": "S7",
   "type": "study",
@@ -6925,21 +7813,27 @@
     "kind": "topic",
     "topicId": "P37.3",
     "conceptIds": null,
-    "label": "P37.3 Search"
+    "label": "P37.3 Search",
+    "title": "ML System Design › Search",
+    "detail": ""
    },
    {
     "ref": "P37.4",
     "kind": "topic",
     "topicId": "P37.4",
     "conceptIds": null,
-    "label": "P37.4 Model-serving platform"
+    "label": "P37.4 Model-serving platform",
+    "title": "ML System Design › Model-serving platform",
+    "detail": ""
    },
    {
     "ref": "P37.5",
     "kind": "topic",
     "topicId": "P37.5",
     "conceptIds": null,
-    "label": "P37.5 RAG system"
+    "label": "P37.5 RAG system",
+    "title": "ML System Design › RAG system",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -6957,6 +7851,7 @@
  },
  {
   "cw": 171,
+  "title": "Advanced ML System Topics + Advanced ML System Topics › Feature stores",
   "stage": "S7B",
   "mainStage": "S7",
   "type": "study",
@@ -6966,14 +7861,18 @@
     "kind": "topic",
     "topicId": "P42.0",
     "conceptIds": null,
-    "label": "P42.0 Advanced ML System Topics (core scope)"
+    "label": "P42.0 Advanced ML System Topics (core scope)",
+    "title": "Advanced ML System Topics",
+    "detail": ""
    },
    {
     "ref": "P42.1",
     "kind": "topic",
     "topicId": "P42.1",
     "conceptIds": null,
-    "label": "P42.1 Feature stores"
+    "label": "P42.1 Feature stores",
+    "title": "Advanced ML System Topics › Feature stores",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -6991,6 +7890,7 @@
  },
  {
   "cw": 172,
+  "title": "Advanced ML System Topics › Distributed training",
   "stage": "S7B",
   "mainStage": "S7",
   "type": "study",
@@ -7000,7 +7900,9 @@
     "kind": "topic",
     "topicId": "P42.2",
     "conceptIds": null,
-    "label": "P42.2 Distributed training"
+    "label": "P42.2 Distributed training",
+    "title": "Advanced ML System Topics › Distributed training",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -7018,6 +7920,7 @@
  },
  {
   "cw": 173,
+  "title": "Advanced ML System Topics › Model optimisation",
   "stage": "S7B",
   "mainStage": "S7",
   "type": "study",
@@ -7027,7 +7930,9 @@
     "kind": "topic",
     "topicId": "P42.3",
     "conceptIds": null,
-    "label": "P42.3 Model optimisation"
+    "label": "P42.3 Model optimisation",
+    "title": "Advanced ML System Topics › Model optimisation",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -7045,6 +7950,7 @@
  },
  {
   "cw": 174,
+  "title": "Advanced ML System Topics › High-scale inference",
   "stage": "S7B",
   "mainStage": "S7",
   "type": "study",
@@ -7054,7 +7960,9 @@
     "kind": "topic",
     "topicId": "P42.4",
     "conceptIds": null,
-    "label": "P42.4 High-scale inference"
+    "label": "P42.4 High-scale inference",
+    "title": "Advanced ML System Topics › High-scale inference",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -7072,6 +7980,7 @@
  },
  {
   "cw": 175,
+  "title": "Multimodal AI",
   "stage": "S7B",
   "mainStage": "S7",
   "type": "study",
@@ -7087,7 +7996,9 @@
      "P26.0#4",
      "P26.0#5"
     ],
-    "label": "P26.0 Multimodal AI (core scope) · #1–5 (vision-language models → multimodal tokenisation awareness)"
+    "label": "P26.0 Multimodal AI (core scope) · #1–5 (vision-language models → multimodal tokenisation awareness)",
+    "title": "Multimodal AI",
+    "detail": "vision-language models → multimodal tokenisation awareness"
    }
   ],
   "supporting": [],
@@ -7105,6 +8016,7 @@
  },
  {
   "cw": 176,
+  "title": "Multimodal AI",
   "stage": "S7B",
   "mainStage": "S7",
   "type": "study",
@@ -7120,7 +8032,9 @@
      "P26.0#9",
      "P26.0#10"
     ],
-    "label": "P26.0 Multimodal AI (core scope) · #6–10 (multimodal retrieval → multimodal search)"
+    "label": "P26.0 Multimodal AI (core scope) · #6–10 (multimodal retrieval → multimodal search)",
+    "title": "Multimodal AI",
+    "detail": "multimodal retrieval → multimodal search"
    }
   ],
   "supporting": [],
@@ -7138,6 +8052,7 @@
  },
  {
   "cw": 177,
+  "title": "Consolidation: gate attempt, spaced re-tests, targeted repair",
   "stage": "S7B",
   "mainStage": "S7",
   "type": "consolidation",
@@ -7146,7 +8061,9 @@
     "ref": "CONSOLIDATE",
     "kind": "activity",
     "activity": "CONSOLIDATE",
-    "label": "Consolidation: gate attempt, spaced re-tests, targeted repair"
+    "label": "Consolidation: gate attempt, spaced re-tests, targeted repair",
+    "title": "Consolidation: gate attempt, spaced re-tests, targeted repair",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -7164,6 +8081,7 @@
  },
  {
   "cw": 178,
+  "title": "Research Skills › Reading papers",
   "stage": "S8",
   "mainStage": "S8",
   "type": "study",
@@ -7173,7 +8091,9 @@
     "kind": "topic",
     "topicId": "P40.1",
     "conceptIds": null,
-    "label": "P40.1 Reading papers"
+    "label": "P40.1 Reading papers",
+    "title": "Research Skills › Reading papers",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -7191,6 +8111,7 @@
  },
  {
   "cw": 179,
+  "title": "Research Skills › Reproduction ladder",
   "stage": "S8",
   "mainStage": "S8",
   "type": "study",
@@ -7200,7 +8121,9 @@
     "kind": "topic",
     "topicId": "P40.2",
     "conceptIds": null,
-    "label": "P40.2 Reproduction ladder"
+    "label": "P40.2 Reproduction ladder",
+    "title": "Research Skills › Reproduction ladder",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -7218,6 +8141,7 @@
  },
  {
   "cw": 180,
+  "title": "Research Skills › Experimental discipline",
   "stage": "S8",
   "mainStage": "S8",
   "type": "study",
@@ -7227,7 +8151,9 @@
     "kind": "topic",
     "topicId": "P40.3",
     "conceptIds": null,
-    "label": "P40.3 Experimental discipline"
+    "label": "P40.3 Experimental discipline",
+    "title": "Research Skills › Experimental discipline",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -7245,6 +8171,7 @@
  },
  {
   "cw": 181,
+  "title": "Research Skills › Research writing",
   "stage": "S8",
   "mainStage": "S8",
   "type": "study",
@@ -7254,7 +8181,9 @@
     "kind": "topic",
     "topicId": "P40.4",
     "conceptIds": null,
-    "label": "P40.4 Research writing"
+    "label": "P40.4 Research writing",
+    "title": "Research Skills › Research writing",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -7272,6 +8201,7 @@
  },
  {
   "cw": 182,
+  "title": "Paper reproduction (P40 reproduction ladder applied)",
   "stage": "S8",
   "mainStage": "S8",
   "type": "open",
@@ -7280,7 +8210,9 @@
     "ref": "RESEARCH",
     "kind": "activity",
     "activity": "RESEARCH",
-    "label": "Paper reproduction (P40 reproduction ladder applied)"
+    "label": "Paper reproduction (P40 reproduction ladder applied)",
+    "title": "Paper reproduction (P40 reproduction ladder applied)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -7298,6 +8230,7 @@
  },
  {
   "cw": 183,
+  "title": "Paper reproduction (P40 reproduction ladder applied)",
   "stage": "S8",
   "mainStage": "S8",
   "type": "open",
@@ -7306,7 +8239,9 @@
     "ref": "RESEARCH",
     "kind": "activity",
     "activity": "RESEARCH",
-    "label": "Paper reproduction (P40 reproduction ladder applied)"
+    "label": "Paper reproduction (P40 reproduction ladder applied)",
+    "title": "Paper reproduction (P40 reproduction ladder applied)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -7324,6 +8259,7 @@
  },
  {
   "cw": 184,
+  "title": "Paper reproduction (P40 reproduction ladder applied)",
   "stage": "S8",
   "mainStage": "S8",
   "type": "open",
@@ -7332,7 +8268,9 @@
     "ref": "RESEARCH",
     "kind": "activity",
     "activity": "RESEARCH",
-    "label": "Paper reproduction (P40 reproduction ladder applied)"
+    "label": "Paper reproduction (P40 reproduction ladder applied)",
+    "title": "Paper reproduction (P40 reproduction ladder applied)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -7350,6 +8288,7 @@
  },
  {
   "cw": 185,
+  "title": "Paper reproduction (P40 reproduction ladder applied)",
   "stage": "S8",
   "mainStage": "S8",
   "type": "open",
@@ -7358,7 +8297,9 @@
     "ref": "RESEARCH",
     "kind": "activity",
     "activity": "RESEARCH",
-    "label": "Paper reproduction (P40 reproduction ladder applied)"
+    "label": "Paper reproduction (P40 reproduction ladder applied)",
+    "title": "Paper reproduction (P40 reproduction ladder applied)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -7376,6 +8317,7 @@
  },
  {
   "cw": 186,
+  "title": "Specialisation work (master specialisation strategy)",
   "stage": "S8",
   "mainStage": "S8",
   "type": "open",
@@ -7384,7 +8326,9 @@
     "ref": "SPECIALISE",
     "kind": "activity",
     "activity": "SPECIALISE",
-    "label": "Specialisation work (master specialisation strategy)"
+    "label": "Specialisation work (master specialisation strategy)",
+    "title": "Specialisation work (master specialisation strategy)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -7402,6 +8346,7 @@
  },
  {
   "cw": 187,
+  "title": "Specialisation work (master specialisation strategy)",
   "stage": "S8",
   "mainStage": "S8",
   "type": "open",
@@ -7410,7 +8355,9 @@
     "ref": "SPECIALISE",
     "kind": "activity",
     "activity": "SPECIALISE",
-    "label": "Specialisation work (master specialisation strategy)"
+    "label": "Specialisation work (master specialisation strategy)",
+    "title": "Specialisation work (master specialisation strategy)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -7428,6 +8375,7 @@
  },
  {
   "cw": 188,
+  "title": "Specialisation work (master specialisation strategy)",
   "stage": "S8",
   "mainStage": "S8",
   "type": "open",
@@ -7436,7 +8384,9 @@
     "ref": "SPECIALISE",
     "kind": "activity",
     "activity": "SPECIALISE",
-    "label": "Specialisation work (master specialisation strategy)"
+    "label": "Specialisation work (master specialisation strategy)",
+    "title": "Specialisation work (master specialisation strategy)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -7454,6 +8404,7 @@
  },
  {
   "cw": 189,
+  "title": "Specialisation work (master specialisation strategy)",
   "stage": "S8",
   "mainStage": "S8",
   "type": "open",
@@ -7462,7 +8413,9 @@
     "ref": "SPECIALISE",
     "kind": "activity",
     "activity": "SPECIALISE",
-    "label": "Specialisation work (master specialisation strategy)"
+    "label": "Specialisation work (master specialisation strategy)",
+    "title": "Specialisation work (master specialisation strategy)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -7480,6 +8433,7 @@
  },
  {
   "cw": 190,
+  "title": "Specialisation work (master specialisation strategy)",
   "stage": "S8",
   "mainStage": "S8",
   "type": "open",
@@ -7488,7 +8442,9 @@
     "ref": "SPECIALISE",
     "kind": "activity",
     "activity": "SPECIALISE",
-    "label": "Specialisation work (master specialisation strategy)"
+    "label": "Specialisation work (master specialisation strategy)",
+    "title": "Specialisation work (master specialisation strategy)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -7506,6 +8462,7 @@
  },
  {
   "cw": 191,
+  "title": "Specialisation work (master specialisation strategy)",
   "stage": "S8",
   "mainStage": "S8",
   "type": "open",
@@ -7514,7 +8471,9 @@
     "ref": "SPECIALISE",
     "kind": "activity",
     "activity": "SPECIALISE",
-    "label": "Specialisation work (master specialisation strategy)"
+    "label": "Specialisation work (master specialisation strategy)",
+    "title": "Specialisation work (master specialisation strategy)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -7532,6 +8491,7 @@
  },
  {
   "cw": 192,
+  "title": "Specialisation work (master specialisation strategy)",
   "stage": "S8",
   "mainStage": "S8",
   "type": "open",
@@ -7540,7 +8500,9 @@
     "ref": "SPECIALISE",
     "kind": "activity",
     "activity": "SPECIALISE",
-    "label": "Specialisation work (master specialisation strategy)"
+    "label": "Specialisation work (master specialisation strategy)",
+    "title": "Specialisation work (master specialisation strategy)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -7558,6 +8520,7 @@
  },
  {
   "cw": 193,
+  "title": "Specialisation work (master specialisation strategy)",
   "stage": "S8",
   "mainStage": "S8",
   "type": "open",
@@ -7566,7 +8529,9 @@
     "ref": "SPECIALISE",
     "kind": "activity",
     "activity": "SPECIALISE",
-    "label": "Specialisation work (master specialisation strategy)"
+    "label": "Specialisation work (master specialisation strategy)",
+    "title": "Specialisation work (master specialisation strategy)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -7584,6 +8549,7 @@
  },
  {
   "cw": 194,
+  "title": "Specialisation work (master specialisation strategy)",
   "stage": "S8",
   "mainStage": "S8",
   "type": "open",
@@ -7592,7 +8558,9 @@
     "ref": "SPECIALISE",
     "kind": "activity",
     "activity": "SPECIALISE",
-    "label": "Specialisation work (master specialisation strategy)"
+    "label": "Specialisation work (master specialisation strategy)",
+    "title": "Specialisation work (master specialisation strategy)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -7610,6 +8578,7 @@
  },
  {
   "cw": 195,
+  "title": "Intelligent Financial Research Platform (project)",
   "stage": "S8",
   "mainStage": "S8",
   "type": "project",
@@ -7618,7 +8587,9 @@
     "ref": "PR11",
     "kind": "project",
     "projectId": "PR11",
-    "label": "PR11 Intelligent Financial Research Platform (build)"
+    "label": "PR11 Intelligent Financial Research Platform (build)",
+    "title": "Intelligent Financial Research Platform (project)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -7636,6 +8607,7 @@
  },
  {
   "cw": 196,
+  "title": "Intelligent Financial Research Platform (project)",
   "stage": "S8",
   "mainStage": "S8",
   "type": "project",
@@ -7644,7 +8616,9 @@
     "ref": "PR11",
     "kind": "project",
     "projectId": "PR11",
-    "label": "PR11 Intelligent Financial Research Platform (build)"
+    "label": "PR11 Intelligent Financial Research Platform (build)",
+    "title": "Intelligent Financial Research Platform (project)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -7662,6 +8636,7 @@
  },
  {
   "cw": 197,
+  "title": "Intelligent Financial Research Platform (project)",
   "stage": "S8",
   "mainStage": "S8",
   "type": "project",
@@ -7670,7 +8645,9 @@
     "ref": "PR11",
     "kind": "project",
     "projectId": "PR11",
-    "label": "PR11 Intelligent Financial Research Platform (build)"
+    "label": "PR11 Intelligent Financial Research Platform (build)",
+    "title": "Intelligent Financial Research Platform (project)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -7688,6 +8665,7 @@
  },
  {
   "cw": 198,
+  "title": "Intelligent Financial Research Platform (project)",
   "stage": "S8",
   "mainStage": "S8",
   "type": "project",
@@ -7696,7 +8674,9 @@
     "ref": "PR11",
     "kind": "project",
     "projectId": "PR11",
-    "label": "PR11 Intelligent Financial Research Platform (build)"
+    "label": "PR11 Intelligent Financial Research Platform (build)",
+    "title": "Intelligent Financial Research Platform (project)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -7714,6 +8694,7 @@
  },
  {
   "cw": 199,
+  "title": "Intelligent Financial Research Platform (project)",
   "stage": "S8",
   "mainStage": "S8",
   "type": "project",
@@ -7722,7 +8703,9 @@
     "ref": "PR11",
     "kind": "project",
     "projectId": "PR11",
-    "label": "PR11 Intelligent Financial Research Platform (build)"
+    "label": "PR11 Intelligent Financial Research Platform (build)",
+    "title": "Intelligent Financial Research Platform (project)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -7740,6 +8723,7 @@
  },
  {
   "cw": 200,
+  "title": "Intelligent Financial Research Platform (project)",
   "stage": "S8",
   "mainStage": "S8",
   "type": "project",
@@ -7748,7 +8732,9 @@
     "ref": "PR11",
     "kind": "project",
     "projectId": "PR11",
-    "label": "PR11 Intelligent Financial Research Platform (build)"
+    "label": "PR11 Intelligent Financial Research Platform (build)",
+    "title": "Intelligent Financial Research Platform (project)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -7766,6 +8752,7 @@
  },
  {
   "cw": 201,
+  "title": "Intelligent Financial Research Platform (project)",
   "stage": "S8",
   "mainStage": "S8",
   "type": "project",
@@ -7774,7 +8761,9 @@
     "ref": "PR11",
     "kind": "project",
     "projectId": "PR11",
-    "label": "PR11 Intelligent Financial Research Platform (build)"
+    "label": "PR11 Intelligent Financial Research Platform (build)",
+    "title": "Intelligent Financial Research Platform (project)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -7792,6 +8781,7 @@
  },
  {
   "cw": 202,
+  "title": "Intelligent Financial Research Platform (project)",
   "stage": "S8",
   "mainStage": "S8",
   "type": "project",
@@ -7800,7 +8790,9 @@
     "ref": "PR11",
     "kind": "project",
     "projectId": "PR11",
-    "label": "PR11 Intelligent Financial Research Platform (build)"
+    "label": "PR11 Intelligent Financial Research Platform (build)",
+    "title": "Intelligent Financial Research Platform (project)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -7818,6 +8810,7 @@
  },
  {
   "cw": 203,
+  "title": "Intelligent Financial Research Platform (project)",
   "stage": "S8",
   "mainStage": "S8",
   "type": "project",
@@ -7826,7 +8819,9 @@
     "ref": "PR11",
     "kind": "project",
     "projectId": "PR11",
-    "label": "PR11 Intelligent Financial Research Platform (build)"
+    "label": "PR11 Intelligent Financial Research Platform (build)",
+    "title": "Intelligent Financial Research Platform (project)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -7844,6 +8839,7 @@
  },
  {
   "cw": 204,
+  "title": "Intelligent Financial Research Platform (project)",
   "stage": "S8",
   "mainStage": "S8",
   "type": "project",
@@ -7852,7 +8848,9 @@
     "ref": "PR11",
     "kind": "project",
     "projectId": "PR11",
-    "label": "PR11 Intelligent Financial Research Platform (build)"
+    "label": "PR11 Intelligent Financial Research Platform (build)",
+    "title": "Intelligent Financial Research Platform (project)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -7870,6 +8868,7 @@
  },
  {
   "cw": 205,
+  "title": "Intelligent Financial Research Platform (project)",
   "stage": "S8",
   "mainStage": "S8",
   "type": "project",
@@ -7878,7 +8877,9 @@
     "ref": "PR11",
     "kind": "project",
     "projectId": "PR11",
-    "label": "PR11 Intelligent Financial Research Platform (build)"
+    "label": "PR11 Intelligent Financial Research Platform (build)",
+    "title": "Intelligent Financial Research Platform (project)",
+    "detail": ""
    }
   ],
   "supporting": [],
@@ -7896,6 +8897,7 @@
  },
  {
   "cw": 206,
+  "title": "Intelligent Financial Research Platform (project)",
   "stage": "S8",
   "mainStage": "S8",
   "type": "project",
@@ -7904,7 +8906,9 @@
     "ref": "PR11",
     "kind": "project",
     "projectId": "PR11",
-    "label": "PR11 Intelligent Financial Research Platform (build)"
+    "label": "PR11 Intelligent Financial Research Platform (build)",
+    "title": "Intelligent Financial Research Platform (project)",
+    "detail": ""
    }
   ],
   "supporting": [],

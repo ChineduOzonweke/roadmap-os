@@ -23,6 +23,15 @@ export default function Page() {
         <p className="max-w-[72ch] text-sm">Master curriculum, then 46 phases (P01–P46), then topics (components such as P13.2), then checklist items (concepts such as P13.2#4). The 206-week mapping schedules those items; gates decide when later work is cleared; projects and checkpoints demand evidence. Every ID is stable, so notes and progress survive wording changes in the master.</p>
       </Section>
 
+      <Section title="Working with AI" id="ai">
+        <div className="max-w-[72ch] space-y-2 text-sm">
+          <p>AI output is an input to engineering, not proof of correctness. Two ideas decide how AI takes part in your work:</p>
+          <p><span className="font-medium">Tier</span> grows with your checkpoints: Tutor from the start, Pair after the Programmer checkpoint, Supervised agent after the Foundation Reset exit.</p>
+          <p><span className="font-medium">Mode</span> depends on what you are doing: Learn (the concept is new), Build (you can already do it alone, or it is project work) and Assess (checkpoints, unseen tasks, graded work: AI off).</p>
+          <p>Today shows the tier and mode for your current week in one line. The full rules, the working loop and twelve practice missions are on <Link className="text-accent underline" href="/ai">Working with AI</Link>. The content comes from master section 109; the AI/ML curriculum itself stays in its phases.</p>
+        </div>
+      </Section>
+
       <Section title="Status and unlocking">
         <dl className="divide-y divide-rule rounded-lg border border-rule bg-surface text-sm">
           {STATUS_RULES.map(([k, v]) => <div key={k} className="grid grid-cols-1 gap-1 px-4 py-2 sm:grid-cols-[9rem_1fr]"><dt className="font-medium">{k}</dt><dd>{v}</dd></div>)}

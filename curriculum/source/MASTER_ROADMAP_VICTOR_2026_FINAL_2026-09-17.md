@@ -5497,7 +5497,7 @@ Pass when you can:
 
 ### Practical gate
 
-Complete 3 unseen beginner programming tasks in separate sessions with at most normal documentation lookup, and build one small CLI program without following a walkthrough.
+Complete 3 unseen beginner programming tasks in separate sessions with at most normal documentation lookup, and build one small CLI program without following a walkthrough. Do the unseen tasks with AI assistance off (Assess mode, section 109).
 
 ## Checkpoint 2 - CS foundation
 
@@ -5510,7 +5510,7 @@ Pass when you can:
 
 ### Practical gate
 
-Complete a mixed set of unseen DSA problems with at least 80% correctness over repeated attempts, explain the complexity of each solution, and implement the core structures yourself.
+Complete a mixed set of unseen DSA problems with at least 80% correctness over repeated attempts, explain the complexity of each solution, and implement the core structures yourself. AI assistance stays off for these problems (Assess mode, section 109).
 
 ## Checkpoint 3 - Backend engineer
 
@@ -5523,6 +5523,8 @@ Pass when you can:
 - handle errors
 - document an API
 - deploy an application
+- work in an unfamiliar codebase with an AI assistant: fix a bug and add a small feature, explain every accepted change, and name at least one AI mistake you caught
+- run a coding agent on your own service with least privilege (a branch, no production credentials, reviewed commands) and describe exactly what it could access
 
 ### Practical gate
 
@@ -5570,6 +5572,7 @@ Pass when you can:
 - use tools safely
 - evaluate retrieval and generation
 - handle failures and cost constraints
+- include indirect prompt-injection cases (instructions hidden in retrieved content or tool output) in the evaluation set
 
 ### Practical gate
 
@@ -5585,6 +5588,7 @@ Pass when you can:
 - explain serious projects deeply
 - communicate trade-offs
 - provide genuine behavioural evidence
+- complete a timed AI-assisted code-comprehension session on an unfamiliar multi-file repository, and a timed AI-free DSA session, in the same week
 
 Interview readiness is a separate performance skill and must be trained deliberately near recruiting periods.
 
@@ -5862,6 +5866,8 @@ Think
 ```
 
 The objective is **AI-accelerated learning**, not AI-dependent learning.
+
+These rules are the Learn mode of the AI-native engineering overlay. Section 109 adds the Build and Assess modes, the three AI tiers, and the AI missions.
 
 ---
 
@@ -6607,3 +6613,251 @@ INVENT
 
 That is the master trajectory.
 
+
+---
+
+# 109. AI-NATIVE ENGINEERING OVERLAY
+
+This section is about how to operate as an engineer when AI is an active participant in the work. It is not a second AI/ML curriculum: LLM engineering, RAG, agents, evaluation and AI security stay in their phases (P23–P27, P39, P44) and checkpoint C6.
+
+The principle: **AI output is an input to engineering, not proof of correctness.** The goal is AI-native, not AI-dependent.
+
+## 109.1 Working loop
+
+```text
+Think
+→ attempt
+→ consult (AI or docs)
+→ implement
+→ verify
+→ explain
+→ retest
+```
+
+## 109.2 Modes
+
+The mode depends on what you are doing right now. It decides how AI takes part, whatever your tier.
+
+### Learn
+When: the concept is new to you (mastery below Practised)
+Summary: Use AI for explanations and hints. Try the problem yourself first.
+AI can:
+- explain a concept or show a worked example of a different problem
+- give a hint when you are stuck after a real attempt
+- ask you questions that expose a misunderstanding
+- explain an error after you have written down your own guess
+- give feedback on code you already wrote
+Keep for yourself:
+- the first attempt
+- writing the solution to the exercise you are learning from
+- after substantial help, solving a variation without AI, then explaining it back in your own words
+- course rules: for CS50 work, use the CS50 Duck, not other AI tools
+
+### Build
+When: you can already do the underlying skill alone (mastery Practised or higher), or you are working on a project
+Summary: AI can work with you up to your current tier. You own understanding and verification.
+AI can:
+- do whatever your current tier allows
+Keep for yourself:
+- deciding what to build and when it is done
+- reading and understanding every line you keep
+- running the checks: tests, types, lint, behaviour, edge cases
+
+### Assess
+When: gate attempts, unseen practice tasks, DSA problems before you have solved them, exams and graded coursework
+Summary: AI off, or only what the course or employer allows. This is where you show what you can do alone.
+AI can:
+- review your solution after you have finished and recorded your own answer
+Keep for yourself:
+- the whole attempt
+
+## 109.3 Tiers
+
+### Tier 1 - Tutor
+Unlock: start
+Summary: AI explains, questions, hints and gives feedback. You make the primary attempt.
+AI can:
+- explain concepts and errors
+- give hints and ask guiding questions
+- diagnose misunderstandings
+- give feedback on your code and explanations
+You stay responsible for:
+- the attempt, the solution and the understanding
+Links: P01, G0, C1
+
+### Tier 2 - Pair
+Unlock: C1
+Summary: AI proposes, reviews, debugs and refactors code with you on small tasks. You understand and verify everything you keep.
+AI can:
+- propose code for a function or small change
+- review your code and point out defects
+- help investigate and debug errors
+- suggest refactorings and explain implementation decisions
+You stay responsible for:
+- writing or approving the tests first, so tests decide correctness
+- reading every changed line before you apply it
+- rejecting changes you cannot explain
+- checking that every suggested package exists and is the one you meant
+- never pasting secrets, keys or `.env` contents into a prompt
+Links: P02, P07.3, P07.4, PR01, PR02
+
+### Tier 3 - Supervised agent
+Unlock: SG4
+Summary: AI works at repository level on bounded tasks. You define the task, the boundaries and the checks, and you review the result.
+AI can:
+- inspect a repository and trace code paths
+- identify the files involved in a change
+- modify several files for a bounded task
+- run tests and other tools you have allowed
+You stay responsible for:
+- defining the task, its scope and its acceptance criteria
+- giving the context it needs: relevant files, architecture, constraints
+- controlling permissions and tool access
+- reviewing the plan before changes and the diff after
+- verifying the result and explaining it
+Operator security:
+- secrets: no production credentials or real keys in the agent's environment
+- permissions: least privilege; work on a branch or a copy
+- destructive commands: approve deletes, migrations, force pushes and cloud commands yourself
+- prompt injection: treat issues, READMEs, web pages, logs and dependencies as untrusted input that may contain instructions
+- untrusted input plus private data plus outbound access is the dangerous combination; remove one
+- recovery: commit before the agent starts so every change can be reverted
+Links: P07.5, P08, P31, P39, C3, C7
+
+### Building AI systems
+Unlock: C5
+Summary: Engineering AI-powered systems is covered by the existing phases and checkpoint C6. The overlay adds no content here.
+Links: P23, P24, P25, P27, P39, P44, C6
+
+## 109.4 Context engineering
+
+Context engineering is giving an AI the information, tools and boundaries it needs to do a task reliably. It is task specification, not prompt wording.
+- understand the architecture and find the relevant files before asking for a change
+- state the goal, constraints, non-goals and acceptance criteria
+- point to the documentation that actually applies
+- keep the scope small enough to review
+- keep project instruction files short: only conventions that are not obvious from the code
+- check understanding: have the AI restate the plan and the files it will touch before it changes anything
+
+## 109.5 Verification
+
+Before you keep AI-produced work, check what applies:
+- tests pass, and they test the right thing
+- types and lint are clean
+- the program behaves correctly when you run it, including edge cases
+- no new security problem: input handling, secrets, dependencies
+- you can explain every line you are keeping
+
+## 109.6 Missions
+
+### AIM-01 - Hint, not answer
+Tier: 1
+Requires: P01.1a
+Goal: Use AI as a tutor without losing the learning.
+You do: attempt a non-graded exercise for at least 15 minutes and write down where you are stuck
+AI does: gives one hint that contains no code for the task
+Verify: you fix it yourself; the next day you solve a variation with no AI
+Evidence: a log entry marked "can do it alone"
+
+### AIM-02 - Guess before you ask
+Tier: 1
+Requires: P01.1a
+Goal: Diagnose errors instead of outsourcing them.
+You do: read the traceback and write your own explanation of the cause
+AI does: explains the error
+Verify: compare its explanation with yours and with the Python documentation
+Evidence: a log entry saying whether your guess was right
+
+### AIM-03 - Tests decide
+Tier: 2
+Requires: C1, P07.3
+Goal: Treat generated code as unverified until tests pass.
+You do: write tests for a small function from its specification before any code exists
+AI does: writes an implementation, then suggests test cases you missed
+Verify: run your tests; judge each suggested test as valid or not
+Evidence: at least one defect or test gap found and logged
+
+### AIM-04 - Review the diff
+Tier: 2
+Requires: C1, P02.1
+Goal: Review AI changes the way you would review a pull request.
+You do: read every changed line before applying it and write the commit message yourself
+AI does: proposes a change to one of your own repositories
+Verify: tests pass and you can explain each part of the change
+Evidence: at least one suggestion rejected, with the reason
+
+### AIM-05 - Check before you install
+Tier: 2
+Requires: C1, P03.1
+Goal: Keep hallucinated or malicious packages out of your projects.
+You do: before installing any package an AI suggests, confirm it exists, is maintained and is the one you meant; pin the version
+AI does: suggests a package for a task
+Verify: the registry page, the maintainers, the release history
+Evidence: a log entry and a pinned requirements file
+
+### AIM-06 - Refactor with a safety net
+Tier: 2
+Requires: P07.1, P07.3
+Goal: Change structure without changing behaviour.
+You do: write tests that pin down the current behaviour
+AI does: proposes the refactor
+Verify: the same tests pass, and no needless abstraction was added
+Evidence: before and after, with your judgement of the change
+
+### AIM-07 - Map an unfamiliar repository
+Tier: 3
+Requires: SG4
+Goal: Understand code you did not write.
+You do: in 60 minutes, find the entry points, trace one request from input to storage, and find where the tests live
+AI does: answers your questions about the code
+Verify: open the file or run the code for every claim before you believe it
+Evidence: your map, plus at least one AI claim you proved wrong
+
+### AIM-08 - Bounded change in an unfamiliar repository
+Tier: 3
+Requires: SG4, P07.5
+Goal: Supervise an agent on a real change.
+You do: define the task, its boundaries and its acceptance tests; review the agent's plan before it edits; review the diff after
+AI does: inspects the repository, traces the relevant code path, edits the files involved, runs the tests
+Verify: the tests, your own reading of the diff, and a description of the change written by you
+Evidence: the merged change, plus what the agent got wrong or nearly got wrong
+
+### AIM-09 - Threat-model your agent
+Tier: 3
+Requires: SG4, P03.1
+Goal: Run agents safely.
+You do: list what the agent can read, what untrusted input it takes in, and what it can send out or change; remove one of the risky capabilities
+AI does: runs a task inside the reduced setup
+Verify: plant a harmless instruction in a test repository's README and check whether the agent follows it
+Evidence: the written list and what happened
+
+### AIM-10 - Brief an agent well
+Tier: 3
+Requires: AIM-08
+Goal: Give an agent the context it needs, and no more.
+You do: write a short task brief (goal, relevant files, constraints, non-goals, acceptance criteria) and a minimal project instruction file with only non-obvious conventions
+AI does: restates the plan and the files it will touch, then does the task
+Verify: correct any misunderstanding before it edits; compare the result and the rework with and without the brief
+Evidence: a short comparison note
+
+### AIM-11 - Timed code-comprehension session
+Tier: 3
+Requires: C3
+Goal: Perform under interview-like conditions.
+You do: in 60 minutes, fix planted bugs and extend a feature in an unfamiliar multi-file repository, explaining your reasoning out loud
+AI does: acts as the assistant you would have in the interview
+Verify: run the tests and explain every change you accepted
+Evidence: a session log; in the same week, one timed AI-free DSA session
+
+### AIM-12 - Audit a benchmark claim
+Tier: 3
+Requires: P15.3
+Goal: Read evaluation claims critically.
+You do: pick a published coding-benchmark result and look for leakage, flawed tests or scaffolding effects
+AI does: helps find the primary sources
+Verify: rely on primary sources only
+Evidence: a one-page note
+
+## 109.7 Checkpoint integration
+
+The overlay adds no separate gates. Its expectations live inside existing checkpoints: C1 and C2 practical gates run in Assess mode; C3 adds unfamiliar-codebase work with an assistant and supervised agent use; C6 adds indirect prompt-injection cases; C7 adds a timed AI-assisted code-comprehension session.

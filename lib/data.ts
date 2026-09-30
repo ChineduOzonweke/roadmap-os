@@ -78,11 +78,22 @@ export const topicsUnlockedBy = (gateId: string) =>
 
 export const weeksOfStage = (stageId: string) => weeks.filter((w) => w.stage === stageId || w.mainStage === stageId);
 
+/** Learner-facing name and link for any curriculum ID. The ID itself is shown only via <RefId>. */
 export function refLabel(id: string): { label: string; href: string | null } {
-  if (phaseMap.has(id)) return { label: `${id} ${phaseMap.get(id)!.title}`, href: `/phases/${id}` };
-  if (topicMap.has(id)) return { label: `${id} ${topicMap.get(id)!.label}`, href: `/topics/${id}` };
-  if (conceptMap.has(id)) return { label: `${id} ${conceptMap.get(id)!.text}`, href: `/concepts/${conceptSlug(id)}` };
-  if (checkpointMap.has(id)) return { label: `${id} ${checkpointMap.get(id)!.title}`, href: `/checkpoints/${id}` };
-  if (projectMap.has(id)) return { label: `${id} ${projectMap.get(id)!.title}`, href: `/projects/${id}` };
+  if (phaseMap.has(id)) return { label: phaseMap.get(id)!.title, href: `/phases/${id}` };
+  if (topicMap.has(id)) return { label: topicMap.get(id)!.label, href: `/topics/${id}` };
+  if (conceptMap.has(id)) {
+    const c = conceptMap.get(id)!;
+    return { label: `${c.text} (${topicMap.get(c.topicId)?.label ?? ""})`, href: `/concepts/${conceptSlug(id)}` };
+  }
+  if (checkpointMap.has(id)) return { label: checkpointName(id), href: `/checkpoints/${id}` };
+  if (projectMap.has(id)) return { label: projectMap.get(id)!.title, href: `/projects/${id}` };
   return { label: id, href: null };
+}
+
+/** "Programmer checkpoint" for competency checkpoints; stage gates keep their descriptive title. */
+export function checkpointName(id: string): string {
+  const c = checkpointMap.get(id);
+  if (!c) return id;
+  return c.kind === "competency" ? `${c.title} checkpoint` : c.title;
 }

@@ -27,11 +27,10 @@ export function WeekStrip({ compact = false }: { compact?: boolean }) {
         const weeks = idx.weeks.filter((w) => w.cw >= st.r[0] && w.cw <= st.r[1]);
         const done = ready ? weeks.filter((w) => weekView(s, w).complete).length : 0;
         return (
-          <div key={st.id} className="grid grid-cols-[3.2rem_minmax(0,1fr)] items-start gap-2 sm:grid-cols-[13rem_minmax(0,1fr)]">
-            <div className="pt-px text-xs leading-tight">
-              <span className="font-mono text-muted">{st.id}</span>
-              {!compact && <span className="ml-1.5 hidden text-ink sm:inline">{st.n}</span>}
-              <span className="ml-1.5 hidden tabular-nums text-faint sm:inline">{done}/{weeks.length}</span>
+          <div key={st.id} className="grid grid-cols-1 gap-1 sm:grid-cols-[13rem_minmax(0,1fr)] sm:gap-2">
+            <div className="flex items-baseline justify-between gap-2 pt-px text-xs leading-tight sm:block">
+              {!compact && <span className="text-ink">{st.n}</span>}
+              <span className="tabular-nums text-faint sm:ml-1.5">{done}/{weeks.length}</span>
             </div>
             <ol className="flex flex-wrap gap-[3px]">
               {weeks.map((w) => {

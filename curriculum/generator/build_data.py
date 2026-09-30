@@ -392,15 +392,61 @@ for r in resources:
     r["topicIds"] = ids
 
 # ------------------------------------------------------------------ weeks
+def human_topic(cid):
+    """Learner-facing name for a component: meaningful titles only, no IDs."""
+    c = E.COMPS[cid]
+    if c["title"] == "Core scope":
+        return E.NICE[c["phase"]]
+    lab = E.comp_label(cid)
+    if not c.get("parent"):
+        ph = E.NICE[c["phase"]]
+        return lab if lab.lower() in ph.lower() else f"{ph} › {lab}"
+    return lab
+
+
+def join_titles(titles):
+    """'Python › A' + 'Python › B' -> 'Python › A + B' (drop a repeated leading path)."""
+    out, prev = [], None
+    for t in dict.fromkeys(titles):
+        head, _, tail = t.rpartition(" › ")
+        if prev is not None and head and head == prev:
+            out.append(tail)
+        else:
+            out.append(t)
+        prev = head or None
+    return " + ".join(out)
+
+
+def human_detail(cid, idx):
+    """Concept range summary without item numbers: 'print() → for; input/output'."""
+    if idx is None:
+        return ""
+    items = E.COMPS[cid]["items"]
+    ranges, run = [], []
+    for i in sorted(idx):
+        if run and i == run[-1] + 1:
+            run.append(i)
+        else:
+            if run: ranges.append(run)
+            run = [i]
+    if run: ranges.append(run)
+    out = []
+    for r_ in ranges:
+        ta, tb = items[r_[0] - 1].replace("`", ""), items[r_[-1] - 1].replace("`", "")
+        out.append(ta if len(r_) == 1 else f"{ta} → {tb}")
+    return "; ".join(out)
+
+
 def slice_obj(sl):
     k, cid, idx = E.parse_slice(sl)
     if k == "comp":
         return {"ref": sl, "kind": "topic", "topicId": cid,
                 "conceptIds": None if idx is None else [f"{cid}#{i}" for i in sorted(idx)],
-                "label": E.slice_label(sl)}
+                "label": E.slice_label(sl), "title": human_topic(cid), "detail": human_detail(cid, idx)}
     if k == "project":
-        return {"ref": sl, "kind": "project", "projectId": cid, "label": E.slice_label(sl)}
-    return {"ref": sl, "kind": "activity", "activity": cid, "label": E.PSEUDO[cid]}
+        return {"ref": sl, "kind": "project", "projectId": cid, "label": E.slice_label(sl),
+                "title": f"{E.PROJECT_TITLES[cid]} (project)", "detail": ""}
+    return {"ref": sl, "kind": "activity", "activity": cid, "label": E.PSEUDO[cid], "title": E.PSEUDO[cid], "detail": ""}
 
 a = next(i for i, s in enumerate(L) if s.startswith("### First 14 days"))
 day_plan = []
@@ -413,9 +459,9 @@ weeks = []
 for w in E.WEEKS:
     lane, lnote, la, lb = E.dsa_lane_for(w["cw"])
     weeks.append({
-        "cw": w["cw"], "stage": w["stage"], "mainStage": w["main_stage"], "type": w["type"],
+        "cw": w["cw"], "title": join_titles(slice_obj(x)["title"] for x in w["p"]), "stage": w["stage"], "mainStage": w["main_stage"], "type": w["type"],
         "primary": [slice_obj(s) for s in w["p"]],
-        "supporting": [slice_obj(s) if s != "SETUP" else {"ref": "SETUP", "kind": "activity", "activity": "SETUP", "label": E.PSEUDO["SETUP"]} for s in w["s"]],
+        "supporting": [slice_obj(s) if s != "SETUP" else {"ref": "SETUP", "kind": "activity", "activity": "SETUP", "label": E.PSEUDO["SETUP"], "title": E.PSEUDO["SETUP"], "detail": ""} for s in w["s"]],
         "dsaLane": {"slices": [slice_obj(s) for s in lane], "note": lnote} if (lane or lnote) and w["cw"] >= 18 else None,
         "project": w["proj"] or None,
         "build": w["b"], "note": w["n"], "gate": w["g"] or None,
@@ -524,16 +570,6 @@ def slice_units(s):
         return []
     return s["conceptIds"] if s["conceptIds"] is not None else units_of(s["topicId"])
 
-def short(s):
-    if s["kind"] == "topic":
-        t = tmap[s["topicId"]]
-        rng = ""
-        if s["conceptIds"]:
-            idx = [int(x.split("#")[1]) for x in s["conceptIds"]]
-            rng = f" #{idx[0]}–{idx[-1]}" if len(idx) > 1 else f" #{idx[0]}"
-        return f"{t['id']} {t['label']}{rng}"
-    return s["label"]
-
 client_index = {
     "phases": [{"id": p["id"], "t": p["title"], "topics": [x for x in p["topicIds"] if tmap[x]["kind"] == "concepts"]} for p in phases],
     "topics": [{
@@ -547,13 +583,114 @@ client_index = {
         "cw": w["cw"], "s": w["stage"], "ty": w["type"], "g": w["gate"], "rg": w["requiredGate"],
         "u": [u for sl in w["primary"] + w["supporting"] for u in slice_units(sl)],
         "pu": [u for sl in w["primary"] for u in slice_units(sl)],
-        "t": " + ".join(short(sl) for sl in w["primary"]), "b": w["build"], "pj": w["project"],
+        "t": w["title"], "b": w["build"], "pj": w["project"],
     } for w in weeks],
     "gates": [{"id": c["id"], "t": c["title"], "k": c["kind"], "w": c["gateWeek"], "n": len(c["criteria"]), "r": c["requires"]} for c in checkpoints],
     "projects": [{"id": p["id"], "t": p["title"], "m": [m["id"] for m in p["milestones"]], "w": p["buildWeeks"]} for p in projects],
     "stages": [{"id": st["id"], "n": st["name"], "r": st["range"], "p": st["parent"]} for st in stages],
     "retest": meta["spacedRetestDays"],
 }
+
+
+# ------------------------------------------------------------------ AI-native engineering overlay (master section 109)
+def build_overlay():
+    """Parse master section 109 into a small structured document.
+
+    Format (strict, so the validator can check references):
+      ## 109.N Title            -> part
+      ### Heading               -> item inside the part (tier, mode, mission)
+      Key: value                -> scalar field
+      Key:  + '- ' bullets      -> list field
+    """
+    lines = RD.section("109")
+    parts, intro = [], []
+    part = item = None
+    last_key = None
+    in_code = False
+    code = []
+
+    def key_of(k):
+        return re.sub(r"[^a-z0-9]+", "_", k.strip().lower()).strip("_")
+
+    for s in lines:
+        if s.strip().startswith("```"):
+            if in_code:
+                (item or part)["code"] = "\n".join(code)
+                code = []
+            in_code = not in_code
+            continue
+        if in_code:
+            code.append(s)
+            continue
+        m2 = re.match(r"^## 109\.(\d+) (.+)$", s)
+        m3 = re.match(r"^### (.+)$", s)
+        if m2:
+            part = {"n": int(m2.group(1)), "title": m2.group(2).strip(), "text": [], "bullets": [], "items": []}
+            parts.append(part); item = None; last_key = None
+            continue
+        if m3 and part is not None:
+            head = m3.group(1).strip()
+            mm = re.match(r"^(AIM-\d\d) - (.+)$", head)
+            item = {"id": mm.group(1), "title": mm.group(2)} if mm else {"title": head}
+            part["items"].append(item); last_key = None
+            continue
+        if not s.strip() or s.strip() == "---":
+            continue
+        b = re.match(r"^\s*-\s+(.*)$", s)
+        target = item if item is not None else part
+        if b:
+            if target is None:
+                continue
+            if last_key and item is not None:
+                item.setdefault(last_key, []).append(b.group(1).strip())
+            else:
+                target["bullets"].append(b.group(1).strip())
+            continue
+        kv = re.match(r"^([A-Z][A-Za-z ]{1,24}):\s*(.*)$", s)
+        if kv and item is not None:
+            k, v = key_of(kv.group(1)), kv.group(2).strip()
+            if v:
+                item[k] = v; last_key = None
+            else:
+                item[k] = []; last_key = k
+            continue
+        if part is None:
+            intro.append(s.strip())
+        else:
+            target["text"] = target.get("text", []) + [s.strip()]
+
+    by_n = {p["n"]: p for p in parts}
+    def split_ids(v):
+        return [x.strip() for x in (v or "").split(",") if x.strip()]
+    tiers = []
+    for n, it in enumerate(by_n[3]["items"], 1):
+        tid = f"T{n}" if n <= 3 else "T4"
+        tiers.append({
+            "id": tid, "title": it["title"].replace("Tier 1 - ", "").replace("Tier 2 - ", "").replace("Tier 3 - ", ""),
+            "unlock": None if it.get("unlock") == "start" else it.get("unlock"),
+            "summary": it.get("summary", ""), "aiCan": it.get("ai_can", []),
+            "youOwn": it.get("you_stay_responsible_for", []), "security": it.get("operator_security", []),
+            "links": split_ids(it.get("links")), "pointerOnly": n > 3,
+        })
+    modes = [{"id": it["title"].lower(), "title": it["title"], "when": it.get("when", ""), "summary": it.get("summary", ""),
+              "aiCan": it.get("ai_can", []), "yours": it.get("keep_for_yourself", [])} for it in by_n[2]["items"]]
+    missions = [{"id": it["id"], "title": it["title"], "tier": int(it["tier"]), "requires": split_ids(it.get("requires")),
+                 "goal": it.get("goal", ""), "you": it.get("you_do", ""), "ai": it.get("ai_does", ""),
+                 "verify": it.get("verify", ""), "evidence": it.get("evidence", "")} for it in by_n[6]["items"]]
+    return {
+        "source": "master section 109",
+        "intro": [x for x in intro if x],
+        "loop": [x.strip("→ ").strip() for x in by_n[1].get("code", "").split("\n") if x.strip()],
+        "modes": modes,
+        "tiers": tiers,
+        "context": {"text": " ".join(by_n[4]["text"]), "points": by_n[4]["bullets"]},
+        "verification": {"text": " ".join(by_n[5]["text"]), "points": by_n[5]["bullets"]},
+        "missions": missions,
+        "checkpoints": " ".join(by_n[7]["text"]),
+    }
+
+
+ai_overlay = build_overlay()
 
 print("writing data/ ...")
 dump("meta.json", meta)
@@ -566,6 +703,7 @@ dump("projects.json", projects)
 dump("tracks.json", tracks)
 dump("resources.json", {"resources": resources, "tools": tools})
 dump("weeks.json", weeks)
+dump("ai-overlay.json", ai_overlay)
 (DATA / "client-index.json").write_text(json.dumps(client_index, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
 print(f"  client-index.json     {(DATA / 'client-index.json').stat().st_size:>9,} bytes")
 print(f"phases {len(phases)}  topics {len(topics)}  concepts {len(concepts)}  weeks {len(weeks)}  checkpoints {len(checkpoints)}  projects {len(projects)}  tracks {len(tracks)}  resources {len(resources)}  tools {len(tools)}")

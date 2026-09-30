@@ -7,6 +7,7 @@ import { useHydrated, useUserState } from "@/lib/store";
 import { hrefFor } from "@/lib/ids";
 import type { SearchEntry } from "@/types/curriculum";
 import { InlineText, cx } from "./ui";
+import { RefId } from "./Ref";
 
 let indexPromise: Promise<SearchEntry[]> | null = null;
 function loadIndex() {
@@ -19,10 +20,15 @@ function loadIndex() {
 
 type Hit = SearchEntry & { score: number };
 
+/** Lowercase and fold British/American spellings so "normalization" finds "normalisation". */
+export function fold(x: string) {
+  return x.toLowerCase().replace(/is(ation|e|ed|es|ing|er)\b/g, "iz$1").replace(/yse\b/g, "yze").replace(/our\b/g, "or");
+}
+
 function score(e: SearchEntry, q: string, tokens: string[]): number {
   const id = e.id.toLowerCase();
-  const t = e.t.toLowerCase();
-  const hay = `${id} ${t} ${e.s.toLowerCase()} ${e.k.toLowerCase()}`;
+  const t = fold(e.t);
+  const hay = `${id} ${t} ${fold(e.p ?? "")} ${fold(e.s)} ${e.k.toLowerCase()}`;
   if (!tokens.every((x) => hay.includes(x))) return 0;
   let sc = 1;
   if (id === q) sc += 100;
@@ -70,7 +76,7 @@ export function SearchView() {
   }, [s, ready]);
 
   const hits = useMemo<Hit[]>(() => {
-    const query = q.trim().toLowerCase();
+    const query = fold(q.trim());
     if (!query || !index) return [];
     const tokens = query.split(/\s+/).filter(Boolean);
     return [...personal, ...index]
@@ -93,11 +99,11 @@ export function SearchView() {
         type="search"
         value={q}
         onChange={(e) => { setQ(e.target.value); setKind("All"); }}
-        placeholder="Search phases, topics, concepts, weeks, projects, resources, DSA, career, notes"
+        placeholder="Search the roadmap, your notes and journals"
         aria-label="Search Roadmap OS"
         className="w-full rounded-lg border border-rule bg-surface px-4 py-3 text-base"
       />
-      <p className="mt-2 text-xs text-muted">Try an ID (P13.2, C3, PR07), a week number (&quot;week 88&quot;), or words (&quot;sliding window&quot;, &quot;docker&quot;).</p>
+      <p className="mt-2 text-xs text-muted">Try words (&quot;normalization&quot;, &quot;sliding window&quot;, &quot;docker&quot;) or a week (&quot;week 88&quot;).</p>
 
       {error && <p className="mt-4 rounded-md border border-danger/40 bg-danger-soft px-3 py-2 text-sm">The search index could not load ({error}). Reload the page; if it keeps failing, the deployment is missing /search-index.json.</p>}
       {!index && !error && <p className="mt-4 text-sm text-muted">Loading the search index.</p>}
@@ -118,15 +124,14 @@ export function SearchView() {
             {shown.map((h, i) => (
               <li key={`${h.k}-${h.id}-${i}`}>
                 <Link href={h.h} className="block px-3 py-2.5 hover:bg-surface-2">
-                  <span className="text-xs text-muted">{h.k} <span className="font-mono">{h.id}</span></span>
                   <span className="block"><InlineText text={h.t} /></span>
-                  {h.s && <span className="block truncate text-sm text-muted">{h.s}</span>}
+                  <span className="block truncate text-sm text-muted">{h.p ? `${h.p} · ${h.k}` : h.k}{h.p ? "" : h.s ? ` · ${h.s}` : ""} <RefId id={h.id} /></span>
                 </Link>
               </li>
             ))}
           </ul>
         ) : (
-          <p className="mt-6 text-center text-sm text-muted">Nothing matches &quot;{q}&quot;. Use fewer words, or search by an ID.</p>
+          <p className="mt-6 text-center text-sm text-muted">Nothing matches &quot;{q}&quot;. Try fewer words.</p>
         )
       )}
       {hits.length > 80 && kind === "All" && <p className="mt-2 text-xs text-muted">Showing the top 80 of {hits.length}. Narrow by type above.</p>}

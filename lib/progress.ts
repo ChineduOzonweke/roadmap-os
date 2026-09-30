@@ -193,3 +193,21 @@ export function unitLabel(u: string) {
 export function pct(n: number) {
   return `${Math.round(n * 100)}%`;
 }
+
+/** Human-readable name for any curriculum ID (phase, topic, concept, gate, project). */
+export function nameOf(id: string): string {
+  if (phaseById.has(id)) return phaseById.get(id)!.t;
+  if (topicById.has(id)) return topicById.get(id)!.t;
+  if (gateById.has(id)) return gateById.get(id)!.t;
+  if (projectById.has(id)) return projectById.get(id)!.t;
+  if (idx.ct[id] !== undefined) return idx.ct[id];
+  return id;
+}
+
+/** Checkpoints read as "Programmer checkpoint"; stage gates keep their descriptive title. */
+export function gateName(id: string): string {
+  const g = gateById.get(id);
+  if (!g) return id;
+  return g.k === "competency" ? `${g.t} checkpoint` : g.t;
+}
+

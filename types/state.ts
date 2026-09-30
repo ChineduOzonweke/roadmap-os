@@ -79,6 +79,21 @@ export type Application = {
   updatedAt: string;
 };
 
+// AI-native engineering overlay: one lightweight evidence entry per AI-assisted task.
+export type AiCanDoAlone = "yes" | "partly" | "no";
+export type AiLogEntry = {
+  id: string;
+  missionId: string | null; // AIM-01 .. AIM-12, or null for everyday use
+  task: string;
+  attemptedFirst: boolean; // did I try it myself before asking?
+  aiDid: string;
+  verified: string; // what I checked, and what the AI got wrong
+  aiErrorCaught: boolean;
+  canDoAlone: AiCanDoAlone;
+  createdAt: string;
+  updatedAt: string;
+};
+
 export type UserState = {
   version: number;
   updatedAt: string;
@@ -94,6 +109,7 @@ export type UserState = {
   dsa: DsaProblem[];
   stories: Story[];
   applications: Application[];
+  aiLog: AiLogEntry[]; // added after v1 shipped; normalize() defaults it to [] for older documents
 };
 
 export function emptyState(): UserState {
@@ -112,5 +128,6 @@ export function emptyState(): UserState {
     dsa: [],
     stories: [],
     applications: [],
+    aiLog: [],
   };
 }

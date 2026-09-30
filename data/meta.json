@@ -1,9 +1,9 @@
 {
  "source": {
   "file": "curriculum/source/MASTER_ROADMAP_VICTOR_2026_FINAL_2026-09-17.md",
-  "md5": "2951e64c4a6cd61691e30420b1f98f10",
+  "md5": "090f7c1c3e34bf04390f5c92373347d6",
   "version": "v1.0 (2026-09-24)",
-  "generated": "2026-09-24"
+  "generated": "2026-09-30"
  },
  "depthModel": [
   {
@@ -194,7 +194,9 @@
      "kind": "topic",
      "topicId": "P04.2",
      "conceptIds": null,
-     "label": "P04.2 Linear structures"
+     "label": "P04.2 Linear structures",
+     "title": "Data Structures & Algorithms › Linear structures",
+     "detail": ""
     },
     {
      "ref": "P04.5:1-7",
@@ -209,7 +211,9 @@
       "P04.5#6",
       "P04.5#7"
      ],
-     "label": "P04.5 Algorithm families · #1–7 (linear search → recursion)"
+     "label": "P04.5 Algorithm families · #1–7 (linear search → recursion)",
+     "title": "Data Structures & Algorithms › Algorithm families",
+     "detail": "linear search → recursion"
     }
    ],
    "note": "Re-test linear structures, hashing, search/sort (2-3 sessions/week)."
@@ -223,7 +227,9 @@
      "kind": "topic",
      "topicId": "P04.3",
      "conceptIds": null,
-     "label": "P04.3 Trees"
+     "label": "P04.3 Trees",
+     "title": "Data Structures & Algorithms › Trees",
+     "detail": ""
     }
    ],
    "note": "Trees, heaps, priority queues, tries."
@@ -237,7 +243,9 @@
      "kind": "topic",
      "topicId": "P04.4",
      "conceptIds": null,
-     "label": "P04.4 Graphs"
+     "label": "P04.4 Graphs",
+     "title": "Data Structures & Algorithms › Graphs",
+     "detail": ""
     }
    ],
    "note": "Graphs."
@@ -258,14 +266,18 @@
       "P04.5#12",
       "P04.5#13"
      ],
-     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)"
+     "label": "P04.5 Algorithm families · #8–13 (divide and conquer → bit manipulation)",
+     "title": "Data Structures & Algorithms › Algorithm families",
+     "detail": "divide and conquer → bit manipulation"
     },
     {
      "ref": "P04.6",
      "kind": "topic",
      "topicId": "P04.6",
      "conceptIds": null,
-     "label": "P04.6 Problem-solving patterns"
+     "label": "P04.6 Problem-solving patterns",
+     "title": "Data Structures & Algorithms › Problem-solving patterns",
+     "detail": ""
     }
    ],
    "note": "Algorithm families and problem-solving patterns; target C2 at CW66."
@@ -279,7 +291,9 @@
      "kind": "topic",
      "topicId": "P04.7",
      "conceptIds": null,
-     "label": "P04.7 Interview progression"
+     "label": "P04.7 Interview progression",
+     "title": "Data Structures & Algorithms › Interview progression",
+     "detail": ""
     }
    ],
    "note": "Interview progression: easy to medium, mistake log (master DSA track)."

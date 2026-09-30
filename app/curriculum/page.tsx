@@ -30,7 +30,7 @@ export default function Page() {
   return (
     <>
       <PageHeader
-        title="Curriculum"
+        title="Roadmap"
         lead={<>46 phases from the master roadmap. Open a phase to see its topics, then a topic to see its checklist, mastery criteria and dependencies. Locked content stays readable: locked only means you are not cleared to work on it yet. <Link className="text-accent underline" href="/guide">How status works</Link>.</>}
       />
       <CurriculumExplorer phases={data} />

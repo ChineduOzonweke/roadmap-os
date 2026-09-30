@@ -7,6 +7,7 @@ import { setResourceStatus } from "@/lib/actions";
 import type { Resource, Tool } from "@/types/curriculum";
 import type { ResourceStatus } from "@/types/state";
 import { ExternalLink, InlineText, cx } from "./ui";
+import { RefId } from "./Ref";
 
 const STATUS_OPTIONS: { id: ResourceStatus | ""; label: string }[] = [
   { id: "", label: "Not marked" },
@@ -86,7 +87,7 @@ export function ResourceBrowser({ resources, tools, phases }: { resources: Resou
                 <li key={r.id} className="flex flex-col gap-2 px-3 py-2.5 sm:flex-row sm:items-start sm:gap-4">
                   <div className="min-w-0 flex-1">
                     <p className="text-xs text-muted">
-                      <span className="font-mono">{r.id}</span>, {r.label}
+                      <RefId id={r.id} />, {r.label}
                       {r.phaseId ? `, ${r.phaseId} ${phaseTitle.get(r.phaseId) ?? ""}` : ", general"}
                       {r.group ? `, ${r.group}` : ""}
                     </p>
@@ -112,7 +113,7 @@ export function ResourceBrowser({ resources, tools, phases }: { resources: Resou
         <ul className="divide-y divide-rule rounded-lg border border-rule bg-surface">
           {tools.map((t) => (
             <li key={t.id} className="px-3 py-2.5">
-              <p className="text-xs text-muted"><span className="font-mono">{t.id}</span>, {t.activation}</p>
+              <p className="text-xs text-muted"><RefId id={t.id} />, {t.activation}</p>
               <p className="font-medium">{t.url ? <ExternalLink href={t.url}>{t.name}</ExternalLink> : t.name}</p>
               <p className="text-sm text-muted">{t.route}{!t.url && t.reference ? `. ${t.reference}` : ""}</p>
             </li>
