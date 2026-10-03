@@ -254,8 +254,9 @@ export function DependencyGraph({ nodes }: { nodes: GraphNode[] }) {
                   const faded = sel ? !on : dim(n.id) && dim(p);
                   return (
                     <path key={`${p}-${n.id}`} d={`M${x1},${y1} C${x1},${my} ${x2},${my} ${x2},${y2}`}
-                      stroke={on === "down" ? "var(--ok)" : on === "up" ? "var(--accent)" : "var(--rule)"}
-                      opacity={faded ? 0.25 : 1} strokeWidth={on ? 1.8 : 1.1} />
+                      stroke={on === "down" ? "var(--ok)" : on === "up" ? "var(--accent)" : "var(--rule-strong)"}
+                      opacity={faded ? 0.2 : 1} strokeWidth={on ? 2 : 1.1}
+                      style={{ transition: "opacity var(--dur-base) var(--ease-out), stroke var(--dur-base), stroke-width var(--dur-base)" }} />
                   );
                 }),
               )}
@@ -266,10 +267,10 @@ export function DependencyGraph({ nodes }: { nodes: GraphNode[] }) {
               const isSel = n.id === sel;
               const role = sel ? (isSel ? "sel" : ancestors.has(n.id) ? "up" : descendants.has(n.id) ? "down" : null) : null;
               return (
-                <g key={n.id} transform={`translate(${p.x},${p.y})`} opacity={dim(n.id) ? 0.3 : 1} className="cursor-pointer"
+                <g key={n.id} transform={`translate(${p.x},${p.y})`} opacity={dim(n.id) ? 0.3 : 1} className="cursor-pointer" style={{ transition: "opacity var(--dur-base) var(--ease-out)" }}
                   onClick={() => setSel(isSel ? null : n.id)} role="button" tabIndex={0} aria-label={`${n.id} ${n.title}`}
                   onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setSel(isSel ? null : n.id); } }}>
-                  <rect width={W} height={H} rx={n.kind === "gate" ? 20 : 6} fill={FILL[st]}
+                  <rect width={W} height={H} rx={n.kind === "gate" ? 20 : 5} fill={FILL[st]}
                     stroke={role === "sel" ? "var(--ink)" : role === "up" ? "var(--accent)" : role === "down" ? "var(--ok)" : "var(--rule)"}
                     strokeWidth={role ? 2 : 1} />
                   <text x={10} y={16} fontSize={10.5} fontFamily="var(--font-mono)" fill="var(--muted)">{n.id}{n.weekRange ? `  wk ${n.weekRange[0]}` : ""}</text>

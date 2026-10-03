@@ -10,7 +10,7 @@
  *
  * Bump VERSION to drop every old cache on the next visit.
  */
-const VERSION = "v1";
+const VERSION = "v2";
 const STATIC = `ros-static-${VERSION}`;
 const PAGES = `ros-pages-${VERSION}`;
 const ASSETS = `ros-assets-${VERSION}`;

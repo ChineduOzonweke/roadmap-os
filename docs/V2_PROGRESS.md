@@ -18,8 +18,8 @@ Branch: v2   Baseline: main @ b922317
 | UI-A | V2.1 visual reconnaissance + design decisions | done | 3ce4974 (pushed) |
 | UI-B/C/D | Tokens, fonts, primitives, app shell | done | ab5987e (pushed) |
 | UI-E | Today, Weeks, Projects, project detail | done | c095e94 (pushed) |
-| UI-F | Secondary screens | done | UI-F commit |
-| UI-G/H | Motion, graph visuals | not started | |
+| UI-F | Secondary screens | done | 11865f1 (pushed) |
+| UI-G/H | Motion, graph visuals, final consistency audit | done | V2.1 final commit |
 
 ## Phase B summary
 - Load path: every stored/synced/imported document goes through `readDocument` = migration registry (`lib/persistence/migrate.ts`) + hand-written validator/repair (`lib/persistence/sanitize.ts`). Unknown fields preserved at every level.
@@ -98,6 +98,9 @@ Branch: v2   Baseline: main @ b922317
 - Added a full v4 export/import round-trip test (sessions, review log, modes, evidence, project record, DSA attempts, tutor log fields): 144 tests.
 - README rewritten where stale (routes, `/` is Today, retention rule, scripts, env vars, quality section); PERSISTENCE.md device keys; `docs/V2_FINAL_REPORT.md` created.
 
+## V2.1 summary
+See docs/ROADMAP_OS_V21_VISUAL_AUDIT.md (Part 3) and docs/V2_FINAL_REPORT.md section 9. Final verification on the production build: `npm run check` OK, 144 tests, build OK; 24 routes x 360/1280 px with no errors, overflow or missing headings; light/dark screenshots at phone and desktop; keyboard focus ring verified; reduced-motion rule present in the built CSS; palette, Active Mode switch, session start/stop, export and import preview re-tested. Service worker cache bumped to v2 so devices drop pre-redesign caches.
+
 ## Decisions and deviations
 - STATE_VERSION stays 1 in Phase B: the only schema addition (`pastReviews`) is optional and backward compatible (older builds keep it via spread). The migration registry is in place, empty, and tested with synthetic migrations; the first real migration will come with Phase C/D state.
 - Automatic backups and "last exported" are device-local metadata in separate keys, not part of `UserState`, so exports do not carry another device's backup history.
@@ -105,6 +108,7 @@ Branch: v2   Baseline: main @ b922317
 - UI verification uses the desktop app's browser pane instead of Playwright, to avoid adding a dependency.
 - `.claude/launch.json` (local `next start` on port 3123 for the browser pane) is not committed.
 - Phase C: Active Mode is not yet an input to the Today plan; Phase E adds it to `todayPlan`. Reopening a finished stage keeps its first start time, so time spent can be overstated after jumping back.
+- V2.1: font packages `@fontsource-variable/inter` and `@fontsource/instrument-serif` added (OFL, files only); `@fontsource/ibm-plex-sans` removed. No UI framework or animation library added; no WebGL.
 - Phase J: added `@anthropic-ai/sdk` (server-only; not in any client bundle) as the official provider client, a deliberate exception to "avoid new dependencies".
 - Phase H: the palette is keyboard-first; on phones the bottom-bar Search page (same search engine) stays the entry point. Command palette DOM behaviour is verified in the browser rather than unit-tested (no DOM test environment, to avoid adding dependencies).
 - Phase F: screenshots and artifacts are stored as links, not files: browser storage (~5 MB, shared with automatic backups) cannot hold binaries safely. A cloud adapter could add file storage later.

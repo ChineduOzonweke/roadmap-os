@@ -156,7 +156,7 @@ export function BackupPanel({ curriculum }: { curriculum: Curriculum }) {
       )}
 
       <div>
-        <h3 className="text-sm font-semibold">Automatic backups on this device</h3>
+        <h3 className="t-eyebrow">Automatic backups on this device</h3>
         <p className="mt-1 text-sm text-muted">Taken weekly and before every import, restore or reset. The newest five are kept, in this browser only.</p>
         {ready && st.snapshots.length === 0 && <p className="mt-2 text-sm text-faint">None yet.</p>}
         <ul className="mt-2 divide-y divide-rule">
@@ -182,7 +182,7 @@ export function BackupPanel({ curriculum }: { curriculum: Curriculum }) {
       </div>
 
       <div>
-        <h3 className="text-sm font-semibold">Reset</h3>
+        <h3 className="t-eyebrow">Reset</h3>
         <p className="mt-1 text-sm text-muted">Clears every tick, mastery stage, gate record, note and journal entry in this browser. The curriculum is untouched, and current progress is saved as an automatic backup first.</p>
         <button type="button" disabled={!ready || st.readOnly} className="btn btn-danger btn-sm mt-2" onClick={() => {
           if (!window.confirm("Clear all progress in this browser? It is saved as an automatic backup first.")) return;

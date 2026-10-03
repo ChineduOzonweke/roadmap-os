@@ -2,7 +2,7 @@
 
 A personal learning operating system built on one canonical roadmap: Software Engineering to Machine Learning to AI/ML Engineering. It turns the master curriculum and its 206-week execution mapping into a working tool for deciding what to study, tracking checklists and mastery, passing gates, running projects, logging DSA practice, and preparing for a career.
 
-It is a Next.js web app. Open it from a phone or a laptop through one URL.
+It is a Next.js web app (installable as a PWA). Open it from a phone or a laptop through one URL. Visual system: docs/ROADMAP_OS_V21_VISUAL_AUDIT.md.
 
 ## What is in it
 

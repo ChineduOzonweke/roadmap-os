@@ -56,7 +56,7 @@ function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
                     aria-current={active ? "page" : undefined}
                     className={cx(
                       "flex min-h-10 items-center rounded-md px-3 text-[0.9375rem] transition-colors",
-                      active ? "bg-surface-2 font-medium text-ink shadow-[inset_2px_0_0_var(--accent)]" : "text-muted hover:bg-surface-2 hover:text-ink",
+                      active ? "bg-surface-2 font-medium text-ink accent-rule-left" : "text-muted hover:bg-surface-2 hover:text-ink",
                     )}
                   >
                     {it.label}

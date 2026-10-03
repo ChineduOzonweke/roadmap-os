@@ -124,3 +124,41 @@ Contrast (computed): every text token is >= 4.5:1 on bg, surface and surface-sub
 
 ### 3D / WebGL
 Evaluated for the dependency graph. The graph is a layered DAG of ~50 nodes whose meaning is order and prerequisite paths; a 2D layered layout already shows that exactly, and depth would hide labels and edges and add a continuous render loop and a large dependency. **Decision: no Three.js / WebGL.** Graph character comes from 2D styling (stage bands, state-coded nodes, path emphasis).
+
+## Part 3. What changed (V2.1)
+
+| Phase | Commit | Result |
+|---|---|---|
+| UI-A | 3ce4974 | This audit and the decisions above |
+| UI-B/C/D | ab5987e | Tokens, fonts, primitives, application shell |
+| UI-E | c095e94 | Today, Weeks, Projects, project detail |
+| UI-F | 11865f1 | Secondary screens |
+| UI-G/H | final V2.1 commit | Motion, graph styling, consistency sweep |
+
+### Design system as built
+- **Tokens** (`app/globals.css`): legacy implementation names kept (`--bg`, `--surface`, `--surface-2`, `--ink`, `--muted`, `--faint`, `--rule`, `--accent`, `--ok`, `--warn`, `--danger`...) with the new values; semantic aliases (`--background`, `--surface-subtle`, `--text-primary/secondary/muted`, `--border`, `--accent-subtle/strong`, `--success`, `--warning`, `--info`, `--focus`, `--control-border`), learning-state ramp (`--state-not-started` ... `--state-retained`, `--state-locked/available/in-progress`), radii 4/6/10, `--elev-float`, `--dur-fast` 120 ms, `--dur-base` 200 ms, `--ease-out`.
+- **Type roles**: `font-display` (Instrument Serif) for page titles, the day's mission, stage names and tier; `h-section` for section headings; `t-eyebrow` (mono, uppercase, tracked) for context and labels; `t-data` (mono, tabular) for week numbers, counts, timers and metrics; Inter for everything else.
+- **Primitives** (`components/ui.tsx`): editorial `PageHeader`, `Disclosure` with `flat`, `DisclosureGroup` (one surface, hairline-separated), `MasteryMark`, plus CSS `.btn*`, `.input`, `.chip` (now with `aria-checked`), `.card`, `.list-card`, `.rule-list`, `.accent-rule-top/left`, checkbox, `.pop-in`, disclosure reveal.
+- **Shell**: serif/mono wordmark, mono eyebrow nav groups, active item = ink text + 2 px accent rule, data-style week chip, content width 5xl, `shadow-float` only on floating layers, palette and sheets pop in.
+
+### Screen changes
+- **Today**: mono context line → serif mission → tally → one compact strip (Active Mode on phones, AI tier/mode) → the session as the only hero card (accent rule, serif heading) → primary checklist → reviews → hairline "Also today" → build → secondary sections on one grouped surface. The six-card wall and the stacked mode/AI cards are gone.
+- **Project detail**: at-a-glance strip (milestones, criteria, evidence, quality) → main column (milestones, criteria, engineering record on one surface, evidence) and side column (status, links, quality). Header facts as eyebrow labels.
+- **Projects / Weeks**: editorial index (mono numbers, serif stage names, mono ranges).
+- **DSA**: glance strip for stats; text buttons became 36 px targets. **Settings**: hairline-separated sections. **Career / criteria / quality** rows: 40 px minimum. **AI, Progress, error, 404**: serif titles; consistent `h-section`.
+- **State colour**: "in progress" = accent everywhere (graph, week map, project badge); amber only for due/attention; done/retained = green.
+- **Graph**: stronger default edges, 200 ms path/node transitions on focus, recessed locked nodes, tighter radii. No 3D.
+
+### Motion
+CSS only: hover/press 120 ms; disclosure reveal, session stage change, palette, sheets, toasts and the logged-session state 160–200 ms ease-out; graph focus fades. Nothing loops. `prefers-reduced-motion: reduce` disables every transition and animation (rule verified in the built CSS). View Transitions were not used: Next 16 exposes them only behind an experimental flag.
+
+### Accessibility
+WCAG 2.2 AA targets: text contrast computed above (all >= 4.5:1), control outlines >= 3:1, visible 2 px accent focus ring (verified with real Tab presses), radio chips expose `aria-checked` with a visible state, dialogs (palette, sheets) keep their existing focus management, small text buttons enlarged, no horizontal overflow at 360–1440 px.
+
+### Performance
+Fonts: Inter variable latin ~48 KB, Instrument Serif latin ~21 KB, Plex Mono as before, all self-hosted with `unicode-range`; IBM Plex Sans removed. No new JavaScript libraries for the redesign, no WebGL, no continuous animation; pages remain statically prerendered.
+
+### Known limitations and future work
+- The week page still uses the full-width AI explanation card (intentional: it is the explanation surface).
+- Remaining arbitrary sizes are the display-serif steps (2.125 / 2.625 rem page titles, 2.25–2.875 rem Today title, 1.5–1.75 rem sub-display); they could become named tokens.
+- Possible next steps: a stage-banded graph layout, View Transitions once stable in Next.

@@ -46,7 +46,7 @@ function MilestoneRow({ projectId, m, p }: { projectId: string; m: MilestoneView
   return (
     <li className="px-3 py-2.5">
       <div className="flex flex-wrap items-start gap-x-3 gap-y-2">
-        <span aria-hidden className={cx("mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full", status === "done" ? "bg-ok" : status === "doing" ? "bg-accent" : status === "blocked" ? "bg-danger" : "bg-rule-strong")} />
+        <span aria-hidden className={cx("mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full transition-colors duration-200", status === "done" ? "bg-ok" : status === "doing" ? "bg-accent" : status === "blocked" ? "bg-danger" : "bg-rule-strong")} />
         <button type="button" onClick={() => setOpen((v) => !v)} aria-expanded={open} className={cx("min-w-0 flex-1 text-left", status === "done" && "text-muted")}>
           {m.text}
           <span className="mt-0.5 block text-xs text-muted">

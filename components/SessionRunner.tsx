@@ -136,7 +136,7 @@ export function SessionRunner({ session: x, state: s, ctx }: { session: DailySes
   const stale = x.date < localDay(now);
 
   return (
-    <section aria-labelledby="session" className="card overflow-hidden shadow-[inset_0_2px_0_var(--accent)]">
+    <section aria-labelledby="session" className="card overflow-hidden accent-rule-top">
       <div className="border-b border-rule px-5 py-4">
         <div className="flex items-baseline justify-between gap-3">
           <h2 id="session" className="font-display text-[1.5rem] leading-tight">Today&apos;s session</h2>
@@ -242,7 +242,7 @@ export function SessionStart({ template, week, focus, leftOff, doneToday, prefer
   const start = (plan: SessionPlan) => startSession({ week, focus: plan === "review" ? [] : focus, stages: stagesOf(plan), plan });
   const done = doneToday.length > 0;
   return (
-    <section aria-labelledby="session" className={cx("card px-5 py-5", !done && "shadow-[inset_0_2px_0_var(--accent)]")}>
+    <section aria-labelledby="session" className={cx("card px-5 py-5", !done ? "accent-rule-top" : "pop-in")}>
       <p className="t-eyebrow">Daily work unit</p>
       <h2 id="session" className="mt-1 font-display text-[1.75rem] leading-tight">{done ? "Today's session is logged" : "Today's session"}</h2>
       {leftOff && !done && (

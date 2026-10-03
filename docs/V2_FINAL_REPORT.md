@@ -69,4 +69,16 @@ Cloud sync adapter; calendar anchoring of weeks; per-concept review if the curri
 
 ## 9. V2.1 visual redesign
 
-See section appended below and `docs/ROADMAP_OS_V21_VISUAL_AUDIT.md`.
+Full record: `docs/ROADMAP_OS_V21_VISUAL_AUDIT.md` (reconnaissance, decisions, what changed).
+
+- **Direction:** technical + editorial + quietly futuristic: warm paper (light) / charcoal workstation (dark), stone ink, one ink-blue accent; hierarchy from type, space and hairlines instead of boxes.
+- **Typography:** Instrument Serif (display), Inter (UI/body), IBM Plex Mono (technical), all SIL OFL and self-hosted. Editorial Old and Neue Montreal (commercial web licences) and SF Pro (Apple-platform licence) were evaluated and not embedded; Instrument Serif carries the editorial character.
+- **Colour:** semantic tokens with separately tuned light/dark values, computed contrast (text >= 4.5:1, control outlines >= 3:1), learning-state ramp; amber reserved for attention, accent for in-progress/current, green for done/retained.
+- **Components:** editorial page header, grouped flat disclosures, glance strips, mastery mark, accent rules, refined controls; shell with serif/mono wordmark and accent-rule navigation.
+- **Screens:** Today rebuilt around one hero session and a clear order; project detail with an at-a-glance strip and main/side columns; editorial indexes for Projects and Weeks; secondary screens aligned.
+- **Motion:** CSS only, 120–200 ms, no loops, fully disabled under reduced motion. **3D:** evaluated for the graph and rejected (no comprehension gain, real cost).
+- **Verification:** 24 routes x 360/1280 px with no errors or overflow; screenshots in both themes at phone and desktop widths; keyboard focus checked; palette, Active Mode, sessions, export and import re-tested on the redesigned build.
+
+## 10. Release
+
+`v2` is merged into `main` for production after the Vercel preview is confirmed healthy (see `docs/V2_PROGRESS.md` for the merge commit).
