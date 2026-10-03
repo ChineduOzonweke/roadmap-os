@@ -16,9 +16,12 @@ import { cx } from "./ui";
 
 function Brand() {
   return (
-    <Link href="/" className="flex items-center gap-2 font-semibold tracking-tight">
-      <span aria-hidden className="grid h-7 w-7 place-items-center rounded-lg bg-accent text-accent-ink"><IconRoadmap width={16} height={16} strokeWidth={2} /></span>
-      Roadmap OS
+    <Link href="/" className="flex items-center gap-2.5" aria-label="Roadmap OS, Today">
+      <span aria-hidden className="grid h-7 w-7 place-items-center rounded-md bg-accent text-accent-ink"><IconRoadmap width={16} height={16} strokeWidth={2} /></span>
+      <span aria-hidden className="flex items-baseline gap-1.5">
+        <span className="font-display text-[1.375rem] leading-none tracking-[-0.01em]">Roadmap</span>
+        <span className="font-mono text-[0.6875rem] font-medium uppercase tracking-[0.12em] text-muted">OS</span>
+      </span>
     </Link>
   );
 }
@@ -28,9 +31,9 @@ function WeekChip() {
   const ready = useHydrated();
   const stage = stageOfWeek(s.currentWeek);
   return (
-    <Link href="/" className="block rounded-lg bg-surface-2 px-3 py-2.5 hover:bg-rule">
-      <span className="block font-medium">{ready ? `Week ${s.currentWeek} of 206` : "Loading progress"}</span>
-      {ready && stage && <span className="block truncate text-xs text-muted">{stage.n}</span>}
+    <Link href="/" className="block rounded-md px-3 py-2 hover:bg-surface-2">
+      <span className="block font-mono text-xs tabular-nums text-muted">{ready ? <>WEEK <span className="text-ink">{String(s.currentWeek).padStart(3, "0")}</span> / 206</> : "Loading progress"}</span>
+      {ready && stage && <span className="block truncate text-sm">{stage.n}</span>}
     </Link>
   );
 }
@@ -40,8 +43,8 @@ function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
   return (
     <nav aria-label="Main">
       {NAV.map((g) => (
-        <div key={g.group} className="mb-4">
-          <p className="mb-1 px-3 text-xs font-medium text-faint">{g.group}</p>
+        <div key={g.group} className="mb-5">
+          <p className="t-eyebrow mb-1.5 px-3">{g.group}</p>
           <ul>
             {g.items.map((it) => {
               const active = isActive(pathname, it.href);
@@ -52,8 +55,8 @@ function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
                     onClick={onNavigate}
                     aria-current={active ? "page" : undefined}
                     className={cx(
-                      "flex min-h-10 items-center rounded-lg px-3 text-[0.9375rem]",
-                      active ? "bg-accent-soft font-medium text-accent" : "text-ink hover:bg-surface-2",
+                      "flex min-h-10 items-center rounded-md px-3 text-[0.9375rem] transition-colors",
+                      active ? "bg-surface-2 font-medium text-ink shadow-[inset_2px_0_0_var(--accent)]" : "text-muted hover:bg-surface-2 hover:text-ink",
                     )}
                   >
                     {it.label}
@@ -92,7 +95,7 @@ export function AppShell({ children }: { children: ReactNode }) {
         Skip to content
       </a>
 
-      <aside className="sticky top-0 hidden h-dvh flex-col gap-4 overflow-y-auto border-r border-rule bg-surface px-3 py-4 scroll-thin lg:flex">
+      <aside className="sticky top-0 hidden h-dvh flex-col gap-3 overflow-y-auto border-r border-rule bg-surface px-3 py-5 scroll-thin lg:flex">
         <div className="px-2"><Brand /></div>
         <CommandPaletteButton />
         <WeekChip />
@@ -105,7 +108,7 @@ export function AppShell({ children }: { children: ReactNode }) {
       </aside>
 
       <div className="min-w-0">
-        <header className="sticky top-0 z-30 flex h-14 items-center justify-between border-b border-rule bg-surface/95 px-4 backdrop-blur lg:hidden">
+        <header className="sticky top-0 z-30 flex h-14 items-center justify-between border-b border-rule bg-bg/90 px-4 backdrop-blur lg:hidden">
           <Brand />
           <div className="flex items-center">
             <ThemeToggle />
@@ -114,7 +117,7 @@ export function AppShell({ children }: { children: ReactNode }) {
 
         <StorageBanner />
         <OfflineNotice />
-        <main id="main" className="mx-auto w-full max-w-4xl px-4 pb-32 pt-6 sm:px-6 lg:px-10 lg:pb-16 lg:pt-10">
+        <main id="main" className="mx-auto w-full max-w-5xl px-4 pb-32 pt-6 sm:px-6 lg:px-10 lg:pb-16 lg:pt-10">
           {children}
         </main>
       </div>
@@ -122,14 +125,14 @@ export function AppShell({ children }: { children: ReactNode }) {
       <CommandPalette />
       <ServiceWorkerRegistration />
 
-      <nav aria-label="Quick" className="fixed inset-x-0 bottom-0 z-30 border-t border-rule bg-surface/95 pb-[env(safe-area-inset-bottom)] shadow-[0_-4px_16px_rgb(0_0_0/0.04)] backdrop-blur lg:hidden">
+      <nav aria-label="Quick" className="fixed inset-x-0 bottom-0 z-30 border-t border-rule bg-surface/95 pb-[env(safe-area-inset-bottom)] backdrop-blur lg:hidden">
         <ul className="mx-auto grid max-w-md grid-cols-5 px-1">
           {BOTTOM.map(({ href, label, Icon }) => {
             const active = isActive(pathname, href);
             return (
               <li key={href}>
-                <Link href={href} aria-current={active ? "page" : undefined} className={cx("group flex min-h-[3.75rem] flex-col items-center justify-center gap-1 pb-1.5 pt-2 text-xs", active ? "font-medium text-accent" : "text-muted active:text-ink")}>
-                  <span className={cx("flex h-8 w-14 items-center justify-center rounded-full transition-colors", active ? "bg-accent-soft" : "group-active:bg-surface-2")}><Icon width={22} height={22} /></span>
+                <Link href={href} aria-current={active ? "page" : undefined} className={cx("group flex min-h-[3.75rem] flex-col items-center justify-center gap-1 pb-1.5 pt-2 text-xs", active ? "font-medium text-ink" : "text-muted active:text-ink")}>
+                  <span className={cx("flex h-8 w-14 items-center justify-center rounded-full transition-colors", active ? "bg-accent-soft text-accent" : "group-active:bg-surface-2")}><Icon width={22} height={22} /></span>
                   {label}
                 </Link>
               </li>
@@ -147,7 +150,7 @@ export function AppShell({ children }: { children: ReactNode }) {
       {menu && (
         <div className="fixed inset-0 z-40 lg:hidden" role="dialog" aria-modal="true" aria-label="All sections" id="more-menu">
           <button type="button" className="absolute inset-0 bg-black/40" aria-label="Close menu" onClick={() => setMenu(false)} />
-          <div className="absolute inset-x-0 bottom-0 max-h-[85dvh] overflow-y-auto rounded-t-2xl bg-surface px-3 pb-[calc(1.5rem+env(safe-area-inset-bottom))] pt-2 shadow-[0_-8px_32px_rgb(0_0_0/0.18)]">
+          <div className="pop-in absolute inset-x-0 bottom-0 max-h-[85dvh] overflow-y-auto rounded-t-xl bg-surface px-3 pb-[calc(1.5rem+env(safe-area-inset-bottom))] pt-2 shadow-float">
             <div aria-hidden className="mx-auto mb-2 h-1 w-10 rounded-full bg-rule-strong" />
             <div className="mb-3 flex items-center justify-between">
               <span className="px-3 font-semibold">All sections</span>

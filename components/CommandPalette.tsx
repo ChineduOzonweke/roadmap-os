@@ -30,7 +30,7 @@ function useIsMac() {
 export function CommandPaletteButton() {
   const mac = useIsMac();
   return (
-    <button type="button" onClick={openCommandPalette} className="flex w-full items-center gap-2 rounded-lg border border-rule px-3 py-2 text-sm text-muted hover:bg-surface-2">
+    <button type="button" onClick={openCommandPalette} className="flex w-full items-center gap-2 rounded-md border border-rule bg-bg px-3 py-2 text-sm text-muted transition-colors hover:border-rule-strong hover:text-ink">
       <IconSearch width={15} height={15} />
       <span className="flex-1 text-left">Jump to…</span>
       <kbd className="rounded border border-rule px-1.5 font-mono text-[0.6875rem]">{mac ? "⌘" : "Ctrl"} K</kbd>
@@ -128,8 +128,8 @@ export function CommandPalette() {
 
   const optionId = (i: number) => `${listId}-opt-${i}`;
   return (
-    <div className="fixed inset-0 z-50 flex items-start justify-center bg-black/40 px-3 pt-[10vh]" onMouseDown={(e) => { if (e.target === e.currentTarget) close(); }}>
-      <div role="dialog" aria-modal="true" aria-label="Command palette" className="w-full max-w-xl overflow-hidden rounded-xl border border-rule bg-surface shadow-[0_16px_48px_rgb(0_0_0/0.3)]">
+    <div className="fixed inset-0 z-50 flex items-start justify-center bg-black/35 px-3 pt-[10vh] backdrop-blur-[2px]" onMouseDown={(e) => { if (e.target === e.currentTarget) close(); }}>
+      <div role="dialog" aria-modal="true" aria-label="Command palette" className="pop-in w-full max-w-xl overflow-hidden rounded-xl border border-rule bg-surface shadow-float">
         <div className="flex items-center gap-2 border-b border-rule px-3">
           <IconSearch width={16} height={16} className="shrink-0 text-faint" />
           <input

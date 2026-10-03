@@ -8,7 +8,7 @@ import { cx } from "./ui";
 const CELL: Record<Status, string> = {
   completed: "bg-ok",
   mastered: "bg-ok",
-  in_progress: "bg-warn",
+  in_progress: "bg-accent",
   available: "bg-accent-soft border border-accent/40",
   locked: "bg-surface-2",
 };
@@ -60,7 +60,7 @@ export function WeekStrip({ compact = false }: { compact?: boolean }) {
       {!compact && (
         <div className="flex flex-wrap gap-x-4 gap-y-1 pt-2 text-xs text-muted">
           <Legend className="bg-ok" label="Complete" />
-          <Legend className="bg-warn" label="In progress" />
+          <Legend className="bg-accent" label="In progress" />
           <Legend className="border border-accent/40 bg-accent-soft" label="Cleared" />
           <Legend className="bg-surface-2" label="Behind a gate" />
           <span className="inline-flex items-center gap-1.5"><span className="relative h-3 w-3 rounded-[3px] bg-surface-2"><span className="absolute -bottom-1 left-1/2 h-1 w-[2px] -translate-x-1/2 bg-ink/70" /></span>Gate week</span>

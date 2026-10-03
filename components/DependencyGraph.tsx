@@ -21,9 +21,9 @@ const LEGEND: { status: Status; label: string }[] = [
 ];
 
 const FILL: Record<Status, string> = {
-  locked: "var(--surface)",
-  available: "var(--accent-soft)",
-  in_progress: "var(--warn-soft)",
+  locked: "var(--surface-2)",
+  available: "var(--surface)",
+  in_progress: "var(--accent-soft)",
   completed: "var(--ok-soft)",
   mastered: "var(--ok-soft)",
 };

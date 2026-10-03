@@ -6,7 +6,7 @@ export function pwaIcon(size: number, { maskable = false }: { maskable?: boolean
   const glyph = Math.round(size * (maskable ? 0.46 : 0.58));
   return new ImageResponse(
     (
-      <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center", background: "#0a5f6b", borderRadius: maskable ? 0 : Math.round(size * 0.2) }}>
+      <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center", background: "#2747a8", borderRadius: maskable ? 0 : Math.round(size * 0.2) }}>
         <svg width={glyph} height={glyph} viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
           <circle cx="6" cy="18" r="2" />
           <circle cx="18" cy="6" r="2" />

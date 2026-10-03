@@ -32,7 +32,7 @@ export function ProjectStatusBadge({ id }: { id: string }) {
   const ready = useHydrated();
   if (!ready) return null;
   const st = s.projects[id]?.status ?? "not_started";
-  const style = st === "complete" ? "bg-ok-soft text-ok" : st === "in_progress" ? "bg-warn-soft text-warn" : "bg-surface-2 text-muted";
+  const style = st === "complete" ? "bg-ok-soft text-ok" : st === "in_progress" ? "bg-accent-soft text-accent" : "bg-surface-2 text-muted";
   return <span className={cx("rounded px-1.5 py-0.5 text-xs font-medium", style)}>{STATUS.find((x) => x.id === st)?.label}</span>;
 }
 
