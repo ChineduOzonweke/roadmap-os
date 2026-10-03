@@ -6,6 +6,7 @@ import { useEffect, useState, type ReactNode } from "react";
 import { NAV, isActive } from "@/lib/nav";
 import { useHydrated, useUserState } from "@/lib/store";
 import { stageOfWeek } from "@/lib/progress";
+import { StorageBanner } from "./StorageNotices";
 import { ThemeToggle } from "./ThemeToggle";
 import { IconClose, IconMore, IconProgress, IconRoadmap, IconSearch, IconToday } from "./icons";
 import { cx } from "./ui";
@@ -106,6 +107,7 @@ export function AppShell({ children }: { children: ReactNode }) {
           </div>
         </header>
 
+        <StorageBanner />
         <main id="main" className="mx-auto w-full max-w-4xl px-4 pb-32 pt-6 sm:px-6 lg:px-10 lg:pb-16 lg:pt-10">
           {children}
         </main>

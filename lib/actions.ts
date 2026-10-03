@@ -1,6 +1,11 @@
 "use client";
 
-import { update, replaceState } from "@/lib/store";
+import { backupStore, flushSave, getState, refreshBackups, replaceState, takeSnapshot, update } from "@/lib/store";
+import type { SnapshotReason } from "@/lib/persistence";
+import { readDocument } from "@/lib/persistence/migrate";
+import {
+  buildExport, exportFilename, hasProgress, parseImport, serializeExport, type ImportPreview,
+} from "@/lib/persistence/portable";
 import { newId } from "@/lib/ids";
 import {
   emptyState,
@@ -46,7 +51,12 @@ export function setMastery(topicId: string, mastery: MasteryLevel) {
     const t = topicOf(s, topicId);
     const next: TopicProgress = { ...t, mastery, updatedAt: now() };
     if (mastery >= 4 && !t.demonstratedAt) next.demonstratedAt = now();
-    if (mastery < 4) {
+    if (mastery < 4 && t.mastery >= 4) {
+      // Keep the finished re-test cycle as history; a new cycle starts when the topic is demonstrated again.
+      if (t.reviews.count > 0 || t.demonstratedAt) {
+        const cycle = { ...t.reviews, ...(t.demonstratedAt ? { demonstratedAt: t.demonstratedAt } : {}), endedAt: now() };
+        next.pastReviews = [...(t.pastReviews ?? []), cycle];
+      }
       delete next.demonstratedAt;
       next.reviews = { count: 0 };
     }
@@ -202,20 +212,82 @@ export function deleteAiLog(id: string) {
   update((s) => ({ ...s, aiLog: s.aiLog.filter((x) => x.id !== id) }));
 }
 
-// ---- whole-state operations
-export function importState(json: string): { ok: true } | { ok: false; error: string } {
-  try {
-    const parsed = JSON.parse(json);
-    if (!parsed || typeof parsed !== "object" || !("checks" in parsed)) {
-      return { ok: false, error: "This file is not a Roadmap OS export: it has no progress data." };
-    }
-    replaceState(parsed as UserState);
-    return { ok: true };
-  } catch {
-    return { ok: false, error: "This file is not valid JSON. Export a fresh copy and try again." };
-  }
+// ---- whole-state operations (backup, import, reset). Each one that replaces progress
+// takes an automatic local backup first and refuses to continue if that fails,
+// unless the caller explicitly passes `force` after the user has agreed.
+type Result = { ok: true } | { ok: false; error: string; needsForce?: boolean };
+
+function backupFirst(reason: SnapshotReason, force: boolean): Result {
+  const current = getState();
+  if (!hasProgress(current)) return { ok: true };
+  const r = takeSnapshot(reason, current);
+  if (r.ok || force) return { ok: true };
+  return { ok: false, error: `${r.error} Export a backup file first, or continue without an automatic backup.`, needsForce: true };
 }
 
-export function resetState() {
+/** Build the backup file for the current progress and remember when this device last exported. */
+export function exportBackup(curriculum: { md5: string; generated: string } | null): { filename: string; json: string } {
+  const at = new Date();
+  const json = serializeExport(buildExport(getState(), curriculum, at));
+  backupStore()?.setDevice({ lastExportAt: at.toISOString() });
+  refreshBackups();
+  return { filename: exportFilename(at), json };
+}
+
+/** Validate a backup file without changing anything. */
+export function previewImport(text: string, currentMd5?: string): ImportPreview {
+  return parseImport(text, currentMd5);
+}
+
+export function applyImport(preview: Extract<ImportPreview, { ok: true }>, force = false): Result {
+  const b = backupFirst("before-import", force);
+  if (!b.ok) return b;
+  replaceState(preview.state);
+  void flushSave();
+  return { ok: true };
+}
+
+export function restoreSnapshot(id: string, force = false): Result {
+  const snap = backupStore()?.get(id);
+  if (!snap) return { ok: false, error: "That automatic backup no longer exists." };
+  const doc = readDocument(snap.state);
+  if (!doc.ok) return { ok: false, error: "That automatic backup cannot be read by this version of Roadmap OS." };
+  const b = backupFirst("before-restore", force);
+  if (!b.ok) return b;
+  replaceState(doc.state);
+  void flushSave();
+  return { ok: true };
+}
+
+export function snapshotNow(): Result {
+  const r = takeSnapshot("manual");
+  return r.ok ? { ok: true } : r;
+}
+
+/** A stored automatic backup as a standard backup file, so it can be kept outside the browser. */
+export function snapshotFile(id: string, curriculum: { md5: string; generated: string } | null): { filename: string; json: string } | null {
+  const snap = backupStore()?.get(id);
+  if (!snap) return null;
+  const at = new Date(snap.at);
+  return { filename: exportFilename(at).replace("backup", `auto-${snap.reason}`), json: serializeExport(buildExport(snap.state, curriculum, at)) };
+}
+
+/** Raw text of quarantined (unreadable or repaired) stored progress, for manual recovery. */
+export function quarantineFile(index: number): { filename: string; text: string } | null {
+  const q = backupStore()?.quarantined()[index];
+  if (!q) return null;
+  return { filename: `roadmap-os-recovered-${q.at.slice(0, 10)}.json`, text: q.raw };
+}
+
+export function resetState(force = false): Result {
+  const b = backupFirst("before-reset", force);
+  if (!b.ok) return b;
   replaceState(emptyState());
+  void flushSave();
+  return { ok: true };
+}
+
+/** Retry a failed save (for example after freeing browser storage). */
+export function retrySave(): Promise<boolean> {
+  return flushSave();
 }

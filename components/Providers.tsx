@@ -3,13 +3,13 @@
 import { ThemeProvider } from "next-themes";
 import { useEffect, type ReactNode } from "react";
 import { initStore } from "@/lib/store";
-import { getAdapter } from "@/lib/persistence";
+import { getAdapter, getBackupStore } from "@/lib/persistence";
 
 function StoreBoot() {
   useEffect(() => {
     let cleanup: (() => void) | undefined;
     let cancelled = false;
-    initStore(getAdapter()).then((c) => {
+    initStore(getAdapter(), getBackupStore()).then((c) => {
       if (cancelled) c();
       else cleanup = c;
     });

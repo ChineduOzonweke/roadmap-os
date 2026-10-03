@@ -1,11 +1,11 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { useRef, useState, useSyncExternalStore } from "react";
-import { useHydrated, useUserState, persistenceInfo, getState } from "@/lib/store";
-import { importState, resetState, setCurrentWeek, setFlag } from "@/lib/actions";
+import { useState, useSyncExternalStore } from "react";
+import { useHydrated, useUserState } from "@/lib/store";
+import { setCurrentWeek, setFlag } from "@/lib/actions";
+import { BackupPanel } from "./BackupPanel";
 import { SHOW_REFS_FLAG } from "./Ref";
-import { cx } from "./ui";
 
 const noop = () => () => {};
 
@@ -15,29 +15,14 @@ export function SettingsView({ dataInfo }: { dataInfo: { md5: string; generated:
   const { theme, setTheme } = useTheme();
   const mounted = useSyncExternalStore(noop, () => true, () => false);
   const [week, setWeek] = useState<string>("");
-  const [msg, setMsg] = useState<{ ok: boolean; text: string } | null>(null);
-  const file = useRef<HTMLInputElement>(null);
-  const info = ready ? persistenceInfo() : null;
-
-  const exportJson = () => {
-    const url = URL.createObjectURL(new Blob([JSON.stringify(getState(), null, 1)], { type: "application/json" }));
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = `roadmap-os-progress-${new Date().toISOString().slice(0, 10)}.json`;
-    a.click();
-    URL.revokeObjectURL(url);
-    setMsg({ ok: true, text: "Exported. Keep the file somewhere safe; import it on another device to carry progress over." });
-  };
-
-  const onImport = async (f: File) => {
-    if (!window.confirm("Importing replaces all progress in this browser with the file's contents. Continue?")) return;
-    const r = importState(await f.text());
-    setMsg(r.ok ? { ok: true, text: "Imported. Your progress now matches the file." } : { ok: false, text: r.error });
-  };
-
   const btn = "btn btn-secondary btn-sm";
   return (
     <div className="space-y-8">
+      <section id="backup" className="scroll-mt-20">
+        <h2 className="mb-2 text-base font-semibold">Backup and restore</h2>
+        <BackupPanel curriculum={{ md5: dataInfo.md5, generated: dataInfo.generated }} />
+      </section>
+
       <section>
         <h2 className="mb-2 text-base font-semibold">Appearance</h2>
         <div className="flex flex-wrap gap-2" role="group" aria-label="Theme">
@@ -68,27 +53,6 @@ export function SettingsView({ dataInfo }: { dataInfo: { md5: string; generated:
             <span className="text-muted">Adds the roadmap&apos;s internal codes (P13.2, C3, SG4, PR07) next to names, for cross-checking with the master roadmap. Off by default.</span>
           </span>
         </label>
-      </section>
-
-      <section>
-        <h2 className="mb-2 text-base font-semibold">Where your progress lives</h2>
-        <p className="text-sm">{info ? info.description : "Loading."}</p>
-        <p className="mt-1 text-sm text-muted">Until cloud sync is added, use export and import to move progress between your phone and laptop. Clearing browser data deletes local progress, so export regularly.</p>
-        {ready && <p className="mt-1 text-xs text-muted">Last change {s.updatedAt.startsWith("1970") ? "never" : new Date(s.updatedAt).toLocaleString()}. {Object.keys(s.checks).length} items ticked, {Object.keys(s.notes).length} notes, {s.dsa.length} DSA problems, {s.aiLog.length} AI log entries.</p>}
-        <div className="mt-3 flex flex-wrap gap-2">
-          <button type="button" onClick={exportJson} disabled={!ready} className={btn}>Export progress (JSON)</button>
-          <button type="button" onClick={() => file.current?.click()} disabled={!ready} className={btn}>Import progress</button>
-          <input ref={file} type="file" accept="application/json,.json" className="hidden" onChange={(e) => { const f = e.target.files?.[0]; if (f) void onImport(f); e.target.value = ""; }} />
-        </div>
-        {msg && <p role="status" className={cx("mt-3 rounded-md px-3 py-2 text-sm", msg.ok ? "bg-ok-soft text-ok" : "bg-danger-soft text-danger")}>{msg.text}</p>}
-      </section>
-
-      <section>
-        <h2 className="mb-2 text-base font-semibold">Reset</h2>
-        <p className="mb-2 text-sm text-muted">Deletes every tick, mastery stage, gate record, note and journal entry in this browser. The curriculum itself is untouched.</p>
-        <button type="button" disabled={!ready} onClick={() => { if (window.confirm("Delete all progress in this browser? Export first if you might want it back.")) { resetState(); setMsg({ ok: true, text: "Progress reset." }); } }} className="rounded-md border border-danger/50 px-3 py-2 text-sm text-danger hover:bg-danger-soft">
-          Reset all progress
-        </button>
       </section>
 
       <section>

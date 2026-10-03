@@ -8,6 +8,7 @@ import {
 } from "@/lib/progress";
 import { recordReview, setCheck, setCurrentWeek, setWeekDone } from "@/lib/actions";
 import { AiModeLine } from "./AiModeLine";
+import { BackupNudge } from "./StorageNotices";
 import { ConceptChecklist, NotesEditor } from "./progress";
 import { RefId } from "./Ref";
 import { Disclosure, Tally, cx } from "./ui";
@@ -121,6 +122,8 @@ export function Today({ dayPlans, dailyUnit, lanes }: {
           Build done too? Complete week {cw}{cw < 206 ? ` and start week ${cw + 1}` : ""}
         </button>
       )}
+
+      <BackupNudge />
 
      </div>
 

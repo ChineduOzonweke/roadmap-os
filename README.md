@@ -24,7 +24,7 @@ It is a Next.js web app. Open it from a phone or a laptop through one URL.
 | Career | `/career` | The master's 11 career tracks as checklists, portfolio stages, behavioural story bank, applications log, C7 status |
 | Notes | `/notes` | All notes in one place, filter, Markdown download |
 | Guide | `/guide` | Status, unlock, mastery, depth and priority rules, plus the master operating rules |
-| Settings | `/settings` | Theme, current week, export/import/reset progress, data version |
+| Settings | `/settings` | Backup and restore (export, previewed import, automatic local backups, recovered data, reset), theme, current week, data version |
 
 ## Run it locally
 
@@ -68,12 +68,13 @@ Every push to `main` redeploys automatically. If the curriculum data is ever inv
 
 Progress currently lives in the browser (`localStorage`, key `roadmap-os:state:v1`). That means **your phone and laptop do not share progress yet**, and clearing browser data deletes it.
 
-Until cloud sync ships, use **Settings > Export progress** to download a JSON file and **Import progress** on the other device. Export regularly as a backup.
+Until cloud sync ships, use **Settings > Backup > Export backup** to download a JSON file and **Import backup** on the other device. Export regularly: Today shows a one-line reminder when the last export from this device is more than 14 days old. The app also keeps automatic backups in the browser (weekly, and before every import, restore or reset), quarantines stored data it cannot read instead of overwriting it, and shows a banner if a save ever fails. Details: [docs/PERSISTENCE.md](docs/PERSISTENCE.md).
 
 The code is structured for the next stage:
 
 - All user data is one versioned, serialisable document (`types/state.ts`).
 - Components never touch storage. They call actions (`lib/actions.ts`) on a small store (`lib/store.ts`), which saves through a `PersistenceAdapter` (`lib/persistence/adapter.ts`).
+- Every loaded or imported document goes through schema migrations and validation (`lib/persistence/migrate.ts`, `sanitize.ts`). Unknown fields are preserved.
 - `lib/persistence/index.ts` is the single switch point. Adding Supabase means writing a second adapter that loads and saves the same document for the signed-in user, plus a sign-in screen. No page or component changes.
 
 ## How the curriculum data works
@@ -164,6 +165,7 @@ Server components render the static curriculum (about 1,940 pages are prerendere
 
 - `npm run data:validate`: OK, and seven deliberately corrupted datasets were each rejected with a precise message
 - `npm run typecheck` and `npm run lint`: clean
+- `npm test` (Vitest): persistence, migration, validation, export/import and backup tests
 - `npm run build`: succeeds, 1,941 routes prerendered
 - Production server: all routes return 200, unknown IDs return 404, a crawl of every internal link in every generated page found no broken links, and all 133 unique canonical resource and tool URLs appear in the rendered app
 - Headless browser at 390 px (Android phone width) and 1366 px, light and dark: no horizontal overflow, no console or hydration errors

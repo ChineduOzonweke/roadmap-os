@@ -13,6 +13,8 @@ export type TopicProgress = {
   evidence: string;
   demonstratedAt?: string;
   reviews: { count: number; last?: string };
+  /** Re-test cycles ended when mastery dropped below Demonstrated. Kept as history, never deleted. */
+  pastReviews?: { count: number; last?: string; demonstratedAt?: string; endedAt: string }[];
   updatedAt: string;
 };
 

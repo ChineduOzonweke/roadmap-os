@@ -1,0 +1,20 @@
+{
+ "version": 1,
+ "updatedAt": "2026-09-30T18:22:10.000Z",
+ "currentWeek": 12,
+ "checks": { "P01.1a#1": "2026-09-01T10:00:00.000Z", "P01.1a#2": "2026-09-02T10:00:00.000Z" },
+ "topics": {
+  "P01.1a": { "mastery": 4, "depth": 2, "evidence": "repo link", "demonstratedAt": "2026-09-10T10:00:00.000Z", "reviews": { "count": 1, "last": "2026-09-12T10:00:00.000Z" }, "updatedAt": "2026-09-12T10:00:00.000Z" },
+  "P01.1b": { "mastery": 2, "depth": null, "evidence": "", "reviews": { "count": 0 }, "updatedAt": "2026-09-13T10:00:00.000Z" }
+ },
+ "gates": { "G0": { "status": "passed", "criteria": { "0": true, "1": true }, "evidence": "explained aloud", "passedAt": "2026-09-20T10:00:00.000Z" } },
+ "weeks": { "1": { "done": true, "doneAt": "2026-09-07T10:00:00.000Z" }, "2": { "done": false } },
+ "projects": { "PR01": { "status": "in_progress", "milestones": { "PR01-M1": true }, "quality": {}, "repoUrl": "https://github.com/example/pr01" } },
+ "resources": { "RES-P01-01": "done" },
+ "flags": { "show-refs": true },
+ "notes": { "week:1": { "text": "Went fine.", "updatedAt": "2026-09-07T10:00:00.000Z" } },
+ "dsa": [{ "id": "dsa-1", "title": "Two Sum", "url": "", "source": "LeetCode", "difficulty": "easy", "status": "solved", "patterns": ["P04.6#2"], "missed": "", "why": "", "better": "", "notes": "", "revisitOn": "2026-10-01", "attempts": 2, "createdAt": "2026-09-05T10:00:00.000Z", "updatedAt": "2026-09-05T10:00:00.000Z" }],
+ "stories": [],
+ "applications": [],
+ "aiLog": []
+}

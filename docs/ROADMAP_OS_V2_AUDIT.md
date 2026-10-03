@@ -32,5 +32,13 @@ Verified: `npm run check` passes; `npm run build` passes (~1,940 static pages); 
 - PWA: none (no manifest, no service worker).
 - Socratic AI: none. `/ai` shows overlay tiers/modes/missions and the AI log. `lib/ai.ts` derives tier (from gates) and Learn/Build mode (from topic mastery).
 
+## Spot-check corrections (2026-10-03, on the Windows working copy, v2 @ 108194a)
+All claims above re-verified against the code: architecture, state fields, routes, the seven data-safety defects and the gap analysis are accurate. Additions:
+- The generator entry points are `parse_master.py` then `build_data.py` (which imports `reconcile_data`, `engine`, `render`); `npm run data:build` runs them via `python3`.
+- With `core.autocrlf=true` the working copy of the master has CRLF line endings, so `md5sum` on disk gives `d19cf26d...`. The committed blob is `c85d55c0...`, and the generator reads in text mode (CRLF -> LF), so it still records the correct MD5. Do not "fix" the file; compare with `git show HEAD:<path> | md5sum`.
+- No test runner and no Playwright package are installed (Playwright browsers are cached, the package is not). UI checks use the Claude desktop browser pane against `next start` rather than adding Playwright.
+- Cross-tab sync replaces the whole document on every `storage` event, so an edit made in the 300 ms debounce window of one tab can be overwritten by another tab's save. Low risk with one user; noted, not changed.
+- Vitest 5 requires `@types/node` >= 22; Vitest 4 is used to keep the existing `@types/node@20`.
+
 ## Planned approach for Phase B
 Keep storage key. Add a migration registry (v1 -> v2) and hand-written validators (no new runtime deps). On parse failure, quarantine the raw string under a separate key instead of overwriting. Flush on pagehide/visibilitychange and surface save failures in the UI. Automatic snapshot before import/reset (ring buffer of a few snapshots in localStorage). Export a versioned envelope {app, schemaVersion, exportedAt, curriculumMd5, state}; still accept bare v1 exports. Show "last backup" in Settings and a gentle backup prompt. Add Vitest for store/migration/validator/scheduler tests. Prepare a cloud adapter interface (Supabase env vars already documented in `.env.example`) without making anything depend on it.
