@@ -3,8 +3,10 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { useHydrated, useUserState } from "@/lib/store";
-import { deleteDsa, saveDsa } from "@/lib/actions";
-import type { DsaDifficulty, DsaProblem, DsaStatus } from "@/types/state";
+import { deleteDsa, logDsaAttempt, saveDsa } from "@/lib/actions";
+import { CLEAN_TO_RETIRE, MISTAKES, OUTCOMES, cleanStreak, dueResolves, mistakeCounts, mistakeLabel } from "@/lib/dsa";
+import { localDay } from "@/lib/today";
+import type { DsaAttempt, DsaDifficulty, DsaMistake, DsaProblem, DsaStatus } from "@/types/state";
 import { Bar, ExternalLink, cx } from "./ui";
 
 export type Pattern = { id: string; text: string; topicId: string; topicLabel: string };
@@ -24,8 +26,54 @@ const blank = (): Draft => ({
   notes: "", revisitOn: null, attempts: 0,
 });
 
-const plusDays = (d: number) => new Date(Date.now() + d * 86400000).toISOString().slice(0, 10);
-const today = () => new Date().toISOString().slice(0, 10);
+const plusDays = (d: number) => localDay(new Date(Date.now() + d * 86400000));
+const today = () => localDay();
+const outcomeLabel = (o: DsaAttempt["outcome"]) => (o === "clean" ? "Clean" : o === "with_help" ? "With help" : "Not solved");
+
+/** Log one attempt: outcome first, then (if it was not clean) what went wrong. */
+function AttemptForm({ p, onDone }: { p: DsaProblem; onDone: () => void }) {
+  const [outcome, setOutcome] = useState<DsaAttempt["outcome"] | null>(null);
+  const [mistake, setMistake] = useState<DsaMistake | "">("");
+  const [minutes, setMinutes] = useState("");
+  const [note, setNote] = useState("");
+  return (
+    <form
+      className="mt-2 space-y-2 rounded-lg border border-rule bg-surface-2/40 p-3"
+      onSubmit={(e) => {
+        e.preventDefault();
+        if (!outcome) return;
+        logDsaAttempt(p.id, { outcome, mistake: mistake || undefined, minutes: Number(minutes) || undefined, note });
+        onDone();
+      }}
+    >
+      <div className="flex flex-wrap gap-2" role="radiogroup" aria-label="Outcome">
+        {OUTCOMES.map((o) => (
+          <button key={o.id} type="button" role="radio" aria-checked={outcome === o.id} onClick={() => setOutcome(o.id)} className="chip">{o.label}</button>
+        ))}
+      </div>
+      {outcome && outcome !== "clean" && (
+        <label className="block text-sm">
+          <span className="mb-1 block text-muted">What went wrong</span>
+          <select className="input text-sm" value={mistake} onChange={(e) => setMistake(e.target.value as DsaMistake | "")}>
+            <option value="">Choose one (optional)</option>
+            {MISTAKES.map((m) => <option key={m.id} value={m.id}>{m.label}</option>)}
+          </select>
+        </label>
+      )}
+      <div className="grid gap-2 sm:grid-cols-[8rem_1fr]">
+        <label className="text-sm"><span className="mb-1 block text-muted">Minutes</span>
+          <input className="input text-sm" type="number" min={0} inputMode="numeric" value={minutes} onChange={(e) => setMinutes(e.target.value)} /></label>
+        <label className="text-sm"><span className="mb-1 block text-muted">Note</span>
+          <input className="input text-sm" value={note} onChange={(e) => setNote(e.target.value)} placeholder="The key insight, or where it broke" /></label>
+      </div>
+      <p className="text-xs text-muted">Not clean: back in 3 days. Clean: 14 days, then 30; {CLEAN_TO_RETIRE} clean solves in a row retire it.</p>
+      <div className="flex gap-2">
+        <button type="submit" className="btn btn-primary btn-sm" disabled={!outcome}>Log attempt</button>
+        <button type="button" className="btn btn-quiet btn-sm" onClick={onDone}>Cancel</button>
+      </div>
+    </form>
+  );
+}
 
 function ProblemForm({ initial, patterns, onDone }: { initial: Draft; patterns: Pattern[]; onDone: () => void }) {
   const [d, setD] = useState<Draft>(initial);
@@ -126,6 +174,7 @@ export function DsaJournal({ patterns, practice, laneNote }: { patterns: Pattern
   const [diff, setDiff] = useState("all");
   const [pattern, setPattern] = useState("all");
   const [view, setView] = useState<"problems" | "mistakes">("problems");
+  const [logging, setLogging] = useState<string | null>(null);
 
   const stats = useMemo(() => {
     const byPattern = new Map<string, number>();
@@ -134,7 +183,7 @@ export function DsaJournal({ patterns, practice, laneNote }: { patterns: Pattern
       total: s.dsa.length,
       solved: s.dsa.filter((p) => p.status === "solved").length,
       byDiff: DIFF.map((d) => [d, s.dsa.filter((p) => p.difficulty === d).length] as const),
-      due: s.dsa.filter((p) => p.revisitOn && p.revisitOn <= today()),
+      due: dueResolves(s.dsa, today()),
       top: [...byPattern.entries()].sort((a, b) => b[1] - a[1]).slice(0, 8),
     };
   }, [s.dsa]);
@@ -146,7 +195,8 @@ export function DsaJournal({ patterns, practice, laneNote }: { patterns: Pattern
     (diff === "all" || p.difficulty === diff) &&
     (pattern === "all" || p.patterns.includes(pattern)),
   );
-  const mistakes = s.dsa.filter((p) => p.missed || p.why || p.better);
+  const mistakes = s.dsa.filter((p) => p.missed || p.why || p.better || p.attemptLog?.some((a) => a.mistake));
+  const byType = mistakeCounts(s.dsa);
   const open = (d: Draft) => { setEditing(d); setFormKey((k) => k + 1); };
 
   return (
@@ -155,8 +205,31 @@ export function DsaJournal({ patterns, practice, laneNote }: { patterns: Pattern
         <div><p className="text-xs text-muted">Problems logged</p><p className="text-xl font-semibold tabular-nums">{stats.total}</p></div>
         <div><p className="text-xs text-muted">Solved alone</p><p className="text-xl font-semibold tabular-nums">{stats.solved}</p>{stats.total > 0 && <Bar value={stats.solved / stats.total} className="mt-1" label="Solved alone" />}</div>
         <div><p className="text-xs text-muted">By difficulty</p><p className="text-sm tabular-nums">{stats.byDiff.map(([d, n]) => `${d} ${n}`).join(", ")}</p></div>
-        <div><p className="text-xs text-muted">Due for revisit</p><p className={cx("text-xl font-semibold tabular-nums", stats.due.length > 0 && "text-warn")}>{stats.due.length}</p></div>
+        <div><p className="text-xs text-muted">Due to re-solve</p><p className={cx("text-xl font-semibold tabular-nums", stats.due.length > 0 && "text-warn")}>{stats.due.length}</p></div>
       </section>
+
+      {stats.due.length > 0 && (
+        <section aria-labelledby="resolve">
+          <h2 id="resolve" className="mb-1 text-base font-semibold">Due to re-solve today</h2>
+          <p className="mb-2 text-sm text-muted">Solve from a blank editor, no notes. Failed problems keep coming back until they are solved cleanly.</p>
+          <ul className="list-card">
+            {stats.due.map((p) => {
+              const last = p.attemptLog?.[p.attemptLog.length - 1];
+              return (
+                <li key={p.id} className="px-3 py-3">
+                  <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                    <span className="min-w-0 flex-1 font-medium">{p.url && /^https?:\/\//.test(p.url) ? <ExternalLink href={p.url}>{p.title}</ExternalLink> : p.title}</span>
+                    <span className="text-xs text-muted">due {p.revisitOn}{last ? `, last: ${outcomeLabel(last.outcome).toLowerCase()}${last.mistake ? ` (${mistakeLabel(last.mistake).toLowerCase()})` : ""}` : ""}</span>
+                  </div>
+                  {logging === p.id ? <AttemptForm p={p} onDone={() => setLogging(null)} /> : (
+                    <button type="button" className="btn btn-secondary btn-sm mt-2" onClick={() => setLogging(p.id)}>Log attempt</button>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      )}
 
       {editing ? (
         <ProblemForm key={formKey} initial={editing} patterns={patterns} onDone={() => setEditing(null)} />
@@ -205,13 +278,32 @@ export function DsaJournal({ patterns, practice, laneNote }: { patterns: Pattern
                     <span className="text-xs text-muted">{statusLabel(p.status)}{p.attempts ? `, ${p.attempts} attempt(s)` : ""}</span>
                   </div>
                   {p.patterns.length > 0 && <p className="mt-1 flex flex-wrap gap-1.5">{p.patterns.map((x) => <Link key={x} href={`/topics/${x.split("#")[0]}`} className="rounded bg-surface-2 px-1.5 py-0.5 text-xs hover:text-accent">{pText(x)}</Link>)}</p>}
-                  {p.revisitOn && <p className={cx("mt-1 text-xs", p.revisitOn <= today() ? "text-warn" : "text-muted")}>Revisit {p.revisitOn}</p>}
+                  <p className="mt-1 text-xs text-muted">
+                    {p.revisitOn ? <span className={cx(p.revisitOn <= today() && "text-warn")}>Re-solve {p.revisitOn}</span> : (p.attemptLog?.length ?? 0) > 0 && cleanStreak(p.attemptLog) >= CLEAN_TO_RETIRE ? "Retired: solved cleanly " + CLEAN_TO_RETIRE + " times in a row" : null}
+                    {p.cleanSolvedAt && <span>{p.revisitOn ? " · " : ""}last clean solve {p.cleanSolvedAt.slice(0, 10)}</span>}
+                    {(p.attemptLog?.length ?? 0) > 0 && cleanStreak(p.attemptLog) < CLEAN_TO_RETIRE && <span> · {cleanStreak(p.attemptLog)} of {CLEAN_TO_RETIRE} clean in a row</span>}
+                  </p>
+                  {(p.attemptLog?.length ?? 0) > 0 && (
+                    <details className="mt-1 text-xs">
+                      <summary className="cursor-pointer text-muted">Attempts ({p.attemptLog!.length})</summary>
+                      <ul className="mt-1 space-y-0.5">
+                        {[...p.attemptLog!].reverse().map((a, i) => (
+                          <li key={a.at + i}>
+                            <span className="tabular-nums text-muted">{a.at.slice(0, 10)}</span>{" "}
+                            <span className={a.outcome === "clean" ? "text-ok" : a.outcome === "failed" ? "text-danger" : "text-warn"}>{outcomeLabel(a.outcome)}</span>
+                            {a.mistake && <span className="text-muted">, {mistakeLabel(a.mistake).toLowerCase()}</span>}
+                            {a.minutes ? <span className="text-muted">, {a.minutes} min</span> : null}
+                            {a.note && <span className="text-muted">: {a.note}</span>}
+                          </li>
+                        ))}
+                      </ul>
+                    </details>
+                  )}
+                  {logging === p.id && <AttemptForm p={p} onDone={() => setLogging(null)} />}
                   {p.notes && <p className="mt-1 whitespace-pre-wrap text-sm text-muted">{p.notes}</p>}
                   <div className="mt-2 flex gap-3 text-xs">
                     <button type="button" className="text-accent hover:underline" onClick={() => open({ ...p })}>Edit</button>
-                    {p.revisitOn && p.revisitOn <= today() && (
-                      <button type="button" className="text-accent hover:underline" onClick={() => saveDsa({ ...p, attempts: p.attempts + 1, revisitOn: plusDays(p.status === "solved" ? 30 : 7) })}>Revisited today</button>
-                    )}
+                    {logging !== p.id && <button type="button" className="text-accent hover:underline" onClick={() => setLogging(p.id)}>Log attempt</button>}
                     <button type="button" className="text-danger hover:underline" onClick={() => { if (window.confirm(`Delete "${p.title}"?`)) deleteDsa(p.id); }}>Delete</button>
                   </div>
                 </li>
@@ -222,6 +314,12 @@ export function DsaJournal({ patterns, practice, laneNote }: { patterns: Pattern
           <p className="rounded-lg border border-dashed border-rule px-4 py-8 text-center text-sm text-muted">No mistakes recorded. Fill in &quot;what I missed&quot; when a problem goes wrong; the master DSA track treats this log as the main learning signal.</p>
         ) : (
           <ul className="space-y-3">
+            {byType.length > 0 && (
+              <li className="card p-3 text-sm">
+                <p className="font-medium">Mistakes by type</p>
+                <ul className="mt-1 space-y-0.5">{byType.map(([m, n]) => <li key={m} className="flex justify-between gap-3"><span>{mistakeLabel(m)}</span><span className="tabular-nums text-muted">{n}</span></li>)}</ul>
+              </li>
+            )}
             {mistakes.map((p) => (
               <li key={p.id} className="card p-3 text-sm">
                 <p className="font-medium">{p.title} <span className="text-xs font-normal text-muted">{p.patterns.map(pText).join(", ")}</span></p>

@@ -10,8 +10,8 @@ Branch: v2   Baseline: main @ b922317
 | D | Review queue + mastery retention | done | 74cce48 (pushed) |
 | E | Active Mode switcher | done | 09129a7 (pushed) |
 | F | Project milestones + evidence | done | 1b90924 (pushed) |
-| G | Portfolio / README export | done | phase G commit |
-| H | Command palette + DSA enhancements | not started | |
+| G | Portfolio / README export | done | d383372 (pushed) |
+| H | Command palette + DSA enhancements | done | phase H commit |
 | I | Graph pan/zoom + PWA | not started | |
 | J | Socratic AI layer (provider abstraction only, no secrets) | not started | |
 
@@ -67,6 +67,13 @@ Branch: v2   Baseline: main @ b922317
 - Tests: 93. Verified in the browser on PR03: output matched the recorded milestone states and evidence, gaps listed.
 - `vitest.config.ts` renamed to `.mts` (silences the ESM/CommonJS warning).
 
+## Phase H summary
+- Command palette (`components/CommandPalette.tsx`): Ctrl+K / Cmd+K anywhere, plus a "Jump to… Ctrl K" button in the desktop sidebar. Empty query lists pages; typing searches pages, commands (export a backup, switch Active Mode A-F), the static curriculum index (phases, topics, concepts, weeks, checkpoints, projects, resources, career, guide; loaded lazily on first open) and personal records (notes, DSA problems, career entries, evidence, session logs). Combobox/listbox semantics, arrow keys, Enter, Esc, Tab kept inside, focus restored on close, closes on navigation.
+- `lib/search.ts`: scoring, spelling folding, index loader and personal entries shared by `/search` and the palette (SearchView now imports it).
+- DSA (`lib/dsa.ts`, pure, tested): per-attempt log (outcome clean / with help / not solved, mistake type from 8 categories, minutes, note) and last clean-solve date (optional fields, schema unchanged at v4). Re-solve queue 3 / 14 / 30 days: any non-clean attempt -> 3 days and the clean streak resets; clean solves -> 14, then 30; three consecutive clean solves retire the problem. `revisitOn` still holds the next date, so Today's DSA line keeps working; manual dates still editable.
+- DSA journal UI: "Due to re-solve today" queue (not-yet-clean first, last outcome and mistake shown), "Log attempt" form, streak and last clean solve per problem, attempt history, mistakes counted by type in the mistake log. No LeetCode integration (manual workflow, per the brief).
+- Tests: 100. Verified in the browser: palette opened with Ctrl+K, search found a concept and Enter navigated to it, a mode command switched to C, Esc closed; DSA problem logged, failed attempt recorded with mistake/minutes and re-solve 3 days out; no overflow at 390 px.
+
 ## Decisions and deviations
 - STATE_VERSION stays 1 in Phase B: the only schema addition (`pastReviews`) is optional and backward compatible (older builds keep it via spread). The migration registry is in place, empty, and tested with synthetic migrations; the first real migration will come with Phase C/D state.
 - Automatic backups and "last exported" are device-local metadata in separate keys, not part of `UserState`, so exports do not carry another device's backup history.
@@ -74,6 +81,7 @@ Branch: v2   Baseline: main @ b922317
 - UI verification uses the desktop app's browser pane instead of Playwright, to avoid adding a dependency.
 - `.claude/launch.json` (local `next start` on port 3123 for the browser pane) is not committed.
 - Phase C: Active Mode is not yet an input to the Today plan; Phase E adds it to `todayPlan`. Reopening a finished stage keeps its first start time, so time spent can be overstated after jumping back.
+- Phase H: the palette is keyboard-first; on phones the bottom-bar Search page (same search engine) stays the entry point. Command palette DOM behaviour is verified in the browser rather than unit-tested (no DOM test environment, to avoid adding dependencies).
 - Phase F: screenshots and artifacts are stored as links, not files: browser storage (~5 MB, shared with automatic backups) cannot hold binaries safely. A cloud adapter could add file storage later.
 - Phase F: checkpoint completion is not blocked on evidence (the gate criteria checklist stays the authority); the evidence list sits next to it.
 - Phase E: mode descriptions are short paraphrases of master 0.3 kept in `lib/modes.ts` (the master prose lives in `meta.operatingRulesMd`, which is not structured per mode). Exams keeps the "Done this week" and notes sections so nothing is hidden irreversibly.

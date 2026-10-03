@@ -94,6 +94,16 @@ export type Note = { text: string; updatedAt: string };
 
 export type DsaDifficulty = "easy" | "medium" | "hard";
 export type DsaStatus = "todo" | "attempted" | "solved_with_help" | "solved";
+export type DsaMistake = "pattern" | "edge-case" | "off-by-one" | "complexity" | "implementation" | "misread" | "syntax" | "other";
+/** One attempt at a problem (phase H). See lib/dsa.ts for the re-solve rules. */
+export type DsaAttempt = {
+  at: string;
+  outcome: "clean" | "with_help" | "failed";
+  mistake?: DsaMistake;
+  minutes?: number;
+  note?: string;
+};
+
 export type DsaProblem = {
   id: string;
   title: string;
@@ -108,6 +118,8 @@ export type DsaProblem = {
   notes: string;
   revisitOn: string | null; // ISO date
   attempts: number;
+  attemptLog?: DsaAttempt[]; // phase H, optional
+  cleanSolvedAt?: string; // most recent clean solve (phase H)
   createdAt: string;
   updatedAt: string;
 };

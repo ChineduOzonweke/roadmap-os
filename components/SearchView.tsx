@@ -4,43 +4,10 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useHydrated, useUserState } from "@/lib/store";
-import { hrefFor } from "@/lib/ids";
+import { loadIndex, personalEntries, search, type Hit } from "@/lib/search";
 import type { SearchEntry } from "@/types/curriculum";
 import { InlineText } from "./ui";
 import { RefId } from "./Ref";
-
-let indexPromise: Promise<SearchEntry[]> | null = null;
-function loadIndex() {
-  indexPromise ??= fetch("/search-index.json").then((r) => {
-    if (!r.ok) throw new Error(`Search index returned ${r.status}`);
-    return r.json() as Promise<SearchEntry[]>;
-  });
-  return indexPromise;
-}
-
-type Hit = SearchEntry & { score: number };
-
-/** Lowercase and fold British/American spellings so "normalization" finds "normalisation". */
-export function fold(x: string) {
-  return x.toLowerCase().replace(/is(ation|e|ed|es|ing|er)\b/g, "iz$1").replace(/yse\b/g, "yze").replace(/our\b/g, "or");
-}
-
-function score(e: SearchEntry, q: string, tokens: string[]): number {
-  const id = e.id.toLowerCase();
-  const t = fold(e.t);
-  const hay = `${id} ${t} ${fold(e.p ?? "")} ${fold(e.s)} ${e.k.toLowerCase()}`;
-  if (!tokens.every((x) => hay.includes(x))) return 0;
-  let sc = 1;
-  if (id === q) sc += 100;
-  else if (id.startsWith(q)) sc += 40;
-  if (t === q) sc += 60;
-  else if (t.startsWith(q)) sc += 25;
-  else if (t.includes(q)) sc += 15;
-  tokens.forEach((x) => { if (t.includes(x)) sc += 4; });
-  if (e.k === "Phase" || e.k === "Topic" || e.k === "DSA topic") sc += 6;
-  if (e.k === "Project" || e.k === "Checkpoint") sc += 5;
-  return sc;
-}
 
 export function SearchView() {
   const params = useSearchParams();
@@ -54,7 +21,7 @@ export function SearchView() {
 
   useEffect(() => {
     let live = true;
-    loadIndex().then((x) => live && setIndex(x)).catch((e: Error) => { indexPromise = null; if (live) setError(e.message); });
+    loadIndex().then((x) => live && setIndex(x)).catch((e: Error) => { if (live) setError(e.message); });
     input.current?.focus();
     return () => { live = false; };
   }, []);
@@ -65,25 +32,9 @@ export function SearchView() {
     window.history.replaceState(null, "", url.toString());
   }, [q]);
 
-  const personal = useMemo<SearchEntry[]>(() => {
-    if (!ready) return [];
-    return [
-      ...s.dsa.map((p) => ({ k: "DSA journal", id: p.difficulty, t: p.title, s: `${p.source} ${p.patterns.join(" ")} ${p.missed} ${p.why} ${p.better} ${p.notes}`, h: "/dsa" })),
-      ...Object.entries(s.notes).map(([id, n]) => ({ k: "Note", id, t: n.text.split("\n")[0].slice(0, 120), s: n.text, h: id.startsWith("week:") ? `/weeks/${id.slice(5)}` : hrefFor(id) ?? "/notes" })),
-      ...s.stories.map((x) => ({ k: "Career", id: x.theme, t: x.title, s: `${x.situation} ${x.action} ${x.result}`, h: "/career#stories" })),
-      ...s.applications.map((x) => ({ k: "Career", id: x.stage, t: `${x.organisation}: ${x.role}`, s: x.notes, h: "/career#applications" })),
-    ];
-  }, [s, ready]);
+  const personal = useMemo<SearchEntry[]>(() => (ready ? personalEntries(s) : []), [s, ready]);
 
-  const hits = useMemo<Hit[]>(() => {
-    const query = fold(q.trim());
-    if (!query || !index) return [];
-    const tokens = query.split(/\s+/).filter(Boolean);
-    return [...personal, ...index]
-      .map((e) => ({ ...e, score: score(e, query, tokens) }))
-      .filter((h) => h.score > 0)
-      .sort((a, b) => b.score - a.score);
-  }, [q, index, personal]);
+  const hits = useMemo<Hit[]>(() => (index ? search([...personal, ...index], q) : []), [q, index, personal]);
 
   const kinds = useMemo(() => {
     const m = new Map<string, number>();

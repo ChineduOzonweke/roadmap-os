@@ -10,10 +10,11 @@ import { newId } from "@/lib/ids";
 import { localDay } from "@/lib/today";
 import { applyReview, undoReview } from "@/lib/reviews";
 import { switchMode } from "@/lib/modes";
+import { logAttempt } from "@/lib/dsa";
 import { idx } from "@/lib/progress";
 import {
   emptyState,
-  type ActiveModeId, type AiLogEntry, type DailySession, type SessionPlan, type SessionStage,
+  type ActiveModeId, type AiLogEntry, type DailySession, type DsaAttempt, type SessionPlan, type SessionStage,
   type Application, type DepthLevel, type DsaProblem, type GateStatus, type MasteryLevel,
   type EvidenceItem, type MilestoneDetail, type MilestoneStatus, type ProjectProgress, type ProjectRecord, type ProjectStatus, type ResourceStatus, type Story, type TopicProgress, type UserState,
 } from "@/types/state";
@@ -258,6 +259,11 @@ export function saveDsa(p: Omit<DsaProblem, "id" | "createdAt" | "updatedAt"> & 
     return { ...s, dsa: exists ? s.dsa.map((x) => (x.id === id ? item : x)) : [item, ...s.dsa] };
   });
 }
+/** Log one attempt; updates status, attempts, clean-solve date and the next re-solve date (lib/dsa.ts). */
+export function logDsaAttempt(id: string, attempt: Omit<DsaAttempt, "at">) {
+  update((s) => ({ ...s, dsa: s.dsa.map((p) => (p.id === id ? logAttempt(p, attempt, new Date()) : p)) }));
+}
+
 export function deleteDsa(id: string) {
   update((s) => ({ ...s, dsa: s.dsa.filter((x) => x.id !== id) }));
 }

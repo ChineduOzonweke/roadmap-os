@@ -1,6 +1,6 @@
 import {
   emptyState, STATE_VERSION,
-  type ActiveModeId, type AiLogEntry, type Application, type DailySession, type EvidenceItem, type MilestoneDetail,
+  type ActiveModeId, type AiLogEntry, type Application, type DailySession, type DsaAttempt, type DsaMistake, type EvidenceItem, type MilestoneDetail,
   type ProjectRecord, type SessionStage, type DepthLevel, type DsaProblem, type GateProgress, type MasteryLevel,
   type Note, type ProjectProgress, type ResourceStatus, type Story, type TopicProgress, type UserState,
 } from "@/types/state";
@@ -183,8 +183,10 @@ function evidence(v: Obj, i: number): EvidenceItem {
   };
 }
 
-function dsa(v: Obj, i: number): DsaProblem {
-  return {
+const MISTAKE_IDS = ["pattern", "edge-case", "off-by-one", "complexity", "implementation", "misread", "syntax", "other"] as const;
+
+function dsa(c: Ctx, v: Obj, i: number): DsaProblem {
+  const out: DsaProblem = {
     ...v,
     id: str(v.id) || `dsa-recovered-${i}`,
     title: str(v.title),
@@ -202,6 +204,30 @@ function dsa(v: Obj, i: number): DsaProblem {
     createdAt: str(v.createdAt, EPOCH),
     updatedAt: str(v.updatedAt, EPOCH),
   };
+  if (v.attemptLog !== undefined) {
+    const raw = Array.isArray(v.attemptLog) ? v.attemptLog : [];
+    out.attemptLog = raw
+      .filter((a): a is Obj => isObj(a) && typeof a.at === "string" && ["clean", "with_help", "failed"].includes(a.outcome as string))
+      .map((a) => {
+        const e: DsaAttempt = { ...a, at: a.at as string, outcome: a.outcome as DsaAttempt["outcome"] };
+        if (a.mistake !== undefined) {
+          if (MISTAKE_IDS.includes(a.mistake as DsaMistake)) e.mistake = a.mistake as DsaMistake;
+          else delete e.mistake;
+        }
+        if (a.minutes !== undefined) {
+          const m = int(a.minutes, 0, 10000);
+          if (m) e.minutes = m;
+          else delete e.minutes;
+        }
+        if (a.note !== undefined) e.note = str(a.note);
+        return e;
+      });
+    if (out.attemptLog.length !== raw.length) c.note(`dsa[${i}].attemptLog`, "unreadable attempts skipped", true);
+  }
+  const clean = optStr(v.cleanSolvedAt);
+  if (clean) out.cleanSolvedAt = clean;
+  else delete out.cleanSolvedAt;
+  return out;
 }
 
 function story(v: Obj, i: number): Story {
@@ -326,7 +352,7 @@ export function sanitizeState(input: unknown): { state: UserState; issues: Issue
       if (!isObj(v) || typeof v.text !== "string") return undefined;
       return { ...v, text: v.text, updatedAt: str(v.updatedAt, EPOCH) };
     }),
-    dsa: list(c, input.dsa, "dsa", dsa),
+    dsa: list(c, input.dsa, "dsa", (v, i) => dsa(c, v, i)),
     stories: list(c, input.stories, "stories", story),
     applications: list(c, input.applications, "applications", application),
     aiLog: list(c, input.aiLog, "aiLog", aiEntry),

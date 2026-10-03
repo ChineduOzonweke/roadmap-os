@@ -7,6 +7,7 @@ import { NAV, isActive } from "@/lib/nav";
 import { useHydrated, useUserState } from "@/lib/store";
 import { stageOfWeek } from "@/lib/progress";
 import { ActiveModeSwitcher } from "./ActiveMode";
+import { CommandPalette, CommandPaletteButton } from "./CommandPalette";
 import { StorageBanner } from "./StorageNotices";
 import { ThemeToggle } from "./ThemeToggle";
 import { IconClose, IconMore, IconProgress, IconRoadmap, IconSearch, IconToday } from "./icons";
@@ -92,6 +93,7 @@ export function AppShell({ children }: { children: ReactNode }) {
 
       <aside className="sticky top-0 hidden h-dvh flex-col gap-4 overflow-y-auto border-r border-rule bg-surface px-3 py-4 scroll-thin lg:flex">
         <div className="px-2"><Brand /></div>
+        <CommandPaletteButton />
         <WeekChip />
         <ActiveModeSwitcher variant="sidebar" />
         <NavLinks />
@@ -114,6 +116,8 @@ export function AppShell({ children }: { children: ReactNode }) {
           {children}
         </main>
       </div>
+
+      <CommandPalette />
 
       <nav aria-label="Quick" className="fixed inset-x-0 bottom-0 z-30 border-t border-rule bg-surface/95 pb-[env(safe-area-inset-bottom)] shadow-[0_-4px_16px_rgb(0_0_0/0.04)] backdrop-blur lg:hidden">
         <ul className="mx-auto grid max-w-md grid-cols-5 px-1">
