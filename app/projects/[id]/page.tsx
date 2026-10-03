@@ -7,6 +7,7 @@ import { ExternalLink, PageHeader, Section } from "@/components/ui";
 import { NotesEditor, TopicStatus } from "@/components/progress";
 import { ProjectControls } from "@/components/ProjectControls";
 import { parseRequirements } from "@/lib/projectSpec";
+import { PortfolioExport } from "@/components/PortfolioExport";
 import { RefId } from "@/components/Ref";
 
 export const dynamicParams = false;
@@ -28,6 +29,7 @@ export default async function Page({ params }: Props) {
   const p = getProject(id);
   if (!p) notFound();
   const quality = p.qualityProfile.flatMap((g) => meta.quality[g].map((text, i) => ({ key: `${g}-${i + 1}`, group: GROUP_LABEL[g], text })));
+  const requirements = parseRequirements(p.bodyMd);
   const phasesUsed = Array.from(new Set(p.relatedTopics.map((t) => t.split(".")[0])));
   const res = resources.filter((r) => r.url && r.phaseId && phasesUsed.includes(r.phaseId) && (r.label === "BUILD" || r.label === "PROJECT")).slice(0, 12);
   return (
@@ -49,9 +51,13 @@ export default async function Page({ params }: Props) {
           title={p.title}
           milestones={p.milestones}
           quality={quality}
-          requirements={parseRequirements(p.bodyMd)}
+          requirements={requirements}
           focus={p.qualityProfile.some((g) => g === "ml" || g === "ai") ? "ml" : "general"}
         />
+      </Section>
+
+      <Section title="README and case study">
+        <PortfolioExport project={{ id: p.id, title: p.title, purpose: p.purpose, milestones: p.milestones }} requirements={requirements} />
       </Section>
 
       <Section title="Master specification">

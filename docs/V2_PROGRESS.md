@@ -9,8 +9,8 @@ Branch: v2   Baseline: main @ b922317
 | C | Today + daily execution engine | done | fd135f7 (pushed) |
 | D | Review queue + mastery retention | done | 74cce48 (pushed) |
 | E | Active Mode switcher | done | 09129a7 (pushed) |
-| F | Project milestones + evidence | done | phase F commit |
-| G | Portfolio / README export | not started | |
+| F | Project milestones + evidence | done | 1b90924 (pushed) |
+| G | Portfolio / README export | done | phase G commit |
 | H | Command palette + DSA enhancements | not started | |
 | I | Graph pan/zoom + PWA | not started | |
 | J | Socratic AI layer (provider abstraction only, no secrets) | not started | |
@@ -59,6 +59,13 @@ Branch: v2   Baseline: main @ b922317
 - Projects are not identical: criteria come from each spec (PR01 "Must demonstrate", PR04 "Requirements" + "Then analyse", PR07 "Required questions", PR11 "Required documentation"...), and ML/AI projects lead with experiments and metrics.
 - Evidence UI (`components/Evidence.tsx`): add/edit/delete (delete confirms) on milestones, the whole project (any milestone selectable), topics (with a "Demonstrated should be backed by proof" hint) and checkpoints. New `/evidence` page lists everything, filterable by kind, linked back to what it proves; added to the nav under Practice.
 - Tests: 90 (requirement parser against the real `data/projects.json`, milestone status, subject labels, validation, v3->v4 migration, milestone/record/evidence actions). Verified in the browser: v3 data migrated to v4, milestone set to Doing (project moved to In progress), evidence added to a milestone and shown on the project list and `/evidence` with a link back, checkpoint and topic evidence sections render, no horizontal overflow at 390 px.
+
+## Phase G summary
+- `lib/portfolio.ts` (pure, tested): `buildPortfolio(input, "readme" | "case-study")` turns the project record into Markdown. README: problem, architecture, technical choices (table), implementation, experiments, metrics (table), milestone status, what it demonstrates (met master criteria + own definition of done), known issues/debugging, future, evidence, links. Case study adds goal, rejected alternatives, lessons and a status line.
+- Nothing is invented: empty sections are omitted and listed as "Not recorded yet"; empty decision/metric rows are skipped; table cells escape pipes, prose does not. Master purpose is only used as the README subtitle when no goal is written.
+- Project page: "README and case study" section with format toggle, rendered preview (headings demoted so the draft does not add a second h1), raw Markdown view, Copy and Download .md.
+- Tests: 93. Verified in the browser on PR03: output matched the recorded milestone states and evidence, gaps listed.
+- `vitest.config.ts` renamed to `.mts` (silences the ESM/CommonJS warning).
 
 ## Decisions and deviations
 - STATE_VERSION stays 1 in Phase B: the only schema addition (`pastReviews`) is optional and backward compatible (older builds keep it via spread). The migration registry is in place, empty, and tested with synthetic migrations; the first real migration will come with Phase C/D state.
