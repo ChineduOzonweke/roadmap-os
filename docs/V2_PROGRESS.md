@@ -14,7 +14,13 @@ Branch: v2   Baseline: main @ b922317
 | H | Command palette + DSA enhancements | done | 21725af (pushed) |
 | I | Graph pan/zoom + PWA | done | ed077e7 (pushed) |
 | J | Socratic AI layer | done | 8087fee (pushed) |
-| Stab. | Final engineering audit, docs | done | stabilization commit |
+| Stab. | Final engineering audit, docs | done | 3f67d0a (pushed) |
+| UI-A | V2.1 visual reconnaissance + design decisions | done | UI-A commit |
+| UI-B | Design tokens + fonts | not started | |
+| UI-C/D | Primitives + app shell | not started | |
+| UI-E | Today, Weeks, Projects, project detail | not started | |
+| UI-F | Secondary screens | not started | |
+| UI-G/H | Motion, graph visuals | not started | |
 
 ## Phase B summary
 - Load path: every stored/synced/imported document goes through `readDocument` = migration registry (`lib/persistence/migrate.ts`) + hand-written validator/repair (`lib/persistence/sanitize.ts`). Unknown fields preserved at every level.
