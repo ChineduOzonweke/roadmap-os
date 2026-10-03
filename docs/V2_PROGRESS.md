@@ -11,8 +11,8 @@ Branch: v2   Baseline: main @ b922317
 | E | Active Mode switcher | done | 09129a7 (pushed) |
 | F | Project milestones + evidence | done | 1b90924 (pushed) |
 | G | Portfolio / README export | done | d383372 (pushed) |
-| H | Command palette + DSA enhancements | done | phase H commit |
-| I | Graph pan/zoom + PWA | not started | |
+| H | Command palette + DSA enhancements | done | 21725af (pushed) |
+| I | Graph pan/zoom + PWA | done | phase I commit |
 | J | Socratic AI layer (provider abstraction only, no secrets) | not started | |
 
 ## Phase B summary
@@ -74,6 +74,12 @@ Branch: v2   Baseline: main @ b922317
 - DSA journal UI: "Due to re-solve today" queue (not-yet-clean first, last outcome and mistake shown), "Log attempt" form, streak and last clean solve per problem, attempt history, mistakes counted by type in the mistake log. No LeetCode integration (manual workflow, per the brief).
 - Tests: 100. Verified in the browser: palette opened with Ctrl+K, search found a concept and Enter navigated to it, a mode command switched to C, Esc closed; DSA problem logged, failed attempt recorded with mistake/minutes and re-solve 3 days out; no overflow at 390 px.
 
+## Phase I summary
+- Graph: zoom buttons (-, +, 100%, Fit), Ctrl/Cmd+wheel zoom anchored at the pointer, mouse drag to pan (touch keeps native scroll), auto-centre on selection, status/edge legend. No new library.
+- PWA: `app/manifest.ts`, PNG icons generated at build time with `next/og` (192, 512, maskable 512, apple-icon), `/offline` page, hand-written `public/sw.js` (cache-first hashed assets, network-first pages and RSC, stale-while-revalidate search index/manifest/icons, versioned caches, precached core pages, 200-page cap). Registered in production only; offline notice in the shell. No next.config or Vercel changes; no experimental flags.
+- Verified: icons and manifest served and linked; SW activated and controlling; with the server stopped, a visited week page, Today and the precached pages loaded from cache and hydrated with local progress, and an unvisited page showed /offline.
+- Tests: 102.
+
 ## Decisions and deviations
 - STATE_VERSION stays 1 in Phase B: the only schema addition (`pastReviews`) is optional and backward compatible (older builds keep it via spread). The migration registry is in place, empty, and tested with synthetic migrations; the first real migration will come with Phase C/D state.
 - Automatic backups and "last exported" are device-local metadata in separate keys, not part of `UserState`, so exports do not carry another device's backup history.
@@ -89,6 +95,7 @@ Branch: v2   Baseline: main @ b922317
 - Phase C: when a project milestone's text is identical to this week's build text, Today shows it once (in the build section).
 
 ## Known limitations
+- Offline covers pages opened before plus the precached core pages, not all ~1,950 curriculum pages.
 - UI checks in the desktop app's browser pane can stall on the loading skeleton while the Claude window is hidden (React's streaming reveal waits for an animation frame). Not an app bug; see the memory note. Real browsers are unaffected.
 - Automatic backups live in the same browser storage as progress: clearing site data removes both. Only exported files survive that; the Today nudge is the mitigation.
 - Cross-tab edits within the 300 ms save window can be overwritten by another tab (last writer wins).

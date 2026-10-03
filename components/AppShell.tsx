@@ -8,6 +8,7 @@ import { useHydrated, useUserState } from "@/lib/store";
 import { stageOfWeek } from "@/lib/progress";
 import { ActiveModeSwitcher } from "./ActiveMode";
 import { CommandPalette, CommandPaletteButton } from "./CommandPalette";
+import { OfflineNotice, ServiceWorkerRegistration } from "./Pwa";
 import { StorageBanner } from "./StorageNotices";
 import { ThemeToggle } from "./ThemeToggle";
 import { IconClose, IconMore, IconProgress, IconRoadmap, IconSearch, IconToday } from "./icons";
@@ -112,12 +113,14 @@ export function AppShell({ children }: { children: ReactNode }) {
         </header>
 
         <StorageBanner />
+        <OfflineNotice />
         <main id="main" className="mx-auto w-full max-w-4xl px-4 pb-32 pt-6 sm:px-6 lg:px-10 lg:pb-16 lg:pt-10">
           {children}
         </main>
       </div>
 
       <CommandPalette />
+      <ServiceWorkerRegistration />
 
       <nav aria-label="Quick" className="fixed inset-x-0 bottom-0 z-30 border-t border-rule bg-surface/95 pb-[env(safe-area-inset-bottom)] shadow-[0_-4px_16px_rgb(0_0_0/0.04)] backdrop-blur lg:hidden">
         <ul className="mx-auto grid max-w-md grid-cols-5 px-1">

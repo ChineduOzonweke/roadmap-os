@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { useHydrated, useUserState } from "@/lib/store";
 import { gatePassed, phaseRollup, type Status } from "@/lib/progress";
 import { StatusPill, cx } from "./ui";
@@ -10,6 +10,15 @@ export type GraphNode = { id: string; title: string; stages: string[]; weekRange
 
 const W = 164, H = 42, GX = 180, GY = 78, PAD = 16;
 const STAGES = ["S0", "S1", "S2", "S3", "S4", "S5", "S6", "S7", "S8"];
+const ZOOM_MIN = 0.35, ZOOM_MAX = 2, ZOOM_STEP = 1.25;
+const clampZoom = (z: number) => Math.min(ZOOM_MAX, Math.max(ZOOM_MIN, z));
+
+const LEGEND: { status: Status; label: string }[] = [
+  { status: "locked", label: "Locked" },
+  { status: "available", label: "Available" },
+  { status: "in_progress", label: "In progress" },
+  { status: "completed", label: "Completed / mastered" },
+];
 
 const FILL: Record<Status, string> = {
   locked: "var(--surface)",
@@ -82,6 +91,11 @@ export function DependencyGraph({ nodes }: { nodes: GraphNode[] }) {
   const [sel, setSel] = useState<string | null>(null);
   const [stage, setStage] = useState<string>("all");
   const [view, setView] = useState<"auto" | "graph" | "list">("auto");
+  const [zoom, setZoom] = useState(1);
+  const box = useRef<HTMLDivElement>(null);
+  // Point (in graph units) to keep under the same screen position across a zoom change.
+  const anchor = useRef<{ gx: number; gy: number; sx: number; sy: number } | null>(null);
+  const drag = useRef<{ x: number; y: number; left: number; top: number } | null>(null);
 
   const byId = useMemo(() => new Map(nodes.map((n) => [n.id, n])), [nodes]);
   const dependents = useMemo(() => {
@@ -101,6 +115,65 @@ export function DependencyGraph({ nodes }: { nodes: GraphNode[] }) {
   };
   const inStage = (id: string) => stage === "all" || (byId.get(id)?.stages ?? []).some((x) => x.startsWith(stage));
   const dim = (id: string) => (sel ? !(id === sel || ancestors.has(id) || descendants.has(id)) : !inStage(id));
+
+  const zoomTo = (next: number, at?: { sx: number; sy: number }) => {
+    const el = box.current;
+    const z = clampZoom(next);
+    if (el) {
+      const sx = at?.sx ?? el.clientWidth / 2, sy = at?.sy ?? el.clientHeight / 2;
+      anchor.current = { gx: (el.scrollLeft + sx) / zoom, gy: (el.scrollTop + sy) / zoom, sx, sy };
+    }
+    setZoom(z);
+  };
+  const fit = () => {
+    const el = box.current;
+    if (el) { anchor.current = null; setZoom(clampZoom((el.clientWidth - 8) / width)); el.scrollTo({ left: 0, top: 0 }); }
+  };
+
+  useLayoutEffect(() => {
+    const el = box.current, a = anchor.current;
+    if (!el || !a) return;
+    el.scrollLeft = a.gx * zoom - a.sx;
+    el.scrollTop = a.gy * zoom - a.sy;
+    anchor.current = null;
+  }, [zoom]);
+
+  // Ctrl/Cmd + wheel (and trackpad pinch, which browsers report the same way) zooms around the pointer.
+  useEffect(() => {
+    const el = box.current;
+    if (!el) return;
+    const onWheel = (e: WheelEvent) => {
+      if (!e.ctrlKey && !e.metaKey) return;
+      e.preventDefault();
+      const r = el.getBoundingClientRect();
+      zoomTo(zoom * (e.deltaY < 0 ? 1.1 : 1 / 1.1), { sx: e.clientX - r.left, sy: e.clientY - r.top });
+    };
+    el.addEventListener("wheel", onWheel, { passive: false });
+    return () => el.removeEventListener("wheel", onWheel);
+  });
+
+  // Bring the selection into view when it is chosen from the list or the select box.
+  useEffect(() => {
+    const el = box.current, p = sel ? xy.get(sel) : null;
+    if (!el || !p) return;
+    el.scrollTo({ left: (p.x + W / 2) * zoom - el.clientWidth / 2, top: (p.y + H / 2) * zoom - el.clientHeight / 2, behavior: "smooth" });
+    // Only when the selection changes, not on every zoom step.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [sel]);
+
+  const onPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (e.pointerType !== "mouse" || e.button !== 0 || (e.target as Element).closest("[role=button]")) return;
+    const el = box.current!;
+    drag.current = { x: e.clientX, y: e.clientY, left: el.scrollLeft, top: el.scrollTop };
+    el.setPointerCapture(e.pointerId);
+  };
+  const onPointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    const d = drag.current, el = box.current;
+    if (!d || !el) return;
+    el.scrollLeft = d.left - (e.clientX - d.x);
+    el.scrollTop = d.top - (e.clientY - d.y);
+  };
+  const endDrag = () => { drag.current = null; };
 
   const selected = sel ? byId.get(sel) : null;
   const directDeps = sel ? dependents.get(sel) ?? [] : [];
@@ -152,8 +225,24 @@ export function DependencyGraph({ nodes }: { nodes: GraphNode[] }) {
       )}
 
       <div className={cx(view === "list" ? "hidden" : view === "graph" ? "block" : "hidden md:block")}>
-        <div className="overflow-auto rounded-lg border border-rule bg-bg scroll-thin" style={{ maxHeight: "80vh" }}>
-          <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`} role="img" aria-label="Phase dependency graph, prerequisites above">
+        <div className="mb-2 flex flex-wrap items-center gap-1.5" role="group" aria-label="Zoom">
+          <button type="button" className="chip" aria-label="Zoom out" onClick={() => zoomTo(zoom / ZOOM_STEP)} disabled={zoom <= ZOOM_MIN}>−</button>
+          <span className="w-12 text-center text-xs tabular-nums text-muted" aria-live="polite">{Math.round(zoom * 100)}%</span>
+          <button type="button" className="chip" aria-label="Zoom in" onClick={() => zoomTo(zoom * ZOOM_STEP)} disabled={zoom >= ZOOM_MAX}>+</button>
+          <button type="button" className="chip" onClick={fit}>Fit</button>
+          <button type="button" className="chip" onClick={() => zoomTo(1)}>100%</button>
+          <span className="ml-auto hidden text-xs text-faint sm:inline">Drag to pan · Ctrl + scroll to zoom</span>
+        </div>
+        <div
+          ref={box}
+          className="cursor-grab overflow-auto rounded-lg border border-rule bg-bg scroll-thin active:cursor-grabbing"
+          style={{ maxHeight: "80vh", touchAction: "pan-x pan-y" }}
+          onPointerDown={onPointerDown}
+          onPointerMove={onPointerMove}
+          onPointerUp={endDrag}
+          onPointerCancel={endDrag}
+        >
+          <svg width={width * zoom} height={height * zoom} viewBox={`0 0 ${width} ${height}`} role="img" aria-label="Phase dependency graph, prerequisites above">
             <g fill="none" strokeWidth={1.2}>
               {nodes.flatMap((n) =>
                 n.prereqs.filter((p) => xy.has(p)).map((p) => {
@@ -190,6 +279,15 @@ export function DependencyGraph({ nodes }: { nodes: GraphNode[] }) {
             })}
           </svg>
         </div>
+        <ul className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted" aria-label="Legend">
+          {LEGEND.map((l) => (
+            <li key={l.status} className="flex items-center gap-1.5">
+              <span aria-hidden className="inline-block h-3 w-4 rounded-sm border border-rule" style={{ background: FILL[l.status] }} />{l.label}
+            </li>
+          ))}
+          <li className="flex items-center gap-1.5"><span aria-hidden className="inline-block h-0.5 w-4 bg-accent" />Needed by the selection</li>
+          <li className="flex items-center gap-1.5"><span aria-hidden className="inline-block h-0.5 w-4 bg-ok" />Builds on the selection</li>
+        </ul>
         <p className="mt-2 text-xs text-muted">Rows run top to bottom by dependency depth: everything a phase needs sits above it. Blue edges lead to the selection; green edges lead away from it. Node colour shows your progress.</p>
       </div>
 
