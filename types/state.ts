@@ -158,6 +158,13 @@ export type AiLogEntry = {
   verified: string; // what I checked, and what the AI got wrong
   aiErrorCaught: boolean;
   canDoAlone: AiCanDoAlone;
+  // phase J, optional: set when the entry was logged from the embedded tutor.
+  source?: "tutor";
+  aiMode?: "learn" | "build" | "assess";
+  tier?: "T1" | "T2" | "T3";
+  contextId?: string; // topic, project or checkpoint id the tutor was opened on
+  intent?: string;
+  allowed?: boolean; // false when the policy refused the request
   createdAt: string;
   updatedAt: string;
 };

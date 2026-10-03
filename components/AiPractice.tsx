@@ -6,6 +6,7 @@ import { useHydrated, useUserState } from "@/lib/store";
 import { currentTier, missionState, overlay, tierNumber, weekMode, workingTiers, type AiMission, type AiTier } from "@/lib/ai";
 import { gateById, gateName, nameOf } from "@/lib/progress";
 import { deleteAiLog, saveAiLog, setFlag } from "@/lib/actions";
+import { Tutor } from "./Tutor";
 import { hrefFor } from "@/lib/ids";
 import type { AiCanDoAlone } from "@/types/state";
 import { RefId } from "./Ref";
@@ -150,6 +151,8 @@ export function AiPractice() {
         <p className="mt-3 text-sm"><span className="font-medium">This week: {mode.title.toLowerCase()} mode.</span> {mode.summary}</p>
         {next && <p className="mt-2 text-sm text-muted">Next: Tier {n + 1}, {next.title}, after the {next.unlock ? gateName(next.unlock) : ""}.</p>}
       </section>
+
+      <Tutor />
 
       <section aria-labelledby="loop">
         <h2 id="loop" className="mb-2 text-base font-semibold">The working loop</h2>

@@ -379,6 +379,15 @@ export function abandonSession(id: string) {
   });
 }
 
+// ---- embedded tutor (device-local access token; see lib/ai/config.ts)
+export function getAiAccessToken(): string {
+  return backupStore()?.device().aiAccessToken ?? "";
+}
+
+export function setAiAccessToken(token: string): boolean {
+  return backupStore()?.setDevice({ aiAccessToken: token.trim() || undefined }) ?? false;
+}
+
 // ---- whole-state operations (backup, import, reset). Each one that replaces progress
 // takes an automatic local backup first and refuses to continue if that fails,
 // unless the caller explicitly passes `force` after the user has agreed.

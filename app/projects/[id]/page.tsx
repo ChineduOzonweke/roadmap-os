@@ -8,6 +8,7 @@ import { NotesEditor, TopicStatus } from "@/components/progress";
 import { ProjectControls } from "@/components/ProjectControls";
 import { parseRequirements } from "@/lib/projectSpec";
 import { PortfolioExport } from "@/components/PortfolioExport";
+import { Tutor } from "@/components/Tutor";
 import { RefId } from "@/components/Ref";
 
 export const dynamicParams = false;
@@ -55,6 +56,8 @@ export default async function Page({ params }: Props) {
           focus={p.qualityProfile.some((g) => g === "ml" || g === "ai") ? "ml" : "general"}
         />
       </Section>
+
+      <Section><Tutor scope={{ projectId: p.id }} /></Section>
 
       <Section title="README and case study">
         <PortfolioExport project={{ id: p.id, title: p.title, purpose: p.purpose, milestones: p.milestones }} requirements={requirements} />

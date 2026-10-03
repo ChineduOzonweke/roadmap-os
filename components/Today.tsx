@@ -13,6 +13,7 @@ import { AiModeLine } from "./AiModeLine";
 import { effectiveMode } from "@/lib/modes";
 import { ActiveModeSwitcher } from "./ActiveMode";
 import { ReviewQueue } from "./Reviews";
+import { Tutor } from "./Tutor";
 import { SessionHistory, SessionRunner, SessionStart } from "./SessionRunner";
 import { BackupNudge } from "./StorageNotices";
 import { ConceptChecklist, NotesEditor } from "./progress";
@@ -201,6 +202,7 @@ export function Today({ dayPlans, dailyUnit, lanes, projects }: {
 
       <aside className="mt-7 space-y-3 lg:mt-0 lg:pt-1" aria-label="More for this week">
         <div className="hidden lg:block"><AiModeLine cw={cw} /></div>
+        <Tutor />
         {doneItems.length > 0 && (
           <Disclosure title={`Done this week (${doneItems.length})`} hint="Untick anything you ticked by mistake">
             <ConceptChecklist items={doneItems.map((u) => ({ id: u, text: unitLabel(u) }))} showIds={false} />

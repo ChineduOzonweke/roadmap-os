@@ -20,7 +20,12 @@ export type SnapshotReason = "before-import" | "before-reset" | "before-restore"
 export type SnapshotMeta = { id: string; at: string; reason: SnapshotReason; schemaVersion: number; summary: StateSummary };
 export type Snapshot = SnapshotMeta & { state: UserState };
 export type QuarantineEntry = { at: string; reason: string; raw: string };
-export type DeviceMeta = { lastExportAt?: string; lastSnapshotAt?: string };
+export type DeviceMeta = {
+  lastExportAt?: string;
+  lastSnapshotAt?: string;
+  /** Tutor access token for this device (ROADMAP_AI_ACCESS_TOKEN). Device-local: never part of UserState or exports. */
+  aiAccessToken?: string;
+};
 
 export type BackupStore = ReturnType<typeof createBackupStore>;
 

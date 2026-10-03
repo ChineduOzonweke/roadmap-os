@@ -12,8 +12,8 @@ Branch: v2   Baseline: main @ b922317
 | F | Project milestones + evidence | done | 1b90924 (pushed) |
 | G | Portfolio / README export | done | d383372 (pushed) |
 | H | Command palette + DSA enhancements | done | 21725af (pushed) |
-| I | Graph pan/zoom + PWA | done | phase I commit |
-| J | Socratic AI layer (provider abstraction only, no secrets) | not started | |
+| I | Graph pan/zoom + PWA | done | ed077e7 (pushed) |
+| J | Socratic AI layer | done | phase J commit |
 
 ## Phase B summary
 - Load path: every stored/synced/imported document goes through `readDocument` = migration registry (`lib/persistence/migrate.ts`) + hand-written validator/repair (`lib/persistence/sanitize.ts`). Unknown fields preserved at every level.
@@ -80,6 +80,13 @@ Branch: v2   Baseline: main @ b922317
 - Verified: icons and manifest served and linked; SW activated and controlling; with the server stopped, a visited week page, Today and the precached pages loaded from cache and hydrated with local progress, and an unvisited page showed /offline.
 - Tests: 102.
 
+## Phase J summary
+- Pure, tested policy layer (`lib/ai/policy.ts`): intent classifier, Learn / Build / Assess x Tier decision matrix, generated system prompt, reply filter (code over the mode's limit removed; none in Assess). Context and mode resolution (`lib/ai/context.ts`): a checkpoint attempt in progress forces and locks Assess; Build requires Practised or a project.
+- Server boundary `app/api/ai` (the only dynamic route): GET status without secrets; POST re-derives the policy, refuses before any provider call, requires `ROADMAP_AI_ACCESS_TOKEN`, calls Anthropic (`claude-opus-5-5` by default, server-side refusal fallback on) through `lib/ai/anthropic.ts`, maps failures to calm errors. Handler is provider-injected (`lib/ai/handler.ts`) so it is tested without live calls.
+- Tutor panel (`components/Tutor.tsx`) on Today, topic, project, checkpoint and /ai pages: collapsed by default, mode chips with reasons, local policy pre-check (refusals need no network), device-local access token (never exported), user-approved "Log to AI practice" into the existing aiLog with optional mode/tier/context/intent/allowed fields.
+- No credentials exist in this environment: the tutor shows its configuration state; all other features unaffected. Setup in docs/AI.md; `.env.example` updated.
+- Tests: 143 (41 new). Verified in the browser: unconfigured status, local refusal at Tier 1, configuration message, logging, no overflow at 390 px. Fixed: radio chips (`aria-checked`) now show the selected state (also affects DSA outcome chips).
+
 ## Decisions and deviations
 - STATE_VERSION stays 1 in Phase B: the only schema addition (`pastReviews`) is optional and backward compatible (older builds keep it via spread). The migration registry is in place, empty, and tested with synthetic migrations; the first real migration will come with Phase C/D state.
 - Automatic backups and "last exported" are device-local metadata in separate keys, not part of `UserState`, so exports do not carry another device's backup history.
@@ -87,6 +94,7 @@ Branch: v2   Baseline: main @ b922317
 - UI verification uses the desktop app's browser pane instead of Playwright, to avoid adding a dependency.
 - `.claude/launch.json` (local `next start` on port 3123 for the browser pane) is not committed.
 - Phase C: Active Mode is not yet an input to the Today plan; Phase E adds it to `todayPlan`. Reopening a finished stage keeps its first start time, so time spent can be overstated after jumping back.
+- Phase J: added `@anthropic-ai/sdk` (server-only; not in any client bundle) as the official provider client, a deliberate exception to "avoid new dependencies".
 - Phase H: the palette is keyboard-first; on phones the bottom-bar Search page (same search engine) stays the entry point. Command palette DOM behaviour is verified in the browser rather than unit-tested (no DOM test environment, to avoid adding dependencies).
 - Phase F: screenshots and artifacts are stored as links, not files: browser storage (~5 MB, shared with automatic backups) cannot hold binaries safely. A cloud adapter could add file storage later.
 - Phase F: checkpoint completion is not blocked on evidence (the gate criteria checklist stays the authority); the evidence list sits next to it.

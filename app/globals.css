@@ -157,7 +157,7 @@ body {
     font-size: 0.875rem; white-space: nowrap; cursor: pointer;
   }
   .chip:hover { background: var(--surface-2); }
-  .chip[aria-pressed="true"], .chip[aria-selected="true"] { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+  .chip[aria-pressed="true"], .chip[aria-selected="true"], .chip[aria-checked="true"] { background: var(--ink); border-color: var(--ink); color: var(--bg); }
 
   .h-section { font-size: 1.0625rem; font-weight: 600; letter-spacing: -0.005em; }
   .text-meta { font-size: 0.875rem; color: var(--muted); }
