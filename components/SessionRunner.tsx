@@ -76,7 +76,7 @@ function StageGuide({ x, s, ctx }: { x: DailySession; s: UserState; ctx: Session
           </div>
         )}
         {prev?.log.next && <p><span className="text-muted">You planned next:</span> {prev.log.next}</p>}
-        {ctx.reviewsDue > 0 && <p><Link href="#retests" className="text-accent hover:underline">{ctx.reviewsDue} re-test{ctx.reviewsDue > 1 ? "s" : ""} due</Link>: a good recall target.</p>}
+        {ctx.reviewsDue > 0 && <p><Link href="#reviews" className="text-accent hover:underline">{ctx.reviewsDue} re-test{ctx.reviewsDue > 1 ? "s" : ""} due</Link>: a good recall target.</p>}
         {!prev && ctx.reviewsDue === 0 && <p className="text-muted">First session: recall anything you already know about today&apos;s topic.</p>}
       </div>
     );

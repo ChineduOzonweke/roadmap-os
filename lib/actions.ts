@@ -8,6 +8,8 @@ import {
 } from "@/lib/persistence/portable";
 import { newId } from "@/lib/ids";
 import { localDay } from "@/lib/today";
+import { applyReview, undoReview } from "@/lib/reviews";
+import { idx } from "@/lib/progress";
 import {
   emptyState,
   type AiLogEntry, type DailySession, type SessionStage,
@@ -81,13 +83,21 @@ export function setEvidence(topicId: string, evidence: string) {
   update((s) => ({ ...s, topics: { ...s.topics, [topicId]: { ...topicOf(s, topicId), evidence, updatedAt: now() } } }));
 }
 
-/** Record a passed spaced re-test (master spaced-retest rule). */
-export function recordReview(topicId: string) {
+/** Record a spaced re-test result (see lib/reviews.ts for the rules). */
+export function recordReview(topicId: string, result: "pass" | "fail" = "pass", note = "") {
   update((s) => {
-    const t = topicOf(s, topicId);
-    const reviews = { count: t.reviews.count + 1, last: now() };
-    const mastery: MasteryLevel = t.mastery >= 4 ? 5 : t.mastery;
-    return { ...s, topics: { ...s.topics, [topicId]: { ...t, reviews, mastery, updatedAt: now() } } };
+    const t = s.topics[topicId];
+    if (!t) return s;
+    return { ...s, topics: { ...s.topics, [topicId]: applyReview(t, result, idx.retest, new Date(), note) } };
+  });
+}
+
+/** Undo the most recent re-test result for a topic. */
+export function undoLastReview(topicId: string) {
+  update((s) => {
+    const t = s.topics[topicId];
+    if (!t) return s;
+    return { ...s, topics: { ...s.topics, [topicId]: undoReview(t, new Date()) } };
   });
 }
 

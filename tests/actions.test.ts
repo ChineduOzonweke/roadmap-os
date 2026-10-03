@@ -3,7 +3,7 @@ import type { UserState } from "@/types/state";
 import { getState, getStorageStatus, initStore } from "@/lib/store";
 import {
   abandonSession, applyImport, completeSession, exportBackup, goToStage, previewImport, recordReview, resetState, restoreSnapshot,
-  setCheck, setMastery, setSessionLog, setStageNote, startSession,
+  setCheck, setMastery, setSessionLog, setStageNote, startSession, undoLastReview,
 } from "@/lib/actions";
 import { sessionStages } from "@/lib/today";
 import { createBrowserAdapter, STATE_KEY } from "@/lib/persistence/browser";
@@ -22,9 +22,17 @@ beforeAll(async () => {
 });
 
 describe("mastery history", () => {
+  it("records re-tests with the 30-day rule: a 7-day pass keeps Demonstrated", () => {
+    recordReview("P01.1a", "pass");
+    expect(getState().topics["P01.1a"]).toMatchObject({ mastery: 4, reviews: { count: 2 } });
+    expect(getState().topics["P01.1a"].reviewLog).toHaveLength(1);
+    undoLastReview("P01.1a");
+    expect(getState().topics["P01.1a"]).toMatchObject({ mastery: 4, reviews: { count: 1 }, reviewLog: [] });
+    recordReview("P01.1a", "pass");
+  });
+
   it("keeps the re-test cycle as history when mastery drops below Demonstrated", () => {
-    recordReview("P01.1a");
-    expect(getState().topics["P01.1a"]).toMatchObject({ mastery: 5, reviews: { count: 2 } });
+    setMastery("P01.1a", 5);
     setMastery("P01.1a", 3);
     const t = getState().topics["P01.1a"];
     expect(t.mastery).toBe(3);

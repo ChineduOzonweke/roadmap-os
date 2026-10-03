@@ -8,12 +8,25 @@ export const STATE_VERSION = 2;
 export type MasteryLevel = 0 | 1 | 2 | 3 | 4 | 5; // not started .. retained
 export type DepthLevel = 0 | 1 | 2 | 3 | 4 | 5; // D0 .. D5
 
+/** One spaced re-test outcome. `prev` is what the result changed, so it can be undone exactly. */
+export type ReviewEntry = {
+  at: string;
+  result: "pass" | "fail";
+  step: number; // index of the interval this re-test closed
+  intervalDays: number;
+  note?: string;
+  prev?: { mastery: MasteryLevel; reviews: TopicProgress["reviews"] };
+};
+
 export type TopicProgress = {
   mastery: MasteryLevel;
   depth: DepthLevel | null;
   evidence: string;
   demonstratedAt?: string;
-  reviews: { count: number; last?: string };
+  /** count = step into the re-test intervals; lapses = failed re-tests; needsPractice = last re-test failed. */
+  reviews: { count: number; last?: string; lapses?: number; needsPractice?: boolean };
+  /** Every re-test result, never trimmed (phase D). */
+  reviewLog?: ReviewEntry[];
   /** Re-test cycles ended when mastery dropped below Demonstrated. Kept as history, never deleted. */
   pastReviews?: { count: number; last?: string; demonstratedAt?: string; endedAt: string }[];
   updatedAt: string;

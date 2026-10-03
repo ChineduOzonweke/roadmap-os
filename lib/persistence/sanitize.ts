@@ -84,6 +84,8 @@ function topic(c: Ctx, v: unknown, path: string): TopicProgress | undefined {
   const last = optStr(rv.last);
   if (last) reviews.last = last;
   else delete reviews.last;
+  if (rv.lapses !== undefined) reviews.lapses = int(rv.lapses, 0, 1000) ?? 0;
+  if (rv.needsPractice !== undefined) reviews.needsPractice = !!rv.needsPractice;
   const out: TopicProgress = {
     ...v,
     mastery: (mastery ?? 0) as MasteryLevel,
@@ -95,6 +97,13 @@ function topic(c: Ctx, v: unknown, path: string): TopicProgress | undefined {
   const dem = optStr(v.demonstratedAt);
   if (dem) out.demonstratedAt = dem;
   else delete out.demonstratedAt;
+  if (v.reviewLog !== undefined) {
+    const log = Array.isArray(v.reviewLog) ? v.reviewLog : [];
+    out.reviewLog = log
+      .filter((e): e is Obj => isObj(e) && (e.result === "pass" || e.result === "fail") && typeof e.at === "string")
+      .map((e) => ({ ...e, at: e.at as string, result: e.result as "pass" | "fail", step: int(e.step, 0, 1000) ?? 0, intervalDays: int(e.intervalDays, 0, 100000) ?? 0 }));
+    if (out.reviewLog.length !== log.length) c.note(`${path}.reviewLog`, "unreadable re-test entries skipped", true);
+  }
   return out;
 }
 

@@ -5,10 +5,10 @@ import { useEffect, useMemo, useState } from "react";
 import { useDraft } from "@/lib/useDraft";
 import { useHydrated, useUserState } from "@/lib/store";
 import {
-  conceptBlocker, gatePassed, gateById, gateName, nameOf, nextReviewDate, phaseRollup, topicById, topicView, weekByCw, weekView,
+  conceptBlocker, gatePassed, gateById, gateName, nameOf, phaseRollup, topicById, topicView, weekByCw, weekView,
 } from "@/lib/progress";
 import {
-  recordReview, setCheck, setChecks, setCurrentWeek, setDepth, setEvidence, setGateCriterion, setGateEvidence,
+  setCheck, setChecks, setCurrentWeek, setDepth, setEvidence, setGateCriterion, setGateEvidence,
   setGateStatus, setMastery, setNote, setWeekDone,
 } from "@/lib/actions";
 import { conceptSlug, hrefFor } from "@/lib/ids";
@@ -16,6 +16,7 @@ import type { DepthLevel, GateStatus, MasteryLevel } from "@/types/state";
 import { Bar, InlineText, StatusGlyph, StatusPill, cx } from "./ui";
 import { IconChevron, IconLock } from "./icons";
 import { RefId } from "./Ref";
+import { ReviewPanel } from "./Reviews";
 
 function Placeholder({ className }: { className?: string }) {
   return <span className={cx("inline-block h-5 w-24 animate-pulse rounded bg-surface-2", className)} aria-hidden />;
@@ -194,7 +195,6 @@ export function MasteryPanel({ topicId, states, depths, target }: { topicId: str
   const mastery = tp?.mastery ?? 0;
   const depth = tp?.depth ?? null;
   const [evidence, setEv] = useDraft(tp?.evidence ?? "");
-  const next = ready ? nextReviewDate(s, topicId) : null;
   const t = topicById.get(topicId);
   const v = t && ready ? topicView(s, t) : null;
 
@@ -272,18 +272,7 @@ export function MasteryPanel({ topicId, states, depths, target }: { topicId: str
         />
       </div>
 
-      {mastery >= 4 && (
-        <div className="rounded-xl border border-rule bg-surface px-4 py-3 text-sm">
-          <p className="font-medium">Spaced re-test</p>
-          <p className="text-muted">
-            {tp?.reviews?.count ?? 0} re-test(s) recorded.{" "}
-            {next ? <>Next re-test due {next.toLocaleDateString()}.</> : "All scheduled re-tests are done."}
-          </p>
-          <button type="button" onClick={() => recordReview(topicId)} className="btn btn-secondary btn-sm mt-2">
-            Record a passed re-test
-          </button>
-        </div>
-      )}
+      <ReviewPanel topicId={topicId} />
     </div>
   );
 }

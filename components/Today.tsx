@@ -5,11 +5,12 @@ import { useEffect, useState } from "react";
 import { hrefFor } from "@/lib/ids";
 import { useHydrated, useUserState } from "@/lib/store";
 import {
-  dueReviews, gateName, gatePassed, idx, nameOf, phaseById, stageOfWeek, topicById, unitLabel, weekByCw, weekView,
+  dueReviews, gateName, gatePassed, idx, nameOf, phaseById, stageOfWeek, unitLabel, weekByCw, weekView,
 } from "@/lib/progress";
-import { recordReview, setCheck, setCurrentWeek, setWeekDone } from "@/lib/actions";
+import { setCheck, setCurrentWeek, setWeekDone } from "@/lib/actions";
 import { activeSession, lastCompletedSession, localDay, sessionsOn, todayPlan, type ProjectInfo, type StepTemplate } from "@/lib/today";
 import { AiModeLine } from "./AiModeLine";
+import { ReviewQueue } from "./Reviews";
 import { SessionHistory, SessionRunner, SessionStart } from "./SessionRunner";
 import { BackupNudge } from "./StorageNotices";
 import { ConceptChecklist, NotesEditor } from "./progress";
@@ -129,7 +130,9 @@ export function Today({ dayPlans, dailyUnit, lanes, projects }: {
         )}
       </section>
 
-      {(today.supporting || reviews.length > 0 || dsaDue.length > 0 || project || gateThisWeek) && (
+      <ReviewQueue />
+
+      {(today.supporting || dsaDue.length > 0 || project || gateThisWeek) && (
         <section aria-labelledby="also">
           <h2 id="also" className="h-section mb-2">Also today</h2>
           <ul className="list-card text-sm">
@@ -140,12 +143,10 @@ export function Today({ dayPlans, dailyUnit, lanes, projects }: {
                 {supportOpen.length > 1 && <span className="text-muted"> ({supportOpen.length - 1} more in <Link href={`/weeks/${cw}`} className="text-accent hover:underline">the week</Link>)</span>}
               </li>
             )}
-            {(reviews.length > 0 || dsaDue.length > 0) && (
+            {dsaDue.length > 0 && (
               <li className="px-4 py-3">
                 <span className="block text-xs text-muted">Maintenance</span>
-                <a href="#retests" className="hover:text-accent">
-                  {[reviews.length && `${reviews.length} re-test${reviews.length > 1 ? "s" : ""} due`, dsaDue.length && `${dsaDue.length} DSA revisit${dsaDue.length > 1 ? "s" : ""}`].filter(Boolean).join(", ")}
-                </a>
+                <a href="#retests" className="hover:text-accent">{dsaDue.length} DSA revisit{dsaDue.length > 1 ? "s" : ""} due</a>
               </li>
             )}
             {project && (
@@ -211,30 +212,20 @@ export function Today({ dayPlans, dailyUnit, lanes, projects }: {
           </Disclosure>
         )}
 
-        {(lane || reviews.length > 0 || dsaDue.length > 0) && (
+        {(lane || dsaDue.length > 0) && (
           <Disclosure
             id="retests"
-            title="Practice and re-tests"
-            hint={[reviews.length && `${reviews.length} re-test${reviews.length > 1 ? "s" : ""} due`, dsaDue.length && `${dsaDue.length} DSA revisit${dsaDue.length > 1 ? "s" : ""}`].filter(Boolean).join(", ") || "DSA practice for this stage"}
-            open={reviews.length > 0}
+            title="DSA practice"
+            hint={dsaDue.length ? `${dsaDue.length} revisit${dsaDue.length > 1 ? "s" : ""} due` : "DSA practice for this stage"}
+            open={dsaDue.length > 0}
           >
-            {lane && (
-              <div className="mb-3">
-                <p className="text-sm text-muted">{lane.note}</p>
-                <p className="mt-1 text-sm"><Link href="/dsa" className="text-accent hover:underline">Open the DSA journal</Link></p>
-              </div>
-            )}
-            {reviews.length > 0 && (
-              <ul className="divide-y divide-rule">
-                {reviews.map((r) => (
-                  <li key={r.topicId} className="flex flex-wrap items-center gap-3 py-2">
-                    <Link href={`/topics/${r.topicId}`} className="min-w-0 flex-1 hover:text-accent">{topicById.get(r.topicId)?.t}</Link>
-                    <span className="text-xs text-muted">re-test {r.count + 1}</span>
-                    <button type="button" onClick={() => recordReview(r.topicId)} className="btn btn-secondary btn-sm">Passed</button>
-                  </li>
-                ))}
+            {lane && <p className="text-sm text-muted">{lane.note}</p>}
+            {dsaDue.length > 0 && (
+              <ul className="mt-2 list-disc space-y-0.5 pl-5 text-sm">
+                {dsaDue.map((p) => <li key={p.id}>{p.title || "Untitled problem"}</li>)}
               </ul>
             )}
+            <p className="mt-2 text-sm"><Link href="/dsa" className="text-accent hover:underline">Open the DSA journal</Link></p>
           </Disclosure>
         )}
 
