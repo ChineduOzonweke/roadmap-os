@@ -9,7 +9,7 @@ All user progress is one `UserState` document (`types/state.ts`). Components nev
 | `roadmap-os:state:v1` | the live `UserState` document | Never rename. The `v1` in the key is not the schema version; `state.version` is. |
 | `roadmap-os:snapshots:v1` | ring of the 5 newest automatic backups | Taken weekly and before import, restore, reset and schema migration. Dropped oldest-first only when the live document cannot be saved because storage is full; the newest is always kept. |
 | `roadmap-os:quarantine:v1` | raw text of stored progress that could not be read, or had to be repaired (max 3) | Downloadable from Settings > Backup. Written before anything overwrites the original. |
-| `roadmap-os:device:v1` | `{ lastExportAt, lastSnapshotAt }` | Per device; drives the "last exported" line and the 14-day nudge on Today. |
+| `roadmap-os:device:v1` | `{ lastExportAt, lastSnapshotAt, aiAccessToken }` | Per device; drives the "last exported" line and the 14-day nudge on Today, and holds the tutor access token (never exported). |
 
 ## Load path (`initStore`)
 

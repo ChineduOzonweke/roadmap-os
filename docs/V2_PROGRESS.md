@@ -13,7 +13,8 @@ Branch: v2   Baseline: main @ b922317
 | G | Portfolio / README export | done | d383372 (pushed) |
 | H | Command palette + DSA enhancements | done | 21725af (pushed) |
 | I | Graph pan/zoom + PWA | done | ed077e7 (pushed) |
-| J | Socratic AI layer | done | phase J commit |
+| J | Socratic AI layer | done | 8087fee (pushed) |
+| Stab. | Final engineering audit, docs | done | stabilization commit |
 
 ## Phase B summary
 - Load path: every stored/synced/imported document goes through `readDocument` = migration registry (`lib/persistence/migrate.ts`) + hand-written validator/repair (`lib/persistence/sanitize.ts`). Unknown fields preserved at every level.
@@ -86,6 +87,11 @@ Branch: v2   Baseline: main @ b922317
 - Tutor panel (`components/Tutor.tsx`) on Today, topic, project, checkpoint and /ai pages: collapsed by default, mode chips with reasons, local policy pre-check (refusals need no network), device-local access token (never exported), user-approved "Log to AI practice" into the existing aiLog with optional mode/tier/context/intent/allowed fields.
 - No credentials exist in this environment: the tutor shows its configuration state; all other features unaffected. Setup in docs/AI.md; `.env.example` updated.
 - Tests: 143 (41 new). Verified in the browser: unconfigured status, local refusal at Tier 1, configuration message, logging, no overflow at 390 px. Fixed: radio chips (`aria-checked`) now show the selected state (also affects DSA outcome chips).
+
+## Stabilization summary
+- Route audit against `next start`: every route type 200, unknown ids 404; client audit of untested-since-change routes at 390 px: no console errors, no overflow, hydration OK.
+- Added a full v4 export/import round-trip test (sessions, review log, modes, evidence, project record, DSA attempts, tutor log fields): 144 tests.
+- README rewritten where stale (routes, `/` is Today, retention rule, scripts, env vars, quality section); PERSISTENCE.md device keys; `docs/V2_FINAL_REPORT.md` created.
 
 ## Decisions and deviations
 - STATE_VERSION stays 1 in Phase B: the only schema addition (`pastReviews`) is optional and backward compatible (older builds keep it via spread). The migration registry is in place, empty, and tested with synthetic migrations; the first real migration will come with Phase C/D state.

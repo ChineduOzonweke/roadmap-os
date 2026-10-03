@@ -140,3 +140,34 @@ describe("browser adapter", () => {
     expect(await createBrowserAdapter(() => memoryKV()).save(v1)).toEqual({ ok: true });
   });
 });
+
+describe("full current-schema round trip", () => {
+  it("a rich v4 document survives export, import and validation unchanged", () => {
+    const rich = {
+      ...V2,
+      topics: {
+        ...V2.topics,
+        "P01.1a": {
+          ...V2.topics["P01.1a"],
+          reviews: { count: 0, last: "2026-10-01T00:00:00.000Z", lapses: 1, needsPractice: true },
+          reviewLog: [{ at: "2026-10-01T00:00:00.000Z", result: "fail" as const, step: 1, intervalDays: 7, note: "forgot", prev: { mastery: 4 as const, reviews: { count: 1 } } }],
+          pastReviews: [{ count: 2, endedAt: "2026-09-01T00:00:00.000Z" }],
+        },
+      },
+      sessions: [{
+        id: "s1", date: "2026-10-02", week: 3, plan: "short" as const, status: "completed" as const, startedAt: "2026-10-02T08:00:00.000Z", endedAt: "2026-10-02T09:00:00.000Z",
+        stage: 0, stages: [{ key: "recall", label: "Recall", minutes: "5", startedAt: "a", endedAt: "b", note: "ok" }], focus: ["P01.1a#3"], ticked: ["P01.1a#3"],
+        log: { learned: "loops", stuck: "", next: "tests" }, updatedAt: "2026-10-02T09:00:00.000Z",
+      }],
+      activeMode: { id: "D" as const, since: "2026-10-01T00:00:00.000Z" },
+      modeHistory: [{ id: "B" as const, since: "2026-09-01T00:00:00.000Z", until: "2026-10-01T00:00:00.000Z" }],
+      evidence: [{ id: "e1", kind: "repo" as const, subject: "PR01-M1", title: "repo", url: "https://github.com/x", detail: "", createdAt: "c", updatedAt: "u" }],
+      projects: { PR01: { status: "in_progress" as const, milestones: { "PR01-M1": true }, quality: {}, repoUrl: "", milestoneDetail: { "PR01-M1": { status: "done" as const, notes: "n", doneAt: "d" } }, customMilestones: [{ id: "PR01-Ux", text: "pkg", createdAt: "c" }], requirements: { "must-demonstrate:git": true }, record: { problem: "p", decisions: [{ id: "d", decision: "a", why: "b", rejected: "c" }], metrics: [] } } },
+      dsa: [{ ...V2.dsa[0], attemptLog: [{ at: "t", outcome: "failed" as const, mistake: "edge-case" as const, minutes: 30 }], cleanSolvedAt: "t2" }],
+      aiLog: [{ id: "a", missionId: null, task: "q", attemptedFirst: true, aiDid: "x", verified: "", aiErrorCaught: false, canDoAlone: "partly" as const, source: "tutor" as const, aiMode: "learn" as const, tier: "T1" as const, intent: "explain", allowed: true, createdAt: "c", updatedAt: "u" }],
+    } as UserState;
+    const p = parseImport(serializeExport(buildExport(rich, CUR)));
+    expect(p.ok && p.issues).toEqual([]);
+    expect(p.ok && p.state).toEqual(rich);
+  });
+});
