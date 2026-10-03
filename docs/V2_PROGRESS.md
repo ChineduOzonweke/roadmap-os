@@ -19,7 +19,8 @@ Branch: v2   Baseline: main @ b922317
 | UI-B/C/D | Tokens, fonts, primitives, app shell | done | ab5987e (pushed) |
 | UI-E | Today, Weeks, Projects, project detail | done | c095e94 (pushed) |
 | UI-F | Secondary screens | done | 11865f1 (pushed) |
-| UI-G/H | Motion, graph visuals, final consistency audit | done | V2.1 final commit |
+| UI-G/H | Motion, graph visuals, final consistency audit | done | f5f1ceb (pushed) |
+| Release | v2 merged into main (no-ff), production deployed | done | 0d51bb4 |
 
 ## Phase B summary
 - Load path: every stored/synced/imported document goes through `readDocument` = migration registry (`lib/persistence/migrate.ts`) + hand-written validator/repair (`lib/persistence/sanitize.ts`). Unknown fields preserved at every level.
@@ -100,6 +101,11 @@ Branch: v2   Baseline: main @ b922317
 
 ## V2.1 summary
 See docs/ROADMAP_OS_V21_VISUAL_AUDIT.md (Part 3) and docs/V2_FINAL_REPORT.md section 9. Final verification on the production build: `npm run check` OK, 144 tests, build OK; 24 routes x 360/1280 px with no errors, overflow or missing headings; light/dark screenshots at phone and desktop; keyboard focus ring verified; reduced-motion rule present in the built CSS; palette, Active Mode switch, session start/stop, export and import preview re-tested. Service worker cache bumped to v2 so devices drop pre-redesign caches.
+
+## Release
+- Vercel preview for f5f1ceb: deployment status success. Its pages are behind Vercel SSO (302 to vercel.com/sso-api), so content smoke-testing was done on the identical local production build; the owner approved merging on that basis.
+- `main` merged with `--no-ff` at 0d51bb4 (all phase commits preserved), pushed; Vercel production deployment: success.
+- Production smoke test (https://roadmap-os-lovat.vercel.app): 19 routes 200 including /evidence, /offline, /api/ai, manifest, icons, sw.js (cache v2), search index; unknown path 404; `/api/ai` reports not configured (no key set); in-browser: Today hydrates, Inter / Instrument Serif / IBM Plex Mono load, service worker registers, no console errors, no overflow.
 
 ## Decisions and deviations
 - STATE_VERSION stays 1 in Phase B: the only schema addition (`pastReviews`) is optional and backward compatible (older builds keep it via spread). The migration registry is in place, empty, and tested with synthetic migrations; the first real migration will come with Phase C/D state.
