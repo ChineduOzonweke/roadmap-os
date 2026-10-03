@@ -16,6 +16,7 @@ export const NAV: { group: string; items: NavItem[] }[] = [
   ] },
   { group: "Practice", items: [
     { href: "/ai", label: "Working with AI" },
+    { href: "/evidence", label: "Evidence" },
     { href: "/dsa", label: "DSA journal" },
     { href: "/career", label: "Career" },
     { href: "/notes", label: "Notes" },

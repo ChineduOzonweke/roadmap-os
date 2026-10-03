@@ -23,7 +23,7 @@ describe("store load", () => {
   it("upgrades existing v1 progress: snapshot of the original first, then the migrated document is saved", async () => {
     const { store, kv, adapter, backups } = setup({ [STATE_KEY]: JSON.stringify(v1) });
     await store.init(adapter, backups);
-    const V2 = { ...v1, version: 3, sessions: [], activeMode: null, modeHistory: [] };
+    const V2 = { ...v1, version: 4, sessions: [], activeMode: null, modeHistory: [], evidence: [] };
     expect(store.getState()).toEqual(V2);
     expect(store.getStatus()).toMatchObject({ load: null, readOnly: false });
     expect(store.getStatus().snapshots.map((m) => m.reason)).toEqual(["before-migration"]); // counts as this week's snapshot
@@ -33,7 +33,7 @@ describe("store load", () => {
   });
 
   it("leaves current-version progress untouched until the user changes something", async () => {
-    const V2 = JSON.stringify({ ...v1, version: 3, sessions: [], activeMode: null, modeHistory: [] });
+    const V2 = JSON.stringify({ ...v1, version: 4, sessions: [], activeMode: null, modeHistory: [], evidence: [] });
     const { store, kv, adapter, backups } = setup({ [STATE_KEY]: V2 });
     await store.init(adapter, backups);
     expect(store.getStatus().snapshots.map((m) => m.reason)).toEqual(["weekly"]);

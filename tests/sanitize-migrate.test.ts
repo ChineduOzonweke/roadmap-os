@@ -5,7 +5,7 @@ import { migrate, readDocument, type Migration } from "@/lib/persistence/migrate
 import v1 from "./fixtures/v1-state.json";
 
 /** What a v1 document becomes after migration: identical plus empty session log and no Active Mode chosen. */
-const V2 = { ...v1, version: 3, sessions: [], activeMode: null, modeHistory: [] };
+const V2 = { ...v1, version: 4, sessions: [], activeMode: null, modeHistory: [], evidence: [] };
 
 describe("sanitizeState", () => {
   it("passes a current-version document through unchanged", () => {
@@ -91,7 +91,7 @@ describe("migrate", () => {
 
   it("migrates a real v1 document to the current schema without changing any existing field", () => {
     const r = migrate({ ...v1 });
-    expect(r).toMatchObject({ ok: true, from: 1, applied: [1, 2] });
+    expect(r).toMatchObject({ ok: true, from: 1, applied: [1, 2, 3] });
     expect(r.ok && r.doc).toEqual(V2);
     const kept = readDocument({ ...v1, sessions: [{ id: "s1", status: "completed", stages: [] }] });
     expect(kept.ok && kept.state.sessions[0].id).toBe("s1");

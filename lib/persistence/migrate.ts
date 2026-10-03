@@ -18,6 +18,8 @@ export const MIGRATIONS: Record<number, Migration> = {
   1: (doc) => ({ ...doc, version: 2, sessions: Array.isArray(doc.sessions) ? doc.sessions : [] }),
   // v2 -> v3 (phase E): Active Mode. No mode is guessed; the app shows a suggestion until one is chosen.
   2: (doc) => ({ ...doc, version: 3, activeMode: doc.activeMode ?? null, modeHistory: Array.isArray(doc.modeHistory) ? doc.modeHistory : [] }),
+  // v3 -> v4 (phase F): structured evidence. Existing free-text evidence fields stay where they are, untouched.
+  3: (doc) => ({ ...doc, version: 4, evidence: Array.isArray(doc.evidence) ? doc.evidence : [] }),
 };
 
 export type MigrateResult =

@@ -1,6 +1,7 @@
 import {
   emptyState, STATE_VERSION,
-  type ActiveModeId, type AiLogEntry, type Application, type DailySession, type SessionStage, type DepthLevel, type DsaProblem, type GateProgress, type MasteryLevel,
+  type ActiveModeId, type AiLogEntry, type Application, type DailySession, type EvidenceItem, type MilestoneDetail,
+  type ProjectRecord, type SessionStage, type DepthLevel, type DsaProblem, type GateProgress, type MasteryLevel,
   type Note, type ProjectProgress, type ResourceStatus, type Story, type TopicProgress, type UserState,
 } from "@/types/state";
 
@@ -121,14 +122,64 @@ function gate(v: unknown): GateProgress | undefined {
   return out;
 }
 
+const RECORD_TEXT = ["problem", "goal", "architecture", "implementation", "experiments", "failures", "lessons", "future", "completionCriteria", "deployUrl", "links"] as const;
+
 function project(v: unknown): ProjectProgress | undefined {
   if (!isObj(v)) return undefined;
-  return {
+  const out: ProjectProgress = {
     ...v,
     status: oneOf(v.status, ["not_started", "in_progress", "complete"] as const, "not_started"),
     milestones: boolMap(v.milestones),
     quality: boolMap(v.quality),
     repoUrl: str(v.repoUrl),
+  };
+  if (v.requirements !== undefined) out.requirements = boolMap(v.requirements);
+  if (v.milestoneDetail !== undefined) {
+    const md: Record<string, MilestoneDetail> = {};
+    if (isObj(v.milestoneDetail)) {
+      for (const [k, d] of Object.entries(v.milestoneDetail)) {
+        if (!isObj(d)) continue;
+        const item: MilestoneDetail = { ...d, status: oneOf(d.status, ["todo", "doing", "blocked", "done"] as const, "todo"), notes: str(d.notes) };
+        for (const t of ["startedAt", "doneAt"] as const) {
+          const x = optStr(d[t]);
+          if (x) item[t] = x;
+          else delete item[t];
+        }
+        md[k] = item;
+      }
+    }
+    out.milestoneDetail = md;
+  }
+  if (v.customMilestones !== undefined) {
+    out.customMilestones = (Array.isArray(v.customMilestones) ? v.customMilestones : [])
+      .filter(isObj)
+      .map((m, i) => ({ ...m, id: str(m.id) || `custom-recovered-${i}`, text: str(m.text), createdAt: str(m.createdAt, EPOCH) }));
+  }
+  if (v.record !== undefined) {
+    const r = isObj(v.record) ? v.record : {};
+    const rec: Partial<ProjectRecord> = { ...r };
+    for (const k of RECORD_TEXT) if (r[k] !== undefined) rec[k] = str(r[k]);
+    const rows = <T,>(x: unknown, fix: (o: Obj, i: number) => T): T[] => (Array.isArray(x) ? x.filter(isObj).map(fix) : []);
+    if (r.decisions !== undefined) rec.decisions = rows(r.decisions, (o, i) => ({ ...o, id: str(o.id) || `dec-${i}`, decision: str(o.decision), why: str(o.why), rejected: str(o.rejected) }));
+    if (r.metrics !== undefined) rec.metrics = rows(r.metrics, (o, i) => ({ ...o, id: str(o.id) || `met-${i}`, name: str(o.name), value: str(o.value), context: str(o.context) }));
+    out.record = rec;
+  }
+  return out;
+}
+
+const EVIDENCE_KINDS = ["repo", "commit", "exercise", "explanation", "test", "benchmark", "diagram", "note", "retest", "screenshot", "deploy", "other"] as const;
+
+function evidence(v: Obj, i: number): EvidenceItem {
+  return {
+    ...v,
+    id: str(v.id) || `ev-recovered-${i}`,
+    kind: oneOf(v.kind, EVIDENCE_KINDS, "other"),
+    subject: str(v.subject),
+    title: str(v.title),
+    url: str(v.url),
+    detail: str(v.detail),
+    createdAt: str(v.createdAt, EPOCH),
+    updatedAt: str(v.updatedAt, EPOCH),
   };
 }
 
@@ -284,6 +335,7 @@ export function sanitizeState(input: unknown): { state: UserState; issues: Issue
     modeHistory: list(c, input.modeHistory, "modeHistory", (v) => v)
       .filter((p, i) => MODES.includes(p.id as ActiveModeId) || (c.note(`modeHistory[${i}]`, "unknown Active Mode", true), false))
       .map((p) => ({ ...p, id: p.id as ActiveModeId, since: str(p.since, EPOCH), until: str(p.until, EPOCH) })),
+    evidence: list(c, input.evidence, "evidence", evidence),
   };
   return { state, issues: c.issues };
 }

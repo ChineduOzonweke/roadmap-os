@@ -8,8 +8,8 @@ Branch: v2   Baseline: main @ b922317
 | B | Data safety / persistence / export / import | done | 28f46a2 (pushed) |
 | C | Today + daily execution engine | done | fd135f7 (pushed) |
 | D | Review queue + mastery retention | done | 74cce48 (pushed) |
-| E | Active Mode switcher | done | phase E commit |
-| F | Project milestones + evidence | not started | |
+| E | Active Mode switcher | done | 09129a7 (pushed) |
+| F | Project milestones + evidence | done | phase F commit |
 | G | Portfolio / README export | not started | |
 | H | Command palette + DSA enhancements | not started | |
 | I | Graph pan/zoom + PWA | not started | |
@@ -53,6 +53,13 @@ Branch: v2   Baseline: main @ b922317
 - Switcher (`components/ActiveMode.tsx`): in the desktop sidebar under the week, at the top of Today on phones, and in Settings with the history of earlier periods. Expands in place as a radio group; Escape closes and returns focus. Always labelled "Active Mode" to stay distinct from the AI learn/build/assess mode.
 - Tests: 79. Verified at 390 px and 1366 px: v2 data migrated to v3 with no mode guessed, switcher opens, choosing Exams paused the primary block and the build, history recorded, sidebar layout fits.
 
+## Phase F summary
+- Schema v4 (`MIGRATIONS[3]`): `evidence: EvidenceItem[]` {kind, subject, title, url, detail}. Kinds: repository, commit/PR, exercise, written explanation, test result, benchmark/metric, architecture diagram, technical note, re-test result, screenshot/artifact, deployed URL, other. Subject = topic, project, milestone or checkpoint id. Existing free-text evidence (topic and gate) is untouched and still editable as "Evidence notes".
+- Project record (optional `ProjectProgress` fields, validated): milestone status To do / Doing / Blocked / Done with notes and start/done times (Done keeps the v1 `milestones` flag in sync, so older views and counts agree); custom milestones; completion criteria parsed from each project's master spec (`lib/projectSpec.ts`: every headed bullet list except Examples, code blocks ignored; text-derived keys) plus the user's own definition of done; engineering record (problem, goal, architecture, implementation, experiments, failure points/debugging, lessons, future, decisions with rejected alternatives, metrics, deployed URL, other links).
+- Projects are not identical: criteria come from each spec (PR01 "Must demonstrate", PR04 "Requirements" + "Then analyse", PR07 "Required questions", PR11 "Required documentation"...), and ML/AI projects lead with experiments and metrics.
+- Evidence UI (`components/Evidence.tsx`): add/edit/delete (delete confirms) on milestones, the whole project (any milestone selectable), topics (with a "Demonstrated should be backed by proof" hint) and checkpoints. New `/evidence` page lists everything, filterable by kind, linked back to what it proves; added to the nav under Practice.
+- Tests: 90 (requirement parser against the real `data/projects.json`, milestone status, subject labels, validation, v3->v4 migration, milestone/record/evidence actions). Verified in the browser: v3 data migrated to v4, milestone set to Doing (project moved to In progress), evidence added to a milestone and shown on the project list and `/evidence` with a link back, checkpoint and topic evidence sections render, no horizontal overflow at 390 px.
+
 ## Decisions and deviations
 - STATE_VERSION stays 1 in Phase B: the only schema addition (`pastReviews`) is optional and backward compatible (older builds keep it via spread). The migration registry is in place, empty, and tested with synthetic migrations; the first real migration will come with Phase C/D state.
 - Automatic backups and "last exported" are device-local metadata in separate keys, not part of `UserState`, so exports do not carry another device's backup history.
@@ -60,11 +67,14 @@ Branch: v2   Baseline: main @ b922317
 - UI verification uses the desktop app's browser pane instead of Playwright, to avoid adding a dependency.
 - `.claude/launch.json` (local `next start` on port 3123 for the browser pane) is not committed.
 - Phase C: Active Mode is not yet an input to the Today plan; Phase E adds it to `todayPlan`. Reopening a finished stage keeps its first start time, so time spent can be overstated after jumping back.
+- Phase F: screenshots and artifacts are stored as links, not files: browser storage (~5 MB, shared with automatic backups) cannot hold binaries safely. A cloud adapter could add file storage later.
+- Phase F: checkpoint completion is not blocked on evidence (the gate criteria checklist stays the authority); the evidence list sits next to it.
 - Phase E: mode descriptions are short paraphrases of master 0.3 kept in `lib/modes.ts` (the master prose lives in `meta.operatingRulesMd`, which is not structured per mode). Exams keeps the "Done this week" and notes sections so nothing is hidden irreversibly.
 - Phase D: reviews stay topic-level (mastery is topic-level in the data model); concept-level review would need per-concept mastery, which the curriculum does not define.
 - Phase C: when a project milestone's text is identical to this week's build text, Today shows it once (in the build section).
 
 ## Known limitations
+- UI checks in the desktop app's browser pane can stall on the loading skeleton while the Claude window is hidden (React's streaming reveal waits for an animation frame). Not an app bug; see the memory note. Real browsers are unaffected.
 - Automatic backups live in the same browser storage as progress: clearing site data removes both. Only exported files survive that; the Today nudge is the mitigation.
 - Cross-tab edits within the 300 ms save window can be overwritten by another tab (last writer wins).
 - Cloud sync is designed (adapter contract, Supabase steps in docs/PERSISTENCE.md) but not implemented: it needs a Supabase project and credentials.

@@ -29,7 +29,7 @@ Saves are debounced 300 ms and flushed on `pagehide` and `visibilitychange: hidd
 
 ## Schema migrations
 
-`STATE_VERSION` in `types/state.ts` is the current schema (v2: v1 plus `sessions`, the Daily Work Unit log). To change the schema: bump it, add `MIGRATIONS[oldVersion]` in `lib/persistence/migrate.ts` (pure, non-mutating, preserves unknown fields), and add a test using a real document of the old shape (`tests/fixtures/`). Optional fields that default cleanly (for example `TopicProgress.pastReviews`) do not need a version bump.
+`STATE_VERSION` in `types/state.ts` is the current schema (v2 adds `sessions`; v3 adds `activeMode` and `modeHistory`; v4 adds `evidence`). Each upgrade snapshots the original first (`before-migration`). To change the schema: bump it, add `MIGRATIONS[oldVersion]` in `lib/persistence/migrate.ts` (pure, non-mutating, preserves unknown fields), and add a test using a real document of the old shape (`tests/fixtures/`). Optional fields that default cleanly (for example `TopicProgress.pastReviews`) do not need a version bump.
 
 ## Backup file format
 

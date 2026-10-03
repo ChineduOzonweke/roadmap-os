@@ -3,8 +3,8 @@
 // cloud (Supabase) in the next stage, so keep it serialisable and versioned.
 
 // v1: original. v2 (phase C): adds `sessions`. v3 (phase E): adds `activeMode`, `modeHistory`.
-// See lib/persistence/migrate.ts.
-export const STATE_VERSION = 3;
+// v4 (phase F): adds `evidence`. See lib/persistence/migrate.ts.
+export const STATE_VERSION = 4;
 
 export type MasteryLevel = 0 | 1 | 2 | 3 | 4 | 5; // not started .. retained
 export type DepthLevel = 0 | 1 | 2 | 3 | 4 | 5; // D0 .. D5
@@ -42,11 +42,50 @@ export type GateProgress = {
 };
 
 export type ProjectStatus = "not_started" | "in_progress" | "complete";
+export type MilestoneStatus = "todo" | "doing" | "blocked" | "done";
+export type MilestoneDetail = { status: MilestoneStatus; notes: string; startedAt?: string; doneAt?: string };
+export type CustomMilestone = { id: string; text: string; createdAt: string };
+export type Decision = { id: string; decision: string; why: string; rejected: string };
+export type Metric = { id: string; name: string; value: string; context: string };
+/** The engineering record behind a project: what the README / case study is generated from (phase G). */
+export type ProjectRecord = {
+  problem: string;
+  goal: string;
+  architecture: string;
+  implementation: string;
+  experiments: string;
+  failures: string; // failure points and debugging
+  lessons: string;
+  future: string;
+  completionCriteria: string; // the user's own definition of done, beyond the master's
+  deployUrl: string;
+  links: string; // one per line
+  decisions: Decision[];
+  metrics: Metric[];
+};
 export type ProjectProgress = {
   status: ProjectStatus;
-  milestones: Record<string, boolean>;
+  milestones: Record<string, boolean>; // milestone id -> done (v1 field, still the source of "done")
   quality: Record<string, boolean>;
   repoUrl: string;
+  // phase F, all optional:
+  milestoneDetail?: Record<string, MilestoneDetail>;
+  customMilestones?: CustomMilestone[];
+  requirements?: Record<string, boolean>; // lib/projectSpec.ts keys -> met
+  record?: Partial<ProjectRecord>;
+};
+
+export type EvidenceKind =
+  | "repo" | "commit" | "exercise" | "explanation" | "test" | "benchmark" | "diagram" | "note" | "retest" | "screenshot" | "deploy" | "other";
+export type EvidenceItem = {
+  id: string;
+  kind: EvidenceKind;
+  subject: string; // topic, project, milestone or checkpoint id
+  title: string;
+  url: string;
+  detail: string;
+  createdAt: string;
+  updatedAt: string;
 };
 
 export type ResourceStatus = "todo" | "using" | "done";
@@ -163,6 +202,7 @@ export type UserState = {
   sessions: DailySession[]; // v2; newest first
   activeMode: { id: ActiveModeId; since: string } | null; // v3; null until chosen (a suggestion is shown)
   modeHistory: ModePeriod[]; // v3; closed periods, oldest first
+  evidence: EvidenceItem[]; // v4; proof of competency, see lib/evidence.ts
 };
 
 export function emptyState(): UserState {
@@ -185,5 +225,6 @@ export function emptyState(): UserState {
     sessions: [],
     activeMode: null,
     modeHistory: [],
+    evidence: [],
   };
 }

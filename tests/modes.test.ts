@@ -19,7 +19,7 @@ describe("Active Mode", () => {
 
   it("is not guessed by the migration; a suggestion is shown until one is chosen", () => {
     const r = migrate({ version: 2, checks: {} });
-    expect(r.ok && r.doc).toMatchObject({ version: 3, activeMode: null, modeHistory: [] });
+    expect(r.ok && r.doc).toMatchObject({ version: 4, activeMode: null, modeHistory: [], evidence: [] });
     expect(suggestedMode(1)).toBe("A");
     expect(suggestedMode(40)).toBe("B");
     expect(effectiveMode({ ...emptyState(), currentWeek: 40 })).toMatchObject({ chosen: false, since: null, def: { id: "B" } });

@@ -6,6 +6,7 @@ import { Markdown } from "@/components/Markdown";
 import { ExternalLink, PageHeader, Section } from "@/components/ui";
 import { NotesEditor, TopicStatus } from "@/components/progress";
 import { ProjectControls } from "@/components/ProjectControls";
+import { parseRequirements } from "@/lib/projectSpec";
 import { RefId } from "@/components/Ref";
 
 export const dynamicParams = false;
@@ -42,7 +43,16 @@ export default async function Page({ params }: Props) {
         <div><p className="text-xs text-muted">Requires</p><p>{p.requires.map((r, i) => { const x = refLabel(r); return <span key={r}>{i > 0 && ", "}{x.href ? <Link className="hover:text-accent" href={x.href}>{x.label}</Link> : x.label}</span>; })}</p></div>
       </div>
 
-      <Section title="Your project record"><ProjectControls id={p.id} milestones={p.milestones} quality={quality} /></Section>
+      <Section title="Your project record">
+        <ProjectControls
+          id={p.id}
+          title={p.title}
+          milestones={p.milestones}
+          quality={quality}
+          requirements={parseRequirements(p.bodyMd)}
+          focus={p.qualityProfile.some((g) => g === "ml" || g === "ai") ? "ml" : "general"}
+        />
+      </Section>
 
       <Section title="Master specification">
         <div className="card p-4"><Markdown md={p.bodyMd} /></div>

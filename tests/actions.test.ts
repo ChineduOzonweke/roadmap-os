@@ -4,6 +4,7 @@ import { getState, getStorageStatus, initStore } from "@/lib/store";
 import {
   abandonSession, applyImport, completeSession, exportBackup, goToStage, previewImport, recordReview, resetState, restoreSnapshot,
   setActiveMode, setCheck, setMastery, setSessionLog, setStageNote, startSession, undoLastReview,
+  addCustomMilestone, deleteEvidence, removeCustomMilestone, saveEvidence, setMilestoneNotes, setMilestoneStatus, setProjectRecord, setProjectRequirement,
 } from "@/lib/actions";
 import { sessionStages } from "@/lib/today";
 import { createBrowserAdapter, STATE_KEY } from "@/lib/persistence/browser";
@@ -146,5 +147,48 @@ describe("Active Mode action", () => {
     setActiveMode("D");
     expect(getState().activeMode?.id).toBe("D");
     expect(getState().modeHistory.map((p) => p.id)).toEqual(["B"]);
+  });
+});
+
+describe("project milestones and evidence", () => {
+  it("milestone status keeps the v1 done flag in sync and starts the project", () => {
+    setMilestoneStatus("PR01", "PR01-M1", "doing");
+    let p = getState().projects.PR01;
+    expect(p.status).toBe("in_progress");
+    expect(p.milestones["PR01-M1"]).toBe(false);
+    expect(p.milestoneDetail?.["PR01-M1"]).toMatchObject({ status: "doing" });
+    expect(p.milestoneDetail?.["PR01-M1"].startedAt).toBeDefined();
+    setMilestoneNotes("PR01", "PR01-M1", "argparse done");
+    setMilestoneStatus("PR01", "PR01-M1", "done");
+    p = getState().projects.PR01;
+    expect(p.milestones["PR01-M1"]).toBe(true);
+    expect(p.milestoneDetail?.["PR01-M1"]).toMatchObject({ status: "done", notes: "argparse done" });
+  });
+
+  it("custom milestones, requirements and the engineering record", () => {
+    addCustomMilestone("PR01", "  packaging  ");
+    addCustomMilestone("PR01", "   ");
+    const custom = getState().projects.PR01.customMilestones!;
+    expect(custom.map((m) => m.text)).toEqual(["packaging"]);
+    expect(custom[0].id).toMatch(/^PR01-U/);
+    setProjectRequirement("PR01", "must-demonstrate:python", true);
+    setProjectRecord("PR01", { problem: "messy files" });
+    setProjectRecord("PR01", { decisions: [{ id: "d1", decision: "argparse", why: "stdlib", rejected: "click" }] });
+    const p = getState().projects.PR01;
+    expect(p.requirements).toEqual({ "must-demonstrate:python": true });
+    expect(p.record).toMatchObject({ problem: "messy files", decisions: [{ decision: "argparse" }] });
+    removeCustomMilestone("PR01", custom[0].id);
+    expect(getState().projects.PR01.customMilestones).toEqual([]);
+  });
+
+  it("saves, edits and deletes evidence", () => {
+    saveEvidence({ kind: "repo", subject: "PR01-M1", title: "cli repo", url: "https://github.com/x/cli", detail: "" });
+    const e = getState().evidence[0];
+    expect(e).toMatchObject({ kind: "repo", subject: "PR01-M1", title: "cli repo" });
+    saveEvidence({ ...e, title: "CLI repo" });
+    expect(getState().evidence).toHaveLength(1);
+    expect(getState().evidence[0]).toMatchObject({ id: e.id, title: "CLI repo", createdAt: e.createdAt });
+    deleteEvidence(e.id);
+    expect(getState().evidence).toEqual([]);
   });
 });

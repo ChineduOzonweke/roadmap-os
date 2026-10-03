@@ -15,7 +15,7 @@ import {
   emptyState,
   type ActiveModeId, type AiLogEntry, type DailySession, type SessionPlan, type SessionStage,
   type Application, type DepthLevel, type DsaProblem, type GateStatus, type MasteryLevel,
-  type ProjectProgress, type ProjectStatus, type ResourceStatus, type Story, type TopicProgress, type UserState,
+  type EvidenceItem, type MilestoneDetail, type MilestoneStatus, type ProjectProgress, type ProjectRecord, type ProjectStatus, type ResourceStatus, type Story, type TopicProgress, type UserState,
 } from "@/types/state";
 
 const now = () => new Date().toISOString();
@@ -152,6 +152,73 @@ export function setProjectFlag(id: string, group: "milestones" | "quality", key:
 
 export function setProjectRepo(id: string, repoUrl: string) {
   update((s) => ({ ...s, projects: { ...s.projects, [id]: { ...projectOf(s, id), repoUrl } } }));
+}
+
+function patchProject(id: string, fn: (p: ProjectProgress) => ProjectProgress) {
+  update((s) => ({ ...s, projects: { ...s.projects, [id]: fn(projectOf(s, id)) } }));
+}
+
+/**
+ * Milestone status. "done" also sets the v1 done flag (and "todo"/"doing"/"blocked"
+ * clear it), so older views and the progress counts stay consistent.
+ */
+export function setMilestoneStatus(projectId: string, milestoneId: string, status: MilestoneStatus) {
+  patchProject(projectId, (p) => {
+    const prev = p.milestoneDetail?.[milestoneId] ?? { status: p.milestones[milestoneId] ? "done" : "todo", notes: "" };
+    const t = now();
+    const detail: MilestoneDetail = { ...prev, status };
+    if (status === "doing" && !detail.startedAt) detail.startedAt = t;
+    if (status === "done") detail.doneAt = t;
+    else delete detail.doneAt;
+    const next: ProjectProgress = {
+      ...p,
+      milestones: { ...p.milestones, [milestoneId]: status === "done" },
+      milestoneDetail: { ...(p.milestoneDetail ?? {}), [milestoneId]: detail },
+    };
+    if (status !== "todo" && p.status === "not_started") next.status = "in_progress";
+    return next;
+  });
+}
+
+export function setMilestoneNotes(projectId: string, milestoneId: string, notes: string) {
+  patchProject(projectId, (p) => {
+    const prev = p.milestoneDetail?.[milestoneId] ?? { status: p.milestones[milestoneId] ? "done" : "todo", notes: "" };
+    return { ...p, milestoneDetail: { ...(p.milestoneDetail ?? {}), [milestoneId]: { ...prev, notes } } };
+  });
+}
+
+export function addCustomMilestone(projectId: string, text: string) {
+  if (!text.trim()) return;
+  patchProject(projectId, (p) => ({
+    ...p,
+    customMilestones: [...(p.customMilestones ?? []), { id: `${projectId}-U${newId("m").slice(2)}`, text: text.trim(), createdAt: now() }],
+  }));
+}
+
+export function removeCustomMilestone(projectId: string, milestoneId: string) {
+  patchProject(projectId, (p) => ({ ...p, customMilestones: (p.customMilestones ?? []).filter((m) => m.id !== milestoneId) }));
+}
+
+export function setProjectRequirement(projectId: string, key: string, met: boolean) {
+  patchProject(projectId, (p) => ({ ...p, requirements: { ...(p.requirements ?? {}), [key]: met } }));
+}
+
+export function setProjectRecord(projectId: string, patch: Partial<ProjectRecord>) {
+  patchProject(projectId, (p) => ({ ...p, record: { ...(p.record ?? {}), ...patch } }));
+}
+
+// ---- evidence (proof of competency)
+export function saveEvidence(e: Omit<EvidenceItem, "id" | "createdAt" | "updatedAt"> & { id?: string; createdAt?: string }) {
+  update((s) => {
+    const id = e.id ?? newId("ev");
+    const item: EvidenceItem = { ...e, id, createdAt: e.createdAt ?? now(), updatedAt: now() };
+    const exists = s.evidence.some((x) => x.id === id);
+    return { ...s, evidence: exists ? s.evidence.map((x) => (x.id === id ? item : x)) : [item, ...s.evidence] };
+  });
+}
+
+export function deleteEvidence(id: string) {
+  update((s) => ({ ...s, evidence: s.evidence.filter((x) => x.id !== id) }));
 }
 
 // ---- resources, flags, notes
