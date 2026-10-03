@@ -201,16 +201,16 @@ export function DsaJournal({ patterns, practice, laneNote }: { patterns: Pattern
 
   return (
     <div className="space-y-8">
-      <section className="grid grid-cols-2 gap-4 card p-4 sm:grid-cols-4" aria-label="DSA stats">
-        <div><p className="text-xs text-muted">Problems logged</p><p className="text-xl font-semibold tabular-nums">{stats.total}</p></div>
-        <div><p className="text-xs text-muted">Solved alone</p><p className="text-xl font-semibold tabular-nums">{stats.solved}</p>{stats.total > 0 && <Bar value={stats.solved / stats.total} className="mt-1" label="Solved alone" />}</div>
-        <div><p className="text-xs text-muted">By difficulty</p><p className="text-sm tabular-nums">{stats.byDiff.map(([d, n]) => `${d} ${n}`).join(", ")}</p></div>
-        <div><p className="text-xs text-muted">Due to re-solve</p><p className={cx("text-xl font-semibold tabular-nums", stats.due.length > 0 && "text-warn")}>{stats.due.length}</p></div>
+      <section className="grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-rule bg-rule sm:grid-cols-4" aria-label="DSA stats">
+        <div className="bg-surface px-4 py-3"><p className="t-eyebrow">Logged</p><p className="t-data mt-1 text-xl">{stats.total}</p></div>
+        <div className="bg-surface px-4 py-3"><p className="t-eyebrow">Solved alone</p><p className="t-data mt-1 text-xl">{stats.solved}</p>{stats.total > 0 && <Bar value={stats.solved / stats.total} className="mt-2" label="Solved alone" />}</div>
+        <div className="bg-surface px-4 py-3"><p className="t-eyebrow">By difficulty</p><p className="t-data mt-1 text-sm">{stats.byDiff.map(([d, n]) => `${d[0].toUpperCase()}${n}`).join(" · ")}</p></div>
+        <div className="bg-surface px-4 py-3"><p className="t-eyebrow">Due to re-solve</p><p className={cx("t-data mt-1 text-xl", stats.due.length > 0 && "text-warn")}>{stats.due.length}</p></div>
       </section>
 
       {stats.due.length > 0 && (
         <section aria-labelledby="resolve">
-          <h2 id="resolve" className="mb-1 text-base font-semibold">Due to re-solve today</h2>
+          <h2 id="resolve" className="h-section mb-1">Due to re-solve today</h2>
           <p className="mb-2 text-sm text-muted">Solve from a blank editor, no notes. Failed problems keep coming back until they are solved cleanly.</p>
           <ul className="list-card">
             {stats.due.map((p) => {
@@ -301,10 +301,10 @@ export function DsaJournal({ patterns, practice, laneNote }: { patterns: Pattern
                   )}
                   {logging === p.id && <AttemptForm p={p} onDone={() => setLogging(null)} />}
                   {p.notes && <p className="mt-1 whitespace-pre-wrap text-sm text-muted">{p.notes}</p>}
-                  <div className="mt-2 flex gap-3 text-xs">
-                    <button type="button" className="text-accent hover:underline" onClick={() => open({ ...p })}>Edit</button>
-                    {logging !== p.id && <button type="button" className="text-accent hover:underline" onClick={() => setLogging(p.id)}>Log attempt</button>}
-                    <button type="button" className="text-danger hover:underline" onClick={() => { if (window.confirm(`Delete "${p.title}"?`)) deleteDsa(p.id); }}>Delete</button>
+                  <div className="-ml-1.5 mt-1 flex gap-1 text-sm">
+                    <button type="button" className="btn btn-quiet btn-sm" onClick={() => open({ ...p })}>Edit</button>
+                    {logging !== p.id && <button type="button" className="btn btn-quiet btn-sm" onClick={() => setLogging(p.id)}>Log attempt</button>}
+                    <button type="button" className="btn btn-quiet btn-sm text-danger hover:bg-danger-soft" onClick={() => { if (window.confirm(`Delete "${p.title}"?`)) deleteDsa(p.id); }}>Delete</button>
                   </div>
                 </li>
               ))}
@@ -336,13 +336,13 @@ export function DsaJournal({ patterns, practice, laneNote }: { patterns: Pattern
 
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
         <section>
-          <h2 className="mb-2 text-base font-semibold">Most practised patterns</h2>
+          <h2 className="h-section mb-3">Most practised patterns</h2>
           {stats.top.length ? (
             <ul className="space-y-1 text-sm">{stats.top.map(([id, n]) => <li key={id} className="flex justify-between gap-3"><Link className="hover:text-accent" href={`/topics/${id.split("#")[0]}`}>{pText(id)}</Link><span className="tabular-nums text-muted">{n}</span></li>)}</ul>
           ) : <p className="text-sm text-muted">Tag problems with patterns to see coverage.</p>}
         </section>
         <section>
-          <h2 className="mb-2 text-base font-semibold">DSA lane and practice sources</h2>
+          <h2 className="h-section mb-3">DSA lane and practice sources</h2>
           <p className="mb-2 text-sm text-muted">{laneNote}</p>
           <ul className="space-y-1 text-sm">{practice.map((r) => <li key={r.id}><ExternalLink href={r.url}>{r.name || r.url}</ExternalLink></li>)}</ul>
         </section>

@@ -60,7 +60,7 @@ export function Dashboard() {
   return (
     <div className="space-y-8">
       <header>
-        <h1 className="text-[1.75rem] font-semibold leading-[1.15] tracking-[-0.015em]">Progress</h1>
+        <h1 className="font-display text-[2.125rem] leading-[1.05] tracking-[-0.01em] sm:text-[2.625rem]">Progress</h1>
         <p className="mt-2 text-muted">What you have done, where you are, and what comes next.</p>
       </header>
 

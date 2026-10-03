@@ -18,14 +18,14 @@ export function SettingsView({ dataInfo }: { dataInfo: { md5: string; generated:
   const [week, setWeek] = useState<string>("");
   const btn = "btn btn-secondary btn-sm";
   return (
-    <div className="space-y-8">
+    <div className="rule-list [&>section]:py-7 [&>section:first-child]:pt-0">
       <section id="backup" className="scroll-mt-20">
-        <h2 className="mb-2 text-base font-semibold">Backup and restore</h2>
+        <h2 className="h-section mb-3">Backup and restore</h2>
         <BackupPanel curriculum={{ md5: dataInfo.md5, generated: dataInfo.generated }} />
       </section>
 
       <section>
-        <h2 className="mb-2 text-base font-semibold">Appearance</h2>
+        <h2 className="h-section mb-3">Appearance</h2>
         <div className="flex flex-wrap gap-2" role="group" aria-label="Theme">
           {["system", "light", "dark"].map((t) => (
             <button key={t} type="button" aria-pressed={mounted && theme === t} onClick={() => setTheme(t)} className="chip">
@@ -36,13 +36,13 @@ export function SettingsView({ dataInfo }: { dataInfo: { md5: string; generated:
       </section>
 
       <section>
-        <h2 className="mb-2 text-base font-semibold">Active Mode</h2>
+        <h2 className="h-section mb-3">Active Mode</h2>
         <p className="mb-2 text-sm text-muted">Your operating state (master 0.3): it sets how much roadmap work Today asks for. Separate from the AI learn/build/assess mode.</p>
         <ActiveModeSettings />
       </section>
 
       <section>
-        <h2 className="mb-2 text-base font-semibold">Current week</h2>
+        <h2 className="h-section mb-3">Current week</h2>
         <p className="mb-2 text-sm text-muted">The week Today and the dashboard work from. Completing the current week moves it forward automatically.</p>
         <form className="flex flex-wrap items-center gap-2" onSubmit={(e) => { e.preventDefault(); const n = Number(week); if (n >= 1 && n <= 206) { setCurrentWeek(n); setWeek(""); } }}>
           <span className="text-sm">Now: week {ready ? s.currentWeek : "…"}</span>
@@ -52,7 +52,7 @@ export function SettingsView({ dataInfo }: { dataInfo: { md5: string; generated:
       </section>
 
       <section>
-        <h2 className="mb-2 text-base font-semibold">Reference codes</h2>
+        <h2 className="h-section mb-3">Reference codes</h2>
         <label className="flex min-h-11 cursor-pointer items-start gap-3">
           <input type="checkbox" className="mt-0.5 shrink-0" disabled={!ready} checked={ready && !!s.flags[SHOW_REFS_FLAG]} onChange={(e) => setFlag(SHOW_REFS_FLAG, e.target.checked)} />
           <span className="text-sm">
@@ -63,7 +63,7 @@ export function SettingsView({ dataInfo }: { dataInfo: { md5: string; generated:
       </section>
 
       <section>
-        <h2 className="mb-2 text-base font-semibold">Curriculum data</h2>
+        <h2 className="h-section mb-3">Curriculum data</h2>
         <p className="text-sm">{dataInfo.counts}</p>
         <p className="mt-1 text-xs text-muted">Master MD5 <span className="font-mono">{dataInfo.md5}</span>, generated {dataInfo.generated}.</p>
       </section>

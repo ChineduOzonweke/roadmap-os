@@ -17,8 +17,8 @@ Branch: v2   Baseline: main @ b922317
 | Stab. | Final engineering audit, docs | done | 3f67d0a (pushed) |
 | UI-A | V2.1 visual reconnaissance + design decisions | done | 3ce4974 (pushed) |
 | UI-B/C/D | Tokens, fonts, primitives, app shell | done | ab5987e (pushed) |
-| UI-E | Today, Weeks, Projects, project detail | done | UI-E commit |
-| UI-F | Secondary screens | not started | |
+| UI-E | Today, Weeks, Projects, project detail | done | c095e94 (pushed) |
+| UI-F | Secondary screens | done | UI-F commit |
 | UI-G/H | Motion, graph visuals | not started | |
 
 ## Phase B summary

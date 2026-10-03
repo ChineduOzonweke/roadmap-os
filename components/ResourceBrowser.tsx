@@ -87,9 +87,8 @@ export function ResourceBrowser({ resources, tools, phases }: { resources: Resou
                 <li key={r.id} className="flex flex-col gap-2 px-3 py-2.5 sm:flex-row sm:items-start sm:gap-4">
                   <div className="min-w-0 flex-1">
                     <p className="text-xs text-muted">
-                      <RefId id={r.id} />, {r.label}
-                      {r.phaseId ? `, ${r.phaseId} ${phaseTitle.get(r.phaseId) ?? ""}` : ", general"}
-                      {r.group ? `, ${r.group}` : ""}
+                      <RefId id={r.id} />{" "}
+                      {[r.label, r.phaseId ? `${r.phaseId} ${phaseTitle.get(r.phaseId) ?? ""}`.trim() : "General", r.group].filter(Boolean).join(" · ")}
                     </p>
                     <p className="mt-0.5">{r.url ? <ExternalLink href={r.url}>{r.name || r.url}</ExternalLink> : <InlineText text={r.name} />}</p>
                     {r.note && <p className="text-sm text-muted">{r.note}</p>}

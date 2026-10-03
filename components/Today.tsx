@@ -83,7 +83,7 @@ export function Today({ dayPlans, dailyUnit, lanes, projects }: {
         <p className="t-eyebrow">
           Week <span className="text-ink">{String(cw).padStart(3, "0")}</span> / 206{phase ? ` · ${phase.t}` : stage ? ` · ${stage.n}` : ""}
         </p>
-        <h1 className="mt-2 font-display text-[2.25rem] leading-[1.04] tracking-[-0.01em] text-balance sm:text-[2.875rem]">{w.t}</h1>
+        <h1 className="mt-2 font-display text-[2.25rem] leading-[1.04] tracking-[-0.01em] text-balance sm:text-[2.875rem] lg:text-[2.5rem] xl:text-[2.875rem]">{w.t}</h1>
         {v.total > 0 && (
           <div className="mt-5 max-w-xl">
             <Tally done={v.done} total={v.total} label="This week's checklist" />
