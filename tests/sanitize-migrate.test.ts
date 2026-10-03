@@ -4,8 +4,8 @@ import { sanitizeState } from "@/lib/persistence/sanitize";
 import { migrate, readDocument, type Migration } from "@/lib/persistence/migrate";
 import v1 from "./fixtures/v1-state.json";
 
-/** What a v1 document becomes after the v1 -> v2 migration: identical plus an empty session log. */
-const V2 = { ...v1, version: 2, sessions: [] };
+/** What a v1 document becomes after migration: identical plus empty session log and no Active Mode chosen. */
+const V2 = { ...v1, version: 3, sessions: [], activeMode: null, modeHistory: [] };
 
 describe("sanitizeState", () => {
   it("passes a current-version document through unchanged", () => {
@@ -89,9 +89,9 @@ describe("migrate", () => {
     2: (d) => ({ ...d, version: 3, renamed: d.added }),
   };
 
-  it("migrates a real v1 document to v2 without changing any existing field", () => {
+  it("migrates a real v1 document to the current schema without changing any existing field", () => {
     const r = migrate({ ...v1 });
-    expect(r).toMatchObject({ ok: true, from: 1, applied: [1] });
+    expect(r).toMatchObject({ ok: true, from: 1, applied: [1, 2] });
     expect(r.ok && r.doc).toEqual(V2);
     const kept = readDocument({ ...v1, sessions: [{ id: "s1", status: "completed", stages: [] }] });
     expect(kept.ok && kept.state.sessions[0].id).toBe("s1");

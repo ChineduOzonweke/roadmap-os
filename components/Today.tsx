@@ -10,6 +10,8 @@ import {
 import { setCheck, setCurrentWeek, setWeekDone } from "@/lib/actions";
 import { activeSession, lastCompletedSession, localDay, sessionsOn, todayPlan, type ProjectInfo, type StepTemplate } from "@/lib/today";
 import { AiModeLine } from "./AiModeLine";
+import { effectiveMode } from "@/lib/modes";
+import { ActiveModeSwitcher } from "./ActiveMode";
 import { ReviewQueue } from "./Reviews";
 import { SessionHistory, SessionRunner, SessionStart } from "./SessionRunner";
 import { BackupNudge } from "./StorageNotices";
@@ -53,7 +55,9 @@ export function Today({ dayPlans, dailyUnit, lanes, projects }: {
   const phase = phaseById.get(phaseId);
   const now = new Date();
   const reviews = dueReviews(s, now);
-  const today = todayPlan(s, w, { projects, reviewsDue: reviews.length, gatePassed: (id) => gatePassed(s, id), now, nextCount: NEXT_UP });
+  const mode = effectiveMode(s);
+  const policy = mode.def.policy;
+  const today = todayPlan(s, w, { projects, reviewsDue: reviews.length, gatePassed: (id) => gatePassed(s, id), now, nextCount: NEXT_UP, policy });
   const open = w.pu.filter((u) => !s.checks[u]);
   const doneItems = w.pu.filter((u) => !!s.checks[u]);
   const focus = today.primary.next;
@@ -95,6 +99,9 @@ export function Today({ dayPlans, dailyUnit, lanes, projects }: {
         </p>
       )}
 
+      <div className="lg:hidden"><ActiveModeSwitcher /></div>
+      {policy.note && <p className="-mt-3 text-sm text-muted lg:mt-0">{policy.note}</p>}
+
       <div className="lg:hidden"><AiModeLine cw={cw} /></div>
 
       {running ? (
@@ -110,17 +117,22 @@ export function Today({ dayPlans, dailyUnit, lanes, projects }: {
           }}
         />
       ) : (
-        <SessionStart template={dailyUnit} week={cw} focus={open.slice(0, 3)} leftOff={today.leftOff} doneToday={sessionsOn(s, localDay(now))} />
+        <SessionStart template={dailyUnit} week={cw} focus={open.slice(0, 3)} leftOff={today.leftOff} doneToday={sessionsOn(s, localDay(now))} preferred={policy.session} />
       )}
 
       <section aria-labelledby="next">
-        <h2 id="next" className="h-section mb-3">{focus.length ? "Up next" : "This week"}</h2>
-        {focus.length ? (
+        <h2 id="next" className="h-section mb-3">{policy.primary === "light" && focus.length ? "Optional, only with spare capacity" : focus.length ? "Up next" : "This week"}</h2>
+        {policy.primary === "paused" && open.length > 0 ? (
+          <p className="card px-4 py-3">
+            New roadmap work is paused in this mode. Week {cw} waits for you, with {open.length} item{open.length > 1 ? "s" : ""} left; <Link href={`/weeks/${cw}`} className="text-accent hover:underline">open the week</Link> if you need to look something up.
+          </p>
+        ) : focus.length ? (
           <>
             <ConceptChecklist items={focus.map((u) => ({ id: u, text: unitLabel(u) }))} showIds={false} onToggle={onToggle} lead />
             <p className="mt-2.5 text-sm text-muted">
               Tick an item when you can do it without the tutorial open.
               {open.length > focus.length && <> {open.length - focus.length} more after these.</>}
+              {policy.primary === "light" && <> The roadmap can pause; skipping this is fine.</>}
             </p>
           </>
         ) : (
@@ -165,11 +177,13 @@ export function Today({ dayPlans, dailyUnit, lanes, projects }: {
         </section>
       )}
 
+{policy.primary !== "paused" && (
       <section aria-labelledby="build" className="border-l-2 border-rule-strong py-0.5 pl-4">
         <h2 id="build" className="text-sm text-muted">This week&apos;s build</h2>
         <p className="mt-0.5 leading-relaxed">{w.b}</p>
         {w.pj && <p className="mt-2 text-sm"><Link className="text-accent hover:underline" href={`/projects/${w.pj}`}>Open the project: {nameOf(w.pj)}</Link></p>}
       </section>
+      )}
 
       {(primaryDone || w.pu.length === 0) && !weekDone && (
         <button
@@ -212,11 +226,11 @@ export function Today({ dayPlans, dailyUnit, lanes, projects }: {
           </Disclosure>
         )}
 
-        {(lane || dsaDue.length > 0) && (
+        {policy.dsa !== "off" && (lane || dsaDue.length > 0) && (
           <Disclosure
             id="retests"
             title="DSA practice"
-            hint={dsaDue.length ? `${dsaDue.length} revisit${dsaDue.length > 1 ? "s" : ""} due` : "DSA practice for this stage"}
+            hint={policy.dsa === "optional" ? "Optional: 15-30 minutes only if it helps" : dsaDue.length ? `${dsaDue.length} revisit${dsaDue.length > 1 ? "s" : ""} due` : "DSA practice for this stage"}
             open={dsaDue.length > 0}
           >
             {lane && <p className="text-sm text-muted">{lane.note}</p>}

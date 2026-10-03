@@ -7,8 +7,8 @@ Branch: v2   Baseline: main @ b922317
 | A | Audit + architecture map | done (see ROADMAP_OS_V2_AUDIT.md) | n/a |
 | B | Data safety / persistence / export / import | done | 28f46a2 (pushed) |
 | C | Today + daily execution engine | done | fd135f7 (pushed) |
-| D | Review queue + mastery retention | done | phase D commit |
-| E | Active Mode switcher | not started | |
+| D | Review queue + mastery retention | done | 74cce48 (pushed) |
+| E | Active Mode switcher | done | phase E commit |
 | F | Project milestones + evidence | not started | |
 | G | Portfolio / README export | not started | |
 | H | Command palette + DSA enhancements | not started | |
@@ -46,6 +46,13 @@ Branch: v2   Baseline: main @ b922317
 - Behaviour change: before Phase D the first passed re-test promoted Demonstrated to Retained; now that needs the 30-day re-test.
 - Tests: 72. Verified at 390 px: due re-test listed, fail with note recorded and scheduled 2 days out, topic panel shows history and warning.
 
+## Phase E summary
+- Schema v3 (`MIGRATIONS[2]`): `activeMode: {id, since} | null` and `modeHistory: {id, since, until}[]`. The migration never guesses a mode: until one is chosen the app shows a labelled suggestion (A during the programming reset, weeks 1-2; B otherwise).
+- `lib/modes.ts` (pure, tested): the six modes from master 0.3 with a policy each: primary block active/light/paused, supporting item on/off, project on/off, DSA on/optional/off, preferred session plan, and one calm note. `switchMode` closes the current period into history.
+- `todayPlan` takes the policy: A = programming only (no supporting, project or DSA); B/F = full plan; C = light (2 optional items, short session, no project); D = new roadmap work paused (week kept, build hidden, review-only session: recall, re-test due topics, log; re-tests stay); E = light plus project/career evidence kept. Paused/light states use "waits for you" / "skipping is fine" wording, never failure language.
+- Switcher (`components/ActiveMode.tsx`): in the desktop sidebar under the week, at the top of Today on phones, and in Settings with the history of earlier periods. Expands in place as a radio group; Escape closes and returns focus. Always labelled "Active Mode" to stay distinct from the AI learn/build/assess mode.
+- Tests: 79. Verified at 390 px and 1366 px: v2 data migrated to v3 with no mode guessed, switcher opens, choosing Exams paused the primary block and the build, history recorded, sidebar layout fits.
+
 ## Decisions and deviations
 - STATE_VERSION stays 1 in Phase B: the only schema addition (`pastReviews`) is optional and backward compatible (older builds keep it via spread). The migration registry is in place, empty, and tested with synthetic migrations; the first real migration will come with Phase C/D state.
 - Automatic backups and "last exported" are device-local metadata in separate keys, not part of `UserState`, so exports do not carry another device's backup history.
@@ -53,6 +60,7 @@ Branch: v2   Baseline: main @ b922317
 - UI verification uses the desktop app's browser pane instead of Playwright, to avoid adding a dependency.
 - `.claude/launch.json` (local `next start` on port 3123 for the browser pane) is not committed.
 - Phase C: Active Mode is not yet an input to the Today plan; Phase E adds it to `todayPlan`. Reopening a finished stage keeps its first start time, so time spent can be overstated after jumping back.
+- Phase E: mode descriptions are short paraphrases of master 0.3 kept in `lib/modes.ts` (the master prose lives in `meta.operatingRulesMd`, which is not structured per mode). Exams keeps the "Done this week" and notes sections so nothing is hidden irreversibly.
 - Phase D: reviews stay topic-level (mastery is topic-level in the data model); concept-level review would need per-concept mastery, which the curriculum does not define.
 - Phase C: when a project milestone's text is identical to this week's build text, Today shows it once (in the build section).
 

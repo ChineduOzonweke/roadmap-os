@@ -6,6 +6,7 @@ import { useEffect, useState, type ReactNode } from "react";
 import { NAV, isActive } from "@/lib/nav";
 import { useHydrated, useUserState } from "@/lib/store";
 import { stageOfWeek } from "@/lib/progress";
+import { ActiveModeSwitcher } from "./ActiveMode";
 import { StorageBanner } from "./StorageNotices";
 import { ThemeToggle } from "./ThemeToggle";
 import { IconClose, IconMore, IconProgress, IconRoadmap, IconSearch, IconToday } from "./icons";
@@ -92,6 +93,7 @@ export function AppShell({ children }: { children: ReactNode }) {
       <aside className="sticky top-0 hidden h-dvh flex-col gap-4 overflow-y-auto border-r border-rule bg-surface px-3 py-4 scroll-thin lg:flex">
         <div className="px-2"><Brand /></div>
         <WeekChip />
+        <ActiveModeSwitcher variant="sidebar" />
         <NavLinks />
         <div className="mt-auto flex items-center justify-between px-1 text-xs text-faint">
           <span>Undated plan</span>

@@ -3,7 +3,7 @@ import type { UserState } from "@/types/state";
 import { getState, getStorageStatus, initStore } from "@/lib/store";
 import {
   abandonSession, applyImport, completeSession, exportBackup, goToStage, previewImport, recordReview, resetState, restoreSnapshot,
-  setCheck, setMastery, setSessionLog, setStageNote, startSession, undoLastReview,
+  setActiveMode, setCheck, setMastery, setSessionLog, setStageNote, startSession, undoLastReview,
 } from "@/lib/actions";
 import { sessionStages } from "@/lib/today";
 import { createBrowserAdapter, STATE_KEY } from "@/lib/persistence/browser";
@@ -137,5 +137,14 @@ describe("daily work sessions", () => {
     abandonSession(id);
     expect(find(id).status).toBe("abandoned");
     expect(getState().sessions).toHaveLength(2);
+  });
+});
+
+describe("Active Mode action", () => {
+  it("persists the chosen mode and its history", () => {
+    setActiveMode("B");
+    setActiveMode("D");
+    expect(getState().activeMode?.id).toBe("D");
+    expect(getState().modeHistory.map((p) => p.id)).toEqual(["B"]);
   });
 });

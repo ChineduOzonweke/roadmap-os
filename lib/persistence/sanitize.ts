@@ -1,6 +1,6 @@
 import {
   emptyState, STATE_VERSION,
-  type AiLogEntry, type Application, type DailySession, type SessionStage, type DepthLevel, type DsaProblem, type GateProgress, type MasteryLevel,
+  type ActiveModeId, type AiLogEntry, type Application, type DailySession, type SessionStage, type DepthLevel, type DsaProblem, type GateProgress, type MasteryLevel,
   type Note, type ProjectProgress, type ResourceStatus, type Story, type TopicProgress, type UserState,
 } from "@/types/state";
 
@@ -217,7 +217,7 @@ function session(v: Obj, i: number): DailySession {
     id: str(v.id) || `session-recovered-${i}`,
     date: str(v.date),
     week: int(v.week, 1, 206) ?? 1,
-    plan: oneOf(v.plan, ["full", "short"] as const, "full"),
+    plan: oneOf(v.plan, ["full", "short", "review"] as const, "full"),
     status: oneOf(v.status, ["active", "completed", "abandoned"] as const, "completed"),
     startedAt: str(v.startedAt, EPOCH),
     stage: Math.min(int(v.stage, 0, 100) ?? 0, Math.max(0, stages.length - 1)),
@@ -231,6 +231,15 @@ function session(v: Obj, i: number): DailySession {
   if (endedAt) out.endedAt = endedAt;
   else delete out.endedAt;
   return out;
+}
+
+const MODES: readonly ActiveModeId[] = ["A", "B", "C", "D", "E", "F"];
+
+function activeMode(c: Ctx, v: unknown): UserState["activeMode"] {
+  if (v === null || v === undefined) return null;
+  if (isObj(v) && MODES.includes(v.id as ActiveModeId)) return { ...v, id: v.id as ActiveModeId, since: str(v.since, EPOCH) };
+  c.note("activeMode", "unknown Active Mode; showing the suggestion instead", true);
+  return null;
 }
 
 /** Repair a document that is already at STATE_VERSION (run migrations first). */
@@ -271,6 +280,10 @@ export function sanitizeState(input: unknown): { state: UserState; issues: Issue
     applications: list(c, input.applications, "applications", application),
     aiLog: list(c, input.aiLog, "aiLog", aiEntry),
     sessions: list(c, input.sessions, "sessions", session),
+    activeMode: activeMode(c, input.activeMode),
+    modeHistory: list(c, input.modeHistory, "modeHistory", (v) => v)
+      .filter((p, i) => MODES.includes(p.id as ActiveModeId) || (c.note(`modeHistory[${i}]`, "unknown Active Mode", true), false))
+      .map((p) => ({ ...p, id: p.id as ActiveModeId, since: str(p.since, EPOCH), until: str(p.until, EPOCH) })),
   };
   return { state, issues: c.issues };
 }

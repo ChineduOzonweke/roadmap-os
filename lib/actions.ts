@@ -9,10 +9,11 @@ import {
 import { newId } from "@/lib/ids";
 import { localDay } from "@/lib/today";
 import { applyReview, undoReview } from "@/lib/reviews";
+import { switchMode } from "@/lib/modes";
 import { idx } from "@/lib/progress";
 import {
   emptyState,
-  type AiLogEntry, type DailySession, type SessionStage,
+  type ActiveModeId, type AiLogEntry, type DailySession, type SessionPlan, type SessionStage,
   type Application, type DepthLevel, type DsaProblem, type GateStatus, type MasteryLevel,
   type ProjectProgress, type ProjectStatus, type ResourceStatus, type Story, type TopicProgress, type UserState,
 } from "@/types/state";
@@ -231,13 +232,18 @@ export function deleteAiLog(id: string) {
   update((s) => ({ ...s, aiLog: s.aiLog.filter((x) => x.id !== id) }));
 }
 
+// ---- Active Mode (A-F)
+export function setActiveMode(id: ActiveModeId) {
+  update((s) => ({ ...s, ...switchMode(s, id, new Date()) }));
+}
+
 // ---- Daily Work Unit sessions
 function patchSession(id: string, fn: (x: DailySession) => DailySession) {
   update((s) => ({ ...s, sessions: s.sessions.map((x) => (x.id === id ? { ...fn(x), updatedAt: now() } : x)) }));
 }
 
 /** Start a session, or return the one already running (only one at a time). */
-export function startSession(opts: { week: number; focus: string[]; stages: SessionStage[]; plan: "full" | "short" }): string {
+export function startSession(opts: { week: number; focus: string[]; stages: SessionStage[]; plan: SessionPlan }): string {
   const running = getState().sessions.find((x) => x.status === "active");
   if (running) return running.id;
   const id = newId("session");

@@ -2,8 +2,9 @@
 // Today it lives in browser storage; the same document will be stored in the
 // cloud (Supabase) in the next stage, so keep it serialisable and versioned.
 
-// v1: original. v2 (phase C): adds `sessions`. See lib/persistence/migrate.ts.
-export const STATE_VERSION = 2;
+// v1: original. v2 (phase C): adds `sessions`. v3 (phase E): adds `activeMode`, `modeHistory`.
+// See lib/persistence/migrate.ts.
+export const STATE_VERSION = 3;
 
 export type MasteryLevel = 0 | 1 | 2 | 3 | 4 | 5; // not started .. retained
 export type DepthLevel = 0 | 1 | 2 | 3 | 4 | 5; // D0 .. D5
@@ -122,11 +123,16 @@ export type SessionStage = {
   note: string;
 };
 export type SessionStatus = "active" | "completed" | "abandoned";
+export type SessionPlan = "full" | "short" | "review";
+
+/** Active Modes A-F (master 0.3). Distinct from the AI Learn/Build/Assess mode. */
+export type ActiveModeId = "A" | "B" | "C" | "D" | "E" | "F";
+export type ModePeriod = { id: ActiveModeId; since: string; until: string };
 export type DailySession = {
   id: string;
   date: string; // local calendar day the session started, YYYY-MM-DD
   week: number;
-  plan: "full" | "short";
+  plan: SessionPlan;
   status: SessionStatus;
   startedAt: string;
   endedAt?: string;
@@ -155,6 +161,8 @@ export type UserState = {
   applications: Application[];
   aiLog: AiLogEntry[]; // added after v1 shipped; normalize() defaults it to [] for older documents
   sessions: DailySession[]; // v2; newest first
+  activeMode: { id: ActiveModeId; since: string } | null; // v3; null until chosen (a suggestion is shown)
+  modeHistory: ModePeriod[]; // v3; closed periods, oldest first
 };
 
 export function emptyState(): UserState {
@@ -175,5 +183,7 @@ export function emptyState(): UserState {
     applications: [],
     aiLog: [],
     sessions: [],
+    activeMode: null,
+    modeHistory: [],
   };
 }

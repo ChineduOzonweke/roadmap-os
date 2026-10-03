@@ -1,4 +1,5 @@
-import type { DailySession, DsaProblem, SessionStage, UserState } from "@/types/state";
+import type { DailySession, DsaProblem, SessionPlan, SessionStage, UserState } from "@/types/state";
+import type { ActiveModePolicy } from "@/lib/modes";
 
 /**
  * Pure planning for Today and the Daily Work Unit. No React, no storage, no
@@ -30,7 +31,15 @@ const LABELS: Record<string, string> = {
 /** Busy-day version of the unit: same shape, smaller blocks. Debug folds into coding. */
 const SHORT_MINUTES: Record<string, string | null> = { recall: "5", study: "15-20", code: "15-20", debug: null, explain: "5", log: "5" };
 
-export function sessionStages(template: StepTemplate[], plan: "full" | "short" = "full"): SessionStage[] {
+/** Exam-period plan: keep what you know alive, learn nothing new. */
+const REVIEW_PLAN: SessionStage[] = [
+  { key: "recall", label: "Recall", minutes: "10", note: "" },
+  { key: "retest", label: "Re-test due topics", minutes: "15-30", note: "" },
+  { key: "log", label: "Log and next step", minutes: "5", note: "" },
+];
+
+export function sessionStages(template: StepTemplate[], plan: SessionPlan = "full"): SessionStage[] {
+  if (plan === "review") return REVIEW_PLAN.map((s) => ({ ...s }));
   return template
     .map((t, i) => {
       const key = template.length === STEP_KEYS.length ? STEP_KEYS[i] : `step-${i + 1}`;
@@ -83,6 +92,8 @@ export function sessionMinutes(x: DailySession, now: Date): number {
 export type ProjectInfo = { id: string; title: string; weeks: number[]; milestones: { id: string; cw: number; text: string }[] };
 
 export type TodayPlan = {
+  /** How the Active Mode shapes the day (master 0.3). */
+  policy: ActiveModePolicy;
   /** ONE primary learning block: the next unticked items of this week's primary work. */
   primary: { next: string[]; remaining: number; topicId: string | null };
   /** AT MOST ONE supporting item. */
@@ -95,6 +106,9 @@ export type TodayPlan = {
   checkpoints: { blocking: string | null; thisWeek: string | null };
   leftOff: { next: string; date: string } | null;
 };
+
+/** Normal-semester behaviour, used when no Active Mode policy is passed. */
+const DEFAULT_POLICY: ActiveModePolicy = { primary: "active", supporting: true, project: true, dsa: "on", session: "full", note: null };
 
 type WeekLike = { cw: number; pu: string[]; u: string[]; pj: string | null; g: string | null; rg: string | null };
 
@@ -115,22 +129,25 @@ export function pickProject(s: UserState, cw: number, projects: ProjectInfo[]): 
 export function todayPlan(
   s: UserState,
   w: WeekLike,
-  opts: { projects: ProjectInfo[]; reviewsDue: number; gatePassed: (id: string) => boolean; now: Date; nextCount?: number },
+  opts: { projects: ProjectInfo[]; reviewsDue: number; gatePassed: (id: string) => boolean; now: Date; nextCount?: number; policy?: ActiveModePolicy },
 ): TodayPlan {
+  const policy = opts.policy ?? DEFAULT_POLICY;
   const open = w.pu.filter((u) => !s.checks[u]);
-  const next = open.slice(0, opts.nextCount ?? 5);
-  const supporting = w.u.find((u) => !w.pu.includes(u) && !s.checks[u]) ?? null;
-  const dsaDue = s.dsa.filter((p) => p.revisitOn && new Date(p.revisitOn) <= opts.now);
+  // Paused or light modes still show where you are, just fewer items.
+  const next = open.slice(0, policy.primary === "active" ? (opts.nextCount ?? 5) : policy.primary === "light" ? 2 : 0);
+  const supporting = policy.supporting ? (w.u.find((u) => !w.pu.includes(u) && !s.checks[u]) ?? null) : null;
+  const dsaDue = policy.dsa === "off" ? [] : s.dsa.filter((p) => p.revisitOn && new Date(p.revisitOn) <= opts.now);
   const checkpoints = {
     blocking: w.rg && !opts.gatePassed(w.rg) ? w.rg : null,
     thisWeek: w.g && !opts.gatePassed(w.g) ? w.g : null,
   };
   const last = lastCompletedSession(s);
   return {
-    primary: { next, remaining: open.length, topicId: next[0] ? topicOfUnit(next[0]) : null },
+    policy,
+    primary: { next, remaining: open.length, topicId: open[0] ? topicOfUnit(open[0]) : null },
     supporting,
     maintenance: { reviewsDue: opts.reviewsDue, dsaDue },
-    project: pickProject(s, w.cw, opts.projects),
+    project: policy.project ? pickProject(s, w.cw, opts.projects) : null,
     checkpoints,
     leftOff: last && last.log.next.trim() ? { next: last.log.next.trim(), date: last.date } : null,
   };

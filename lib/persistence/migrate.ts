@@ -16,6 +16,8 @@ export type Migration = (doc: Doc) => Doc;
 export const MIGRATIONS: Record<number, Migration> = {
   // v1 -> v2 (phase C): Daily Work Unit sessions.
   1: (doc) => ({ ...doc, version: 2, sessions: Array.isArray(doc.sessions) ? doc.sessions : [] }),
+  // v2 -> v3 (phase E): Active Mode. No mode is guessed; the app shows a suggestion until one is chosen.
+  2: (doc) => ({ ...doc, version: 3, activeMode: doc.activeMode ?? null, modeHistory: Array.isArray(doc.modeHistory) ? doc.modeHistory : [] }),
 };
 
 export type MigrateResult =

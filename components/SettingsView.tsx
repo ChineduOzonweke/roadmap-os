@@ -4,6 +4,7 @@ import { useTheme } from "next-themes";
 import { useState, useSyncExternalStore } from "react";
 import { useHydrated, useUserState } from "@/lib/store";
 import { setCurrentWeek, setFlag } from "@/lib/actions";
+import { ActiveModeSettings } from "./ActiveMode";
 import { BackupPanel } from "./BackupPanel";
 import { SHOW_REFS_FLAG } from "./Ref";
 
@@ -32,6 +33,12 @@ export function SettingsView({ dataInfo }: { dataInfo: { md5: string; generated:
             </button>
           ))}
         </div>
+      </section>
+
+      <section>
+        <h2 className="mb-2 text-base font-semibold">Active Mode</h2>
+        <p className="mb-2 text-sm text-muted">Your operating state (master 0.3): it sets how much roadmap work Today asks for. Separate from the AI learn/build/assess mode.</p>
+        <ActiveModeSettings />
       </section>
 
       <section>

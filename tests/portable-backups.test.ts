@@ -9,7 +9,7 @@ import { memoryKV } from "@/lib/persistence/kv";
 import v1json from "./fixtures/v1-state.json";
 
 const v1 = v1json as unknown as UserState;
-const V2 = { ...v1json, version: 2, sessions: [] } as unknown as UserState;
+const V2 = { ...v1json, version: 3, sessions: [], activeMode: null, modeHistory: [] } as unknown as UserState;
 const CUR = { md5: "c85d55c0e1916af940605fe1467edc3c", generated: "2026-10-03" };
 
 describe("export / import", () => {

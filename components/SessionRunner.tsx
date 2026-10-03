@@ -6,7 +6,7 @@ import { useDraft } from "@/lib/useDraft";
 import { abandonSession, completeSession, goToStage, setMastery, setSessionLog, setStageNote, startSession } from "@/lib/actions";
 import { elapsedMinutes, localDay, planMinutes, sessionMinutes, sessionStages, type StepTemplate } from "@/lib/today";
 import { topicById, unitLabel } from "@/lib/progress";
-import type { DailySession, UserState } from "@/types/state";
+import type { DailySession, SessionPlan, UserState } from "@/types/state";
 import { ConceptChecklist } from "./progress";
 import { cx } from "./ui";
 
@@ -96,6 +96,14 @@ function StageGuide({ x, s, ctx }: { x: DailySession; s: UserState; ctx: Session
         <p>Write the code yourself, without the tutorial open. Get stuck, then consult, then fix.</p>
         {ctx.build && <p><span className="text-muted">This week&apos;s build:</span> {ctx.build}</p>}
         {ctx.projectHref && <p><Link href={ctx.projectHref} className="text-accent hover:underline">Open the project: {ctx.projectTitle}</Link></p>}
+      </div>
+    );
+  }
+  if (key === "retest") {
+    return (
+      <div className="space-y-2 text-sm">
+        <p>Work through what is due: re-demonstrate each topic without notes, then record pass or fail.</p>
+        {ctx.reviewsDue > 0 ? <p><Link href="#reviews" className="text-accent hover:underline">{ctx.reviewsDue} re-test{ctx.reviewsDue > 1 ? "s" : ""} due today</Link></p> : <p className="text-muted">Nothing is due: recall last week&apos;s topics from memory instead.</p>}
       </div>
     );
   }
@@ -212,19 +220,26 @@ export function SessionRunner({ session: x, state: s, ctx }: { session: DailySes
   );
 }
 
-/** Start card: the plan's length up front, a busy-day option, and where you left off. */
-export function SessionStart({ template, week, focus, leftOff, doneToday }: {
+const PLAN_LABEL: Record<SessionPlan, { start: string; alt: string }> = {
+  full: { start: "Start session", alt: "Full session" },
+  short: { start: "Start short session", alt: "Short day" },
+  review: { start: "Start review session", alt: "Review only" },
+};
+
+/** Start card: the plan's length up front, the Active Mode's preferred plan first, and where you left off. */
+export function SessionStart({ template, week, focus, leftOff, doneToday, preferred = "full" }: {
   template: StepTemplate[];
   week: number;
   focus: string[];
   leftOff: { next: string; date: string } | null;
   doneToday: DailySession[];
+  preferred?: SessionPlan;
 }) {
-  const full = sessionStages(template, "full");
-  const short = sessionStages(template, "short");
-  const [flo, fhi] = planMinutes(full);
-  const [slo, shi] = planMinutes(short);
-  const start = (plan: "full" | "short") => startSession({ week, focus, stages: plan === "full" ? full : short, plan });
+  const plans: SessionPlan[] = preferred === "review" ? ["review", "short"] : preferred === "short" ? ["short", "full"] : ["full", "short"];
+  const stagesOf = (p: SessionPlan) => sessionStages(template, p);
+  const [lo, hi] = planMinutes(stagesOf(plans[0]));
+  const [alo, ahi] = planMinutes(stagesOf(plans[1]));
+  const start = (plan: SessionPlan) => startSession({ week, focus: plan === "review" ? [] : focus, stages: stagesOf(plan), plan });
   const done = doneToday.length > 0;
   return (
     <section aria-labelledby="session" className={cx("card px-4 py-4", !done && "border-accent/40")}>
@@ -238,14 +253,14 @@ export function SessionStart({ template, week, focus, leftOff, doneToday }: {
         </p>
       ) : (
         <p className="mt-1 text-sm text-muted">
-          {full.map((st) => st.label.toLowerCase()).join(", ")}. About {flo}-{fhi} min; the short version is {slo}-{shi} min.
+          {stagesOf(plans[0]).map((st) => st.label.toLowerCase()).join(", ")}. About {lo}-{hi} min; {PLAN_LABEL[plans[1]].alt.toLowerCase()} is {alo}-{ahi} min.
         </p>
       )}
       <div className="mt-3 flex flex-wrap gap-2">
-        <button type="button" className={cx("btn min-h-11", done ? "btn-secondary btn-sm" : "btn-primary flex-1 sm:flex-none")} onClick={() => start("full")}>
-          {done ? "Start another session" : "Start session"}
+        <button type="button" className={cx("btn min-h-11", done ? "btn-secondary btn-sm" : "btn-primary flex-1 sm:flex-none")} onClick={() => start(plans[0])}>
+          {done ? "Start another session" : PLAN_LABEL[plans[0]].start}
         </button>
-        <button type="button" className="btn btn-secondary min-h-11" onClick={() => start("short")}>Short day</button>
+        <button type="button" className="btn btn-secondary min-h-11" onClick={() => start(plans[1])}>{PLAN_LABEL[plans[1]].alt}</button>
       </div>
     </section>
   );
@@ -264,7 +279,7 @@ export function SessionHistory({ sessions, limit = 5 }: { sessions: DailySession
         <li key={x.id} className="text-sm">
           <p>
             <span className="font-medium">{x.date}</span>
-            <span className="text-muted"> · week {x.week} · {sessionMinutes(x, now)} min · {STATUS_LABEL[x.status]}{x.plan === "short" ? " · short" : ""}</span>
+            <span className="text-muted"> · week {x.week} · {sessionMinutes(x, now)} min · {STATUS_LABEL[x.status]}{x.plan !== "full" ? ` · ${x.plan}` : ""}</span>
           </p>
           {x.log.learned && <p className="mt-0.5"><span className="text-muted">Learned:</span> {x.log.learned}</p>}
           {x.log.stuck && <p className="mt-0.5"><span className="text-muted">Stuck:</span> {x.log.stuck}</p>}
