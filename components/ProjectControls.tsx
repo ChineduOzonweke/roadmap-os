@@ -9,10 +9,11 @@ import {
 } from "@/lib/actions";
 import { milestoneStatus, type RequirementGroup } from "@/lib/projectSpec";
 import { newId } from "@/lib/ids";
+import { evidenceFor } from "@/lib/evidence";
 import type { Decision, Metric, MilestoneStatus, ProjectProgress, ProjectRecord, ProjectStatus } from "@/types/state";
 import { DraftField } from "./SessionRunner";
 import { EvidenceList } from "./Evidence";
-import { Bar, Disclosure, ExternalLink, cx } from "./ui";
+import { Bar, Disclosure, DisclosureGroup, ExternalLink, cx } from "./ui";
 
 const STATUS: { id: ProjectStatus; label: string }[] = [
   { id: "not_started", label: "Not started" },
@@ -152,124 +153,138 @@ export function ProjectControls({ id, title, milestones, quality, requirements, 
   const text = (k: keyof ProjectRecord) => String(rec[k] ?? "");
   const textSections = focus === "ml" ? [...TEXT_SECTIONS].sort((a, b) => Number(b.key === "experiments") - Number(a.key === "experiments")) : TEXT_SECTIONS;
 
+  const evidenceCount = evidenceFor(s, evidenceSubjects.map((x) => x.id)).length;
+  const glance: { label: string; value: string; pct: number | null }[] = [
+    { label: "Milestones", value: `${msDone}/${all.length}`, pct: all.length ? msDone / all.length : null },
+    { label: "Criteria", value: reqItems.length ? `${reqDone}/${reqItems.length}` : "—", pct: reqItems.length ? reqDone / reqItems.length : null },
+    { label: "Evidence", value: String(evidenceCount), pct: null },
+    { label: "Quality", value: `${qDone}/${quality.length}`, pct: quality.length ? qDone / quality.length : null },
+  ];
+
   return (
-    <div className="space-y-7">
-      <div className="flex flex-wrap gap-2" role="group" aria-label="Project status">
-        {STATUS.map((o) => (
-          <button key={o.id} type="button" aria-pressed={status === o.id} onClick={() => setProjectStatus(id, o.id)} className="chip">{o.label}</button>
-        ))}
-      </div>
-
-      <div>
-        <div className="mb-2 flex items-center gap-3">
-          <p className="text-sm font-medium">Milestones</p>
-          <span className="text-xs tabular-nums text-muted">{msDone}/{all.length}</span>
-          <Bar value={all.length ? msDone / all.length : 0} className="w-24" label="Milestones" />
-        </div>
-        <ul className="list-card">
-          {all.map((m) => <MilestoneRow key={m.id} projectId={id} m={m} p={p} />)}
-        </ul>
-        <form className="mt-2 flex gap-2" onSubmit={(e) => { e.preventDefault(); addCustomMilestone(id, newMs); setNewMs(""); }}>
-          <input className="input min-w-0 flex-1 text-sm" value={newMs} onChange={(e) => setNewMs(e.target.value)} placeholder="Add your own milestone, e.g. auth and rate limiting" aria-label="New milestone" />
-          <button type="submit" className="btn btn-secondary btn-sm" disabled={!newMs.trim()}>Add</button>
-        </form>
-      </div>
-
-      <div>
-          <div className="mb-1 flex items-center gap-3">
-            <p className="text-sm font-medium">Completion criteria</p>
-            {reqItems.length > 0 && <><span className="text-xs tabular-nums text-muted">{reqDone}/{reqItems.length}</span><Bar value={reqDone / reqItems.length} className="w-24" label="Completion criteria" /></>}
+    <div className="space-y-8">
+      <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-rule bg-rule sm:grid-cols-4" aria-label="Project at a glance">
+        {glance.map((g) => (
+          <div key={g.label} className="bg-surface px-4 py-3">
+            <dt className="t-eyebrow">{g.label}</dt>
+            <dd className="mt-1 t-data text-xl">{g.value}</dd>
+            {g.pct !== null && <Bar value={g.pct} className="mt-2" tone={g.pct === 1 ? "ok" : "accent"} label={g.label} />}
           </div>
-          {reqItems.length > 0 && <p className="mb-2 text-xs text-muted">From the master specification. Tick what the project actually demonstrates.</p>}
-          {requirements.map((g) => (
-            <div key={g.heading} className="mb-3">
-              <p className="mb-1 text-xs text-muted">{g.heading}</p>
-              <ul className="grid grid-cols-1 gap-1 sm:grid-cols-2">
-                {g.items.map((r) => (
-                  <li key={r.key}>
-                    <label className="flex cursor-pointer items-start gap-2 rounded px-1 py-1 text-sm hover:bg-surface-2">
-                      <input type="checkbox" className="mt-0.5 shrink-0" checked={!!p?.requirements?.[r.key]} onChange={(e) => setProjectRequirement(id, r.key, e.target.checked)} />
-                      <span>{r.text}</span>
-                    </label>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-          <DraftField label="Your definition of done" saved={text("completionCriteria")} onSave={(v) => setProjectRecord(id, { completionCriteria: v })} rows={2} placeholder="Anything beyond the master's list that must be true before you call it complete" />
-      </div>
-
-      <div className="space-y-3">
-        <p className="text-sm font-medium">Engineering record</p>
-        <p className="-mt-2 text-xs text-muted">What the README and case-study export are built from. Write it as you go; it is much harder to reconstruct later.</p>
-        {textSections.map((sec, i) => (
-          <Disclosure key={sec.key} title={sec.label} hint={text(sec.key) ? "Written" : sec.placeholder} open={focus === "ml" && sec.key === "experiments" ? true : i === 0 && !text(sec.key)}>
-            <DraftField label={sec.label} saved={text(sec.key)} onSave={(v) => setProjectRecord(id, { [sec.key]: v })} rows={4} placeholder={sec.placeholder} />
-          </Disclosure>
         ))}
-        <Disclosure title="Technical decisions" hint={rec.decisions?.length ? `${rec.decisions.length} recorded` : "What you chose, why, and the alternatives you rejected"}>
-          <Rows<Decision>
-            rows={rec.decisions ?? []}
-            fields={[{ key: "decision", label: "Decision", placeholder: "PostgreSQL for storage" }, { key: "why", label: "Why", placeholder: "Relational data, constraints" }, { key: "rejected", label: "Rejected alternatives", placeholder: "MongoDB: weaker constraints" }]}
-            onChange={(decisions) => setProjectRecord(id, { decisions })}
-            addLabel="Add a decision"
-            empty={() => ({ id: newId("dec"), decision: "", why: "", rejected: "" })}
-          />
-        </Disclosure>
-        <Disclosure title="Metrics" hint={rec.metrics?.length ? `${rec.metrics.length} recorded` : focus === "ml" ? "Evaluation results: metric, value, dataset and conditions" : "Latency, throughput, coverage, cost: measured, not guessed"} open={focus === "ml" && !rec.metrics?.length}>
-          <Rows<Metric>
-            rows={rec.metrics ?? []}
-            fields={[{ key: "name", label: "Metric", placeholder: focus === "ml" ? "PR-AUC" : "p95 latency" }, { key: "value", label: "Value", placeholder: focus === "ml" ? "0.81" : "42 ms" }, { key: "context", label: "Measured how / where", placeholder: focus === "ml" ? "Temporal split, test set" : "Local, 100 rps, k6" }]}
-            onChange={(metrics) => setProjectRecord(id, { metrics })}
-            addLabel="Add a metric"
-            empty={() => ({ id: newId("met"), name: "", value: "", context: "" })}
-          />
-        </Disclosure>
-      </div>
+      </dl>
 
-      <div className="space-y-3">
-        <p className="text-sm font-medium">Links</p>
-        <label className="block text-sm">
-          <span className="mb-1 block text-xs text-muted">GitHub repository</span>
-          <span className="flex flex-wrap items-center gap-3">
-            <input type="url" value={repo} onChange={(e) => setRepo(e.target.value)} onBlur={() => setProjectRepo(id, repo.trim())} placeholder="https://github.com/..." className="min-w-0 flex-1 input" />
-            {p?.repoUrl && /^https?:\/\//.test(p.repoUrl) && <ExternalLink href={p.repoUrl}>Open</ExternalLink>}
-          </span>
-        </label>
-        <label className="block text-sm">
-          <span className="mb-1 block text-xs text-muted">Deployed URL</span>
-          <span className="flex flex-wrap items-center gap-3">
-            <input type="url" value={deploy} onChange={(e) => setDeploy(e.target.value)} onBlur={() => setProjectRecord(id, { deployUrl: deploy.trim() })} placeholder="https://..." className="min-w-0 flex-1 input" />
-            {rec.deployUrl && /^https?:\/\//.test(rec.deployUrl) && <ExternalLink href={rec.deployUrl}>Open</ExternalLink>}
-          </span>
-        </label>
-        <DraftField label="Other links (one per line)" saved={text("links")} onSave={(v) => setProjectRecord(id, { links: v })} rows={2} placeholder="Design doc, demo video, blog post" />
-      </div>
-
-      <EvidenceList subjects={evidenceSubjects} title="All evidence for this project" hint="Proof that it works: commits, test results, benchmarks, diagrams, screenshots (as links), the deployed URL." />
-
-      <div>
-        <div className="mb-1 flex items-center gap-3">
-          <p className="text-sm font-medium">Master project quality standard</p>
-          <span className="text-xs tabular-nums text-muted">{qDone}/{quality.length}</span>
-          <Bar value={quality.length ? qDone / quality.length : 0} className="w-24" label="Quality standard" />
-        </div>
-        <p className="mb-2 text-xs text-muted">Portfolio-ready means these are true of the repository, not just the code running once.</p>
-        {groups.map((g) => (
-          <div key={g} className="mb-3">
-            {groups.length > 1 && <p className="mb-1 text-xs text-muted">{g}</p>}
-            <ul className="grid grid-cols-1 gap-1 sm:grid-cols-2">
-              {quality.filter((q) => q.group === g).map((q) => (
-                <li key={q.key}>
-                  <label className="flex cursor-pointer items-start gap-2 rounded px-1 py-1 text-sm hover:bg-surface-2">
-                    <input type="checkbox" className="mt-0.5 shrink-0" checked={!!p?.quality?.[q.key]} onChange={(e) => setProjectFlag(id, "quality", q.key, e.target.checked)} />
-                    <span>{q.text}</span>
-                  </label>
-                </li>
-              ))}
+      <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_17rem] lg:gap-10">
+        <div className="min-w-0 space-y-10">
+          <section aria-labelledby={`ms-${id}`}>
+            <h3 id={`ms-${id}`} className="h-section mb-3">Milestones</h3>
+            <ul className="list-card">
+              {all.map((m) => <MilestoneRow key={m.id} projectId={id} m={m} p={p} />)}
             </ul>
+            <form className="mt-2 flex gap-2" onSubmit={(e) => { e.preventDefault(); addCustomMilestone(id, newMs); setNewMs(""); }}>
+              <input className="input min-w-0 flex-1 text-sm" value={newMs} onChange={(e) => setNewMs(e.target.value)} placeholder="Add your own milestone, e.g. auth and rate limiting" aria-label="New milestone" />
+              <button type="submit" className="btn btn-secondary btn-sm" disabled={!newMs.trim()}>Add</button>
+            </form>
+          </section>
+
+          <section aria-labelledby={`cc-${id}`}>
+            <h3 id={`cc-${id}`} className="h-section">Completion criteria</h3>
+            {reqItems.length > 0 && <p className="mb-3 mt-1 text-sm text-muted">From the master specification. Tick what the project actually demonstrates.</p>}
+            {requirements.map((g) => (
+              <div key={g.heading} className="mb-4">
+                <p className="t-eyebrow mb-1.5">{g.heading}</p>
+                <ul className="grid grid-cols-1 gap-x-4 sm:grid-cols-2">
+                  {g.items.map((r) => (
+                    <li key={r.key}>
+                      <label className="flex min-h-10 cursor-pointer items-start gap-2.5 rounded-md px-1.5 py-2 text-sm hover:bg-surface-2">
+                        <input type="checkbox" className="mt-px shrink-0" checked={!!p?.requirements?.[r.key]} onChange={(e) => setProjectRequirement(id, r.key, e.target.checked)} />
+                        <span>{r.text}</span>
+                      </label>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+            <DraftField label="Your definition of done" saved={text("completionCriteria")} onSave={(v) => setProjectRecord(id, { completionCriteria: v })} rows={2} placeholder="Anything beyond the master's list that must be true before you call it complete" />
+          </section>
+
+          <section aria-labelledby={`er-${id}`}>
+            <h3 id={`er-${id}`} className="h-section">Engineering record</h3>
+            <p className="mb-3 mt-1 text-sm text-muted">What the README and case-study export are built from. Write it as you go; it is much harder to reconstruct later.</p>
+            <DisclosureGroup label="Engineering record">
+              {textSections.map((sec, i) => (
+                <Disclosure flat key={sec.key} title={sec.label} hint={text(sec.key) ? "Written" : sec.placeholder} open={focus === "ml" && sec.key === "experiments" ? true : i === 0 && !text(sec.key)}>
+                  <DraftField label={sec.label} saved={text(sec.key)} onSave={(v) => setProjectRecord(id, { [sec.key]: v })} rows={4} placeholder={sec.placeholder} />
+                </Disclosure>
+              ))}
+              <Disclosure flat title="Technical decisions" hint={rec.decisions?.length ? `${rec.decisions.length} recorded` : "What you chose, why, and the alternatives you rejected"}>
+                <Rows<Decision>
+                  rows={rec.decisions ?? []}
+                  fields={[{ key: "decision", label: "Decision", placeholder: "PostgreSQL for storage" }, { key: "why", label: "Why", placeholder: "Relational data, constraints" }, { key: "rejected", label: "Rejected alternatives", placeholder: "MongoDB: weaker constraints" }]}
+                  onChange={(decisions) => setProjectRecord(id, { decisions })}
+                  addLabel="Add a decision"
+                  empty={() => ({ id: newId("dec"), decision: "", why: "", rejected: "" })}
+                />
+              </Disclosure>
+              <Disclosure flat title="Metrics" hint={rec.metrics?.length ? `${rec.metrics.length} recorded` : focus === "ml" ? "Evaluation results: metric, value, dataset and conditions" : "Latency, throughput, coverage, cost: measured, not guessed"} open={focus === "ml" && !rec.metrics?.length}>
+                <Rows<Metric>
+                  rows={rec.metrics ?? []}
+                  fields={[{ key: "name", label: "Metric", placeholder: focus === "ml" ? "PR-AUC" : "p95 latency" }, { key: "value", label: "Value", placeholder: focus === "ml" ? "0.81" : "42 ms" }, { key: "context", label: "Measured how / where", placeholder: focus === "ml" ? "Temporal split, test set" : "Local, 100 rps, k6" }]}
+                  onChange={(metrics) => setProjectRecord(id, { metrics })}
+                  addLabel="Add a metric"
+                  empty={() => ({ id: newId("met"), name: "", value: "", context: "" })}
+                />
+              </Disclosure>
+            </DisclosureGroup>
+          </section>
+
+          <EvidenceList subjects={evidenceSubjects} title="All evidence for this project" hint="Proof that it works: commits, test results, benchmarks, diagrams, screenshots (as links), the deployed URL." />
+        </div>
+
+        <aside className="mt-10 space-y-8 lg:mt-0" aria-label="Project status, links and quality">
+          <div>
+            <p className="t-eyebrow mb-2">Status</p>
+            <div className="flex flex-wrap gap-2" role="group" aria-label="Project status">
+              {STATUS.map((o) => (
+                <button key={o.id} type="button" aria-pressed={status === o.id} onClick={() => setProjectStatus(id, o.id)} className="chip">{o.label}</button>
+              ))}
+            </div>
           </div>
-        ))}
+
+          <div className="space-y-3">
+            <p className="t-eyebrow">Links</p>
+            <label className="block text-sm">
+              <span className="mb-1 block text-xs text-muted">GitHub repository</span>
+              <input type="url" value={repo} onChange={(e) => setRepo(e.target.value)} onBlur={() => setProjectRepo(id, repo.trim())} placeholder="https://github.com/..." className="input text-sm" />
+              {p?.repoUrl && /^https?:\/\//.test(p.repoUrl) && <ExternalLink href={p.repoUrl} className="mt-1 inline-block text-sm">Open repository</ExternalLink>}
+            </label>
+            <label className="block text-sm">
+              <span className="mb-1 block text-xs text-muted">Deployed URL</span>
+              <input type="url" value={deploy} onChange={(e) => setDeploy(e.target.value)} onBlur={() => setProjectRecord(id, { deployUrl: deploy.trim() })} placeholder="https://..." className="input text-sm" />
+              {rec.deployUrl && /^https?:\/\//.test(rec.deployUrl) && <ExternalLink href={rec.deployUrl} className="mt-1 inline-block text-sm">Open live</ExternalLink>}
+            </label>
+            <DraftField label="Other links (one per line)" saved={text("links")} onSave={(v) => setProjectRecord(id, { links: v })} rows={2} placeholder="Design doc, demo video, blog post" />
+          </div>
+
+          <div>
+            <p className="t-eyebrow">Quality standard</p>
+            <p className="mb-2 mt-1 text-xs text-muted">True of the repository, not just the code running once.</p>
+            {groups.map((g) => (
+              <div key={g} className="mb-3">
+                {groups.length > 1 && <p className="mb-1 text-xs text-faint">{g}</p>}
+                <ul>
+                  {quality.filter((q) => q.group === g).map((q) => (
+                    <li key={q.key}>
+                      <label className="flex min-h-10 cursor-pointer items-start gap-2.5 rounded-md px-1.5 py-2 text-sm hover:bg-surface-2">
+                        <input type="checkbox" className="mt-px shrink-0" checked={!!p?.quality?.[q.key]} onChange={(e) => setProjectFlag(id, "quality", q.key, e.target.checked)} />
+                        <span>{q.text}</span>
+                      </label>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </aside>
       </div>
     </div>
   );

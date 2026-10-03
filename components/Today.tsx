@@ -18,7 +18,7 @@ import { SessionHistory, SessionRunner, SessionStart } from "./SessionRunner";
 import { BackupNudge } from "./StorageNotices";
 import { ConceptChecklist, NotesEditor } from "./progress";
 import { RefId } from "./Ref";
-import { Disclosure, Tally, cx } from "./ui";
+import { Disclosure, DisclosureGroup, Tally, cx } from "./ui";
 
 const hrefOfUnit = (u: string) => hrefFor(u) ?? "#";
 
@@ -80,30 +80,31 @@ export function Today({ dayPlans, dailyUnit, lanes, projects }: {
     <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_17.5rem] lg:gap-10 xl:grid-cols-[minmax(0,1fr)_19rem]">
      <div className="min-w-0 space-y-7">
       <header>
-        <p className="text-sm text-muted">
-          <span className="font-medium text-ink">Week {cw}</span> of 206{phase ? `, ${phase.t}` : stage ? `, ${stage.n}` : ""}
+        <p className="t-eyebrow">
+          Week <span className="text-ink">{String(cw).padStart(3, "0")}</span> / 206{phase ? ` · ${phase.t}` : stage ? ` · ${stage.n}` : ""}
         </p>
-        <h1 className="mt-1.5 text-[1.75rem] font-semibold leading-[1.15] tracking-[-0.015em] text-balance sm:text-[2rem]">{w.t}</h1>
+        <h1 className="mt-2 font-display text-[2.25rem] leading-[1.04] tracking-[-0.01em] text-balance sm:text-[2.875rem]">{w.t}</h1>
         {v.total > 0 && (
-          <div className="mt-5">
+          <div className="mt-5 max-w-xl">
             <Tally done={v.done} total={v.total} label="This week's checklist" />
-            <p className="mt-2 text-sm tabular-nums text-muted">
-              <span className="font-medium text-ink">{v.done} of {v.total}</span> done this week
+            <p className="mt-2 text-sm text-muted">
+              <span className="t-data text-ink">{v.done}/{v.total}</span> done this week
             </p>
           </div>
         )}
+        <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-1 border-y border-rule py-1.5">
+          <div className="lg:hidden"><ActiveModeSwitcher variant="compact" /></div>
+          <span aria-hidden className="hidden h-4 w-px bg-rule sm:block lg:hidden" />
+          <AiModeLine cw={cw} compact />
+        </div>
+        {policy.note && <p className="mt-2 text-sm text-muted">{policy.note}</p>}
       </header>
 
       {gateBlocked && (
-        <p className="rounded-xl border border-warn/30 bg-warn-soft px-4 py-3 text-sm">
+        <p className="rounded-lg border border-warn/30 bg-warn-soft px-4 py-3 text-sm">
           This week comes after the <Link className="font-medium text-warn underline" href={`/checkpoints/${w.rg}`}>{gateName(w.rg!)}</Link>, which is not marked passed yet. Attempt it first, unless you already have the evidence.
         </p>
       )}
-
-      <div className="lg:hidden"><ActiveModeSwitcher /></div>
-      {policy.note && <p className="-mt-3 text-sm text-muted lg:mt-0">{policy.note}</p>}
-
-      <div className="lg:hidden"><AiModeLine cw={cw} /></div>
 
       {running ? (
         <SessionRunner
@@ -148,29 +149,29 @@ export function Today({ dayPlans, dailyUnit, lanes, projects }: {
       {(today.supporting || dsaDue.length > 0 || project || gateThisWeek) && (
         <section aria-labelledby="also">
           <h2 id="also" className="h-section mb-2">Also today</h2>
-          <ul className="list-card text-sm">
+          <ul className="rule-list border-y border-rule text-sm">
             {today.supporting && (
-              <li className="px-4 py-3">
-                <span className="block text-xs text-muted">Supporting, only with spare capacity</span>
+              <li className="py-3">
+                <span className="block text-xs text-faint">Supporting, only with spare capacity</span>
                 <Link href={hrefOfUnit(today.supporting)} className="hover:text-accent">{unitLabel(today.supporting)}</Link>
                 {supportOpen.length > 1 && <span className="text-muted"> ({supportOpen.length - 1} more in <Link href={`/weeks/${cw}`} className="text-accent hover:underline">the week</Link>)</span>}
               </li>
             )}
             {dsaDue.length > 0 && (
-              <li className="px-4 py-3">
-                <span className="block text-xs text-muted">Maintenance</span>
+              <li className="py-3">
+                <span className="block text-xs text-faint">Maintenance</span>
                 <a href="#retests" className="hover:text-accent">{dsaDue.length} DSA revisit{dsaDue.length > 1 ? "s" : ""} due</a>
               </li>
             )}
             {project && (
-              <li className="px-4 py-3">
-                <span className="block text-xs text-muted">Project milestone{project.why === "in-progress" ? "" : ", scheduled this week"}</span>
+              <li className="py-3">
+                <span className="block text-xs text-faint">Project milestone{project.why === "in-progress" ? "" : ", scheduled this week"}</span>
                 <Link href={`/projects/${project.id}`} className="hover:text-accent">{project.milestone ? project.milestone.text : `${project.title}: all milestones ticked`}</Link>
               </li>
             )}
             {gateThisWeek && (
-              <li className="px-4 py-3">
-                <span className="block text-xs text-muted">Checkpoint this week</span>
+              <li className="py-3">
+                <span className="block text-xs text-faint">Checkpoint this week</span>
                 <Link href={`/checkpoints/${gateThisWeek}`} className="hover:text-accent">{gateName(gateThisWeek)}</Link> <RefId id={gateThisWeek} />
               </li>
             )}
@@ -200,17 +201,17 @@ export function Today({ dayPlans, dailyUnit, lanes, projects }: {
 
      </div>
 
-      <aside className="mt-7 space-y-3 lg:mt-0 lg:pt-1" aria-label="More for this week">
-        <div className="hidden lg:block"><AiModeLine cw={cw} /></div>
+      <aside className="mt-8 space-y-4 lg:mt-0 lg:pt-1" aria-label="More for this week">
         <Tutor />
+        <DisclosureGroup label="More for this week">
         {doneItems.length > 0 && (
-          <Disclosure title={`Done this week (${doneItems.length})`} hint="Untick anything you ticked by mistake">
+          <Disclosure flat title={`Done this week (${doneItems.length})`} hint="Untick anything you ticked by mistake">
             <ConceptChecklist items={doneItems.map((u) => ({ id: u, text: unitLabel(u) }))} showIds={false} />
           </Disclosure>
         )}
 
         {plan && (
-          <Disclosure title="The 14-day plan" hint={`This week covers days ${plan.days}`} open={cw === 1 && doneItems.length === 0}>
+          <Disclosure flat title="The 14-day plan" hint={`This week covers days ${plan.days}`} open={cw === 1 && doneItems.length === 0}>
             <ol className="space-y-1.5">
               {plan.plan.map((d) => {
                 const [a, b] = d.days.replace(/Days? /, "").split("-").map(Number);
@@ -229,7 +230,7 @@ export function Today({ dayPlans, dailyUnit, lanes, projects }: {
         )}
 
         {policy.dsa !== "off" && (lane || dsaDue.length > 0) && (
-          <Disclosure
+          <Disclosure flat
             id="retests"
             title="DSA practice"
             hint={policy.dsa === "optional" ? "Optional: 15-30 minutes only if it helps" : dsaDue.length ? `${dsaDue.length} revisit${dsaDue.length > 1 ? "s" : ""} due` : "DSA practice for this stage"}
@@ -245,15 +246,15 @@ export function Today({ dayPlans, dailyUnit, lanes, projects }: {
           </Disclosure>
         )}
 
-        <Disclosure title="Recent sessions" hint={s.sessions.length ? "What you learned and where you got stuck" : "Your session log"}>
+        <Disclosure flat title="Recent sessions" hint={s.sessions.length ? "What you learned and where you got stuck" : "Your session log"}>
           <SessionHistory sessions={s.sessions} />
         </Disclosure>
 
-        <Disclosure title="Notes for this week">
+        <Disclosure flat title="Notes for this week">
           <NotesEditor entityId={`week:${cw}`} title="Notes" />
         </Disclosure>
 
-        <Disclosure title="More about this week" hint="Full checklist, other weeks">
+        <Disclosure flat title="More about this week" hint="Full checklist, other weeks">
           <div className="space-y-3 text-sm">
             <p><Link href={`/weeks/${cw}`} className="text-accent hover:underline">Open week {cw} in full</Link></p>
             <div className="flex flex-wrap items-center gap-2">
@@ -264,6 +265,7 @@ export function Today({ dayPlans, dailyUnit, lanes, projects }: {
             {stage && <p className="text-muted">Stage: {stage.n} <RefId id={stage.id} /></p>}
           </div>
         </Disclosure>
+        </DisclosureGroup>
       </aside>
 
       {undo && (

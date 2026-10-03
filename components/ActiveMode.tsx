@@ -12,7 +12,7 @@ const since = (iso: string) => new Date(iso).toLocaleDateString(undefined, { day
  * Active Mode switcher (A-F). A button that expands the six operating states in place.
  * `variant="sidebar"` for the desktop rail, `"inline"` for Today on phones and for Settings.
  */
-export function ActiveModeSwitcher({ variant = "inline" }: { variant?: "inline" | "sidebar" }) {
+export function ActiveModeSwitcher({ variant = "inline" }: { variant?: "inline" | "sidebar" | "compact" }) {
   const s = useUserState();
   const ready = useHydrated();
   const [open, setOpen] = useState(false);
@@ -31,8 +31,21 @@ export function ActiveModeSwitcher({ variant = "inline" }: { variant?: "inline" 
     return () => window.removeEventListener("keydown", onKey);
   }, [open]);
 
-  if (!ready) return <div className={cx("animate-pulse rounded-lg bg-surface-2", variant === "sidebar" ? "h-12" : "h-14")} aria-hidden />;
+  if (!ready) return <div className={cx("animate-pulse rounded-lg bg-surface-2", variant === "compact" ? "h-8 w-40" : variant === "sidebar" ? "h-12" : "h-14")} aria-hidden />;
   const { def, chosen, since: from } = effectiveMode(s);
+
+  if (variant === "compact") {
+    return (
+      <div className="min-w-0">
+        <button ref={btn} type="button" aria-expanded={open} aria-controls={panelId} onClick={() => setOpen((v) => !v)} className="inline-flex min-h-9 items-center gap-2 rounded-md px-1.5 text-sm hover:bg-surface-2">
+          <span aria-hidden className="grid h-5 w-5 place-items-center rounded-sm bg-accent-soft font-mono text-[0.6875rem] font-medium text-accent">{def.id}</span>
+          <span className="truncate"><span className="text-muted">Mode</span> {def.name}{chosen ? "" : <span className="text-faint"> (suggested)</span>}</span>
+          <span aria-hidden className="text-faint">{open ? "▴" : "▾"}</span>
+        </button>
+        {open && <ModeOptions panelId={panelId} chosen={chosen} current={def.id} onPick={() => { setOpen(false); btn.current?.focus(); }} />}
+      </div>
+    );
+  }
 
   return (
     <div className={variant === "sidebar" ? "" : "rounded-xl border border-rule bg-surface"}>
@@ -60,32 +73,37 @@ export function ActiveModeSwitcher({ variant = "inline" }: { variant?: "inline" 
           <p className={cx("text-xs text-muted", variant === "sidebar" ? "px-1" : "px-2 pt-1")}>
             Modes are operating states, not failure states. Switching changes what Today asks of you.
           </p>
-          <div role="radiogroup" aria-label="Active Mode" className="space-y-1">
-            {ACTIVE_MODES.map((m) => {
-              const active = chosen && m.id === def.id;
-              return (
-                <button
-                  key={m.id}
-                  type="button"
-                  role="radio"
-                  aria-checked={active}
-                  onClick={() => { setActiveMode(m.id); setOpen(false); btn.current?.focus(); }}
-                  className={cx(
-                    "flex w-full gap-3 rounded-lg border px-3 py-2 text-left",
-                    active ? "border-accent bg-accent-soft" : "border-transparent hover:bg-surface-2",
-                  )}
-                >
-                  <span className="w-4 shrink-0 font-semibold tabular-nums text-faint">{m.id}</span>
-                  <span className="min-w-0">
-                    <span className="block text-sm font-medium">{m.name}{!chosen && m.id === def.id ? " (suggested)" : ""}</span>
-                    <span className="block text-xs leading-snug text-muted">{m.summary}</span>
-                  </span>
-                </button>
-              );
-            })}
-          </div>
+          <ModeOptions panelId={undefined} chosen={chosen} current={def.id} onPick={() => { setOpen(false); btn.current?.focus(); }} bare />
         </div>
       )}
+    </div>
+  );
+}
+
+function ModeOptions({ panelId, chosen, current, onPick, bare = false }: { panelId?: string; chosen: boolean; current: string; onPick: () => void; bare?: boolean }) {
+  return (
+    <div id={panelId} className={cx(!bare && "pop-in mt-2 rounded-lg border border-rule bg-surface p-2 shadow-float")}>
+      <div role="radiogroup" aria-label="Active Mode" className="space-y-1">
+        {ACTIVE_MODES.map((m) => {
+          const active = chosen && m.id === current;
+          return (
+            <button
+              key={m.id}
+              type="button"
+              role="radio"
+              aria-checked={active}
+              onClick={() => { setActiveMode(m.id); onPick(); }}
+              className={cx("flex w-full gap-3 rounded-md border px-3 py-2 text-left transition-colors", active ? "border-accent bg-accent-soft" : "border-transparent hover:bg-surface-2")}
+            >
+              <span className="w-4 shrink-0 font-mono font-medium text-faint">{m.id}</span>
+              <span className="min-w-0">
+                <span className="block text-sm font-medium">{m.name}{!chosen && m.id === current ? " (suggested)" : ""}</span>
+                <span className="block text-xs leading-snug text-muted">{m.summary}</span>
+              </span>
+            </button>
+          );
+        })}
+      </div>
     </div>
   );
 }

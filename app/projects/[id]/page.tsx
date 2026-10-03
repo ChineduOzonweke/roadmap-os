@@ -41,9 +41,9 @@ export default async function Page({ params }: Props) {
         lead={p.purpose}
       />
       <div className="mb-8 grid grid-cols-1 gap-3 text-sm sm:grid-cols-3">
-        <div><p className="text-xs text-muted">Evidence for</p><p>{p.evidenceFor.split(/,\s*/).map((e) => refLabel(e.trim()).label).join(", ")}</p></div>
-        <div><p className="text-xs text-muted">Build weeks</p><p>{p.buildWeeks.map((w, i) => <span key={w}>{i > 0 && ", "}<Link className="hover:text-accent" href={`/weeks/${w}`}>{w}</Link></span>)}</p></div>
-        <div><p className="text-xs text-muted">Requires</p><p>{p.requires.map((r, i) => { const x = refLabel(r); return <span key={r}>{i > 0 && ", "}{x.href ? <Link className="hover:text-accent" href={x.href}>{x.label}</Link> : x.label}</span>; })}</p></div>
+        <div><p className="t-eyebrow mb-1">Evidence for</p><p>{p.evidenceFor.split(/,\s*/).map((e) => refLabel(e.trim()).label).join(", ")}</p></div>
+        <div><p className="t-eyebrow mb-1">Build weeks</p><p className="t-data -mx-1">{p.buildWeeks.map((w) => <Link key={w} className="inline-block min-h-6 px-1 hover:text-accent" href={`/weeks/${w}`}>{w}</Link>)}</p></div>
+        <div><p className="t-eyebrow mb-1">Requires</p><p>{p.requires.map((r, i) => { const x = refLabel(r); return <span key={r}>{i > 0 && ", "}{x.href ? <Link className="hover:text-accent" href={x.href}>{x.label}</Link> : x.label}</span>; })}</p></div>
       </div>
 
       <Section title="Your project record">

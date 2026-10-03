@@ -136,11 +136,11 @@ export function SessionRunner({ session: x, state: s, ctx }: { session: DailySes
   const stale = x.date < localDay(now);
 
   return (
-    <section aria-labelledby="session" className="card overflow-hidden">
-      <div className="border-b border-rule px-4 py-3">
+    <section aria-labelledby="session" className="card overflow-hidden shadow-[inset_0_2px_0_var(--accent)]">
+      <div className="border-b border-rule px-5 py-4">
         <div className="flex items-baseline justify-between gap-3">
-          <h2 id="session" className="h-section">Today&apos;s session</h2>
-          <span className="text-xs tabular-nums text-muted">{total} min of {lo}-{hi}</span>
+          <h2 id="session" className="font-display text-[1.5rem] leading-tight">Today&apos;s session</h2>
+          <span className="t-data text-xs text-muted">{total} / {lo}-{hi} min</span>
         </div>
         <ol className="mt-3 flex gap-1" aria-label="Stages">
           {x.stages.map((g, i) => (
@@ -161,12 +161,12 @@ export function SessionRunner({ session: x, state: s, ctx }: { session: DailySes
         {stale && <p className="mt-2 text-xs text-warn">Started on {x.date}. Finish and log it, or stop it, before starting a new one.</p>}
       </div>
 
-      <div className="space-y-4 px-4 py-4">
+      <div key={x.stage} className="pop-in space-y-4 px-5 py-5">
         <div>
-          <p className="text-xs text-muted">Stage {x.stage + 1} of {x.stages.length}</p>
+          <p className="t-eyebrow">Stage {x.stage + 1} / {x.stages.length}</p>
           <div className="flex items-baseline justify-between gap-3">
             <h3 className="text-lg font-semibold">{st.label}</h3>
-            <span className="shrink-0 text-sm tabular-nums text-muted">{stageMin} / {st.minutes} min</span>
+            <span className="t-data shrink-0 text-sm text-muted">{stageMin} / {st.minutes} min</span>
           </div>
         </div>
 
@@ -242,8 +242,9 @@ export function SessionStart({ template, week, focus, leftOff, doneToday, prefer
   const start = (plan: SessionPlan) => startSession({ week, focus: plan === "review" ? [] : focus, stages: stagesOf(plan), plan });
   const done = doneToday.length > 0;
   return (
-    <section aria-labelledby="session" className={cx("card px-4 py-4", !done && "border-accent/40")}>
-      <h2 id="session" className="h-section">{done ? "Today's session is logged" : "Today's session"}</h2>
+    <section aria-labelledby="session" className={cx("card px-5 py-5", !done && "shadow-[inset_0_2px_0_var(--accent)]")}>
+      <p className="t-eyebrow">Daily work unit</p>
+      <h2 id="session" className="mt-1 font-display text-[1.75rem] leading-tight">{done ? "Today's session is logged" : "Today's session"}</h2>
       {leftOff && !done && (
         <p className="mt-2 text-sm"><span className="text-muted">Where you left off ({leftOff.date}):</span> {leftOff.next}</p>
       )}
