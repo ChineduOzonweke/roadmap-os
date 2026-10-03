@@ -1,6 +1,6 @@
 import {
   emptyState, STATE_VERSION,
-  type AiLogEntry, type Application, type DepthLevel, type DsaProblem, type GateProgress, type MasteryLevel,
+  type AiLogEntry, type Application, type DailySession, type SessionStage, type DepthLevel, type DsaProblem, type GateProgress, type MasteryLevel,
   type Note, type ProjectProgress, type ResourceStatus, type Story, type TopicProgress, type UserState,
 } from "@/types/state";
 
@@ -188,6 +188,42 @@ function aiEntry(v: Obj, i: number): AiLogEntry {
   };
 }
 
+function session(v: Obj, i: number): DailySession {
+  const stages: SessionStage[] = Array.isArray(v.stages)
+    ? v.stages.filter(isObj).map((st, j) => {
+        const out: SessionStage = { ...st, key: str(st.key) || `step-${j + 1}`, label: str(st.label), minutes: str(st.minutes), note: str(st.note) };
+        for (const k of ["startedAt", "endedAt"] as const) {
+          const t = optStr(st[k]);
+          if (t) out[k] = t;
+          else delete out[k];
+        }
+        if (st.skipped !== undefined) out.skipped = !!st.skipped;
+        return out;
+      })
+    : [];
+  const log = isObj(v.log) ? v.log : {};
+  const ids = (x: unknown) => (Array.isArray(x) ? x.filter((y): y is string => typeof y === "string") : []);
+  const out: DailySession = {
+    ...v,
+    id: str(v.id) || `session-recovered-${i}`,
+    date: str(v.date),
+    week: int(v.week, 1, 206) ?? 1,
+    plan: oneOf(v.plan, ["full", "short"] as const, "full"),
+    status: oneOf(v.status, ["active", "completed", "abandoned"] as const, "completed"),
+    startedAt: str(v.startedAt, EPOCH),
+    stage: Math.min(int(v.stage, 0, 100) ?? 0, Math.max(0, stages.length - 1)),
+    stages,
+    focus: ids(v.focus),
+    ticked: ids(v.ticked),
+    log: { ...log, learned: str(log.learned), stuck: str(log.stuck), next: str(log.next) },
+    updatedAt: str(v.updatedAt, EPOCH),
+  };
+  const endedAt = optStr(v.endedAt);
+  if (endedAt) out.endedAt = endedAt;
+  else delete out.endedAt;
+  return out;
+}
+
 /** Repair a document that is already at STATE_VERSION (run migrations first). */
 export function sanitizeState(input: unknown): { state: UserState; issues: Issue[] } {
   const c = new Ctx();
@@ -225,6 +261,7 @@ export function sanitizeState(input: unknown): { state: UserState; issues: Issue
     stories: list(c, input.stories, "stories", story),
     applications: list(c, input.applications, "applications", application),
     aiLog: list(c, input.aiLog, "aiLog", aiEntry),
+    sessions: list(c, input.sessions, "sessions", session),
   };
   return { state, issues: c.issues };
 }

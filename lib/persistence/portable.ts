@@ -18,6 +18,7 @@ export type StateSummary = {
   stories: number;
   applications: number;
   aiLog: number;
+  sessions: number;
   currentWeek: number;
   lastChange: string | null;
 };
@@ -39,31 +40,36 @@ const README = [
   "state.checks: checklist item id (e.g. P13.2#4) -> time ticked.",
   "state.topics: topic id (e.g. P13.2) -> mastery 0-5 (Not started, Learning, Explained, Practised, Demonstrated, Retained), depth D0-D5, evidence, re-tests.",
   "state.gates / weeks / projects: checkpoint, week and project progress. state.notes: entity id -> note text.",
+  "state.sessions: daily work sessions (stages with times and notes, plus a closing log of what was learned, where you got stuck, and the next step).",
   "state.dsa, stories, applications, aiLog: journal entries. All times are ISO 8601 UTC.",
 ];
 
+/** Defensive: also used on raw pre-migration documents (before-migration snapshots). */
 export function summarize(s: UserState): StateSummary {
+  const o = <T,>(x: Record<string, T> | undefined) => Object.values(x ?? {});
+  const n = (x: unknown[] | undefined) => (Array.isArray(x) ? x.length : 0);
   return {
-    ticks: Object.keys(s.checks).length,
-    topicsTracked: Object.values(s.topics).filter((t) => t.mastery > 0).length,
-    demonstrated: Object.values(s.topics).filter((t) => t.mastery >= 4).length,
-    gatesPassed: Object.values(s.gates).filter((g) => g.status === "passed").length,
-    weeksDone: Object.values(s.weeks).filter((w) => w.done).length,
-    projectsStarted: Object.values(s.projects).filter((p) => p.status !== "not_started").length,
-    notes: Object.keys(s.notes).length,
-    dsa: s.dsa.length,
-    stories: s.stories.length,
-    applications: s.applications.length,
-    aiLog: s.aiLog.length,
-    currentWeek: s.currentWeek,
-    lastChange: s.updatedAt.startsWith("1970") ? null : s.updatedAt,
+    ticks: Object.keys(s.checks ?? {}).length,
+    topicsTracked: o(s.topics).filter((t) => t?.mastery > 0).length,
+    demonstrated: o(s.topics).filter((t) => t?.mastery >= 4).length,
+    gatesPassed: o(s.gates).filter((g) => g?.status === "passed").length,
+    weeksDone: o(s.weeks).filter((w) => w?.done).length,
+    projectsStarted: o(s.projects).filter((p) => p && p.status !== "not_started").length,
+    notes: Object.keys(s.notes ?? {}).length,
+    dsa: n(s.dsa),
+    stories: n(s.stories),
+    applications: n(s.applications),
+    aiLog: n(s.aiLog),
+    sessions: n(s.sessions),
+    currentWeek: Number(s.currentWeek) || 1,
+    lastChange: typeof s.updatedAt === "string" && !s.updatedAt.startsWith("1970") ? s.updatedAt : null,
   };
 }
 
 /** True when there is anything worth protecting. */
 export function hasProgress(s: UserState): boolean {
   const m = summarize(s);
-  return !!m.lastChange || m.ticks + m.topicsTracked + m.gatesPassed + m.weeksDone + m.projectsStarted + m.notes + m.dsa + m.stories + m.applications + m.aiLog > 0;
+  return !!m.lastChange || m.ticks + m.topicsTracked + m.gatesPassed + m.weeksDone + m.projectsStarted + m.notes + m.dsa + m.stories + m.applications + m.aiLog + m.sessions > 0;
 }
 
 /** True when this device has never exported, or not within `days`. */
@@ -83,6 +89,7 @@ export function describeSummary(m: StateSummary): string {
     m.topicsTracked ? plural(m.topicsTracked, "topic") + " in progress" : "",
     m.gatesPassed ? plural(m.gatesPassed, "gate") + " passed" : "",
     m.notes ? plural(m.notes, "note") : "",
+    m.sessions ? plural(m.sessions, "session") : "",
     m.dsa ? plural(m.dsa, "DSA problem") : "",
     m.aiLog ? plural(m.aiLog, "AI log entry", "AI log entries") : "",
     m.stories + m.applications ? plural(m.stories + m.applications, "career entry", "career entries") : "",

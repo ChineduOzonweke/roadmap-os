@@ -20,13 +20,24 @@ function setup(initial: Record<string, string> = {}, quota = Infinity) {
 afterEach(() => vi.useRealTimers());
 
 describe("store load", () => {
-  it("loads existing v1 progress as-is and takes a weekly snapshot", async () => {
+  it("upgrades existing v1 progress: snapshot of the original first, then the migrated document is saved", async () => {
     const { store, kv, adapter, backups } = setup({ [STATE_KEY]: JSON.stringify(v1) });
     await store.init(adapter, backups);
-    expect(store.getState()).toEqual(v1);
+    const V2 = { ...v1, version: 2, sessions: [] };
+    expect(store.getState()).toEqual(V2);
     expect(store.getStatus()).toMatchObject({ load: null, readOnly: false });
+    expect(store.getStatus().snapshots.map((m) => m.reason)).toEqual(["before-migration"]); // counts as this week's snapshot
+    const original = backups.get(backups.list().find((m) => m.reason === "before-migration")!.id)!;
+    expect(original.state).toEqual(v1);
+    expect(JSON.parse(kv.get(STATE_KEY)!)).toEqual(V2);
+  });
+
+  it("leaves current-version progress untouched until the user changes something", async () => {
+    const V2 = JSON.stringify({ ...v1, version: 2, sessions: [] });
+    const { store, kv, adapter, backups } = setup({ [STATE_KEY]: V2 });
+    await store.init(adapter, backups);
     expect(store.getStatus().snapshots.map((m) => m.reason)).toEqual(["weekly"]);
-    expect(kv.get(STATE_KEY)).toBe(JSON.stringify(v1)); // untouched until the user changes something
+    expect(kv.get(STATE_KEY)).toBe(V2);
   });
 
   it("does not snapshot an empty first run", async () => {

@@ -13,7 +13,10 @@ export type Migration = (doc: Doc) => Doc;
  * Example for the first schema change:
  *   1: (doc) => ({ ...doc, version: 2, newField: defaultFor(doc) }),
  */
-export const MIGRATIONS: Record<number, Migration> = {};
+export const MIGRATIONS: Record<number, Migration> = {
+  // v1 -> v2 (phase C): Daily Work Unit sessions.
+  1: (doc) => ({ ...doc, version: 2, sessions: Array.isArray(doc.sessions) ? doc.sessions : [] }),
+};
 
 export type MigrateResult =
   | { ok: true; doc: Doc; from: number; applied: number[] }

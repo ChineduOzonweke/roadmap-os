@@ -9,12 +9,13 @@ import { memoryKV } from "@/lib/persistence/kv";
 import v1json from "./fixtures/v1-state.json";
 
 const v1 = v1json as unknown as UserState;
+const V2 = { ...v1json, version: 2, sessions: [] } as unknown as UserState;
 const CUR = { md5: "c85d55c0e1916af940605fe1467edc3c", generated: "2026-10-03" };
 
 describe("export / import", () => {
   it("round-trips through a versioned, readable envelope", () => {
     const at = new Date("2026-10-03T12:34:00Z");
-    const text = serializeExport(buildExport(v1, CUR, at));
+    const text = serializeExport(buildExport(V2, CUR, at));
     const env = JSON.parse(text);
     expect(env).toMatchObject({ app: "roadmap-os", kind: "progress-backup", schemaVersion: STATE_VERSION, exportedAt: at.toISOString(), curriculum: CUR });
     expect(env.readme.length).toBeGreaterThan(0);
@@ -23,16 +24,17 @@ describe("export / import", () => {
     expect(p.ok).toBe(true);
     if (!p.ok) return;
     expect(p.format).toBe("backup");
-    expect(p.state).toEqual(v1);
+    expect(p.state).toEqual(V2);
     expect(p.exportedAt).toBe(at.toISOString());
     expect(p.curriculumMismatch).toBe(false);
-    expect(p.summary).toEqual(summarize(v1));
+    expect(p.summary).toEqual(summarize(V2));
   });
 
   it("still accepts bare v1 exports (the original Settings export format)", () => {
     const p = parseImport(JSON.stringify(v1, null, 1));
     expect(p.ok && p.format).toBe("legacy");
-    expect(p.ok && p.state).toEqual(v1);
+    expect(p.ok && p.state).toEqual(V2);
+    expect(p.ok && p.schemaVersion).toBe(1);
   });
 
   it("rejects invalid input with a clear message and never throws", () => {

@@ -4,11 +4,14 @@ import { sanitizeState } from "@/lib/persistence/sanitize";
 import { migrate, readDocument, type Migration } from "@/lib/persistence/migrate";
 import v1 from "./fixtures/v1-state.json";
 
+/** What a v1 document becomes after the v1 -> v2 migration: identical plus an empty session log. */
+const V2 = { ...v1, version: 2, sessions: [] };
+
 describe("sanitizeState", () => {
-  it("passes a real v1 document through unchanged", () => {
-    const { state, issues } = sanitizeState(v1);
+  it("passes a current-version document through unchanged", () => {
+    const { state, issues } = sanitizeState(V2);
     expect(issues).toEqual([]);
-    expect(state).toEqual(v1);
+    expect(state).toEqual(V2);
   });
 
   it("fills defaults for a partial document (older builds without aiLog)", () => {
@@ -86,8 +89,16 @@ describe("migrate", () => {
     2: (d) => ({ ...d, version: 3, renamed: d.added }),
   };
 
-  it("is a no-op at the current version", () => {
+  it("migrates a real v1 document to v2 without changing any existing field", () => {
     const r = migrate({ ...v1 });
+    expect(r).toMatchObject({ ok: true, from: 1, applied: [1] });
+    expect(r.ok && r.doc).toEqual(V2);
+    const kept = readDocument({ ...v1, sessions: [{ id: "s1", status: "completed", stages: [] }] });
+    expect(kept.ok && kept.state.sessions[0].id).toBe("s1");
+  });
+
+  it("is a no-op at the current version", () => {
+    const r = migrate({ ...V2 });
     expect(r).toMatchObject({ ok: true, from: STATE_VERSION, applied: [] });
   });
 
@@ -115,6 +126,7 @@ describe("migrate", () => {
   it("readDocument migrates then validates", () => {
     const r = readDocument(v1);
     expect(r.ok && r.state.currentWeek).toBe(12);
+    expect(r.ok && r.migrated).toBe(true);
     expect(readDocument([1, 2])).toEqual({ ok: false, reason: "not-object" });
     expect(readDocument({ version: 99 })).toMatchObject({ ok: false, reason: "newer" });
   });

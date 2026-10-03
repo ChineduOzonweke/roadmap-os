@@ -2,7 +2,8 @@
 // Today it lives in browser storage; the same document will be stored in the
 // cloud (Supabase) in the next stage, so keep it serialisable and versioned.
 
-export const STATE_VERSION = 1;
+// v1: original. v2 (phase C): adds `sessions`. See lib/persistence/migrate.ts.
+export const STATE_VERSION = 2;
 
 export type MasteryLevel = 0 | 1 | 2 | 3 | 4 | 5; // not started .. retained
 export type DepthLevel = 0 | 1 | 2 | 3 | 4 | 5; // D0 .. D5
@@ -96,6 +97,34 @@ export type AiLogEntry = {
   updatedAt: string;
 };
 
+// Daily Work Unit sessions (master 0.x daily unit). Each session copies its stage
+// plan when it starts, so changing the template later never rewrites history.
+export type SessionStage = {
+  key: string; // recall | study | code | debug | explain | log (or step-N for custom plans)
+  label: string;
+  minutes: string; // target, e.g. "30-45"
+  startedAt?: string;
+  endedAt?: string;
+  skipped?: boolean;
+  note: string;
+};
+export type SessionStatus = "active" | "completed" | "abandoned";
+export type DailySession = {
+  id: string;
+  date: string; // local calendar day the session started, YYYY-MM-DD
+  week: number;
+  plan: "full" | "short";
+  status: SessionStatus;
+  startedAt: string;
+  endedAt?: string;
+  stage: number; // index of the current stage
+  stages: SessionStage[];
+  focus: string[]; // checklist items the session targeted
+  ticked: string[]; // checklist items ticked while the session was active
+  log: { learned: string; stuck: string; next: string };
+  updatedAt: string;
+};
+
 export type UserState = {
   version: number;
   updatedAt: string;
@@ -112,6 +141,7 @@ export type UserState = {
   stories: Story[];
   applications: Application[];
   aiLog: AiLogEntry[]; // added after v1 shipped; normalize() defaults it to [] for older documents
+  sessions: DailySession[]; // v2; newest first
 };
 
 export function emptyState(): UserState {
@@ -131,5 +161,6 @@ export function emptyState(): UserState {
     stories: [],
     applications: [],
     aiLog: [],
+    sessions: [],
   };
 }

@@ -8,7 +8,7 @@ It is a Next.js web app. Open it from a phone or a laptop through one URL.
 
 | Area | Route | What it does |
 | --- | --- | --- |
-| Today | `/today` | Daily mission from the current week: next checklist items, build/evidence, DSA lane, spaced re-tests due, the master's daily work unit, week notes |
+| Today | `/today` | What to do right now: a resumable Daily Work Unit session (recall, study, code, debug, explain, log), the next checklist items, one supporting item, maintenance (re-tests, DSA), one project milestone, checkpoints, where you left off, recent sessions, week notes |
 | Dashboard | `/` | Current week, stage and phase, current mission, next gate, active project, the 206-week execution map, progress, cleared topics, what comes next |
 | Weeks | `/weeks`, `/weeks/[1-206]` | The execution layer: every week's primary, supporting and DSA-lane work, build/evidence, gate, completion |
 | Timeline | `/timeline` | Stages S0–S8, gate sequence, dependency spine, decision-5 order |

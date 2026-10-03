@@ -2,16 +2,21 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { hrefFor } from "@/lib/ids";
 import { useHydrated, useUserState } from "@/lib/store";
 import {
   dueReviews, gateName, gatePassed, idx, nameOf, phaseById, stageOfWeek, topicById, unitLabel, weekByCw, weekView,
 } from "@/lib/progress";
 import { recordReview, setCheck, setCurrentWeek, setWeekDone } from "@/lib/actions";
+import { activeSession, lastCompletedSession, localDay, sessionsOn, todayPlan, type ProjectInfo, type StepTemplate } from "@/lib/today";
 import { AiModeLine } from "./AiModeLine";
+import { SessionHistory, SessionRunner, SessionStart } from "./SessionRunner";
 import { BackupNudge } from "./StorageNotices";
 import { ConceptChecklist, NotesEditor } from "./progress";
 import { RefId } from "./Ref";
 import { Disclosure, Tally, cx } from "./ui";
+
+const hrefOfUnit = (u: string) => hrefFor(u) ?? "#";
 
 type DayPlan = { days: string; plan: { days: string; focus: string }[] } | null;
 
@@ -21,14 +26,14 @@ const NEXT_UP = 5;
  * Today is the cockpit: where am I, what do I do next, how far along is this week.
  * Everything else is one tap away in collapsed sections.
  */
-export function Today({ dayPlans, dailyUnit, lanes }: {
+export function Today({ dayPlans, dailyUnit, lanes, projects }: {
   dayPlans: Record<number, DayPlan>;
-  dailyUnit: { minutes: string; step: string }[];
+  dailyUnit: StepTemplate[];
   lanes: { from: number; to: number | null; label: string; note: string }[];
+  projects: ProjectInfo[];
 }) {
   const s = useUserState();
   const ready = useHydrated();
-  const [session, setSession] = useState<Record<number, boolean>>({});
   const [undo, setUndo] = useState<{ id: string; text: string } | null>(null);
 
   useEffect(() => {
@@ -45,15 +50,21 @@ export function Today({ dayPlans, dailyUnit, lanes }: {
   const stage = stageOfWeek(cw);
   const phaseId = (w.pu[0] ?? "").split(".")[0];
   const phase = phaseById.get(phaseId);
+  const now = new Date();
+  const reviews = dueReviews(s, now);
+  const today = todayPlan(s, w, { projects, reviewsDue: reviews.length, gatePassed: (id) => gatePassed(s, id), now, nextCount: NEXT_UP });
   const open = w.pu.filter((u) => !s.checks[u]);
   const doneItems = w.pu.filter((u) => !!s.checks[u]);
-  const focus = open.slice(0, NEXT_UP);
+  const focus = today.primary.next;
   const supportOpen = w.u.filter((u) => !w.pu.includes(u) && !s.checks[u]);
   const lane = cw >= 18 ? lanes.find((l) => cw >= l.from && (l.to == null || cw <= l.to)) : undefined;
-  const reviews = dueReviews(s);
-  const dsaDue = s.dsa.filter((p) => p.revisitOn && new Date(p.revisitOn) <= new Date());
+  const dsaDue = today.maintenance.dsaDue;
   const plan = dayPlans[cw];
-  const gateBlocked = w.rg && !gatePassed(s, w.rg);
+  const running = activeSession(s);
+  // Skip the project row when its milestone is word-for-word this week's build, which is shown just below.
+  const project = today.project && today.project.milestone?.text !== w.b ? today.project : null;
+  const gateThisWeek = today.checkpoints.thisWeek;
+  const gateBlocked = today.checkpoints.blocking;
   const weekDone = !!s.weeks[cw]?.done;
   const primaryDone = w.pu.length > 0 && open.length === 0;
 
@@ -85,6 +96,22 @@ export function Today({ dayPlans, dailyUnit, lanes }: {
 
       <div className="lg:hidden"><AiModeLine cw={cw} /></div>
 
+      {running ? (
+        <SessionRunner
+          session={running}
+          state={s}
+          ctx={{
+            build: w.b,
+            projectHref: today.project ? `/projects/${today.project.id}` : null,
+            projectTitle: today.project?.title ?? null,
+            reviewsDue: reviews.length,
+            previous: lastCompletedSession(s),
+          }}
+        />
+      ) : (
+        <SessionStart template={dailyUnit} week={cw} focus={open.slice(0, 3)} leftOff={today.leftOff} doneToday={sessionsOn(s, localDay(now))} />
+      )}
+
       <section aria-labelledby="next">
         <h2 id="next" className="h-section mb-3">{focus.length ? "Up next" : "This week"}</h2>
         {focus.length ? (
@@ -102,15 +129,45 @@ export function Today({ dayPlans, dailyUnit, lanes }: {
         )}
       </section>
 
+      {(today.supporting || reviews.length > 0 || dsaDue.length > 0 || project || gateThisWeek) && (
+        <section aria-labelledby="also">
+          <h2 id="also" className="h-section mb-2">Also today</h2>
+          <ul className="list-card text-sm">
+            {today.supporting && (
+              <li className="px-4 py-3">
+                <span className="block text-xs text-muted">Supporting, only with spare capacity</span>
+                <Link href={hrefOfUnit(today.supporting)} className="hover:text-accent">{unitLabel(today.supporting)}</Link>
+                {supportOpen.length > 1 && <span className="text-muted"> ({supportOpen.length - 1} more in <Link href={`/weeks/${cw}`} className="text-accent hover:underline">the week</Link>)</span>}
+              </li>
+            )}
+            {(reviews.length > 0 || dsaDue.length > 0) && (
+              <li className="px-4 py-3">
+                <span className="block text-xs text-muted">Maintenance</span>
+                <a href="#retests" className="hover:text-accent">
+                  {[reviews.length && `${reviews.length} re-test${reviews.length > 1 ? "s" : ""} due`, dsaDue.length && `${dsaDue.length} DSA revisit${dsaDue.length > 1 ? "s" : ""}`].filter(Boolean).join(", ")}
+                </a>
+              </li>
+            )}
+            {project && (
+              <li className="px-4 py-3">
+                <span className="block text-xs text-muted">Project milestone{project.why === "in-progress" ? "" : ", scheduled this week"}</span>
+                <Link href={`/projects/${project.id}`} className="hover:text-accent">{project.milestone ? project.milestone.text : `${project.title}: all milestones ticked`}</Link>
+              </li>
+            )}
+            {gateThisWeek && (
+              <li className="px-4 py-3">
+                <span className="block text-xs text-muted">Checkpoint this week</span>
+                <Link href={`/checkpoints/${gateThisWeek}`} className="hover:text-accent">{gateName(gateThisWeek)}</Link> <RefId id={gateThisWeek} />
+              </li>
+            )}
+          </ul>
+        </section>
+      )}
+
       <section aria-labelledby="build" className="border-l-2 border-rule-strong py-0.5 pl-4">
         <h2 id="build" className="text-sm text-muted">This week&apos;s build</h2>
         <p className="mt-0.5 leading-relaxed">{w.b}</p>
         {w.pj && <p className="mt-2 text-sm"><Link className="text-accent hover:underline" href={`/projects/${w.pj}`}>Open the project: {nameOf(w.pj)}</Link></p>}
-        {w.g && (
-          <p className="mt-2 text-sm">
-            Checkpoint this week: <Link className="text-accent hover:underline" href={`/checkpoints/${w.g}`}>{gateName(w.g)}</Link> <RefId id={w.g} />
-          </p>
-        )}
       </section>
 
       {(primaryDone || w.pu.length === 0) && !weekDone && (
@@ -154,12 +211,6 @@ export function Today({ dayPlans, dailyUnit, lanes }: {
           </Disclosure>
         )}
 
-        {supportOpen.length > 0 && (
-          <Disclosure title="Supporting work" hint="Only with spare time">
-            <ConceptChecklist items={supportOpen.map((u) => ({ id: u, text: unitLabel(u) }))} showIds={false} />
-          </Disclosure>
-        )}
-
         {(lane || reviews.length > 0 || dsaDue.length > 0) && (
           <Disclosure
             id="retests"
@@ -187,18 +238,8 @@ export function Today({ dayPlans, dailyUnit, lanes }: {
           </Disclosure>
         )}
 
-        <Disclosure title="Session plan" hint="A daily work unit you can shrink on busy days">
-          <ol className="space-y-1.5">
-            {dailyUnit.map((d, i) => (
-              <li key={i}>
-                <label className="flex min-h-11 cursor-pointer items-center gap-3">
-                  <input type="checkbox" checked={!!session[i]} onChange={(e) => setSession({ ...session, [i]: e.target.checked })} />
-                  <span className="w-16 shrink-0 text-sm tabular-nums text-muted">{d.minutes} min</span>
-                  <span className={cx(session[i] && "text-muted line-through")}>{d.step}</span>
-                </label>
-              </li>
-            ))}
-          </ol>
+        <Disclosure title="Recent sessions" hint={s.sessions.length ? "What you learned and where you got stuck" : "Your session log"}>
+          <SessionHistory sessions={s.sessions} />
         </Disclosure>
 
         <Disclosure title="Notes for this week">

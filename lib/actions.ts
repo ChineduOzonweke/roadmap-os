@@ -7,9 +7,10 @@ import {
   buildExport, exportFilename, hasProgress, parseImport, serializeExport, type ImportPreview,
 } from "@/lib/persistence/portable";
 import { newId } from "@/lib/ids";
+import { localDay } from "@/lib/today";
 import {
   emptyState,
-  type AiLogEntry,
+  type AiLogEntry, type DailySession, type SessionStage,
   type Application, type DepthLevel, type DsaProblem, type GateStatus, type MasteryLevel,
   type ProjectProgress, type ProjectStatus, type ResourceStatus, type Story, type TopicProgress, type UserState,
 } from "@/types/state";
@@ -25,12 +26,20 @@ function projectOf(s: UserState, id: string): ProjectProgress {
 }
 
 // ---- checklists
+/** Items ticked while a session is running are recorded on that session as part of its log. */
+function noteTicks(s: UserState, ids: string[], value: boolean): UserState["sessions"] {
+  const active = s.sessions.find((x) => x.status === "active");
+  if (!active) return s.sessions;
+  const ticked = value ? [...new Set([...active.ticked, ...ids])] : active.ticked.filter((x) => !ids.includes(x));
+  return s.sessions.map((x) => (x === active ? { ...x, ticked, updatedAt: now() } : x));
+}
+
 export function setCheck(id: string, value: boolean) {
   update((s) => {
     const checks = { ...s.checks };
     if (value) checks[id] = now();
     else delete checks[id];
-    return { ...s, checks };
+    return { ...s, checks, sessions: noteTicks(s, [id], value) };
   });
 }
 
@@ -41,7 +50,7 @@ export function setChecks(ids: string[], value: boolean) {
       if (value) checks[id] = checks[id] ?? now();
       else delete checks[id];
     });
-    return { ...s, checks };
+    return { ...s, checks, sessions: noteTicks(s, ids, value) };
   });
 }
 
@@ -210,6 +219,75 @@ export function saveAiLog(p: Omit<AiLogEntry, "id" | "createdAt" | "updatedAt"> 
 }
 export function deleteAiLog(id: string) {
   update((s) => ({ ...s, aiLog: s.aiLog.filter((x) => x.id !== id) }));
+}
+
+// ---- Daily Work Unit sessions
+function patchSession(id: string, fn: (x: DailySession) => DailySession) {
+  update((s) => ({ ...s, sessions: s.sessions.map((x) => (x.id === id ? { ...fn(x), updatedAt: now() } : x)) }));
+}
+
+/** Start a session, or return the one already running (only one at a time). */
+export function startSession(opts: { week: number; focus: string[]; stages: SessionStage[]; plan: "full" | "short" }): string {
+  const running = getState().sessions.find((x) => x.status === "active");
+  if (running) return running.id;
+  const id = newId("session");
+  const t = now();
+  const stages = opts.stages.map((st, i) => ({ ...st, ...(i === 0 ? { startedAt: t } : {}) }));
+  const session: DailySession = {
+    id, date: localDay(), week: opts.week, plan: opts.plan, status: "active", startedAt: t, stage: 0, stages,
+    focus: opts.focus, ticked: [], log: { learned: "", stuck: "", next: "" }, updatedAt: t,
+  };
+  update((s) => ({ ...s, sessions: [session, ...s.sessions] }));
+  return id;
+}
+
+/** Move to stage `to` (forward or back). The current stage is closed; `skip` marks it skipped instead of done. */
+export function goToStage(id: string, to: number, skip = false) {
+  patchSession(id, (x) => {
+    if (to < 0 || to >= x.stages.length || to === x.stage) return x;
+    const t = now();
+    const stages = x.stages.map((st, i) => {
+      if (i === x.stage) {
+        const out: SessionStage = { ...st, endedAt: t };
+        if (skip) out.skipped = true;
+        else delete out.skipped;
+        return out;
+      }
+      if (i === to) {
+        // Reopening a stage keeps its first start time.
+        const out: SessionStage = { ...st, startedAt: st.startedAt ?? t };
+        delete out.endedAt;
+        delete out.skipped;
+        return out;
+      }
+      return st;
+    });
+    return { ...x, stage: to, stages };
+  });
+}
+
+export function setStageNote(id: string, index: number, note: string) {
+  patchSession(id, (x) => ({ ...x, stages: x.stages.map((st, i) => (i === index ? { ...st, note } : st)) }));
+}
+
+export function setSessionLog(id: string, patch: Partial<DailySession["log"]>) {
+  patchSession(id, (x) => ({ ...x, log: { ...x.log, ...patch } }));
+}
+
+/** Finish the session: close the running stage and keep the whole record as the day's log. */
+export function completeSession(id: string) {
+  patchSession(id, (x) => {
+    const t = now();
+    return { ...x, status: "completed", endedAt: t, stages: x.stages.map((st, i) => (i === x.stage && !st.endedAt ? { ...st, endedAt: t } : st)) };
+  });
+}
+
+/** Stop without completing. The record is kept (never deleted) and marked abandoned. */
+export function abandonSession(id: string) {
+  patchSession(id, (x) => {
+    const t = now();
+    return { ...x, status: "abandoned", endedAt: t, stages: x.stages.map((st, i) => (i === x.stage && !st.endedAt ? { ...st, endedAt: t } : st)) };
+  });
 }
 
 // ---- whole-state operations (backup, import, reset). Each one that replaces progress
