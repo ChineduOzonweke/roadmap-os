@@ -5,6 +5,7 @@ import { checkpointName, checkpoints, getCheckpoint, getPhase, meta, topicsUnloc
 import { PageHeader, Section } from "@/components/ui";
 import { GateControls, NotesEditor, TopicStatus } from "@/components/progress";
 import { RefId } from "@/components/Ref";
+import { Tutor } from "@/components/Tutor";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -70,6 +71,8 @@ export default async function Page({ params }: Props) {
         )}
         {range && <p className="mt-3 text-sm text-muted">Weeks in that range: {weeks.slice(range[0] - 1, range[1]).length}.</p>}
       </Section>
+
+      <Section><Tutor scope={{ gateId: c.id }} /></Section>
 
       <Section><NotesEditor entityId={c.id} title="Gate notes" /></Section>
     </>

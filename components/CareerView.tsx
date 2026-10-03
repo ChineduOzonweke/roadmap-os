@@ -14,11 +14,11 @@ function Checklist({ items }: { items: TrackItem[] }) {
   const s = useUserState();
   const ready = useHydrated();
   return (
-    <ul className="grid grid-cols-1 gap-1 sm:grid-cols-2">
+    <ul className="grid grid-cols-1 gap-x-4 sm:grid-cols-2">
       {items.map((it) => (
         <li key={it.id}>
-          <label className="flex cursor-pointer items-start gap-2 rounded px-1 py-1 text-sm hover:bg-surface-2">
-            <input type="checkbox" className="mt-0.5 shrink-0" disabled={!ready} checked={ready && !!s.flags[it.id]} onChange={(e) => setFlag(it.id, e.target.checked)} />
+          <label className="flex min-h-10 cursor-pointer items-start gap-2.5 rounded-md px-1.5 py-2 text-sm hover:bg-surface-2">
+            <input type="checkbox" className="mt-px shrink-0" disabled={!ready} checked={ready && !!s.flags[it.id]} onChange={(e) => setFlag(it.id, e.target.checked)} />
             <span><InlineText text={it.text} /></span>
           </label>
         </li>

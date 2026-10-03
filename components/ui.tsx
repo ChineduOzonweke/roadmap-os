@@ -84,10 +84,10 @@ export function Tally({ done, total, label, className }: { done: number; total: 
 
 export function PageHeader({ title, lead, meta, children }: { title: ReactNode; lead?: ReactNode; meta?: ReactNode; children?: ReactNode }) {
   return (
-    <header className="mb-7">
+    <header className="mb-8">
       {meta && <div className="mb-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted">{meta}</div>}
-      <h1 className="text-[1.75rem] font-semibold leading-[1.15] tracking-[-0.015em] text-balance">{title}</h1>
-      {lead && <div className="mt-2 max-w-[65ch] text-muted">{lead}</div>}
+      <h1 className="font-display text-[2.125rem] leading-[1.05] tracking-[-0.01em] text-balance sm:text-[2.625rem]">{title}</h1>
+      {lead && <div className="mt-3 max-w-[65ch] text-[0.9375rem] leading-relaxed text-muted">{lead}</div>}
       {children && <div className="mt-4">{children}</div>}
     </header>
   );
@@ -104,6 +104,23 @@ export function Section({ title, aside, children, className, id }: { title?: Rea
       )}
       {children}
     </section>
+  );
+}
+
+/** Several flat disclosures on one surface, separated by hairlines instead of separate cards. */
+export function DisclosureGroup({ children, className, label }: { children: ReactNode; className?: string; label?: string }) {
+  return <div role={label ? "group" : undefined} aria-label={label} className={cx("card overflow-hidden rule-list", className)}>{children}</div>;
+}
+
+/** Mastery 0-5 as six ticks on one accent ramp; retained turns the run green. */
+export function MasteryMark({ level, className }: { level: number; className?: string }) {
+  const names = ["Not started", "Learning", "Explained", "Practised", "Demonstrated", "Retained"];
+  return (
+    <span className={cx("inline-flex items-center gap-[3px]", className)} role="img" aria-label={`Mastery: ${names[level] ?? "Not started"}`}>
+      {[1, 2, 3, 4, 5].map((i) => (
+        <span key={i} className={cx("h-2.5 w-1 rounded-full", i <= level ? (level >= 5 ? "bg-ok" : "bg-accent") : "bg-rule-strong")} style={i <= level && level < 5 ? { opacity: 0.45 + i * 0.11 } : undefined} />
+      ))}
+    </span>
   );
 }
 
@@ -171,10 +188,13 @@ export function ExternalLink({ href, children, className }: { href: string; chil
   );
 }
 
-/** Progressive disclosure: collapsed section with a large tap target. Native <details>, no JS. */
-export function Disclosure({ title, hint, open, children, id, className }: { title: ReactNode; hint?: ReactNode; open?: boolean; children: ReactNode; id?: string; className?: string }) {
+/**
+ * Progressive disclosure: collapsed section with a large tap target. Native <details>, no JS.
+ * `flat` drops the card so several disclosures can share one surface (see DisclosureGroup).
+ */
+export function Disclosure({ title, hint, open, children, id, className, flat = false }: { title: ReactNode; hint?: ReactNode; open?: boolean; children: ReactNode; id?: string; className?: string; flat?: boolean }) {
   return (
-    <details id={id} open={open} className={cx("group card overflow-hidden", className)}>
+    <details id={id} open={open} className={cx("group", !flat && "card overflow-hidden", className)}>
       <summary className="flex min-h-14 cursor-pointer list-none items-center gap-3 px-4 py-3 hover:bg-surface-2/60 active:bg-surface-2 [&::-webkit-details-marker]:hidden">
         <span className="min-w-0 flex-1">
           <span className="block font-medium">{title}</span>

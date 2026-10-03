@@ -25,18 +25,18 @@ export default function Page() {
         const groups = subs.length ? subs : [st];
         return (
           <section key={st.id} className="mb-10" aria-labelledby={`st-${st.id}`}>
-            <h2 id={`st-${st.id}`} className="text-lg font-semibold">{st.name} <RefId id={st.id} /></h2>
-            <p className="mb-3 text-sm text-muted">Weeks {st.range[0]}–{st.range[1]}.</p>
+            <p className="t-eyebrow">Stage {st.id.slice(1)} · Weeks {st.range[0]}–{st.range[1]}</p>
+            <h2 id={`st-${st.id}`} className="mb-4 mt-1 font-display text-[1.75rem] leading-tight">{st.name} <RefId id={st.id} /></h2>
             {groups.map((g) => (
               <div key={g.id} className="mb-5">
-                {subs.length > 0 && <h3 className="mb-2 text-sm font-medium">{g.name} <RefId id={g.id} /> <span className="font-normal text-muted">(weeks {g.range[0]}–{g.range[1]})</span></h3>}
+                {subs.length > 0 && <h3 className="mb-2 flex items-baseline gap-2 text-sm font-medium">{g.name} <RefId id={g.id} /> <span className="t-data text-xs font-normal text-faint">{g.range[0]}–{g.range[1]}</span></h3>}
                 <ol className="list-card">
                   {weeks.filter((w) => w.cw >= g.range[0] && w.cw <= g.range[1]).map((w) => (
                     <li key={w.cw}>
-                      <Link href={`/weeks/${w.cw}`} className="flex flex-col gap-1 px-3 py-2 hover:bg-surface-2 sm:flex-row sm:items-center sm:gap-4">
-                        <span className="w-20 shrink-0 font-medium tabular-nums">Week {w.cw}</span>
+                      <Link href={`/weeks/${w.cw}`} className="flex items-start gap-3 px-3 py-2.5 transition-colors hover:bg-surface-2 sm:items-center sm:gap-4">
+                        <span className="t-data w-9 shrink-0 pt-0.5 text-sm text-faint sm:pt-0" aria-label={`Week ${w.cw}`}>{String(w.cw).padStart(3, "0")}</span>
                         <span className="min-w-0 flex-1">
-                          <span className="block truncate">{w.title}</span>
+                          <span className="block line-clamp-2 sm:truncate">{w.title}</span>
                           <span className="block truncate text-xs text-muted">{TYPE_LABEL[w.type]}{w.gate ? ", checkpoint week" : ""}{w.conceptCount ? `, ${w.conceptCount} items` : ""}</span>
                         </span>
                         <span className="shrink-0"><WeekStatusPill cw={w.cw} /></span>

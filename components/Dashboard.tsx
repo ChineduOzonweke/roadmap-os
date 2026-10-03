@@ -15,7 +15,7 @@ import { Bar, Disclosure, InlineText, StatusGlyph, StatusPill, cx } from "./ui";
 function Stat({ label, value, sub, bar }: { label: string; value: string; sub?: string; bar?: number }) {
   return (
     <div className="min-w-0">
-      <p className="text-2xl font-semibold leading-none tabular-nums tracking-tight">{value}{sub && <span className="ml-1 text-sm font-normal text-muted">{sub}</span>}</p>
+      <p className="t-data text-2xl leading-none">{value}{sub && <span className="ml-1 text-sm font-normal text-muted">{sub}</span>}</p>
       <p className="mt-1.5 text-sm text-muted">{label}</p>
       {bar != null && <Bar value={bar} className="mt-2.5" label={label} />}
     </div>
@@ -60,14 +60,14 @@ export function Dashboard() {
   return (
     <div className="space-y-8">
       <header>
-        <h1 className="text-[1.75rem] font-semibold leading-[1.15] tracking-[-0.015em]">Progress</h1>
+        <h1 className="font-display text-[2.125rem] leading-[1.05] tracking-[-0.01em] sm:text-[2.625rem]">Progress</h1>
         <p className="mt-2 text-muted">What you have done, where you are, and what comes next.</p>
       </header>
 
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-start lg:gap-6">
       <section aria-labelledby="where" className="card p-5">
         <h2 id="where" className="text-sm text-muted">Where you are</h2>
-        <p className="mt-1 text-lg font-semibold leading-snug">Week {cw} of 206: {w.t}</p>
+        <p className="mt-1 font-display text-[1.75rem] leading-tight">Week {cw} of 206: {w.t}</p>
         <p className="mt-0.5 text-sm text-muted">
           {phase && <><Link href={`/phases/${data.phaseId}`} className="hover:text-accent">{phase.t}</Link> <RefId id={data.phaseId} />, </>}
           {stage?.n} <RefId id={stage?.id ?? ""} />

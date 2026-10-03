@@ -6,6 +6,7 @@ import {
   checkpointName, refLabel, resourcesForPhase, resourcesForTopic, topics,
 } from "@/lib/data";
 import { Markdown } from "@/components/Markdown";
+import { Tutor } from "@/components/Tutor";
 import { Chip, Disclosure, ExternalLink, InlineText, PageHeader, Section } from "@/components/ui";
 import {
   ChecklistSummary, ClearanceNotice, ConceptChecklist, GateBadge, MasteryPanel, NotesEditor, SingleCheck, TopicStatus,
@@ -88,6 +89,7 @@ export default async function Page({ params }: Props) {
       </Section>
 
       <div className="space-y-3">
+        <Tutor scope={{ topicId: t.id }} />
         {isChecklist && (
           <Disclosure title="Your mastery and evidence" hint="Mastery stage, depth, evidence and re-tests">
             <MasteryPanel topicId={t.id} states={meta.masteryStates} depths={meta.depthModel} target={target} />

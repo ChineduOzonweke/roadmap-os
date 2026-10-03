@@ -1,8 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
-import "@fontsource/ibm-plex-sans/latin-400.css";
-import "@fontsource/ibm-plex-sans/latin-500.css";
-import "@fontsource/ibm-plex-sans/latin-600.css";
+import "@fontsource-variable/inter/wght.css";
+import "@fontsource/instrument-serif/latin-400.css";
 import "@fontsource/ibm-plex-mono/latin-400.css";
 import "@fontsource/ibm-plex-mono/latin-500.css";
 import "./globals.css";
@@ -19,8 +18,8 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f3f5f2" },
-    { media: "(prefers-color-scheme: dark)", color: "#131a18" },
+    { media: "(prefers-color-scheme: light)", color: "#f7f5f0" },
+    { media: "(prefers-color-scheme: dark)", color: "#0e0f11" },
   ],
 };
 

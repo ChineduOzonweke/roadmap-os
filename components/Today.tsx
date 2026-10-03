@@ -2,15 +2,25 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { hrefFor } from "@/lib/ids";
 import { useHydrated, useUserState } from "@/lib/store";
 import {
-  dueReviews, gateName, gatePassed, idx, nameOf, phaseById, stageOfWeek, topicById, unitLabel, weekByCw, weekView,
+  dueReviews, gateName, gatePassed, idx, nameOf, phaseById, stageOfWeek, unitLabel, weekByCw, weekView,
 } from "@/lib/progress";
-import { recordReview, setCheck, setCurrentWeek, setWeekDone } from "@/lib/actions";
+import { setCheck, setCurrentWeek, setWeekDone } from "@/lib/actions";
+import { activeSession, lastCompletedSession, localDay, sessionsOn, todayPlan, type ProjectInfo, type StepTemplate } from "@/lib/today";
 import { AiModeLine } from "./AiModeLine";
+import { effectiveMode } from "@/lib/modes";
+import { ActiveModeSwitcher } from "./ActiveMode";
+import { ReviewQueue } from "./Reviews";
+import { Tutor } from "./Tutor";
+import { SessionHistory, SessionRunner, SessionStart } from "./SessionRunner";
+import { BackupNudge } from "./StorageNotices";
 import { ConceptChecklist, NotesEditor } from "./progress";
 import { RefId } from "./Ref";
-import { Disclosure, Tally, cx } from "./ui";
+import { Disclosure, DisclosureGroup, Tally, cx } from "./ui";
+
+const hrefOfUnit = (u: string) => hrefFor(u) ?? "#";
 
 type DayPlan = { days: string; plan: { days: string; focus: string }[] } | null;
 
@@ -20,14 +30,14 @@ const NEXT_UP = 5;
  * Today is the cockpit: where am I, what do I do next, how far along is this week.
  * Everything else is one tap away in collapsed sections.
  */
-export function Today({ dayPlans, dailyUnit, lanes }: {
+export function Today({ dayPlans, dailyUnit, lanes, projects }: {
   dayPlans: Record<number, DayPlan>;
-  dailyUnit: { minutes: string; step: string }[];
+  dailyUnit: StepTemplate[];
   lanes: { from: number; to: number | null; label: string; note: string }[];
+  projects: ProjectInfo[];
 }) {
   const s = useUserState();
   const ready = useHydrated();
-  const [session, setSession] = useState<Record<number, boolean>>({});
   const [undo, setUndo] = useState<{ id: string; text: string } | null>(null);
 
   useEffect(() => {
@@ -44,15 +54,23 @@ export function Today({ dayPlans, dailyUnit, lanes }: {
   const stage = stageOfWeek(cw);
   const phaseId = (w.pu[0] ?? "").split(".")[0];
   const phase = phaseById.get(phaseId);
+  const now = new Date();
+  const reviews = dueReviews(s, now);
+  const mode = effectiveMode(s);
+  const policy = mode.def.policy;
+  const today = todayPlan(s, w, { projects, reviewsDue: reviews.length, gatePassed: (id) => gatePassed(s, id), now, nextCount: NEXT_UP, policy });
   const open = w.pu.filter((u) => !s.checks[u]);
   const doneItems = w.pu.filter((u) => !!s.checks[u]);
-  const focus = open.slice(0, NEXT_UP);
+  const focus = today.primary.next;
   const supportOpen = w.u.filter((u) => !w.pu.includes(u) && !s.checks[u]);
   const lane = cw >= 18 ? lanes.find((l) => cw >= l.from && (l.to == null || cw <= l.to)) : undefined;
-  const reviews = dueReviews(s);
-  const dsaDue = s.dsa.filter((p) => p.revisitOn && new Date(p.revisitOn) <= new Date());
+  const dsaDue = today.maintenance.dsaDue;
   const plan = dayPlans[cw];
-  const gateBlocked = w.rg && !gatePassed(s, w.rg);
+  const running = activeSession(s);
+  // Skip the project row when its milestone is word-for-word this week's build, which is shown just below.
+  const project = today.project && today.project.milestone?.text !== w.b ? today.project : null;
+  const gateThisWeek = today.checkpoints.thisWeek;
+  const gateBlocked = today.checkpoints.blocking;
   const weekDone = !!s.weeks[cw]?.done;
   const primaryDone = w.pu.length > 0 && open.length === 0;
 
@@ -62,36 +80,61 @@ export function Today({ dayPlans, dailyUnit, lanes }: {
     <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_17.5rem] lg:gap-10 xl:grid-cols-[minmax(0,1fr)_19rem]">
      <div className="min-w-0 space-y-7">
       <header>
-        <p className="text-sm text-muted">
-          <span className="font-medium text-ink">Week {cw}</span> of 206{phase ? `, ${phase.t}` : stage ? `, ${stage.n}` : ""}
+        <p className="t-eyebrow">
+          Week <span className="text-ink">{String(cw).padStart(3, "0")}</span> / 206{phase ? ` · ${phase.t}` : stage ? ` · ${stage.n}` : ""}
         </p>
-        <h1 className="mt-1.5 text-[1.75rem] font-semibold leading-[1.15] tracking-[-0.015em] text-balance sm:text-[2rem]">{w.t}</h1>
+        <h1 className="mt-2 font-display text-[2.25rem] leading-[1.04] tracking-[-0.01em] text-balance sm:text-[2.875rem] lg:text-[2.5rem] xl:text-[2.875rem]">{w.t}</h1>
         {v.total > 0 && (
-          <div className="mt-5">
+          <div className="mt-5 max-w-xl">
             <Tally done={v.done} total={v.total} label="This week's checklist" />
-            <p className="mt-2 text-sm tabular-nums text-muted">
-              <span className="font-medium text-ink">{v.done} of {v.total}</span> done this week
+            <p className="mt-2 text-sm text-muted">
+              <span className="t-data text-ink">{v.done}/{v.total}</span> done this week
             </p>
           </div>
         )}
+        <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-1 border-y border-rule py-1.5">
+          <div className="lg:hidden"><ActiveModeSwitcher variant="compact" /></div>
+          <span aria-hidden className="hidden h-4 w-px bg-rule sm:block lg:hidden" />
+          <AiModeLine cw={cw} compact />
+        </div>
+        {policy.note && <p className="mt-2 text-sm text-muted">{policy.note}</p>}
       </header>
 
       {gateBlocked && (
-        <p className="rounded-xl border border-warn/30 bg-warn-soft px-4 py-3 text-sm">
+        <p className="rounded-lg border border-warn/30 bg-warn-soft px-4 py-3 text-sm">
           This week comes after the <Link className="font-medium text-warn underline" href={`/checkpoints/${w.rg}`}>{gateName(w.rg!)}</Link>, which is not marked passed yet. Attempt it first, unless you already have the evidence.
         </p>
       )}
 
-      <div className="lg:hidden"><AiModeLine cw={cw} /></div>
+      {running ? (
+        <SessionRunner
+          session={running}
+          state={s}
+          ctx={{
+            build: w.b,
+            projectHref: today.project ? `/projects/${today.project.id}` : null,
+            projectTitle: today.project?.title ?? null,
+            reviewsDue: reviews.length,
+            previous: lastCompletedSession(s),
+          }}
+        />
+      ) : (
+        <SessionStart template={dailyUnit} week={cw} focus={open.slice(0, 3)} leftOff={today.leftOff} doneToday={sessionsOn(s, localDay(now))} preferred={policy.session} />
+      )}
 
       <section aria-labelledby="next">
-        <h2 id="next" className="h-section mb-3">{focus.length ? "Up next" : "This week"}</h2>
-        {focus.length ? (
+        <h2 id="next" className="h-section mb-3">{policy.primary === "light" && focus.length ? "Optional, only with spare capacity" : focus.length ? "Up next" : "This week"}</h2>
+        {policy.primary === "paused" && open.length > 0 ? (
+          <p className="card px-4 py-3">
+            New roadmap work is paused in this mode. Week {cw} waits for you, with {open.length} item{open.length > 1 ? "s" : ""} left; <Link href={`/weeks/${cw}`} className="text-accent hover:underline">open the week</Link> if you need to look something up.
+          </p>
+        ) : focus.length ? (
           <>
             <ConceptChecklist items={focus.map((u) => ({ id: u, text: unitLabel(u) }))} showIds={false} onToggle={onToggle} lead />
             <p className="mt-2.5 text-sm text-muted">
               Tick an item when you can do it without the tutorial open.
               {open.length > focus.length && <> {open.length - focus.length} more after these.</>}
+              {policy.primary === "light" && <> The roadmap can pause; skipping this is fine.</>}
             </p>
           </>
         ) : (
@@ -101,16 +144,48 @@ export function Today({ dayPlans, dailyUnit, lanes }: {
         )}
       </section>
 
+      <ReviewQueue />
+
+      {(today.supporting || dsaDue.length > 0 || project || gateThisWeek) && (
+        <section aria-labelledby="also">
+          <h2 id="also" className="h-section mb-2">Also today</h2>
+          <ul className="rule-list border-y border-rule text-sm">
+            {today.supporting && (
+              <li className="py-3">
+                <span className="block text-xs text-faint">Supporting, only with spare capacity</span>
+                <Link href={hrefOfUnit(today.supporting)} className="hover:text-accent">{unitLabel(today.supporting)}</Link>
+                {supportOpen.length > 1 && <span className="text-muted"> ({supportOpen.length - 1} more in <Link href={`/weeks/${cw}`} className="text-accent hover:underline">the week</Link>)</span>}
+              </li>
+            )}
+            {dsaDue.length > 0 && (
+              <li className="py-3">
+                <span className="block text-xs text-faint">Maintenance</span>
+                <a href="#retests" className="hover:text-accent">{dsaDue.length} DSA revisit{dsaDue.length > 1 ? "s" : ""} due</a>
+              </li>
+            )}
+            {project && (
+              <li className="py-3">
+                <span className="block text-xs text-faint">Project milestone{project.why === "in-progress" ? "" : ", scheduled this week"}</span>
+                <Link href={`/projects/${project.id}`} className="hover:text-accent">{project.milestone ? project.milestone.text : `${project.title}: all milestones ticked`}</Link>
+              </li>
+            )}
+            {gateThisWeek && (
+              <li className="py-3">
+                <span className="block text-xs text-faint">Checkpoint this week</span>
+                <Link href={`/checkpoints/${gateThisWeek}`} className="hover:text-accent">{gateName(gateThisWeek)}</Link> <RefId id={gateThisWeek} />
+              </li>
+            )}
+          </ul>
+        </section>
+      )}
+
+{policy.primary !== "paused" && (
       <section aria-labelledby="build" className="border-l-2 border-rule-strong py-0.5 pl-4">
         <h2 id="build" className="text-sm text-muted">This week&apos;s build</h2>
         <p className="mt-0.5 leading-relaxed">{w.b}</p>
         {w.pj && <p className="mt-2 text-sm"><Link className="text-accent hover:underline" href={`/projects/${w.pj}`}>Open the project: {nameOf(w.pj)}</Link></p>}
-        {w.g && (
-          <p className="mt-2 text-sm">
-            Checkpoint this week: <Link className="text-accent hover:underline" href={`/checkpoints/${w.g}`}>{gateName(w.g)}</Link> <RefId id={w.g} />
-          </p>
-        )}
       </section>
+      )}
 
       {(primaryDone || w.pu.length === 0) && !weekDone && (
         <button
@@ -122,18 +197,21 @@ export function Today({ dayPlans, dailyUnit, lanes }: {
         </button>
       )}
 
+      <BackupNudge />
+
      </div>
 
-      <aside className="mt-7 space-y-3 lg:mt-0 lg:pt-1" aria-label="More for this week">
-        <div className="hidden lg:block"><AiModeLine cw={cw} /></div>
+      <aside className="mt-8 space-y-4 lg:mt-0 lg:pt-1" aria-label="More for this week">
+        <Tutor />
+        <DisclosureGroup label="More for this week">
         {doneItems.length > 0 && (
-          <Disclosure title={`Done this week (${doneItems.length})`} hint="Untick anything you ticked by mistake">
+          <Disclosure flat title={`Done this week (${doneItems.length})`} hint="Untick anything you ticked by mistake">
             <ConceptChecklist items={doneItems.map((u) => ({ id: u, text: unitLabel(u) }))} showIds={false} />
           </Disclosure>
         )}
 
         {plan && (
-          <Disclosure title="The 14-day plan" hint={`This week covers days ${plan.days}`} open={cw === 1 && doneItems.length === 0}>
+          <Disclosure flat title="The 14-day plan" hint={`This week covers days ${plan.days}`} open={cw === 1 && doneItems.length === 0}>
             <ol className="space-y-1.5">
               {plan.plan.map((d) => {
                 const [a, b] = d.days.replace(/Days? /, "").split("-").map(Number);
@@ -151,58 +229,32 @@ export function Today({ dayPlans, dailyUnit, lanes }: {
           </Disclosure>
         )}
 
-        {supportOpen.length > 0 && (
-          <Disclosure title="Supporting work" hint="Only with spare time">
-            <ConceptChecklist items={supportOpen.map((u) => ({ id: u, text: unitLabel(u) }))} showIds={false} />
-          </Disclosure>
-        )}
-
-        {(lane || reviews.length > 0 || dsaDue.length > 0) && (
-          <Disclosure
+        {policy.dsa !== "off" && (lane || dsaDue.length > 0) && (
+          <Disclosure flat
             id="retests"
-            title="Practice and re-tests"
-            hint={[reviews.length && `${reviews.length} re-test${reviews.length > 1 ? "s" : ""} due`, dsaDue.length && `${dsaDue.length} DSA revisit${dsaDue.length > 1 ? "s" : ""}`].filter(Boolean).join(", ") || "DSA practice for this stage"}
-            open={reviews.length > 0}
+            title="DSA practice"
+            hint={policy.dsa === "optional" ? "Optional: 15-30 minutes only if it helps" : dsaDue.length ? `${dsaDue.length} revisit${dsaDue.length > 1 ? "s" : ""} due` : "DSA practice for this stage"}
+            open={dsaDue.length > 0}
           >
-            {lane && (
-              <div className="mb-3">
-                <p className="text-sm text-muted">{lane.note}</p>
-                <p className="mt-1 text-sm"><Link href="/dsa" className="text-accent hover:underline">Open the DSA journal</Link></p>
-              </div>
-            )}
-            {reviews.length > 0 && (
-              <ul className="divide-y divide-rule">
-                {reviews.map((r) => (
-                  <li key={r.topicId} className="flex flex-wrap items-center gap-3 py-2">
-                    <Link href={`/topics/${r.topicId}`} className="min-w-0 flex-1 hover:text-accent">{topicById.get(r.topicId)?.t}</Link>
-                    <span className="text-xs text-muted">re-test {r.count + 1}</span>
-                    <button type="button" onClick={() => recordReview(r.topicId)} className="btn btn-secondary btn-sm">Passed</button>
-                  </li>
-                ))}
+            {lane && <p className="text-sm text-muted">{lane.note}</p>}
+            {dsaDue.length > 0 && (
+              <ul className="mt-2 list-disc space-y-0.5 pl-5 text-sm">
+                {dsaDue.map((p) => <li key={p.id}>{p.title || "Untitled problem"}</li>)}
               </ul>
             )}
+            <p className="mt-2 text-sm"><Link href="/dsa" className="text-accent hover:underline">Open the DSA journal</Link></p>
           </Disclosure>
         )}
 
-        <Disclosure title="Session plan" hint="A daily work unit you can shrink on busy days">
-          <ol className="space-y-1.5">
-            {dailyUnit.map((d, i) => (
-              <li key={i}>
-                <label className="flex min-h-11 cursor-pointer items-center gap-3">
-                  <input type="checkbox" checked={!!session[i]} onChange={(e) => setSession({ ...session, [i]: e.target.checked })} />
-                  <span className="w-16 shrink-0 text-sm tabular-nums text-muted">{d.minutes} min</span>
-                  <span className={cx(session[i] && "text-muted line-through")}>{d.step}</span>
-                </label>
-              </li>
-            ))}
-          </ol>
+        <Disclosure flat title="Recent sessions" hint={s.sessions.length ? "What you learned and where you got stuck" : "Your session log"}>
+          <SessionHistory sessions={s.sessions} />
         </Disclosure>
 
-        <Disclosure title="Notes for this week">
+        <Disclosure flat title="Notes for this week">
           <NotesEditor entityId={`week:${cw}`} title="Notes" />
         </Disclosure>
 
-        <Disclosure title="More about this week" hint="Full checklist, other weeks">
+        <Disclosure flat title="More about this week" hint="Full checklist, other weeks">
           <div className="space-y-3 text-sm">
             <p><Link href={`/weeks/${cw}`} className="text-accent hover:underline">Open week {cw} in full</Link></p>
             <div className="flex flex-wrap items-center gap-2">
@@ -213,10 +265,11 @@ export function Today({ dayPlans, dailyUnit, lanes }: {
             {stage && <p className="text-muted">Stage: {stage.n} <RefId id={stage.id} /></p>}
           </div>
         </Disclosure>
+        </DisclosureGroup>
       </aside>
 
       {undo && (
-        <div role="status" className="fixed inset-x-3 bottom-[calc(4.75rem+env(safe-area-inset-bottom))] z-40 mx-auto flex max-w-md items-center gap-3 rounded-xl bg-ink py-2 pl-4 pr-2 text-sm text-bg shadow-[0_8px_24px_rgb(0_0_0/0.22)] lg:bottom-6">
+        <div role="status" className="pop-in fixed inset-x-3 bottom-[calc(4.75rem+env(safe-area-inset-bottom))] z-40 mx-auto flex max-w-md items-center gap-3 rounded-lg bg-ink py-2 pl-4 pr-2 text-sm text-bg shadow-float lg:bottom-6">
           <span className="min-w-0 flex-1 truncate">Done: {undo.text}</span>
           <button type="button" className="min-h-10 shrink-0 rounded-lg px-3 font-semibold text-accent-soft hover:bg-white/10" onClick={() => { setCheck(undo.id, false); setUndo(null); }}>Undo</button>
         </div>

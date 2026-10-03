@@ -6,6 +6,7 @@ import { useHydrated, useUserState } from "@/lib/store";
 import { currentTier, missionState, overlay, tierNumber, weekMode, workingTiers, type AiMission, type AiTier } from "@/lib/ai";
 import { gateById, gateName, nameOf } from "@/lib/progress";
 import { deleteAiLog, saveAiLog, setFlag } from "@/lib/actions";
+import { Tutor } from "./Tutor";
 import { hrefFor } from "@/lib/ids";
 import type { AiCanDoAlone } from "@/types/state";
 import { RefId } from "./Ref";
@@ -139,27 +140,29 @@ export function AiPractice() {
   return (
     <div className="space-y-6">
       <header>
-        <h1 className="text-[1.6rem] font-semibold leading-tight tracking-tight">Working with AI</h1>
-        <p className="mt-1 text-muted">AI output is an input to engineering, not proof of correctness. Use AI to get more capable, not to skip the learning.</p>
+        <h1 className="font-display text-[2.125rem] leading-[1.05] tracking-[-0.01em] sm:text-[2.625rem]">Working with AI</h1>
+        <p className="mt-3 max-w-[65ch] text-[0.9375rem] leading-relaxed text-muted">AI output is an input to engineering, not proof of correctness. Use AI to get more capable, not to skip the learning.</p>
       </header>
 
       <section className="card p-4">
-        <p className="text-sm text-muted">Your tier now</p>
-        <p className="text-lg font-semibold">Tier {n}: {tier.title}</p>
+        <p className="t-eyebrow">Your tier now</p>
+        <p className="mt-1 font-display text-[1.75rem] leading-tight">Tier {n}: {tier.title}</p>
         <p className="mt-1">{tier.summary}</p>
         <p className="mt-3 text-sm"><span className="font-medium">This week: {mode.title.toLowerCase()} mode.</span> {mode.summary}</p>
         {next && <p className="mt-2 text-sm text-muted">Next: Tier {n + 1}, {next.title}, after the {next.unlock ? gateName(next.unlock) : ""}.</p>}
       </section>
 
+      <Tutor />
+
       <section aria-labelledby="loop">
-        <h2 id="loop" className="mb-2 text-base font-semibold">The working loop</h2>
+        <h2 id="loop" className="h-section mb-3">The working loop</h2>
         <ol className="flex flex-wrap gap-1.5 text-sm">
           {overlay.loop.map((x, i) => <li key={x} className="rounded-md bg-surface-2 px-2 py-1">{i + 1}. {x}</li>)}
         </ol>
       </section>
 
       <section aria-labelledby="modes">
-        <h2 id="modes" className="mb-2 text-base font-semibold">Modes: what you are doing right now</h2>
+        <h2 id="modes" className="h-section mb-3">Modes: what you are doing right now</h2>
         <div className="space-y-2">
           {overlay.modes.map((md) => (
             <Disclosure key={md.id} title={md.title} hint={md.when} open={md.id === mode.id}>
@@ -175,7 +178,7 @@ export function AiPractice() {
 
       <section aria-labelledby="missions">
         <div className="mb-2 flex items-baseline justify-between gap-3">
-          <h2 id="missions" className="text-base font-semibold">Missions</h2>
+          <h2 id="missions" className="h-section">Missions</h2>
           <span className="text-sm text-muted">{done.length} of {missions.length} done</span>
         </div>
         <div className="space-y-2">
@@ -192,7 +195,7 @@ export function AiPractice() {
 
       <section aria-labelledby="log">
         <div className="mb-2 flex items-baseline justify-between gap-3">
-          <h2 id="log" className="text-base font-semibold">AI log</h2>
+          <h2 id="log" className="h-section">AI log</h2>
           {!logging && <button type="button" onClick={() => setLogging({ mission: null })} className="btn btn-primary btn-sm">Log a task</button>}
         </div>
         {logging && (
@@ -224,7 +227,7 @@ export function AiPractice() {
       </section>
 
       <section className="space-y-2" aria-label="Reference">
-        <h2 className="text-base font-semibold">Reference</h2>
+        <h2 className="h-section">Reference</h2>
         {workingTiers.map((t, i) => (
           <Disclosure key={t.id} title={`Tier ${i + 1}: ${t.title}`} hint={t.unlock ? `After the ${gateName(t.unlock)}` : "From the start"}>
             <p className="mb-3 text-sm">{t.summary}</p>

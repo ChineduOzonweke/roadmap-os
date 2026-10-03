@@ -2,29 +2,34 @@
 
 A personal learning operating system built on one canonical roadmap: Software Engineering to Machine Learning to AI/ML Engineering. It turns the master curriculum and its 206-week execution mapping into a working tool for deciding what to study, tracking checklists and mastery, passing gates, running projects, logging DSA practice, and preparing for a career.
 
-It is a Next.js web app. Open it from a phone or a laptop through one URL.
+It is a Next.js web app (installable as a PWA). Open it from a phone or a laptop through one URL. Visual system: docs/ROADMAP_OS_V21_VISUAL_AUDIT.md.
 
 ## What is in it
 
 | Area | Route | What it does |
 | --- | --- | --- |
-| Today | `/today` | Daily mission from the current week: next checklist items, build/evidence, DSA lane, spaced re-tests due, the master's daily work unit, week notes |
-| Dashboard | `/` | Current week, stage and phase, current mission, next gate, active project, the 206-week execution map, progress, cleared topics, what comes next |
+| Today | `/`, `/today` | What to do right now: a resumable Daily Work Unit session (recall, study, code, debug, explain, log), the next checklist items, one supporting item, maintenance (re-tests, DSA), one project milestone, checkpoints, where you left off, recent sessions, week notes |
+| Progress | `/progress` | Current week, stage and phase, next gate, active project, the 206-week execution map, progress, cleared topics, what comes next |
 | Weeks | `/weeks`, `/weeks/[1-206]` | The execution layer: every week's primary, supporting and DSA-lane work, build/evidence, gate, completion |
 | Timeline | `/timeline` | Stages S0–S8, gate sequence, dependency spine, decision-5 order |
 | Curriculum | `/curriculum`, `/phases/P01..P46` | Phase explorer with stage/status filters, then phase pages with topics, prerequisites, dependents, checkpoints, projects, resources |
-| Topics | `/topics/P13.2` | Checklist, "before you call this mastered" criteria, mastery stage, current vs target depth, evidence, spaced re-tests, prerequisites, unlocks, weeks, resources, projects, notes |
+| Topics | `/topics/P13.2` | Checklist, "before you call this mastered" criteria, mastery stage, current vs target depth, evidence items, spaced re-tests (schedule, pass/fail, history), tutor, prerequisites, unlocks, weeks, resources, projects, notes |
 | Concepts | `/concepts/P13.2-4` | One checklist item with its schedule and notes (`#` in IDs becomes `-` in URLs) |
-| Checkpoints | `/checkpoints`, `/checkpoints/C3` | G0, C1–C7 and stage gates: pass criteria, practical gate, evidence, what passing clears |
-| Dependencies | `/graph` | Phase dependency graph with focus highlighting (upstream and downstream) and a list mode for phones |
-| Projects | `/projects`, `/projects/PR07` | The 11 canonical projects: status, milestones from build weeks, master quality standard, deep-dive questions, repo link |
+| Checkpoints | `/checkpoints`, `/checkpoints/C3` | G0, C1–C7 and stage gates: pass criteria, practical gate, evidence items, tutor (Assess while attempting), what passing clears |
+| Dependencies | `/graph` | Phase dependency graph: zoom, pan, focus highlighting (upstream and downstream), legend, and a list mode for phones |
+| Projects | `/projects`, `/projects/PR07` | The 11 canonical projects: milestones with status, notes and evidence (plus your own), completion criteria from the master spec, engineering record (decisions, metrics, failures, lessons, links), README / case-study export, quality standard, deep-dive questions |
+| Evidence | `/evidence` | Every evidence item (repo, commit, test, benchmark, explanation, re-test, deploy…) linked to the topic, project, milestone or checkpoint it proves |
 | Resources | `/resources` | Every resource and tool from the master resource map with the original URLs; filters and personal status |
-| Search | `/search` | Global search across phases, topics, concepts, weeks, checkpoints, projects, resources, career content, your DSA journal and notes |
-| DSA journal | `/dsa` | Problems tagged with canonical P04 patterns, mistake log, revisit scheduling, stats |
+| Search | `/search`, Ctrl/Cmd+K | Global search across phases, topics, concepts, weeks, checkpoints, projects, resources, career content and your own records; the command palette adds pages and commands |
+| DSA journal | `/dsa` | Problems tagged with canonical P04 patterns, attempt log with mistake types, 3/14/30-day re-solve queue until solved cleanly three times, stats |
 | Career | `/career` | The master's 11 career tracks as checklists, portfolio stages, behavioural story bank, applications log, C7 status |
 | Notes | `/notes` | All notes in one place, filter, Markdown download |
 | Guide | `/guide` | Status, unlock, mastery, depth and priority rules, plus the master operating rules |
-| Settings | `/settings` | Theme, current week, export/import/reset progress, data version |
+| Working with AI | `/ai` | AI tiers, modes and missions from master section 109, the embedded tutor, the AI practice log |
+| Settings | `/settings` | Backup and restore (export, previewed import, automatic local backups, recovered data, reset), Active Mode A–F and its history, theme, current week, data version |
+| Offline | `/offline` | Shown by the service worker for pages not yet saved on the device |
+
+The Active Mode switcher (A–F) sits in the sidebar and at the top of Today on phones.
 
 ## Run it locally
 
@@ -38,7 +43,8 @@ npm run dev          # http://localhost:3000
 Other scripts:
 
 ```bash
-npm run build          # validates data first (prebuild), then prerenders ~1,940 static pages
+npm test               # Vitest unit tests (persistence, migrations, scheduling, policy, exports)
+npm run build          # validates data first (prebuild), then prerenders ~1,950 static pages
 npm run start          # serve the production build
 npm run typecheck      # tsc --noEmit
 npm run lint           # eslint
@@ -47,7 +53,7 @@ npm run data:build     # regenerate data/*.json and curriculum/docs/*.md from th
 npm run check          # data:validate + typecheck + lint
 ```
 
-No environment variables are needed. `.env.example` lists the ones the cloud-sync stage will add.
+No environment variables are needed. The optional tutor needs `ANTHROPIC_API_KEY` and `ROADMAP_AI_ACCESS_TOKEN` (see [docs/AI.md](docs/AI.md) and `.env.example`).
 
 ## Deploy to Vercel
 
@@ -59,21 +65,22 @@ No environment variables are needed. `.env.example` lists the ones the cloud-syn
    git push -u origin main
    ```
 3. Go to vercel.com, sign in with GitHub, choose **Add New > Project**, and import the repository.
-4. Keep the defaults: framework preset **Next.js**, build command `npm run build`, no environment variables. Click **Deploy**.
+4. Keep the defaults: framework preset **Next.js**, build command `npm run build`. Environment variables are only needed for the optional tutor. Click **Deploy**.
 5. Vercel gives you a URL like `https://roadmap-os-<something>.vercel.app`. Open it on your phone and add it to the home screen if you like.
 
 Every push to `main` redeploys automatically. If the curriculum data is ever invalid, the build stops at the validation step and the previous deployment stays live.
 
 ## Where progress is stored (read this)
 
-Progress currently lives in the browser (`localStorage`, key `roadmap-os:state:v1`). That means **your phone and laptop do not share progress yet**, and clearing browser data deletes it.
+Progress currently lives in the browser (`localStorage`, key `roadmap-os:state:v1`; the document itself is schema v4). That means **your phone and laptop do not share progress yet**, and clearing browser data deletes it.
 
-Until cloud sync ships, use **Settings > Export progress** to download a JSON file and **Import progress** on the other device. Export regularly as a backup.
+Until cloud sync ships, use **Settings > Backup > Export backup** to download a JSON file and **Import backup** on the other device. Export regularly: Today shows a one-line reminder when the last export from this device is more than 14 days old. The app also keeps automatic backups in the browser (weekly, and before every import, restore or reset), quarantines stored data it cannot read instead of overwriting it, and shows a banner if a save ever fails. Details: [docs/PERSISTENCE.md](docs/PERSISTENCE.md).
 
 The code is structured for the next stage:
 
 - All user data is one versioned, serialisable document (`types/state.ts`).
 - Components never touch storage. They call actions (`lib/actions.ts`) on a small store (`lib/store.ts`), which saves through a `PersistenceAdapter` (`lib/persistence/adapter.ts`).
+- Every loaded or imported document goes through schema migrations and validation (`lib/persistence/migrate.ts`, `sanitize.ts`). Unknown fields are preserved.
 - `lib/persistence/index.ts` is the single switch point. Adding Supabase means writing a second adapter that loads and saves the same document for the signed-in user, plus a sign-in screen. No page or component changes.
 
 ## How the curriculum data works
@@ -122,10 +129,10 @@ Stable IDs are used everywhere instead of section numbers or titles:
 Master section 109 defines how to work with AI as an engineer. `build_data.py` parses it into `data/ai-overlay.json`; `validate-data.mjs` checks every unlock gate, link and mission prerequisite.
 
 - **Tiers** (how much AI may do), unlocked by existing gates: Tutor from the start, Pair after `C1`, Supervised agent after `SG4`. "Building AI systems" (after `C5`) only points to P23–P27, P39, P44 and C6.
-- **Modes** (what you are doing): Learn, Build, Assess. The app derives the week's mode from the mastery of that week's main topic.
+- **Modes** (what you are doing): Learn, Build, Assess. The app derives the week's mode from the mastery of that week's main topic; the embedded tutor enforces them (docs/AI.md).
 - **Missions** `AIM-01`–`AIM-12`: completion is stored in `flags`, evidence in `aiLog`.
 - **Checkpoints:** new criteria were appended to the end of the C3, C6 and C7 lists (criteria ticks are stored by position, so never insert in the middle), and one sentence was added to the C1 and C2 practical gates.
-- UI: one AI line on Today and week pages, and the `/ai` page.
+- UI: one AI line on Today and week pages, the `/ai` page, and the tutor panel.
 
 ## Learner-facing names vs reference codes
 
@@ -136,11 +143,13 @@ IDs (P13.2, C3, SG4, PR07) stay in the data, URLs and validator. The UI shows na
 These are the smallest decisions needed to implement the settled curriculum. None changes the curriculum.
 
 - **Topic = component.** A topic page is a master component (for example `P13.2 Regression`); its checklist is the component's item list. Components the master lists without items get a single "worked through this component" check.
-- **Mastery is separate from checking.** Stages follow the master evidence loop: Not started, Learning, Explained, Practised, Demonstrated, Retained. A topic is *Mastered* only when its checklist is complete and it has reached Demonstrated. Recording a passed spaced re-test (1–3 days, 7, 30, 90 days, 6 months) moves it to Retained.
+- **Mastery is separate from checking.** Stages follow the master evidence loop: Not started, Learning, Explained, Practised, Demonstrated, Retained. A topic is *Mastered* only when its checklist is complete and it has reached Demonstrated. Spaced re-tests run at 2, 7, 30, 90 and 180 days from Demonstrated; only a passed re-test at 30 days or later moves a topic to Retained, and a failed one drops it back to Demonstrated and flags re-practice (`lib/reviews.ts`).
 - **Depth.** D0–D5 use the master's definitions. Target depth comes from the component annotation, else its parent, else the phase. Current depth is set by you.
 - **Unlocking.** A topic's required gate is the last gate before its first scheduled week. Named component edges (for example `P10.1d` before `P13.5`) are enforced directly. Phase prerequisites are shown on every page and are already respected by the validated schedule. On-demand topics: `P05.4` after C2, `P41` and `P43` after C5, `P46` always available. Locks never disable checkboxes: you can always see and record ahead; the lock tells you what is not yet your current work.
 - **Weeks are undated.** Calendar dates will be attached later from a real Week 1 start date and your university calendar, which stays separate from the curriculum timeline.
-- **Search** uses a static index generated at build time (`/search-index.json`), plus your own DSA entries, notes, stories and applications from the browser.
+- **Search** uses a static index generated at build time (`/search-index.json`), plus your own records (DSA, notes, career entries, evidence, session logs) from the browser.
+- **Active Modes** (A–F, master 0.3) are operating states that change Today's workload (`lib/modes.ts`); they are separate from the AI Learn/Build/Assess mode.
+- **Offline:** a hand-written service worker (`public/sw.js`) serves visited and core pages offline; progress is local either way.
 
 ## Source inconsistency reported (not silently changed)
 
@@ -160,17 +169,15 @@ scripts/        data validator
 
 Server components render the static curriculum (about 1,940 pages are prerendered at build time). Only progress widgets run in the browser, backed by a compact index (`data/client-index.json`, about 30 KB gzipped).
 
-## Quality checks run for this version
+## Quality checks
 
-- `npm run data:validate`: OK, and seven deliberately corrupted datasets were each rejected with a precise message
-- `npm run typecheck` and `npm run lint`: clean
-- `npm run build`: succeeds, 1,941 routes prerendered
-- Production server: all routes return 200, unknown IDs return 404, a crawl of every internal link in every generated page found no broken links, and all 133 unique canonical resource and tool URLs appear in the rendered app
-- Headless browser at 390 px (Android phone width) and 1366 px, light and dark: no horizontal overflow, no console or hydration errors
-- End-to-end: checklist persistence across reload, mastery and status, gate passing unlocking a topic, notes, DSA journal tagging, week completion, search, export/reset/import including a malformed import, theme persistence, mobile menu
+Current status and the full V2 record: [docs/V2_PROGRESS.md](docs/V2_PROGRESS.md) and [docs/V2_FINAL_REPORT.md](docs/V2_FINAL_REPORT.md).
+
+- `npm run check` (data validation, typecheck, lint) and `npm test` (144 Vitest tests) pass; `npm run build` prerenders ~1,950 pages plus the dynamic `/api/ai` route.
+- Every route type returns 200 against `next start`; unknown IDs return 404.
+- Pages checked in a real browser at phone (390 px) and desktop (1366 px) widths: no horizontal overflow, no console or hydration errors.
 
 ## Next stage
 
-1. Supabase project, email sign-in, and a Supabase persistence adapter storing the user-state document per user (with browser storage kept as an offline cache).
-2. Week 1 anchor date and calendar view, reconciled with the UNILAG academic calendar.
-3. Optional: installable PWA.
+1. Cloud sync: a Supabase adapter behind `PersistenceAdapter` (design in docs/PERSISTENCE.md).
+2. Week 1 anchor date and calendar view, reconciled with the university calendar.

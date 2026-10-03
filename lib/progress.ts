@@ -3,6 +3,7 @@
 import indexJson from "@/data/client-index.json";
 import type { ClientIndex } from "@/types/curriculum";
 import type { UserState } from "@/types/state";
+import { dueReviews as dueReviewsFor, nextReviewAt } from "@/lib/reviews";
 
 export const idx = indexJson as unknown as ClientIndex;
 export type IndexTopic = ClientIndex["topics"][number];
@@ -153,27 +154,13 @@ export function availableTopics(s: UserState, limit = 8) {
     .slice(0, limit);
 }
 
-/** Spaced re-tests due (master spaced-retest rule), for topics at Demonstrated or above. */
+/** Spaced re-tests due now, using the curriculum's intervals. Scheduling rules live in lib/reviews.ts. */
 export function dueReviews(s: UserState, at = new Date()) {
-  const out: { topicId: string; due: Date; count: number }[] = [];
-  Object.entries(s.topics).forEach(([id, tp]) => {
-    if (tp.mastery < 4 || !tp.demonstratedAt) return;
-    const count = tp.reviews?.count ?? 0;
-    if (count >= idx.retest.length) return;
-    const base = new Date(tp.reviews?.last ?? tp.demonstratedAt);
-    const due = new Date(base.getTime() + idx.retest[count] * 86400000);
-    if (due <= at) out.push({ topicId: id, due, count });
-  });
-  return out.sort((a, b) => a.due.getTime() - b.due.getTime());
+  return dueReviewsFor(s, idx.retest, at);
 }
 
 export function nextReviewDate(s: UserState, topicId: string): Date | null {
-  const tp = s.topics[topicId];
-  if (!tp || tp.mastery < 4 || !tp.demonstratedAt) return null;
-  const count = tp.reviews?.count ?? 0;
-  if (count >= idx.retest.length) return null;
-  const base = new Date(tp.reviews?.last ?? tp.demonstratedAt);
-  return new Date(base.getTime() + idx.retest[count] * 86400000);
+  return nextReviewAt(s.topics[topicId], idx.retest);
 }
 
 /** Next unchecked units of a week's primary work, in order. */
